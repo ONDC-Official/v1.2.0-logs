@@ -1,24 +1,27 @@
 {
-    "context": {
+  "context":
+  {
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:0172",
-        "action": "confirm",
+        "action": "on_update",
         "core_version": "1.2.0",
         "bap_id": "logistics_buyer.com",
-        "bpp_id": "ref-logistics-app-stage.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
         "bap_uri": "https://bde0-115-240-127-98.ngrok-free.app/",
         "transaction_id": "2e4a0ac6-4296-4a64-9b47-27cadd29b52a",
-        "message_id": "2d6d8a22-4f74-44a1-83eb-48fsdf35",
-        "timestamp": "2023-09-05T13:46:22.319Z",
-        "ttl": "PT30S"
-    },
-    "message": {
-        "order": {
-            "id": "2857d572-3d1e-4b9c-9447-21e1b651181d",
-            "state": "Created",
-            "provider": {
+        "message_id": "045-3becd66c7-9a9c-add29b",
+        "bpp_id": "ref-logistics-app-stage.ondc.org",
+        "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
+        "timestamp": "2023-09-05T13:55:23.143Z"
+        
+  },
+  "message":
+  {
+    "order":
+    {
+      "id":"2857d572-3d1e-4b9c-9447-21e1b651181d",
+      "state":"In-progress",
+                  "provider": {
                 "id": "3210a225-69b2-40ac-ae26-56acddfa8075",
                 "locations": [
                     {
@@ -65,16 +68,23 @@
                     }
                 ]
             },
-            "fulfillments": [
-                {
-                    "id": "395b93f7-5547-430c-82a5-2d4fca3a9496",
-                    "type": "Delivery",
-                    "@ondc/org/awb_no": "12272621932345777",
-                    "start": {
-                        "time": {
-                            "duration": "PT15M"
-                        },
-                        "person": {
+      "fulfillments":
+      [
+        {
+          "id":"1",
+          "type":"Delivery",
+          "state":
+          {
+            "descriptor":
+            {
+              "code":"Agent-assigned"
+            }
+          },
+          "@ondc/org/awb_no":"1227262193237777",
+          "tracking":false,
+          "start":
+          {
+            "person": {
                             "name": "Kumar chauhan"
                         },
                         "location": {
@@ -93,12 +103,31 @@
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
                         },
-                        "instructions": {
-                            "code": "P2P",
-                            "short_desc": "value of PCC"
+            "time":
+            {
+              "duration":"PT15M",
+              "range":
+              {
+                "start":"2023-09-05T13:55:23.143Z",
+                "end":"2023-09-05T14:10:23.143Z"
+              }
+            },
+             "instructions": {
+                            "code": "3",
+                            "short_desc": "070147",
+                            "long_desc": "Order pickup code."
                         }
-                    },
+          },
                     "end": {
+                        "time":
+            {
+              "duration":"PT15M",
+              "range":
+              {
+                "start":"2023-09-05T14:25:23.143Z",
+                "end":"2023-09-05T14:40:23.143Z"
+              }
+            },
                         "person": {
                             "name": "Rohan Kumar"
                         },
@@ -122,29 +151,9 @@
                             "code": "P2P",
                             "short_desc": "value of DCC"
                         }
-                    },
-                    "tags": [
-                        {
-                            "code": "state",
-                            "list": [
-                                {
-                                    "code": "ready_to_ship",
-                                    "value": "no"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "no"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
+                    }
+        }
+      ],
             "billing": {
                 "name": "ONDC Logistics Buyer NP",
                 "address": {
@@ -162,20 +171,22 @@
                 "created_at": "2023-09-05T13:37:53.241Z",
                 "updated_at": "2023-09-05T13:37:53.241Z"
             },
-            "payment": {
-                "@ondc/org/collection_amount": "300.00",
-                "collected_by": "BPP",
-                "type": "ON-FULFILLMENT",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "buyer-app",
-                        "settlement_type": "upi",
-                        "upi_address": "gft@oksbi",
-                        "settlement_bank_account_no": "XXXXXXXXXX",
-                        "settlement_ifsc_code": "XXXXXXXXX"
-                    }
-                ]
-            },
+      "payment":
+      {
+        "@ondc/org/collection_amount":"300.00",
+        "collected_by":"BPP",
+        "type":"ON-FULFILLMENT",
+        "@ondc/org/settlement_details":
+        [
+          {
+            "settlement_counterparty":"buyer-app",
+            "settlement_type":"upi",
+            "upi_address":"gft@oksbi",
+            "settlement_bank_account_no":"XXXXXXXXXX",
+            "settlement_ifsc_code":"XXXXXXXXX"
+          }
+        ]
+      },
             "@ondc/org/linked_order": {
                 "items": [
                     {
@@ -232,48 +243,8 @@
                     }
                 }
             },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "max_liability_cap",
-                            "value": "10000"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "1000"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "accept_bpp_terms",
-                            "value": "Y"
-                        }
-                    ]
-                }
-            ],
-            "created_at": "2023-09-05T13:46:22.319Z",
-            "updated_at": "2023-09-05T13:46:22.319Z"
-        }
+      "tags":[],
+      "updated_at":"2023-09-05T13:55:23.143Z"
     }
+  }
 }
