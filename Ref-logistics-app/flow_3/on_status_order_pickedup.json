@@ -1,4 +1,4 @@
-{
+ {
   "context": {
     "domain": "nic2004:60232",
     "country": "IND",
@@ -6,17 +6,20 @@
     "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "logistics_buyer.com",
-    "bap_uri": "https://3a3e-115-240-127-98.ngrok-free.app/",
     "bpp_id": "ref-logistics-app-stage.ondc.org",
     "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
-    "transaction_id": "beecf4da-f5bb-4105-abc6-cb42011b6a65",
-    "message_id": "7ed36c5b-4d28-4c22-b62c-fe7dfa50fc10",
-    "timestamp": "2023-09-06T15:20:17.466Z"
+    "bap_uri": "https://e501-115-240-127-98.ngrok-free.app/",
+    "transaction_id": "4ab9306a-75b0-4b98-8a36-a394dffb0568",
+    "message_id": "09b1201d-7528-4586-9bc0-5335e8435c8d",
+    "timestamp": "2023-09-09T15:40:57.423Z"
   },
   "message": {
     "order": {
-      "id": "c4251443-452d-4ac4-8e5c-daa12543e393",
+      "id": "8ba240d8-3a71-4101-898c-855e344dec3f",
       "state": "In-progress",
+      "provider": {
+        "id": "04d1f404-20bb-456c-9d51-8e135302c453"
+      },
       "items": [
         {
           "descriptor": {
@@ -25,51 +28,61 @@
           "time": {
             "label": "TAT",
             "duration": "PT60M",
-            "timestamp": "2023-09-06"
+            "timestamp": "2023-09-09"
           },
           "id": "express",
-          "fulfillment_id": "18f5fe2d-0bdb-42d0-8372-b1cc028eaba2",
+          "fulfillment_id": "f381842d-b332-4330-8662-3e0f80875a72",
           "category_id": "Immediate Delivery"
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "54.45"
+          "value": "60.50"
         },
         "breakup": [
           {
             "price": {
               "currency": "INR",
-              "value": "49.50"
-            }
+              "value": "55.00"
+            },
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "delivery"
           },
           {
             "price": {
               "currency": "INR",
-              "value": "4.95"
-            }
+              "value": "5.50"
+            },
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "tax"
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "18f5fe2d-0bdb-42d0-8372-b1cc028eaba2",
-          "type": "Delivery",
-          "@ondc/org/awb_no": "1227262193237777",
+          "agent": {
+            "name": "Arjun Singh",
+            "mobile": "8755515005"
+          },
+          "vehicle": {
+            "registration": "BH 23 VH 8989"
+          },
           "state": {
             "descriptor": {
               "code": "Order-picked-up"
             }
           },
+          "id": "f381842d-b332-4330-8662-3e0f80875a72",
+          "type": "Delivery",
           "start": {
             "time": {
-              "duration": "PT15M",
               "range": {
-                "start": "2023-09-06T15:08:16.225Z",
-                "end": "2023-09-06T15:23:16.225Z"
+                "start": "2023-09-09T15:38:17.091Z",
+                "end": "2023-09-09T15:53:17.091Z"
               },
-              "timestamp": "2023-09-06T15:20:17.466Z"
+              "duration": "PT15M",
+              "timestamp": "2023-09-09T15:40:57.337Z"
             },
             "person": {
               "name": "Kumar chauhan"
@@ -91,16 +104,15 @@
               "email": "abcd.efgh@gmail.com"
             },
             "instructions": {
-              "code": "P2P",
-              "short_desc": "value of PCC"
+              "code": "3",
+              "short_desc": "070147"
             }
           },
           "end": {
             "time": {
-              "duration": "PT15M",
               "range": {
-                "start": "2023-09-06T15:38:16.225Z",
-                "end": "2023-09-06T15:53:16.225Z"
+                "start": "2023-09-09T16:23:17.091Z",
+                "end": "2023-09-09T16:38:17.091Z"
               }
             },
             "person": {
@@ -121,23 +133,32 @@
             "contact": {
               "phone": "9886098860",
               "email": "abcd.efgh@gmail.com"
-            },
-            "instructions": {
-              "code": "P2P",
-              "short_desc": "value of DCC"
             }
           },
-          "agent": {
-            "name": "Punnet",
-            "phone": "8755515001"
-          },
-          "vehicle": {
-            "registration": "CH02AS4575"
-          }
+          "tags": [
+            {
+              "code": "state",
+              "list": [
+                {
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
+                  "value": "yes"
+                }
+              ]
+            }
+          ],
+          "tracking": true
         }
       ],
       "payment": {
-        "@ondc/org/collection_amount": "300.00",
         "type": "ON-FULFILLMENT",
         "@ondc/org/settlement_details": []
       },
@@ -155,8 +176,8 @@
         "tax_number": "XXXXXXXXXXXXXXX",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2023-09-06T14:46:57.227Z",
-        "updated_at": "2023-09-06T14:46:57.227Z"
+        "created_at": "2023-09-09T15:28:16.911Z",
+        "updated_at": "2023-09-09T15:28:16.911Z"
       },
       "@ondc/org/linked_order": {
         "provider": {
@@ -178,7 +199,7 @@
             "unit": "kilogram",
             "value": 5
           },
-          "id": "919537ba-0716-4169-8637-7fafe583b615",
+          "id": "1367ba5c-c422-4c7b-b975-6cfef4d1ac2e",
           "dimensions": {
             "length": {
               "unit": "centimeter",
