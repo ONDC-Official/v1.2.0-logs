@@ -6,77 +6,82 @@
     "action": "on_update",
     "core_version": "1.2.0",
     "bap_id": "logistics_buyer.com",
-    "bap_uri": "https://bde0-115-240-127-98.ngrok-free.app/",
-    "transaction_id": "beecf4da-f5bb-4105-abc6-cb42011b6a65",
-    "message_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "bap_uri": "https://e501-115-240-127-98.ngrok-free.app/",
+    "transaction_id": "4ab9306a-75b0-4b98-8a36-a394dffb0568",
+    "message_id": "e99d160f-1eb2-429c-860d-06829eeeb17f",
     "bpp_id": "ref-logistics-app-stage.ondc.org",
     "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
-    "timestamp": "2023-09-06T15:08:16.225Z"
+    "timestamp": "2023-09-09T15:38:17.121Z"
   },
   "message": {
     "order": {
-      "id": "c4251443-452d-4ac4-8e5c-daa12543e393",
+      "id": "8ba240d8-3a71-4101-898c-855e344dec3f",
       "state": "In-progress",
       "provider": {
-        "id": "d113041a-c731-43c7-b50f-5c8d7e608eba"
+        "id": "04d1f404-20bb-456c-9d51-8e135302c453"
       },
       "items": [
         {
-          "id": "express",
-          "fulfillment_id": "18f5fe2d-0bdb-42d0-8372-b1cc028eaba2",
-          "category_id": "Immediate Delivery",
           "descriptor": {
             "code": "P2P"
           },
           "time": {
             "label": "TAT",
-            "duration": "PT45M",
-            "timestamp": "2023-09-06"
-          }
+            "duration": "PT60M",
+            "timestamp": "2023-09-09"
+          },
+          "id": "express",
+          "fulfillment_id": "f381842d-b332-4330-8662-3e0f80875a72",
+          "category_id": "Immediate Delivery"
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "59.95"
+          "value": "60.50"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "I1",
-            "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "54.50"
-            }
+              "value": "55.00"
+            },
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "delivery"
           },
           {
-            "@ondc/org/item_id": "I1",
-            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "5.45"
-            }
+              "value": "5.50"
+            },
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "tax"
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "18f5fe2d-0bdb-42d0-8372-b1cc028eaba2",
-          "type": "Delivery",
+          "agent": {
+            "name": "Arjun Singh",
+            "mobile": "8755515005"
+          },
+          "vehicle": {
+            "registration": "BH 23 VH 8989"
+          },
           "state": {
             "descriptor": {
               "code": "Agent-assigned"
             }
           },
-          "@ondc/org/awb_no": "1227262193237777",
-          "tracking": false,
+          "id": "f381842d-b332-4330-8662-3e0f80875a72",
+          "type": "Delivery",
           "start": {
             "time": {
-              "duration": "PT15M",
               "range": {
-                "start": "2023-09-06T15:08:16.225Z",
-                "end": "2023-09-06T15:23:16.225Z"
-              }
+                "start": "2023-09-09T15:38:17.091Z",
+                "end": "2023-09-09T15:53:17.091Z"
+              },
+              "duration": "PT15M"
             },
             "person": {
               "name": "Kumar chauhan"
@@ -99,16 +104,15 @@
             },
             "instructions": {
               "code": "3",
-              "short_desc": "070147",
-              "long_desc": "Order pickup code."
+              "short_desc": "070147"
             }
           },
           "end": {
             "time": {
               "duration": "PT15M",
               "range": {
-                "start": "2023-09-06T15:38:16.225Z",
-                "end": "2023-09-06T15:53:16.225Z"
+                "start": "2023-09-09T16:23:17.091Z",
+                "end": "2023-09-09T16:38:17.091Z"
               }
             },
             "person": {
@@ -129,12 +133,29 @@
             "contact": {
               "phone": "9886098860",
               "email": "abcd.efgh@gmail.com"
-            },
-            "instructions": {
-              "code": "P2P",
-              "short_desc": "value of DCC"
             }
-          }
+          },
+          "tags": [
+            {
+              "code": "state",
+              "list": [
+                {
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
+                  "value": "yes"
+                }
+              ]
+            }
+          ],
+          "tracking": true
         }
       ],
       "billing": {
@@ -151,43 +172,14 @@
         "tax_number": "XXXXXXXXXXXXXXX",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2023-09-06T14:46:57.227Z",
-        "updated_at": "2023-09-06T14:46:57.227Z"
+        "created_at": "2023-09-09T15:28:16.911Z",
+        "updated_at": "2023-09-09T15:28:16.911Z"
       },
       "payment": {
-        "@ondc/org/collection_amount": "300.00",
-        "collected_by": "BPP",
         "type": "ON-FULFILLMENT",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "buyer-app",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "XXXXXXXXXX",
-            "settlement_ifsc_code": "XXXXXXXXX"
-          }
-        ]
+        "@ondc/org/settlement_details": []
       },
       "@ondc/org/linked_order": {
-        "items": [
-          {
-            "category_id": "Grocery",
-            "descriptor": {
-              "name": "Atta"
-            },
-            "quantity": {
-              "count": 1,
-              "measure": {
-                "unit": "kilogram",
-                "value": 5
-              }
-            },
-            "price": {
-              "currency": "INR",
-              "value": "300.00"
-            }
-          }
-        ],
         "provider": {
           "descriptor": {
             "name": "Aadishwar Store"
@@ -203,11 +195,11 @@
           }
         },
         "order": {
-          "id": "8f53aef6-19da-4e95-9a63-11db3f97c57c",
           "weight": {
             "unit": "kilogram",
             "value": 5
           },
+          "id": "1367ba5c-c422-4c7b-b975-6cfef4d1ac2e",
           "dimensions": {
             "length": {
               "unit": "centimeter",
@@ -222,9 +214,68 @@
               "value": 10
             }
           }
-        }
+        },
+        "items": [
+          {
+            "descriptor": {
+              "name": "Atta"
+            },
+            "quantity": {
+              "measure": {
+                "value": 5,
+                "unit": "kilogram"
+              },
+              "count": 1
+            },
+            "price": {
+              "currency": "INR",
+              "value": "300.00"
+            },
+            "category_id": "Grocery"
+          }
+        ]
       },
-      "updated_at": "2023-09-06T15:08:16.225Z"
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Chanigarh"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            }
+          ]
+        }
+      ],
+      "updated_at": "2023-09-09T15:38:17.121Z"
     }
   }
 }
