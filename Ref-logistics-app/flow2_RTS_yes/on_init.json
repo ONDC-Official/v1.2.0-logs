@@ -3,80 +3,38 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:0172",
-    "action": "on_confirm",
+    "action": "on_init",
     "core_version": "1.2.0",
     "bap_id": "logistics_buyer.com",
+    "bap_uri": "https://1d70-115-240-127-98.ngrok-free.app/",
+    "transaction_id": "4f9be73d-b538-40d2-ae19-aa3cb67393ae",
+    "message_id": "e69a2337-f382-4996-9b17-74e1f0c2b8d8",
     "bpp_id": "ref-logistics-app-stage.ondc.org",
     "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
-    "bap_uri": "https://e501-115-240-127-98.ngrok-free.app/",
-    "transaction_id": "13d8c6d1-9140-45ef-8c9b-6ff233185879",
-    "message_id": "4d79d24d-5101-4e5b-8bfa-e9ee3933a319",
-    "timestamp": "2023-09-09T16:21:18.701Z"
+    "timestamp": "2023-09-13T14:10:30.693Z"
   },
   "message": {
     "order": {
-      "id": "089b014d-e02b-4fdf-9471-5d0ec2deede5",
-      "state": "Accepted",
       "provider": {
-        "id": "204012a6-37cf-4215-8439-e3941fc64628"
+        "id": "6240d89c-1755-4de1-b425-64910f4585b0"
       },
       "items": [
         {
           "descriptor": {
             "code": "P2P"
           },
-          "time": {
-            "label": "TAT",
-            "duration": "PT60M",
-            "timestamp": "2023-09-09"
-          },
           "id": "express",
-          "fulfillment_id": "8a0fb699-803e-4d41-89d7-1cc4635be491",
+          "fulfillment_id": "4dc2982b-2594-47e2-9a68-2b860efa236a",
           "category_id": "Immediate Delivery"
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "54.45"
-        },
-        "breakup": [
-          {
-            "price": {
-              "currency": "INR",
-              "value": "49.50"
-            },
-            "@ondc/org/item_id": "I1",
-            "@ondc/org/title_type": "delivery"
-          },
-          {
-            "price": {
-              "currency": "INR",
-              "value": "4.95"
-            },
-            "@ondc/org/item_id": "I1",
-            "@ondc/org/title_type": "tax"
-          }
-        ]
-      },
       "fulfillments": [
         {
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
-          "id": "8a0fb699-803e-4d41-89d7-1cc4635be491",
+          "id": "4dc2982b-2594-47e2-9a68-2b860efa236a",
           "type": "Delivery",
           "start": {
-            "time": {
-              "duration": "PT15M"
-            },
-            "person": {
-              "name": "Kumar chauhan"
-            },
             "location": {
-              "gps": "30.7467833,76.642853",
+              "gps": "30.7467833, 76.642853",
               "address": {
                 "name": "Kumar chauhan",
                 "building": "f-164",
@@ -93,9 +51,6 @@
             }
           },
           "end": {
-            "person": {
-              "name": "Rohan Kumar"
-            },
             "location": {
               "gps": "30.744600, 76.652496",
               "address": {
@@ -115,19 +70,10 @@
           },
           "tags": [
             {
-              "code": "state",
+              "code": "rider_check",
               "list": [
                 {
-                  "code": "ready_to_ship",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "code": "rto_action",
-              "list": [
-                {
-                  "code": "return_to_origin",
+                  "code": "inline_check_for_rider",
                   "value": "yes"
                 }
               ]
@@ -135,82 +81,36 @@
           ]
         }
       ],
-      "billing": {
-        "name": "ONDC Logistics Buyer NP",
-        "address": {
-          "name": "Rohan Kumar",
-          "building": "f-163",
-          "locality": "chandigarh",
-          "city": "kharar",
-          "state": "punjab",
-          "country": "India",
-          "area_code": "140301"
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "57.75"
         },
-        "tax_number": "XXXXXXXXXXXXXXX",
-        "phone": "9886098860",
-        "email": "abcd.efgh@gmail.com",
-        "created_at": "2023-09-09T16:19:16.723Z",
-        "updated_at": "2023-09-09T16:19:16.723Z"
+        "breakup": [
+          {
+            "@ondc/org/item_id": "express",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "52.50"
+            }
+          },
+          {
+            "@ondc/org/item_id": "express",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "5.25"
+            }
+          }
+        ],
+        "ttl": "PT15M"
       },
       "payment": {
         "type": "ON-FULFILLMENT",
-        "@ondc/org/settlement_details": []
-      },
-      "@ondc/org/linked_order": {
-        "provider": {
-          "descriptor": {
-            "name": "Aadishwar Store"
-          },
-          "address": {
-            "name": "Kumar chauhan",
-            "building": "f-164",
-            "locality": "chandigarh",
-            "city": "kharar",
-            "state": "punjab",
-            "country": "India",
-            "area_code": "140301"
-          }
-        },
-        "order": {
-          "weight": {
-            "unit": "kilogram",
-            "value": 5
-          },
-          "id": "f5f43ebd-2b5f-4420-a574-64d080fb0269",
-          "dimensions": {
-            "length": {
-              "unit": "centimeter",
-              "value": 15
-            },
-            "breadth": {
-              "unit": "centimeter",
-              "value": 10
-            },
-            "height": {
-              "unit": "centimeter",
-              "value": 10
-            }
-          }
-        },
-        "items": [
-          {
-            "descriptor": {
-              "name": "Atta"
-            },
-            "quantity": {
-              "measure": {
-                "value": 5,
-                "unit": "kilogram"
-              },
-              "count": 1
-            },
-            "price": {
-              "currency": "INR",
-              "value": "300.00"
-            },
-            "category_id": "Grocery"
-          }
-        ]
+        "@ondc/org/collection_amount": "300",
+        "@ondc/org/settlement_details": [],
+        "collected_by": "BPP"
       },
       "cancellation_terms": [
         {
@@ -296,7 +196,7 @@
             },
             {
               "code": "court_jurisdiction",
-              "value": "Chanigarh"
+              "value": "Chandigarh"
             },
             {
               "code": "delay_interest",
@@ -307,19 +207,8 @@
               "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
             }
           ]
-        },
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "accept_bpp_terms",
-              "value": "Y"
-            }
-          ]
         }
-      ],
-      "created_at": "2023-09-09T16:21:18.382Z",
-      "updated_at": "2023-09-09T16:21:18.701Z"
+      ]
     }
   }
 }
