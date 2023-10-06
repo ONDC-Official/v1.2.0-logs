@@ -1,0 +1,217 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:0172",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "logistics_buyer.com",
+        "bap_uri": "https://f5d5-115-240-127-98.ngrok-free.app",
+        "transaction_id": "dc1bd74c-5ade-4e2f-b534-aef46d94a00f",
+        "message_id": "93167e85-0c6e-4cbf-afcf-19eaa776643d",
+        "bpp_id": "ref-logistics-app-stage.ondc.org",
+        "bpp_uri": "https://ref-logistics-app-dev.thewitslab.com/",
+        "timestamp": "2023-10-05T12:55:24.767Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "eb12b955-2484-4472-b1d2-7d82dfac2356"
+            },
+            "items": [
+                {
+                    "id": "Express",
+                    "fulfillment_id": "27acc85d-2b0e-42fa-b1dd-a6655bed19fd",
+                    "descriptor": {
+                        "code": "P2H2P"
+                    },
+                    "category_id": "Express Delivery"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "27acc85d-2b0e-42fa-b1dd-a6655bed19fd",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "30.743945,76.641141",
+                            "address": {
+                                "name": "Kumar chauhan",
+                                "building": "f-164",
+                                "locality": "chandigarh",
+                                "city": "kharar",
+                                "state": "punjab",
+                                "country": "India",
+                                "area_code": "140301"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "28.657261,77.142273",
+                            "address": {
+                                "name": "Rohan Kumar",
+                                "building": "f-163",
+                                "locality": "chandigarh",
+                                "city": "kharar",
+                                "state": "punjab",
+                                "country": "India",
+                                "area_code": "110015"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "196.63"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Express",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "178.75"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Express",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "17.88"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "type": "ON-FULFILLMENT",
+                "@ondc/org/collection_amount": "300",
+                "@ondc/org/settlement_details": [],
+                "collected_by": "BPP"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ],
+            "provider_location": {
+                "id": "651413d55665fa7b696c3fcb"
+            }
+        }
+    }
+}
