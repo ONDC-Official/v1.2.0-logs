@@ -1,159 +1,381 @@
 {
-  "request": {
-    "context": {
-      "domain": "ONDC:RET11",
-      "action": "select",
-      "country": "IND",
-      "core_version": "1.2.0",
-      "bap_id": "ondc-staging.paytm.com",
-      "bap_uri": "https://ondc-staging.paytm.com/retail",
-      "transaction_id": "fbef58e2-57a9-49ff-9f76-547c4e2dd1a9",
-      "message_id": ":SentTimeStamp:1694429244091:",
-      "timestamp": "2023-09-11T10:47:24.091Z",
-      "bpp_id": "ondc.uengage.in",
-      "bpp_uri": "https://ondc.uengage.in/"
-    },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "89",
-          "locations": [
-            {
-              "id": "123123"
-            }
-          ]
+    "request_When_OUT_OF_STOCK": {
+        "context": {
+            "domain": "nic2004:52110",
+            "action": "select",
+            "country": "IND",
+            "core_version": "1.2.0",
+            "bap_id": "ondc-staging.paytm.com",
+            "bap_uri": "https://ondc-staging.paytm.com/retail",
+            "transaction_id": "d3a7dbc7-db43-41f7-8230-719130c10951",
+            "message_id": ":SentTimeStamp:1697181050013:",
+            "timestamp": "2023-10-13T07:10:50.003Z",
+            "bpp_id": "ondc.uengage.in",
+            "bpp_uri": "https://ondc.uengage.in/",
+            "ttl": "PT15M"
         },
-        "items": [
-          {
-            "id": "29762120",
-            "location_id": "123123",
-            "quantity": {
-              "count": 1
-            }
-          }
-        ],
-        "fulfillments": [
-          {
-            "end": {
-              "location": {
-                "gps": "12.927112,77.626652",
-                "address": {
-                  "area_code": "560034"
-                }
-              }
-            }
-          }
-        ],
-        "payment": {
-          "type": "ON-ORDER"
-        }
-      }
-    }
-  },
-  "response:": {
-    "context": {
-      "action": "on_select",
-      "bap_id": "ondc-staging.paytm.com",
-      "bap_uri": "https://ondc-staging.paytm.com/retail",
-      "core_version": "1.2.0",
-      "country": "IND",
-      "domain": "ONDC:RET11",
-      "message_id": ":SentTimeStamp:1694429244091:",
-      "timestamp": "2023-09-11T10:47:24.110Z",
-      "transaction_id": "fbef58e2-57a9-49ff-9f76-547c4e2dd1a9",
-      "bpp_id": "ondc.uengage.in",
-      "bpp_uri": "https://ondc.uengage.in/",
-      "key": "MCowBQYDK2VuAyEAsosm57w/ca5Ghk1GmVu+YAB74Evs0RyKua4e0rXYzVA=",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "89"
-        },
-        "items": [
-          {
-            "fulfillment_id": "1",
-            "id": "29762120"
-          }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "116.5"
-          },
-          "breakup": [
-            {
-              "@ondc/org/item_id": "29762120",
-              "@ondc/org/title_type": "item",
-              "@ondc/org/item_quantity": {
-                "count": 1
-              },
-              "item": {
-                "quantity": {
-                  "available": {
-                    "count": "30"
-                  },
-                  "maximum": {
-                    "count": "30"
-                  }
+        "message": {
+            "order": {
+                "provider": {
+                    "id": "89",
+                    "locations": [
+                        {
+                            "id": "123123"
+                        }
+                    ]
                 },
-                "price": {
-                  "currency": "INR",
-                  "value": "110"
+                "items": [
+                    {
+                        "id": "29761781",
+                        "location_id": "123123",
+                        "quantity": {
+                            "count": 2
+                        }
+                    },
+                    {
+                        "id": "29762180",
+                        "location_id": "123123",
+                        "quantity": {
+                            "count": 1
+                        }
+                    }
+                ],
+                "fulfillments": [
+                    {
+                        "end": {
+                            "location": {
+                                "gps": "28.7002462,77.09637599",
+                                "address": {
+                                    "area_code": "110085"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "payment": {
+                    "type": "ON-ORDER"
                 }
-              },
-              "title": "Spicy Non-veg",
-              "price": {
-                "currency": "INR",
-                "value": "110"
-              }
-            },
-            {
-              "@ondc/org/item_id": "29762120",
-              "@ondc/org/title_type": "tax",
-              "title": "Tax",
-              "price": {
-                "currency": "INR",
-                "value": "5.5"
-              }
-            },
-            {
-              "@ondc/org/item_id": "1",
-              "@ondc/org/title_type": "delivery",
-              "title": "Delivery Charges",
-              "price": {
-                "currency": "INR",
-                "value": "0"
-              }
-            },
-            {
-              "@ondc/org/item_id": "1",
-              "@ondc/org/title_type": "packing",
-              "title": "Packing charges",
-              "price": {
-                "currency": "INR",
-                "value": "1"
-              }
             }
-          ],
-          "ttl": "PT60M"
+        }
+    },
+    "response_When_OUT_OF_STOCK": {
+        "context": {
+            "action": "on_select",
+            "bap_id": "ondc-staging.paytm.com",
+            "bap_uri": "https://ondc-staging.paytm.com/retail",
+            "core_version": "1.2.0",
+            "country": "IND",
+            "domain": "nic2004:52110",
+            "message_id": ":SentTimeStamp:1697181050013:",
+            "timestamp": "2023-10-13T07:10:50.019Z",
+            "transaction_id": "d3a7dbc7-db43-41f7-8230-719130c10951",
+            "bpp_id": "ondc.uengage.in",
+            "bpp_uri": "https://ondc.uengage.in/",
+            "key": "MCowBQYDK2VuAyEAsosm57w/ca5Ghk1GmVu+YAB74Evs0RyKua4e0rXYzVA=",
+            "ttl": "PT30S"
         },
-        "fulfillments": [
-          {
-            "id": "1",
-            "@ondc/org/provider_name": "La Pinoz and Pizza",
-            "tracking": true,
-            "@ondc/org/category": "Immediate Delivery",
-            "@ondc/org/TAT": "PT45M",
-            "state": {
-              "descriptor": {
-                "code": "Serviceable"
-              }
+        "message": {
+            "order": {
+                "provider": {
+                    "id": "89",
+                    "locations": [
+                        {
+                            "id": "123123"
+                        }
+                    ]
+                },
+                "items": [
+                    {
+                        "fulfillment_id": "1",
+                        "id": "29761781"
+                    },
+                    {
+                        "fulfillment_id": "1",
+                        "id": "29762180"
+                    }
+                ],
+                "quote": {
+                    "price": {
+                        "currency": "INR",
+                        "value": "202.55"
+                    },
+                    "breakup": [
+                        {
+                            "@ondc/org/item_id": "29761781",
+                            "@ondc/org/title_type": "item",
+                            "@ondc/org/item_quantity": {
+                                "count": 0
+                            },
+                            "item": {
+                                "quantity": {
+                                    "available": {
+                                        "count": "0"
+                                    },
+                                    "maximum": {
+                                        "count": "0"
+                                    }
+                                },
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "185"
+                                }
+                            },
+                            "title": "Farm Villa Pizza (Personal Giant Slice (22.5 Cm))",
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "29761781",
+                            "@ondc/org/title_type": "tax",
+                            "title": "Tax",
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "29762180",
+                            "@ondc/org/title_type": "item",
+                            "@ondc/org/item_quantity": {
+                                "count": 1
+                            },
+                            "item": {
+                                "quantity": {
+                                    "available": {
+                                        "count": "30"
+                                    },
+                                    "maximum": {
+                                        "count": "30"
+                                    }
+                                },
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "191"
+                                }
+                            },
+                            "title": "Spanish Sizzles Pizza (Personal Giant Slice (22.5 Cm))",
+                            "price": {
+                                "currency": "INR",
+                                "value": "191"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "29762180",
+                            "@ondc/org/title_type": "tax",
+                            "title": "Tax",
+                            "price": {
+                                "currency": "INR",
+                                "value": "9.55"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "1",
+                            "@ondc/org/title_type": "delivery",
+                            "title": "Delivery Charges",
+                            "price": {
+                                "currency": "INR",
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "1",
+                            "@ondc/org/title_type": "packing",
+                            "title": "Packing charges",
+                            "price": {
+                                "currency": "INR",
+                                "value": "1"
+                            }
+                        }
+                    ],
+                    "ttl": "PT60M"
+                },
+                "fulfillments": [
+                    {
+                        "id": "1",
+                        "@ondc/org/provider_name": "La Pinoz and Pizza",
+                        "tracking": true,
+                        "@ondc/org/category": "Immediate Delivery",
+                        "@ondc/org/TAT": "PT45M",
+                        "state": {
+                            "descriptor": {
+                                "code": "Serviceable"
+                            }
+                        }
+                    }
+                ]
             }
-          }
-        ]
-      }
+        },
+        "error": {
+            "type": "DOMAIN-ERROR",
+            "code": "40002",
+            "path": "",
+            "message": "29761781"
+        }
+    },
+    
+    "request_in_stock": {
+        "context": {
+            "domain": "nic2004:52110",
+            "action": "select",
+            "country": "IND",
+            "core_version": "1.2.0",
+            "bap_id": "ondc-staging.paytm.com",
+            "bap_uri": "https://ondc-staging.paytm.com/retail",
+            "transaction_id": "d3a7dbc7-db43-41f7-8230-719130c10951",
+            "message_id": ":SentTimeStamp:1697181114494:",
+            "timestamp": "2023-10-13T07:11:54.489Z",
+            "bpp_id": "ondc.uengage.in",
+            "bpp_uri": "https://ondc.uengage.in/",
+            "ttl": "PT15M"
+        },
+        "message": {
+            "order": {
+                "provider": {
+                    "id": "89",
+                    "locations": [
+                        {
+                            "id": "123123"
+                        }
+                    ]
+                },
+                "items": [
+                    {
+                        "id": "29762180",
+                        "location_id": "123123",
+                        "quantity": {
+                            "count": 1
+                        }
+                    }
+                ],
+                "fulfillments": [
+                    {
+                        "end": {
+                            "location": {
+                                "gps": "28.7002462,77.09637599",
+                                "address": {
+                                    "area_code": "110085"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "payment": {
+                    "type": "ON-ORDER"
+                }
+            }
+        }
+    },
+    "response_in_stock": {
+        "context": {
+            "action": "on_select",
+            "bap_id": "ondc-staging.paytm.com",
+            "bap_uri": "https://ondc-staging.paytm.com/retail",
+            "core_version": "1.2.0",
+            "country": "IND",
+            "domain": "nic2004:52110",
+            "message_id": ":SentTimeStamp:1697181114494:",
+            "timestamp": "2023-10-13T07:11:54.507Z",
+            "transaction_id": "d3a7dbc7-db43-41f7-8230-719130c10951",
+            "bpp_id": "ondc.uengage.in",
+            "bpp_uri": "https://ondc.uengage.in/",
+            "key": "MCowBQYDK2VuAyEAsosm57w/ca5Ghk1GmVu+YAB74Evs0RyKua4e0rXYzVA=",
+            "ttl": "PT30S"
+        },
+        "message": {
+            "order": {
+                "provider": {
+                    "id": "89",
+                    "locations": [
+                        {
+                            "id": "123123"
+                        }
+                    ]
+                },
+                "items": [
+                    {
+                        "fulfillment_id": "1",
+                        "id": "29762180"
+                    }
+                ],
+                "quote": {
+                    "price": {
+                        "currency": "INR",
+                        "value": "202.55"
+                    },
+                    "breakup": [
+                        {
+                            "@ondc/org/item_id": "29762180",
+                            "@ondc/org/title_type": "item",
+                            "@ondc/org/item_quantity": {
+                                "count": 1
+                            },
+                            "item": {
+                                "quantity": {
+                                    "available": {
+                                        "count": "30"
+                                    },
+                                    "maximum": {
+                                        "count": "30"
+                                    }
+                                },
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "191"
+                                }
+                            },
+                            "title": "Spanish Sizzles Pizza (Personal Giant Slice (22.5 Cm))",
+                            "price": {
+                                "currency": "INR",
+                                "value": "191"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "29762180",
+                            "@ondc/org/title_type": "tax",
+                            "title": "Tax",
+                            "price": {
+                                "currency": "INR",
+                                "value": "9.55"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "1",
+                            "@ondc/org/title_type": "delivery",
+                            "title": "Delivery Charges",
+                            "price": {
+                                "currency": "INR",
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "@ondc/org/item_id": "1",
+                            "@ondc/org/title_type": "packing",
+                            "title": "Packing charges",
+                            "price": {
+                                "currency": "INR",
+                                "value": "1"
+                            }
+                        }
+                    ],
+                    "ttl": "PT60M"
+                },
+                "fulfillments": [
+                    {
+                        "id": "1",
+                        "@ondc/org/provider_name": "La Pinoz and Pizza",
+                        "tracking": true,
+                        "@ondc/org/category": "Immediate Delivery",
+                        "@ondc/org/TAT": "PT45M",
+                        "state": {
+                            "descriptor": {
+                                "code": "Serviceable"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
     }
-  }
 }
