@@ -1,0 +1,154 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.ondc.adya.ai",
+    "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bap/adya_bap",
+    "transaction_id": "c16b160a-4355-4a57-bf28-4f653401e6c1",
+    "ttl": "PT30S",
+    "message_id": "9e788036-583a-4b5e-b374-3ae13798571d",
+    "timestamp": "2023-10-17T12:08:16.553Z",
+    "bpp_id": "stagingapi.cscestore.in/ondc",
+    "bpp_uri": "https://stagingapi.cscestore.in/ondc/seller/v2"
+  },
+  "message": {
+    "order": {
+      "id": "68f887ae-3603-42ee-90f0-b1efcd171159",
+      "state": "Created",
+      "billing": {
+        "address": {
+          "name": "Test ",
+          "locality": "2 line",
+          "building": "sector 5, 2 line",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "India",
+          "area_code": "110096"
+        },
+        "phone": "9638528527",
+        "name": "Test ",
+        "email": "lsp@gmail.com",
+        "created_at": "2023-10-17T12:07:41.091Z",
+        "updated_at": "2023-10-17T12:07:41.091Z"
+      },
+      "items": [
+        {
+          "id": "561",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b"
+        },
+        {
+          "id": "1495",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "type": "Delivery",
+          "tracking": false,
+          "end": {
+            "location": {
+              "address": {
+                "building": "sector 5",
+                "name": "Test ",
+                "locality": "2 line",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110096"
+              },
+              "gps": "28.6263276,77.14855829999999"
+            },
+            "contact": { "phone": "9638528527", "email": "lsp@gmail.com" },
+            "person": { "name": "Test " }
+          }
+        }
+      ],
+      "provider": {
+        "id": "35",
+        "locations": [{ "id": "Storeking-store-location-id-35" }]
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "status": "PAID",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "6",
+        "@ondc/org/settlement_basis": "Delivery",
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/withholding_amount": "0.00",
+        "params": {
+          "amount": "1176.6",
+          "currency": "INR",
+          "transaction_id": "pay_MpGhpJ3Y3lzx1O"
+        },
+        "@ondc/org/settlement_details": []
+      },
+      "quote": {
+        "price": { "currency": "INR", "value": "1176.6" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "561",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 500",
+            "price": { "currency": "INR", "value": "550" },
+            "item": {
+              "quantity": {
+                "available": { "count": "65" },
+                "maximum": { "count": "65" }
+              },
+              "price": { "currency": "INR", "value": "275.00" }
+            }
+          },
+          {
+            "@ondc/org/item_id": "1495",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 1.2kg",
+            "price": { "currency": "INR", "value": "560" },
+            "item": {
+              "quantity": {
+                "available": { "count": "27" },
+                "maximum": { "count": "27" }
+              },
+              "price": { "currency": "INR", "value": "280.00" }
+            }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": 0 }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "66.6" }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bap_terms",
+          "list": [
+            { "code": "accept_bpp_terms", "value": "Y" },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            { "code": "tax_number", "value": "gst_number_of_buyerNP" }
+          ]
+        }
+      ],
+      "created_at": "2023-10-17T12:08:16.553Z",
+      "updated_at": "2023-10-17T12:08:16.553Z"
+    }
+  }
+}
