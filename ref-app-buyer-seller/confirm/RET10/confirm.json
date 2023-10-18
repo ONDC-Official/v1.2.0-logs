@@ -5,50 +5,70 @@
     "city": "std:080",
     "action": "confirm",
     "core_version": "1.2.0",
-    "bap_id": "buyer-app.ondc.org",
-    "bap_uri": "https://webhook.site/b8c0ef18-f162-417b-95bf-3d62352f271b",
+    "bap_id": "ref-app-buyer-dev-internal.ondc.org",
+    "bap_uri": "https://ref-app-buyer-dev-internal.ondc.org/protocol/v1",
     "bpp_uri": "https://ref-app-seller-dev-internal.ondc.org",
-    "transaction_id": "95aead4e-4782-433e-b705-ae0d6b630d8c",
-    "message_id": "5514b475-ddc0-46f5-818a-6c7d1cef863d",
-    "timestamp": "2023-09-06T15:33:31.131Z",
+    "transaction_id": "85e97812-e156-46d1-9130-216b3570bf41",
+    "message_id": "16f4b9d0-c8de-4526-99f5-d586aa6c0d8c",
+    "timestamp": "2023-10-02T20:28:28.280Z",
     "bpp_id": "ref-app-seller-dev-internal.ondc.org",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-09-06-290568",
+      "id": "2023-10-02-173582",
       "state": "Created",
       "billing": {
         "address": {
           "name": "Akshay",
-          "building": "8983796135",
-          "locality": "street",
-          "city": "Pune",
-          "state": "Maharashtra",
+          "locality": "c",
+          "city": "New Delhi",
+          "state": "Delhi",
           "country": "IND",
-          "area_code": "411041"
+          "area_code": "110085"
         },
         "phone": "8983796135",
         "name": "Akshay",
         "email": "akshay@wemotiveforge.com",
-        "created_at": "2023-09-06T15:33:26.789Z",
-        "updated_at": "2023-09-06T15:33:26.789Z"
+        "created_at": "2023-10-02T20:27:08.443Z",
+        "updated_at": "2023-10-02T20:27:08.443Z"
       },
       "items": [
         {
           "id": "d6caf5a7-7050-43dc-a229-4b9167c321d0",
           "quantity": {
             "count": 1
-          }
+          },
+          "fulfillment_id": "Fulfillment1",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
         }
       ],
       "provider": {
         "id": "2428a90b-763c-474a-9d91-6462b158f8c8",
         "locations": [
           {
-            "id": "64f57e8d21351295e68149a3"
+            "id": "64ff56d76a308ae4e9ee2f60"
           }
-        ]
+        ],
+        "descriptor": {
+          "name": "Grocery store",
+          "symbol": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/760e636a-f029-4818-85f2-9c0b87373c59/logo/85c5.jpg.jpeg",
+          "short_desc": "Grocery store",
+          "long_desc": "Grocery store",
+          "images": [
+            "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/760e636a-f029-4818-85f2-9c0b87373c59/logo/85c5.jpg.jpeg"
+          ]
+        }
       },
       "fulfillments": [
         {
@@ -63,15 +83,14 @@
               "name": "Akshay"
             },
             "location": {
-              "gps": "18.450792, 73.811897",
+              "gps": "28.713463, 77.1346360000001",
               "address": {
                 "name": "Akshay",
-                "building": "8983796135",
-                "locality": "street",
-                "city": "Pune",
-                "state": "Maharashtra",
+                "locality": "c",
+                "city": "New Delhi",
+                "state": "Delhi",
                 "country": "IND",
-                "area_code": "411041"
+                "area_code": "110085"
               }
             }
           },
@@ -84,12 +103,12 @@
         "params": {
           "amount": "1000",
           "currency": "INR",
-          "transaction_id": "95aead4e-4782-433e-b705-ae0d6b630d8c"
+          "transaction_id": "85e97812-e156-46d1-9130-216b3570bf41"
         },
-        "status": "NOT-PAID",
-        "type": "ON-FULFILLMENT",
-        "collected_by": "BPP",
-        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
           {
@@ -125,7 +144,7 @@
             "item": {
               "quantity": {
                 "available": {
-                  "count": "100"
+                  "count": "94"
                 },
                 "maximum": {
                   "count": "5"
@@ -134,7 +153,18 @@
               "price": {
                 "currency": "INR",
                 "value": "1000"
-              }
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
             }
           },
           {
@@ -148,9 +178,28 @@
         ],
         "ttl": "P1D"
       },
-      "created_at": "2023-09-06T15:33:31.131Z",
-      "updated_at": "2023-09-06T15:33:31.131Z"
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "123433654526565"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-10-02T20:28:28.280Z",
+      "updated_at": "2023-10-02T20:28:28.280Z"
     }
-  },
-  "created_at": "2023-09-06 15:33:31.166610"
+  }
 }
