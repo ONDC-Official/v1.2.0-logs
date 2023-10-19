@@ -2,16 +2,16 @@
   "context": {
     "domain": "ONDC:RET10",
     "country": "IND",
-    "city": "std:020",
+    "city": "std:080",
     "action": "on_select",
     "core_version": "1.2.0",
-    "bap_id": "buyer-app.ondc.org",
-    "bap_uri": "https://webhook.site/b8c0ef18-f162-417b-95bf-3d62352f271b",
-    "bpp_uri": "https://ref-app-seller-dev-internal.ondc.org",
-    "transaction_id": "95aead4e-4782-433e-b705-ae0d6b630d8c",
-    "message_id": "545b463d-415b-4415-8768-df5c0d60998c",
-    "timestamp": "2023-09-06T15:33:23.100Z",
-    "bpp_id": "ref-app-seller-dev-internal.ondc.org",
+    "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+    "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ref-app-seller-staging-v2.ondc.org",
+    "transaction_id": "36b5982b-8a73-4436-b3aa-9366d52d8df7",
+    "message_id": "7c5937ab-e12c-401c-a809-d669988a1284",
+    "timestamp": "2023-10-18T19:28:34.620Z",
+    "bpp_id": "ref-app-seller-staging-v2.ondc.org",
     "ttl": "PT30S"
   },
   "message": {
@@ -20,18 +20,17 @@
         "id": "2428a90b-763c-474a-9d91-6462b158f8c8",
         "locations": [
           {
-            "id": "64f57e8d21351295e68149a3"
+            "id": "64ff56d76a308ae4e9ee2f60"
           }
         ]
       },
       "fulfillments": [
         {
           "id": "Fulfillment1",
-          "@ondc/org/provider_name": "WEM",
+          "@ondc/org/provider_name": "Grocery store",
           "tracking": false,
-          "@ondc/org/category": "Standard",
-          "@ondc/org/TAT": "PT45M",
-          "provider_id": "wd6t46r",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "PT48H",
           "state": {
             "descriptor": {
               "code": "Serviceable"
@@ -41,7 +40,7 @@
       ],
       "quote": {
         "price": {
-          "value": 1000,
+          "value": "1000",
           "currency": "INR"
         },
         "breakup": [
@@ -59,7 +58,7 @@
             "item": {
               "quantity": {
                 "available": {
-                  "count": "100"
+                  "count": "79"
                 },
                 "maximum": {
                   "count": "5"
@@ -68,10 +67,22 @@
               "price": {
                 "currency": "INR",
                 "value": "1000"
-              }
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
             }
           },
           {
+            "@ondc/org/item_id": "Fulfillment1",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": {
@@ -85,7 +96,18 @@
       "items": [
         {
           "id": "d6caf5a7-7050-43dc-a229-4b9167c321d0",
-          "fulfillment_id": "F1123"
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ],
+          "fulfillment_id": "Fulfillment1"
         }
       ]
     }

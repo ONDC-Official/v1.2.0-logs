@@ -5,26 +5,35 @@
     "city": "std:080",
     "action": "on_confirm",
     "core_version": "1.2.0",
-    "bap_id": "buyer-app.ondc.org",
-    "bap_uri": "https://webhook.site/b8c0ef18-f162-417b-95bf-3d62352f271b",
-    "bpp_uri": "https://ref-app-seller-dev-internal.ondc.org",
-    "transaction_id": "95aead4e-4782-433e-b705-ae0d6b630d8c",
-    "message_id": "5514b475-ddc0-46f5-818a-6c7d1cef863d",
-    "timestamp": "2023-09-06T15:33:31.240Z",
-    "bpp_id": "ref-app-seller-dev-internal.ondc.org",
+    "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+    "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ref-app-seller-staging-v2.ondc.org",
+    "transaction_id": "36b5982b-8a73-4436-b3aa-9366d52d8df7",
+    "message_id": "4c7d96e0-29d9-4541-b193-9dc83d5c0b07",
+    "timestamp": "2023-10-18T19:30:36.903Z",
+    "bpp_id": "ref-app-seller-staging-v2.ondc.org",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-09-06-290568",
+      "id": "2023-10-18-356816",
       "state": "Accepted",
       "provider": {
         "id": "2428a90b-763c-474a-9d91-6462b158f8c8",
         "locations": [
           {
-            "id": "64f57e8d21351295e68149a3"
+            "id": "64ff56d76a308ae4e9ee2f60"
           }
-        ]
+        ],
+        "descriptor": {
+          "name": "Grocery store",
+          "symbol": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/760e636a-f029-4818-85f2-9c0b87373c59/logo/85c5.jpg.jpeg",
+          "short_desc": "Grocery store",
+          "long_desc": "Grocery store",
+          "images": [
+            "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/760e636a-f029-4818-85f2-9c0b87373c59/logo/85c5.jpg.jpeg"
+          ]
+        }
       },
       "items": [
         {
@@ -32,24 +41,34 @@
           "quantity": {
             "count": 1
           },
-          "fulfillment_id": "F1123"
+          "fulfillment_id": "Fulfillment1",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
         }
       ],
       "billing": {
         "address": {
           "name": "Akshay",
-          "building": "8983796135",
-          "locality": "street",
-          "city": "Pune",
-          "state": "Maharashtra",
+          "locality": "c",
+          "city": "New Delhi",
+          "state": "Delhi",
           "country": "IND",
-          "area_code": "411041"
+          "area_code": "110044"
         },
         "phone": "8983796135",
         "name": "Akshay",
         "email": "akshay@wemotiveforge.com",
-        "created_at": "2023-09-06T15:33:26.789Z",
-        "updated_at": "2023-09-06T15:33:26.789Z"
+        "created_at": "2023-10-18T19:29:43.676Z",
+        "updated_at": "2023-10-18T19:29:43.676Z"
       },
       "fulfillments": [
         {
@@ -64,8 +83,10 @@
           "tracking": false,
           "start": {
             "location": {
-              "id": "64f870674e6eb701ba1fda7c",
-              "descriptor": {},
+              "id": "64ff56d76a308ae4e9ee2f60",
+              "descriptor": {
+                "name": "Grocery store"
+              },
               "gps": "28.67962013520202,77.06928604748101",
               "address": {
                 "building": "ssss",
@@ -78,8 +99,8 @@
             },
             "time": {
               "range": {
-                "start": "2023-09-06T15:33:31.212Z",
-                "end": "2023-09-06T15:33:31.212Z"
+                "start": "2023-10-18T19:30:33.457Z",
+                "end": "2023-10-18T19:30:33.457Z"
               }
             },
             "instructions": {
@@ -102,21 +123,20 @@
               "phone": "8983796135"
             },
             "location": {
-              "gps": "18.450792, 73.811897",
+              "gps": "28.508205, 77.327888",
               "address": {
                 "name": "Akshay",
-                "building": "8983796135",
-                "locality": "street",
-                "city": "Pune",
-                "state": "Maharashtra",
+                "locality": "c",
+                "city": "New Delhi",
+                "state": "Delhi",
                 "country": "IND",
-                "area_code": "411041"
+                "area_code": "110044"
               }
             },
             "time": {
               "range": {
-                "start": "2023-06-03T11:00:00.000Z",
-                "end": "2023-06-03T11:30:00.000Z"
+                "start": "2023-10-18T19:30:33.457Z",
+                "end": "2023-10-19T19:30:33.457Z"
               }
             },
             "instructions": {
@@ -147,7 +167,7 @@
             "item": {
               "quantity": {
                 "available": {
-                  "count": "100"
+                  "count": "79"
                 },
                 "maximum": {
                   "count": "5"
@@ -156,7 +176,18 @@
               "price": {
                 "currency": "INR",
                 "value": "1000"
-              }
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
             }
           },
           {
@@ -176,12 +207,12 @@
         "params": {
           "amount": "1000",
           "currency": "INR",
-          "transaction_id": "95aead4e-4782-433e-b705-ae0d6b630d8c"
+          "transaction_id": "36b5982b-8a73-4436-b3aa-9366d52d8df7"
         },
-        "status": "NOT-PAID",
-        "type": "ON-FULFILLMENT",
-        "collected_by": "BPP",
-        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
           {
@@ -197,8 +228,28 @@
           }
         ]
       },
-      "created_at": "2023-09-06T15:33:31.131Z",
-      "updated_at": "2023-09-06T15:33:31.131Z"
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-10-18T19:30:24.991Z",
+      "updated_at": "2023-10-18T19:30:36.903Z"
     }
   }
 }
