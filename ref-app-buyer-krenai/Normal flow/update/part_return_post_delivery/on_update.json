@@ -1,0 +1,187 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "on_update",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "transaction_id": "896861c3-01b8-4aaa-806e-a5b9c6c2f46e",
+    "message_id": "3dc0aed3-181d-4f9e-8d2c-c6715308b074",
+    "timestamp": "2023-10-18T13:19:45.323Z",
+    "ttl": "PT30S",
+    "bpp_id": "storepreprod.krenai.in",
+    "bpp_uri": "https://storepreprod.krenai.in/ondc/"
+  },
+  "message": {
+    "order": {
+      "id": "2023-10-18-957347",
+      "state": "Completed",
+      "items": [
+        {
+          "id": "BH1001",
+          "fulfillment_id": "606",
+          "quantity": {
+            "count": 1
+          }
+        },
+        {
+          "id": "BH1002",
+          "fulfillment_id": "606",
+          "quantity": {
+            "count": 3
+          }
+        },
+        {
+          "id": "BH1001",
+          "fulfillment_id": "606",
+          "quantity": {
+            "count": 1
+          },
+          "tags": {
+            "status": "Return_Initiated"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "1632.32"
+        },
+        "breakup": [
+          {
+            "title": "GARLYER Non-Sticky Face Serum & Garlyer Bright Complete VITAMIN C Booster Face Serum-BH1001",
+            "price": {
+              "currency": "INR",
+              "value": "498.00"
+            },
+            "@ondc/org/item_id": "BH1001",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "249.00"
+              }
+            }
+          },
+          {
+            "title": "Khadi Herbal Vitamin C Serum For Natural Glowing Beauty (30 ml)-BH1002",
+            "price": {
+              "currency": "INR",
+              "value": "1050.00"
+            },
+            "@ondc/org/item_id": "BH1002",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 3
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "350.00"
+              }
+            }
+          },
+          {
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "20.00"
+            },
+            "@ondc/org/item_id": "606",
+            "@ondc/org/title_type": "delivery"
+          },
+          {
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "64.32"
+            },
+            "@ondc/org/item_id": "606",
+            "@ondc/org/title_type": "misc"
+          }
+        ],
+        "ttl": "PT5M"
+      },
+      "fulfillments": [
+        {
+          "id": "606",
+          "type": "Delivery",
+          "tracking": false,
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2023-10-18T13:18:45.227Z",
+                "end": "2023-10-19T13:18:45.227Z"
+              },
+              "timestamp": "2023-10-18T13:18:46.779Z"
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2023-10-19T13:18:45.227Z",
+                "end": "2023-10-20T13:18:45.227Z"
+              },
+              "timestamp": "2023-10-18T13:18:52.056Z"
+            }
+          }
+        }
+      ],
+      "payment": {
+        "uri": "https://juspay.in/",
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "params": {
+          "amount": "1881.32",
+          "currency": "INR",
+          "transaction_id": "896861c3-01b8-4aaa-806e-a5b9c6c2f46e"
+        },
+        "tl_method": "http/get",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "settlement_bank_account_no": "1212121212212121",
+            "settlement_ifsc_code": "SBIN1234567",
+            "beneficiary_name": "test",
+            "bank_name": "State Bank",
+            "branch_name": "Badhshahpur",
+            "upi_address": "test@upi",
+            "settlement_timestamp": "2023-10-18T13:17:52.000Z",
+            "settlement_amount": "1881.32"
+          },
+          {
+            "settlement_counterparty": "buyer",
+            "settlement_phase": "refund",
+            "settlement_type": "upi",
+            "settlement_timestamp": "2023-10-18T13:18:24.000Z",
+            "settlement_amount": "249.0"
+          },
+          {
+            "settlement_counterparty": "buyer",
+            "settlement_phase": "refund",
+            "settlement_type": "upi",
+            "settlement_timestamp": "2023-10-18T13:19:45.000Z",
+            "settlement_amount": "249.0"
+          }
+        ]
+      },
+      "created_at": "2023-10-18T13:17:49.308Z",
+      "updated_at": "2023-10-18T13:19:45.323Z"
+    }
+  }
+}
