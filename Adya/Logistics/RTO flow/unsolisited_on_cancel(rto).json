@@ -3,20 +3,26 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_status",
+        "action": "on_cancel",
         "core_version": "1.2.0",
         "bap_id": "preprod.ondc.adya.ai",
         "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/lsp_bap/adya_lsp_bap",
         "bpp_id": "preprod.ondc.adloggs.com",
         "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
-        "transaction_id": "85d81dd7-ceae-4d89-a04a-be9505e38c70",
-        "message_id": "35355944-1e56-429b-9f45-c78a97b6d478",
-        "timestamp": "2023-10-26T13:54:52.000Z"
+        "transaction_id": "7dd2db8d-a4a4-4078-b742-5348e00364a6",
+        "message_id": "dc21926b-49c1-41ae-b3b2-fcce5e26aef7",
+        "timestamp": "2023-10-26T13:37:44.000Z"
     },
     "message": {
         "order": {
-            "id": "3f0f96a8-ca51-4213-a5cc-a6ed21e3213d",
-            "state": "Completed",
+            "id": "723ee11a-7091-488b-82f4-8fa13e92cdee",
+            "state": "Cancelled",
+            "cancellation": {
+                "cancelled_by": "preprod.ondc.adloggs.com",
+                "reason": {
+                    "id": "013"
+                }
+            },
             "provider": {
                 "id": "P1"
             },
@@ -25,7 +31,7 @@
                     "id": "I1",
                     "time": {
                         "label": "TAT",
-                        "duration": "PT45M",
+                        "duration": "PT60M",
                         "timestamp": "2023-10-26"
                     },
                     "descriptor": {
@@ -33,11 +39,24 @@
                     },
                     "category_id": "Standard Delivery",
                     "fulfillment_id": "1"
+                },
+                {
+                    "id": "I2",
+                    "fulfillment_id": "1-RTO",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT45M",
+                        "timestamp": "2023-10-26"
+                    }
                 }
             ],
             "quote": {
                 "price": {
-                    "value": "23.60",
+                    "value": "20.00",
                     "currency": "INR"
                 },
                 "breakup": [
@@ -56,6 +75,22 @@
                         },
                         "@ondc/org/item_id": "I1",
                         "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "@ondc/org/item_id": "I2",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I2",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.60"
+                        }
                     }
                 ]
             },
@@ -65,18 +100,18 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Cancelled"
                         }
                     },
-                    "tracking": true,
+                    "tracking": false,
                     "start": {
                         "time": {
                             "range": {
-                                "end": "2023-10-26T13:40:10.000Z",
-                                "start": "2023-10-26T13:25:10.000Z"
+                                "end": "2023-10-26T13:56:09.000Z",
+                                "start": "2023-10-26T13:41:09.000Z"
                             },
                             "duration": "PT15M",
-                            "timestamp": "2023-10-26T13:20:12.000Z"
+                            "timestamp": "2023-10-26T13:36:11.000Z"
                         },
                         "person": {
                             "name": "Adya Store"
@@ -107,10 +142,9 @@
                     "end": {
                         "time": {
                             "range": {
-                                "end": "2023-10-26T14:25:10.000Z",
-                                "start": "2023-10-26T13:40:10.000Z"
-                            },
-                            "timestamp": "2023-10-26T13:54:52.000Z"
+                                "end": "2023-10-26T14:41:09.000Z",
+                                "start": "2023-10-26T13:56:09.000Z"
+                            }
                         },
                         "person": {
                             "name": "test"
@@ -140,12 +174,25 @@
                         "name": "dev Vignesh M",
                         "phone": "9500303975"
                     }
+                },
+                {
+                    "id": "1-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2023-10-26T13:37:44.000Z"
+                            },
+                            "timestamp": "2023-10-26T13:37:44.000Z"
+                        }
+                    }
                 }
             ],
-            "payment": {
-                "type": "ON-ORDER",
-                "collected_by": "BAP"
-            },
             "billing": {
                 "name": "test",
                 "email": "test@gmail.com",
@@ -159,9 +206,13 @@
                     "locality": "3rd building",
                     "area_code": "560095"
                 },
-                "created_at": "2023-10-26T13:19:37.226Z",
+                "created_at": "2023-10-26T13:35:46.243Z",
                 "tax_number": "18AABCU9603R1ZM",
-                "updated_at": "2023-10-26T13:19:37.226Z"
+                "updated_at": "2023-10-26T13:35:46.243Z"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -184,7 +235,7 @@
                     }
                 ],
                 "order": {
-                    "id": "a07f80e3-aaab-42f5-894d-6f43b2466c4e",
+                    "id": "82e7d3b3-6d0d-4fe0-a680-649ae62f6d26",
                     "weight": {
                         "unit": "kilogram",
                         "value": 0.5
@@ -218,7 +269,8 @@
                     }
                 }
             },
-            "updated_at": "2023-10-26T13:54:52.000Z"
+            "updated_at": "2023-10-26T13:37:44.000Z",
+            "created_at": "2023-10-26T19:06:11.000Z"
         }
     }
 }
