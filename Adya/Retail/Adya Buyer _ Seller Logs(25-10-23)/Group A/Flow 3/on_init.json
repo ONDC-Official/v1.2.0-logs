@@ -1,0 +1,301 @@
+{
+    "context": {
+        "domain": "ONDC:RET12",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.ondc.adya.ai",
+        "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bap/adya_bap",
+        "transaction_id": "d09483d1-2f69-4975-8575-fb60bcf38293",
+        "ttl": "PT30S",
+        "message_id": "b957feaa-b96d-4ab9-9460-e7642023fe26",
+        "timestamp": "2023-10-25T08:25:52.633Z",
+        "bpp_id": "preprod.ondc.adya.ai",
+        "bpp_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bpp/adya_bpp"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P224",
+                "locations": [
+                    {
+                        "id": "L62"
+                    }
+                ]
+            },
+            "provider_location": {
+                "id": "L62"
+            },
+            "items": [
+                {
+                    "id": "CSS890_V6798",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "Fulfillment-1"
+                },
+                {
+                    "id": "CSS890_V8323",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "Fulfillment-1"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "name": "Test",
+                    "locality": "Main Road Govindpuri",
+                    "building": "Kalkaji Extension",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110019"
+                },
+                "phone": "7569316675",
+                "name": "Test",
+                "email": "test@gmail.com",
+                "created_at": "2023-10-25T08:25:52.599Z",
+                "updated_at": "2023-10-25T08:25:52.599Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "Fulfillment-1",
+                    "type": "Delivery",
+                    "end": {
+                        "location": {
+                            "address": {
+                                "building": "Kalkaji Extension",
+                                "name": "Test",
+                                "locality": "Main Road Govindpuri",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "India",
+                                "area_code": "110019"
+                            },
+                            "gps": "28.5330685,77.2688713"
+                        },
+                        "contact": {
+                            "phone": "7569316675"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "2691.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "CSS890_V6798",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Casual Shirt",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1350.00"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "40"
+                                },
+                                "maximum": {
+                                    "count": "40"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "675.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "CSS890_V8323",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Casual Shirt",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1310.00"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "100"
+                                },
+                                "maximum": {
+                                    "count": "100"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "655.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "@ondc/org/settlement_details": [
+                    {
+                        "upi_address": "8712799171@jupiteraxis",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "Sridhar Kulkarni"
+                    }
+                ]
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "134.55"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "269.10"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "009"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "010,011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "538.20"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000.00"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000.00"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "29GGGGG1314R9Z6"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
