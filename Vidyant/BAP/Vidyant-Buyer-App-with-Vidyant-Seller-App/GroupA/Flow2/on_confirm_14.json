@@ -1,42 +1,93 @@
 {
   "context": {
     "transaction_id": "ff615f5b-3873-41e6-9d72-ec12bb274088",
-    "bpp_id": "us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "country": "IND",
+    "bpp_id": "us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "city": "std:080",
-    "message_id": "1700047845147",
+    "message_id": "1700047846486",
     "core_version": "1.2.0",
     "ttl": "PT30S",
     "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
     "domain": "ONDC:RET12",
     "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
-    "action": "on_init",
+    "action": "on_confirm",
     "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
-    "timestamp": "2023-11-15T11:30:45.208Z"
+    "timestamp": "2023-11-15T11:30:46.523Z"
   },
   "message": {
     "order": {
       "fulfillments": [
         {
-          "end": {
+          "@ondc/org/TAT": "P5D",
+          "start": {
+            "instructions": {
+              "name": "Status for pickup",
+              "short_desc": "Pickup Confirmation Code"
+            },
             "contact": {
-              "phone": "9129785903"
+              "phone": "9129785903",
+              "email": "atiti123@tranzita.com"
+            },
+            "location": {
+              "address": {
+                "city": "Bengaluru",
+                "area_code": "560076",
+                "locality": "Jayanagar",
+                "state": "KA"
+              },
+              "id": "Ypeps4tHJydTbcoOwBOa-location-1",
+              "descriptor": {
+                "name": "Tranzita Systems"
+              },
+              "gps": "26.855821767945724, 80.99750570239284"
+            },
+            "time": {
+              "range": {
+                "start": "2023-11-15T11:30:46.523Z",
+                "end": "2023-11-15T11:30:46.523Z"
+              }
+            }
+          },
+          "end": {
+            "instructions": {
+              "name": "Status for drop",
+              "short_desc": "Delivery Confirmation Code"
+            },
+            "person": {
+              "name": "Atiti Singh"
+            },
+            "contact": {
+              "phone": "9129785903",
+              "email": "atiti@tranzita.com"
             },
             "location": {
               "address": {
                 "country": "IN",
                 "city": "Lucknow",
-                "area_code": "226010",
+                "area_code": "273407",
                 "name": "Tranzita Systems",
                 "locality": "Gomati Nagar",
                 "state": "UP",
                 "building": "Cyber Heights"
               },
               "gps": "26.775538,83.3858808"
+            },
+            "time": {
+              "range": {
+                "start": "2023-11-15T11:30:46.523Z",
+                "end": "2023-11-15T11:30:46.523Z"
+              }
             }
           },
           "id": "aeb3653c-5d38-47c4-b658-21aaf964510f",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "rateable": true,
           "type": "Delivery",
+          "@ondc/org/provider_name": "Tranzita Systems",
           "tracking": false
         }
       ],
@@ -79,7 +130,7 @@
             }
           },
           {
-            "@ondc/org/item_id": "aeb3653c-5d38-47c4-b658-21aaf964510f",
+            "@ondc/org/item_id": "3289e7d5-1b5d-417a-8f05-93860f7cbbe2",
             "price": {
               "currency": "INR",
               "value": "0"
@@ -94,19 +145,29 @@
         },
         "ttl": "P1D"
       },
+      "updated_at": "2023-11-15T11:30:46.907Z",
       "provider": {
         "locations": [
           {
             "id": "Ypeps4tHJydTbcoOwBOa-location-1"
           }
         ],
-        "id": "Ypeps4tHJydTbcoOwBOa"
+        "id": "Ypeps4tHJydTbcoOwBOa",
+        "rateable": true
       },
-      "provider_location": {
-        "id": "Ypeps4tHJydTbcoOwBOa-location-1"
-      },
+      "created_at": "2023-11-15T11:30:46.907Z",
       "payment": {
         "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "collected_by": "BAP",
+        "params": {
+          "transaction_id": "d29ba22e-956a-4793-a77a-c0f3a438fc44",
+          "amount": "3996",
+          "currency": "INR"
+        },
+        "type": "ON-ORDER",
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "status": "PAID",
         "@ondc/org/buyer_app_finder_fee_amount": "3",
         "@ondc/org/settlement_details": [
           {
@@ -122,6 +183,8 @@
           }
         ]
       },
+      "id": "3133e3ecb803405281de07cab66d3d75",
+      "state": "Accepted",
       "items": [
         {
           "quantity": {
@@ -142,7 +205,7 @@
         "address": {
           "country": "IN",
           "city": "Lucknow",
-          "area_code": "226010",
+          "area_code": "273407",
           "name": "Tranzita Systems",
           "locality": "Gomati Nagar",
           "state": "UP",
