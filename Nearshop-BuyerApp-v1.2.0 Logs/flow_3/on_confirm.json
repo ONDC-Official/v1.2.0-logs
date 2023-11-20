@@ -3,13 +3,13 @@
     "domain": "ONDC:RET10",
     "country": "IND",
     "city": "std:0522",
-    "action": "on_status",
+    "action": "on_confirm",
     "core_version": "1.2.0",
     "bap_id": "api.staging.nearshop.in",
     "bap_uri": "https://api.staging.nearshop.in/bap/api/v1",
     "transaction_id": "05bdc5f5-9003-57ac-8728-bf27621f144c",
-    "message_id": "ca10c2d9-e809-49c2-b0c9-def28216674f",
-    "timestamp": "2023-11-18T10:50:05.941Z",
+    "message_id": "2eb80376-0903-42ef-9dba-536b86b285ba",
+    "timestamp": "2023-11-18T10:47:20.342Z",
     "bpp_id": "ondc-seller-preprod.chatty4ao.com/ondc",
     "bpp_uri": "https://ondc-seller-preprod.chattybao.com/ondc/bpp",
     "ttl": "PT30S"
@@ -17,35 +17,7 @@
   "message": {
     "order": {
       "id": "EDS860D7C432346GK5D13156D0F5244B2276KL",
-      "state": "In-progress",
-      "provider": {
-        "id": "MR8mcezPPQEA-r8EhP6UN9",
-        "locations": [
-          {
-            "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
-          }
-        ]
-      },
-      "items": [
-        {
-          "id": "063a93d0-1a42-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
-          "quantity": {
-            "count": 4
-          },
-          "fulfillment_id": "1",
-          "@ondc/org/returnable": false,
-          "@ondc/org/cancellable": false
-        },
-        {
-          "id": "62136330-b340-11ed-b67d-b356d861831b:MR8mcezPPQEA-r8EhP6UN9",
-          "quantity": {
-            "count": 2
-          },
-          "fulfillment_id": "1",
-          "@ondc/org/returnable": false,
-          "@ondc/org/cancellable": false
-        }
-      ],
+      "state": "Accepted",
       "billing": {
         "address": {
           "name": "Venkat",
@@ -58,17 +30,49 @@
         },
         "phone": "9739374094",
         "name": "Venkat",
-        "email": "help@chattybao.com",
+        "email": "venkyuvr@gmail.com",
         "created_at": "2023-11-18T10:45:57.175Z",
         "updated_at": "2023-11-18T10:45:57.175Z"
+      },
+      "items": [
+        {
+          "id": "063a93d0-1a42-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
+          "quantity": {
+            "count": 4
+          },
+          "fulfillment_id": "1"
+        },
+        {
+          "id": "62136330-b340-11ed-b67d-b356d861831b:MR8mcezPPQEA-r8EhP6UN9",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "1"
+        }
+      ],
+      "provider": {
+        "id": "MR8mcezPPQEA-r8EhP6UN9",
+        "locations": [
+          {
+            "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
+          }
+        ],
+        "descriptor": {
+          "name": "tester shatrughan fru and veg",
+          "symbol": "https://cdn.chattybao.com/shopoutside-temp_file_20230222_093036-0e1d5670-16a2-4a55-abcb-a25aa1711347.jpg",
+          "long_desc": "tester shatrughan fru and veg",
+          "short_desc": "tester shatrughan fru and veg",
+          "images": [
+            "https://cdn.chattybao.com/shopoutside-temp_file_20230222_093036-0e1d5670-16a2-4a55-abcb-a25aa1711347.jpg"
+          ]
+        }
       },
       "fulfillments": [
         {
           "@ondc/org/provider_name": "tester shatrughan fru and veg",
           "state": {
             "descriptor": {
-              "code": "Agent-assigned",
-              "name": "Agent assigned"
+              "code": "Pending"
             }
           },
           "start": {
@@ -133,10 +137,39 @@
               }
             }
           },
-          "type": "Delivery",
-          "@ondc/org/TAT": "PT45M"
+          "type": "Delivery"
         }
       ],
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "367",
+          "currency": "INR",
+          "transaction_id": "ffce42f0-b26f-4e5b-83df-6b9225537ad4"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "CHATTYBAO TECHNOLOGIES PRIVATE LIMITED NODAL ACCOUNT",
+            "upi_address": "",
+            "settlement_bank_account_no": "661505602069\",",
+            "settlement_ifsc_code": "ICIC0006615",
+            "bank_name": "ICICI\",",
+            "branch_name": "Sco 31, Sector 18, Udyog Vihar, Gurgaon - 122016, Haryana\","
+          }
+        ],
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00"
+      },
       "quote": {
         "price": {
           "currency": "INR",
@@ -213,40 +246,29 @@
         ],
         "ttl": "P4D"
       },
-      "tags": {},
-      "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
-        "params": {
-          "amount": "367",
-          "currency": "INR",
-          "transaction_id": "ffce42f0-b26f-4e5b-83df-6b9225537ad4"
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "07AAJCC8423B1ZW"
+            }
+          ]
         },
-        "status": "PAID",
-        "type": "ON-ORDER",
-        "collected_by": "BAP",
-        "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "seller-app",
-            "settlement_phase": "sale-amount",
-            "settlement_type": "neft",
-            "beneficiary_name": "CHATTYBAO TECHNOLOGIES PRIVATE LIMITED NODAL ACCOUNT",
-            "upi_address": "",
-            "settlement_bank_account_no": "661505602069\",",
-            "settlement_ifsc_code": "ICIC0006615",
-            "bank_name": "ICICI\",",
-            "branch_name": "Sco 31, Sector 18, Udyog Vihar, Gurgaon - 122016, Haryana\",",
-            "settlement_timestamp": "2023-11-18T11:17:20.570Z"
-          }
-        ],
-        "@ondc/org/settlement_basis": "delivery",
-        "@ondc/org/settlement_window": "P1D",
-        "@ondc/org/withholding_amount": "10.00"
-      },
-      "created_at": "2023-11-18T10:45:57.175Z",
-      "updated_at": "2023-11-18T10:50:05.941Z"
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-11-18T10:47:20.307Z",
+      "updated_at": "2023-11-18T10:47:20.342Z",
+      "rateable": true
     }
   }
 }
