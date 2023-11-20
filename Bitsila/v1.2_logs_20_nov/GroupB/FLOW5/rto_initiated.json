@@ -2,15 +2,15 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:080",
-        "action": "on_status",
+        "action": "on_cancel",
         "bap_id": "shopping-api-testing.phonepe.com",
         "bpp_id": "biz.test.bitsila.com",
         "domain": "nic2004:52110",
         "bap_uri": "https://shopping-api-testing.phonepe.com/apis/ondcConnector/bpp/callback/v1",
         "bpp_uri": "https://biz.test.bitsila.com/ecc/ondc/retail-bpp",
         "country": "IND",
-        "timestamp": "2023-11-20T17:50:03.501Z",
-        "message_id": "2c75c00b-46e0-4404-a3dd-f6465ff14b4c",
+        "timestamp": "2023-11-20T17:50:42.601Z",
+        "message_id": "f82932db-8ea0-4679-ad95-ed8fe70c687d",
         "core_version": "1.2.0",
         "transaction_id": "C2311201200418199670045"
     },
@@ -33,6 +33,24 @@
                     ],
                     "quantity": {
                         "count": 1
+                    },
+                    "fulfillment_id": "RTO:FPA:1548:::196684:NAD"
+                },
+                {
+                    "id": "1195601",
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ],
+                    "quantity": {
+                        "count": 0
                     },
                     "fulfillment_id": "FPA:1548:::196684:NAD",
                     "parent_item_id": "N18749670771"
@@ -62,6 +80,33 @@
                     "quantity": {
                         "count": 1
                     },
+                    "fulfillment_id": "RTO:FPA:1548:::196684:NAD"
+                },
+                {
+                    "id": "CG:109705",
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "customization"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "parent",
+                            "list": [
+                                {
+                                    "code": "id",
+                                    "value": "C:7357"
+                                }
+                            ]
+                        }
+                    ],
+                    "quantity": {
+                        "count": 0
+                    },
                     "fulfillment_id": "FPA:1548:::196684:NAD",
                     "parent_item_id": "N18749670771"
                 }
@@ -69,7 +114,7 @@
             "quote": {
                 "ttl": "PT1H",
                 "price": {
-                    "value": "325.00",
+                    "value": 48.0,
                     "currency": "INR"
                 },
                 "breakup": [
@@ -93,14 +138,14 @@
                             "parent_item_id": "N18749670771"
                         },
                         "price": {
-                            "value": "0.00",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Chicken Biryani SC 1.0 qty",
                         "@ondc/org/item_id": "1195601",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 1
+                            "count": 0
                         }
                     },
                     {
@@ -132,7 +177,7 @@
                             "parent_item_id": "N18749670771"
                         },
                         "price": {
-                            "value": "300.00",
+                            "value": "0",
                             "currency": "INR",
                             "minimum_value": "300.00"
                         },
@@ -140,7 +185,7 @@
                         "@ondc/org/item_id": "CG:109705",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 1
+                            "count": 0
                         }
                     },
                     {
@@ -159,7 +204,7 @@
                             "parent_item_id": "N18749670771"
                         },
                         "price": {
-                            "value": "0.00",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Tax",
@@ -191,7 +236,7 @@
                             "parent_item_id": "N18749670771"
                         },
                         "price": {
-                            "value": "15.00",
+                            "value": "0",
                             "currency": "INR",
                             "minimum_value": "15.00"
                         },
@@ -216,10 +261,19 @@
                         "title": "Delivery charges",
                         "@ondc/org/item_id": "FPA:1548:::196684:NAD",
                         "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "38",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "RTO:FPA:1548:::196684:NAD",
+                        "@ondc/org/title_type": "delivery"
                     }
                 ]
             },
-            "state": "In-progress",
+            "state": "Cancelled",
             "billing": {
                 "name": "Arjun A B",
                 "phone": "9663377107",
@@ -261,6 +315,7 @@
             },
             "provider": {
                 "id": "1016:1548",
+                "rateable": true,
                 "locations": [
                     {
                         "id": "L:1016:1548"
@@ -268,15 +323,21 @@
                 ]
             },
             "created_at": "2023-11-20T06:34:17.178Z",
-            "updated_at": "2023-11-20T17:49:56.869Z",
+            "updated_at": "2023-11-20T17:50:42.580Z",
+            "cancellation": {
+                "reason": {
+                    "id": "015"
+                },
+                "cancelled_by": "DS super market hsr layout Customization"
+            },
             "fulfillments": [
                 {
                     "id": "FPA:1548:::196684:NAD",
                     "end": {
                         "time": {
                             "range": {
-                                "end": "2023-11-20T19:49:58.000Z",
-                                "start": "2023-11-20T18:49:58.000Z"
+                                "end": "2023-11-20T18:15:20.686Z",
+                                "start": "2023-11-20T17:57:20.686Z"
                             }
                         },
                         "person": {
@@ -298,13 +359,41 @@
                             }
                         }
                     },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "015"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc-preprod.loadshare.net"
+                                },
+                                {
+                                    "code": "retry_count",
+                                    "value": "3"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "RTO:FPA:1548:::196684:NAD"
+                                }
+                            ]
+                        }
+                    ],
                     "type": "Delivery",
+                    "agent": {
+                        "name": "SK",
+                        "phone": "8105197791"
+                    },
                     "start": {
                         "time": {
                             "range": {
-                                "end": "2023-11-20T17:49:58.000Z",
-                                "start": "2023-11-20T16:49:58.000Z"
-                            }
+                                "end": "2023-11-20T17:50:20.683Z",
+                                "start": "2023-11-20T17:50:20.683Z"
+                            },
+                            "timestamp": "2023-11-20T17:50:21.000Z"
                         },
                         "contact": {
                             "email": "dsupermarket@gmail.com",
@@ -329,13 +418,121 @@
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Packed",
-                            "name": "Packed"
+                            "code": "Cancelled",
                         }
                     },
                     "tracking": true,
                     "@ondc/org/TAT": "PT2H",
                     "@ondc/org/provider_name": "Bitsila"
+                },
+                {
+                    "id": "RTO:FPA:1548:::196684:NAD",
+                    "tags": {
+                        "code": "quote_trail",
+                        "list": [
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "1195601"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-0.00"
+                                }
+                            ],
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "CG:109705"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-300.00"
+                                }
+                            ],
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "1195601"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-0.00"
+                                }
+                            ],
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "CG:109705"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-15.00"
+                                }
+                            ],
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "RTO:FPA:1548:::196684:NAD"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "38"
+                                }
+                            ]
+                        ]
+                    },
+                    "type": "RTO",
+                    "start": {
+                        "time": {
+                            "timestamp": "2023-11-20T17:50:42.601Z"
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated"
+                        }
+                    }
                 }
             ]
         }
