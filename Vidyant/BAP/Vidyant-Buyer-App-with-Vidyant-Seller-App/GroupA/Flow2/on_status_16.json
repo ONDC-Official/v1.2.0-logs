@@ -1,22 +1,23 @@
 {
   "context": {
     "domain": "ONDC:RET12",
-    "action": "confirm",
+    "action": "on_status",
+    "core_version": "1.2.0",
     "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
     "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
-    "bpp_id": "us-central1-vidyant-sellerapp.cloudfunctions.net/api",
+    "bpp_id": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "transaction_id": "ff615f5b-3873-41e6-9d72-ec12bb274088",
-    "message_id": "1700047846486",
+    "message_id": "1700284852429",
     "city": "std:080",
     "country": "IND",
-    "timestamp": "2023-11-15T11:30:46.486Z",
+    "timestamp": "2023-11-19T05:41:59.610Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "3133e3ecb803405281de07cab66d3d75",
-      "state": "Created",
+      "state": "In-progress",
       "provider": {
         "id": "Ypeps4tHJydTbcoOwBOa",
         "locations": [
@@ -28,61 +29,135 @@
       "items": [
         {
           "id": "VlLhr4mnLw89qMBT6M08_colour-000000_size-XS",
+          "fulfillment_id": "aeb3653c-5d38-47c4-b658-21aaf964510f",
           "quantity": {
             "count": 2
-          },
-          "fulfillment_id": "aeb3653c-5d38-47c4-b658-21aaf964510f"
+          }
         },
         {
           "id": "VlLhr4mnLw89qMBT6M08_colour-0000FF_size-L",
+          "fulfillment_id": "aeb3653c-5d38-47c4-b658-21aaf964510f",
           "quantity": {
             "count": 2
-          },
-          "fulfillment_id": "aeb3653c-5d38-47c4-b658-21aaf964510f"
+          }
         }
       ],
       "billing": {
-        "name": "Atiti Singh",
         "address": {
-          "name": "Tranzita Systems",
-          "building": "Cyber Heights",
-          "locality": "Gomati Nagar",
-          "city": "Lucknow",
-          "state": "UP",
           "country": "IN",
-          "area_code": "226010"
+          "city": "Lucknow",
+          "area_code": "226010",
+          "name": "Tranzita Systems",
+          "locality": "Gomati Nagar",
+          "state": "UP",
+          "building": "Cyber Heights"
         },
+        "updated_at": "2023-11-15T11:30:45.147Z",
         "phone": "9129785903",
-        "email": "atiti@tranzita.com",
+        "name": "Atiti Singh",
         "created_at": "2023-11-15T11:30:45.147Z",
-        "updated_at": "2023-11-15T11:30:45.147Z"
+        "email": "atiti@tranzita.com"
       },
       "fulfillments": [
         {
           "id": "aeb3653c-5d38-47c4-b658-21aaf964510f",
+          "@ondc/org/provider_name": "Tranzita Systems",
           "type": "Delivery",
-          "@ondc/org/TAT": "P5D",
           "tracking": false,
-          "end": {
-            "person": {
-              "name": "Atiti Singh"
+          "@ondc/org/TAT": "P5D",
+          "state": {
+            "descriptor": {
+              "code": "Agent-assigned"
+            }
+          },
+          "start": {
+            "location": {
+              "descriptor": {
+                "name": "Tranzita Systems"
+              },
+              "gps": "12.967555,77.749666",
+              "address": {
+                "locality": "Jayanagar",
+                "city": "Bengaluru",
+                "area_code": "560076",
+                "state": "KA"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-06-03T10:00:00.000Z",
+                "end": "2023-06-03T10:30:00.000Z"
+              },
+              "timestamp": "2023-06-03T10:25:00.000Z"
+            },
+            "instructions": {
+              "code": "1",
+              "name": "ONDC Order",
+              "short_desc": "value of PCC",
+              "images": [
+                "https://lsp.com/pickup_image.png",
+                "https://lsp.com/rider_location.png"
+              ]
+            },
+            "authorization": {
+              "type": "OTP",
+              "token": "OTP code",
+              "valid_from": "2023-06-03T12:00:00.000Z",
+              "valid_to": "2023-06-03T14:00:00.000Z"
             },
             "contact": {
-              "email": "atiti@tranzita.com",
-              "phone": "9129785903"
-            },
-            "location": {
-              "gps": "26.775538,83.3858808",
-              "address": {
-                "name": "Tranzita Systems",
-                "building": "Cyber Heights",
-                "locality": "Gomati Nagar",
-                "city": "Lucknow",
-                "state": "UP",
-                "country": "IN",
-                "area_code": "226010"
-              }
+              "phone": "9886098860",
+              "email": "tranzitasystem@gmail.com"
             }
+          },
+          "end": {
+            "location": {
+              "address": {
+                "country": "IN",
+                "city": "Lucknow",
+                "area_code": "226010",
+                "name": "Tranzita Systems",
+                "locality": "Gomati Nagar",
+                "state": "UP",
+                "building": "Cyber Heights"
+              },
+              "gps": "26.775538,83.3858808"
+            },
+            "time": {
+              "range": {
+                "start": "2023-06-03T11:00:00.000Z",
+                "end": "2023-06-03T11:30:00.000Z"
+              },
+              "timestamp": "2023-06-03T11:35:00.000Z"
+            },
+            "instructions": {
+              "code": "1",
+              "name": "ONDC Order",
+              "short_desc": "value of DCC",
+              "images": [
+                "https://lsp.com/delivery_image.png",
+                "https://lsp.com/rider_location.png"
+              ]
+            },
+            "authorization": {
+              "type": "OTP",
+              "token": "OTP code",
+              "valid_from": "2023-06-03T18:00:00.000Z",
+              "valid_to": "2023-06-03T22:00:00.000Z"
+            },
+            "person": {
+              "name": "name_of_person"
+            },
+            "contact": {
+              "phone": "9129785903"
+            }
+          },
+          "agent": {
+            "name": "Ram",
+            "phone": "9886098860"
+          },
+          "vehicle": {
+            "registration": "3LVJ945"
           }
         }
       ],
@@ -141,8 +216,6 @@
         "ttl": "P1D"
       },
       "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
         "params": {
           "currency": "INR",
           "transaction_id": "d29ba22e-956a-4793-a77a-c0f3a438fc44",
@@ -153,6 +226,9 @@
         "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
         "@ondc/org/settlement_details": [
           {
             "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
@@ -167,8 +243,14 @@
           }
         ]
       },
-      "created_at": "2023-11-15T11:30:46.486Z",
-      "updated_at": "2023-11-15T11:30:46.486Z"
+      "documents": [
+        {
+          "url": "https://invoice_url",
+          "label": "Invoice"
+        }
+      ],
+      "created_at": "2023-11-21T07:12:15.125Z",
+      "updated_at": "2023-11-21T07:12:15.125Z"
     }
   }
 }
