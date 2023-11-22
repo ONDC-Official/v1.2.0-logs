@@ -1,0 +1,242 @@
+{
+  "request": {
+    "context": {
+      "ttl": "PT30S",
+      "city": "std:080",
+      "action": "on_status",
+      "bap_id": "beta.mystore.in",
+      "bpp_id": "preprod.ondc.adya.ai",
+      "domain": "ONDC:RET12",
+      "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+      "bpp_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bpp/adya_bpp",
+      "country": "IND",
+      "timestamp": "2023-11-21T14:01:04.337Z",
+      "message_id": "528e74f6-6024-47c8-9124-4eed155d048c",
+      "core_version": "1.2.0",
+      "transaction_id": "109d16c1-10bc-46a2-8cba-b3a67fcca265"
+    },
+    "message": {
+      "order": {
+        "id": "655cb7b185e3e9e5ad1ae04f",
+        "state": "In-progress",
+        "provider": {
+          "id": "CANARAADYAPROVIDER275",
+          "locations": [
+            {
+              "id": "CANARAADYALOCATION74"
+            }
+          ]
+        },
+        "items": [
+          {
+            "fulfillment_id": "Fulfillment-1",
+            "id": "WOM456789_V0527",
+            "quantity": {
+              "count": 2
+            }
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "Fulfillment-1",
+            "@ondc/org/provider_name": "Desi Store",
+            "type": "Delivery",
+            "tracking": true,
+            "@ondc/org/TAT": "P8D",
+            "state": {
+              "descriptor": {
+                "code": "Order-picked-up"
+              }
+            },
+            "start": {
+              "time": {
+                "range": {
+                  "end": "2023-11-25T13:59:14.603Z",
+                  "start": "2023-11-21T13:59:14.592Z"
+                },
+                "timestamp": "2023-11-21T14:01:04.337Z"
+              },
+              "contact": {
+                "email": "desistore@adya.ai",
+                "phone": "8522016867"
+              },
+              "location": {
+                "id": "CANARAADYALOCATION74",
+                "gps": "12.9679185,77.6943162",
+                "address": {
+                  "city": "Bengaluru",
+                  "state": "Karnataka",
+                  "locality": "Doddanekkundi",
+                  "area_code": "560037"
+                },
+                "descriptor": {
+                  "name": "Desi Store"
+                }
+              },
+              "instructions": {
+                "code": "3",
+                "name": "ONDC order",
+                "long_desc": "please confirm the order with the merchant using the 6-digit code and pickup the parcel",
+                "short_desc": "843788"
+              }
+            },
+            "end": {
+              "time": {
+                "range": {
+                  "end": "2023-11-29T13:59:14.604Z",
+                  "start": "2023-11-25T13:59:14.603Z"
+                }
+              },
+              "person": {
+                "name": "saurabh"
+              },
+              "contact": {
+                "phone": "8368476734"
+              },
+              "location": {
+                "gps": "26.26920,73.00900",
+                "address": {
+                  "city": "Bengaluru",
+                  "door": "NA",
+                  "name": "MAngolpuri",
+                  "state": "Karnataka",
+                  "country": "IN",
+                  "building": "L-580",
+                  "locality": "MAngolpuri",
+                  "area_code": "560001"
+                }
+              }
+            },
+            "agent": {
+              "name": "Desi Store",
+              "phone": "8522016867"
+            }
+          }
+        ],
+        "quote": {
+          "ttl": "P1D",
+          "price": {
+            "value": "1409.00",
+            "currency": "INR"
+          },
+          "breakup": [
+            {
+              "price": {
+                "value": "1.00",
+                "currency": "INR"
+              },
+              "title": "Convenience Fee",
+              "@ondc/org/item_id": "Fulfillment-1",
+              "@ondc/org/title_type": "misc"
+            },
+            {
+              "item": {
+                "price": {
+                  "value": "699.00",
+                  "currency": "INR"
+                }
+              },
+              "price": {
+                "value": "1398.00",
+                "currency": "INR"
+              },
+              "title": "Van Heusen Women's 100% Cotton Full Sleeve Solid Formal Shirt",
+              "@ondc/org/item_id": "WOM456789_V0527",
+              "@ondc/org/title_type": "item",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              }
+            },
+            {
+              "price": {
+                "value": "0.00",
+                "currency": "INR"
+              },
+              "title": "Delivery charges",
+              "@ondc/org/item_id": "Fulfillment-1",
+              "@ondc/org/title_type": "delivery"
+            },
+            {
+              "price": {
+                "value": "10.00",
+                "currency": "INR"
+              },
+              "title": "Packing charges",
+              "@ondc/org/item_id": "Fulfillment-1",
+              "@ondc/org/title_type": "packing"
+            }
+          ]
+        },
+        "payment": {
+          "type": "ON-ORDER",
+          "params": {
+            "amount": "1409",
+            "currency": "INR",
+            "transaction_id": "TXN-At57OL39"
+          },
+          "status": "PAID",
+          "collected_by": "BAP",
+          "@ondc/org/settlement_basis": "return_window_expiry",
+          "@ondc/org/settlement_window": "P2D",
+          "@ondc/org/settlement_details": [
+            {
+              "upi_address": "8712799171@jupiteraxis",
+              "settlement_type": "upi",
+              "beneficiary_name": "Sridhar Kulkarni",
+              "settlement_phase": "sale-amount",
+              "settlement_counterparty": "seller-app"
+            }
+          ],
+          "@ondc/org/withholding_amount": "0.00",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3"
+        },
+        "created_at": "2023-11-21T13:59:13.217Z",
+        "updated_at": "2023-11-21T14:01:04.337Z",
+        "billing": {
+          "name": "saurabh",
+          "phone": "8368476734",
+          "address": {
+            "city": "Bengaluru",
+            "name": "MAngolpuri",
+            "state": "Karnataka",
+            "country": "IN",
+            "building": "L-580",
+            "locality": "MAngolpuri",
+            "area_code": "560001"
+          },
+          "created_at": "2023-11-21T13:58:41.243Z",
+          "updated_at": "2023-11-21T13:58:41.243Z"
+        },
+        "documents": [
+          {
+            "url": "https://storage.googleapis.com/adya_upload_pdf/pdf/invoices/file-0fed7dc3-d467-4c3b-8f92-9be0c17ff341.pdf",
+            "label": "Invoice"
+          }
+        ]
+      }
+    }
+  },
+  "response": {
+    "context": {
+      "ttl": "PT30S",
+      "city": "std:080",
+      "action": "on_status",
+      "bap_id": "beta.mystore.in",
+      "bpp_id": "preprod.ondc.adya.ai",
+      "domain": "ONDC:RET12",
+      "bap_uri": "https://beta.mystore.in/ondc/1.0/",
+      "bpp_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bpp/adya_bpp",
+      "country": "IND",
+      "timestamp": "2023-11-21T14:01:04.337Z",
+      "message_id": "528e74f6-6024-47c8-9124-4eed155d048c",
+      "core_version": "1.2.0",
+      "transaction_id": "109d16c1-10bc-46a2-8cba-b3a67fcca265"
+    },
+    "message": {
+      "ack": {
+        "status": "ACK"
+      }
+    }
+  }
+}
