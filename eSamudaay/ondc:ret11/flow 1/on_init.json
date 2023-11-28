@@ -1,13 +1,13 @@
 {
   "context": {
-    "action": "on_select",
-    "transaction_id": "8df9e10e-67af-41aa-aeab-ed2e464f867e",
-    "message_id": "81b3b42e-3dd5-41e8-bc8d-1d2712cc9c18",
+    "action": "on_init",
+    "transaction_id": "844a61d9-3f89-4447-9a62-ffc643564cd5",
+    "message_id": "f16a9fab-5ff8-4ecd-9901-2b80b0b4c6d2",
     "city": "std:080",
     "domain": "ONDC:RET11",
     "country": "IND",
     "core_version": "1.2.0",
-    "timestamp": "2023-11-07T06:55:32.542Z",
+    "timestamp": "2023-11-24T14:19:21.849Z",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
@@ -39,7 +39,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "quantity": {
+            "count": 1
+          }
         },
         {
           "id": "1897_733_466",
@@ -64,7 +67,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "quantity": {
+            "count": 1
+          }
         },
         {
           "id": "1897_755_476",
@@ -89,7 +95,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "quantity": {
+            "count": 1
+          }
         },
         {
           "id": "1897_756_478",
@@ -114,7 +123,10 @@
                 }
               ]
             }
-          ]
+          ],
+          "quantity": {
+            "count": 1
+          }
         }
       ],
       "quote": {
@@ -332,22 +344,89 @@
         ],
         "ttl": "P1D"
       },
+      "provider_location": {
+        "id": "75e4363f-001b-4519-ace5-28b1f448a0bb"
+      },
       "fulfillments": [
         {
           "id": "Fulfillment1",
+          "provider_id": "0635ecff-8fde-4185-8cd8-167efda42bbc",
+          "start": {
+            "location": {
+              "id": "75e4363f-001b-4519-ace5-28b1f448a0bb",
+              "gps": "12.9783692,77.6408356",
+              "address": {
+                "door": "",
+                "name": "Ravada Stores",
+                "building": "WZ-123/2",
+                "street": "",
+                "locality": "Near Taj",
+                "ward": "",
+                "city": "Bangalore Urban",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038"
+              }
+            }
+          },
           "type": "Delivery",
           "tracking": false,
-          "@ondc/org/provider_name": "Ravada Stores",
-          "@ondc/org/category": "Immediate Delivery",
-          "@ondc/org/TAT": "PT1H",
-          "state": {
-            "descriptor": {
-              "name": "Serviceable",
-              "code": "Serviceable"
+          "end": {
+            "contact": {
+              "phone": "9449013517"
+            },
+            "location": {
+              "gps": "12.9814010000001, 77.6409810000001",
+              "address": {
+                "lat": "12.9814010000001",
+                "lng": "77.6409810000001",
+                "city": "Bengaluru",
+                "name": "namrataha",
+                "state": "Karnataka",
+                "country": "IND",
+                "building": "sdsds",
+                "locality": "100 Feet Road",
+                "area_code": "560038"
+              }
             }
           }
         }
-      ]
+      ],
+      "billing": {
+        "name": "namrataha",
+        "address": {
+          "city": "Bengaluru",
+          "name": "namrataha",
+          "state": "Karnataka",
+          "country": "IND",
+          "building": "sdsds",
+          "locality": "100 Feet Road",
+          "area_code": "560038"
+        },
+        "updated_at": "2023-11-24T14:19:21.481Z",
+        "created_at": "2023-11-24T14:19:21.481Z",
+        "phone": "9449013517",
+        "email": "sdf@df.com"
+      },
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P2D",
+        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "1111-111-1111",
+            "settlement_ifsc_code": "ESAM000111",
+            "beneficiary_name": "eSamudaay Secret",
+            "bank_name": "eSamudaay Payments Bank",
+            "branch_name": "Bangalore"
+          }
+        ]
+      }
     }
   }
 }
