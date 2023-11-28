@@ -1,123 +1,162 @@
 {
   "context": {
-    "action": "confirm",
-    "bap_id": "ondc-mock-server-dev.thewitslab.com",
-    "bap_uri": "https://5553-115-240-127-98.ngrok-free.app/buyer",
-    "bpp_id": "seller-preprod.thewitslab.com",
-    "bpp_uri": "https://seller-preprod.thewitslab.com",
-    "city": "std:080",
-    "core_version": "1.2.0",
-    "country": "IND",
     "domain": "ONDC:RET12",
-    "message_id": "35beee26-2c02-47a0-b9aa-63f7386127ef",
-    "timestamp": "2023-10-16T14:29:16.331Z",
-    "transaction_id": "6d3bcdd5-15ab-4ba6-998f-cbfe728a3afd",
+    "country": "IND",
+    "city": "std:080",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-mock-server-dev.thewitslab.com",
+    "bap_uri": "https://premium-lion-especially.ngrok-free.app/protocol/v1",
+    "bpp_uri": "https://shopify-adapter-dev.thewitslab.com/api/v2",
+    "transaction_id": "ef893096-c710-4852-895d-cbeac64febff",
+    "message_id": "ecea0109-3811-47f3-bc9b-7d14132e39fd",
+    "timestamp": "2023-11-28T04:17:26.238Z",
+    "bpp_id": "shopify-adapter-dev.thewitslab.com",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "id": "2023-11-28-249883",
+      "state": "Created",
       "billing": {
         "address": {
-          "area_code": "560095",
-          "building": "witslab",
+          "name": "sahil sharma",
+          "building": "Home",
+          "locality": "14th Main Road",
           "city": "Bengaluru",
+          "state": "Karnataka",
           "country": "IND",
-          "locality": "witslab",
-          "name": "witslab",
-          "state": "Karnataka"
+          "area_code": "560092"
         },
-        "created_at": "2023-06-03T09:00:00.000Z",
-        "email": "info@thewitslab.com",
-        "name": "Akash",
-        "phone": "9090909090",
-        "tax_number": "XXXXXXXXXXXXXXX",
-        "updated_at": "2023-06-03T09:00:00.000Z"
+        "phone": "6284202730",
+        "name": "sahil sharma",
+        "email": "robink.chauhan@thewitslab.com",
+        "created_at": "2023-11-28T04:17:24.153Z",
+        "updated_at": "2023-11-28T04:17:24.153Z"
       },
-      "created_at": "2023-10-16T14:29:16.330Z",
-      "fulfillments": [
-        {
-          "end": {
-            "contact": {
-              "phone": "9090909090"
-            },
-            "location": {
-              "address": {
-                "area_code": "560095",
-                "building": "witslab",
-                "city": "Bengaluru",
-                "country": "IND",
-                "locality": "witslab",
-                "name": "witslab",
-                "state": "Karnataka"
-              },
-              "gps": "12.974002,77.613458"
-            }
-          },
-          "id": "F1",
-          "tracking": false,
-          "type": "Delivery"
-        }
-      ],
-      "id": "ORDER01",
       "items": [
         {
+          "id": "47362167996715",
           "quantity": {
             "count": 1
           },
-          "id": "47226797981995",
           "fulfillment_id": "F1"
         },
         {
+          "id": "47226797981995",
           "quantity": {
-            "count": 4
+            "count": 1
           },
-          "id": "47230053089579",
           "fulfillment_id": "F1"
         }
       ],
+      "provider": {
+        "id": "f441bab3-93ab-4e4f-9b2a-e583dd24b4e6",
+        "locations": [
+          {
+            "id": "162c6b3e-aa9e-41f6-9ff2-baf9990aa000"
+          }
+        ],
+        "descriptor": {
+          "name": "WIL Adapter",
+          "symbol": "https://thewitslab.com/_next/static/media/header-logo.29455862.png?imwidth=828",
+          "short_desc": "Wits Adapter Store for selling Dummy products",
+          "long_desc": "Wits Adapter Store for selling Products which are Dummy in Nature",
+          "images": [
+            "https://thewitslab.com/_next/static/media/header-logo.29455862.png?imwidth=828"
+          ]
+        }
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "tracking": false,
+          "end": {
+            "contact": {
+              "email": "robink.chauhan@thewitslab.com",
+              "phone": "6284202730"
+            },
+            "person": {
+              "name": "sahil sharma"
+            },
+            "location": {
+              "gps": "13.061796461108349, 77.58781333453955",
+              "address": {
+                "name": "sahil sharma",
+                "building": "Home",
+                "locality": "14th Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560092"
+              }
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
       "payment": {
-        "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "3610",
+          "currency": "INR",
+          "transaction_id": "ef893096-c710-4852-895d-cbeac64febff"
+        },
+        "status": "NOT-PAID",
+        "type": "ON-FULFILLMENT",
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
           {
             "settlement_counterparty": "seller-app",
             "settlement_phase": "sale-amount",
             "settlement_type": "neft",
-            "settlement_bank_account_no": "XXXXXXXXXXXXXXX",
-            "settlement_ifsc_code": "XXXXXXXXXXXXXXX",
-            "beneficiary_name": "Witslab",
-            "bank_name": "SBI",
-            "branch_name": "Bangaluru"
-          }
-        ],
-        "params": {
-          "currency": "INR",
-          "amount": "12500",
-          "transaction_id": "32893519-ab91-4fff-947e-d5ef9899ba5d"
-        },
-        "status": "PAID",
-        "collected_by": "BAP",
-        "tl_method": "http/get",
-        "type": "ON-ORDER",
-        "uri": "https://thewitslab.com/payment"
-      },
-      "provider": {
-        "id": "P965AfUT46ETcEIKZqmD",
-        "location": [
-          {
-            "id": "P965AfUT46ETcEIKZqmD-location"
+            "settlement_bank_account_no": "6284202730",
+            "settlement_ifsc_code": "SBIN0050007",
+            "beneficiary_name": "sahil",
+            "bank_name": "STATE BANK OF INDIA",
+            "branch_name": "INDIA"
           }
         ]
       },
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "12500"
+          "value": "3610"
         },
         "breakup": [
           {
+            "@ondc/org/item_id": "47362167996715",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "item": {
+              "parent_item_id": "8849949327659",
+              "quantity": {
+                "available": {
+                  "count": "1"
+                },
+                "maximum": {
+                  "count": "1"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "1000.00"
+              }
+            },
+            "title": "Jeans",
+            "price": {
+              "currency": "INR",
+              "value": "1000"
+            }
+          },
+          {
             "@ondc/org/item_id": "47226797981995",
-            "@ondc/org/title_type": "Jeans",
+            "@ondc/org/title_type": "item",
             "@ondc/org/item_quantity": {
               "count": 1
             },
@@ -125,104 +164,57 @@
               "parent_item_id": "8805894422827",
               "quantity": {
                 "available": {
-                  "count": "1"
+                  "count": "30"
                 },
                 "maximum": {
-                  "count": "1"
+                  "count": "30"
                 }
               },
               "price": {
                 "currency": "INR",
-                "value": "2500.00"
-              },
-              "tags": [
-                {
-                  "code": "type",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    }
-                  ]
-                }
-              ]
+                "value": "2600.00"
+              }
             },
             "title": "Jeans",
             "price": {
               "currency": "INR",
-              "value": "2500"
+              "value": "2600"
             }
           },
           {
-            "@ondc/org/item_id": "47226797981995",
-            "@ondc/org/title_type": "tax",
-            "title": "Tax",
-            "price": {
-              "currency": "INR",
-              "value": "0"
-            }
-          },
-          {
-            "@ondc/org/item_id": "47230053089579",
-            "@ondc/org/title_type": "Jeans",
-            "@ondc/org/item_quantity": {
-              "count": 4
-            },
-            "item": {
-              "parent_item_id": "8805894422827",
-              "quantity": {
-                "available": {
-                  "count": "4"
-                },
-                "maximum": {
-                  "count": "4"
-                }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "2500.00"
-              },
-              "tags": [
-                {
-                  "code": "type",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    }
-                  ]
-                }
-              ]
-            },
-            "title": "Jeans",
-            "price": {
-              "currency": "INR",
-              "value": "10000"
-            }
-          },
-          {
-            "@ondc/org/item_id": "47230053089579",
-            "@ondc/org/title_type": "tax",
-            "title": "Tax",
-            "price": {
-              "currency": "INR",
-              "value": "0"
-            }
-          },
-          {
-            "@ondc/org/item_id": "1",
+            "@ondc/org/item_id": "F1",
             "@ondc/org/title_type": "delivery",
             "title": "Delivery Charges",
             "price": {
               "currency": "INR",
-              "value": "0"
+              "value": "10.00"
             }
           }
         ],
         "ttl": "PT60M"
       },
-      "state": "Created",
-      "updated_at": "2023-10-16T14:29:16.330Z"
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_sellerNP"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-11-28T04:17:26.238Z",
+      "updated_at": "2023-11-28T04:17:26.238Z"
     }
   }
 }
