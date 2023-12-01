@@ -1,324 +1,337 @@
 {
-    "context": {
-      "domain": "nic2004:60232",
-      "country": "IND",
-      "city": "std:040",
-      "action": "on_confirm",
-      "core_version": "1.2.0",
-      "bap_id": "preprod.ondc.adya.ai",
-      "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/lsp_bap/adya_lsp_bap",
-      "bpp_id": "preprod.ondc.adloggs.com",
-      "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
-      "transaction_id": "f8c8b643-3477-448e-a975-d0e2d631ac31",
-      "message_id": "64d3910b-d568-4716-8cd6-3196b70ff8b6",
-      "timestamp": "2023-11-24T06:28:14.396Z"
-    },
-    "message": {
-      "order": {
-        "id": "55b947c8-7cae-4ea9-8a9f-b3c833f32f6a",
-        "state": "Accepted",
-        "provider": {
-          "id": "P1"
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:011",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.ondc.adya.ai",
+    "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/lsp_bap/adya_lsp_bap",
+    "bpp_id": "preprod.ondc.adloggs.com",
+    "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+    "transaction_id": "6ff1fc92-43b4-4916-8da8-e90b782c8ef9",
+    "message_id": "43051296-1ee8-433d-8cf9-bcc8c21919e2",
+    "timestamp": "2023-11-30T10:16:03.047Z"
+  },
+  "message": {
+    "order": {
+      "id": "9ced3c19-33d9-4e55-951c-0e82d09b6a8e",
+      "state": "Accepted",
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "1",
+          "category_id": "Immediate Delivery",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "PT45M",
+            "timestamp": "2023-11-30"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "29.50"
         },
-        "items": [
+        "breakup": [
           {
-            "id": "I1",
-            "fulfillment_id": "1",
-            "category_id": "Immediate Delivery",
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "25.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "4.50"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "state": {
             "descriptor": {
-              "code": "P2P"
+              "code": "Pending"
+            }
+          },
+          "tracking": true,
+          "start": {
+            "location": {
+              "gps": "28.5279118,77.20889869999999",
+              "address": {
+                "name": "Adya Store",
+                "building": "sector 5",
+                "locality": "line 4",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110017"
+              }
+            },
+            "contact": {
+              "phone": "7569316623",
+              "email": "saira.shaik@adya.ai"
+            },
+            "person": {
+              "name": "Adya Store"
             },
             "time": {
-              "label": "TAT",
-              "duration": "PT45M",
-              "timestamp": "2023-11-24"
+              "duration": "PT15M",
+              "range": {
+                "start": "2023-11-30T10:21:02.000Z",
+                "end": "2023-11-30T10:36:02.000Z"
+              }
+            },
+            "instructions": {
+              "code": "1",
+              "name": "ONDC order",
+              "short_desc": "7569316675",
+              "long_desc": "please contact respective person and confirm before taking the parcel"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.5330685,77.2688713",
+              "address": {
+                "building": "110019",
+                "locality": "Main Road Govindpuri",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110019",
+                "name": "Test"
+              }
+            },
+            "contact": {
+              "phone": "7569316675",
+              "email": "test@gmail.com"
+            },
+            "person": {
+              "name": "Test"
+            },
+            "instructions": {
+              "code": "3",
+              "long_desc": "please check the information of buyer and deliver the parcel"
+            },
+            "time": {
+              "range": {
+                "start": "2023-11-30T10:36:02.000Z",
+                "end": "2023-11-30T11:21:02.000Z"
+              }
+            }
+          },
+          "tags": [
+            {
+              "code": "state",
+              "list": [
+                {
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "Test",
+        "address": {
+          "building": "110019",
+          "name": "Test",
+          "locality": "Main Road Govindpuri",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "INDIA",
+          "area_code": "110019"
+        },
+        "tax_number": "18AABCU9603R1ZM",
+        "phone": "7569316675",
+        "email": "test@gmail.com",
+        "created_at": "2023-11-30T10:15:32.853Z",
+        "updated_at": "2023-11-30T10:15:32.853Z"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP"
+      },
+      "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "Fashion",
+            "descriptor": {
+              "name": "Wayfarer Eyewear Frame For Men "
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "kilogram",
+                "value": 0.2
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "586.00"
             }
           }
         ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "23.60"
+        "provider": {
+          "descriptor": {
+            "name": "Adya Store"
           },
-          "breakup": [
+          "address": {
+            "name": "Adya Store",
+            "locality": "line 4",
+            "city": "New Delhi",
+            "state": "Delhi",
+            "area_code": "110017",
+            "building": "sector 5"
+          }
+        },
+        "order": {
+          "id": "5d73998b-dc90-4c2f-88a6-f161e31d462f",
+          "weight": {
+            "unit": "kilogram",
+            "value": 0.2
+          },
+          "dimensions": {
+            "length": {
+              "unit": "centimeter",
+              "value": 10
+            },
+            "breadth": {
+              "unit": "centimeter",
+              "value": 10
+            },
+            "height": {
+              "unit": "centimeter",
+              "value": 10
+            }
+          }
+        }
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "29.50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "29.50"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
             {
-              "@ondc/org/item_id": "I1",
-              "@ondc/org/title_type": "delivery",
-              "price": {
-                "currency": "INR",
-                "value": "20.00"
-              }
+              "code": "max_liability",
+              "value": "2"
             },
             {
-              "@ondc/org/item_id": "I1",
-              "@ondc/org/title_type": "tax",
-              "price": {
-                "currency": "INR",
-                "value": "3.60"
-              }
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "5"
             }
           ]
         },
-        "fulfillments": [
-          {
-            "id": "1",
-            "type": "Delivery",
-            "state": {
-              "descriptor": {
-                "code": "Pending"
-              }
-            },
-            "tracking": true,
-            "start": {
-              "location": {
-                "gps": "17.4410941,78.3603179",
-                "address": {
-                  "name": "Desi Store",
-                  "building": "PR Grand Store",
-                  "locality": "Indira Nagar",
-                  "city": "Hyderabad",
-                  "state": "Telangana",
-                  "country": "India",
-                  "area_code": "500032"
-                }
-              },
-              "contact": {
-                "phone": "7569316696",
-                "email": "sushma1224@adya.ai"
-              },
-              "person": {
-                "name": "Desi Store"
-              },
-              "instructions": {
-                "code": "1",
-                "name": "ONDC order",
-                "short_desc": "9894573456",
-                "long_desc": "please contact respective person and confirm before taking the parcel"
-              }
-            },
-            "end": {
-              "location": {
-                "gps": "17.4358411,78.3467857",
-                "address": {
-                  "building": "AS Grang PG",
-                  "locality": "Gandhi Nagar",
-                  "city": "Hyderabad",
-                  "state": "Telangana",
-                  "country": "India",
-                  "area_code": "500032",
-                  "name": "Kausic M"
-                }
-              },
-              "contact": {
-                "phone": "9894573456",
-                "email": "jaikausic@gmail.com"
-              },
-              "person": {
-                "name": "Kausic M"
-              },
-              "instructions": {
-                "code": "3",
-                "long_desc": "please check the information of buyer and deliver the parcel"
-              }
-            },
-            "tags": [
-              {
-                "code": "state",
-                "list": [
-                  {
-                    "code": "ready_to_ship",
-                    "value": "no"
-                  }
-                ]
-              },
-              {
-                "code": "rto_action",
-                "list": [
-                  {
-                    "code": "return_to_origin",
-                    "value": "yes"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "billing": {
-          "name": "Kausic M",
-          "address": {
-            "building": "AS Grang PG",
-            "name": "Kausic M",
-            "locality": "Gandhi Nagar",
-            "city": "Hyderabad",
-            "state": "Telangana",
-            "country": "INDIA",
-            "area_code": "500032"
-          },
-          "tax_number": "18AABCU9603R1ZM",
-          "phone": "9894573456",
-          "email": "jaikausic@gmail.com",
-          "created_at": "2023-11-24T06:27:43.502Z",
-          "updated_at": "2023-11-24T06:27:43.502Z"
-        },
-        "payment": {
-          "type": "ON-ORDER",
-          "collected_by": "BAP"
-        },
-        "@ondc/org/linked_order": {
-          "items": [
+        {
+          "code": "bap_terms",
+          "list": [
             {
-              "category_id": "Fashion",
-              "descriptor": {
-                "name": "Van Heusen Women's 100% Cotton Full Sleeve Solid Formal Shirt"
-              },
-              "quantity": {
-                "count": 1,
-                "measure": {
-                  "unit": "kilogram",
-                  "value": 0.2
-                }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "710.00"
-              }
+              "code": "accept_bpp_terms",
+              "value": "Y"
             }
-          ],
-          "provider": {
-            "descriptor": {
-              "name": "Desi Store"
-            },
-            "address": {
-              "name": "Desi Store",
-              "locality": "Indira Nagar",
-              "city": "Hyderabad",
-              "state": "Telangana",
-              "area_code": "500032",
-              "building": "PR Grand Store"
-            }
-          },
-          "order": {
-            "id": "cf8dc657-1d24-4770-84fd-04bf0e28e6f9",
-            "weight": {
-              "unit": "kilogram",
-              "value": 0.2
-            },
-            "dimensions": {
-              "length": {
-                "unit": "centimeter",
-                "value": 10
-              },
-              "breadth": {
-                "unit": "centimeter",
-                "value": 10
-              },
-              "height": {
-                "unit": "centimeter",
-                "value": 10
-              }
-            }
-          }
-        },
-        "cancellation_terms": [
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Pending",
-                "short_desc": ""
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": false,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "0.0"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Agent-assigned",
-                "short_desc": "001,003"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "0.00"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Order-picked-up",
-                "short_desc": "001,003"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "23.60"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Out-for-delivery",
-                "short_desc": "011,012,013,014,015"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "23.60"
-              }
-            }
-          }
-        ],
-        "tags": [
-          {
-            "code": "bpp_terms",
-            "list": [
-              {
-                "code": "max_liability",
-                "value": "2"
-              },
-              {
-                "code": "mandatory_arbitration",
-                "value": "false"
-              },
-              {
-                "code": "court_jurisdiction",
-                "value": "Bengaluru"
-              },
-              {
-                "code": "delay_interest",
-                "value": "5"
-              }
-            ]
-          },
-          {
-            "code": "bap_terms",
-            "list": [
-              {
-                "code": "accept_bpp_terms",
-                "value": "Y"
-              }
-            ]
-          }
-        ],
-        "created_at": "2023-11-24T06:28:10.911Z",
-        "updated_at": "2023-11-24T06:28:14.396Z"
-      }
+          ]
+        }
+      ],
+      "created_at": "2023-11-30T10:16:01.688Z",
+      "updated_at": "2023-11-30T10:16:03.047Z"
     }
   }
+}
