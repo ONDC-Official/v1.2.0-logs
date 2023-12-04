@@ -1,1 +1,1 @@
-Buyer app flow3 mystore
+Flow 3 buyer app
