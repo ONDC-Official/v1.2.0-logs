@@ -1,18 +1,18 @@
 {
   "context": {
     "transaction_id": "6a2d43f4-4c84-4353-956d-0b66e3b316bc",
-    "bpp_id": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "country": "IND",
+    "bpp_id": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "city": "std:080",
-    "message_id": "1701725046757",
+    "message_id": "1701775156147",
     "core_version": "1.2.0",
     "ttl": "PT30S",
     "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
     "domain": "ONDC:RET12",
     "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
-    "action": "on_status",
+    "action": "on_cancel",
     "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
-    "timestamp": "2023-12-04T21:24:07.049Z"
+    "timestamp": "2023-12-05T11:19:16.473Z"
   },
   "message": {
     "order": {
@@ -20,10 +20,6 @@
         {
           "@ondc/org/TAT": "P5D",
           "start": {
-            "instructions": {
-              "code": "2",
-              "name": "Merchant order no"
-            },
             "contact": {
               "phone": "9129785903",
               "email": "atiti123@tranzita.com"
@@ -35,6 +31,7 @@
                 "locality": "Jayanagar",
                 "state": "KA"
               },
+              "id": "Ypeps4tHJydTbcoOwBOa-location-1",
               "descriptor": {
                 "name": "Tranzita Systems"
               },
@@ -48,10 +45,6 @@
             }
           },
           "end": {
-            "instructions": {
-              "code": "3",
-              "name": "ONDC Order"
-            },
             "person": {
               "name": "Atiti Singh"
             },
@@ -80,14 +73,71 @@
           "id": "8d419c1f-0d89-4bd0-a60c-47f0f9a6f65e",
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Cancelled"
             }
           },
           "type": "Delivery",
           "@ondc/org/provider_name": "Tranzita Systems",
-          "tracking": false
+          "tracking": false,
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "001"
+                },
+                {
+                  "code": "cancelled_by",
+                  "value": "https://us-central1-ondcgo.cloudfunctions.net/api"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "8d048fda-495d-4d01-95e4-d91eddb36b86",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "type": "Cancel",
+          "tags": [
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "daX03blzyFayJEKE6pBS_colour-000000_size-S"
+                },
+                {
+                  "code": "id",
+                  "value": "daX03blzyFayJEKE6pBS_colour-000000_size-XS"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-340.00"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "cancellation": {
+        "reason": {
+          "id": "001"
+        },
+        "cancelled_by": "https://us-central1-ondcgo.cloudfunctions.net/api"
+      },
       "quote": {
         "breakup": [
           {
@@ -100,13 +150,22 @@
             },
             "price": {
               "currency": "INR",
-              "value": "1299"
+              "value": "0.00"
             },
             "@ondc/org/title_type": "item",
             "title": "Men Solid Pure Cotton Straight Kurta  (Orange)",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 0
             }
+          },
+          {
+            "@ondc/org/item_id": "daX03blzyFayJEKE6pBS_colour-000000_size-S",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "@ondc/org/title_type": "tax",
+            "title": "Tax"
           },
           {
             "@ondc/org/item_id": "daX03blzyFayJEKE6pBS_colour-000000_size-XS",
@@ -118,19 +177,28 @@
             },
             "price": {
               "currency": "INR",
-              "value": "1199"
+              "value": "0.00"
             },
             "@ondc/org/title_type": "item",
             "title": "Men Solid Pure Cotton Straight Kurta  (Orange)",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 0
             }
+          },
+          {
+            "@ondc/org/item_id": "daX03blzyFayJEKE6pBS_colour-000000_size-XS",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "@ondc/org/title_type": "tax",
+            "title": "Tax"
           },
           {
             "@ondc/org/item_id": "8d419c1f-0d89-4bd0-a60c-47f0f9a6f65e",
             "price": {
               "currency": "INR",
-              "value": "0"
+              "value": "50.00"
             },
             "@ondc/org/title_type": "delivery",
             "title": "Delivery charges"
@@ -138,11 +206,11 @@
         ],
         "price": {
           "currency": "INR",
-          "value": "2498"
+          "value": "105.00"
         },
         "ttl": "P1D"
       },
-      "updated_at": "2023-12-04T21:24:07.455Z",
+      "updated_at": "2023-12-05T11:19:20.342Z",
       "provider": {
         "locations": [
           {
@@ -151,49 +219,34 @@
         ],
         "id": "Ypeps4tHJydTbcoOwBOa"
       },
-      "documents": [
-        {
-          "label": "Invoice",
-          "url": "https://invoice_url"
-        }
-      ],
-      "created_at": "2023-12-04T21:24:07.455Z",
+      "created_at": "2023-12-05T11:19:20.342Z",
       "payment": {
-        "@ondc/org/settlement_window": "P1D",
-        "@ondc/org/settlement_basis": "delivery",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/withholding_amount": "10.00",
         "collected_by": "BAP",
-        "time": {
-          "timestamp": "2023-06-04T10:00:00.000Z"
-        },
+        "type": "ON-ORDER",
         "params": {
           "transaction_id": "e758e94a-f2ff-4f69-9d39-e55b9a10944a",
           "amount": "2498",
           "currency": "INR"
         },
-        "type": "ON-ORDER",
-        "status": "PAID",
         "@ondc/org/buyer_app_finder_fee_amount": "3",
         "@ondc/org/settlement_details": [
           {
             "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
-            "settlement_status": "PAID",
             "settlement_counterparty": "seller-app",
             "settlement_phase": "sale-amount",
             "branch_name": "HSR Layout Bangalore",
             "bank_name": "HDFC Bank",
             "settlement_ifsc_code": "HDFC5463",
-            "settlement_reference": "",
-            "settlement_timestamp": "2023-12-04T21:24:07.455Z",
             "settlement_bank_account_no": "4562312321235458",
             "upi_address": "vidyant@ybl",
             "settlement_type": "upi"
           }
-        ]
+        ],
+        "status": "PAID"
       },
       "id": "f3acec1b0c9d44fa94afa836e5e0c93b",
-      "state": "Accepted",
+      "state": "Cancelled",
       "items": [
         {
           "quantity": {
