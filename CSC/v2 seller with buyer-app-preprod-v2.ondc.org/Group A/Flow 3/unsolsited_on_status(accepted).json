@@ -1,0 +1,169 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "core_version": "1.2.0",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "transaction_id": "e7143ffe-2a50-4442-8565-4d59d6a09ff0",
+    "message_id": "29b83d3d-b4f8-4132-bd1a-48dbb70c2415",
+    "timestamp": "2023-11-29T15:56:12.950Z",
+    "ttl": "PT30S",
+    "bpp_id": "stagingapi.cscestore.in/ondc",
+    "bpp_uri": "https://stagingapi.cscestore.in/ondc/seller/v2"
+  },
+  "message": {
+    "order": {
+      "state": "Accepted",
+      "provider": {
+        "id": "35",
+        "locations": [{ "id": "Storeking-store-location-id-35" }]
+      },
+      "items": [
+        {
+          "id": "1495",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 5 }
+        },
+        {
+          "id": "561",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 2 }
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Ashish Rawat",
+          "building": "Dsiidc complex",
+          "locality": "Rohtak Road",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "IND",
+          "area_code": "110041"
+        },
+        "phone": "8787081401",
+        "name": "Ashish Rawat",
+        "email": "insphere.ashish@gmail.com",
+        "created_at": "2023-11-29T10:24:40.881Z",
+        "updated_at": "2023-11-29T10:24:40.881Z"
+      },
+      "fulfillments": [
+        {
+          "id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "@ondc/org/provider_name": "Storeking",
+          "type": "Delivery",
+          "end": {
+            "contact": {
+              "email": "insphere.ashish@gmail.com",
+              "phone": "8787081401"
+            },
+            "location": {
+              "gps": "28.68337811764566, 77.05755293369295",
+              "address": {
+                "name": "Ashish Rawat",
+                "building": "Dsiidc complex",
+                "locality": "Rohtak Road",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "IND",
+                "area_code": "110041"
+              }
+            }
+          },
+          "tracking": false,
+          "state": { "descriptor": { "code": "Pending" } },
+          "start": {
+            "location": {
+              "id": "35",
+              "descriptor": { "name": "Storeking" },
+              "gps": "28.69269319,77.15492265",
+              "address": {
+                "locality": "D dmall",
+                "city": "New Delhi",
+                "area_code": "110096",
+                "state": "Delhi"
+              }
+            },
+            "contact": {
+              "phone": "8325802581",
+              "email": "Storeking_distributor@gmail.com"
+            }
+          },
+          "@ondc/org/TAT": "P3D"
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "2120.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1495",
+            "@ondc/org/item_quantity": { "count": 5 },
+            "title": "Pahadi honey 1",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "1400.00" },
+            "item": { "price": { "currency": "INR", "value": "280.00" } }
+          },
+          {
+            "@ondc/org/item_id": "561",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 500",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "550.00" },
+            "item": { "price": { "currency": "INR", "value": "275.00" } }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50.00" }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "120.00" }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "2120.00",
+          "currency": "INR",
+          "transaction_id": "95c4de17-31bf-4e16-9899-721fa52c2264"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "2917980081992",
+            "settlement_ifsc_code": "SBIN11903",
+            "beneficiary_name": "CSC",
+            "bank_name": "State Bank Of India",
+            "branch_name": "Delhi",
+            "settlement_timestamp": "2023-11-29T10:24:47.891Z"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [{ "code": "tax_number", "value": "22GXPPF3765E1Z6" }]
+        }
+      ],
+      "id": "2023-11-29-285648",
+      "created_at": "2023-11-29T10:24:47.891Z",
+      "updated_at": "2023-11-29T10:24:47.891Z"
+    }
+  }
+}
