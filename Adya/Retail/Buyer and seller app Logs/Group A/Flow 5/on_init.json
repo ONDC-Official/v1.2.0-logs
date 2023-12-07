@@ -1,0 +1,262 @@
+{
+    "context": {
+        "domain": "ONDC:RET12",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.ondc.adya.ai",
+        "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bap/adya_bap",
+        "transaction_id": "ea6061cb-26c7-4823-bb2a-d4930916984d",
+        "ttl": "PT30S",
+        "message_id": "8989ff86-41ae-421e-9f1c-c891f22d61d3",
+        "timestamp": "2023-12-05T07:50:21.970Z",
+        "bpp_id": "preprod.ondc.adya.ai",
+        "bpp_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/bpp/adya_bpp"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "CANARAADYAPROVIDER275",
+                "locations": [
+                    {
+                        "id": "CANARAADYALOCATION71"
+                    }
+                ]
+            },
+            "provider_location": {
+                "id": "CANARAADYALOCATION71"
+            },
+            "items": [
+                {
+                    "id": "MXSPST4ZPD71",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "Fulfillment-1"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "name": "Bhavana",
+                    "locality": "mee seva",
+                    "building": "kanithi, mee seva",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560001"
+                },
+                "phone": "9346782346",
+                "name": "Bhavana",
+                "email": "bhavana23@gmail.com",
+                "created_at": "2023-12-05T07:50:21.899Z",
+                "updated_at": "2023-12-05T07:50:21.899Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "Fulfillment-1",
+                    "type": "Delivery",
+                    "end": {
+                        "location": {
+                            "address": {
+                                "building": "kanithi",
+                                "name": "Bhavana",
+                                "locality": "mee seva",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560001"
+                            },
+                            "gps": "12.976594,77.599271"
+                        },
+                        "contact": {
+                            "phone": "9346782346",
+                            "email": "bhavana23@gmail.com"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "860.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "MXSPST4ZPD71",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Provogue Men Black Solid Formal Debys",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "849.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "849.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Fulfillment-1",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "6",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "Sridhar Kulkarni",
+                        "upi_address": "8712799171@jupiteraxis"
+                    }
+                ]
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "43.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "86.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "009"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "010,011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "172.00"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000.00"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000.00"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "29GGGGG1314R9Z6"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
