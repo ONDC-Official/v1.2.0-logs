@@ -1,0 +1,205 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:0522",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "api.staging.nearshop.in",
+    "bap_uri": "https://api.staging.nearshop.in/bap/api/v1",
+    "transaction_id": "dc8c2b5d-a907-5e36-a789-f3728376fee7",
+    "message_id": "599b92c0-d901-5147-a714-ca44d8e38dd2",
+    "timestamp": "2023-12-08T07:39:13.244Z",
+    "ttl": "PT30S",
+    "bpp_id": "ondc-seller-preprod.chattybao.com/ondc",
+    "bpp_uri": "https://ondc-seller-preprod.chattybao.com/ondc/bpp"
+  },
+  "message": {
+    "order": {
+      "id": "b5da26b3-ffe7-5f42-8d0b-8e8ad05e3472",
+      "state": "Created",
+      "provider": {
+        "id": "MR8mcezPPQEA-r8EhP6UN9",
+        "locations": [
+          {
+            "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "7efc8cc0-35e4-11ee-95dc-396fe1db85181:MR8mcezPPQEA-r8EhP6UN9",
+          "fulfillment_id": "1",
+          "quantity": {
+            "count": 2
+          }
+        }
+      ],
+      "billing": {
+        "name": "sandhya",
+        "address": {
+          "name": "sandhya",
+          "building": "#1233",
+          "locality": "yashodanagar",
+          "city": "Bangalore",
+          "state": "karnataka",
+          "country": "IND",
+          "area_code": "226001"
+        },
+        "email": "user@example.com",
+        "phone": "9886394142",
+        "created_at": "2023-12-08T07:39:12.008Z",
+        "updated_at": "2023-12-08T07:39:12.008Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "tracking": true,
+          "end": {
+            "location": {
+              "gps": "26.846212,80.949018",
+              "address": {
+                "name": "sandhya",
+                "building": "shrishti",
+                "locality": "yashodanagar",
+                "state": "karnataka",
+                "city": "Bangalore",
+                "country": "IND",
+                "area_code": "226001"
+              }
+            },
+            "person": {
+              "name": "sandhya"
+            },
+            "contact": {
+              "email": "user@example.com",
+              "phone": "9886394142"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "4111"
+        },
+        "breakup": [
+          {
+            "title": "Avocado Indian 1 piece (250 - 300 g)",
+            "@ondc/org/item_id": "7efc8cc0-35e4-11ee-95dc-396fe1db85181:MR8mcezPPQEA-r8EhP6UN9",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "price": {
+              "currency": "INR",
+              "value": "4000"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "2000"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "94"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "17"
+            },
+            "item": {
+              "tags": [
+                {
+                  "code": "quote",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "fulfillment"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000.00"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Delhi"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000.00"
+            },
+            {
+              "code": "tax_number",
+              "value": "07AAJCC8423B1ZW"
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "uri": "http://ondc-seller-preprod.chattybao.com/ondc/bpp",
+        "tl_method": "http/get",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "status": "PAID",
+        "params": {
+          "amount": "4111",
+          "currency": "INR",
+          "transaction_id": "3rred34b731e-27f9-4a06-8d84-97d2de21715f"
+        },
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "CHATTYBAO TECHNOLOGIES PRIVATE LIMITED NODAL ACCOUNT",
+            "upi_address": "",
+            "settlement_bank_account_no": "661505602069",
+            "settlement_ifsc_code": "ICIC0006615",
+            "bank_name": "ICICI\",",
+            "branch_name": "Sco 31, Sector 18, Udyog Vihar, Gurgaon - 122016, Haryana"
+          }
+        ]
+      },
+      "created_at": "2023-12-08T07:39:12.009Z",
+      "updated_at": "2023-12-08T07:39:12.009Z"
+    }
+  }
+}
