@@ -12,8 +12,8 @@ init = json.load(open('./Flow2/init_11.json'))
 on_init = json.load(open('./Flow2/on_init_12.json'))
 confirm = json.load(open('./Flow2/confirm_13.json'))
 on_confirm = json.load(open('./Flow2/on_confirm_14.json'))
-on_status_pending = json.load(open('./Flow2/on_status_17(unsolicited)_order_packed.json'))
-on_status_picked = json.load(open('./Flow2/on_status_18(unsolicited)_out_for_delivery.json'))
+on_status_pending = json.load(open('./Flow2/on_status_16(solicited).json'))
+on_status_picked = json.load(open('./Flow2/on_status_17(unsolicited)_order_packed.json'))
 on_status_delivered = json.load(open('./Flow2/on_status_18(unsolicited)_out_for_delivery.json'))
 
 url = "https://log-validation.ondc.org/api/validate"
