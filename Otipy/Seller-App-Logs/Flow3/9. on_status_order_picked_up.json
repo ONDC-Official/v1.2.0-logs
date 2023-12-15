@@ -3,24 +3,21 @@
 		"domain":"ONDC:RET10",
 		"country":"IND",
 		"city":"std:011",
-		"action":"on_cancel",
+		"action":"on_status",
 		"core_version":"1.2.0",
 		"bap_id":"buyer-app-preprod-v2.ondc.org",
 		"bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
 		"bpp_id":"preprod.crofarm.com",
 		"bpp_uri":"https://preprod.crofarm.com/ondc/",
-		"transaction_id":"0f41620c-8526-4fc8-8ebd-f79b29905048",
-		"message_id":"8a97a18f-1532-42ef-a872-354c8c2881d3",
-		"timestamp":"2023-12-15T05:26:28.674Z",
+		"transaction_id":"39b2719e-ef21-45a3-902d-04c1631dcc04",
+		"message_id":"95dec76e-d660-4d80-b8f4-659ed2bdf981",
+		"timestamp":"2023-12-14T17:22:00.029Z",
 		"ttl":"PT30S"
 	},
 	"message":{
 		"order":{
-			"id":"2023-12-15-490015",
-			"state":"Cancelled",
-			"tags":{
-				"cancellation_reason_id":"012"
-			},
+			"id":"2023-12-14-837750",
+			"state":"In-progress",
 			"provider":{
 				"id":"4410",
 				"locations":[
@@ -32,23 +29,23 @@
 			"items":[
 				{
 					"fulfillment_id":"F1",
-					"id":"9370",
+					"id":"9343",
 					"quantity":{
-						"count":1
+						"count":2
 					}
 				},
 				{
 					"fulfillment_id":"F1",
-					"id":"9343",
+					"id":"9370",
 					"quantity":{
-						"count":2
+						"count":1
 					}
 				}
 			],
 			"billing":{
 				"name":"Heigenburg",
-				"created_at":"2023-12-15T05:22:47.386Z",
-				"updated_at":"2023-12-15T05:22:47.386Z",
+				"created_at":"2023-12-14T17:15:36.057Z",
+				"updated_at":"2023-12-14T17:15:36.057Z",
 				"phone":"8949300291",
 				"address":{
 					"building":"123",
@@ -61,19 +58,13 @@
 				},
 				"email":"shivpal.chaudhary@crofarm.com"
 			},
-			"cancellation":{
-				"cancelled_by":"buyer-app-preprod-v2.ondc.org",
-				"reason":{
-					"id":"012"
-				}
-			},
 			"fulfillments":[
 				{
 					"id":"F1",
 					"@ondc/org/provider_name":"otipy store 4410",
 					"state":{
 						"descriptor":{
-							"code":"Cancelled"
+							"code":"Order-picked-up"
 						}
 					},
 					"type":"Delivery",
@@ -119,42 +110,7 @@
 						}
 					},
 					"rateable":true,
-					"tags":[
-						{
-							"code":"cancel_request",
-							"list":[
-								{
-									"code":"reason_id",
-									"value":"012"
-								},
-								{
-									"code":"initiated_by",
-									"value":"buyer-app-preprod-v2.ondc.org"
-								}
-							]
-						},
-						{
-							"code":"quote_trail",
-							"list":[
-								{
-									"code":"type",
-									"value":"item"
-								},
-								{
-									"code":"id",
-									"value":"9370"
-								},
-								{
-									"code":"currency",
-									"value":"INR"
-								},
-								{
-									"code":"value",
-									"value":"-230"
-								}
-							]
-						}
-					]
+					"@ondc/org/TAT":"PT60M"
 				}
 			],
 			"quote":{
@@ -163,42 +119,6 @@
 					"value":"270.0"
 				},
 				"breakup":[
-					{
-						"@ondc/org/item_id":"9370",
-						"@ondc/org/item_quantity":{
-							"count":1
-						},
-						"title":"loki",
-						"@ondc/org/title_type":"item",
-						"price":{
-							"currency":"INR",
-							"value":"230"
-						},
-						"item":{
-							"price":{
-								"currency":"INR",
-								"value":"230"
-							}
-						}
-					},
-					{
-						"@ondc/org/item_id":"9370",
-						"title":"Discount",
-						"@ondc/org/title_type":"discount",
-						"price":{
-							"currency":"INR",
-							"value":"0.0"
-						}
-					},
-					{
-						"@ondc/org/item_id":"9370",
-						"title":"Tax",
-						"@ondc/org/title_type":"tax",
-						"price":{
-							"currency":"INR",
-							"value":"0.0"
-						}
-					},
 					{
 						"@ondc/org/item_id":"9343",
 						"@ondc/org/item_quantity":{
@@ -228,6 +148,42 @@
 					},
 					{
 						"@ondc/org/item_id":"9343",
+						"title":"Tax",
+						"@ondc/org/title_type":"tax",
+						"price":{
+							"currency":"INR",
+							"value":"0.0"
+						}
+					},
+					{
+						"@ondc/org/item_id":"9370",
+						"@ondc/org/item_quantity":{
+							"count":1
+						},
+						"title":"loki",
+						"@ondc/org/title_type":"item",
+						"price":{
+							"currency":"INR",
+							"value":"230"
+						},
+						"item":{
+							"price":{
+								"currency":"INR",
+								"value":"230"
+							}
+						}
+					},
+					{
+						"@ondc/org/item_id":"9370",
+						"title":"Discount",
+						"@ondc/org/title_type":"discount",
+						"price":{
+							"currency":"INR",
+							"value":"0.0"
+						}
+					},
+					{
+						"@ondc/org/item_id":"9370",
 						"title":"Tax",
 						"@ondc/org/title_type":"tax",
 						"price":{
@@ -286,14 +242,20 @@
 				"params":{
 					"currency":"INR",
 					"amount":"270",
-					"transaction_id":"bfa2ae3d-60d2-428e-bb68-08e43af00948"
+					"transaction_id":"e5f78a97-9164-4ec7-bc38-e49d3ac5afe4"
 				},
 				"@ondc/org/buyer_app_finder_fee_amount":"3.0",
 				"type":"ON-ORDER",
 				"@ondc/org/buyer_app_finder_fee_type":"percent"
 			},
-			"created_at":"2023-12-15T05:24:07.124Z",
-			"updated_at":"2023-12-15T05:24:07.124Z"
+			"created_at":"2023-12-14T17:17:23.859Z",
+			"updated_at":"2023-12-14T17:17:23.859Z",
+			"documents":[
+				{
+					"url":"https://invoice_url",
+					"label":"Invoice"
+				}
+			]
 		}
 	}
 }
