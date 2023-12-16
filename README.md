@@ -1,5 +1,5 @@
 # v1.2.0-logs
-Retail and Logistics logs for 1.2.0 certification
+Retail and Logistics logs for 1.2.0 certification - test scenarios for [retail](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1367601795) and [logistics](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1670900093)
 
 To submit logs for protocol compliance verification, following steps need to be followed:
 
