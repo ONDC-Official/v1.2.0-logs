@@ -1,0 +1,225 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "extweb.oyeti.com/ecommerce/ondc",
+    "bap_uri": "https://extweb.oyeti.com/ecommerce/ondc/ecommerce/ondc",
+    "bpp_id": "extweb.oyeti.com/ecommerce/ondc",
+    "bpp_uri": "https://extweb.oyeti.com/ecommerce/ondc/ecommerce/ondc",
+    "transaction_id": "6802cbf8-dbb2-4562-abda-3fc2ebef2b75",
+    "message_id": "e292631e-2f47-4af4-b767-3f03bf44ef94",
+    "timestamp": "2023-12-08T09:08:09.525Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "275b09c9-d0d9-42bb-98f1-2c4153a9d320"
+      },
+      "items": [
+        {
+          "id": "Standard",
+          "fulfillment_id": "cc9f3061-29eb-4baf-80dd-4a4b3900c978",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Immediate Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "cc9f3061-29eb-4baf-80dd-4a4b3900c978",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.9029804, 77.6241936",
+              "address": {
+                "name": "Nandyal Chefs",
+                "building": "Bommanahalli",
+                "locality": "Bengaluru, Bangalore Division, Karnataka, India",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560068"
+              }
+            },
+            "contact": {
+              "phone": "7893847511",
+              "email": "venkateshmurapureddy@gmail.com"
+            },
+            "instructions": {
+              "images": [
+                
+              ]
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.903803216971028, 77.62518882751466",
+              "address": {
+                "name": "Venkateswara Reddy",
+                "building": "Venky House",
+                "locality": "9th A Cross Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560068"
+              }
+            },
+            "contact": {
+              "phone": "7893847511",
+              "email": "venkateshmurapureddy@gmail.com"
+            },
+            "instructions": {
+              "images": [
+                
+              ]
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "122.38"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "116.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.38"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          
+        ]
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
