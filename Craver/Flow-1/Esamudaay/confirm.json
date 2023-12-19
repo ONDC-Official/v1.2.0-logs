@@ -1,0 +1,221 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-preprod.craver.in",
+    "bap_uri": "https://ondc-preprod.craver.in/bapl",
+    "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "bpp_uri": "https://api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "transaction_id": "c157c27c-8268-439c-8b09-641aae4348f3",
+    "message_id": "5197bda5-83d3-4f26-a205-25543af16b16",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2023-12-19T10:44:46.332Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "e51f8740-e33f-4106-a786-c2a9f9bea858",
+      "state": "Created",
+      "provider": {
+        "id": "65470f50-87eb-43af-9e8a-8812a765acba",
+        "locations": [
+          {
+            "id": "3f985935-4c8e-4ddb-adaf-d448c7eddce4"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "36339",
+          "parent_item_id": "095316ee-aa18-4eed-9bd8-e190c4bdee79",
+          "fulfillment_id": "Fulfillment1",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "./Tony/Mr/Tony//Stark/IronMan",
+        "address": {
+          "name": "House no. 123",
+          "building": "Building -1",
+          "locality": "My street",
+          "city": "Badagabellur",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "574211"
+        },
+        "phone": "9886098860",
+        "email": "nobody@nomail.com",
+        "created_at": "2023-12-19T10:44:46.332Z",
+        "updated_at": "2023-12-19T10:44:46.332Z"
+      },
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT12H",
+          "tracking": false,
+          "end": {
+            "person": {
+              "name": "./Tony/Mr/Tony//Stark/IronMan"
+            },
+            "contact": {
+              "email": "nobody@nomail.com",
+              "phone": "9886098860"
+            },
+            "location": {
+              "gps": "12.9298834,75.009652",
+              "address": {
+                "name": "House no. 123",
+                "building": "Building -1",
+                "locality": "My street",
+                "city": "Badagabellur",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "574211"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "51.77"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "36339",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Honey",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "50.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "50.00"
+              },
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              },
+              "parent_item_id": "095316ee-aa18-4eed-9bd8-e190c4bdee79",
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Charges",
+            "price": {
+              "currency": "INR",
+              "value": "1.77"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://ondc.transaction.com/payment",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "fc3fda15-4b48-4e13-bbbc-925804c7b2f7",
+          "amount": "51.77"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "1111-111-1111",
+            "settlement_ifsc_code": "ESAM000111",
+            "beneficiary_name": "eSamudaay Secret",
+            "bank_name": "eSamudaay Payments Bank",
+            "branch_name": "Bangalore"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "29AAHCN0433E1ZP"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "code": "tax_number",
+              "value": "11BUSPJ1590F1P2"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-12-19T10:44:46.332Z",
+      "updated_at": "2023-12-19T10:44:46.332Z"
+    }
+  }
+}

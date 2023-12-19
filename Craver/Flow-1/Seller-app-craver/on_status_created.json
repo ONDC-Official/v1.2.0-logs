@@ -1,0 +1,215 @@
+{
+  "_id": "658025210047c1971a013a42",
+  "context": {
+    "domain": "ONDC:RET11",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-preprod.craver.in",
+    "bap_uri": "https://ondc-preprod.craver.in/bapl",
+    "bpp_id": "seller-app-preprod-v2.ondc.org",
+    "bpp_uri": "https://seller-app-preprod-v2.ondc.org",
+    "transaction_id": "c972ec35-35ca-4b35-9324-48647baf184c",
+    "message_id": "996de2e2-cea0-48dd-809b-f853b3392592",
+    "city": "*",
+    "country": "IND",
+    "timestamp": "2023-12-18T10:55:29.966Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "4e5cc221-d3e5-4368-8e07-d1909e778e68",
+        "locations": [
+          {
+            "id": "641599b84d433a4fbf8f40bb"
+          }
+        ]
+      },
+      "state": "In-progress",
+      "items": [
+        {
+          "id": "7854e0f9-f35d-480c-9537-dae8aa7cfce6",
+          "parent_item_id": "0bd7d592-83ba-490a-8e82-dde1f43ed6a2",
+          "fulfillment_id": "3f964886-3d14-40c4-8bd3-e8a7490488af",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "./Tony/Mr/Tony//Stark/IronMan",
+        "address": {
+          "name": "House no. 123",
+          "building": "Building -1",
+          "locality": "My street",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560095"
+        },
+        "phone": "9886098860",
+        "email": "nobody@nomail.com",
+        "created_at": "2023-12-18T10:55:08.730Z",
+        "updated_at": "2023-12-18T10:55:08.730Z"
+      },
+      "fulfillments": [
+        {
+          "id": "3f964886-3d14-40c4-8bd3-e8a7490488af",
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT60M",
+          "tracking": false,
+          "end": {
+            "person": {
+              "name": "./Tony/Mr/Tony//Stark/IronMan"
+            },
+            "contact": {
+              "email": "nobody@nomail.com",
+              "phone": "9886098860"
+            },
+            "location": {
+              "gps": "12.935240283307111,77.62291809918082",
+              "address": {
+                "name": "House no. 123",
+                "building": "Building -1",
+                "locality": "My street",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560095"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-18T10:55:19.158Z",
+                "end": "2023-12-19T10:55:19.158Z"
+              }
+            }
+          },
+          "start": {
+            "location": {
+              "id": "657fec96cb93550b2f55559d",
+              "descriptor": {
+                "name": "Craver Store"
+              },
+              "gps": "12.935240283307111,77.62291809918082"
+            },
+            "contact": {
+              "phone": "9812345098",
+              "email": "abc@example.com"
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-18T10:55:19.158Z",
+                "end": "2023-12-19T10:55:19.158Z"
+              }
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Agent-assigned"
+            }
+          },
+          "@ondc/org/provider_name": "WITS Project Ref Logistic",
+          "agent": {
+            "name": "Dr. Fernando Nolan",
+            "mobile": "7169987126"
+          },
+          "vehicle": {
+            "registration": "KA 54 XYZ 1234"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "322",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "7854e0f9-f35d-480c-9537-dae8aa7cfce6",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Veg burger",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "200"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ],
+              "parent_item_id": "0bd7d592-83ba-490a-8e82-dde1f43ed6a2"
+            }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "3f964886-3d14-40c4-8bd3-e8a7490488af",
+            "price": {
+              "currency": "INR",
+              "value": "122.38"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://ondc.transaction.com/payment",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "72c78efb-296f-4afd-99ab-3d91659c3840",
+          "amount": "322"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percentage",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "1234567890",
+            "settlement_ifsc_code": "BARB0ANJADX",
+            "beneficiary_name": "Craver",
+            "bank_name": "Example bank",
+            "branch_name": "Bank"
+          }
+        ]
+      },
+      "id": "ed404d72-4b89-4d5c-b828-2f167c3f5b0e",
+      "created_at": "2023-12-18T10:55:08.730Z",
+      "updated_at": "2023-12-18T10:55:08.730Z"
+    }
+  }
+}
