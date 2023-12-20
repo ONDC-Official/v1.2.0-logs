@@ -3,43 +3,49 @@
     "domain": "ONDC:RET10",
     "country": "IND",
     "city": "std:080",
-    "action": "on_cancel",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://ondc.hulsecure.in/preprod/v1",
-    "transaction_id": "f5621928-cdb2-4d80-8604-898e35f3ef34",
-    "message_id": "0dd5f1d7-99f8-4cdf-8111-8ad6761b46aa",
-    "timestamp": "2023-12-09T07:24:28.343Z",
+    "transaction_id": "0d1d3917-64b6-495c-8b4d-5b2dd71b275d",
+    "message_id": "70b09fec-6750-4f13-b7a3-05022613357d",
+    "timestamp": "2023-12-19T13:54:40.191Z",
     "bpp_id": "ondc.hulsecure.in",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2023-12-09-519228",
+      "id": "2023-12-19-940050",
       "state": "Cancelled",
+      "cancellation": {
+        "cancelled_by": "Logistics",
+        "reason": { "id": "011" }
+      },
       "provider": {
         "id": "afe44f35-fb0c-527b-8a80-a1b0b839197e",
-        "locations": [
-          {
-            "id": "65426587829"
-          }
-        ]
+        "locations": [{ "id": "65426587829" }]
       },
       "items": [
         {
           "id": "45340561801516",
-          "quantity": {
-            "count": 2
-          },
-          "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e"
+          "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e",
+          "quantity": { "count": 0 }
         },
         {
-          "id": "45340561047852",
-          "quantity": {
-            "count": 2
-          },
-          "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e"
+          "id": "45340561801516",
+          "fulfillment_id": "RTO-2023-12-18-512456",
+          "quantity": { "count": { "count": 2 } }
+        },
+        {
+          "id": "47578024083756",
+          "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e",
+          "quantity": { "count": 0 }
+        },
+        {
+          "id": "47578024083756",
+          "fulfillment_id": "RTO-2023-12-18-512456",
+          "quantity": { "count": { "count": 2 } }
         }
       ],
       "billing": {
@@ -55,14 +61,8 @@
         "phone": "8368922474",
         "name": "Shippu Yadav",
         "email": "shippu.yadav@ens.enterprises",
-        "created_at": "2023-12-09T07:20:11.170Z",
-        "updated_at": "2023-12-09T07:20:11.170Z"
-      },
-      "cancellation": {
-        "cancelled_by": "ondc.hulsecure.in",
-        "reason": {
-          "id": "005"
-        }
+        "created_at": "2023-12-19T13:41:36.464Z",
+        "updated_at": "2023-12-19T13:41:36.464Z"
       },
       "fulfillments": [
         {
@@ -73,11 +73,9 @@
               "email": "shippu.yadav@ens.enterprises",
               "phone": "8368922474"
             },
-            "person": {
-              "name": "Shippu Yadav"
-            },
+            "person": { "name": "Shippu Yadav" },
             "location": {
-              "gps": "12.950055071252017, 77.50174999226148",
+              "gps": "12.950055071252017,77.50174999226148",
               "address": {
                 "name": "Shippu Yadav",
                 "building": "Korulur Village",
@@ -90,24 +88,18 @@
             },
             "time": {
               "range": {
-                "start": "2023-12-09T07:20:18.155Z",
-                "end": "2023-12-15T07:20:19.533Z"
+                "start": "2023-12-19T13:41:40.508Z",
+                "end": "2023-12-20T13:48:03.777Z"
               }
             }
           },
           "type": "Delivery",
           "@ondc/org/provider_name": "The UShop",
-          "state": {
-            "descriptor": {
-              "code": "Cancelled"
-            }
-          },
+          "state": { "descriptor": { "code": "Cancelled" } },
           "start": {
             "location": {
               "id": "65426587829",
-              "descriptor": {
-                "name": "The UShop"
-              },
+              "descriptor": { "name": "The UShop" },
               "gps": "12.9733795,77.7465925",
               "address": {
                 "locality": "No 86, Korulur Village , Hoskote Taluk",
@@ -118,8 +110,8 @@
             },
             "time": {
               "range": {
-                "start": "2023-12-09T07:20:18.155Z",
-                "end": "2023-12-10T07:20:19.533Z"
+                "start": "2023-12-19T13:41:40.508Z",
+                "end": "2023-12-20T13:41:42.250Z"
               }
             },
             "contact": {
@@ -132,25 +124,50 @@
               "code": "cancel_request",
               "list": [
                 {
+                  "code": "retry_count",
+                  "value": "3"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "RTO-2023-12-19-940050"
+                },
+                {
                   "code": "reason_id",
-                  "value": "005"
+                  "value": "011"
                 },
                 {
                   "code": "initiated_by",
-                  "value": "ondc.hulsecure.in"
+                  "value": "Logistics"
                 }
               ]
-            },
+            }
+          ],
+          "@ondc/org/TAT": "P7D"
+        }, 
+        {
+          "id": "RTO-2023-12-19-940050",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Disposed"
+            }
+          },
+          "start": {
+            "time": {
+              "timestamp": "2023-12-19T13:54:40.191Z"
+            }
+          },
+          "tags": [
             {
               "code": "quote_trail",
               "list": [
                 {
                   "code": "type",
-                  "value": "item"
+                  "value": "delivery"
                 },
                 {
                   "code": "id",
-                  "value": "45340561047852"
+                  "value": "RTO-2023-12-19-940050"
                 },
                 {
                   "code": "currency",
@@ -158,7 +175,7 @@
                 },
                 {
                   "code": "value",
-                  "value": "-600"
+                  "value": "0"
                 }
               ]
             },
@@ -182,6 +199,27 @@
                   "value": "-760"
                 }
               ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "47578024083756"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-400"
+                }
+              ]
             }
           ]
         }
@@ -193,24 +231,6 @@
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "45340561047852",
-            "@ondc/org/item_quantity": {
-              "count": 0
-            },
-            "title": "Bru Beaten Coffee Mix",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "currency": "INR",
-              "value": "0"
-            },
-            "item": {
-              "price": {
-                "currency": "INR",
-                "value": "600"
-              }
-            }
-          },
-          {
             "@ondc/org/item_id": "45340561801516",
             "@ondc/org/item_quantity": {
               "count": 0
@@ -219,13 +239,59 @@
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "0"
+              "value": "0.00"
             },
             "item": {
               "price": {
                 "currency": "INR",
-                "value": "760"
+                "value": "380"
               }
+            }
+          },
+          {
+            "@ondc/org/item_id": "45340561801516",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "47578024083756",
+            "@ondc/org/item_quantity": {
+              "count": 0
+            },
+            "title": "Bru Instant Coffee has",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "47578024083756",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id":"RTO-2023-12-19-940050",
+            "title":"Delivery charges",
+            "@ondc/org/title_type":"delivery",
+            "price":
+            {
+              "currency":"INR",
+              "value":"0"
             }
           },
           {
@@ -244,9 +310,9 @@
         "uri": "https://juspay.in/",
         "tl_method": "http/get",
         "params": {
-          "amount": "1360",
+          "amount": "1160",
           "currency": "INR",
-          "transaction_id": "e4a34c85-8f0e-461c-9156-269ef4edb4be"
+          "transaction_id": "ebb5bad1-0bde-4de3-aaa6-eabadf5a7b76"
         },
         "status": "PAID",
         "type": "ON-ORDER",
@@ -267,8 +333,8 @@
           }
         ]
       },
-      "created_at": "2023-12-09T07:20:17.384Z",
-      "updated_at": "2023-12-09T07:20:20.902Z"
+      "created_at": "2023-12-19T13:41:39.794Z",
+      "updated_at": "2023-12-19T13:54:40.191Z"
     }
   }
 }
