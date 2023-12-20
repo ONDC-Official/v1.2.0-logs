@@ -1,0 +1,208 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-qa.gofrugalretail.com",
+        "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
+        "bpp_id": "preprod.zypp-lsp.mp2.in",
+        "bpp_uri": "https://preprod.zypp-lsp.mp2.in/ondc",
+        "transaction_id": "41551d3f-c760-4b28-b25c-5e0a24450a2b",
+        "message_id": "569f6fee-498f-4deb-88ef-79c735070172",
+        "timestamp": "2023-12-20T11:09:06.936Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "Zypp LSP"
+            },
+            "items": [
+                {
+                    "id": "zypp_express",
+                    "fulfillment_id": "zypp_express_f1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "zypp_express_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.9298689,77.6848366",
+                            "address": {
+                                "name": "Subbu Zoho ONDC",
+                                "building": "block v",
+                                "locality": "Vannar Pettai",
+                                "city": "Bangalore",
+                                "state": "Tamil Nadu",
+                                "country": "India",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "09898767675",
+                            "email": "abii@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.929913743710484,77.68526796251538",
+                            "address": {
+                                "name": "Poornima",
+                                "building": "101",
+                                "locality": "Outer Ring Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9980687687",
+                            "email": "poornima@mp2.in"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "1.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "zypp_express",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.88"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "zypp_express",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.12"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.1"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.5"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "1.0"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "2000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
