@@ -1,0 +1,208 @@
+{
+    "context": {
+        "city": "std:080",
+        "action": "on_init",
+        "bap_id": "devapigateway.bizom.in/ondc",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "domain": "nic2004:60232",
+        "bap_uri": "https://devapigateway.bizom.in/ondc",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "country": "IND",
+        "timestamp": "2023-12-20T06:50:40.629Z",
+        "message_id": "c9df91d4-5296-4ada-a466-e87f328ef7c9",
+        "core_version": "1.2.0",
+        "transaction_id": "0701977f-0cd2-4bf9-b49b-a7ce3eb24f0c"
+    },
+    "message": {
+        "order": {
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "2000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "mp2_express",
+                    "fulfillment_id": "mp2_express_f1"
+                }
+            ],
+            "quote": {
+                "ttl": "PT15M",
+                "price": {
+                    "value": "1.0",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "value": "0.88",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "mp2_express",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "0.12",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "mp2_express",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "provider": {
+                "id": "MP2 LSP"
+            },
+            "fulfillments": [
+                {
+                    "id": "mp2_express_f1",
+                    "end": {
+                        "contact": {
+                            "email": "akhil.rajesh@mobisy.com",
+                            "phone": "9838291023"
+                        },
+                        "location": {
+                            "gps": "12.8490423121344,77.65777766704561",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "Akhil",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "building": "E401",
+                                "locality": "Road Number 1",
+                                "area_code": "560100"
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "Delivery",
+                    "start": {
+                        "contact": {
+                            "email": "samarth.patel@mobisy.com",
+                            "phone": "1234567891"
+                        },
+                        "location": {
+                            "gps": "12.927208,77.681028",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "Forbidden Foods",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "building": "509",
+                                "locality": "kormangala",
+                                "area_code": "560103"
+                            }
+                        }
+                    }
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": false,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.1",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.5",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "1.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
