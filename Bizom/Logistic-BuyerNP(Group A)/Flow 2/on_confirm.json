@@ -1,28 +1,59 @@
 {
     "context": {
         "city": "std:080",
-        "action": "on_status",
+        "action": "on_confirm",
         "bap_id": "devapigateway.bizom.in/ondc",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "domain": "nic2004:60232",
         "bap_uri": "https://devapigateway.bizom.in/ondc",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
         "country": "IND",
-        "timestamp": "2023-12-20T11:03:20.045Z",
-        "message_id": "msg_uuvfdu56pdwo34ap",
+        "timestamp": "2023-12-22T04:51:54.939Z",
+        "message_id": "cc41a8f3-1073-4c90-8801-d9d1c84ed45b",
         "core_version": "1.2.0",
-        "transaction_id": "d99ff54b-081a-453a-927a-5b6e4f165524"
+        "transaction_id": "c9c0482a-ebb0-4ff0-b2af-9007389a0f0b"
     },
     "message": {
         "order": {
-            "id": "8069ff60-56d5-4643-9a11-6cd9e3dcf35f",
+            "id": "a1ddf2bf-3d3d-4fad-bc96-2e2152c02111",
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "2000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                        }
+                    ]
+                }
+            ],
             "items": [
                 {
                     "id": "mp2_express",
                     "time": {
                         "label": "TAT",
-                        "duration": "PT20M",
-                        "timestamp": "2023-12-20"
+                        "duration": "PT55M",
+                        "timestamp": "2023-12-22"
                     },
                     "descriptor": {
                         "code": "P2P"
@@ -33,13 +64,13 @@
             ],
             "quote": {
                 "price": {
-                    "value": "1.0",
+                    "value": "2.0",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
                         "price": {
-                            "value": "0.88",
+                            "value": "1.76",
                             "currency": "INR"
                         },
                         "@ondc/org/item_id": "mp2_express",
@@ -47,7 +78,7 @@
                     },
                     {
                         "price": {
-                            "value": "0.12",
+                            "value": "0.24",
                             "currency": "INR"
                         },
                         "@ondc/org/item_id": "mp2_express",
@@ -55,7 +86,7 @@
                     }
                 ]
             },
-            "state": "Completed",
+            "state": "Accepted",
             "billing": {
                 "name": "Bizom",
                 "email": "ondchelp@mobisy.com",
@@ -69,35 +100,23 @@
                     "locality": "Bellandur Main Rd",
                     "area_code": "560103"
                 },
-                "created_at": "2023-12-20T06:39:13.587Z",
+                "created_at": "2023-12-22T04:51:32.513Z",
                 "tax_number": "29AAFCM4341L1Z6",
-                "updated_at": "2023-12-20T06:39:13.587Z"
+                "updated_at": "2023-12-22T04:51:32.513Z"
             },
             "payment": {
-                "time": {
-                    "timestamp": "2023-12-20T06:39:19.358Z"
-                },
                 "type": "ON-ORDER",
-                "status": "PAID",
-                "collected_by": "BAP",
-                "@ondc/org/collection_amount": "0"
+                "collected_by": "BAP"
             },
             "provider": {
                 "id": "MP2 LSP"
             },
-            "created_at": "2023-12-20T06:39:19.358Z",
-            "updated_at": "2023-12-20T11:03:20.027Z",
+            "created_at": "2023-12-22T04:51:54.841Z",
+            "updated_at": "2023-12-22T04:51:54.939Z",
             "fulfillments": [
                 {
                     "id": "mp2_express_f1",
                     "end": {
-                        "time": {
-                            "range": {
-                                "end": "2023-12-20T08:46:24.049Z",
-                                "start": "2023-12-20T08:31:24.049Z"
-                            },
-                            "timestamp": "2023-12-20T11:03:20.027Z"
-                        },
                         "person": {
                             "name": "Akhil"
                         },
@@ -118,18 +137,39 @@
                             }
                         }
                     },
+                    "tags": [
+                        {
+                            "code": "weather_check",
+                            "list": [
+                                {
+                                    "code": "raining",
+                                    "value": "no"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "no"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "return_to_origin",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ],
                     "type": "Delivery",
-                    "agent": {
-                        "name": "MAHESH",
-                        "phone": "9900163002"
-                    },
                     "start": {
                         "time": {
-                            "range": {
-                                "end": "2023-12-20T08:31:24.049Z",
-                                "start": "2023-12-20T08:11:24.049Z"
-                            },
-                            "timestamp": "2023-12-20T10:11:29.002Z"
+                            "duration": "PT20M"
                         },
                         "person": {
                             "name": "Forbidden Foods"
@@ -153,22 +193,88 @@
                         "instructions": {
                             "code": "3",
                             "long_desc": "Pickup confirmation code",
-                            "short_desc": "5524"
+                            "short_desc": "0f0b"
                         }
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Pending"
                         }
                     },
                     "tracking": true
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "reason_required": false,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "0.2",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "1.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    }
+                },
+                {
+                    "reason_required": true,
+                    "refund_eligible": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "value": "2.0",
+                            "currency": "INR"
+                        }
+                    },
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    }
                 }
             ],
             "@ondc/org/linked_order": {
                 "items": [
                     {
                         "price": {
-                            "value": "450.00",
+                            "value": "558.00",
                             "currency": "INR"
                         },
                         "quantity": {
@@ -179,33 +285,16 @@
                             }
                         },
                         "descriptor": {
-                            "name": "Surya Coriander (Dhaniya) Powder 100g (Pack of 5; 100g Each) (Total 500g)"
-                        },
-                        "category_id": "Grocery"
-                    },
-                    {
-                        "price": {
-                            "value": "504.00",
-                            "currency": "INR"
-                        },
-                        "quantity": {
-                            "count": 2,
-                            "measure": {
-                                "unit": "kilogram",
-                                "value": 1
-                            }
-                        },
-                        "descriptor": {
-                            "name": "Surya Chilli Flakes 50g (Pack of 4, 50g Each) (Total Wgt.200g)"
+                            "name": "Surya Aniseed (Ajwain) Whole 500g |Best Whole Spices"
                         },
                         "category_id": "Grocery"
                     }
                 ],
                 "order": {
-                    "id": "2023-12-20-626698",
+                    "id": "2023-12-22-569273",
                     "weight": {
                         "unit": "kilogram",
-                        "value": 2
+                        "value": 1
                     }
                 },
                 "provider": {
