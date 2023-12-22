@@ -1,1 +1,1 @@
-FLow 2 mystore buyer app
+FLOW2 mystore buyer app

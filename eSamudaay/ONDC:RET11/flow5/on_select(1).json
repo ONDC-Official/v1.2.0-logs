@@ -1,0 +1,113 @@
+{
+  "context": {
+    "action": "on_select",
+    "transaction_id": "2ce6a21d-c8b2-46e5-be05-1320e0be004e",
+    "message_id": "c4e37736-007d-4dbf-ad54-2c20e4227545",
+    "city": "std:080",
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "core_version": "1.2.0",
+    "timestamp": "2023-12-08T07:06:56.340Z",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "bpp_uri": "https://api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "0635ecff-8fde-4185-8cd8-167efda42bbc",
+        "locations": [
+          {
+            "id": "75e4363f-001b-4519-ace5-28b1f448a0bb"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "16399",
+          "fulfillment_id": "Fulfillment1"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "220.27"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "16399",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Papad Roasted",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "50.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "50.00"
+              },
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
+            "price": {
+              "currency": "INR",
+              "value": "40.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing charges",
+            "price": {
+              "currency": "INR",
+              "value": "90.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "40.27"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/provider_name": "Ravada Stores",
+          "@ondc/org/category": "Immediate Delivery",
+          "@ondc/org/TAT": "PT1H",
+          "state": {
+            "descriptor": {
+              "name": "Serviceable",
+              "code": "Serviceable"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
