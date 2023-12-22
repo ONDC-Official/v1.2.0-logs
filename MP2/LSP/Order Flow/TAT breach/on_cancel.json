@@ -4,30 +4,128 @@
         "country": "IND",
         "city": "std:080",
         "action": "on_cancel",
-        "timestamp": "2023-12-14T11:11:40.248Z",
         "core_version": "1.2.0",
         "bap_id": "ondc-qa.gofrugalretail.com",
         "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-        "transaction_id": "cadfeccf-68d0-40df-b76e-82e480903e0d",
-        "message_id": "d59e913d-7d5a-4a5e-b722-53a3343b5d0f"
+        "transaction_id": "7fa844e4-d468-4f09-a496-981994fc2b09",
+        "message_id": "511c675a-8974-4c10-9c6f-5087d3a12bc9",
+        "timestamp": "2023-12-22T05:41:06.761Z"
     },
     "message": {
         "order": {
+            "id": "4562B5228FE89928BC41497991434B3A",
             "state": "Cancelled",
-            "cancellation": {
-                "reason": {
-                    "id": "007"
-                },
-                "cancelled_by": "ondc-qa.gofrugalretail.com"
+            "provider": {
+                "id": "MP2 LSP"
             },
             "items": [
                 {
-                    "id": "mp2_express",
-                    "fulfillment_id": "mp2_express_f1"
+                    "id": "mp2_sdd",
+                    "fulfillment_id": "mp2_sdd_f1",
+                    "category_id": "Same Day Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "timestamp": "2023-12-22",
+                        "duration": "PT1H"
+                    }
                 }
             ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "2.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "mp2_sdd",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.76"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_sdd",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.24"
+                        }
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "mp2_sdd_f1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "start": {
+                        "person": {
+                            "name": "Abinaya"
+                        },
+                        "location": {
+                            "gps": "12.930037,77.675391",
+                            "address": {
+                                "name": "ONDC Rpos7",
+                                "building": "block v",
+                                "locality": "Vannar Pettai",
+                                "city": "Banglore",
+                                "state": "Tamil Nadu",
+                                "country": "India",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9898767675",
+                            "email": "abii@gmail.com"
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "short_desc": "7865",
+                            "long_desc": "QR code will be attached to package"
+                        }
+                    },
+                    "end": {
+                        "person": {
+                            "name": "Uma 1"
+                        },
+                        "location": {
+                            "gps": "12.930007756774424,77.67544589958207",
+                            "address": {
+                                "name": "Uma 1",
+                                "building": "Marg",
+                                "locality": "4th Cross Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9003170541",
+                            "email": "uma.v@gofrugal.com"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "6230"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "payment": {
+                "collected_by": "BAP",
+                "type": "ON-ORDER"
+            },
             "billing": {
                 "name": "Gofrugal Technologies Pvt Ltd",
                 "address": {
@@ -39,122 +137,75 @@
                     "country": "India",
                     "area_code": "600127"
                 },
-                "email": "accounts@gofrugal.com",
-                "phone": "9840812985",
                 "tax_number": "33AACCG2423J1ZZ",
-                "created_at": "2023-12-14T11:10:30.533Z",
-                "updated_at": "2023-12-14T11:10:30.533Z"
+                "phone": "9840812985",
+                "email": "accounts@gofrugal.com",
+                "created_at": "2023-12-22T05:39:25.275Z",
+                "updated_at": "2023-12-22T05:39:25.275Z"
             },
-            "fulfillments": [
-                {
-                    "id": "mp2_express_f1",
-                    "type": "Delivery",
-                    "state": {
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
                         "descriptor": {
-                            "code": "Cancelled"
+                            "name": "Chocolate Complan 100 gm"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "gram",
+                                "value": 2.0
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.00"
                         }
+                    }
+                ],
+                "provider": {
+                    "descriptor": {
+                        "name": "ONDC Rpos7"
                     },
-                    "tracking": false,
-                    "start": {
-                        "location": {
-                            "gps": "12.9298689, 77.6848366",
-                            "address": {
-                                "name": "ONDC Rpos7",
-                                "building": "block v",
-                                "locality": "Vannar Pettai",
-                                "city": "Banglore",
-                                "state": "Tamil Nadu",
-                                "country": "India",
-                                "area_code": "560103"
-                            }
-                        },
-                        "time": {
-                            "range": {
-                                "start": "2023-12-14T11:10:36.580Z",
-                                "end": "2023-12-14T12:10:36.580Z"
-                            }
-                        },
-                        "instructions": {
-                            "code": "3",
-                            "short_desc": "1060",
-                            "long_desc": "QR code will be attached to package"
-                        },
-                        "contact": {
-                            "phone": "9898767675",
-                            "email": "abii@gmail.com"
-                        },
-                        "person": {
-                            "name": "Abinaya"
-                        }
+                    "address": {
+                        "name": "ONDC Rpos7",
+                        "building": "block v",
+                        "locality": "Vannar Pettai",
+                        "city": "Banglore",
+                        "state": "Tamil Nadu",
+                        "area_code": "560103"
+                    }
+                },
+                "order": {
+                    "id": "2023-12-22-598643",
+                    "weight": {
+                        "unit": "gram",
+                        "value": 2.0
                     },
-                    "end": {
-                        "location": {
-                            "gps": "12.930007756774424, 77.67544589958207",
-                            "address": {
-                                "name": "Uma 1",
-                                "building": "Marg",
-                                "locality": "4th Cross Road",
-                                "city": "Bengaluru",
-                                "state": "Karnataka",
-                                "country": "IND",
-                                "area_code": "560103"
-                            }
+                    "dimensions": {
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 1.0
                         },
-                        "time": {
-                            "range": {
-                                "start": "2023-12-14T12:10:36.580Z",
-                                "end": "2023-12-14T15:10:36.580Z"
-                            }
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 2.0
                         },
-                        "instructions": {
-                            "code": "3",
-                            "short_desc": "1709",
-                            "long_desc": ""
-                        },
-                        "contact": {
-                            "phone": "9003170541",
-                            "email": "uma.v@gofrugal.com"
-                        },
-                        "person": {
-                            "name": "Uma 1"
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 4.0
                         }
                     }
                 }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "1.0"
-                },
-                "breakup": [
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.88"
-                        },
-                        "@ondc/org/item_id": "mp2_express",
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.12"
-                        },
-                        "@ondc/org/item_id": "mp2_express",
-                        "@ondc/org/title_type": "tax"
-                    }
-                ]
             },
-            "payment": {
-                "type": "ON-ORDER",
-                "collected_by": "BAP",
-                "@ondc/org/collection_amount": "1.0"
-            },
-            "provider": {
-                "id": "MP2 LSP"
-            },
-            "id": "F36E97B817114E4FA398C69FDC5EAEA9",
-            "updated_at": "2023-12-14T11:10:36.734Z"
+            "updated_at": "2023-12-22T05:39:29.495Z",
+            "created_at": "2023-12-22T05:39:29.397Z",
+            "cancellation": {
+                "cancelled_by": "ondc-qa.gofrugalretail.com",
+                "reason": {
+                    "id": "010"
+                }
+            }
         }
     }
 }

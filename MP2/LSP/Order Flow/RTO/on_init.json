@@ -4,30 +4,33 @@
         "country": "IND",
         "city": "std:080",
         "action": "on_init",
-        "timestamp": "2023-12-14T09:28:04.437Z",
         "core_version": "1.2.0",
         "bap_id": "ondc-qa.gofrugalretail.com",
         "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-        "transaction_id": "8c0f179b-5ee4-4489-9b7d-5bca4feeacf3",
-        "message_id": "52128b17-c1cc-48f6-978e-43722e34bd75"
+        "transaction_id": "73077953-4abe-40c2-87d8-19dbca939bbb",
+        "message_id": "a5950cc7-cec0-44ba-8394-fcb389d21773",
+        "timestamp": "2023-12-22T05:21:21.420Z"
     },
     "message": {
         "order": {
+            "provider": {
+                "id": "MP2 LSP"
+            },
             "items": [
                 {
-                    "id": "mp2_express",
-                    "fulfillment_id": "mp2_express_f1"
+                    "id": "mp2_sdd",
+                    "fulfillment_id": "mp2_sdd_f1"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "mp2_express_f1",
+                    "id": "mp2_sdd_f1",
                     "type": "Delivery",
                     "start": {
                         "location": {
-                            "gps": "12.9298689, 77.6848366",
+                            "gps": "12.930037,77.675391",
                             "address": {
                                 "name": "ONDC Rpos7",
                                 "building": "block v",
@@ -45,7 +48,7 @@
                     },
                     "end": {
                         "location": {
-                            "gps": "12.930007756774424, 77.67544589958207",
+                            "gps": "12.930007756774424,77.67544589958207",
                             "address": {
                                 "name": "Uma 1",
                                 "building": "Marg",
@@ -74,38 +77,101 @@
                     ]
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "1.0"
-                },
-                "breakup": [
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.88"
-                        },
-                        "@ondc/org/item_id": "mp2_express",
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.12"
-                        },
-                        "@ondc/org/item_id": "mp2_express",
-                        "@ondc/org/title_type": "tax"
-                    }
-                ],
-                "ttl": "PT15M"
-            },
             "payment": {
                 "type": "ON-ORDER",
                 "collected_by": "BAP"
             },
-            "provider": {
-                "id": "MP2 LSP"
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "2.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "mp2_sdd",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.76"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_sdd",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.24"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
             },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.2"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "1.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "2.0"
+                        }
+                    }
+                }
+            ],
             "tags": [
                 {
                     "code": "bpp_terms",
