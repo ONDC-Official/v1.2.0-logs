@@ -1,23 +1,23 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "action": "on_status",
+    "action": "on_cancel",
     "country": "IND",
     "city": "std:0124",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-    "transaction_id": "01646601-7735-429b-83e7-bcc827666687",
-    "message_id": "3df83e48-d339-4f31-a83a-879957e2d337",
-    "timestamp": "2023-12-27T10:38:30.124Z",
+    "transaction_id": "012ddc54-487a-48ca-b2d6-75a5b6ea4288",
+    "message_id": "ae2c001f-db8d-4d04-84a8-bbb7ca972eee",
+    "timestamp": "2023-12-27T11:25:02.842Z",
     "ttl": "PT30S",
     "bpp_id": "storepreprod.krenai.in",
     "bpp_uri": "https://storepreprod.krenai.in/ondc/"
   },
   "message": {
     "order": {
-      "id": "2023-12-27-239034",
-      "state": "In-progress",
+      "id": "2023-12-27-931127",
+      "state": "Cancelled",
       "provider": {
         "id": "606",
         "locations": [
@@ -42,14 +42,14 @@
           "id": "100745",
           "fulfillment_id": "606",
           "quantity": {
-            "count": 2
+            "count": 3
           }
         },
         {
           "id": "8901972083",
           "fulfillment_id": "606",
           "quantity": {
-            "count": 2
+            "count": 3
           }
         }
       ],
@@ -66,17 +66,23 @@
           "country": "IND",
           "area_code": "122102"
         },
-        "created_at": "2023-12-27T10:34:17.444Z",
-        "updated_at": "2023-12-27T10:34:17.444Z"
+        "created_at": "2023-12-27T11:24:07.095Z",
+        "updated_at": "2023-12-27T11:24:07.095Z"
+      },
+      "cancelation": {
+        "cancelled_by": "storepreprod.krenai.in",
+        "reason": {
+          "id": "018"
+        }
       },
       "fulfillments": [
         {
           "id": "606",
           "type": "Delivery",
-          "tracking": true,
+          "tracking": false,
           "state": {
             "descriptor": {
-              "code": "Out-for-delivery"
+              "code": "Cancelled"
             }
           },
           "start": {
@@ -96,10 +102,9 @@
             },
             "time": {
               "range": {
-                "start": "2023-12-27T10:38:21.250Z",
-                "end": "2023-12-28T10:38:21.250Z"
-              },
-              "timestamp": "2023-12-27T10:38:24.098Z"
+                "start": "2023-12-27T11:25:02.842Z",
+                "end": "2023-12-27T11:25:02.842Z"
+              }
             },
             "contact": {
               "phone": "7053008236",
@@ -108,6 +113,7 @@
           },
           "end": {
             "location": {
+              "descriptor": null,
               "gps": "28.3910935,77.0601233",
               "address": {
                 "name": "Pradeep Yadav",
@@ -121,8 +127,8 @@
             },
             "time": {
               "range": {
-                "start": "2023-12-28T10:38:21.250Z",
-                "end": "2023-12-29T10:38:21.250Z"
+                "start": "2023-12-27T11:25:02.842Z",
+                "end": "2023-12-27T11:25:02.842Z"
               }
             },
             "contact": {
@@ -131,28 +137,81 @@
             }
           },
           "tags": [
-            
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "018"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "storepreprod.krenai.in"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "100745"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-205.0"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "8901972083"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-48.0"
+                }
+              ]
+            }
           ],
-          "@ondc/org/provider_name": "UJJIVAN SMALL FINANCE BANK LIMITED",
-          "@ondc/org/TAT": "P3D"
+          "@ondc/org/provider_name": "UJJIVAN SMALL FINANCE BANK LIMITED"
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "544.62"
+          "value": "47.58"
         },
         "breakup": [
           {
             "title": "Lahori Zeera -100745",
             "price": {
               "currency": "INR",
-              "value": "410.00"
+              "value": "0"
             },
             "@ondc/org/item_id": "100745",
             "@ondc/org/title_type": "item",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 3
             },
             "item": {
               "price": {
@@ -165,12 +224,12 @@
             "title": "Parle Orange Bite-8901972083",
             "price": {
               "currency": "INR",
-              "value": "96.00"
+              "value": "0"
             },
             "@ondc/org/item_id": "8901972083",
             "@ondc/org/title_type": "item",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 3
             },
             "item": {
               "price": {
@@ -192,13 +251,13 @@
             "title": "Convenience Fee",
             "price": {
               "currency": "INR",
-              "value": "18.62"
+              "value": "27.58"
             },
             "@ondc/org/item_id": "606",
             "@ondc/org/title_type": "misc"
           }
         ],
-        "ttl": "PT5M"
+        "ttl": "P1D"
       },
       "payment": {
         "uri": "https://juspay.in/",
@@ -206,14 +265,11 @@
         "type": "ON-ORDER",
         "collected_by": "BAP",
         "params": {
-          "amount": "544.62",
+          "amount": "806.58",
           "currency": "INR",
-          "transaction_id": "db52f669-9649-4718-ba5f-8e6e5acc4c29"
+          "transaction_id": "4b8d3f52-fa89-4407-bf71-045e6ef704a3"
         },
         "tl_method": "http/get",
-        "@ondc/org/settlement_basis": "delivery",
-        "@ondc/org/settlement_window": "P1D",
-        "@ondc/org/withholding_amount": "0",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
@@ -227,19 +283,13 @@
             "bank_name": "State Bank",
             "branch_name": "Badhshahpur",
             "upi_address": "test@upi",
-            "settlement_timestamp": "2023-12-27T10:34:30.000Z",
-            "settlement_amount": "544.62"
+            "settlement_timestamp": "2023-12-27T11:24:25.000Z",
+            "settlement_amount": "806.58"
           }
         ]
       },
-      "documents": [
-        {
-          "url": "https://krenai-resources-staging-new.s3.ap-south-1.amazonaws.com/1703673506687-1003052-cart-Invoice.pdf",
-          "label": "Invoice"
-        }
-      ],
-      "created_at": "2023-12-27T10:34:17.444Z",
-      "updated_at": "2023-12-27T10:38:30.033Z"
+      "created_at": "2023-12-27T11:24:07.095Z",
+      "updated_at": "2023-12-27T11:25:02.600Z"
     }
   }
 }
