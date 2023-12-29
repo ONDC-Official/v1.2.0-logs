@@ -4,34 +4,24 @@
       "domain": "ONDC:RET11",
       "country": "IND",
       "city": "std:080",
-      "action": "on_init",
+      "action": "on_status",
       "bap_id": "buyer-app-preprod-v2.ondc.org",
       "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
       "bpp_id": "falconsai.com",
       "bpp_uri": "https://falconsai.com/v1/gf/ecomm/fnb",
       "transaction_id": "4a87562c-6654-4008-89e9-85df8fd9fff2",
-      "message_id": "6f722c6c-632d-41bb-ab9d-9b78ed671a71",
-      "timestamp": "2023-12-29T16:41:19.707Z",
+      "message_id": "USME34B1344B5434258BA1E51DEF93BA942",
+      "timestamp": "2023-12-29T16:44:37.146Z",
       "ttl": "PT30S"
    },
    "message": {
       "order": {
+         "id": "2023-12-29-992068",
+         "state": "Accepted",
          "items": [
             {
                "id": "450937c6-d5ee-4287-9858-32d5547785d2",
                "fulfillment_id": "F1",
-               "location_id": "GFFBRTNH1691483763",
-               "tags": [
-                  {
-                     "code": "type",
-                     "list": [
-                        {
-                           "code": "type",
-                           "value": "item"
-                        }
-                     ]
-                  }
-               ],
                "quantity": {
                   "count": 1
                }
@@ -40,7 +30,6 @@
                "id": "77236f77-3d00-4590-87b3-2ef075344570",
                "parent_item_id": "DI1",
                "fulfillment_id": "F1",
-               "location_id": "GFFBRTNH1691483763",
                "tags": [
                   {
                      "code": "type",
@@ -60,7 +49,6 @@
                "id": "16010775",
                "parent_item_id": "DI1",
                "fulfillment_id": "F1",
-               "location_id": "GFFBRTNH1691483763",
                "tags": [
                   {
                      "code": "type",
@@ -106,6 +94,36 @@
             {
                "id": "F1",
                "type": "Delivery",
+               "state": {
+                  "descriptor": {
+                     "code": "Pending"
+                  }
+               },
+               "tracking": true,
+               "start": {
+                  "location": {
+                     "id": "GFFBRTNH1691483763",
+                     "descriptor": {
+                        "name": "Falcons FoodCourt"
+                     },
+                     "gps": "12.966036, 77.717866",
+                     "address": {
+                        "locality": "Brookefield Mall, 306, 3rd Floor, Brookefield, Bengaluru, Karnataka 560037",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560037"
+                     }
+                  },
+                  "time": {
+                     "range": {
+                        "start": "2023-12-29T16:44:00.337Z",
+                        "end": "2023-12-29T16:54:00.337Z"
+                     }
+                  },
+                  "contact": {
+                     "phone": "8105921005"
+                  }
+               },
                "end": {
                   "location": {
                      "gps": "12.966885107349198,77.71452248096467",
@@ -119,11 +137,22 @@
                         "area_code": "560037"
                      }
                   },
+                  "time": {
+                     "range": {
+                        "start": "2023-12-29T18:14:00.337Z",
+                        "end": "2023-12-29T18:24:00.337Z"
+                     }
+                  },
                   "contact": {
                      "phone": "7019540003",
                      "email": "sandeeppai2890@gmail.com"
+                  },
+                  "person": {
+                     "name": "Sandeep"
                   }
-               }
+               },
+               "@ondc/org/provider_name": "Falcons FoodCourt",
+               "@ondc/org/TAT": "PT1H30M"
             }
          ],
          "quote": {
@@ -144,14 +173,6 @@
                      "count": 1
                   },
                   "item": {
-                     "quantity": {
-                        "available": {
-                           "count": "99"
-                        },
-                        "maximum": {
-                           "count": "99"
-                        }
-                     },
                      "price": {
                         "currency": "INR",
                         "value": "269"
@@ -170,19 +191,11 @@
                      "count": 1
                   },
                   "item": {
-                     "quantity": {
-                        "available": {
-                           "count": "99"
-                        },
-                        "maximum": {
-                           "count": "99"
-                        }
-                     },
+                     "parent_item_id": "DI1",
                      "price": {
                         "currency": "INR",
                         "value": "365"
                      },
-                     "parent_item_id": "DI1",
                      "tags": [
                         {
                            "code": "type",
@@ -208,19 +221,11 @@
                      "count": 1
                   },
                   "item": {
-                     "quantity": {
-                        "available": {
-                           "count": "99"
-                        },
-                        "maximum": {
-                           "count": "99"
-                        }
-                     },
+                     "parent_item_id": "DI1",
                      "price": {
                         "currency": "INR",
                         "value": "79"
                      },
-                     "parent_item_id": "DI1",
                      "tags": [
                         {
                            "code": "type",
@@ -338,8 +343,18 @@
             "ttl": "PT1H"
          },
          "payment": {
+            "uri": "https://juspay.in/",
+            "tl_method": "http/get",
+            "params": {
+               "currency": "INR",
+               "transaction_id": "49af4bf3-c02d-481a-bcc5-5ddd5f616aa3",
+               "amount": "837.52"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
+            "collected_by": "BAP",
             "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
             "@ondc/org/settlement_details": [
                {
                   "settlement_counterparty": "seller-app",
@@ -363,20 +378,8 @@
                }
             ]
          },
-         "provider_location": {
-            "id": "GFFBRTNH1691483763"
-         },
-         "tags": [
-            {
-               "code": "bpp_terms",
-               "list": [
-                  {
-                     "code": "tax_number",
-                     "value": "GF-GSTN-NUM-1234"
-                  }
-               ]
-            }
-         ]
+         "created_at": "2023-12-29T16:44:00.122Z",
+         "updated_at": "2023-12-29T16:44:37.146Z"
       }
    }
 }
