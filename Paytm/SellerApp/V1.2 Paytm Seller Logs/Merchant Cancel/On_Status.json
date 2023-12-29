@@ -1,23 +1,28 @@
 {
     "context": {
         "domain": "ONDC:RET11",
-        "action": "on_cancel",
+        "action": "on_status",
         "country": "IND",
         "city": "std:0124",
         "core_version": "1.2.0",
         "bap_id": "ondc-staging.paytm.com",
         "bap_uri": "https://ondc-staging.paytm.com/retail",
         "transaction_id": "d5d51a3e-dd97-457e-b115-bd86aed13313",
-        "message_id": ":SentTimeStamp:1703846168061:",
-        "timestamp": "2023-12-29T10:42:11.222Z",
+        "message_id": ":SentTimeStamp:1703846168060:",
+        "timestamp": "2023-12-29T10:45:31.915Z",
         "bpp_id": "ondc-seller-staging.paytm.com",
         "bpp_uri": "https://ondc-seller-staging.paytm.com",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "61406CE8C9CCA8D45FD52CD622F15296",
             "state": "Cancelled",
+            "cancellation": {
+                "cancelled_by": "ondc-seller-staging.paytm.com",
+                "reason": {
+                    "id": "017"
+                }
+            },
             "provider": {
                 "id": "63798557",
                 "locations": [
@@ -59,34 +64,148 @@
             "billing": {
                 "name": "New Address Deepali",
                 "address": {
-                    "building": "A 804     Sector 17A, Sector 17, Gurugram, Haryana 122001, India",
                     "name": "New Address Deepali",
-                    "locality": "Concord Portia",
+                    "building": "A 804     Sector 17A, Sector 17, Gurugram, Haryana 122001, India",
                     "city": "Gurugram",
                     "state": "Haryana",
                     "country": "India",
-                    "area_code": "122001"
+                    "area_code": "122001",
+                    "locality": "Concord Portia"
                 },
                 "created_at": "2023-12-29T10:35:36.344Z",
                 "updated_at": "2023-12-29T10:35:36.344Z"
             },
-            "cancellation": {
-                "cancelled_by": "ondc-staging.paytm.com",
-                "reason": {
-                    "id": "017"
-                }
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0.0"
+                },
+                "breakup": [
+                    {
+                        "title": "Chicken",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "customization"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "parent",
+                                    "list": [
+                                        {
+                                            "code": "id",
+                                            "value": "157926"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "parent_item_id": "DID0"
+                        },
+                        "@ondc/org/item_id": "1235193247",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Chicken Thali",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "parent_item_id": "DID0"
+                        },
+                        "@ondc/org/item_id": "1235217314",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        },
+                        "@ondc/org/item_id": "111e68cf-f7bc-45ca-9794-1e8da45a825b",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "parent_item_id": "DID0"
+                        },
+                        "@ondc/org/item_id": "1235217314",
+                        "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        },
+                        "@ondc/org/item_id": "111e68cf-f7bc-45ca-9794-1e8da45a825b",
+                        "@ondc/org/title_type": "misc"
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "currency": "INR",
+                    "transaction_id": "20231229011800000947524953320882482",
+                    "amount": "134.95"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_amount": "5"
             },
             "fulfillments": [
                 {
                     "id": "111e68cf-f7bc-45ca-9794-1e8da45a825b",
                     "@ondc/org/provider_name": "paytm_seller",
-                    "state": {
-                        "descriptor": {
-                            "code": "Cancelled"
-                        }
-                    },
+                    "@ondc/org/TAT": "PT42M",
                     "type": "Delivery",
-                    "tracking": "true",
+                    "tracking": true,
                     "start": {
                         "location": {
                             "id": "1031222",
@@ -99,6 +218,12 @@
                                 "city": "Pearson",
                                 "state": "Uttar Pradesh",
                                 "area_code": "110001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2023-12-29T05:40:08.000Z",
+                                "end": "2023-12-29T05:55:08.000Z"
                             }
                         },
                         "contact": {
@@ -115,15 +240,25 @@
                                 "locality": "Concord Portia",
                                 "city": "Gurugram",
                                 "state": "Haryana",
-                                "country": "India",
-                                "area_code": "122001"
+                                "country": "India"
                             }
                         },
-                        "person": {
-                            "name": "New Address Deepali"
+                        "time": {
+                            "range": {
+                                "start": "2023-12-29T11:19:08.852Z",
+                                "end": "2023-12-29T11:49:08.852Z"
+                            }
                         },
                         "contact": {
                             "phone": "6397865147"
+                        },
+                        "person": {
+                            "name": "New Address Deepali"
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
                         }
                     },
                     "tags": [
@@ -144,12 +279,12 @@
                 },
                 {
                     "id": "111e68cf-f7bc-45ca-9794-1e8da45a825b-Cancel",
+                    "type": "Cancel",
                     "state": {
                         "descriptor": {
                             "code": "Cancelled"
                         }
                     },
-                    "type": "Cancel",
                     "tags": [
                         {
                             "code": "quote_trail",
@@ -238,133 +373,9 @@
                     ]
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "0.0"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "1235193247",
-                        "@ondc/org/item_quantity": {
-                            "count": 0
-                        },
-                        "title": "Chicken",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        },
-                        "item": {
-                            "parent_item_id": "DID0",
-                            "tags": [
-                                {
-                                    "code": "type",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "customization"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "parent",
-                                    "list": [
-                                        {
-                                            "code": "id",
-                                            "value": "157926"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "1235217314",
-                        "@ondc/org/item_quantity": {
-                            "count": 0
-                        },
-                        "title": "Chicken Thali",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.0"
-                        },
-                        "item": {
-                            "parent_item_id": "DID0",
-                            "tags": [
-                                {
-                                    "code": "type",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "111e68cf-f7bc-45ca-9794-1e8da45a825b",
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.0"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "1235217314",
-                        "title": "Tax",
-                        "@ondc/org/title_type": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.0"
-                        },
-                        "item": {
-                            "parent_item_id": "DID0",
-                            "tags": [
-                                {
-                                    "code": "type",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "111e68cf-f7bc-45ca-9794-1e8da45a825b",
-                        "title": "Convenience Fee",
-                        "@ondc/org/title_type": "misc",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.0"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "payment": {
-                "uri": "https://ondc.transaction.com/payment",
-                "tl_method": "http/get",
-                "params": {
-                    "currency": "INR",
-                    "transaction_id": "20231229011800000947524953320882482",
-                    "amount": "134.95"
-                },
-                "type": "ON-ORDER",
-                "status": "PAID",
-                "collected_by": "BAP",
-                "@/ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "5"
-            },
             "created_at": "2023-12-29T10:36:08.028Z",
-            "updated_at": "2023-12-29T10:36:28.793Z"
+            "updated_at": "2023-12-29T10:45:31.915Z",
+            "id": "61406CE8C9CCA8D45FD52CD622F15296"
         }
     }
 }
