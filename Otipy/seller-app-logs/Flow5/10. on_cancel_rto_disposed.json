@@ -3,21 +3,21 @@
 		"domain":"ONDC:RET10",
 		"country":"IND",
 		"city":"std:011",
-		"action":"on_confirm",
+		"action":"on_cancel",
 		"core_version":"1.2.0",
 		"bap_id":"buyer-app-preprod-v2.ondc.org",
 		"bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
 		"bpp_id":"preprod.crofarm.com",
 		"bpp_uri":"https://preprod.crofarm.com/ondc/",
-		"transaction_id":"8ebe6d62-dbb7-4124-bcf4-aae09e925661",
-		"message_id":"c7b0f81f-3934-4cf6-b437-80e4e1194a78",
-		"timestamp":"2024-01-03T11:21:38.834Z",
+		"transaction_id":"e4a29f4c-ea3c-427e-a234-82ce5f31639a",
+		"message_id":"e22fbe47-7088-48c6-87eb-a8b62d0b6411",
+		"timestamp":"2024-01-03T11:48:20.731Z",
 		"ttl":"PT30S"
 	},
 	"message":{
 		"order":{
-			"id":"2024-01-03-797332",
-			"state":"Accepted",
+			"id":"2024-01-03-251879",
+			"state":"Cancelled",
 			"provider":{
 				"id":"4410",
 				"locations":[
@@ -28,24 +28,38 @@
 			},
 			"items":[
 				{
+					"id":"9343",
 					"fulfillment_id":"F1",
-					"id":"9371",
 					"quantity":{
-						"count":2
+						"count":0
 					}
 				},
 				{
-					"fulfillment_id":"F1",
 					"id":"9343",
+					"fulfillment_id":"F1-RTO",
 					"quantity":{
-						"count":3
+						"count":0
+					}
+				},
+				{
+					"id":"9343",
+					"fulfillment_id":"F1",
+					"quantity":{
+						"count":0
+					}
+				},
+				{
+					"id":"9343",
+					"fulfillment_id":"F1-RTO",
+					"quantity":{
+						"count":5
 					}
 				}
 			],
 			"billing":{
 				"name":"Heigenburg",
-				"created_at":"2024-01-03T11:19:49.505Z",
-				"updated_at":"2024-01-03T11:19:49.505Z",
+				"created_at":"2024-01-03T11:40:58.344Z",
+				"updated_at":"2024-01-03T11:40:58.344Z",
 				"phone":"8949300291",
 				"address":{
 					"building":"Indus Biznotel",
@@ -62,13 +76,13 @@
 				{
 					"id":"F1",
 					"@ondc/org/provider_name":"otipy store 4410",
-					"state":{
-						"descriptor":{
-							"code":"Pending"
-						}
-					},
 					"type":"Delivery",
 					"tracking":false,
+					"state":{
+						"descriptor":{
+							"code":"Cancelled"
+						}
+					},
 					"start":{
 						"location":{
 							"id":"L1",
@@ -91,7 +105,8 @@
 							"range":{
 								"start":"2024-01-03T16:30:00.000Z",
 								"end":"2024-01-03T20:30:00.000Z"
-							}
+							},
+							"timestamp":"2024-01-03T11:43:07.642Z"
 						}
 					},
 					"end":{
@@ -121,43 +136,134 @@
 							}
 						}
 					},
-					"rateable":true
+					"tags":[
+						{
+							"code":"cancel_request",
+							"list":[
+								{
+									"code":"retry_count",
+									"value":"0"
+								},
+								{
+									"code":"rto_id",
+									"value":"F1-RTO"
+								},
+								{
+									"code":"reason_id",
+									"value":"015"
+								},
+								{
+									"code":"initiated_by",
+									"value":"buyer-app-preprod-v2.ondc.org"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id":"F1-RTO",
+					"type":"RTO",
+					"state":{
+						"descriptor":{
+							"code":"RTO-Disposed"
+						}
+					},
+					"start":{
+						"time":{
+							"timestamp":"2024-01-03T11:48:20.731Z"
+						}
+					},
+					"tags":[
+						{
+							"code":"quote_trail",
+							"list":[
+								{
+									"code":"type",
+									"value":"delivery"
+								},
+								{
+									"code":"id",
+									"value":"F1-RTO"
+								},
+								{
+									"code":"currency",
+									"value":"INR"
+								},
+								{
+									"code":"value",
+									"value":"0"
+								}
+							]
+						},
+						{
+							"code":"type",
+							"value":"item"
+						},
+						{
+							"code":"id",
+							"value":"9343"
+						},
+						{
+							"code":"currency",
+							"value":"INR"
+						},
+						{
+							"code":"value",
+							"value":"-0.00"
+						},
+						{
+							"code":"type",
+							"value":"item"
+						},
+						{
+							"code":"id",
+							"value":"9343"
+						},
+						{
+							"code":"currency",
+							"value":"INR"
+						},
+						{
+							"code":"value",
+							"value":"-0.00"
+						}
+					]
 				}
 			],
 			"quote":{
 				"price":{
 					"currency":"INR",
-					"value":"112.00"
+					"value":"0.00"
 				},
 				"breakup":[
 					{
-						"@ondc/org/item_id":"9371",
+						"@ondc/org/item_id":"9343",
 						"@ondc/org/item_quantity":{
-							"count":2
+							"count":0
 						},
-						"title":"palak",
+						"title":"grapes",
 						"@ondc/org/title_type":"item",
 						"price":{
 							"currency":"INR",
-							"value":"52.00"
+							"value":"0.00"
 						},
 						"item":{
 							"price":{
 								"currency":"INR",
-								"value":"26.00"
+								"value":"20.00"
 							}
 						}
 					},
 					{
 						"@ondc/org/item_id":"9343",
 						"@ondc/org/item_quantity":{
-							"count":3
+							"count":0
 						},
 						"title":"grapes",
 						"@ondc/org/title_type":"item",
 						"price":{
 							"currency":"INR",
-							"value":"60.00"
+							"value":"0.00"
 						},
 						"item":{
 							"price":{
@@ -168,6 +274,15 @@
 					},
 					{
 						"@ondc/org/item_id":"F1",
+						"title":"Delivery charges",
+						"@ondc/org/title_type":"delivery",
+						"price":{
+							"currency":"INR",
+							"value":"0.00"
+						}
+					},
+					{
+						"@ondc/org/item_id":"F1-RTO",
 						"title":"Delivery charges",
 						"@ondc/org/title_type":"delivery",
 						"price":{
@@ -195,28 +310,8 @@
 					}
 				]
 			},
-			"tags":[
-				{
-					"code":"bpp_terms",
-					"list":[
-						{
-							"code":"tax_number",
-							"value":"06AAGCC4634B2Z3"
-						}
-					]
-				},
-				{
-					"code":"bap_terms",
-					"list":[
-						{
-							"code":"tax_number",
-							"value":"BUYER-APP-GSTN-ONDC"
-						}
-					]
-				}
-			],
-			"created_at":"2024-01-03T11:21:33.592Z",
-			"updated_at":"2024-01-03T11:21:38.834Z"
+			"created_at":"2024-01-03T11:41:47.589Z",
+			"updated_at":"2024-01-03T11:48:20.731Z"
 		}
 	}
 }
