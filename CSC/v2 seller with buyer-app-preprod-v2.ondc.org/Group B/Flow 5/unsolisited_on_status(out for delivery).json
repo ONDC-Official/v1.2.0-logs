@@ -1,0 +1,192 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "core_version": "1.2.0",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "transaction_id": "69f5614e-0987-48ba-91fb-1328b20f64ce",
+    "message_id": "03acfa8a-9491-43e2-886f-cc8f1e7beb9e",
+    "timestamp": "2023-12-29T07:24:47.000Z",
+    "ttl": "PT30S",
+    "bpp_id": "stagingapi.cscestore.in/ondc",
+    "bpp_uri": "https://stagingapi.cscestore.in/ondc/seller/v2"
+  },
+  "message": {
+    "order": {
+      "state": "In-progress",
+      "provider": {
+        "id": "35",
+        "locations": [{ "id": "Storeking-store-location-id-35" }]
+      },
+      "items": [
+        {
+          "id": "1495",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 2 }
+        },
+        {
+          "id": "561",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 2 }
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Ashish Rawat",
+          "building": "28/AB",
+          "locality": "Raj Bhavan Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560001"
+        },
+        "phone": "8787081401",
+        "name": "Ashish Rawat",
+        "email": "insphere.ashish@gmail.com",
+        "created_at": "2023-12-29T07:23:20.458Z",
+        "updated_at": "2023-12-29T07:23:20.458Z"
+      },
+      "fulfillments": [
+        {
+          "id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "@ondc/org/provider_name": "Storeking",
+          "type": "Delivery",
+          "end": {
+            "contact": {
+              "email": "insphere.ashish@gmail.com",
+              "phone": "8787081401"
+            },
+            "location": {
+              "gps": "12.981736346365281,77.59577572345735",
+              "address": {
+                "name": "Ashish Rawat",
+                "building": "28/AB",
+                "locality": "Raj Bhavan Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-29T07:24:00.000Z",
+                "end": "2024-01-01T07:24:30.000Z"
+              }
+            }
+          },
+          "tracking": false,
+          "state": { "descriptor": { "code": "Out-for-delivery" } },
+          "start": {
+            "location": {
+              "id": "Storeking-store-location-id-35",
+              "descriptor": { "name": "Storeking" },
+              "gps": "13.06393600,77.60132200",
+              "address": {
+                "locality": "sneha nagar",
+                "city": "BENGALURU URBAN",
+                "area_code": "560001",
+                "state": "Karnataka"
+              }
+            },
+            "contact": {
+              "phone": "8325802581",
+              "email": "Storeking_distributor@gmail.com"
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-29T07:24:00.000Z",
+                "end": "2024-01-01T07:24:30.000Z"
+              },
+              "timestamp": "2023-12-29T07:24:39.000Z"
+            }
+          },
+          "@ondc/org/TAT": "P3D"
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "1229.60" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1495",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi Honey 1Kg (organic)",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "560.00" },
+            "item": { "price": { "currency": "INR", "value": "280.00" } }
+          },
+          {
+            "@ondc/org/item_id": "561",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 500gm (organic)",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "550.00" },
+            "item": { "price": { "currency": "INR", "value": "275.00" } }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50.00" }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "69.60" }
+          }
+        ],
+        "ttl": "P4D"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "1229.60",
+          "currency": "INR",
+          "transaction_id": "9492a3f0-2eed-4b7c-b3d2-e382ff6921a8"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "2917980081992",
+            "settlement_ifsc_code": "SBIN11903",
+            "beneficiary_name": "CSC",
+            "bank_name": "State Bank Of India",
+            "branch_name": "Delhi",
+            "settlement_timestamp": "2023-12-29T07:23:32.644Z"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [{ "code": "tax_number", "value": "22GXPPF3765E1Z6" }]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "BUYER-APP-GSTN-ONDC" }]
+        }
+      ],
+      "id": "2023-12-29-934430",
+      "created_at": "2023-12-29T07:23:32.644Z",
+      "updated_at": "2023-12-29T07:24:47.000Z",
+      "documents": [
+        {
+          "url": "http://api.grameen.com/invoice/2e99d5ea-6d6c-413a-a7c8-e757772a9fd6",
+          "label": "Invoice"
+        }
+      ]
+    }
+  }
+}

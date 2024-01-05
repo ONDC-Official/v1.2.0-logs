@@ -1,0 +1,299 @@
+{
+    "context": {
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:040",
+      "action": "on_cancel",
+      "core_version": "1.2.0",
+      "bap_id": "preprod.ondc.adya.ai",
+      "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/lsp_bap/adya_lsp_bap",
+      "bpp_id": "preprod.ondc.adloggs.com",
+      "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+      "transaction_id": "f8c8b643-3477-448e-a975-d0e2d631ac31",
+      "message_id": "4de53d0f-d999-42fe-81fd-7b58126a3b57",
+      "timestamp": "2023-11-24T06:29:52.271Z"
+    },
+    "message": {
+      "order": {
+        "id": "55b947c8-7cae-4ea9-8a9f-b3c833f32f6a",
+        "state": "Cancelled",
+        "cancellation": {
+          "cancelled_by": "preprod.ondc.adloggs.com",
+          "reason": {
+            "id": "013"
+          }
+        },
+        "provider": {
+          "id": "P1"
+        },
+        "items": [
+          {
+            "id": "I1",
+            "time": {
+              "label": "TAT",
+              "duration": "PT45M",
+              "timestamp": "2023-11-24"
+            },
+            "descriptor": {
+              "code": "P2P"
+            },
+            "category_id": "Immediate Delivery",
+            "fulfillment_id": "1"
+          },
+          {
+            "id": "I2",
+            "fulfillment_id": "1-RTO",
+            "category_id": "Immediate Delivery",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "time": {
+              "label": "TAT",
+              "duration": "PT45M",
+              "timestamp": "2023-11-24"
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "value": "47.20",
+            "currency": "INR"
+          },
+          "breakup": [
+            {
+              "price": {
+                "value": "20.00",
+                "currency": "INR"
+              },
+              "@ondc/org/item_id": "I1",
+              "@ondc/org/title_type": "delivery"
+            },
+            {
+              "price": {
+                "value": "3.60",
+                "currency": "INR"
+              },
+              "@ondc/org/item_id": "I1",
+              "@ondc/org/title_type": "tax"
+            },
+            {
+              "@ondc/org/item_id": "I2",
+              "@ondc/org/title_type": "rto",
+              "price": {
+                "currency": "INR",
+                "value": "20.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "I2",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "3.60"
+              }
+            }
+          ]
+        },
+        "fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery",
+            "state": {
+              "descriptor": {
+                "code": "Cancelled"
+              }
+            },
+            "tracking": false,
+            "start": {
+              "time": {
+                "range": {
+                  "end": "2023-11-24T06:48:31.000Z",
+                  "start": "2023-11-24T06:33:31.000Z"
+                },
+                "duration": "PT15M",
+                "timestamp": "2023-11-24T06:28:31.190Z"
+              },
+              "person": {
+                "name": "Desi Store"
+              },
+              "contact": {
+                "email": "sushma1224@adya.ai",
+                "phone": "7569316696"
+              },
+              "location": {
+                "gps": "17.4410941,78.3603179",
+                "address": {
+                  "city": "Hyderabad",
+                  "name": "Desi Store",
+                  "state": "Telangana",
+                  "country": "India",
+                  "building": "PR Grand Store",
+                  "locality": "Indira Nagar",
+                  "area_code": "500032"
+                }
+              },
+              "instructions": {
+                "code": "1",
+                "name": "ONDC order",
+                "long_desc": "please contact respective person and confirm before taking the parcel",
+                "short_desc": "9894573456"
+              }
+            },
+            "end": {
+              "time": {
+                "range": {
+                  "end": "2023-11-24T07:03:31.000Z",
+                  "start": "2023-11-24T06:48:31.000Z"
+                }
+              },
+              "person": {
+                "name": "Kausic M"
+              },
+              "contact": {
+                "email": "jaikausic@gmail.com",
+                "phone": "9894573456"
+              },
+              "location": {
+                "gps": "17.4358411,78.3467857",
+                "address": {
+                  "city": "Hyderabad",
+                  "name": "Kausic M",
+                  "state": "Telangana",
+                  "country": "India",
+                  "building": "AS Grang PG",
+                  "locality": "Gandhi Nagar",
+                  "area_code": "500032"
+                }
+              },
+              "instructions": {
+                "code": "3",
+                "long_desc": "please check the information of buyer and deliver the parcel"
+              }
+            },
+            "agent": {
+              "name": "dev Vignesh M",
+              "phone": "9500303975"
+            },
+            "tags": [
+              {
+                "code": "rto_event",
+                "list": [
+                  {
+                    "code": "retry_count",
+                    "value": "2"
+                  },
+                  {
+                    "code": "rto_id",
+                    "value": "1-RTO"
+                  },
+                  {
+                    "code": "cancellation_reason_id",
+                    "value": "013"
+                  },
+                  {
+                    "code": "cancelled_by",
+                    "value": "preprod.ondc.adloggs.com"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "1-RTO",
+            "type": "RTO",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Initiated"
+              }
+            },
+            "start": {
+              "time": {
+                "range": {
+                  "start": "2023-11-24T06:29:52.271Z"
+                },
+                "timestamp": "2023-11-24T06:29:52.271Z"
+              }
+            }
+          }
+        ],
+        "billing": {
+          "name": "Kausic M",
+          "email": "jaikausic@gmail.com",
+          "phone": "9894573456",
+          "address": {
+            "city": "Hyderabad",
+            "name": "Kausic M",
+            "state": "Telangana",
+            "country": "INDIA",
+            "building": "AS Grang PG",
+            "locality": "Gandhi Nagar",
+            "area_code": "500032"
+          },
+          "created_at": "2023-11-24T06:27:43.502Z",
+          "tax_number": "18AABCU9603R1ZM",
+          "updated_at": "2023-11-24T06:27:43.502Z"
+        },
+        "payment": {
+          "type": "ON-ORDER",
+          "collected_by": "BAP"
+        },
+        "@ondc/org/linked_order": {
+          "items": [
+            {
+              "price": {
+                "value": "710.00",
+                "currency": "INR"
+              },
+              "quantity": {
+                "count": 1,
+                "measure": {
+                  "unit": "kilogram",
+                  "value": 0.2
+                }
+              },
+              "descriptor": {
+                "name": "Van Heusen Women's 100% Cotton Full Sleeve Solid Formal Shirt"
+              },
+              "category_id": "Fashion"
+            }
+          ],
+          "order": {
+            "id": "cf8dc657-1d24-4770-84fd-04bf0e28e6f9",
+            "weight": {
+              "unit": "kilogram",
+              "value": 0.2
+            },
+            "dimensions": {
+              "height": {
+                "unit": "centimeter",
+                "value": 10
+              },
+              "length": {
+                "unit": "centimeter",
+                "value": 10
+              },
+              "breadth": {
+                "unit": "centimeter",
+                "value": 10
+              }
+            }
+          },
+          "provider": {
+            "address": {
+              "city": "Hyderabad",
+              "name": "Desi Store",
+              "state": "Telangana",
+              "building": "PR Grand Store",
+              "locality": "Indira Nagar",
+              "area_code": "500032"
+            },
+            "descriptor": {
+              "name": "Desi Store"
+            }
+          }
+        },
+        "updated_at": "2023-11-24T06:29:52.271Z",
+        "created_at": "2023-11-24T06:28:10.911Z"
+      }
+    }
+  }
