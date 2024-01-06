@@ -1,23 +1,23 @@
 {
   "context": {
     "domain": "ONDC:RET12",
-    "action": "confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "us-central1-ondcgo.cloudfunctions.net/api/ondc/onboarding",
     "bap_uri": "https://us-central1-ondcgo.cloudfunctions.net/api",
     "bpp_id": "us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "bpp_uri": "https://us-central1-vidyant-sellerapp.cloudfunctions.net/api",
     "transaction_id": "dda28794-5ba8-409b-a81b-a270b51c6a37",
-    "message_id": "1704560909668",
+    "message_id": "1704561805681",
     "city": "std:0551",
     "country": "IND",
-    "timestamp": "2024-01-06T17:08:29.668Z",
+    "timestamp": "2024-01-06T17:23:26.012Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "2ac7061cb74146e29197a093d7fecc84",
-      "state": "Created",
+      "state": "Accepted",
       "provider": {
         "id": "Ypeps4tHJydTbcoOwBOa",
         "locations": [
@@ -29,58 +29,94 @@
       "items": [
         {
           "id": "daX03blzyFayJEKE6pBS_colour-000000_size-L",
+          "fulfillment_id": "8a1918fd-0d6a-4507-82dc-054af1d65151",
           "quantity": {
             "count": 1
-          },
-          "fulfillment_id": "8a1918fd-0d6a-4507-82dc-054af1d65151"
+          }
         },
         {
           "id": "daX03blzyFayJEKE6pBS_colour-000000_size-XS",
+          "fulfillment_id": "8a1918fd-0d6a-4507-82dc-054af1d65151",
           "quantity": {
             "count": 2
-          },
-          "fulfillment_id": "8a1918fd-0d6a-4507-82dc-054af1d65151"
+          }
         }
       ],
       "billing": {
-        "name": "Atiti Singh",
         "address": {
-          "name": "Tranzita Systems",
-          "building": "Cyber Heights",
-          "locality": "Gomati Nagar",
-          "city": "Lucknow",
-          "state": "UP",
           "country": "IN",
-          "area_code": "273407"
+          "city": "Lucknow",
+          "area_code": "273407",
+          "name": "Tranzita Systems",
+          "locality": "Gomati Nagar",
+          "state": "UP",
+          "building": "Cyber Heights"
         },
+        "updated_at": "2024-01-06T17:05:33.540Z",
         "phone": "9129785903",
-        "created_at": "2024-01-06T17:05:33.540Z",
-        "updated_at": "2024-01-06T17:05:33.540Z"
+        "name": "Atiti Singh",
+        "created_at": "2024-01-06T17:05:33.540Z"
       },
       "fulfillments": [
         {
           "id": "8a1918fd-0d6a-4507-82dc-054af1d65151",
+          "@ondc/org/provider_name": "Tranzita Systems",
           "type": "Delivery",
-          "@ondc/org/TAT": "P5D",
           "tracking": false,
+          "@ondc/org/TAT": "P5D",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "start": {
+            "location": {
+              "descriptor": {
+                "name": "Tranzita Systems"
+              },
+              "gps": "26.855821767945724, 80.99750570239284",
+              "address": {
+                "city": "Lucknow",
+                "area_code": "226010",
+                "locality": "Kamla Nehru Nagar",
+                "state": "UP"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-07T17:08:32.626Z",
+                "end": "2024-01-08T17:08:32.626Z"
+              }
+            },
+            "contact": {
+              "phone": "7676580202",
+              "email": "support@vidyant.com"
+            }
+          },
           "end": {
-            "person": {
-              "name": "Atiti Singh"
+            "location": {
+              "gps": "26.4460988,83.2835447",
+              "address": {
+                "country": "IN",
+                "city": "Lucknow",
+                "area_code": "273407",
+                "name": "Tranzita Systems",
+                "locality": "Gomati Nagar",
+                "state": "UP",
+                "building": "Cyber Heights"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-09T17:08:32.626Z",
+                "end": "2024-01-11T17:08:32.626Z"
+              }
             },
             "contact": {
               "phone": "9129785903"
             },
-            "location": {
-              "gps": "26.4460988,83.2835447",
-              "address": {
-                "name": "Tranzita Systems",
-                "building": "Cyber Heights",
-                "locality": "Gomati Nagar",
-                "city": "Lucknow",
-                "state": "UP",
-                "country": "IN",
-                "area_code": "273407"
-              }
+            "person": {
+              "name": "Atiti Singh"
             }
           }
         }
@@ -141,9 +177,9 @@
       },
       "payment": {
         "params": {
-          "currency": "INR",
           "transaction_id": "8aa6d9f9-e5d1-4e0d-afc2-efb0aca4af77",
-          "amount": "2897"
+          "amount": "2897",
+          "currency": "INR"
         },
         "status": "PAID",
         "type": "ON-ORDER",
@@ -155,40 +191,23 @@
         "@ondc/org/withholding_amount": "10.00",
         "@ondc/org/settlement_details": [
           {
-            "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
             "settlement_counterparty": "seller-app",
             "settlement_phase": "sale-amount",
-            "branch_name": "HSR Layout Bangalore",
-            "bank_name": "HDFC Bank",
-            "settlement_ifsc_code": "HDFC5463",
-            "settlement_bank_account_no": "4562312321235458",
+            "settlement_type": "upi",
+            "beneficiary_name": "Vidyant Technologies Pvt. Ltd",
             "upi_address": "vidyant@ybl",
-            "settlement_type": "upi"
+            "settlement_bank_account_no": "4562312321235458",
+            "settlement_ifsc_code": "HDFC5463",
+            "bank_name": "HDFC Bank",
+            "branch_name": "HSR Layout Bangalore",
+            "settlement_reference": "",
+            "settlement_status": "PAID",
+            "settlement_timestamp": "2024-01-06T17:23:26.615Z"
           }
         ]
       },
-      "tags": [
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "tax_number",
-              "value": "29AAJCV4162C1Z9"
-            }
-          ]
-        },
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "tax_number",
-              "value": "29AAJCV4162C1Z9"
-            }
-          ]
-        }
-      ],
       "created_at": "2024-01-06T17:08:29.668Z",
-      "updated_at": "2024-01-06T17:08:29.668Z"
+      "updated_at": "2024-01-06T17:23:26.012Z"
     }
   }
 }
