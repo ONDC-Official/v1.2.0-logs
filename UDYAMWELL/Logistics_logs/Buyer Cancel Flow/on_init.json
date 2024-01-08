@@ -1,0 +1,208 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "seller.udyamwell.in",
+        "bap_uri": "https://seller.udyamwell.in",
+        "bpp_id": "ref-logistics-app-preprod.ondc.org",
+        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+        "transaction_id": "42f74472-d6be-467c-9a60-28c4c6319f63",
+        "message_id": "e80847d1-4ec8-4584-9cd6-8892b50d9522",
+        "timestamp": "2024-01-06T12:05:44.836Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "4f65d5fb-313a-47c0-9305-486656d2fe16"
+            },
+            "items": [
+                {
+                    "id": "6515dd144db3ec39dd125321",
+                    "fulfillment_id": "41817250-b4aa-43ac-8954-ba479cb1a882",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "41817250-b4aa-43ac-8954-ba479cb1a882",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "17.3727205, 78.4917962",
+                            "address": {
+                                "name": "name",
+                                "locality": "locality",
+                                "city": "city",
+                                "state": "state",
+                                "country": "IND",
+                                "area_code": "500024"
+                            }
+                        },
+                        "instructions": {
+                            "images": []
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "17.425257014740506,78.4557599389984",
+                            "address": {
+                                "name": "test",
+                                "building": "Abc",
+                                "locality": "Kasturba Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "500082"
+                            }
+                        },
+                        "instructions": {
+                            "images": []
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "122.38"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "116.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "6.38"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "@ondc/org/settlement_details": [],
+                "collected_by": "BPP"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

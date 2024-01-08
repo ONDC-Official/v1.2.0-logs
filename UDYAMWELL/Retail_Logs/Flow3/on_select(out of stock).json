@@ -1,0 +1,130 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://seller.udyamwell.in/",
+        "transaction_id": "8cf060ce-0ca1-4ad6-8193-ce05cf8a7f36",
+        "message_id": "d78109f7-6e2a-4e51-a952-76d84e09bd4c",
+        "timestamp": "2024-01-06T17:42:12.560Z",
+        "bpp_id": "seller.udyamwell.in",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "6512f44b8519435497707338",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "c0b15c1a-db5a-4f87-be06-bf7521b3ad80",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "ONDC Logistics Seller App by WITS",
+                    "tracking": true,
+                    "@ondc/org/category": "Same Day Delivery",
+                    "@ondc/org/TAT": "P1D",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "352",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "6515dd144db3ec39dd125321",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "title": "WALNUT",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "200"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": 0
+                                },
+                                "maximum": {
+                                    "count": 0
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "200"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "6515dd144db3ec39dd125321",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": 10
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "quote",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "c0b15c1a-db5a-4f87-be06-bf7521b3ad80",
+                        "price": {
+                            "currency": "INR",
+                            "value": "122.38"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c0b15c1a-db5a-4f87-be06-bf7521b3ad80",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "items": [
+                {
+                    "id": "6515dd144db3ec39dd125321",
+                    "fulfillment_id": "c0b15c1a-db5a-4f87-be06-bf7521b3ad80"
+                }
+            ]
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "Item is out of stock"
+    }
+}
