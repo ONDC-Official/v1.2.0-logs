@@ -1,0 +1,271 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://preprod.tipplr.in/ondc/v2",
+    "transaction_id": "f8d69bed-6e49-4b9c-be3c-7df54f7184d9",
+    "message_id": "2cacd084-d6f4-4e65-8467-99a2981432ff",
+    "timestamp": "2024-01-03T10:48:08.929Z",
+    "bpp_id": "preprod.tipplr.in",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-01-04-804699",
+      "state": "In-progress",
+      "billing": {
+        "address": {
+          "name": "Punithraj N",
+          "building": "Tipplr HQ",
+          "locality": "Cunningham Crescent Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560052"
+        },
+        "phone": "8553957123",
+        "name": "Punithraj N",
+        "email": "tech@tipplr.in",
+        "created_at": "2024-01-04T10:59:48.219Z",
+        "updated_at": "2024-01-04T10:59:48.219Z"
+      },
+      "items": [
+        {
+          "id": "food_item-166989369412329288",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "merchant-16470689776923676",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ],
+          "parent_item_id": "DI0"
+        }
+      ],
+      "provider": {
+        "id": "merchant-16470689776923676",
+        "locations": [
+          {
+            "id": "merchant-16470689776923676:T123"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "merchant-16470689776923676",
+          "end": {
+            "contact": {
+              "email": "tech@tipplr.in",
+              "phone": "8553957123"
+            },
+            "person": {
+              "name": "Punithraj N"
+            },
+            "location": {
+              "gps": "12.98730109793505,77.59535220815452",
+              "address": {
+                "name": "Punithraj N",
+                "building": "Tipplr HQ",
+                "locality": "Cunningham Crescent Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560052"
+              }
+            }
+          },
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "merchant-16470689776923676",
+              "descriptor": {
+                "name": "samrudh veg testing"
+              },
+              "gps": "12.984772,77.594824",
+              "address": {
+                "city": "Bengaluru",
+                "area_code": "560052",
+                "state": "KA"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-04T10:59:58.220Z",
+                "end": "2024-01-04T11:44:58.220Z"
+              }
+            },
+            "contact": {
+              "phone": "8929221233",
+              "email": "support@tipplr.in"
+            }
+          },
+          "@ondc/org/provider_name": "TIPPLR_DELIVERY",
+          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Packed"
+            }
+          },
+          "rateable": true
+        }
+      ],
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "654.3",
+          "currency": "INR",
+          "transaction_id": "d70f511d-80d2-4f81-b1f4-c31cb73150fe"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "1234567890",
+            "settlement_ifsc_code": "SBIN12345",
+            "beneficiary_name": "Foodspace Technology",
+            "bank_name": "SB",
+            "branch_name": "CNN"
+          }
+        ]
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "654.3"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "food_item-166989369412329288",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Veg Dumpling",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "560"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "10"
+                },
+                "maximum": {
+                  "count": "10"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "560"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ],
+              "parent_item_id": "DI0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "merchant-16470689776923676",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "16"
+            }
+          },
+          {
+            "@ondc/org/item_id": "merchant-16470689776923676",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "39"
+            }
+          },
+          {
+            "@ondc/org/item_id": "merchant-16470689776923676",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          },
+          {
+            "@ondc/org/item_id": "merchant-16470689776923676",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "29.3"
+            },
+            "item": {
+              "tags": [
+                {
+                  "code": "quote",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "fulfillment"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "07AAACN2082N4Z7"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-01-04T10:59:57.951Z",
+      "updated_at": "2024-01-04T10:59:57.951Z"
+    }
+  }
+}
