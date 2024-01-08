@@ -1,13 +1,13 @@
 {
   "context": {
     "action": "on_cancel",
-    "transaction_id": "f2af9e09-0dca-41f6-97a8-5a6885bdeee2",
-    "message_id": "ca5b1ddb-8f8d-4ef8-abcf-df552a8cf755",
+    "transaction_id": "f19f073b-991b-4e32-bda4-bbe83dd0ccb1",
+    "message_id": "d23a4836-50a4-48c8-b344-50df643242a5",
     "city": "std:080",
     "domain": "ONDC:RET11",
     "country": "IND",
     "core_version": "1.2.0",
-    "timestamp": "2023-12-26T06:14:27.889Z",
+    "timestamp": "2024-01-07T07:21:02.146Z",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
@@ -16,7 +16,7 @@
   },
   "message": {
     "order": {
-      "id": "2023-12-26-119728",
+      "id": "2024-01-07-854250",
       "tags": [
         {
           "code": "bpp_terms",
@@ -26,18 +26,74 @@
               "value": "29AAHCN0433E1ZP"
             }
           ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
         }
       ],
       "items": [
         {
-          "id": "36342",
+          "id": "36345",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ],
           "quantity": {
             "count": 0
           },
-          "fulfillment_id": "Fulfillment1"
+          "fulfillment_id": "Fulfillment1",
+          "parent_item_id": "DI0"
         },
         {
-          "id": "36342",
+          "id": "36345_758_481",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "customization"
+                }
+              ]
+            },
+            {
+              "code": "parent",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "36345_758"
+                }
+              ]
+            }
+          ],
+          "quantity": {
+            "count": 0
+          },
+          "fulfillment_id": "Fulfillment1",
+          "parent_item_id": "DI0"
+        },
+        {
+          "id": "36345",
+          "fulfillment_id": "Cancellation1",
+          "quantity": {
+            "count": 1
+          }
+        },
+        {
+          "id": "36345_758_481",
           "fulfillment_id": "Cancellation1",
           "quantity": {
             "count": 1
@@ -47,14 +103,25 @@
       "quote": {
         "ttl": "P1D",
         "price": {
-          "value": "0.00",
+          "value": "0.0",
           "currency": "INR"
         },
         "breakup": [
           {
             "item": {
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ],
               "price": {
-                "value": "160.00",
+                "value": "150.00",
                 "currency": "INR"
               },
               "quantity": {
@@ -64,31 +131,134 @@
                 "available": {
                   "count": "99"
                 }
-              }
+              },
+              "parent_item_id": "DI0"
             },
             "price": {
-              "value": "160.00",
+              "value": "0.0",
               "currency": "INR"
             },
-            "title": "Honey",
-            "@ondc/org/item_id": "36342",
+            "title": "Kissan Jam - Mixed",
+            "@ondc/org/item_id": "36345",
             "@ondc/org/title_type": "item",
             "@ondc/org/item_quantity": {
               "count": 0
             }
           },
           {
+            "item": {
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "customization"
+                    }
+                  ]
+                },
+                {
+                  "code": "parent",
+                  "list": [
+                    {
+                      "code": "id",
+                      "value": "36345_758"
+                    }
+                  ]
+                }
+              ],
+              "price": {
+                "value": "222.00",
+                "currency": "INR"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": "99"
+                },
+                "available": {
+                  "count": "99"
+                }
+              },
+              "parent_item_id": "DI0"
+            },
             "price": {
-              "value": "5.66",
+              "value": "0.0",
               "currency": "INR"
             },
-            "title": "Convenience Charges",
+            "title": "milk",
+            "@ondc/org/item_id": "36345_758_481",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 0
+            }
+          },
+          {
+            "item": {
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ],
+              "parent_item_id": "DI0"
+            },
+            "price": {
+              "value": "0.0",
+              "currency": "INR"
+            },
+            "title": "Tax",
+            "@ondc/org/item_id": "36345",
+            "@ondc/org/title_type": "tax"
+          },
+          {
+            "item": {
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "customization"
+                    }
+                  ]
+                },
+                {
+                  "code": "parent",
+                  "list": [
+                    {
+                      "code": "id",
+                      "value": "36345_758"
+                    }
+                  ]
+                }
+              ],
+              "parent_item_id": "DI0"
+            },
+            "price": {
+              "value": "0.0",
+              "currency": "INR"
+            },
+            "title": "Tax",
+            "@ondc/org/item_id": "36345_758_481",
+            "@ondc/org/title_type": "tax"
+          },
+          {
+            "price": {
+              "value": "0.0",
+              "currency": "INR"
+            },
+            "title": "Convenience Fee",
             "@ondc/org/item_id": "Fulfillment1",
             "@ondc/org/title_type": "misc"
           },
           {
             "price": {
-              "value": "0",
+              "value": "0.0",
               "currency": "INR"
             },
             "title": "Delivery Charges",
@@ -99,28 +269,28 @@
       },
       "state": "Cancelled",
       "billing": {
-        "name": "beng",
+        "name": "Namratha",
         "email": "df@dd.com",
         "phone": "7894561239",
         "address": {
           "city": "Bengaluru",
-          "name": "beng",
+          "name": "Namratha",
           "state": "Karnataka",
           "country": "IND",
-          "building": "sdfnkds",
+          "building": "Hero build",
           "locality": "Raj Bhavan Road",
           "area_code": "560001"
         },
-        "created_at": "2023-12-26T06:14:07.594Z",
-        "updated_at": "2023-12-26T06:14:07.594Z"
+        "created_at": "2024-01-07T07:20:49.328Z",
+        "updated_at": "2024-01-07T07:20:49.328Z"
       },
       "payment": {
         "uri": "https://juspay.in/",
         "type": "ON-ORDER",
         "params": {
-          "amount": "165.66",
+          "amount": "403.77",
           "currency": "INR",
-          "transaction_id": "b39396f8-a1e8-443b-b42b-a2825c35a203"
+          "transaction_id": "919f1c7a-6b79-47b7-989e-464d66720283"
         },
         "status": "PAID",
         "tl_method": "http/get",
@@ -149,21 +319,21 @@
           }
         ]
       },
-    
-      "created_at": "2023-12-26T06:14:09.751Z",
-      "updated_at": "2023-12-26T06:14:27.872Z",
+
+      "created_at": "2024-01-07T07:20:51.234Z",
+      "updated_at": "2024-01-07T07:21:02.135Z",
       "fulfillments": [
         {
           "id": "Fulfillment1",
           "end": {
             "time": {
               "range": {
-                "end": "2023-12-26T08:50:37.383Z",
-                "start": "2023-12-26T08:35:37.383Z"
+                "end": "2024-01-07T10:57:19.469Z",
+                "start": "2024-01-07T10:42:19.469Z"
               }
             },
             "person": {
-              "name": "beng"
+              "name": "Namratha"
             },
             "contact": {
               "phone": "7894561239"
@@ -172,10 +342,10 @@
               "gps": "12.98134952492177,77.59504080525033",
               "address": {
                 "city": "Bengaluru",
-                "name": "beng",
+                "name": "Namratha",
                 "state": "Karnataka",
                 "country": "IND",
-                "building": "sdfnkds",
+                "building": "Hero build",
                 "locality": "Raj Bhavan Road",
                 "area_code": "560001"
               }
@@ -185,8 +355,8 @@
           "start": {
             "time": {
               "range": {
-                "end": "2023-12-26T08:29:11.383Z",
-                "start": "2023-12-26T08:14:11.383Z"
+                "end": "2024-01-07T10:35:53.469Z",
+                "start": "2024-01-07T10:20:53.469Z"
               }
             },
             "contact": {
@@ -220,9 +390,9 @@
             }
           },
           "rateable": true,
-          "tracking": false,
-     
-          "@ondc/org/TAT": "PT2H",
+          "tracking": true,
+          "provider_id": "65470f50-87eb-43af-9e8a-8812a765acba",
+          "@ondc/org/TAT": "PT3H",
           "@ondc/org/provider_name": "Sai Cafe",
           "tags": [
             {
@@ -248,17 +418,22 @@
               "code": "Cancelled"
             }
           },
-          "tags": {
-            "code": "quote_trail",
-            "list": [
-              [
+          "tags": [
+
+            {
+              "code": "quote_trail",
+              "list": [
                 {
                   "code": "type",
                   "value": "item"
                 },
                 {
+                  "code": "subtype",
+                  "value": "item"
+                },
+                {
                   "code": "id",
-                  "value": "36342"
+                  "value": "36345"
                 },
                 {
                   "code": "currency",
@@ -266,11 +441,132 @@
                 },
                 {
                   "code": "value",
-                  "value": "-160.00"
+                  "value": "-150.00"
                 }
               ]
-            ]
-          }
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "subtype",
+                  "value": "customization"
+                },
+                {
+                  "code": "id",
+                  "value": "36345_758_481"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-222.00"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "tax"
+                },
+                {
+                  "code": "subtype",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "36345"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-7.5"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "tax"
+                },
+                {
+                  "code": "subtype",
+                  "value": "customization"
+                },
+                {
+                  "code": "id",
+                  "value": "36345_758_481"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-11.1"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "misc"
+                },
+                {
+                  "code": "subtype",
+                  "value": "misc"
+                },
+                {
+                  "code": "id",
+                  "value": "Fulfillment1"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-13.17"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "delivery"
+                },
+                {
+                  "code": "subtype",
+                  "value": "delivery"
+                },
+                {
+                  "code": "id",
+                  "value": "Fulfillment1"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-0"
+                }
+              ]
+            }
+          ]
         }
       ],
       "cancellation": {
