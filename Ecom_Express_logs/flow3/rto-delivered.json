@@ -3,24 +3,31 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "ondc-qa.gofrugalretail.com",
     "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
     "bpp_id": "stage-ondc.ecomexpress.in",
     "bpp_uri": "https://stage-ondc.ecomexpress.in",
     "transaction_id": "9a617183-9460-4f78-a22d-cdc27eb6d912",
-    "message_id": "2ff67299-e852-483e-9380-95edf1d45dbc",
-    "timestamp": "2024-01-08T13:38:47.481Z",
+    "message_id": "72221ffb-0722-424b-91e3-49ce9d0e9237",
+    "timestamp": "2024-01-09T06:27:27.996Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "CB5BC0BD300B4F980A1A20768435A513",
-      "state": "Created",
+      "state": "Cancelled",
       "payment": {
         "type": "POST-FULFILLMENT",
-        "collected_by": "BAP"
+        "collected_by": "BAP",
+        "status": "PAID"
+      },
+      "cancellation": {
+        "reason": {
+          "id": "013"
+        },
+        "cancelled_by": "stage-ondc.ecomexpress.in"
       },
       "provider": {
         "id": "I1"
@@ -28,7 +35,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "30"
+          "value": "60"
         },
         "breakup": [
           {
@@ -38,6 +45,14 @@
             },
             "@ondc/org/item_id": "1",
             "@ondc/org/title_type": "delivery"
+          },
+          {
+            "price": {
+              "currency": "INR",
+              "value": "30"
+            },
+            "@ondc/org/item_id": "2",
+            "@ondc/org/title_type": "rto"
           }
         ]
       },
@@ -49,35 +64,32 @@
           "descriptor": {
             "code": "P2H2P"
           }
+        },
+        {
+          "id": "2",
+          "fulfillment_id": "2",
+          "category_id": "Express Delivery",
+          "descriptor": {
+            "name": "Express Plus Delivery",
+            "code": "P2H2P",
+            "short_desc": "Fast Delivery For Items",
+            "long_desc": "Fast Delivery for Items"
+          }
         }
       ],
       "fulfillments": [
         {
           "id": "1",
           "type": "Delivery",
-          "tags": [
-            {
-              "code": "state",
-              "list": [
-                {
-                  "code": "ready_to_ship",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "code": "rto_action",
-              "list": [
-                {
-                  "code": "return_to_origin",
-                  "value": "yes"
-                }
-              ]
-            }
-          ],
           "end": {
             "person": {
               "name": "Abinaya"
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-13T00:00:00.000Z",
+                "end": "2024-01-13T23:59:00.000Z"
+              }
             },
             "contact": {
               "phone": "09898767675",
@@ -104,13 +116,22 @@
             "person": {
               "name": "Abinaya"
             },
+            "time": {
+              "timestamp": "2024-01-09T06:25:07.000Z",
+              "range": {
+                "start": "2024-01-09T00:00:00.000Z",
+                "end": "2024-01-09T23:59:00.000Z"
+              }
+            },
             "contact": {
               "phone": "09898767675",
               "email": "abii@gmail.com"
             },
             "instructions": {
               "short_desc": "7505",
-              "long_desc": "QR code will be attached to package",
+              "images": [
+                "https://stage-ondc.ecomexpress.in/shippingLabel/112844922812"
+              ],
               "code": "3"
             },
             "location": {
@@ -128,11 +149,31 @@
           },
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Cancelled"
             }
           },
           "tracking": false,
           "@ondc/org/awb_no": "112844922812"
+        },
+        {
+          "id": "2",
+          "type": "RTO",
+          "end": {
+            "time": {
+              "timestamp": "2024-01-09T06:27:27.000Z"
+            }
+          },
+          "start": {
+            "time": {
+              "timestamp": "2024-01-09T06:25:07.691Z"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "RTO-Delivered"
+            }
+          },
+          "tracking": false
         }
       ],
       "billing": {
@@ -208,7 +249,7 @@
           }
         }
       },
-      "updated_at": "2024-01-08T13:38:47.481Z",
+      "updated_at": "2024-01-09T06:27:27.996Z",
       "created_at": "2024-01-08T13:38:47.319Z"
     }
   }
