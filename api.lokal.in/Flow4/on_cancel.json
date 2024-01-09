@@ -1,23 +1,26 @@
 {
     "context": {
-        "ttl": "PT30S",
-        "city": "std:080",
-        "action": "on_status",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "bpp_id": "api.lokal.in",
         "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_cancel",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_uri": "https://api.lokal.in/ondc/",
-        "country": "IND",
-        "timestamp": "2024-01-09T07:15:57.298Z",
-        "message_id": "faf3ba7c-be6a-4137-9080-f835ef654557",
-        "core_version": "1.2.0",
-        "transaction_id": "b56435c0-008b-463d-89c5-0f445eae093d"
+        "transaction_id": "da1c6d02-81e7-4dd6-ab16-5d3fc991f52d",
+        "message_id": "eaa2ef4d-2dd8-4ee7-af26-e50802f9c70d",
+        "timestamp": "2024-01-09T07:37:10.466Z",
+        "bpp_id": "api.lokal.in",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-01-09-851464",
-            "state": "Completed",
+            "id": "2024-01-09-752915",
+            "state": "Cancelled",
+            "tags": {
+                "cancellation_reason_id": "012"
+            },
             "provider": {
                 "id": "OM Collection",
                 "locations": [
@@ -28,18 +31,18 @@
             },
             "items": [
                 {
-                    "fulfillment_id": "1",
-                    "id": "490930",
-                    "quantity": {
-                        "count": 2
-                    }
-                },
-                {
-                    "fulfillment_id": "1",
                     "id": "490927",
                     "quantity": {
                         "count": 2
-                    }
+                    },
+                    "fulfillment_id": "1"
+                },
+                {
+                    "id": "490926",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "1"
                 }
             ],
             "billing": {
@@ -55,51 +58,50 @@
                     "locality": "Barkat Ali Dargah Lane",
                     "area_code": "400037"
                 },
-                "created_at": "2024-01-09T06:56:58.831Z",
-                "updated_at": "2024-01-09T06:56:58.831Z"
+                "created_at": "2024-01-09T07:32:08.023Z",
+                "updated_at": "2024-01-09T07:32:08.023Z"
+            },
+            "cancellation": {
+                "cancelled_by": "buyerNP.com",
+                "reason": {
+                    "id": "012"
+                }
             },
             "fulfillments": [
                 {
                     "id": "1",
                     "@ondc/org/provider_name": "OM Collection",
-                    "type": "Delivery",
-                    "@ondc/org/TAT": "PT60M",
-                    "tracking": false,
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Cancelled"
                         }
                     },
+                    "type": "Delivery",
+                    "tracking": true,
+                    "@ondc/org/TAT": "PT60M",
                     "start": {
                         "location": {
-                            "id": "OM Collection_lokal",
+                            "id": "L1",
                             "descriptor": {
                                 "name": "OM Collection"
                             },
+                            "gps": "30.7434030000001,76.784951",
                             "address": {
                                 "locality": "Maharashtra",
                                 "city": "Mumbai",
                                 "area_code": "160017",
                                 "state": "MH"
-                            },
-                            "gps": "30.7434030000001,76.784951"
-                        },
-                        "time": {
-                            "timestamp": "2024-01-09T06:58:32.812Z",
-                            "range": {
-                                "start": "2024-01-09T07:15:56.610Z",
-                                "end": "2024-01-09T07:45:56.610Z"
                             }
                         },
-                        "instructions": {
-                            "code": "2",
-                            "name": "ONDC order",
-                            "short_desc": "value of PCC",
-                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        "time": {
+                            "range": {
+                                "start": "2024-01-09T10:10:15.071Z",
+                                "end": "2024-01-09T10:40:15.071Z"
+                            }
                         },
                         "contact": {
-                            "email": "sherinsha.aj@xilligence.com",
-                            "phone": "9633432807"
+                            "phone": "9886098860",
+                            "email": "support@myyshop.com"
                         }
                     },
                     "end": {
@@ -121,65 +123,68 @@
                                 "locality": "Barkat Ali Dargah Lane",
                                 "area_code": "400037"
                             }
-                        },
-                        "time": {
-                            "timestamp": "2024-01-09T07:55:56.610Z",
-                            "range": {
-                                "start": "2024-01-09T07:15:56.610Z",
-                                "end": "2024-01-09T07:45:56.610Z"
-                            }
                         }
-                    },
-                    "agent": {
-                        "name": "Ramu",
-                        "phone": "9886098860"
-                    },
-                    "vehicle": {
-                        "category": "mini-truck",
-                        "size": "small",
-                        "registration": "2020"
                     },
                     "tags": [
                         {
-                            "code": "state",
+                            "code": "cancel_request",
                             "list": [
                                 {
-                                    "code": "ready_to_ship",
-                                    "value": "yes"
+                                    "code": "reason_id",
+                                    "value": "012"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "buyerNP.com"
                                 }
                             ]
                         },
                         {
-                            "code": "tracking",
+                            "code": "precancel_state",
                             "list": [
                                 {
-                                    "code": "gps_enabled",
-                                    "value": "yes"
-                                },
-                                {
-                                    "code": "url_enabled",
-                                    "value": "no"
-                                },
-                                {
-                                    "code": "url",
-                                    "value": "https://sellerNP.com/ondc/tracking_url"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "fulfillment_delay",
-                            "list": [
-                                {
-                                    "code": "state",
+                                    "code": "fulfillment_state",
                                     "value": "Order-picked-up"
                                 },
                                 {
-                                    "code": "reason_id",
-                                    "value": "002"
+                                    "code": "updated_at",
+                                    "value": "2024-01-09T10:40:15.071Z"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "2024-01-09-752915",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
                                 },
                                 {
-                                    "code": "timestamp",
-                                    "value": "2023-06-06T22:00:00.000Z"
+                                    "code": "subtype",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-0"
                                 }
                             ]
                         }
@@ -189,10 +194,56 @@
             "quote": {
                 "ttl": "P1D",
                 "price": {
-                    "value": "665.82",
+                    "value": "758.65",
                     "currency": "INR"
                 },
                 "breakup": [
+                    {
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "price": {
+                                "value": "50.00",
+                                "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "18"
+                                },
+                                "available": {
+                                    "count": "18"
+                                }
+                            }
+                        },
+                        "price": {
+                            "value": "100.00",
+                            "currency": "INR"
+                        },
+                        "title": "Diet PopCorn",
+                        "@ondc/org/item_id": "490926",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        }
+                    },
+                    {
+                        "price": {
+                            "value": "10.00",
+                            "currency": "INR"
+                        },
+                        "title": "Tax",
+                        "@ondc/org/item_id": "490926",
+                        "@ondc/org/title_type": "tax"
+                    },
                     {
                         "item": {
                             "tags": [
@@ -212,10 +263,10 @@
                             },
                             "quantity": {
                                 "maximum": {
-                                    "count": "56"
+                                    "count": "54"
                                 },
                                 "available": {
-                                    "count": "56"
+                                    "count": "54"
                                 }
                             }
                         },
@@ -240,43 +291,6 @@
                         "@ondc/org/title_type": "tax"
                     },
                     {
-                        "item": {
-                            "tags": [
-                                {
-                                    "code": "type",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                }
-                            ],
-                            "price": {
-                                "value": "10.00",
-                                "currency": "INR"
-                            },
-                            "quantity": {
-                                "maximum": {
-                                    "count": "78"
-                                },
-                                "available": {
-                                    "count": "78"
-                                }
-                            }
-                        },
-                        "price": {
-                            "value": "20.00",
-                            "currency": "INR"
-                        },
-                        "title": "Potato Chips ",
-                        "@ondc/org/item_id": "490930",
-                        "@ondc/org/title_type": "item",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        }
-                    },
-                    {
                         "price": {
                             "value": "100.00",
                             "currency": "INR"
@@ -287,7 +301,7 @@
                     },
                     {
                         "price": {
-                            "value": "22.55",
+                            "value": "25.38",
                             "currency": "INR"
                         },
                         "title": "Convenience Fee",
@@ -300,9 +314,9 @@
                 "uri": "https://juspay.in/",
                 "type": "ON-FULFILLMENT",
                 "params": {
-                    "amount": "665.82",
+                    "amount": "758.65",
                     "currency": "INR",
-                    "transaction_id": "a2dccaf5-418e-4395-86a6-e0a1f97a0fe5"
+                    "transaction_id": "a7d66958-b0f2-4a5e-80ba-38ca9e40780f"
                 },
                 "status": "NOT-PAID",
                 "tl_method": "http/get",
@@ -316,7 +330,7 @@
                         "beneficiary_name": "Xilligence PRIVATE LIMITED",
                         "settlement_phase": "sale-amount",
                         "settlement_ifsc_code": "SBIN0070074",
-                        "settlement_timestamp": "2024-01-09T06:56:59.007Z",
+                        "settlement_timestamp": "2024-01-09T07:32:08.119Z",
                         "settlement_counterparty": "seller-app",
                         "settlement_bank_account_no": "123456789087"
                     }
@@ -324,14 +338,8 @@
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0"
             },
-            "documents": [
-                {
-                    "url": "https://invoice_url",
-                    "label": "Invoice"
-                }
-            ],
-            "created_at": "2024-01-09T06:58:32.812Z",
-            "updated_at": "2024-01-09T06:58:32.812Z"
+            "created_at": "2024-01-09T07:33:35.477Z",
+            "updated_at": "2024-01-09T07:33:35.477Z"
         }
     }
 }
