@@ -8,16 +8,16 @@
         "bap_id": "sit.mytra.money",
         "bap_uri": "https://sit.mytra.money/api/method/buyer_ondc/",
         "ttl": "PT30S",
-        "transaction_id": "ee1edba8-8ee4-4940-8bee-3cde99506a39",
-        "message_id": "1430bd73-a04b-46b1-b8ea-8e6b7bb2d8ee",
-        "timestamp": "2024-01-09T06:49:44.056Z",
+        "transaction_id": "86bcf49d-9239-48de-bdd0-ee77818a119d",
+        "message_id": "763b59bd-0bb9-4dc5-be9c-865a769e3b02",
+        "timestamp": "2024-01-09T12:48:30.833Z",
         "bpp_id": "ondc.hulsecure.in",
         "bpp_uri": "https://ondc.hulsecure.in/preprod/v1"
     },
     "message": {
         "order": {
-            "id": "ONDC-BUYER-ORDER-00094",
-            "state": "In-progress",
+            "id": "ONDC-BUYER-ORDER-00100",
+            "state": "Cancelled",
             "provider": {
                 "id": "afe44f35-fb0c-527b-8a80-a1b0b839197e",
                 "locations": [
@@ -28,18 +28,18 @@
             },
             "items": [
                 {
-                    "id": "47562844602668",
-                    "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e",
+                    "id": "47562844569900",
                     "quantity": {
-                        "count": 2
-                    }
+                        "count": 0
+                    },
+                    "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e"
                 },
                 {
                     "id": "47562844569900",
-                    "fulfillment_id": "0a4a6c37-7622-46b9-a501-2b48527f4a3e",
                     "quantity": {
                         "count": 2
-                    }
+                    },
+                    "fulfillment_id": "RTO-ONDC-BUYER-ORDER-00100"
                 }
             ],
             "billing": {
@@ -55,8 +55,14 @@
                 "phone": "9703525310",
                 "name": "Harsh Agrawal",
                 "email": "harsh.agrawal1991@gmail.com",
-                "created_at": "2024-01-09T06:48:17.887Z",
-                "updated_at": "2024-01-09T06:48:17.887Z"
+                "created_at": "2024-01-09T12:43:26.484Z",
+                "updated_at": "2024-01-09T12:43:26.484Z"
+            },
+            "cancellation": {
+                "cancelled_by": "Logistics",
+                "reason": {
+                    "id": "011"
+                }
             },
             "fulfillments": [
                 {
@@ -82,8 +88,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-01-09T06:48:36.328Z",
-                                "end": "2024-01-15T06:48:37.874Z"
+                                "start": "2024-01-09T12:43:48.188Z",
+                                "end": "2024-01-10T12:46:34.616Z"
                             }
                         }
                     },
@@ -93,7 +99,7 @@
                     "@ondc/org/provider_name": "The UShop",
                     "state": {
                         "descriptor": {
-                            "code": "Packed"
+                            "code": "Cancelled"
                         }
                     },
                     "start": {
@@ -112,8 +118,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-01-09T06:48:36.328Z",
-                                "end": "2024-01-10T06:48:37.874Z"
+                                "start": "2024-01-09T12:43:48.188Z",
+                                "end": "2024-01-10T12:43:49.936Z"
                             }
                         },
                         "contact": {
@@ -121,25 +127,106 @@
                             "email": "customercare@theushop.in"
                         }
                     },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "retry_count",
+                                    "value": "3"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "RTO-ONDC-BUYER-ORDER-00100"
+                                },
+                                {
+                                    "code": "reason_id",
+                                    "value": "011"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "Logistics"
+                                }
+                            ]
+                        }
+                    ],
                     "@ondc/org/TAT": "P7D"
+                },
+                {
+                    "id": "RTO-ONDC-BUYER-ORDER-00100",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Disposed"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-01-09T12:48:30.833Z"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "RTO-ONDC-BUYER-ORDER-00100"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "30"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "47562844569900"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-394"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "844"
+                    "value": "30"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "47562844569900",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 0
                         },
                         "title": "AXE Ultra Smooth After Shave Balm, 100 g",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "394"
+                            "value": "0.00"
                         },
                         "item": {
                             "price": {
@@ -149,21 +236,21 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "47562844602668",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        },
-                        "title": "AXE Ultra Smooth After Shave Balm, 100 g",
-                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_id": "47562844569900",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "450"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "225"
-                            }
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "RTO-ONDC-BUYER-ORDER-00100",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
                         }
                     },
                     {
@@ -172,7 +259,7 @@
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
+                            "value": "30"
                         }
                     }
                 ],
@@ -181,8 +268,8 @@
             "payment": {
                 "params": {
                     "currency": "INR",
-                    "transaction_id": "0c3d1480a0",
-                    "amount": "844"
+                    "transaction_id": "7ac340e155",
+                    "amount": "394"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER",
@@ -206,8 +293,8 @@
                     }
                 ]
             },
-            "created_at": "2024-01-09T06:48:35.524Z",
-            "updated_at": "2024-01-09T06:49:44.056Z"
+            "created_at": "2024-01-09T12:43:47.400Z",
+            "updated_at": "2024-01-09T12:48:30.833Z"
         }
     }
 }
