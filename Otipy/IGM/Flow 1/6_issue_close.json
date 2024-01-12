@@ -1,105 +1,116 @@
 {
-    "context":
-    {
-        "domain": "ONDC:RET10",
-        "country": "IND",
-        "city": "std:011",
-        "action": "issue",
-        "core_version": "1.0.0",
-        "bap_id":"shopping-api-testing.phonepe.com",
-		"bap_uri":"https://shopping-api-testing.phonepe.com/apis/ondcConnector/bpp/callback/v1",
-        "bpp_id": "preprod.crofarm.com",
-        "bpp_uri": "https://preprod.crofarm.com/ondc",
-        "transaction_id": "a2e16dda-7b32-4f62-9ff5-02c3f4d990cf",
-        "message_id": "054e199b-b19d-4275-a0b5-444e8ffc655d",
-        "timestamp": "2024-01-05T07:55:02.404Z",
-        "ttl": "PT30S"
-    },
-    "message":
-    {
-        "issue":
-        {
-            "id": "12345654321",
-            "category": "ITEM",
-            "sub_category": "ITM02",
-            "complainant_info":
-            {
-                "person":
-                {
-                    "name": "Anupam Khare"
-                },
-                "contact":
-                {
-                    "phone": "7271932723"
-                }
-            },
-            "order_details":
-            {
-                "id": "2024-01-04-600044",
-                "items":
-                [
+	"context":{
+		"domain":"ONDC:RET10",
+		"country":"IND",
+		"city":"std:080",
+		"action":"issue",
+		"core_version":"1.0.0",
+		"bap_id":"buyer-app-preprod-v2.ondc.org",
+		"bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+		"bpp_uri":"https://preprod.crofarm.com/ondc/",
+		"transaction_id":"59d839d6-1652-4ce5-96ed-8bbf6af63585",
+		"message_id":"a5c5c29b-9001-4aba-a3fd-2341a74068b1",
+		"timestamp":"2024-01-11T11:20:01.123Z",
+		"bpp_id":"preprod.crofarm.com",
+		"ttl":"PT30S"
+	},
+	"message":{
+		"issue":{
+			"id":"bf30af1b-9688-4670-ac61-1aea388d045a",
+			"category":"ITEM",
+			"sub_category":"ITM03",
+			"complainant_info":{
+				"person":{
+					"name":"Heigenburg"
+				},
+				"contact":{
+					"phone":"8949300291",
+					"email":"shivpal.chaudhary@crofarm.com"
+				}
+			},
+			"order_details":{
+				"id":"2024-01-11-673925",
+				"state":"Completed",
+				"items":[
+					{
+						"id":"9371",
+						"quantity":2
+					}
+				],
+				"fulfillments":[
+					{
+						"id":"F1",
+						"state":"Order-delivered"
+					}
+				],
+				"provider_id":"4410"
+			},
+			"description":{
+				"short_desc":"item mismatch",
+				"long_desc":"item mismatch",
+				"additional_desc":{
+					"url":"https://buyerapp.com/additonal-details/desc.txt",
+					"content_type":"text/plain"
+				},
+				"images":[
+					"http://localhost:8989/issueApis/uploads/1704971566628.png"
+				]
+			},
+			"source":{
+				"network_participant_id":"buyer-app-preprod-v2.ondc.org",
+				"type":"CONSUMER"
+			},
+			"expected_response_time":{
+				"duration":""
+			},
+			"expected_resolution_time":{
+				"duration":""
+			},
+			"status":"CLOSED",
+			"issue_type":"ISSUE",
+			"issue_actions":{
+				"complainant_actions":[
                     {
-                        "id": "9371",
-                        "quantity": 1
-                    }
-                ],
-                "fulfillments":
-                [],
-                "provider_id": "4410"
-            },
-            "description":
-            {
-                "short_desc": "ITEM::Missingitems",
-                "long_desc": "Orderedproductismissing",
-                "images":
-                [
-                    "https://nstoreassets.s3.amazonaws.com/23356/101/101_b8j29h05lbl5kgqo.jpg"
-                ]
-            },
-            "source":
-            {
-                "network_participant_id": "shopping-api-testing.phonepe.com",
-                "issue_source_type": "CONSUMER"
-            },
-            "expected_response_time":
-            {
-                "duration": "PT2H"
-            },
-            "expected_resolution_time":
-            {
-                "duration": "P1D"
-            },
-            "status": "CLOSED",
-            "issue_type": "ISSUE",
-            "issue_actions":
-            {
-                "complainant_actions":
-                [
-                    {
-                        "complainant_action": "OPEN",
-                        "short_desc": "Complaint created",
-                        "updated_at": "2024-01-05T07:51:40.404Z",
-                        "updated_by":
-                        {
-                            "org":
-                            {
-                                "name": "preprod.crofarm.com::ONDC:RET10"
-                            },
-                            "contact":
-                            {
-                                "phone": "09958103154",
-                                "email": "support@crofarm.com"
-                            },
-                            "person":
-                            {
-                                "name": "OtipyCustomerCare"
-                            }
-                        }
-                    }
-                ]
-            },
-            "created_at": "2024-01-05T07:51:40.404Z",
-            "updated_at": "2024-01-05T07:55:02.404Z"
-        }
-    }
+						"complainant_action":"CLOSE",
+						"short_desc":"Complaint closed",
+						"updated_at":"2024-01-11T11:20:01.123Z",
+						"updated_by":{
+							"org":{
+								"name":"buyer-app-preprod-v2.ondc.org::nic2004:52110"
+							},
+							"contact":{
+								"phone":"6239083807",
+								"email":"Rishabhnand.singh@ondc.org"
+							},
+							"person":{
+								"name":"Rishabhnand Singh"
+							}
+						}
+					},
+					{
+						"complainant_action":"OPEN",
+						"short_desc":"Complaint created",
+						"updated_at":"2024-01-11T11:12:46.628Z",
+						"updated_by":{
+							"org":{
+								"name":"buyer-app-preprod-v2.ondc.org::nic2004:52110"
+							},
+							"contact":{
+								"phone":"6239083807",
+								"email":"Rishabhnand.singh@ondc.org"
+							},
+							"person":{
+								"name":"Rishabhnand Singh"
+							}
+						}
+					}
+				],
+				"respondent_actions":[
+
+				]
+			},
+			"created_at":"2024-01-11T11:12:46.628Z",
+			"updated_at":"2024-01-11T11:20:01.123Z"
+		}
+	}
 }
