@@ -9,15 +9,15 @@
       "bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
       "bpp_id":"preprod.crofarm.com",
       "bpp_uri":"https://preprod.crofarm.com/ondc/",
-      "transaction_id":"607d2447-c71d-4f48-bcbe-06994a92e467",
-      "message_id":"c5c020f5-9c30-458b-97e9-db10c6f3c684",
-      "timestamp":"2024-01-12T12:12:52.384Z",
+      "transaction_id":"2363f152-0b71-4153-b902-6f5b7571d748",
+      "message_id":"eef9de75-f9b2-454d-b678-6cc8bf23390b",
+      "timestamp":"2024-01-12T12:47:27.673Z",
       "ttl":"PT30S"
    },
    "message":{
       "order":{
-         "id":"2024-01-12-371044",
-         "state":"In-progress",
+         "id":"2024-01-12-584254",
+         "state":"Cancelled",
          "provider":{
             "id":"4410",
             "locations":[
@@ -28,24 +28,24 @@
          },
          "items":[
             {
-               "fulfillment_id":"F1",
                "id":"9343",
+               "fulfillment_id":"F1",
                "quantity":{
-                  "count":3
+                  "count":0
                }
             },
             {
-               "fulfillment_id":"F1",
-               "id":"9341",
+               "id":"9343",
+               "fulfillment_id":"F1-RTO",
                "quantity":{
-                  "count":2
+                  "count":5
                }
             }
          ],
          "billing":{
             "name":"Heigenburg",
-            "created_at":"2024-01-12T12:07:31.632Z",
-            "updated_at":"2024-01-12T12:07:31.632Z",
+            "created_at":"2024-01-12T12:40:34.052Z",
+            "updated_at":"2024-01-12T12:40:34.052Z",
             "phone":"8949300291",
             "address":{
                "building":"Indus Biznotel",
@@ -62,14 +62,14 @@
             {
                "id":"F1",
                "@ondc/org/provider_name":"otipy store 4410",
+               "type":"Delivery",
+               "tracking":false,
+               "@ondc/org/TAT":"P1D",
                "state":{
                   "descriptor":{
-                     "code":"Out-for-delivery"
+                     "code":"Cancelled"
                   }
                },
-               "type":"Delivery",
-               "@ondc/org/TAT":"P1D",
-               "tracking":false,
                "start":{
                   "location":{
                      "id":"L1",
@@ -93,7 +93,7 @@
                         "start":"2024-01-12T16:30:00.000Z",
                         "end":"2024-01-12T20:30:00.000Z"
                      },
-                     "timestamp":"2024-01-12T12:11:04.352Z"
+                     "timestamp":"2024-01-12T12:42:41.121Z"
                   }
                },
                "end":{
@@ -123,25 +123,105 @@
                      }
                   }
                },
-               "rateable":true
+               "tags":[
+                  {
+                     "code":"cancel_request",
+                     "list":[
+                        {
+                           "code":"retry_count",
+                           "value":"0"
+                        },
+                        {
+                           "code":"rto_id",
+                           "value":"F1-RTO"
+                        },
+                        {
+                           "code":"reason_id",
+                           "value":"015"
+                        },
+                        {
+                           "code":"initiated_by",
+                           "value":"preprod.crofarm.com"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "id":"F1-RTO",
+               "type":"RTO",
+               "state":{
+                  "descriptor":{
+                     "code":"RTO-Disposed"
+                  }
+               },
+               "start":{
+                  "time":{
+                     "timestamp":"2024-01-12T12:47:27.673Z"
+                  }
+               },
+               "tags":[
+                  {
+                     "code":"quote_trail",
+                     "list":[
+                        {
+                           "code":"type",
+                           "value":"delivery"
+                        },
+                        {
+                           "code":"id",
+                           "value":"F1-RTO"
+                        },
+                        {
+                           "code":"currency",
+                           "value":"INR"
+                        },
+                        {
+                           "code":"value",
+                           "value":"0"
+                        }
+                     ]
+                  },
+                  {
+                     "code":"quote_trail",
+                     "list":[
+                        {
+                           "code":"type",
+                           "value":"item"
+                        },
+                        {
+                           "code":"id",
+                           "value":"9343"
+                        },
+                        {
+                           "code":"currency",
+                           "value":"INR"
+                        },
+                        {
+                           "code":"value",
+                           "value":"-100.00"
+                        }
+                     ]
+                  }
+               ]
             }
          ],
          "quote":{
             "price":{
                "currency":"INR",
-               "value":"118.00"
+               "value":"0.00"
             },
             "breakup":[
                {
                   "@ondc/org/item_id":"9343",
                   "@ondc/org/item_quantity":{
-                     "count":3
+                     "count":0
                   },
                   "title":"grapes",
                   "@ondc/org/title_type":"item",
                   "price":{
                      "currency":"INR",
-                     "value":"60.00"
+                     "value":"0.00"
                   },
                   "item":{
                      "price":{
@@ -151,25 +231,16 @@
                   }
                },
                {
-                  "@ondc/org/item_id":"9341",
-                  "@ondc/org/item_quantity":{
-                     "count":2
-                  },
-                  "title":"Chilli",
-                  "@ondc/org/title_type":"item",
+                  "@ondc/org/item_id":"F1",
+                  "title":"Delivery charges",
+                  "@ondc/org/title_type":"delivery",
                   "price":{
                      "currency":"INR",
-                     "value":"58.00"
-                  },
-                  "item":{
-                     "price":{
-                        "currency":"INR",
-                        "value":"29.00"
-                     }
+                     "value":"0.00"
                   }
                },
                {
-                  "@ondc/org/item_id":"F1",
+                  "@ondc/org/item_id":"F1-RTO",
                   "title":"Delivery charges",
                   "@ondc/org/title_type":"delivery",
                   "price":{
@@ -184,8 +255,8 @@
             "tl_method":"http/get",
             "params":{
                "currency":"INR",
-               "amount":"118",
-               "transaction_id":"ba4234d4-4ea3-4934-84ef-0332379bfac0"
+               "amount":"100",
+               "transaction_id":"57be21c7-d5d6-4cd8-8f79-814b154e67bf"
             },
             "status":"PAID",
             "type":"ON-ORDER",
@@ -206,14 +277,9 @@
                }
             ]
          },
-         "created_at":"2024-01-12T12:08:17.708Z",
-         "updated_at":"2024-01-12T12:12:52.384Z",
-         "documents":[
-            {
-               "url":"https://img.crofarm.com/consumerOrderInvoice/ondc/14807524_1705061464.pdf",
-               "label":"Invoice"
-            }
-         ]
+         "created_at":"2024-01-12T12:41:13.769Z",
+         "updated_at":"2024-01-12T12:47:27.673Z"
+
       }
    }
 }
