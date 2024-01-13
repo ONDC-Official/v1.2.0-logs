@@ -7,16 +7,16 @@
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "core_version": "1.2.0",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-    "transaction_id": "381639a5-c3e2-4bdf-98e1-f7331398757a",
-    "message_id": "dfcd8a29-44b5-4f78-870e-5041193b5641",
-    "timestamp": "2024-01-13T09:25:58.095Z",
+    "transaction_id": "af41ec3f-1cf3-482d-be14-c9a7bb2c978b",
+    "message_id": "02453bee-b47e-4690-b726-00af50ba210f",
+    "timestamp": "2024-01-13T10:15:18.024Z",
     "ttl": "PT30S",
     "bpp_id": "stagingapi.cscestore.in/ondc",
     "bpp_uri": "https://stagingapi.cscestore.in/ondc/seller/v2"
   },
   "message": {
     "order": {
-      "state": "In-progress",
+      "state": "Cancelled",
       "provider": {
         "id": "35",
         "locations": [{ "id": "Storeking-store-location-id-35" }]
@@ -24,12 +24,22 @@
       "items": [
         {
           "id": "1495",
-          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 0 },
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b"
+        },
+        {
+          "id": "1495",
+          "fulfillment_id": "6e8c344a-503e-4a9a-9bda-27d619873f91",
           "quantity": { "count": 2 }
         },
         {
           "id": "561",
-          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 0 },
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b"
+        },
+        {
+          "id": "561",
+          "fulfillment_id": "6e8c344a-503e-4a9a-9bda-27d619873f91",
           "quantity": { "count": 2 }
         }
       ],
@@ -46,8 +56,8 @@
         "phone": "8787081401",
         "name": "Ashish Rawat",
         "email": "insphere.ashish@gmail.com",
-        "created_at": "2024-01-13T09:24:09.715Z",
-        "updated_at": "2024-01-13T09:24:09.715Z"
+        "created_at": "2024-01-13T10:08:44.350Z",
+        "updated_at": "2024-01-13T10:08:44.350Z"
       },
       "fulfillments": [
         {
@@ -60,6 +70,7 @@
               "email": "insphere.ashish@gmail.com",
               "phone": "8787081401"
             },
+            "person": { "name": "Ashish Rawat" },
             "location": {
               "gps": "12.981736346365281,77.59577572345735",
               "address": {
@@ -74,13 +85,13 @@
             },
             "time": {
               "range": {
-                "start": "2024-01-16T08:00:00.000Z",
-                "end": "2024-01-16T10:00:00.000Z"
+                "start": "2024-01-13T08:42:59.000Z",
+                "end": "2024-01-13T10:02:59.000Z"
               }
             }
           },
           "tracking": false,
-          "state": { "descriptor": { "code": "Order-picked-up" } },
+          "state": { "descriptor": { "code": "Cancelled" } },
           "start": {
             "location": {
               "id": "Storeking-store-location-id-35",
@@ -99,35 +110,96 @@
             },
             "time": {
               "range": {
-                "start": "2024-01-13T09:00:00.000Z",
-                "end": "2024-01-14T09:00:00.000Z"
-              },
-              "timestamp": "2024-01-13T09:25:56.761Z"
+                "start": "2024-01-13T10:09:52.968Z",
+                "end": "2024-01-16T10:09:30.000Z"
+              }
             }
-          }
+          },
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                { "code": "retry_count", "value": "3" },
+                {
+                  "code": "rto_id",
+                  "value": "6e8c344a-503e-4a9a-9bda-27d619873f91"
+                },
+                { "code": "reason_id", "value": "011" },
+                {
+                  "code": "initiated_by",
+                  "value": "stagingapi.cscestore.in/ondc"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6e8c344a-503e-4a9a-9bda-27d619873f91",
+          "type": "RTO",
+          "state": { "descriptor": { "code": "RTO-Delivered" } },
+          "start": { "time": { "timestamp": "2024-01-13T10:15:15.000Z" } },
+          "tags": [
+            {
+              "code": "quote_trail",
+              "list": [
+                { "code": "type", "value": "delivery" },
+                {
+                  "code": "id",
+                  "value": "6e8c344a-503e-4a9a-9bda-27d619873f91"
+                },
+                { "code": "currency", "value": "stagingapi.cscestore.in/ondc" },
+                { "code": "value", "value": "50.00" }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                { "code": "type", "value": "item" },
+                { "code": "id", "value": "561" },
+                { "code": "currency", "value": "INR" },
+                { "code": "value", "value": "-550.00" }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                { "code": "type", "value": "item" },
+                { "code": "id", "value": "1495" },
+                { "code": "currency", "value": "INR" },
+                { "code": "value", "value": "-600.00" }
+              ]
+            }
+          ]
         }
       ],
       "quote": {
-        "price": { "currency": "INR", "value": "1272.00" },
+        "price": { "currency": "INR", "value": "172.00" },
+        "ttl": "P4D",
         "breakup": [
           {
             "@ondc/org/item_id": "1495",
-            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/item_quantity": { "count": 0 },
             "title": "Pahadi Honey 1Kg (organic)",
             "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "600.00" },
+            "price": { "currency": "INR", "value": "0.00" },
             "item": { "price": { "currency": "INR", "value": "300.00" } }
           },
           {
             "@ondc/org/item_id": "561",
-            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/item_quantity": { "count": 0 },
             "title": "Pahadi honey 500gm (organic)",
             "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "550.00" },
+            "price": { "currency": "INR", "value": "0.00" },
             "item": { "price": { "currency": "INR", "value": "275.00" } }
           },
           {
             "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50.00" }
+          },
+          {
+            "@ondc/org/item_id": "6e8c344a-503e-4a9a-9bda-27d619873f91",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": { "currency": "INR", "value": "50.00" }
@@ -138,8 +210,7 @@
             "@ondc/org/title_type": "misc",
             "price": { "currency": "INR", "value": "72.00" }
           }
-        ],
-        "ttl": "P4D"
+        ]
       },
       "payment": {
         "uri": "https://juspay.in/",
@@ -147,7 +218,7 @@
         "params": {
           "amount": "1272.00",
           "currency": "INR",
-          "transaction_id": "f9519d99-dfbb-438a-9e4c-5cecd387902c"
+          "transaction_id": "6e6848d0-1640-4047-9870-da880a1c9681"
         },
         "status": "PAID",
         "type": "ON-ORDER",
@@ -164,7 +235,7 @@
             "beneficiary_name": "CSC",
             "bank_name": "State Bank Of India",
             "branch_name": "Delhi",
-            "settlement_timestamp": "2024-01-13T09:24:47.558Z"
+            "settlement_timestamp": "2024-01-13T10:09:15.109Z"
           }
         ]
       },
@@ -178,15 +249,9 @@
           "list": [{ "code": "tax_number", "value": "BUYER-APP-GSTN-ONDC" }]
         }
       ],
-      "id": "2024-01-13-215874",
-      "created_at": "2024-01-13T09:24:47.558Z",
-      "updated_at": "2024-01-13T09:25:57.350Z",
-      "documents": [
-        {
-          "url": "http://api.grameen.com/invoice/4d1ed848-366d-4992-ba9c-1c8c78ad7983",
-          "label": "Invoice"
-        }
-      ]
+      "id": "2024-01-13-450632",
+      "created_at": "2024-01-13T10:09:15.109Z",
+      "updated_at": "2024-01-13T10:15:16.660Z"
     }
   }
 }
