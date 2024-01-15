@@ -1,0 +1,162 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "*",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-preprod.gogullak.com",
+    "bap_uri": "https://ondc-preprod.gogullak.com/",
+    "transaction_id": "0dec66b7-85bd-4723-8286-686cfe50ee74",
+    "message_id": "c6d20fd8-3e7f-4fda-a66a-92b21e842228",
+    "timestamp": "2023-12-12T11:01:29.274Z",
+    "bpp_id": "sit.mytra.money",
+    "bpp_uri": "https://sit.mytra.money/api/method/ondc/"
+  },
+  "message": {
+    "order": {
+      "id": "4cd4be63-c597-4a75-a6d6-7d67288aa518",
+      "state": "In-progress",
+      "provider": {
+        "id": "sit.mytra.money",
+        "locations": [{ "id": "Benguluru Warehouse - Pwc" }]
+      },
+      "items": [
+        {
+          "id": "Dabur Honey, 500 gm:Benguluru Warehouse - Pwc",
+          "fulfillment_id": "ONDC-REQ-1213410",
+          "quantity": { "count": 2 }
+        },
+        {
+          "id": "Dabur Honey, 1 Kg:Benguluru Warehouse - Pwc",
+          "fulfillment_id": "ONDC-REQ-1213410",
+          "quantity": { "count": 2 }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "1215.98" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Dabur Honey, 500 gm:Benguluru Warehouse - Pwc",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/title_type": "item",
+            "title": "Dabur Honey, 500 gm",
+            "price": { "currency": "INR", "value": "418.0" },
+            "item": { "price": { "currency": "INR", "value": "209.0" } }
+          },
+          {
+            "@ondc/org/item_id": "Dabur Honey, 1 Kg:Benguluru Warehouse - Pwc",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/title_type": "item",
+            "title": "Dabur Honey, 1 Kg",
+            "price": { "currency": "INR", "value": "797.98" },
+            "item": { "price": { "currency": "INR", "value": "398.99" } }
+          },
+          {
+            "@ondc/org/item_id": "ONDC-REQ-1213410",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "0.00" }
+          }
+        ],
+        "ttl": "PT1H"
+      },
+      "billing": {
+        "name": "GoGullak",
+        "address": {
+          "name": "Finplex Solutions Private Limited",
+          "building": "Ground Floor, CIIE.CO",
+          "locality": "Indian Institute of Management Ahmedabad",
+          "city": "Ahmedabad",
+          "state": "Gujarat",
+          "country": "India",
+          "area_code": "380015"
+        },
+        "email": "support@gogullak.com",
+        "phone": "9546563568",
+        "created_at": "2023-12-12T10:52:55Z",
+        "updated_at": "2023-12-12T10:52:55Z"
+      },
+      "created_at": "2023-12-12T10:52:53Z",
+      "updated_at": "2023-12-12T11:01:29.017Z",
+      "fulfillments": [
+        {
+          "id": "ONDC-REQ-1213410",
+          "type": "Delivery",
+          "@ondc/org/provider_name": "PwcTech Technologies Pvt Ltd",
+          "tracking": false,
+          "end": {
+            "location": {
+              "gps": "12.898919,77.655541",
+              "address": {
+                "name": "29/10A SRDA Recidency",
+                "building": "29/10A SRDA Recidency",
+                "locality": "Somsundarpalya, HSR Layout sector 2",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560102"
+              }
+            },
+            "person": { "name": "Yash" },
+            "contact": { "phone": "9546563568" },
+            "time": {
+              "range": {
+                "start": "2023-12-12T11:53Z",
+                "end": "2023-12-15T11:53Z"
+              }
+            }
+          },
+          "state": { "descriptor": { "code": "Packed" } },
+          "start": {
+            "location": {
+              "id": "Benguluru Warehouse - Pwc",
+              "descriptor": { "name": "mytra store - Hyd" },
+              "gps": "12.977416,77.592488",
+              "address": {
+                "street": "Test Bengaluru",
+                "locality": "Test Bengaluru 2",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "area_code": "560001"
+              }
+            },
+            "contact": { "phone": "9703525310", "email": "ha@pwctech.in" },
+            "time": {
+              "range": {
+                "start": "2023-12-12T10:53Z",
+                "end": "2023-12-12T11:53Z"
+              }
+            }
+          }
+        }
+      ],
+      "payment": {
+        "uri": "https://gogullak.com/payment",
+        "tl_method": "upi",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "test12345",
+          "amount": "1215.98"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "111222333444",
+            "settlement_ifsc_code": "ICIC0001112",
+            "beneficiary_name": "PwcTech Technologies Pvt Ltd",
+            "bank_name": "ICICI BANK LIMITED",
+            "branch_name": "ICICI BANK LIMITED"
+          }
+        ]
+      }
+    }
+  }
+}
