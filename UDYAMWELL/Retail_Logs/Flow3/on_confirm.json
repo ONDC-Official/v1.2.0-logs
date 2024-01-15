@@ -1,0 +1,204 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_confirm",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://seller.udyamwell.in/",
+        "transaction_id": "6031ea99-0ff3-4f03-a908-65ab19a41f97",
+        "message_id": "4bceb2fd-39bf-4c69-b586-88c4c305af80",
+        "timestamp": "2024-01-06T17:52:42.078Z",
+        "bpp_id": "seller.udyamwell.in",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2024-01-06-179815",
+            "state": "Created",
+            "billing": {
+                "address": {
+                    "name": "test",
+                    "building": "Abc",
+                    "locality": "Kasturba Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560027"
+                },
+                "phone": "7018713034",
+                "name": "test",
+                "email": "test@yopmail.com",
+                "created_at": "2024-01-06T17:50:04.045Z",
+                "updated_at": "2024-01-06T17:50:04.045Z"
+            },
+            "items": [
+                {
+                    "id": "6515dd144db3ec39dd125321",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "994fba19-541f-40a5-8bec-3b9c1ca4d177",
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "provider": {
+                "id": "6512f44b8519435497707338",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "994fba19-541f-40a5-8bec-3b9c1ca4d177",
+                    "end": {
+                        "person": {
+                            "name": "test"
+                        },
+                        "location": {
+                            "gps": "17.425257014740506,78.4557599389984",
+                            "address": {
+                                "name": "test",
+                                "building": "Abc",
+                                "locality": "Kasturba Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "500082"
+                            }
+                        }
+                    },
+                    "type": "Delivery"
+                }
+            ],
+            "payment": {
+                "uri": "https://juspay.in/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "352",
+                    "currency": "INR",
+                    "transaction_id": "074e192d-7c5e-4f62-8f57-61a375e1a556"
+                },
+                "status": "NOT-PAID",
+                "type": "ON-FULFILLMENT",
+                "collected_by": "BPP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "414141411414",
+                        "settlement_ifsc_code": "HDFC0000128",
+                        "beneficiary_name": "Udyamwell",
+                        "bank_name": "PNB",
+                        "branch_name": "Palampur"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "352"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "6515dd144db3ec39dd125321",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "WALNUT",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "200"
+                        },
+                        "item": {
+                            "price": {
+                                "value": "200",
+                                "currency": "INR"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "6515dd144db3ec39dd125321",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "quote",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "994fba19-541f-40a5-8bec-3b9c1ca4d177",
+                        "price": {
+                            "currency": "INR",
+                            "value": "122.38"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "994fba19-541f-40a5-8bec-3b9c1ca4d177",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "BUYER-APP-GSTN-ONDC"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2024-01-06T17:52:42.078Z",
+            "updated_at": "2024-01-06T17:52:42.078Z"
+        }
+    }
+}
