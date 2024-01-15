@@ -3,21 +3,21 @@
       "domain":"ONDC:RET10",
       "country":"IND",
       "city":"std:011",
-      "action":"on_cancel",
+      "action":"on_update",
       "core_version":"1.2.0",
       "bap_id":"buyer-app-preprod-v2.ondc.org",
       "bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
       "bpp_id":"preprod.crofarm.com",
       "bpp_uri":"https://preprod.crofarm.com/ondc/",
-      "transaction_id":"d07a2572-d51e-4e99-915c-1f0199276a8a",
-      "message_id":"fe90d4ca-b96b-4067-a254-0daaead81e52",
-      "timestamp":"2024-01-12T12:32:51.914Z",
+      "transaction_id":"9fcb3400-821c-4236-9650-f3060e5bfbf7",
+      "message_id":"08d533e7-6883-4c3c-935f-4e64b5f0dfbd",
+      "timestamp":"2024-01-12T13:13:46.869Z",
       "ttl":"PT30S"
    },
    "message":{
       "order":{
-         "id":"2024-01-12-395903",
-         "state":"Cancelled",
+         "id":"2024-01-12-205928",
+         "state":"Completed",
          "provider":{
             "id":"4410",
             "locations":[
@@ -28,7 +28,21 @@
          },
          "items":[
             {
+               "fulfillment_id":"F1",
                "id":"9343",
+               "quantity":{
+                  "count":0
+               }
+            },
+            {
+               "id":"9341",
+               "fulfillment_id":"C1",
+               "quantity":{
+                  "count":3
+               }
+            },
+            {
+               "id":"9341",
                "fulfillment_id":"F1",
                "quantity":{
                   "count":0
@@ -36,16 +50,16 @@
             },
             {
                "id":"9343",
-               "fulfillment_id":"C1",
+               "fulfillment_id":"65a13a172c2150ce2c6de04c",
                "quantity":{
-                  "count":5
+                  "count":2
                }
             }
          ],
          "billing":{
             "name":"Heigenburg",
-            "created_at":"2024-01-12T12:27:18.787Z",
-            "updated_at":"2024-01-12T12:27:18.787Z",
+            "created_at":"2024-01-12T12:55:22.567Z",
+            "updated_at":"2024-01-12T12:55:22.567Z",
             "phone":"8949300291",
             "address":{
                "building":"Indus Biznotel",
@@ -58,24 +72,18 @@
             },
             "email":"shivpal.chaudhary@crofarm.com"
          },
-         "cancellation":{
-            "cancelled_by":"buyer-app-preprod-v2.ondc.org",
-            "reason":{
-               "id":"003"
-            }
-         },
          "fulfillments":[
             {
                "id":"F1",
                "@ondc/org/provider_name":"otipy store 4410",
-               "type":"Delivery",
-               "tracking":false,
                "state":{
                   "descriptor":{
-                     "code":"Cancelled"
+                     "code":"Order-delivered"
                   }
                },
+               "type":"Delivery",
                "@ondc/org/TAT":"P1D",
+               "tracking":false,
                "start":{
                   "location":{
                      "id":"L1",
@@ -98,7 +106,8 @@
                      "range":{
                         "start":"2024-01-12T16:30:00.000Z",
                         "end":"2024-01-12T20:30:00.000Z"
-                     }
+                     },
+                     "timestamp":"2024-01-12T13:02:32.614Z"
                   }
                },
                "end":{
@@ -125,22 +134,11 @@
                      "range":{
                         "start":"2024-01-12T23:30:00.000Z",
                         "end":"2024-01-13T03:30:00.000Z"
-                     }
+                     },
+                     "timestamp":"2024-01-12T13:07:22.616Z"
                   }
                },
-               "tags":{
-                  "code":"cancel_request",
-                  "list":[
-                     {
-                        "code":"reason_id",
-                        "value":"003"
-                     },
-                     {
-                        "code":"initiated_by",
-                        "value":"buyer-app-preprod-v2.ondc.org"
-                     }
-                  ]
-               }
+               "rateable":true
             },
             {
                "id":"C1",
@@ -150,12 +148,97 @@
                      "code":"Cancelled"
                   }
                },
-               "start":{
-                  "time":{
-                     "timestamp":"2024-01-12T12:32:51.914Z"
+               "tags":[
+                  {
+                     "code":"cancel_request",
+                     "list":[
+                        {
+                           "code":"reason_id",
+                           "value":"002"
+                        },
+                        {
+                           "code":"initiated_by",
+                           "value":"preprod.crofarm.com"
+                        }
+                     ]
+                  },
+                  {
+                     "code":"quote_trail",
+                     "list":[
+                        {
+                           "code":"type",
+                           "value":"item"
+                        },
+                        {
+                           "code":"id",
+                           "value":"9341"
+                        },
+                        {
+                           "code":"currency",
+                           "value":"INR"
+                        },
+                        {
+                           "code":"value",
+                           "value":"-87.0"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "id":"65a13a172c2150ce2c6de04c",
+               "type":"Return",
+               "state":{
+                  "descriptor":{
+                     "code":"Liquidated"
                   }
                },
                "tags":[
+                  {
+                     "code":"return_request",
+                     "list":[
+                        {
+                           "code":"id",
+                           "value":"65a13a172c2150ce2c6de04c"
+                        },
+                        {
+                           "code":"item_id",
+                           "value":"9343"
+                        },
+                        {
+                           "code":"parent_item_id",
+                           "value":""
+                        },
+                        {
+                           "code":"item_quantity",
+                           "value":"2"
+                        },
+                        {
+                           "code":"reason_id",
+                           "value":"003"
+                        },
+                        {
+                           "code":"reason_desc",
+                           "value":"detailed description for return"
+                        },
+                        {
+                           "code":"images",
+                           "value":"https://reference-buyer-app-assets/public-assets.s3.ap-south-1.amazonaws.com/2024-01-12-205928/cdaefd11-9eb6-4384-b5dd-9aa917c744a0.png"
+                        },
+                        {
+                           "code":"ttl_approval",
+                           "value":"PT24H"
+                        },
+                        {
+                           "code":"ttl_reverseqc",
+                           "value":"P3D"
+                        },
+                        {
+                           "code":"initiated_by",
+                           "value":"buyer-app-preprod-v2.ondc.org"
+                        }
+                     ]
+                  },
                   {
                      "code":"quote_trail",
                      "list":[
@@ -173,11 +256,12 @@
                         },
                         {
                            "code":"value",
-                           "value":"-100.00"
+                           "value":"-40.00"
                         }
                      ]
                   }
-               ]
+               ],
+               "@ondc/org/provider_name":"Otipy Store"
             }
          ],
          "quote":{
@@ -212,6 +296,24 @@
                      "currency":"INR",
                      "value":"0.00"
                   }
+               },
+               {
+                  "@ondc/org/item_id":"9341",
+                  "@ondc/org/item_quantity":{
+                     "count":0
+                  },
+                  "title":"Chilli",
+                  "@ondc/org/title_type":"item",
+                  "price":{
+                     "currency":"INR",
+                     "value":"0.00"
+                  },
+                  "item":{
+                     "price":{
+                        "currency":"INR",
+                        "value":"29.00"
+                     }
+                  }
                }
             ],
             "ttl":"P1D"
@@ -220,8 +322,8 @@
             "tl_method":"http/get",
             "params":{
                "currency":"INR",
-               "amount":"100",
-               "transaction_id":"3e99fa62-cff4-4548-9508-a96a5e4c7149"
+               "amount":"127",
+               "transaction_id":"5295950b-b225-4bcc-9666-97b230cf54c5"
             },
             "status":"PAID",
             "type":"ON-ORDER",
@@ -242,8 +344,14 @@
                }
             ]
          },
-         "created_at":"2024-01-12T12:28:01.058Z",
-         "updated_at":"2024-01-12T12:32:51.914Z"
+         "created_at":"2024-01-12T12:56:26.157Z",
+         "updated_at":"2024-01-12T13:13:46.869Z",
+         "documents":[
+            {
+               "url":"https://img.crofarm.com/consumerOrderInvoice/ondc/14807539_1705064552.pdf",
+               "label":"Invoice"
+            }
+         ]
       }
    }
 }
