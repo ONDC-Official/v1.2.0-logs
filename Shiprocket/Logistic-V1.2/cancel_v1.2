@@ -1,0 +1,194 @@
+//cancel (order cancel request)
+
+{
+    "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "cancel",
+    "core_version": "1.2.0",
+    "bap_id": "ondcpreprodtest.sellerapp.in",
+    "bap_uri": "http://test.ondc/bap",
+    "bpp_id": "dev-ondc.shiprocket.in",
+    "bpp_uri": "https://dev-ondc.shiprocket.in/",
+    "transaction_id": "abcdef_abcdef_abcdef_12344_ba344895",
+    "message_id": "testmsg-bZyMrKvQnNPbWZBpCcAW",
+    "timestamp": "2024-01-04T13:52:12.922Z"
+    },
+    "message": {
+        "order_id": "Test-V1.2-Order-027",
+        "cancellation_reason_id": "008"
+    }
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+// on_cancel (Response)
+
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_cancel",
+    "core_version": "1.2.0",
+    "bap_id": "ondcpreprodtest.sellerapp.in",
+    "bap_uri": "http://test.ondc/bap",
+    "bpp_id": "dev-ondc.shiprocket.in",
+    "bpp_uri": "https://dev-ondc.shiprocket.in/",
+    "transaction_id": "abcdef_abcdef_abcdef_12344_ba344895",
+    "message_id": "testmsg-bZyMrKvQnNPbWZBpCcAW",
+    "timestamp": "2024-01-04T13:53:00.800Z"
+  },
+  "message": {
+    "order": {
+      "id": "Test-V1.2-Order-027",
+      "state": "Cancelled",
+      "cancellation": {
+        "cancelled_by": "ondcpreprodtest.sellerapp.in",
+        "reasons": {
+          "id": "008"
+        }
+      },
+      "provider": {
+        "id": "170"
+      },
+      "items": [
+        {
+          "id": "170",
+          "fulfillment_id": "1",
+          "category_id": "Standard Delivery",
+          "descriptor": {
+            "code": "P2H2P"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "4.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "170",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "3.39"
+            }
+          },
+          {
+            "@ondc/org/item_id": "170",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.61"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "@ondc/org/awb_no": "SRTP1430285721",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tracking": false
+        }
+      ],
+      "billing": {
+        "name": "ONDC Logistics Buyer NP",
+        "address": {
+          "name": "name",
+          "building": "My house or building name",
+          "locality": "My street name",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "600013"
+        },
+        "email": "abcd.efgh@gmail.com",
+        "phone": "9886098860",
+        "tax_number": "29AAACU1901H1ZK",
+        "created_at": "2024-01-04T11:48:13.212Z",
+        "updated_at": "2024-01-04T11:48:13.212Z"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BPP",
+        "@ondc/org/collection_amount": "300.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX",
+            "upi_address": "gft@oksbi"
+          }
+        ]
+      },
+      "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "Grocery",
+            "descriptor": {
+              "name": "Aadishwar Store,Aadishwar Store,Aadishwar Store"
+            },
+            "quantity": {
+              "count": 2,
+              "measure": {
+                "value": "2",
+                "unit": "kilogram"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "150.00"
+            }
+          }
+        ],
+        "provider": {
+          "descriptor": {
+            "name": "Aadishwar Store,Aadishwar Store,Aadishwar Store,Aadishwar Store,Aadishwar Store,Aadishwar Store,"
+          },
+          "address": {
+            "name": "KHB Towers",
+            "building": "104/102",
+            "locality": "Koramangala",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "country": "IND",
+            "area_code": "600013"
+          }
+        },
+        "order": {
+          "id": "Test-V1.2-Order-027",
+          "weight": {
+            "value": "2",
+            "unit": "kilogram"
+          },
+          "dimensions": {
+            "length": {
+              "value": "1",
+              "unit": "centimeter"
+            },
+            "breadth": {
+              "value": "1",
+              "unit": "centimeter"
+            },
+            "height": {
+              "value": "1",
+              "unit": "centimeter"
+            }
+          }
+        }
+      },
+      "updated_at": "2024-01-04T13:53:00.817Z"
+    }
+  }
+}
