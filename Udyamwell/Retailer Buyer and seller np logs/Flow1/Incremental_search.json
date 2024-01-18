@@ -1,7 +1,7 @@
 {
     "context": {
         "domain": "ONDC:RET10",
-        "action": "search",
+        "action": "on_search",
         "country": "IND",
         "city": "std:080",
         "core_version": "1.2.0",
@@ -13,14 +13,17 @@
         "ttl": "PT30S"
     },
     "message": {
-        "intent": {
-            "fulfillment": {
-                "type": "Delivery"
-            },
-            "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3"
-            }
-        }
+      "intent": {
+        "payment": {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3"
+        },
+        "tags": [
+          {
+            "code": "catalog_inc",
+            "list": [{ "code": "mode", "value": "start" }]
+          }
+        ]
+      }
     }
-}
+  }
