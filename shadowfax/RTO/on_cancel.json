@@ -1,0 +1,291 @@
+{
+    "context": {
+      "action": "on_cancel",
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:080",
+      "core_version": "1.2.0",
+      "bap_id": "biz.test.bitsila.com",
+      "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+      "bpp_id": "flash-api.staging.shadowfax.in",
+      "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
+      "transaction_id": "LOG-C2401301226267256978833",
+      "message_id": "20035dc8-85f9-4d23-bd57-a1957cf5b2f0",
+      "timestamp": "2024-01-30T08:09:24.495Z"
+    },
+    "message": {
+      "order": {
+        "id": "OD2401301226431654016180",
+        "state": "Cancelled",
+        "cancellation": {
+          "cancelled_by": "flash-api.staging.shadowfax.in",
+          "reason": {
+            "id": "008"
+          }
+        },
+        "provider": {
+          "id": "SFX"
+        },
+        "items": [
+          {
+            "id": "SFXImmediateDelivery",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "category_id": "Immediate Delivery",
+            "fulfillment_id": "1",
+            "time": {
+              "label": "TAT",
+              "duration": "PT45M",
+              "timestamp": "2024-01-30"
+            }
+          },
+          {
+            "id": "SFXImmediateDeliveryRTO",
+            "fulfillment_id": "2",
+            "category_id": "Immediate Delivery",
+            "descriptor": {
+              "code": "P2P"
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "1.4"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "1.0"
+              }
+            },
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              }
+            },
+            {
+              "@ondc/org/item_id": "SFXImmediateDeliveryRTO",
+              "@ondc/org/title_type": "rto",
+              "price": {
+                "currency": "INR",
+                "value": "0.4"
+              }
+            },
+            {
+              "@ondc/org/item_id": "SFXImmediateDeliveryRTO",
+              "@ondc/org/title_type": "rto",
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          ],
+          "ttl": "PT15M"
+        },
+        "fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Initiated"
+              }
+            },
+            "tracking": false,
+            "start": {
+              "person": {
+                "name": "Store manager"
+              },
+              "location": {
+                "id": "1016:1548",
+                "gps": "12.9120511, 77.6482887",
+                "address": {
+                  "city": "Bengaluru",
+                  "name": "DS super market hsr layout Customization",
+                  "state": " karnataka",
+                  "country": "India",
+                  "building": "GLENS BAKEHOUSE, HSR LAYOUT 2337, SECTOR 1, HSR Layout 17th Cross , 24th Main Rd",
+                  "locality": "Bengaluru, Karnataka 560102, India",
+                  "area_code": "560102"
+                }
+              },
+              "contact": {
+                "email": "test1@test.com",
+                "phone": "9999999998"
+              },
+              "instructions": {
+                "code": "2",
+                "short_desc": "",
+                "long_desc": ""
+              },
+              "time": {
+                "duration": "PT15M"
+              }
+            },
+            "end": {
+              "person": {
+                "name": "Darshan Hsr"
+              },
+              "location": {
+                "gps": "12.907535552979,77.650131225586",
+                "address": {
+                  "city": "Bengaluru",
+                  "door": "",
+                  "name": "27 Main Road, 1st Sector, Hsr Layout",
+                  "state": "Karnataka",
+                  "country": "IND",
+                  "building": "Darshan Hsr",
+                  "locality": "----",
+                  "area_code": "560102"
+                }
+              },
+              "contact": {
+                "email": "",
+                "phone": "8151000066"
+              },
+              "instructions": {
+                "code": "3",
+                "long_desc": "----"
+              }
+            },
+            "tags": [
+              {
+                "code": "rto_event",
+                "list": [
+                  {
+                    "code": "retry_count",
+                    "value": 1
+                  },
+                  {
+                    "code": "cancelled_by",
+                    "value": "flash-api.staging.shadowfax.in"
+                  },
+                  {
+                    "code": "cancellation_reason_id",
+                    "value": "008"
+                  },
+                  {
+                    "code": "rto_id",
+                    "value": "SFXImmediateDeliveryRTO"
+                  }
+                ]
+              },
+              {
+                "code": "precancel_state",
+                "list": [
+                  {
+                    "code": "fulfillment_state",
+                    "value": "Out-for-delivery"
+                  },
+                  {
+                    "code": "updated_at",
+                    "value": "2024-01-30T08:09:15.000000Z"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "SFXImmediateDeliveryRTO",
+            "type": "RTO",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Initiated"
+              }
+            },
+            "start": {
+              "time": {
+                "timestamp": "2024-01-30T13:39:24.503779Z"
+              }
+            }
+          }
+        ],
+        "billing": {
+          "name": "Bitsila",
+          "address": {
+            "name": "221, INNOBITS SOLUTIONS PVT LTD",
+            "building": "221",
+            "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
+            "city": "Bengaluru",
+            "state": "Karnataka",
+            "country": "India",
+            "area_code": "560085"
+          },
+          "tax_number": "29AAFCI9011D1ZQ",
+          "phone": "8951898275",
+          "email": "finance@bitsila.com",
+          "created_at": "2024-01-30T06:57:05.561Z",
+          "updated_at": "2024-01-30T06:57:05.561Z"
+        },
+        "@ondc/org/linked_order": {
+          "items": [
+            {
+              "category_id": "F&B",
+              "descriptor": {
+                "name": "Fish Fry NC"
+              },
+              "quantity": {
+                "count": 4,
+                "measure": {
+                  "unit": "kilogram",
+                  "value": 0.5
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0.00"
+              }
+            }
+          ],
+          "provider": {
+            "descriptor": {
+              "name": "Ds Super Market - DS super market hsr layout Customization"
+            },
+            "address": {
+              "name": "DS super market hsr layout Customization",
+              "locality": "Bengaluru, Karnataka 560102, India",
+              "city": "Bengaluru",
+              "state": "karnataka",
+              "building": "Bengaluru, Karnataka 560102, India",
+              "area_code": "560102"
+            }
+          },
+          "order": {
+            "id": "OD2401301226431654016180",
+            "weight": {
+              "unit": "kilogram",
+              "value": 0.5
+            },
+            "dimensions": {
+              "height": {
+                "unit": "meter",
+                "value": 0.1
+              },
+              "length": {
+                "unit": "meter",
+                "value": 0.1
+              },
+              "breadth": {
+                "unit": "meter",
+                "value": 0.1
+              }
+            }
+          }
+        },
+        "updated_at": "2024-01-30T08:09:24.495Z",
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/collection_amount": "0.0"
+        }
+      }
+    }
+  }
