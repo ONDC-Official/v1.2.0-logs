@@ -1,6 +1,6 @@
 {
     "context": {
-      "action": "on_confirm",
+      "action": "on_status",
       "domain": "nic2004:60232",
       "country": "IND",
       "city": "std:080",
@@ -9,56 +9,16 @@
       "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
       "bpp_id": "flash-api.staging.shadowfax.in",
       "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
-      "transaction_id": "LOG-1016-1011-1677-psKH",
-      "message_id": "072cf3f5-da07-45b5-830c-ac8f83df0a12",
-      "timestamp": "2024-01-30T05:29:51.285Z"
+      "transaction_id": "LOG-1016-1011-1706-SACs",
+      "message_id": "7b391d30-5424-4414-8bbc-10ed811fd019",
+      "timestamp": "2024-01-31T05:58:10.222Z"
     },
     "message": {
       "order": {
-        "id": "1016-1011-1677",
-        "state": "Accepted",
+        "id": "1016-1011-1706",
+        "state": "In-progress",
         "provider": {
           "id": "SFX"
-        },
-        "items": [
-          {
-            "id": "SFXImmediateDelivery",
-            "descriptor": {
-              "code": "P2P"
-            },
-            "category_id": "Immediate Delivery",
-            "fulfillment_id": "1",
-            "time": {
-              "label": "TAT",
-              "duration": "PT45M",
-              "timestamp": "2024-01-30"
-            }
-          }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "1.0"
-          },
-          "breakup": [
-            {
-              "@ondc/org/item_id": "SFXImmediateDelivery",
-              "@ondc/org/title_type": "Delivery",
-              "price": {
-                "currency": "INR",
-                "value": "1.0"
-              }
-            },
-            {
-              "@ondc/org/item_id": "SFXImmediateDelivery",
-              "@ondc/org/title_type": "tax",
-              "price": {
-                "currency": "INR",
-                "value": "0"
-              }
-            }
-          ],
-          "ttl": "PT15M"
         },
         "fulfillments": [
           {
@@ -66,30 +26,14 @@
             "type": "Delivery",
             "state": {
               "descriptor": {
-                "code": "Pending"
+                "code": "Out-for-delivery"
               }
             },
+            "agent": {
+              "name": "Mallikharjuna",
+              "phone": "8197802820"
+            },
             "tracking": true,
-            "tags": [
-              {
-                "code": "state",
-                "list": [
-                  {
-                    "code": "ready_to_ship",
-                    "value": "no"
-                  }
-                ]
-              },
-              {
-                "code": "rto_action",
-                "list": [
-                  {
-                    "code": "return_to_origin",
-                    "value": "yes"
-                  }
-                ]
-              }
-            ],
             "start": {
               "person": {
                 "name": "Store manager"
@@ -122,24 +66,24 @@
             },
             "end": {
               "person": {
-                "name": "Darshan Hsr"
+                "name": "Arjun A B"
               },
               "location": {
                 "gps": "12.907535552979, 77.650131225586",
                 "address": {
                   "city": "Bengaluru",
-                  "door": "27 Main Road, 1st Sector, Hsr Layout,----,Darshan Hsr",
-                  "name": "Darshan Hsr",
+                  "door": "Asffggh,----,34",
+                  "name": "Arjun A B",
                   "state": "Karnataka",
                   "country": "IND",
-                  "building": "27 Main Road, 1st Sector, Hsr Layout,----,Darshan Hsr",
+                  "building": "Asffggh,----,34",
                   "locality": "Bengaluru",
                   "area_code": "560102"
                 }
               },
               "contact": {
                 "email": "",
-                "phone": "8151000066"
+                "phone": "9663377107"
               },
               "instructions": {
                 "code": "3",
@@ -148,6 +92,54 @@
             }
           }
         ],
+        "items": [
+          {
+            "id": "SFXImmediateDelivery",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "category_id": "Immediate Delivery",
+            "fulfillment_id": "1",
+            "time": {
+              "label": "TAT",
+              "duration": "PT45M",
+              "timestamp": "2024-01-31"
+            }
+          }
+        ],
+        "payment": {
+          "@ondc/org/collection_amount": "0.0",
+          "collected_by": "BAP",
+          "type": "POST-FULFILLMENT",
+          "status": "PAID",
+          "time": {
+            "timestamp": "2024-01-31T05:25:12.000000Z"
+          }
+        },
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "1.0"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "0.82"
+              }
+            },
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "0.18"
+              }
+            }
+          ]
+        },
         "billing": {
           "name": "Bitsila",
           "address": {
@@ -162,23 +154,18 @@
           "tax_number": "29AAFCI9011D1ZQ",
           "phone": "8951898275",
           "email": "finance@bitsila.com",
-          "created_at": "2024-01-30T05:29:49.202Z",
-          "updated_at": "2024-01-30T05:29:49.202Z"
-        },
-        "payment": {
-          "type": "POST-FULFILLMENT",
-          "collected_by": "BAP",
-          "@ondc/org/collection_amount": "0.0"
+          "created_at": "2024-01-31T05:25:09.602Z",
+          "updated_at": "2024-01-31T05:25:09.602Z"
         },
         "@ondc/org/linked_order": {
           "items": [
             {
               "category_id": "F&B",
               "descriptor": {
-                "name": "Fish Fry NC"
+                "name": "Italian Pizza."
               },
               "quantity": {
-                "count": 2,
+                "count": 1,
                 "measure": {
                   "unit": "kilogram",
                   "value": 0.5
@@ -186,24 +173,7 @@
               },
               "price": {
                 "currency": "INR",
-                "value": "260.0"
-              }
-            },
-            {
-              "category_id": "F&B",
-              "descriptor": {
-                "name": "Tava Fry"
-              },
-              "quantity": {
-                "count": 2,
-                "measure": {
-                  "unit": "kilogram",
-                  "value": 0.5
-                }
-              },
-              "price": {
-                "currency": "INR",
-                "value": "60.0"
+                "value": "200.0"
               }
             }
           ],
@@ -221,7 +191,7 @@
             }
           },
           "order": {
-            "id": "1016-1011-1677",
+            "id": "1016-1011-1706",
             "weight": {
               "unit": "kilogram",
               "value": 0.5
@@ -241,9 +211,7 @@
               }
             }
           }
-        },
-        "created_at": "2024-01-30T05:29:50.604Z",
-        "updated_at": "2024-01-30T05:29:51.285Z"
+        }
       }
     }
   }
