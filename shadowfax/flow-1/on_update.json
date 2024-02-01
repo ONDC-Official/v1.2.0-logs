@@ -1,6 +1,6 @@
 {
     "context": {
-      "action": "on_status",
+      "action": "on_update",
       "domain": "nic2004:60232",
       "country": "IND",
       "city": "std:080",
@@ -10,15 +10,55 @@
       "bpp_id": "flash-api.staging.shadowfax.in",
       "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
       "transaction_id": "LOG-1016-1011-1717-BqZb",
-      "message_id": "bd6962f0-363f-4094-916c-374a98972040",
-      "timestamp": "2024-02-01T06:57:27.426Z"
+      "message_id": "a461b56a-5f67-44f7-89ff-5a2a1ef3ab3e",
+      "timestamp": "2024-02-01T05:11:08.093Z"
     },
     "message": {
       "order": {
         "id": "1016-1011-1717",
-        "state": "Completed",
+        "state": "Accepted",
         "provider": {
           "id": "SFX"
+        },
+        "items": [
+          {
+            "id": "SFXImmediateDelivery",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "category_id": "Immediate Delivery",
+            "fulfillment_id": "1",
+            "time": {
+              "label": "TAT",
+              "duration": "PT45M",
+              "timestamp": "2024-02-01"
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "1.0"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "0.82"
+              }
+            },
+            {
+              "@ondc/org/item_id": "SFXImmediateDelivery",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "0.18"
+              }
+            }
+          ],
+          "ttl": "PT15M"
         },
         "fulfillments": [
           {
@@ -26,10 +66,9 @@
             "type": "Delivery",
             "state": {
               "descriptor": {
-                "code": "Order-delivered"
+                "code": "Pending"
               }
             },
-            "agent": {},
             "tracking": true,
             "start": {
               "person": {
@@ -53,16 +92,16 @@
                 "phone": "9999999998"
               },
               "instructions": {
+                "short_desc": "1011-1717",
                 "code": "2",
-                "short_desc": "",
+                "name": "Order 1011-1717",
                 "long_desc": ""
               },
               "time": {
                 "range": {
-                  "start": "2024-02-01T05:11:08.000Z",
-                  "end": "2024-02-01T05:41:08.000Z"
-                },
-                "timestamp": "2024-02-01T06:56:51.000Z"
+                  "start": "2024-02-01T05:11:08.017Z",
+                  "end": "2024-02-01T05:41:08.017Z"
+                }
               }
             },
             "end": {
@@ -87,67 +126,20 @@
                 "phone": "9663377107"
               },
               "instructions": {
-                "code": "3",
-                "long_desc": "Bengaluru"
+                "name": "Order 1011-1717",
+                "short_desc": null,
+                "long_desc": "Bengaluru",
+                "code": "3"
               },
               "time": {
                 "range": {
-                  "start": "2024-02-01T05:21:08.000Z",
-                  "end": "2024-02-01T05:46:08.000Z"
-                },
-                "timestamp": "2024-02-01T06:57:27.000Z"
+                  "start": "2024-02-01T05:21:08.017Z",
+                  "end": "2024-02-01T05:46:08.017Z"
+                }
               }
             }
           }
         ],
-        "items": [
-          {
-            "id": "SFXImmediateDelivery",
-            "descriptor": {
-              "code": "P2P"
-            },
-            "category_id": "Immediate Delivery",
-            "fulfillment_id": "1",
-            "time": {
-              "label": "TAT",
-              "duration": "PT45M",
-              "timestamp": "2024-02-01"
-            }
-          }
-        ],
-        "payment": {
-          "@ondc/org/collection_amount": "0.0",
-          "collected_by": "BAP",
-          "type": "POST-FULFILLMENT",
-          "status": "PAID",
-          "time": {
-            "timestamp": "2024-02-01T05:10:42.000000Z"
-          }
-        },
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "1.0"
-          },
-          "breakup": [
-            {
-              "@ondc/org/item_id": "SFXImmediateDelivery",
-              "@ondc/org/title_type": "delivery",
-              "price": {
-                "currency": "INR",
-                "value": "0.82"
-              }
-            },
-            {
-              "@ondc/org/item_id": "SFXImmediateDelivery",
-              "@ondc/org/title_type": "tax",
-              "price": {
-                "currency": "INR",
-                "value": "0.18"
-              }
-            }
-          ]
-        },
         "billing": {
           "name": "Bitsila",
           "address": {
@@ -164,6 +156,11 @@
           "email": "finance@bitsila.com",
           "created_at": "2024-02-01T05:10:40.435Z",
           "updated_at": "2024-02-01T05:10:40.435Z"
+        },
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/collection_amount": "0.0"
         },
         "@ondc/org/linked_order": {
           "items": [
@@ -219,7 +216,8 @@
               }
             }
           }
-        }
+        },
+        "updated_at": "2024-02-01T05:11:07.474Z"
       }
     }
   }
