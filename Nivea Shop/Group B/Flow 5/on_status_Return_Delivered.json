@@ -3,14 +3,14 @@
     "domain": "ONDC:RET13",
     "country": "IND",
     "city": "std:011",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://ondc-v2.niveashop.in/api",
-    "transaction_id": "65a67f3f-97de-4c16-9e87-cd69f4b60fdc",
-    "message_id": "a6f66372-02d2-4ce5-8ab4-2a92c79bdad3",
-    "timestamp": "2024-02-02T07:02:48.329Z",
+    "transaction_id": "4b436dca-bf53-4b15-9650-01a0eab084f9",
+    "message_id": "84cb98ef-ba66-4f16-9d4d-91e38bfb2f20",
+    "timestamp": "2024-02-02T07:37:20.860Z",
     "bpp_id": "ondc-v2.niveashop.in",
     "ttl": "PT30S"
   },
@@ -32,69 +32,74 @@
       },
       "items": [
         {
-          "id": "43001177440483",
+          "id": "43001184944355",
           "fulfillment_id": "Fulfillment1",
           "quantity": {
-            "count": 2
+            "count": 1
           }
         },
         {
-          "id": "43001196019939",
+          "id": "43001187303651",
           "fulfillment_id": "Fulfillment1",
           "quantity": {
-            "count": 2
+            "count": 1
+          }
+        },
+        {
+          "id": "43001184944355",
+          "fulfillment_id": "Fulfillment1-RTO",
+          "quantity": {
+            "count": "1"
+          }
+        },
+        {
+          "id": "43001187303651",
+          "fulfillment_id": "Fulfillment1-RTO",
+          "quantity": {
+            "count": "1"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "1749.00"
+          "value": "699.00"
         },
         "breakup": [
           {
-            "title": "Body Lotion - Oil in Lotion Cherry Blossom & Jojoba Oil - 400ml",
-            "@ondc/org/item_id": "43001177440483",
+            "title": "Body Lotion- Oil in Lotion Cocoa Nourish (Very Dry Skin) - 400ml",
+            "@ondc/org/item_id": "43001184944355",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 1
             },
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "510"
+              "value": "359"
             },
             "item": {
               "price": {
                 "currency": "INR",
-                "value": "255.00"
+                "value": "359.00"
               }
             }
           },
           {
-            "title": "42K Roll on Pack of 3",
-            "@ondc/org/item_id": "43001196019939",
+            "title": "Body Lotion- Shea Smooth Milk (Dry Skin) - 400ml",
+            "@ondc/org/item_id": "43001187303651",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 1
             },
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "1050"
+              "value": "340"
             },
             "item": {
               "price": {
                 "currency": "INR",
-                "value": "525.00"
+                "value": "340.00"
               }
-            }
-          },
-          {
-            "@ondc/org/item_id": "43001196019939",
-            "title": "Tax",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "189.00"
             }
           },
           {
@@ -139,9 +144,10 @@
             },
             "time": {
               "range": {
-                "start": "2024-02-02T07:02:48.329Z",
-                "end": "2024-02-07T07:02:48.329Z"
-              }
+                "start": "2024-02-02T07:11:37.839Z",
+                "end": "2024-02-07T07:11:37.839Z"
+              },
+              "timestamp": "2024-02-02T07:35:44.000Z"
             }
           },
           "start": {
@@ -167,9 +173,10 @@
             },
             "time": {
               "range": {
-                "start": "2024-02-03T07:02:48.329Z",
-                "end": "2024-02-04T07:02:48.329Z"
-              }
+                "start": "2024-02-03T07:11:37.839Z",
+                "end": "2024-02-04T07:11:37.839Z"
+              },
+              "timestamp": "2024-02-02T07:12:24.000Z"
             },
             "instructions": {
               "code": "2",
@@ -180,20 +187,120 @@
           },
           "state": {
             "descriptor": {
-              "name": "pending",
-              "code": "Pending"
+              "code": "Cancelled"
             }
           },
-          "@ondc/org/TAT": "P5D"
+          "@ondc/org/TAT": "P5D",
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "retry_count",
+                  "value": "0"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "Fulfillment1-RTO"
+                },
+                {
+                  "code": "reason_id",
+                  "value": "011"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "buyer-app-preprod-v2.ondc.org"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Fulfillment1-RTO",
+          "type": "RTO",
+          "@ondc/org/provider_name": "Nivea Shop",
+          "state": {
+            "descriptor": {
+              "code": "Return_Delivered"
+            }
+          },
+          "start": {
+            "location": {
+              "address": {
+                "name": "parmeshwar",
+                "building": "police building",
+                "locality": " Nilaje Gaon Station Road",
+                "city": "Kalyan",
+                "state": "Maharashtra",
+                "country": "India",
+                "area_code": "421204"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-02-02T07:37:20.860Z",
+                "end": "2024-02-04T07:37:20.860Z"
+              }
+            }
+          },
+          "tags": [
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "title_type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "43001184944355"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-359.00"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "title_type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "43001187303651"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-340.00"
+                }
+              ]
+            }
+          ],
+          "end": {
+            "time": {
+              "timestamp": "2024-02-02T07:37:20.860Z"
+            }
+          }
         }
       ],
       "payment": {
         "uri": "https://juspay.in/",
         "tl_method": "http/get",
         "params": {
-          "amount": "1749",
+          "amount": "699",
           "currency": "INR",
-          "transaction_id": "5b6bdc1e-621a-4b7f-8090-4a0d489fb97b"
+          "transaction_id": "8641dec5-b954-42a9-8ecb-b81f6c83e3ff"
         },
         "status": "PAID",
         "type": "ON-ORDER",
@@ -217,50 +324,7 @@
           }
         ]
       },
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability",
-              "value": "0"
-            },
-            {
-              "code": "max_liability_cap",
-              "value": "0"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "true"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Mumbai"
-            },
-            {
-              "code": "delay_interest",
-              "value": "12.00"
-            },
-            {
-              "code": "tax_number",
-              "value": "gst_number_of_sellerNP"
-            },
-            {
-              "code": "np_type",
-              "value": "ISN"
-            },
-            {
-              "code": "provider_tax_number",
-              "value": "PAN_number_of_provider"
-            },
-            {
-              "code": "accept_bap_terms",
-              "value": "Y"
-            }
-          ]
-        }
-      ],
-      "created_at": "2024-02-02T07:02:44.300Z",
+      "created_at": "2024-02-02T07:11:33.998Z",
       "billing": {
         "address": {
           "name": "parmeshwar",
@@ -274,99 +338,18 @@
         "phone": "9076388126",
         "name": "parmeshwar",
         "email": "parmeshwar.rathod@schbang.com",
-        "created_at": "2024-02-02T07:02:35.749Z",
-        "updated_at": "2024-02-02T07:02:35.749Z"
+        "created_at": "2024-02-02T07:11:24.302Z",
+        "updated_at": "2024-02-02T07:11:24.302Z"
       },
-      "cancellation_terms": [
+      "id": "2024-02-02-929977",
+      "state": "Cancelled",
+      "updated_at": "2024-02-02T07:37:20.860Z",
+      "documents": [
         {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": false,
-          "cancellation_fee": {
-            "percentage": "0.00",
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Packed",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "10.00",
-            "amount": {
-              "currency": "INR",
-              "value": "50.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "10.00",
-            "amount": {
-              "currency": "INR",
-              "value": "50.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "009"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "0.00",
-            "amount": {
-              "currency": "INR",
-              "value": "0.00"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "010,011,012,013,014,015"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "percentage": "20.00",
-            "amount": {
-              "currency": "INR",
-              "value": "100.00"
-            }
-          }
+          "label": "Invoice",
+          "url": "https://ondc-testing.myshopify.com/pages/invoice?id=5590636855523"
         }
-      ],
-      "id": "2024-02-02-623289",
-      "state": "Accepted",
-      "updated_at": "2024-02-02T07:02:48.329Z"
+      ]
     }
   }
 }
