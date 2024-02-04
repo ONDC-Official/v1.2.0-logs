@@ -1,8 +1,8 @@
 {
   "message": {
     "order": {
-      "id": "d0a36922d58b419987e775c07dc35f7e",
-      "state": "Accepted",
+      "id": "0dfdb5d1971e42bfb85d0c77e5035239",
+      "state": "In-progress",
       "provider": {
         "id": "Delhivery"
       },
@@ -12,74 +12,65 @@
             "code": "P2H2P"
           },
           "category_id": "Standard Delivery",
-          "id": "c7bd2f02-eed9-4453-840b-a3550aa884a4",
+          "id": "4e017417-9784-4e05-bc66-502fb2d3fa72",
           "fulfillment_id": "1",
           "time": {
             "label": "TAT",
             "duration": "P1D",
-            "timestamp": "2024-01-24"
+            "timestamp": "2024-02-03"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "46.72"
+          "value": "42.48"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "c7bd2f02-eed9-4453-840b-a3550aa884a4",
+            "@ondc/org/item_id": "4e017417-9784-4e05-bc66-502fb2d3fa72",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "39.60"
+              "value": "36.00"
             }
           },
           {
-            "@ondc/org/item_id": "c7bd2f02-eed9-4453-840b-a3550aa884a4",
+            "@ondc/org/item_id": "4e017417-9784-4e05-bc66-502fb2d3fa72",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "7.12"
+              "value": "6.48"
             }
           }
         ]
-      },
-      "payment": {
-        "type": "ON-ORDER",
-        "collected_by": "BAP",
-        "@ondc/org/collection_amount": "0"
       },
       "fulfillments": [
         {
           "id": "1",
           "type": "Delivery",
+          "@ondc/org/awb_no": "6421710001606",
           "state": {
             "descriptor": {
-              "code": "Searching-for-Agent"
+              "code": "Delivery-rescheduled"
             }
           },
-          "@ondc/org/awb_no": "352034831122",
           "tracking": true,
           "start": {
-            "instructions": {
-              "long_desc": "Status For Pickup",
-              "short_desc": "0001"
-            },
             "person": {
               "name": "Sangeetha Mobiles"
             },
             "location": {
-              "gps": "28.4554726,77.0219019",
               "address": {
                 "name": "Sangeetha Mobiles",
                 "building": "below Sangeetha mobiles,",
-                "city": "Bangalore",
-                "state": "Karnataka",
-                "country": "IND",
-                "area_code": "560001",
-                "locality": "Banashankari"
-              }
+                "locality": "Banashankari",
+                "city": "Mumbai",
+                "state": "Maharashtra",
+                "area_code": "400005",
+                "country": "India"
+              },
+              "gps": "28.4554726,77.0219019"
             },
             "contact": {
               "phone": "8197759422",
@@ -87,58 +78,66 @@
             },
             "time": {
               "range": {
-                "start": "2024-01-24T03:20:00.000Z",
-                "end": "2024-01-24T08:20:00.000Z"
-              }
+                "start": "2024-02-03T04:15:00.000Z",
+                "end": "2024-02-03T09:15:00.000Z"
+              },
+              "timestamp": "2024-02-02T14:18:56.035Z"
+            },
+            "instructions": {
+              "short_desc": "Shipping label or proof of delivery details",
+              "long_desc": "Shipping label info or proof of pickup",
+              "images": [
+                "https://s3.ap-southeast-1.amazonaws.com/media.delhivery/tmp/shipping_label_ondc/6421710001606.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARIGS3RKBILQEEZEU%2F20240202%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20240202T143201Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1d0f3f2f31b8c0eb73bb546dca3d82e3edc7cda9f5c6d0965b923756907d92d2"
+              ]
             }
           },
           "end": {
-            "instructions": {
-              "long_desc": "Status For Drop",
-              "short_desc": "0001"
-            },
             "person": {
               "name": "sellerapp"
             },
             "location": {
-              "gps": "21,78",
               "address": {
                 "name": "sellerapp",
                 "building": "indiranagar",
-                "city": "Bengaluru",
+                "locality": "12,san jose",
+                "city": "Delhi",
                 "state": "Karnataka",
-                "country": "IND",
-                "area_code": "122003",
-                "locality": "12,san jose"
-              }
+                "country": "India",
+                "area_code": "110017"
+              },
+              "gps": "21,78"
             },
             "contact": {
               "phone": "9809557809",
               "email": "prasanth.m@sellerapp.com"
+            },
+            "time": {
+              "range": {
+                "start": "2024-02-03T18:29:59.000Z",
+                "end": "2024-02-03T18:29:59.000Z"
+              }
             }
           },
-          "tags": [
-            {
-              "code": "state",
-              "list": [
-                {
-                  "code": "ready_to_ship",
-                  "value": "yes"
-                }
-              ]
-            },
-            {
-              "code": "rto_action",
-              "list": [
-                {
-                  "code": "return_to_origin",
-                  "value": "yes"
-                }
-              ]
-            }
-          ]
+          "agent": {
+            "name": "ondc_support@delhivery.com"
+          }
         }
       ],
+      "payments": {
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_ifsc_code": "IFSCTEST1234",
+            "beneficiary_name": "DELHIVERY LIMITED",
+            "settlement_bank_account_no": "ACCTEST1234",
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft"
+          }
+        ],
+        "@ondc/org/collection_amount": "0.0"
+      },
       "billing": {
         "address": {
           "door": "1, 621/A",
@@ -150,11 +149,11 @@
           "state": "Karnataka",
           "building": "san jose"
         },
-        "updated_at": "2024-01-23T13:20:13.023Z",
+        "updated_at": "2024-02-02T12:46:04.914Z",
         "phone": "9650439777",
         "tax_number": "29ABDCS3411L1Z7",
         "name": "SELLMETRIC PRIVATE LIMITED",
-        "created_at": "2024-01-23T13:20:13.023Z",
+        "created_at": "2024-02-02T12:46:04.914Z",
         "email": "ondc-billing@sellerapp.com"
       },
       "@ondc/org/linked_order": {
@@ -177,20 +176,6 @@
             }
           }
         ],
-        "provider": {
-          "descriptor": {
-            "name": "Sangeetha mobiles"
-          },
-          "address": {
-            "name": "Sangeetha Mobiles",
-            "building": "below Sangeetha mobiles,",
-            "city": "Bangalore",
-            "state": "Karnataka",
-            "country": "IND",
-            "area_code": "560001",
-            "locality": "Banashankari"
-          }
-        },
         "order": {
           "id": "SLRP-2914",
           "weight": {
@@ -211,24 +196,35 @@
               "unit": "centimeter"
             }
           }
+        },
+        "provider": {
+          "descriptor": {
+            "name": "Sangeetha Mobiles"
+          },
+          "address": {
+            "name": "Sangeetha Mobiles",
+            "building": "below Sangeetha mobiles,",
+            "locality": "Banashankari",
+            "city": "Mumbai",
+            "state": "Maharashtra",
+            "area_code": "400005"
+          }
         }
-      },
-      "created_at": "2024-01-23T13:20:13.870Z",
-      "updated_at": "2024-01-23T13:20:13.870Z"
+      }
     }
   },
   "context": {
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "ondcpreprod.sellerapp.in",
     "bap_uri": "https://ondcpreprod.sellerapp.in/bapl/u",
-    "bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/",
-    "transaction_id": "8b1707c0-6b8a-4b49-98bc-945536ea3689",
-    "message_id": "0a9777c0-1084-4e3d-8e76-1f3e540bb287",
-    "timestamp": "2024-01-23T13:20:26.805Z",
-    "bpp_id": "ondc-dev.delhivery.com"
+    "transaction_id": "fd9737c5-5b41-42f8-8669-f93aa958e4a6",
+    "message_id": "0e9848f2-df6e-4af5-a46e-af1769e1c120",
+    "timestamp": "2024-02-02T14:32:00.937Z",
+    "bpp_id": "ondc-dev.delhivery.com",
+    "bpp_uri": "https://ondc-dev.delhivery.com/delhivery/v1/"
   }
 }
