@@ -1,17 +1,17 @@
 {
   "context": {
-    "domain": "ONDC:RET11",
+    "domain": "ONDC:RET12",
     "country": "IND",
-    "city": "std:0124",
+    "city": "std:080",
     "core_version": "1.2.0",
     "action": "on_status",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "beta.mystore.in",
     "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
-    "transaction_id": "dds435d312d2arerewewirfdfrtde09-4682-a08c-0c4da7a5",
-    "message_id": "2334r4343e2edc2701fdfdc99-3a58-47d5-869e-fac094576dc5",
-    "timestamp": "2024-01-31T16:17:55.961Z",
+    "transaction_id": "aseddrds7fdffderewewdsirfdfrtde09-4682-a08c-0c4da7a5",
+    "message_id": "0a050f59-ba43-4ba6-88c0-ba3a02f6cf6c",
+    "timestamp": "2024-02-04T13:20:28.507Z",
     "ttl": "PT30S"
   },
   "message": {
@@ -36,7 +36,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "381.60"
+          "value": "294.00"
         },
         "breakup": [
           {
@@ -53,10 +53,10 @@
             "item": {
               "quantity": {
                 "available": {
-                  "count": "40"
+                  "count": "36"
                 },
                 "maximum": {
-                  "count": "40"
+                  "count": "36"
                 }
               },
               "price": {
@@ -71,7 +71,7 @@
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "141.60"
+              "value": "54.00"
             }
           }
         ],
@@ -83,19 +83,23 @@
           "name": "Dharmender#",
           "street": "test",
           "city": "gurgaon",
+          "building": "#47A",
           "area_code": "122001",
           "state": "Haryana",
+          "country": "IND",
           "locality": "test2"
         },
         "tax_number": "87878987898",
         "email": "dharmender.kumar@thewitslab.com",
         "phone": "9813668112",
-        "created_at": "2024-01-31T09:00:00.000Z",
-        "updated_at": "2024-01-31T09:00:00.000Z"
+        "created_at": "2024-02-04T13:04:21.855Z",
+        "updated_at": "2024-02-04T13:04:21.855Z"
       },
       "fulfillments": [
         {
           "id": "6ms659e7cea5da96cff0167bed21e2",
+          "@ondc/org/provider_name":"mystore",
+          "@ondc/org/TAT": "P2D",
           "state": {
             "descriptor": {
               "name": "Order delivered",
@@ -110,14 +114,35 @@
               "descriptor": {
                 "name": "Witslab Test Seller"
               },
-              "gps": "28.40412,77.045"
+              "gps": "28.40412,77.045",
+              "address": {
+                "name": "Dharmender#",
+                "building": "47A",
+                "street": "test",
+                "city": "gurgaon",
+                "country": "IND",
+                "area_code": "122001",
+                "state": "Haryana",
+                "locality": "test2"
+              }
             },
             "contact": {
               "phone": "8010117117",
               "email": "seller@mystore.in"
+            },
+            "time":{
+              "range":
+              {
+                "start": "2024-02-04T13:20:28.507Z",
+                "end":  "2024-02-04T13:20:28.507Z"
+              },
+              "timestamp":"2024-02-04T13:20:28.507Z"
             }
           },
           "end": {
+            "person": {
+              "name": "Dharmender"
+            },
             "location": {
               "gps": "28.40412,77.205",
               "address": {
@@ -125,6 +150,7 @@
                 "building": "47A",
                 "street": "test",
                 "city": "gurgaon",
+                "country": "IND",
                 "area_code": "122001",
                 "state": "Haryana",
                 "locality": "test2"
@@ -132,7 +158,19 @@
             },
             "contact": {
               "phone": "9813668112"
+            },
+            "time":{
+              "range":
+              {
+                "start": "2024-02-04T13:20:28.507Z",
+                "end":  "2024-02-04T13:20:28.507Z"
+              },
+              "timestamp":"2024-02-04T13:20:28.507Z"
             }
+          },
+          "agent": {
+            "name": "Mystore",
+            "phone": "9898129898"
           }
         }
       ],
@@ -141,40 +179,35 @@
         "tl_method": "http/get",
         "params": {
           "currency": "INR",
-          "transaction_id": "54545645",
-          "amount": "381.60"
+          "transaction_id": "89898",
+          "amount": "294.00"
         },
         "status": "PAID",
         "type": "ON-ORDER",
         "collected_by": "BAP",
-        "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3",
         "@ondc/org/settlement_basis": "delivery",
         "@ondc/org/settlement_window": "P1D",
         "@ondc/org/withholding_amount": "10.00",
         "@ondc/org/settlement_details": [
           {
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "seller-app",
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "test",
-                "settlement_ifsc_code": "test",
-                "bank_name": "test",
-                "branch_name": "test",
-                "beneficiary_name": "Test",
-                "settlement_phase": "sale-amount"
-              }
-            ],
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3"
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "test",
+            "upi_address": "mystore32@oksbi",
+            "settlement_ifsc_code": "test",
+            "bank_name": "test",
+            "branch_name": "test",
+            "beneficiary_name": "Test",
+            "settlement_phase": "sale-amount"
           }
-        ]
+        ],
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3"
       },
-      "id": "654781",
+      "id": "5454522",
       "state": "Completed",
-      "created_at": "2024-01-31T15:31:24.034Z",
-      "updated_at": "2024-01-31T16:17:56.006Z"
+      "created_at": "2024-02-04T13:04:21.855Z",
+      "updated_at": "2024-02-04T13:20:28.630Z"
     }
   }
 }
