@@ -1,27 +1,32 @@
 {
     "context": {
-        "transaction_id": "4830b637-cf4b-46d8-aabf-5bdb78263a0e",
+        "transaction_id": "04acd966-e905-44c4-915d-4fc850c38476",
         "country": "IND",
         "bpp_id": "preprod-ondc.whizzard.in",
         "city": "std:080",
-        "message_id": "328107b0-dab5-4043-b288-fe4ef259b9f6",
-        "core_version": "1.2.0",
-        "ttl": "PT30S",
-        "bap_id": "dev-preprod-ondc.ndh01.com",
         "domain": "nic2004:60232",
         "bpp_uri": "https://preprod-ondc.whizzard.in/api/integration",
-        "action": "confirm",
+        "action": "on_status",
+        "message_id": "65c200df7aef5787d700ec7c",
+        "core_version": "1.2.0",
         "bap_uri": "https://dev-preprod-ondc.ndh01.com/logistics/buyer",
-        "timestamp": "2024-02-06T09:53:46.075Z"
+        "bap_id": "dev-preprod-ondc.ndh01.com",
+        "timestamp": "2024-02-06T09:50:23.164Z"
     },
     "message": {
         "order": {
             "fulfillments": [
                 {
+                    "agent": {
+                        "phone": "8499954583",
+                        "name": "Jeevan M"
+                    },
                     "start": {
                         "instructions": {
                             "code": "2",
-                            "short_desc": "740269"
+                            "name": "ONDC order",
+                            "short_desc": "884697",
+                            "long_desc": ""
                         },
                         "person": {
                             "name": "Monish Store 2"
@@ -43,12 +48,18 @@
                             "gps": "12.9218199,77.5874601"
                         },
                         "time": {
-                            "duration": "PT20M"
+                            "duration": "PT20M",
+                            "range": {
+                                "start": "2024-02-06T09:47:56.711Z",
+                                "end": "2024-02-06T10:06:56.711Z"
+                            },
+                            "timestamp": "2024-02-06T09:50:22.896Z"
                         }
                     },
                     "end": {
                         "instructions": {
-                            "code": "3"
+                            "code": "2",
+                            "short_desc": "884697"
                         },
                         "person": {
                             "name": "Jeevan"
@@ -68,30 +79,25 @@
                                 "building": "baburakamma"
                             },
                             "gps": "12.921888183240949,77.58263556109719"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-02-06T10:06:56.711Z",
+                                "end": "2024-02-06T10:26:56.711Z"
+                            }
                         }
                     },
                     "id": "1",
-                    "type": "Delivery",
-                    "tags": [
-                        {
-                            "code": "state",
-                            "list": [
-                                {
-                                    "code": "ready_to_ship",
-                                    "value": "no"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "yes"
-                                }
-                            ]
+                    "state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
                         }
-                    ]
+                    },
+                    "type": "Delivery",
+                    "tracking": true,
+                    "vehicle": {
+                        "registration": "AB12CD1234"
+                    }
                 }
             ],
             "quote": {
@@ -115,17 +121,16 @@
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "30"
+                    "value": "30.0"
                 }
             },
-            "updated_at": "2024-02-06T09:53:46.075Z",
             "provider": {
                 "id": "MLL"
             },
-            "created_at": "2024-02-06T09:53:46.075Z",
             "payment": {
                 "collected_by": "BAP",
                 "type": "POST-FULFILLMENT",
+                "status": "NOT-PAID",
                 "@ondc/org/settlement_details": [
                     {
                         "beneficiary_name": "Jeevan",
@@ -163,7 +168,7 @@
                         "category_id": "Grocery",
                         "price": {
                             "currency": "INR",
-                            "value": "500.00"
+                            "value": "500.0"
                         },
                         "descriptor": {
                             "name": "Cran Berries"
@@ -175,7 +180,7 @@
                         "unit": "kilogram",
                         "value": 0.8
                     },
-                    "id": "NDH7PCKVOEPG44RYPNHOWGKL9",
+                    "id": "NDH1TYVDCPDANUDNXNOWUJHKL",
                     "dimensions": {
                         "breadth": {
                             "unit": "centimeter",
@@ -192,12 +197,17 @@
                     }
                 }
             },
-            "id": "2024-02-06-740269",
-            "state": "Created",
+            "id": "2024-02-06-884697",
+            "state": "In-progress",
             "items": [
                 {
                     "category_id": "Immediate Delivery",
                     "id": "I1",
+                    "time": {
+                        "duration": "PT40M",
+                        "label": "TAT",
+                        "timestamp": "2024-02-06"
+                    },
                     "descriptor": {
                         "code": "P2P"
                     },
@@ -214,11 +224,9 @@
                     "state": "Karnataka",
                     "building": "Shop no 8, Flat No.121"
                 },
-                "updated_at": "2024-02-06T09:53:38.969Z",
                 "phone": "9176090955",
                 "tax_number": "24AAACC4175D1Z4",
                 "name": "Monish Store 2",
-                "created_at": "2024-02-06T09:53:38.969Z",
                 "email": "abcd1122334@hotmail.com"
             }
         }
