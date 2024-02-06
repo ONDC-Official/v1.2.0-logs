@@ -1,0 +1,228 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "extweb.oyeti.com/ecommerce/ondc",
+    "bap_uri": "https://extweb.oyeti.com/ecommerce/ondc/ecommerce/ondc",
+    "bpp_id": "ref-logistics-app-preprod.ondc.org",
+    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+    "transaction_id": "f321c184-414a-46ab-89a4-6c92dc053d6c",
+    "message_id": "610fd5d0-dbb4-453b-a848-963cbceee687",
+    "timestamp": "2023-12-29T09:24:31.000Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "48110af9-5fd0-4b17-9e18-cd72e923219b"
+      },
+      "items": [
+        {
+          "id": "Standard",
+          "fulfillment_id": "d22612c2-bc18-4ea9-b286-ded0c5ccc236",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Immediate Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "d22612c2-bc18-4ea9-b286-ded0c5ccc236",
+          "type": "Delivery",
+          "start": {
+            "time": {
+              "duration": "PT15M"
+            },
+            "location": {
+              "gps": "12.9029804, 77.6241936",
+              "address": {
+                "name": "Nandyal Chefs",
+                "building": "Bommanahalli",
+                "locality": "Bengaluru, Bangalore Division, Karnataka, India",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560068"
+              }
+            },
+            "contact": {
+              "phone": "7893847511",
+              "email": "venkateshmurapureddy@gmail.com"
+            },
+            "instructions": {
+              "images": [
+                
+              ]
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.903894723527097,77.62522101402284",
+              "address": {
+                "name": "Venkateswara Reddy",
+                "building": "Kreatio",
+                "locality": "6th Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560068"
+              }
+            },
+            "contact": {
+              "phone": "7893847511",
+              "email": "venkateshmurapureddy@gmail.com"
+            },
+            "instructions": {
+              "images": [
+                
+              ]
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "115.50"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "110.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "5.50"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "@ondc/org/settlement_details": [
+          
+        ],
+        "collected_by": "BAP"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

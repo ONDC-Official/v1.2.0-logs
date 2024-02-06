@@ -1,0 +1,57 @@
+{
+	"context": {
+		"domain": "nic2004:60232",
+		"country": "IND",
+		"city": "std:080",
+		"action": "on_init",
+		"core_version": "1.2.0",
+		"bap_id": "dev-preprod-ondc.ndh01.com",
+		"bap_uri": "https://dev-preprod-ondc.ndh01.com/logistics/buyer",
+		"bpp_id": "preprod.logistics-seller.mp2.in",
+		"bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+		"transaction_id": "fed64e54-27b0-48b2-a765-4c8da52b831f",
+		"message_id": "914c902d-ed7a-41a3-9654-443e364afc2c",
+		"timestamp": "2024-01-23T07:26:37.037Z"
+	},
+	"message": {
+		"order": {
+			"provider": {
+				"id": "MP2 LSP"
+			},
+			"items": [
+				{
+					"id": "mp2_express"
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "2.0"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "mp2_express",
+						"@ondc/org/title_type": "delivery",
+						"price": {
+							"currency": "INR",
+							"value": "1.76"
+						}
+					},
+					{
+						"@ondc/org/item_id": "mp2_express",
+						"@ondc/org/title_type": "tax",
+						"price": {
+							"currency": "INR",
+							"value": "0.24"
+						}
+					}
+				],
+				"ttl": "PT15M"
+			},
+			"payment": {
+				"type": "POST-FULFILLMENT",
+				"collected_by": "BAP"
+			}
+		}
+	}
+}
