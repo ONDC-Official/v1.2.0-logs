@@ -1,0 +1,163 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+    "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ondc-seller-api.trafyn.info/",
+    "transaction_id": "812460c6-251e-4d1f-9839-c93ea2ea9675",
+    "message_id": "8fa1569b-1551-41e2-9326-9393b560ade6",
+    "timestamp": "2024-02-06T03:04:56.035Z",
+    "bpp_id": "ondc-seller-api.trafyn.info",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-02-06-311129",
+      "state": "Created",
+      "billing": {
+        "address": {
+          "name": "Subhendu Maji",
+          "building": "test",
+          "locality": "1st Main Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560061"
+        },
+        "phone": "9999999991",
+        "name": "Subhendu Maji",
+        "email": "subhendumaji@ninjacart.com",
+        "created_at": "2024-02-06T03:04:54.362Z",
+        "updated_at": "2024-02-06T03:04:54.362Z"
+      },
+      "items": [
+        {
+          "id": "e46eebc6-6cfd-48ee-b3fe-e7e1b60dfe3b",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "8a685430-e9eb-466c-ac73-317562c799af"
+        },
+        {
+          "id": "e8963ad9-790a-4e93-bcc7-2f252bde3b02",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "8a685430-e9eb-466c-ac73-317562c799af"
+        }
+      ],
+      "provider": {
+        "id": "1714860",
+        "locations": [{ "id": "NC-location-1714860" }]
+      },
+      "fulfillments": [
+        {
+          "id": "8a685430-e9eb-466c-ac73-317562c799af",
+          "tracking": false,
+          "end": {
+            "contact": {
+              "email": "subhendumaji@ninjacart.com",
+              "phone": "9999999991"
+            },
+            "person": { "name": "Subhendu Maji" },
+            "location": {
+              "gps": "12.90883108493887,77.54908588249236",
+              "address": {
+                "name": "Subhendu Maji",
+                "building": "test",
+                "locality": "1st Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560061"
+              }
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "262",
+          "currency": "INR",
+          "transaction_id": "1598824d-8cce-4afc-96cf-702f0e706aac"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_window": "P3D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "923020048031608",
+            "settlement_ifsc_code": "UTIB0000009",
+            "bank_name": "AXIS BANK LTD",
+            "branch_name": "Bangalore Main Branch",
+            "beneficiary_name": "63IDEASINFOLABS PRIVATE LIMITED"
+          }
+        ]
+      },
+      "quote": {
+        "price": { "currency": "INR", "value": "262.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "e8963ad9-790a-4e93-bcc7-2f252bde3b02",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": { "currency": "INR", "value": "80.00" },
+              "quantity": {
+                "available": { "count": 100 },
+                "maximum": { "count": 10 }
+              }
+            },
+            "title": "Maggi 50gm",
+            "price": { "currency": "INR", "value": "160.00" }
+          },
+          {
+            "@ondc/org/item_id": "e46eebc6-6cfd-48ee-b3fe-e7e1b60dfe3b",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": { "currency": "INR", "value": "41.00" },
+              "quantity": {
+                "available": { "count": 100 },
+                "maximum": { "count": 20 }
+              }
+            },
+            "title": "Maggi 10gm",
+            "price": { "currency": "INR", "value": "82.00" }
+          },
+          {
+            "@ondc/org/item_id": "8a685430-e9eb-466c-ac73-317562c799af",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing charges",
+            "price": { "currency": "INR", "value": "20" }
+          },
+          {
+            "@ondc/org/item_id": "8a685430-e9eb-466c-ac73-317562c799af",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
+            "price": { "currency": "INR", "value": "0.0" }
+          }
+        ],
+        "ttl": "PT30S"
+      },
+      "tags": [
+        { "code": "bpp_terms", "list": [{ "code": "tax_number" }] },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "BUYER-APP-GSTN-ONDC" }]
+        }
+      ],
+      "created_at": "2024-02-06T03:04:56.035Z",
+      "updated_at": "2024-02-06T03:04:56.035Z"
+    }
+  }
+}
