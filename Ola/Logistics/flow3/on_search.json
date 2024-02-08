@@ -1,0 +1,139 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "biz.test.bitsila.com",
+        "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+        "bpp_id": "ondc-preprod-lsp.olacabs.com",
+        "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
+        "transaction_id": "LOG-3040-1001-1440-6Lgi",
+        "message_id": "a77d461b-b026-46a4-9cb2-36615ceab457",
+        "timestamp": "2024-02-02T15:38:23.496Z"
+    },
+    "message": {
+        "catalog": {
+            "bpp/descriptor": {
+                "name": "OLA",
+                "tags": [
+                    {
+                        "code": "bpp_terms",
+                        "list": [
+                            {
+                                "code": "static_terms",
+                                "value": ""
+                            },
+                            {
+                                "code": "static_terms_new",
+                                "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                            },
+                            {
+                                "code": "effective_date",
+                                "value": "2023-10-01T00:00:00.000Z"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bpp/providers": [
+                {
+                    "id": "OLA",
+                    "descriptor": {
+                        "name": "OLA",
+                        "short_desc": "OLA Immediate delivery",
+                        "long_desc": "OLA Immediate delivery"
+                    },
+                    "categories": [
+                        {
+                            "id": "Immediate Delivery",
+                            "time": {
+                                "duration": "PT55M",
+                                "label": "TAT",
+                                "timestamp": "2024-02-02"
+                            }
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "ola_express_f1",
+                            "type": "Delivery",
+                            "start": {
+                                "time": {
+                                    "duration": "PT55M"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "distance",
+                                    "list": [
+                                        {
+                                            "code": "motorable_distance_type",
+                                            "value": "kilometer"
+                                        },
+                                        {
+                                            "code": "motorable_distance",
+                                            "value": "2.0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ola_express_f1-RTO",
+                            "type": "RTO",
+                            "start": {
+                                "time": {
+                                    "duration": "PT55M"
+                                }
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "ola_express",
+                            "fulfillment_id": "ola_express_f1",
+                            "category_id": "Immediate Delivery",
+                            "descriptor": {
+                                "name": "OLA",
+                                "code": "P2P",
+                                "short_desc": "OLA",
+                                "long_desc": "OLA"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0.05"
+                            },
+                            "time": {
+                                "duration": "PT55M",
+                                "label": "TAT",
+                                "timestamp": "2024-02-02"
+                            }
+                        },
+                        {
+                            "id": "ola_express-RTO",
+                            "fulfillment_id": "ola_express_f1-RTO",
+                            "category_id": "Immediate Delivery",
+                            "descriptor": {
+                                "name": "OLA",
+                                "code": "P2P",
+                                "short_desc": "OLA",
+                                "long_desc": "OLA"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            },
+                            "time": {
+                                "duration": "PT55M",
+                                "label": "TAT",
+                                "timestamp": "2024-02-02"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
