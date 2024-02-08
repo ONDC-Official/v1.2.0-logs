@@ -1,0 +1,234 @@
+{
+  "context": {
+    "action": "on_status",
+    "transaction_id": "2f2dfeea-f37c-4a2c-9f5b-fb2c70de9849",
+    "message_id": "08ac76af-57c6-4d60-b24e-7def8de3f23f",
+    "city": "std:080",
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "core_version": "1.2.0",
+    "timestamp": "2024-01-30T11:08:29.987Z",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1/",
+    "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "bpp_uri": "https://api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-01-30-691918",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "29AAHCN0433E1ZP"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "ABCTY1234D"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "23339",
+          "quantity": {
+            "count": 4
+          },
+          "fulfillment_id": "Fulfillment1"
+        }
+      ],
+      "quote": {
+        "ttl": "P1D",
+        "price": {
+          "value": "546.99",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "value": "120.00",
+                "currency": "INR"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": "99"
+                },
+                "available": {
+                  "count": "99"
+                }
+              }
+            },
+            "price": {
+              "value": "480.00",
+              "currency": "INR"
+            },
+            "title": "Pizza meat powder",
+            "@ondc/org/item_id": "23339",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 4
+            }
+          },
+          {
+            "price": {
+              "value": "40.00",
+              "currency": "INR"
+            },
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "delivery"
+          },
+          {
+            "price": {
+              "value": "26.99",
+              "currency": "INR"
+            },
+            "title": "Convenience Fee",
+            "@ondc/org/item_id": "Fulfillment1",
+            "@ondc/org/title_type": "misc"
+          }
+        ]
+      },
+      "state": "Accepted",
+      "billing": {
+        "name": "namratha",
+        "email": "fdds@df.com",
+        "phone": "9874563219",
+        "address": {
+          "city": "Bengaluru",
+          "name": "namratha",
+          "state": "Karnataka",
+          "country": "IND",
+          "building": "Old Apartment",
+          "locality": "2nd Main Road",
+          "area_code": "560040"
+        },
+        "created_at": "2024-01-30T11:07:25.394Z",
+        "updated_at": "2024-01-30T11:07:25.394Z"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "type": "ON-ORDER",
+        "params": {
+          "amount": "546.99",
+          "currency": "INR",
+          "transaction_id": "5ed7cf50-0683-4f34-a0b6-c6e537a6d35e"
+        },
+        "status": "PAID",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "eSamudaay Payments Bank",
+            "branch_name": "Bangalore",
+            "settlement_type": "neft",
+            "beneficiary_name": "eSamudaay Secret",
+            "settlement_phase": "sale-amount",
+            "settlement_ifsc_code": "ESAM000111",
+            "settlement_counterparty": "seller-app",
+            "settlement_bank_account_no": "1111-111-1111"
+          }
+        ],
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+      },
+      "provider": {
+        "id": "44e34f61-7200-4efb-8e44-c815157e0c3a",
+        "rateable": true,
+        "locations": [
+          {
+            "id": "d1086b57-a26f-4f8d-b5eb-068e3ee3e1da"
+          }
+        ]
+      },
+   
+      "created_at": "2024-01-30T11:07:27.026Z",
+      "updated_at": "2024-01-30T11:08:29.987Z",
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "end": {
+            "time": {
+              "range": {
+                "end": "2024-01-30T13:38:52.865Z",
+                "start": "2024-01-30T13:23:52.865Z"
+              }
+            },
+            "person": {
+              "name": "namratha"
+            },
+            "contact": {
+              "phone": "9874563219"
+            },
+            "location": {
+              "gps": "12.958421438701704,77.52870440483095",
+              "address": {
+                "city": "Bengaluru",
+                "name": "namratha",
+                "state": "Karnataka",
+                "country": "IND",
+                "building": "Old Apartment",
+                "locality": "2nd Main Road",
+                "area_code": "560040"
+              }
+            }
+          },
+          "type": "Delivery",
+          "start": {
+            "time": {
+              "range": {
+                "end": "2024-01-30T13:22:28.865Z",
+                "start": "2024-01-30T13:07:28.865Z"
+              }
+            },
+            "contact": {
+              "email": "shrilakshmi@esamudaay.com",
+              "phone": "9148196081"
+            },
+            "location": {
+              "id": "d1086b57-a26f-4f8d-b5eb-068e3ee3e1da",
+              "gps": "12.9579523,77.531129",
+              "address": {
+                "city": "Bengaluru",
+                "name": "Kushi Ice Cream parlour",
+                "state": "Karnataka",
+                "street": "Old Tharagupet",
+                "country": "IND",
+                "building": "123",
+                "locality": "chickpet",
+                "area_code": "560053"
+              },
+              "descriptor": {
+                "name": "Kushi Ice Cream parlour"
+              }
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Pending",
+              "name": "Pending"
+            }
+          },
+          "rateable": true,
+          "tracking": false,
+          "@ondc/org/TAT": "PT2H",
+          "@ondc/org/provider_name": "Kushi Ice Cream parlour"
+        }
+      ]
+    }
+  }
+}
