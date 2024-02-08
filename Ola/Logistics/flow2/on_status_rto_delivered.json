@@ -8,14 +8,14 @@
         "bap_id": "biz.test.bitsila.com",
         "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
         "bpp_id": "ondc-preprod-lsp.olacabs.com",
-        "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
-        "transaction_id": "LOG-3040-1001-1436-4WET",
-        "message_id": "msg_uubi3kzkouno6iu2",
-        "timestamp": "2024-02-02T15:14:35.728Z"
+        "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/",
+        "transaction_id": "f2",
+        "message_id": "msg_uuwnoagcv4miyj6o",
+        "timestamp": "2024-02-08T15:13:39.083Z"
     },
     "message": {
         "order": {
-            "id": "3040-1001-1436",
+            "id": "o2",
             "state": "Cancelled",
             "provider": {
                 "id": "OLA",
@@ -35,14 +35,19 @@
                     "fulfillment_id": "ola_express_f1-RTO",
                     "category_id": "Immediate Delivery",
                     "descriptor": {
-                      "code": "P2P"
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "duration": "PT55M",
+                        "label": "TAT",
+                        "timestamp": "2024-02-08"
                     }
-                  }
+                }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "0.05"
+                    "value": "0.07"
                 },
                 "breakup": [
                     {
@@ -55,10 +60,26 @@
                     },
                     {
                         "@ondc/org/item_id": "ola_express",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "ola_express-RTO",
                         "@ondc/org/title_type": "rto",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
+                            "value": "0.02"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "ola_express-RTO",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
                         }
                     }
                 ]
@@ -75,12 +96,17 @@
                     "start": {
                         "time": {
                             "range": {
-                                "start": "2024-02-02T15:06:55.156Z",
-                                "end": "2024-02-02T15:26:55.156Z"
+                                "start": "2024-02-08T15:00:54.320Z",
+                                "end": "2024-02-08T15:20:54.320Z"
                             },
-                            "timestamp": "2024-02-02T15:08:14.446Z"
-                        },"person": {
+                            "timestamp": "2024-02-08T15:08:51.548Z"
+                        },
+                        "person": {
                             "name": "Ola ondc test"
+                        },
+                        "contact": {
+                            "phone": "9999999998",
+                            "email": "test1@test.com"
                         },
                         "location": {
                             "id": "3040:1669",
@@ -95,52 +121,63 @@
                                 "area_code": "560102"
                             }
                         },
-                        "contact": {
-                          "phone": "9999999998",
-                          "email": "test1@test.com"
+                        "instructions": {
+                            "images": [
+                                "123"
+                            ]
                         }
                     },
                     "end": {
                         "time": {
                             "range": {
-                                "start": "2024-02-02T15:26:55.156Z",
-                                "end": "2024-02-02T15:41:55.156Z"
+                                "start": "2024-02-08T15:20:54.320Z",
+                                "end": "2024-02-08T15:35:54.320Z"
                             }
                         },
                         "person": {
-                            "name": "Jignesh"
+                            "name": "ola kabeer"
+                        },
+                        "contact": {
+                            "phone": "8197484037",
+                            "email": "abdul.sab@olacabs.com"
                         },
                         "location": {
-                            "id": null,
-                            "descriptor": null,
-                            "gps": "12.925290831082423, 77.67744737444445",
-                            "station_code": null,
-                            "city": null,
-                            "country": null,
-                            "circle": null,
-                            "polygon": null,
+                            "gps": "12.9313018, 77.6163517",
                             "address": {
-                              "name": "Jignesh",
-                              "building": "Jignesh,Outer Ring Road,BBelendur",
-                              "locality": "Bengaluru",
-                              "city": "Bengaluru",
-                              "state": "Karnataka",
-                              "country": "IND",
-                              "area_code": "560103"
-                            },
-                            "time": null,
-                            "updated_at": null
-                          },
-                          "contact": {
-                            "phone": "9263106154",
-                            "email": "raju.mallik@olacabs.com"
-                          }
+                                "name": "ola kabeer",
+                                "building": "ola kabeer,1st Cross Road,ola c wing",
+                                "locality": "Bengaluru",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560034"
+                            }
+                        }
                     },
-                    "tracking": false,
+                    "tracking": true,
                     "agent": {
                         "name": "Abdul",
                         "phone": "8197484037"
-                    }
+                    },
+                    "tags": [
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "no"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://sellerNP.com/ondc/tracking_url"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "id": "ola_express_f1-RTO",
@@ -152,76 +189,20 @@
                     },
                     "start": {
                         "time": {
-                            "range": {
-                                "start": "2024-02-02T15:12:08.338Z",
-                                "end": "2024-02-02T16:07:08.338Z"
-                            },
-                            "timestamp": "2024-02-02T15:12:08.338Z"
-                        },"person": {
-                            "name": "Ola ondc test"
-                        },
-                        "location": {
-                            "id": "3040:1669",
-                            "gps": "12.914573, 77.647833",
-                            "address": {
-                                "name": "MP2 Cafe Koramangala",
-                                "building": "124, 1st A cross Rd 124, 1st A cross Rd, near Jyoti Nivas College Road",
-                                "locality": "KHB Colony, 5th Block, HSR Layout",
-                                "city": "Bangalore",
-                                "state": " Karnataka",
-                                "country": "India",
-                                "area_code": "560102"
-                            }
-                        },
-                        "contact": {
-                          "phone": "9999999998",
-                          "email": "test1@test.com"
+                            "timestamp": "2024-02-08T15:10:58.098Z"
                         }
                     },
                     "end": {
                         "time": {
-                            "range": {
-                                "start": "2024-02-02T15:14:35.719Z",
-                                "end": "2024-02-02T16:09:35.719Z"
-                            },
-                            "timestamp": "2024-02-02T15:14:35.719Z"
-                        },
-                        "person": {
-                            "name": "Jignesh"
-                        },
-                        "location": {
-                            "id": null,
-                            "descriptor": null,
-                            "gps": "12.925290831082423, 77.67744737444445",
-                            "station_code": null,
-                            "city": null,
-                            "country": null,
-                            "circle": null,
-                            "polygon": null,
-                            "address": {
-                              "name": "Jignesh",
-                              "building": "Jignesh,Outer Ring Road,BBelendur",
-                              "locality": "Bengaluru",
-                              "city": "Bengaluru",
-                              "state": "Karnataka",
-                              "country": "IND",
-                              "area_code": "560103"
-                            },
-                            "time": null,
-                            "updated_at": null
-                          },
-                          "contact": {
-                            "phone": "9263106154",
-                            "email": "raju.mallik@olacabs.com"
-                          }
+                            "timestamp": "2024-02-08T15:13:39.083Z"
+                        }
                     }
                 }
             ],
             "payment": {
-                "status": "NOT-PAID",
-                "type": "ON-ORDER",
+                "type": "POST-FULFILLMENT",
                 "collected_by": "BAP",
-                "@ondc/org/collection_amount": "0.0"
+                "status": "NOT-PAID"
             },
             "billing": {
                 "name": "Bitsila",
@@ -237,8 +218,8 @@
                 "tax_number": "29AAFCI9011D1ZQ",
                 "phone": "8951898275",
                 "email": "finance@bitsila.com",
-                "created_at": "2024-02-02T15:04:57.324Z",
-                "updated_at": "2024-02-02T15:04:57.324Z"
+                "created_at": "2024-02-08T14:57:54.957Z",
+                "updated_at": "2024-02-08T14:57:54.957Z"
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -258,6 +239,23 @@
                             "currency": "INR",
                             "value": "236.0"
                         }
+                    },
+                    {
+                        "category_id": "F&B",
+                        "descriptor": {
+                            "name": "Gobi Manchurian"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "216.0"
+                        }
                     }
                 ],
                 "provider": {
@@ -274,7 +272,7 @@
                     }
                 },
                 "order": {
-                    "id": "3040-1001-1436",
+                    "id": "3040-1001-1401",
                     "weight": {
                         "unit": "kilogram",
                         "value": 0.5
@@ -295,8 +293,8 @@
                     }
                 }
             },
-            "created_at": "2024-02-02T15:05:13.096Z",
-            "updated_at": "2024-02-02T15:14:35.719Z",
+            "created_at": "2024-02-08T14:57:58.199Z",
+            "updated_at": "2024-02-08T15:13:39.000Z",
             "cancellation": {
                 "cancelled_by": "ondc-preprod-lsp.olacabs.com",
                 "reason": {

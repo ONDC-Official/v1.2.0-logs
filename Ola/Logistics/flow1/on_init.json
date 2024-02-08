@@ -1,237 +1,143 @@
 {
-    "context": {
-      "domain": "nic2004:60232",
-      "country": "IND",
-      "city": "std:080",
-      "action": "on_init",
-      "core_version": "1.2.0",
-      "bap_id": "biz.test.bitsila.com",
-      "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
-      "bpp_id": "ondc-preprod-lsp.olacabs.com",
-      "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
-      "transaction_id": "LOG-3040-1001-1423-Guo3",
-      "message_id": "80010e98-0c71-4675-9681-9ee537b25bf7",
-      "timestamp": "2024-02-02T13:21:46.100Z"
-    },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "OLA"
-        },
-        "items": [
-          {
-            "id": "ola_express",
-            "fulfillment_id": "ola_express_f1"
-          }
-        ],
-        "cancellation_terms": [
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Pending",
-                "short_desc": ""
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": false,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "0.0"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Agent-assigned",
-                "short_desc": "001,003"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "10"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Order-picked-up",
-                "short_desc": "001,003"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "30"
-              }
-            }
-          },
-          {
-            "fulfillment_state": {
-              "descriptor": {
-                "code": "Out-for-delivery",
-                "short_desc": "011,012,013,014,015"
-              }
-            },
-            "refund_eligible": true,
-            "reason_required": true,
-            "cancellation_fee": {
-              "amount": {
-                "currency": "INR",
-                "value": "40"
-              }
-            }
-          }
-        ],
-        "fulfillments": [
-          {
-            "id": "ola_express_f1",
-            "type": "Delivery",
-            "start": {
-              "time": null,
-              "person": null,
-              "location": {
-                "id": "3040:1669",
-                "descriptor": null,
-                "gps": "12.914573, 77.647833",
-                "station_code": null,
-                "city": null,
-                "country": null,
-                "circle": null,
-                "polygon": null,
-                "address": {
-                  "name": "MP2 Cafe Koramangala",
-                  "building": "124, 1st A cross Rd 124, 1st A cross Rd, near Jyoti Nivas College Road",
-                  "locality": "KHB Colony, 5th Block, HSR Layout",
-                  "city": "Bangalore",
-                  "state": " Karnataka",
-                  "country": "India",
-                  "area_code": "560102"
-                },
-                "time": null,
-                "updated_at": null
-              },
-              "contact": {
-                "name": null,
-                "phone": "9999999998"
-              },
-              "instructions": null
-            },
-            "end": {
-              "time": null,
-              "person": null,
-              "location": {
-                "id": null,
-                "descriptor": null,
-                "gps": "12.922726876919764, 77.67078909352824",
-                "station_code": null,
-                "city": null,
-                "country": null,
-                "circle": null,
-                "polygon": null,
-                "address": {
-                  "name": "Poornima",
-                  "building": "Poornima,Outer Ring Road,s1",
-                  "locality": "Bengaluru",
-                  "city": "Bengaluru",
-                  "state": "Karnataka",
-                  "country": "IND",
-                  "area_code": "560103"
-                },
-                "time": null,
-                "updated_at": null
-              },
-              "contact": {
-                "name": null,
-                "phone": "9982039765",
-                "email": "a@gmail.com"
-              },
-              "instructions": null
-            },
-            "tags": [
-              {
-                "code": "rider_check",
-                "list": [
-                  {
-                    "code": "inline_check_for_rider",
-                    "value": "yes"
-                  }
-                ]
-              }
-            ],
-            "tracking": null,
-            "state": null,
-            "agent": null,
-            "vehicle": null
-          }
-        ],
-        "tags": [
-          {
-            "code": "bpp_terms",
-            "list": [
-              {
-                "code": "max_liability",
-                "value": "2"
-              },
-              {
-                "code": "max_liability_cap",
-                "value": "2000"
-              },
-              {
-                "code": "mandatory_arbitration",
-                "value": "false"
-              },
-              {
-                "code": "court_jurisdiction",
-                "value": "Bengaluru"
-              },
-              {
-                "code": "delay_interest",
-                "value": "1000"
-              },
-              {
-                "code": "static_terms",
-                "value": "https://www.olacabs.com/tnc?doc=india-tnc-website"
-              }
-            ]
-          }
-        ],
-        "payment": {
-          "type": "ON-ORDER",
-          "collected_by": "BAP"
-        },
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "0.05"
-          },
-          "breakup": [
-            {
-              "@ondc/org/item_id": "ola_express",
-              "@ondc/org/title_type": "delivery",
-              "price": {
-                "currency": "INR",
-                "value": "0.05"
-              }
-            },
-            {
-              "@ondc/org/item_id": "ola_express",
-              "@ondc/org/title_type": "tax",
-              "price": {
-                  "currency": "INR",
-                  "value": "0.00"
-              }
-          }
-          ],
-          "ttl": "PT15M"
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "biz.test.bitsila.com",
+    "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+    "bpp_id": "ondc-preprod-lsp.olacabs.com",
+    "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/",
+    "transaction_id": "f1",
+    "message_id": "430ce58d-c3d8-48db-9405-99de6f1cf9b0",
+    "timestamp": "2024-02-08T13:12:32.763Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "OLA"
+      },
+      "items": [
+        {
+          "id": "ola_express",
+          "fulfillment_id": "ola_express_f1"
         }
-      }
+      ],
+      "quote": {
+        "ttl": "PT15M",
+        "price": {
+          "currency": "INR",
+          "value": "0.05"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.05"
+            }
+          },
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "ola_express_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "3040:1669",
+              "gps": "12.914573, 77.647833",
+              "address": {
+                "name": "MP2 Cafe Koramangala",
+                "building": "124, 1st A cross Rd 124, 1st A cross Rd, near Jyoti Nivas College Road",
+                "locality": "KHB Colony, 5th Block, HSR Layout",
+                "city": "Bangalore",
+                "state": " Karnataka",
+                "country": "India",
+                "area_code": "560102"
+              }
+            },
+            "contact": {
+              "phone": "9999999998",
+              "email": "test1@test.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.9313018, 77.6163517",
+              "address": {
+                "name": "ola kabeer",
+                "building": "ola kabeer,1st Cross Road,ola c wing",
+                "locality": "Bengaluru",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560034"
+              }
+            },
+            "contact": {
+              "phone": "8197484037",
+              "email": "abdul.sab@olacabs.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "2000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://www.olacabs.com/tnc?doc=india-tnc-website"
+            }
+          ]
+        }
+      ]
     }
   }
+}
