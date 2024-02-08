@@ -1,17 +1,17 @@
 {
     "context": {
-        "transaction_id": "d0fe1aff-c196-40df-a725-7cebb73c1389",
+        "transaction_id": "04acd966-e905-44c4-915d-4fc850c38476",
         "country": "IND",
         "bpp_id": "preprod-ondc.whizzard.in",
         "city": "std:080",
         "domain": "nic2004:60232",
         "bpp_uri": "https://preprod-ondc.whizzard.in/api/integration",
         "action": "on_update",
-        "message_id": "2df3e65d-c4fd-4475-9bd0-d0617d83e9c1",
+        "message_id": "0ef367b3-de49-4cb7-98d1-8f0f2188354b",
         "core_version": "1.2.0",
         "bap_uri": "https://dev-preprod-ondc.ndh01.com/logistics/buyer",
         "bap_id": "dev-preprod-ondc.ndh01.com",
-        "timestamp": "2024-01-21T06:35:52.315Z"
+        "timestamp": "2024-02-06T09:47:56.723Z"
     },
     "message": {
         "order": {
@@ -21,7 +21,8 @@
                         "instructions": {
                             "code": "2",
                             "name": "ONDC order",
-                            "short_desc": "2024-01-21-103685",
+                            "short_desc": "884697",
+                            "long_desc": ""
                         },
                         "person": {
                             "name": "Monish Store 2"
@@ -35,6 +36,7 @@
                                 "country": "IND",
                                 "city": "Bangalore Division",
                                 "area_code": "560041",
+                                "name": "Monish Store 2",
                                 "locality": "Shop no 8",
                                 "state": "Karnataka",
                                 "building": "Shop no 8, Flat No.121"
@@ -43,12 +45,16 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-01-21T06:35:52.283Z",
-                                "end": "2024-01-21T06:54:52.283Z"
+                                "start": "2024-02-06T09:47:56.711Z",
+                                "end": "2024-02-06T10:06:56.711Z"
                             }
                         }
                     },
                     "end": {
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "884697"
+                        },
                         "person": {
                             "name": "Jeevan"
                         },
@@ -61,6 +67,7 @@
                                 "country": "IND",
                                 "city": "Bengaluru",
                                 "area_code": "560041",
+                                "name": "Jeevan",
                                 "locality": "38th Cross Road",
                                 "state": "Karnataka",
                                 "building": "baburakamma"
@@ -69,18 +76,19 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-01-21T06:54:52.283Z",
-                                "end": "2024-01-21T07:14:52.283Z"
+                                "start": "2024-02-06T10:06:56.711Z",
+                                "end": "2024-02-06T10:26:56.711Z"
                             }
                         }
                     },
                     "id": "1",
                     "state": {
                         "descriptor": {
-                            "code": "In-progress"
+                            "code": "Pending"
                         }
                     },
-                    "type": "Delivery"
+                    "type": "Delivery",
+                    "tracking": true
                 }
             ],
             "quote": {
@@ -107,54 +115,85 @@
                     "value": "30"
                 }
             },
-            "updated_at": "2024-01-21T06:35:51.493Z",
+            "updated_at": "2024-02-06T09:47:55.493Z",
             "provider": {
                 "id": "MLL"
             },
-            "created_at": "2024-01-21T06:23:36.619Z",
+            "created_at": "2024-02-06T09:45:28.661Z",
             "payment": {
-                "@ondc/org/collection_amount": "530.0",
                 "collected_by": "BAP",
-                "status": "PAID",
-                "type": "ON-ORDER",
+                "type": "POST-FULFILLMENT",
                 "@ondc/org/settlement_details": [
                     {
-                        "beneficiary_name": "Jeevan",
+                        "beneficiary_name": "Zipzap Logistics Private Limited",
                         "settlement_counterparty": "seller-app",
-                        "settlement_ifsc_code": "ICICI1000234",
-                        "settlement_bank_account_no": "12231232",
+                        "settlement_ifsc_code": "ICIC0000243",
+                        "settlement_bank_account_no": "194205000512",
                         "settlement_type": "neft"
                     }
                 ]
-             },
+            },
             "@ondc/org/linked_order": {
                 "provider": {
                     "address": {
                         "country": "IND",
                         "city": "Bangalore Division",
                         "area_code": "560041",
+                        "name": "Monish Store 2",
                         "locality": "Shop no 8",
                         "state": "Karnataka",
                         "building": "Shop no 8, Flat No.121"
-                        },
+                    },
                     "descriptor": {
                         "name": "Monish Store 2"
                     }
                 },
                 "items": [
                     {
+                        "quantity": {
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.0
+                            },
+                            "count": 1
+                        },
                         "category_id": "Grocery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.0"
+                        },
                         "descriptor": {
                             "name": "Cran Berries"
                         }
                     }
-                ]
+                ],
+                "order": {
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 0.8
+                    },
+                    "id": "NDH1TYVDCPDANUDNXNOWUJHKL",
+                    "dimensions": {
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 20.0
+                        },
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 15.0
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 25.0
+                        }
+                    }
+                }
             },
-            "id": "2024-01-21-103685",
+            "id": "2024-02-06-884697",
             "state": "In-progress",
             "items": [
                 {
-                    "category_id": "I1",
+                    "category_id": "Immediate Delivery",
                     "id": "I1",
                     "descriptor": {
                         "code": "P2P"
@@ -162,8 +201,9 @@
                     "time": {
                         "duration": "PT20M",
                         "label": "TAT",
-                        "timestamp": "2024-01-21"
-                    }
+                        "timestamp": "2024-02-06"
+                    },
+                    "fulfillment_id": "1"
                 }
             ],
             "billing": {
@@ -176,11 +216,11 @@
                     "state": "Karnataka",
                     "building": "Shop no 8, Flat No.121"
                 },
-                "updated_at": "2024-01-21T06:23:30.651Z",
+                "updated_at": "2024-02-06T09:45:07.105Z",
                 "phone": "9176090955",
                 "tax_number": "24AAACC4175D1Z4",
                 "name": "Monish Store 2",
-                "created_at": "2024-01-21T06:23:30.651Z",
+                "created_at": "2024-02-06T09:45:07.105Z",
                 "email": "abcd1122334@hotmail.com"
             }
         }
