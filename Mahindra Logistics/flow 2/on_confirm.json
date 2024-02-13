@@ -1,17 +1,17 @@
 {
     "context": {
-        "transaction_id": "c5cc6670-c232-416f-ae5d-79478bdf0b85",
+        "transaction_id": "dd8beb7f-a4ac-432d-a43c-1f48571a1371",
         "country": "IND",
         "bpp_id": "preprod-ondc.whizzard.in",
         "city": "std:080",
         "domain": "nic2004:60232",
         "bpp_uri": "https://preprod-ondc.whizzard.in/api/integration",
         "action": "on_confirm",
-        "message_id": "b7297878-5e34-4b1c-a998-74827c044252",
+        "message_id": "059d8001-00c4-4648-8ac5-733a0ef2d4b2",
         "core_version": "1.2.0",
         "bap_uri": "https://dev-preprod-ondc.ndh01.com/logistics/buyer",
         "bap_id": "dev-preprod-ondc.ndh01.com",
-        "timestamp": "2024-01-21T05:19:53.920Z"
+        "timestamp": "2024-02-06T10:02:56.978Z"
     },
     "message": {
         "order": {
@@ -20,7 +20,7 @@
                     "start": {
                         "instructions": {
                             "code": "2",
-                            "short_desc": "2024-01-21-124326"
+                            "short_desc": "702591"
                         },
                         "person": {
                             "name": "Monish Store 2"
@@ -34,6 +34,7 @@
                                 "country": "IND",
                                 "city": "Bangalore Division",
                                 "area_code": "560041",
+                                "name": "Monish Store 2",
                                 "locality": "Shop no 8",
                                 "state": "Karnataka",
                                 "building": "Shop no 8, Flat No.121"
@@ -42,8 +43,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-01-21T05:19:53.327Z",
-                                "end": "2024-01-21T05:38:53.327Z"
+                                "start": "2024-02-06T10:04:22.216Z",
+                                "end": "2024-02-06T10:23:22.216Z"
                             }
                         }
                     },
@@ -63,12 +64,18 @@
                                 "country": "IND",
                                 "city": "Bengaluru",
                                 "area_code": "560041",
+                                "name": "Jeevan",
                                 "locality": "38th Cross Road",
                                 "state": "Karnataka",
                                 "building": "baburakamma"
                             },
-                            "gps": "12.921888183240949,77.58263556109719",
-                            "time": {}
+                            "gps": "12.921888183240949,77.58263556109719"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-02-06T10:23:22.216Z",
+                                "end": "2024-02-06T10:43:22.216Z"
+                            }
                         }
                     },
                     "id": "1",
@@ -78,7 +85,27 @@
                         }
                     },
                     "type": "Delivery",
-                    "tracking": false
+                    "tracking": true,
+                    "tags": [
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "yes"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "rto_action",
+                            "list": [
+                                {
+                                    "code": "return_to_origin",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
@@ -105,16 +132,14 @@
                     "value": "30"
                 }
             },
-            "updated_at": "2024-01-21T05:19:53.920Z",
+            "updated_at": "2024-02-06T10:02:56.978Z",
             "provider": {
                 "id": "MLL"
             },
-            "created_at": "2024-01-21T05:19:52.818Z",
+            "created_at": "2024-02-06T10:02:56.778Z",
             "payment": {
-                "@ondc/org/collection_amount": "530.0",
                 "collected_by": "BAP",
-                "status": "PAID",
-                "type": "ON-ORDER",
+                "type": "POST-FULFILLMENT",
                 "@ondc/org/settlement_details": [
                     {
                         "beneficiary_name": "Jeevan",
@@ -131,6 +156,7 @@
                         "country": "IND",
                         "city": "Bangalore Division",
                         "area_code": "560041",
+                        "name": "Monish Store 2",
                         "locality": "Shop no 8",
                         "state": "Karnataka",
                         "building": "Shop no 8, Flat No.121"
@@ -141,14 +167,46 @@
                 },
                 "items": [
                     {
+                        "quantity": {
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.0
+                            },
+                            "count": 1
+                        },
                         "category_id": "Grocery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "500.0"
+                        },
                         "descriptor": {
                             "name": "Cran Berries"
                         }
                     }
-                ]
+                ],
+                "order": {
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 0.8
+                    },
+                    "id": "NDH2BRZCJWGL5XZWI70MQ2SLB",
+                    "dimensions": {
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 20.0
+                        },
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 15.0
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 25.0
+                        }
+                    }
+                }
             },
-            "id": "2024-01-21-124326",
+            "id": "2024-02-06-702591",
             "state": "Accepted",
             "items": [
                 {
@@ -160,8 +218,9 @@
                     "time": {
                         "duration": "PT20M",
                         "label": "TAT",
-                        "timestamp": "2024-01-21"
-                    }
+                        "timestamp": "2024-02-06"
+                    },
+                    "fulfillment_id": "1"
                 }
             ],
             "billing": {
@@ -174,11 +233,11 @@
                     "state": "Karnataka",
                     "building": "Shop no 8, Flat No.121"
                 },
-                "updated_at": "2024-01-21T05:19:44.680Z",
+                "updated_at": "2024-02-06T10:02:39.558Z",
                 "phone": "9176090955",
                 "tax_number": "24AAACC4175D1Z4",
                 "name": "Monish Store 2",
-                "created_at": "2024-01-21T05:19:44.680Z",
+                "created_at": "2024-02-06T10:02:39.558Z",
                 "email": "abcd1122334@hotmail.com"
             }
         }
