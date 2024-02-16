@@ -1,0 +1,94 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-mock-server-dev.thewitslab.com",
+        "bap_uri": "https://primary-ant-reasonably.ngrok-free.app/protocol/v1",
+        "bpp_uri": "https://products-magento-dev.thewitslab.com/bapl",
+        "transaction_id": "10db79e6-f4d5-4702-9bf4-b35e4ee64183",
+        "message_id": "37b95b87-b48d-4d53-a7ed-7bf5decd8bb6",
+        "timestamp": "2024-02-06T10:27:02.881Z",
+        "bpp_id": "products-magento-dev.thewitslab.com",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "274d27d1-4cec-4cdf-8b93-c43ccd8ae2be"
+            },
+            "items": [
+                {
+                    "fulfillment_id": "1",
+                    "id": "Coffee"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Delivery",
+                    "tracking": false,
+                    "@ondc/org/category": "",
+                    "@ondc/org/TAT": "",
+                    "state": {
+                        "descriptor": {
+                            "code": "Non-serviceable"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Coffee",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "title": "Coffee",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "1"
+                                },
+                                "maximum": {
+                                    "count": "10000"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "250"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Coffee",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "\"Coffee\" are out of stock"
+    }
+}
