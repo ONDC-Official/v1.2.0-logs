@@ -1,0 +1,231 @@
+/on_status_Order-picked-up
+
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bap_id": "ondcpreprodtest.sellerapp.in",
+        "bap_uri": "https://qa.ondc.sellerapp.in/bapl/u/",
+        "bpp_id": "dev-ondc.shiprocket.in",
+        "bpp_uri": "https://dev-ondc.shiprocket.in/",
+        "transaction_id": "abcdef_abcdef_abcdef_qa_046",
+        "message_id": "testmsg-SixaKSgEPFCogiHAABpR",
+        "timestamp": "2024-02-02T06:58:37.110Z"
+    },
+    "message": {
+        "order": {
+            "id": "Test-V1.2-Order-0106",
+            "state": "Cancelled",
+            "cancellation": {
+                "cancelled_by": "Buyer App",
+                "reason": {
+                    "id": "012"
+                }
+            },
+            "provider": {
+                "id": "22"
+            },
+            "items": [
+                {
+                    "id": "22",
+                    "fulfillment_id": "1",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                        "code": "P2H2P"
+                    },
+                    "time": {
+                        "duration": "P3D",
+                        "label": "TAT",
+                        "timestamp": "2024-05-02"
+                    }
+                },
+                {
+                    "id": "22",
+                    "fulfillment_id": "2",
+                    "descriptor": {
+                        "code": "P2H2P"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "ONDC Logistics Buyer NP",
+                "address": {
+                    "name": "name",
+                    "building": "My house or building name",
+                    "locality": "My street name",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "600013"
+                },
+                "email": "abcd.efgh@gmail.com",
+                "phone": "9886098860",
+                "tax_number": "29AAACU1901H1ZK",
+                "created_at": "2024-02-02T05:40:17.733Z",
+                "updated_at": "2024-02-02T05:40:17.733Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/awb_no": "76726912345",
+                    "@ondc/org/ebnexpirydate": "",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO Delivered"
+                        }
+                    },
+                    "tracking": true,
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2024-02-02T11:32:59.000Z",
+                                "end": "2024-02-02T11:32:59.000Z"
+                            }
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "range": {
+                                "start": "2024-02-04T11:22:06.000Z",
+                                "end": "2024-02-05T11:22:06.000Z"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "1-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO Delivered"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-02-02 12:19:42",
+                            "range": {
+                                "start": "2024-02-02 12:19:42",
+                                "end": "2024-02-04 11:22:06"
+                            }
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "24.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "22",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "15.25"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "22",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2.75"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "22",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.08"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "22",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.92"
+                        }
+                    }
+                ]
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "@ondc/org/collection_amount": "300.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX",
+                        "upi_address": "gft@oksbi"
+                    }
+                ]
+            },
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Aadishwar Store,Aadishwar && ABCD Product of fat, Store,Aadishwar Store"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "value": "2",
+                                "unit": "kilogram"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "150.00"
+                        }
+                    }
+                ],
+                "provider": {
+                    "descriptor": {
+                        "name": "Aadishwar Store,Aadishwar Store,Aadishwar Store,Aadishwar Store,Aadishwar && ABCD Product of fat,Store,Aadishwar Store"
+                    },
+                    "address": {
+                        "name": "KHB Towers",
+                        "building": "104/102",
+                        "locality": "Koramangala",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "country": "IND",
+                        "area_code": "600013"
+                    }
+                },
+                "order": {
+                    "id": "Test-V1.2-Order-0106",
+                    "weight": {
+                        "value": "3",
+                        "unit": "kilogram"
+                    },
+                    "dimensions": {
+                        "length": {
+                            "value": "10",
+                            "unit": "centimeter"
+                        },
+                        "breadth": {
+                            "value": "10",
+                            "unit": "centimeter"
+                        },
+                        "height": {
+                            "value": "10",
+                            "unit": "centimeter"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
