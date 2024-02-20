@@ -3,13 +3,13 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:0522",
-        "action": "confirm",
+        "action": "on_update",
         "core_version": "1.2.0",
         "bap_id": "api.staging.nearshop.in",
         "bap_uri": "https://api.staging.nearshop.in/bap/api/v1",
         "transaction_id": "00249014-36f1-54cf-a286-1fd3ca122a01",
-        "message_id": "c3d52268-aece-5669-99a0-734666c0a52a",
-        "timestamp": "2024-02-14T10:40:20.972Z",
+        "message_id": "f7f65ad0-cb25-11ee-a212-49138047de27",
+        "timestamp": "2024-02-14T10:44:02.941Z",
         "ttl": "PT30S",
         "bpp_id": "ondc-seller-preprod.chattybao.com/ondc",
         "bpp_uri": "https://ondc-seller-preprod.chattybao.com/ondc/bpp"
@@ -17,7 +17,7 @@
     "message": {
         "order": {
             "id": "65321cbb-4897-55a6-bbd2-6e412a58f70b",
-            "state": "Created",
+            "state": "Accepted",
             "provider": {
                 "id": "MR8mcezPPQEA-r8EhP6UN9",
                 "locations": [
@@ -29,10 +29,17 @@
             "items": [
                 {
                     "id": "dde25c60-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
-                    "fulfillment_id": "1",
                     "quantity": {
-                        "count": 3
-                    }
+                        "count": 2
+                    },
+                    "fulfillment_id": "C1"
+                },
+                {
+                    "id": "dde25c60-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "1"
                 },
                 {
                     "id": "4e5ffc10-944d-11ee-848d-2d2b8538311e:MR8mcezPPQEA-r8EhP6UN9",
@@ -74,6 +81,44 @@
             },
             "fulfillments": [
                 {
+                    "@ondc/org/provider_name": "tester shatrughan grocery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "name": "Pending"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042",
+                            "descriptor": {
+                                "name": "tester shatrughan grocery"
+                            },
+                            "gps": "26.854719,80.998035",
+                            "address": {
+                                "locality": "4/267, Vivek Khand 4 Gomti Nagar",
+                                "city": "Lucknow",
+                                "area_code": "226010",
+                                "state": "lucknow"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-02-14T10:40:22.567Z",
+                                "end": "2024-02-14T11:10:22.567Z"
+                            }
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "name": "ONDC order",
+                            "short_desc": "ONDC order",
+                            "long_desc": "ONDC order"
+                        },
+                        "contact": {
+                            "phone": "8840019700",
+                            "email": "help@chattybao.com"
+                        }
+                    },
                     "id": "1",
                     "type": "Delivery",
                     "tracking": true,
@@ -96,14 +141,66 @@
                         "contact": {
                             "email": "user@example.com",
                             "phone": "9886394142"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-02-14T10:40:22.567Z",
+                                "end": "2024-02-14T11:40:22.567Z"
+                            }
                         }
-                    }
+                    },
+                    "@ondc/org/TAT": "PT60M"
+                },
+                {
+                    "id": "C1",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc-seller-preprod.chattybao.com/ondc"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "dde25c60-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-1304"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "19706"
+                    "value": "18402"
                 },
                 "breakup": [
                     {
@@ -111,11 +208,11 @@
                         "@ondc/org/item_id": "dde25c60-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 3
+                            "count": 1
                         },
                         "price": {
                             "currency": "INR",
-                            "value": "1956"
+                            "value": "652"
                         },
                         "item": {
                             "price": {
@@ -190,26 +287,6 @@
                 ],
                 "ttl": "P4D"
             },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "07AAJCC8423B1ZW"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "29AACCJ6756B1ZI"
-                        }
-                    ]
-                }
-            ],
             "payment": {
                 "type": "ON-ORDER",
                 "collected_by": "BAP",
@@ -239,7 +316,7 @@
                 ]
             },
             "created_at": "2024-02-14T10:40:20.972Z",
-            "updated_at": "2024-02-14T10:40:20.972Z"
+            "updated_at": "2024-02-14T10:44:02.929Z"
         }
     }
 }
