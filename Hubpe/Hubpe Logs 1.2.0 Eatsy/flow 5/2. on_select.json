@@ -9,9 +9,9 @@
         "bap_uri": "https://dev-preprod-buyer-ondc.ndh01.com/retail/buyer",
         "bpp_id": "staging.tmbill.com/tp/v1/ondc",
         "bpp_uri": "https://staging.tmbill.com/tp/v1/ondc",
-        "transaction_id": "d3b65fac-4e18-4a1b-8bd5-37383296312d",
-        "message_id": "d7f62eef-249a-4f9c-a32d-1337be572173",
-        "timestamp": "2024-02-02T11:15:24.567Z",
+        "transaction_id": "4b70afdc-173b-48cc-92a7-c4ef48bdec20",
+        "message_id": "2b3aadf0-4c0c-4c29-9a36-af7045b9d3c2",
+        "timestamp": "2024-02-21T05:42:10.466Z",
         "ttl": "PT30S"
     },
     "message": {
@@ -21,8 +21,8 @@
             },
             "items": [
                 {
-                    "id": "2775198::901000::G-1",
                     "fulfillment_id": "22446688739675_fulfillment_1",
+                    "id": "2775198::901000::G-1",
                     "tags": [
                         {
                             "list": [
@@ -31,14 +31,13 @@
                                     "value": "item"
                                 }
                             ],
-                            "display": true,
                             "code": "type"
                         }
                     ]
                 },
                 {
-                    "id": "2775203::1155942::EP10",
                     "fulfillment_id": "22446688739675_fulfillment_1",
+                    "id": "2775200::1155939::EP07",
                     "tags": [
                         {
                             "list": [
@@ -47,7 +46,6 @@
                                     "value": "item"
                                 }
                             ],
-                            "display": true,
                             "code": "type"
                         }
                     ]
@@ -56,99 +54,59 @@
             "fulfillments": [
                 {
                     "id": "22446688739675_fulfillment_1",
-                    "type": "Delivery",
+                    "@ondc/org/provider_name": "TMBill",
+                    "tracking": true,
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT60M",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
                     },
-                    "tracking": true
+                    "type": "Delivery"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "483"
+                    "value": "511"
                 },
+                "ttl": "PT1H",
                 "breakup": [
                     {
                         "@ondc/org/item_id": "2775198::901000::G-1",
                         "@ondc/org/item_quantity": {
                             "count": 2
                         },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "95.24"
-                            },
-                            "quantity": {
-                                "available": {
-                                    "count": 97
-                                },
-                                "maximum": {
-                                    "count": 97
-                                }
-                            }
-                        },
                         "title": "Inclusive Item 2",
+                        "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
                             "value": "190.48"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "97"
+                                },
+                                "maximum": {
+                                    "count": "97"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "95.24"
+                            }
                         }
                     },
                     {
                         "@ondc/org/item_id": "2775198::901000::G-1",
-                        "@ondc/org/title_type": "tax",
-                        "item": {
-                            "tags": [
-                                {
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ],
-                                    "display": true,
-                                    "code": "type"
-                                }
-                            ]
-                        },
                         "title": "Tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
                             "value": "9.52"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "2775203::1155942::EP10",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
                         },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "100"
-                            },
-                            "quantity": {
-                                "available": {
-                                    "count": 97
-                                },
-                                "maximum": {
-                                    "count": 97
-                                }
-                            }
-                        },
-                        "title": "Mutton Curry",
-                        "price": {
-                            "currency": "INR",
-                            "value": "200"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "2775203::1155942::EP10",
-                        "@ondc/org/title_type": "tax",
                         "item": {
                             "tags": [
                                 {
@@ -158,37 +116,69 @@
                                             "value": "item"
                                         }
                                     ],
-                                    "display": true,
                                     "code": "type"
                                 }
                             ]
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "2775200::1155939::EP07",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         },
+                        "title": "Egg Curry",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "240"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "97"
+                                },
+                                "maximum": {
+                                    "count": "97"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "2775200::1155939::EP07",
                         "title": "Tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "10"
+                            "value": "12"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ],
+                                    "code": "type"
+                                }
+                            ]
                         }
                     },
                     {
                         "@ondc/org/item_id": "22446688739675_fulfillment_1",
-                        "@ondc/org/title_type": "packing",
-                        "title": "Packing Charges",
-                        "price": {
-                            "currency": "INR",
-                            "value": "14.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "22446688739675_fulfillment_1",
-                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery Charges",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
                             "value": "59"
                         }
                     }
-                ],
-                "ttl": "PT1H"
+                ]
             }
         }
     }

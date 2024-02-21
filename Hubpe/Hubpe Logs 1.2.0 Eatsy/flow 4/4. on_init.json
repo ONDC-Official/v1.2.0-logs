@@ -9,35 +9,28 @@
         "bap_uri": "https://dev-preprod-buyer-ondc.ndh01.com/retail/buyer",
         "bpp_id": "staging.tmbill.com/tp/v1/ondc",
         "bpp_uri": "https://staging.tmbill.com/tp/v1/ondc",
-        "transaction_id": "874f3779-1b4b-4a0f-b299-528a40a4832f",
-        "message_id": "24768dc6-32a4-4c65-81ac-189ba2f21a66",
-        "timestamp": "2024-02-02T11:11:58.750Z",
+        "transaction_id": "240e6cab-ad84-4b60-8e65-d3b9431c615e",
+        "message_id": "1ed48b3d-31e8-4fb4-ae94-191bbc30fd10",
+        "timestamp": "2024-02-21T05:52:47.229Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "tags": [
-                {
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "27AAFCT2020D1ZW"
-                        }
-                    ],
-                    "display": true,
-                    "code": "bpp_terms"
-                }
-            ],
             "provider": {
-                "id": "22446688739675"
+                "id": "22446688739675",
+                "locations": [
+                    {
+                        "id": "22446688739675"
+                    }
+                ]
             },
             "items": [
                 {
+                    "fulfillment_id": "22446688739675_fulfillment_1",
                     "id": "2775198::901000::G-1",
                     "quantity": {
                         "count": 2
                     },
-                    "fulfillment_id": "22446688739675_fulfillment_1",
                     "tags": [
                         {
                             "list": [
@@ -46,17 +39,16 @@
                                     "value": "item"
                                 }
                             ],
-                            "display": true,
                             "code": "type"
                         }
                     ]
                 },
                 {
-                    "id": "2775203::1155942::EP10",
+                    "fulfillment_id": "22446688739675_fulfillment_1",
+                    "id": "2775200::1155939::EP07",
                     "quantity": {
                         "count": 2
                     },
-                    "fulfillment_id": "22446688739675_fulfillment_1",
                     "tags": [
                         {
                             "list": [
@@ -65,39 +57,22 @@
                                     "value": "item"
                                 }
                             ],
-                            "display": true,
                             "code": "type"
                         }
                     ]
                 }
             ],
-            "billing": {
-                "name": "Eren Yeager",
-                "address": {
-                    "name": "Eren Yeager",
-                    "building": "14A",
-                    "locality": "Eatsy",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "India",
-                    "area_code": "560066"
-                },
-                "phone": "1111122222",
-                "created_at": "2024-02-02T11:11:57.764Z",
-                "updated_at": "2024-02-02T11:11:57.764Z"
-            },
             "fulfillments": [
                 {
                     "id": "22446688739675_fulfillment_1",
                     "type": "Delivery",
-                    "provider_id": "22446688739675",
                     "tracking": false,
                     "end": {
                         "location": {
-                            "gps": "12.969806181237303,77.7499626763165",
+                            "gps": "12.96980423507413,77.74996133521199",
                             "address": {
                                 "name": "Eren Yeager",
-                                "building": "14A",
+                                "building": "55, Eatsy",
                                 "locality": "Eatsy",
                                 "city": "Bengaluru",
                                 "state": "Karnataka",
@@ -112,77 +87,43 @@
                             "name": "Eren Yeager",
                             "image": "https://hubpe.s3.amazonaws.com/profile_img%2F1705926556280.png"
                         }
-                    }
+                    },
+                    "provider_id": "22446688739675"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "483"
+                    "value": "511"
                 },
+                "ttl": "PT1H",
                 "breakup": [
                     {
                         "@ondc/org/item_id": "2775198::901000::G-1",
                         "@ondc/org/item_quantity": {
                             "count": 2
                         },
+                        "title": "Inclusive Item 2",
                         "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "190.48"
+                        },
                         "item": {
                             "price": {
                                 "currency": "INR",
                                 "value": "95.24"
                             }
-                        },
-                        "title": "Inclusive Item 2",
-                        "price": {
-                            "currency": "INR",
-                            "value": "190.48"
                         }
                     },
                     {
                         "@ondc/org/item_id": "2775198::901000::G-1",
-                        "@ondc/org/title_type": "tax",
-                        "item": {
-                            "tags": [
-                                {
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ],
-                                    "display": true,
-                                    "code": "type"
-                                }
-                            ]
-                        },
                         "title": "Tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
                             "value": "9.52"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "2775203::1155942::EP10",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
                         },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "100"
-                            }
-                        },
-                        "title": "Mutton Curry",
-                        "price": {
-                            "currency": "INR",
-                            "value": "200"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "2775203::1155942::EP10",
-                        "@ondc/org/title_type": "tax",
                         "item": {
                             "tags": [
                                 {
@@ -192,37 +133,61 @@
                                             "value": "item"
                                         }
                                     ],
-                                    "display": true,
                                     "code": "type"
                                 }
                             ]
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "2775200::1155939::EP07",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         },
+                        "title": "Egg Curry",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "240"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "120"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "2775200::1155939::EP07",
                         "title": "Tax",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "10"
+                            "value": "12"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ],
+                                    "code": "type"
+                                }
+                            ]
                         }
                     },
                     {
                         "@ondc/org/item_id": "22446688739675_fulfillment_1",
-                        "@ondc/org/title_type": "packing",
-                        "title": "Packing Charges",
-                        "price": {
-                            "currency": "INR",
-                            "value": "14.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "22446688739675_fulfillment_1",
-                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery Charges",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
                             "value": "59"
                         }
                     }
-                ],
-                "ttl": "PT1H"
+                ]
             },
             "payment": {
                 "@ondc/org/buyer_app_finder_fee_type": "Percent",
@@ -234,11 +199,46 @@
                         "settlement_type": "neft",
                         "settlement_bank_account_no": "50200085305869",
                         "settlement_ifsc_code": "HDFC0000966",
+                        "beneficiary_name": "TechMainstay Software Private Limited",
                         "bank_name": "HDFC BANK",
                         "branch_name": "SHRIRAMPUR BRANCH"
                     }
                 ]
-            }
+            },
+            "billing": {
+                "name": "Eren Yeager",
+                "address": {
+                    "name": "Eren Yeager",
+                    "building": "55, Eatsy",
+                    "locality": "Eatsy",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560066"
+                },
+                "phone": "1111122222",
+                "created_at": "2024-02-21T05:52:29.084Z",
+                "updated_at": "2024-02-21T05:52:29.084Z"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "27AAFCT2020D1ZW"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "29AAZFG9754C1ZM"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }
