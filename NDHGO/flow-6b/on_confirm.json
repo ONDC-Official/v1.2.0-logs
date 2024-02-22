@@ -3,57 +3,71 @@
     "domain": "ONDC:RET10",
     "country": "IND",
     "city": "std:080",
-    "action": "on_cancel",
+    "action": "on_confirm",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "preprod-ondc.ndh01.com/retail",
     "bpp_uri": "https://preprod-ondc.ndh01.com/retail/seller",
-    "transaction_id": "95683171-55b0-44c5-97c3-02581461ce7d",
-    "message_id": "3f5525ff-45c8-4245-b412-a570a1dcf6cf",
-    "timestamp": "2024-02-22T12:38:07.377Z",
+    "transaction_id": "bfd34608-5dd9-4a52-ac36-38e66153067f",
+    "message_id": "252a163c-ae34-4224-b450-b11bc2321bc4",
+    "timestamp": "2024-02-22T13:08:11.289Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2024-02-22-241838",
-      "state": "Cancelled",
+      "id": "2024-02-22-994233",
+      "tags": [
+        {
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "GST123"
+            }
+          ],
+          "code": "bpp_terms"
+        },
+        {
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "GSTIN1234567890"
+            }
+          ],
+          "code": "bap_terms"
+        }
+      ],
+      "state": "Created",
       "provider": {
         "id": "132622",
         "locations": [
           {
             "id": "L-132622"
           }
-        ]
+        ],
+        "rateable": false
       },
       "items": [
         {
-          "id": "MTMyNjIyXzgwNTc4MzZfM19Q",
-          "quantity": {
-            "count": 0
-          },
-          "fulfillment_id": "1"
-        },
-        {
-          "id": "MTMyNjIyXzgwNTI4NjFfM19Q",
-          "quantity": {
-            "count": 0
-          },
-          "fulfillment_id": "1"
-        },
-        {
           "id": "MTMyNjIyXzgwNTI4NjFfM19Q",
           "quantity": {
             "count": 3
           },
-          "fulfillment_id": "408df820-0416-4334-8f6b-a6906aad91dc"
+          "fulfillment_id": "1"
         },
         {
-          "id": "MTMyNjIyXzgwNTc4MzZfM19Q",
+          "id": "MTMyNjIyXzc5ODM0OTFfM19Q",
           "quantity": {
-            "count": 3
+            "count": 1
           },
-          "fulfillment_id": "408df820-0416-4334-8f6b-a6906aad91dc"
+          "fulfillment_id": "1"
+        },
+        {
+          "id": "MTMyNjIyXzc4MDA2MzZfM19Q",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "1"
         }
       ],
       "billing": {
@@ -69,23 +83,18 @@
         },
         "email": "monish.b@unizap.ai",
         "phone": "09566291095",
-        "created_at": "2024-02-22T12:36:48.728Z",
-        "updated_at": "2024-02-22T12:36:48.728Z"
-      },
-      "cancellation": {
-        "cancelled_by": "buyer-app-preprod-v2.ondc.org",
-        "reason": {
-          "id": "003"
-        }
+        "created_at": "2024-02-22T13:08:05.896Z",
+        "updated_at": "2024-02-22T13:08:05.896Z"
       },
       "fulfillments": [
         {
           "id": "1",
           "type": "Delivery",
+          "@ondc/org/TAT": "PT2H",
           "@ondc/org/provider_name": "Monish ONDC Store",
           "state": {
             "descriptor": {
-              "code": "Cancelled"
+              "code": "Pending"
             }
           },
           "tracking": true,
@@ -108,8 +117,8 @@
             },
             "time": {
               "range": {
-                "start": "2024-02-22T13:21:52.635Z",
-                "end": "2024-02-22T13:26:52.635Z"
+                "start": "2024-02-22T13:53:10.757Z",
+                "end": "2024-02-22T13:58:10.757Z"
               }
             },
             "contact": {
@@ -131,8 +140,8 @@
             },
             "time": {
               "range": {
-                "start": "2024-02-22T14:26:52.635Z",
-                "end": "2024-02-22T14:36:52.635Z"
+                "start": "2024-02-22T14:58:10.757Z",
+                "end": "2024-02-22T15:08:10.757Z"
               }
             },
             "contact": {
@@ -143,33 +152,8 @@
               "name": "Monish B"
             }
           },
+          "rateable": false,
           "tags": [
-            {
-              "list": [
-                {
-                  "code": "reason_id",
-                  "value": "003"
-                },
-                {
-                  "code": "initiated_by",
-                  "value": "buyer-app-preprod-v2.ondc.org"
-                }
-              ],
-              "code": "cancel_request"
-            },
-            {
-              "list": [
-                {
-                  "code": "fulfillment_state",
-                  "value": "Pending"
-                },
-                {
-                  "code": "updated_at",
-                  "value": "2024-02-22T12:38:07.739Z"
-                }
-              ],
-              "code": "precancel_state"
-            },
             {
               "list": [
                 {
@@ -191,63 +175,10 @@
                 },
                 {
                   "code": "url",
-                  "value": "https://staging-seller.ndh01.com/seller/track-order/2024-02-22-241838?for=ondc"
+                  "value": "https://staging-seller.ndh01.com/seller/track-order/2024-02-22-994233?for=ondc"
                 }
               ],
               "code": "tracking"
-            }
-          ]
-        },
-        {
-          "id": "408df820-0416-4334-8f6b-a6906aad91dc",
-          "type": "Cancel",
-          "state": {
-            "descriptor": {
-              "code": "Cancelled"
-            }
-          },
-          "tags": [
-            {
-              "list": [
-                {
-                  "code": "type",
-                  "value": "item"
-                },
-                {
-                  "code": "id",
-                  "value": "MTMyNjIyXzgwNTI4NjFfM19Q"
-                },
-                {
-                  "code": "currency",
-                  "value": "INR"
-                },
-                {
-                  "code": "value",
-                  "value": "-150.00"
-                }
-              ],
-              "code": "quote_trail"
-            },
-            {
-              "list": [
-                {
-                  "code": "type",
-                  "value": "item"
-                },
-                {
-                  "code": "id",
-                  "value": "MTMyNjIyXzgwNTc4MzZfM19Q"
-                },
-                {
-                  "code": "currency",
-                  "value": "INR"
-                },
-                {
-                  "code": "value",
-                  "value": "-600.00"
-                }
-              ],
-              "code": "quote_trail"
             }
           ]
         }
@@ -255,31 +186,49 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "50.00"
+          "value": "4270.00"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "MTMyNjIyXzgwNTc4MzZfM19Q",
+            "@ondc/org/item_id": "MTMyNjIyXzc4MDA2MzZfM19Q",
             "@ondc/org/item_quantity": {
-              "count": 0
+              "count": 2
             },
             "@ondc/org/title_type": "item",
             "item": {
               "price": {
                 "currency": "INR",
-                "value": "200.00"
+                "value": "2000.00"
               }
             },
-            "title": "Roasted Cheddar Cheese Makhana",
+            "title": "Mango Milk Shake",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "4000.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "MTMyNjIyXzc5ODM0OTFfM19Q",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "70.00"
+              }
+            },
+            "title": "Snapin Achari Seasoning, 40 gm",
+            "price": {
+              "currency": "INR",
+              "value": "70.00"
             }
           },
           {
             "@ondc/org/item_id": "MTMyNjIyXzgwNTI4NjFfM19Q",
             "@ondc/org/item_quantity": {
-              "count": 0
+              "count": 3
             },
             "@ondc/org/title_type": "item",
             "item": {
@@ -291,7 +240,7 @@
             "title": "GRB Red Chilli Powder, 100 gm",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "150.00"
             }
           },
           {
@@ -345,8 +294,8 @@
         "uri": "https://juspay.in/",
         "tl_method": "http/get",
         "params": {
-          "transaction_id": "4426be14-d462-4081-a373-0c624b9fd460",
-          "amount": "800",
+          "transaction_id": "d1ba4959-e2a1-489c-bc7c-cb82436e6969",
+          "amount": "4270",
           "currency": "INR"
         },
         "type": "ON-ORDER",
@@ -367,8 +316,8 @@
           }
         ]
       },
-      "created_at": "2024-02-22T12:36:52.635Z",
-      "updated_at": "2024-02-22T12:38:07.739Z"
+      "created_at": "2024-02-22T13:08:10.757Z",
+      "updated_at": "2024-02-22T13:08:11.289Z"
     }
   }
 }
