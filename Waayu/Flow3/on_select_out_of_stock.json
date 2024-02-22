@@ -5,26 +5,26 @@
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-    "bpp_id": "owner.waayu.app/ondc",
-    "bpp_uri": "owner.waayu.app/ondcpreprod",
-    "transaction_id": "fb6e6f60-8312-48a1-b0f1-10c06147b15a",
-    "message_id": "7cbc8a89-97fa-4098-aee2-5302d59dec4f",
-    "city": "std:022",
+    "bpp_id": "owner.waayu.app/ondcpreprod",
+    "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
+    "transaction_id": "ec0d5a5c-3d74-4e1e-b3b5-01a113631b40",
+    "message_id": "677778bf-e68a-49d0-8bbc-fa3c3d3ef627",
+    "city": "std:08922",
     "country": "IND",
-    "timestamp": "2023-10-26T11:09:53.549Z"
+    "timestamp": "2024-02-20T06:50:48.132Z"
   },
   "message": {
     "order": {
-      "provider": { "id": "670", "locations": [{ "id": "L670" }] },
+      "provider": { "id": "659", "locations": [{ "id": "L659" }] },
       "items": [
-        { "fulfillment_id": "F670", "id": "180683" },
-        { "fulfillment_id": "F670", "id": "180691" }
+        { "fulfillment_id": "WD111", "id": "177168" },
+        { "fulfillment_id": "WD111", "id": "177169" }
       ],
       "fulfillments": [
         {
-          "id": "F670",
+          "id": "WD111",
           "type": "Delivery",
-          "@ondc/org/provider_name": "Guruprasad Veg Restaurant",
+          "@ondc/org/provider_name": "Nityanands cafe",
           "tracking": true,
           "@ondc/org/category": "Immediate Delivery",
           "@ondc/org/TAT": "PT90M",
@@ -34,59 +34,59 @@
       "quote": {
         "breakup": [
           {
-            "@ondc/org/item_id": "180683",
-            "@ondc/org/item_quantity": { "count": 0 },
-            "title": "Veg Cheese Sandwich",
+            "@ondc/org/item_id": "177168",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Chicken Biryani",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "2000" },
+            "item": {
+              "quantity": {
+                "available": { "count": "99" },
+                "maximum": { "count": "99" }
+              },
+              "price": { "currency": "INR", "value": "1000" }
+            }
+          },
+          {
+            "@ondc/org/item_id": "177168",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "100" }
+          },
+          {
+            "@ondc/org/item_id": "177169",
+            "title": "Paneer Tikka Biryani",
             "@ondc/org/title_type": "item",
             "price": { "currency": "INR", "value": "0" },
+            "@ondc/org/item_quantity": { "count": 0 },
             "item": {
               "quantity": {
                 "available": { "count": "0" },
                 "maximum": { "count": "0" }
               },
-              "price": { "currency": "INR", "value": "160" }
+              "price": { "currency": "INR", "value": "900" }
             }
           },
           {
-            "@ondc/org/item_id": "180683",
+            "@ondc/org/item_id": "177169",
             "title": "Tax",
             "@ondc/org/title_type": "tax",
             "price": { "currency": "INR", "value": "0" }
           },
           {
-            "@ondc/org/item_id": "180691",
-            "title": "Grilled Cheese Sandwich",
-            "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "0" },
-            "@ondc/org/item_quantity": { "count": 0 },
-            "item": {
-              "quantity": {
-                "available": { "count": "0" },
-                "maximum": { "count": "0" }
-              },
-              "price": { "currency": "INR", "value": "190" }
-            }
-          },
-          {
-            "@ondc/org/item_id": "180691",
-            "title": "Tax",
-            "@ondc/org/title_type": "tax",
-            "price": { "currency": "INR", "value": "0" }
-          },
-          {
-            "@ondc/org/item_id": "F670",
+            "@ondc/org/item_id": "WD111",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
-            "price": { "currency": "INR", "value": "0" }
+            "price": { "currency": "INR", "value": "50" }
           },
           {
-            "@ondc/org/item_id": "F670",
+            "@ondc/org/item_id": "WD111",
             "title": "Packing charges",
             "@ondc/org/title_type": "packing",
-            "price": { "currency": "INR", "value": "0" }
+            "price": { "currency": "INR", "value": "10" }
           }
         ],
-        "price": { "currency": "INR", "value": "0.00" },
+        "price": { "currency": "INR", "value": "2160.00" },
         "ttl": "P1D"
       }
     }
@@ -94,60 +94,24 @@
   "error": {
     "type": "DOMAIN-ERROR",
     "code": "40002",
-    "message": "180683,180691"
+    "path": "/on_select",
+    "message": "[{\"item_id\":\"177169\",\"error\":\"40002\"}]"
   },
-  "gateway_response": {
+  "buyer_response": {
     "context": {
       "domain": "ONDC:RET11",
       "action": "on_select",
       "core_version": "1.2.0",
       "bap_id": "buyer-app-preprod-v2.ondc.org",
       "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-      "bpp_id": "owner.waayu.app/ondc",
-      "bpp_uri": "owner.waayu.app/ondcpreprod",
-      "transaction_id": "fb6e6f60-8312-48a1-b0f1-10c06147b15a",
-      "message_id": "7cbc8a89-97fa-4098-aee2-5302d59dec4f",
-      "city": "std:022",
+      "bpp_id": "owner.waayu.app/ondcpreprod",
+      "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
+      "transaction_id": "ec0d5a5c-3d74-4e1e-b3b5-01a113631b40",
+      "message_id": "677778bf-e68a-49d0-8bbc-fa3c3d3ef627",
+      "city": "std:08922",
       "country": "IND",
-      "timestamp": "2023-10-26T11:09:53.549Z"
+      "timestamp": "2024-02-20T06:50:48.132Z"
     },
     "message": { "ack": { "status": "ACK" } }
-  },
-  "generated_signature": "Signature keyId=\"owner.waayu.app/ondcpreprod|7711|ed25519\",algorithm=\"ed25519\",created=\"1698318592\",expires=\"1698322192\",headers=\"(created) (expires) digest\",signature=\"v3e7TVCA6bmTeHFJk6WBUgPtpnqdABKK733oIvYji3NApSNvC6T1d5ksqxgPGoeX2vGebqGDc02oEcK/18laBw==\"",
-  "bap_payload": {
-    "context": {
-      "domain": "ONDC:RET11",
-      "country": "IND",
-      "city": "std:022",
-      "action": "select",
-      "core_version": "1.2.0",
-      "bap_id": "buyer-app-preprod-v2.ondc.org",
-      "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-      "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
-      "transaction_id": "fb6e6f60-8312-48a1-b0f1-10c06147b15a",
-      "message_id": "7cbc8a89-97fa-4098-aee2-5302d59dec4f",
-      "timestamp": "2023-10-26T11:09:51.549Z",
-      "bpp_id": "owner.waayu.app/ondcpreprod",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "order": {
-        "items": [
-          { "id": "180683", "quantity": { "count": 1 }, "location_id": "L670" },
-          { "id": "180691", "quantity": { "count": 2 }, "location_id": "L670" }
-        ],
-        "provider": { "id": "670", "locations": [{ "id": "L670" }] },
-        "fulfillments": [
-          {
-            "end": {
-              "location": {
-                "gps": "18.965586, 72.816646",
-                "address": { "area_code": "400007" }
-              }
-            }
-          }
-        ]
-      }
-    }
   }
 }
