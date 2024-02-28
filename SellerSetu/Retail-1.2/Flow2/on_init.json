@@ -3,14 +3,14 @@
        "domain":"ONDC:RET10",
        "country":"IND",
        "city":"std:08288",
-       "action":"on_select",
+       "action":"on_init",
        "core_version":"1.2.0",
        "bap_id":"buyer-app-preprod-v2.ondc.org",
        "bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
        "bpp_uri":"https://bridge.sellersetu.in/ondc",
        "transaction_id":"7df3747c-38f0-412d-90c0-810e38c453f1",
-       "message_id":"1317e92c-d015-4acb-9178-463d561eb83a",
-       "timestamp":"2024-02-28T13:41:23.646Z",
+       "message_id":"091b9ea2-05fd-4623-8c77-7f72b7992836",
+       "timestamp":"2024-02-28T13:45:33.941Z",
        "bpp_id":"bridge.sellersetu.in"
     },
     "message":{
@@ -25,40 +25,72 @@
           },
           "items":[
              {
-                "fulfillment_id":"MP2",
-                "id":"6f0fa0ec-2d0a-41ab-bdb5-a4eb7a3755c5"
+                "id":"6f0fa0ec-2d0a-41ab-bdb5-a4eb7a3755c5",
+                "quantity":{
+                   "count":2
+                },
+                "location_id":"ddc83ddd-f504-44a6-b9f4-ad2917416a37",
+                "fulfillment_id":"MP2"
              },
              {
-                "fulfillment_id":"MP2",
-                "id":"a2032aea-2593-4ffe-8f3b-1cc439adf5b8"
+                "id":"a2032aea-2593-4ffe-8f3b-1cc439adf5b8",
+                "quantity":{
+                   "count":2
+                },
+                "location_id":"ddc83ddd-f504-44a6-b9f4-ad2917416a37",
+                "fulfillment_id":"MP2"
              }
           ],
+          "billing":{
+             "address":{
+                "building":"OYO",
+                "city":"Bengaluru",
+                "state":"Karnataka",
+                "country":"IND",
+                "area_code":"560076",
+                "locality":"4th Cross Road",
+                "name":"ikshan"
+             },
+             "phone":"8882160205",
+             "name":"ikshan",
+             "email":"ibhardwaj_be21@thapar.edu",
+             "created_at":"2024-02-28T13:45:30.429Z",
+             "updated_at":"2024-02-28T13:45:30.429Z"
+          },
           "fulfillments":[
              {
                 "id":"MP2",
                 "type":"Delivery",
-                "@ondc/org/provider_name":"MP2",
-                "tracking":false,
-                "@ondc/org/category":"Immediate Delivery",
-                "@ondc/org/TAT":"PT55M",
-                "state":{
-                   "descriptor":{
-                      "code":"Serviceable"
+                "end":{
+                   "contact":{
+                      "email":"ibhardwaj_be21@thapar.edu",
+                      "phone":"8882160205"
+                   },
+                   "location":{
+                      "gps":"12.891469134148641,77.60926589369774",
+                      "address":{
+                         "building":"OYO",
+                         "city":"Bengaluru",
+                         "state":"Karnataka",
+                         "country":"IND",
+                         "area_code":"560076",
+                         "locality":"4th Cross Road",
+                         "name":"ikshan"
+                      }
                    }
-                }
-             },
-             {
-                "id":"MP2",
-                "type":"Delivery",
-                "@ondc/org/provider_name":"MP2",
+                },
                 "tracking":false,
-                "@ondc/org/category":"Immediate Delivery",
-                "@ondc/org/TAT":"PT55M",
-                "state":{
-                   "descriptor":{
-                      "code":"Serviceable"
+                "tags":[
+                   {
+                      "code":"rider_check",
+                      "list":[
+                         {
+                            "code":"inline_check_for_rider",
+                            "value":"yes"
+                         }
+                      ]
                    }
-                }
+                ]
              }
           ],
           "quote":{
@@ -255,7 +287,97 @@
                 "value":"4132.88"
              },
              "ttl":"P1D"
-          }
+          },
+          "payment":{
+             "type":"ON-ORDER",
+             "collected_by":"BPP",
+             "uri":"https://snp.com/pg",
+             "status":"NOT-PAID",
+             "@ondc/org/buyer_app_finder_fee_type":"percent",
+             "@ondc/org/buyer_app_finder_fee_amount":"3",
+             "@ondc/org/settlement_basis":"delivery",
+             "@ondc/org/settlement_window":"P1D",
+             "@ondc/org/withholding_amount":"10.00",
+             "tags":[
+                
+             ],
+             "@ondc/org/settlement_details":[
+                {
+                   "settlement_counterparty":"seller-app",
+                   "settlement_phase":"sale-amount",
+                   "settlement_type":"neft",
+                   "beneficiary_name":"SellerSetu Pvt. Ltd",
+                   "upi_address":"xyz@abc",
+                   "settlement_bank_account_no":"123654789",
+                   "settlement_ifsc_code":"123654789",
+                   "bank_name":"ABC BANK",
+                   "branch_name":"XYZ"
+                }
+             ]
+          },
+          "cancellation_terms":[
+             {
+                "fulfillment_state":{
+                   "descriptor":{
+                      "code":"Pending",
+                      "short_desc":"002,005,007"
+                   }
+                },
+                "cancellation_fee":{
+                   "percentage":"0.00",
+                   "amount":{
+                      "currency":"INR",
+                      "value":"0.00"
+                   }
+                }
+             },
+             {
+                "fulfillment_state":{
+                   "descriptor":{
+                      "code":"Packed",
+                      "short_desc":"005,007"
+                   }
+                },
+                "cancellation_fee":{
+                   "percentage":"0.00",
+                   "amount":{
+                      "currency":"INR",
+                      "value":"0.00"
+                   }
+                }
+             }
+          ],
+          "tags":[
+             {
+                "code":"bpp_terms",
+                "list":[
+                   {
+                      "code":"max_liability",
+                      "value":"2"
+                   },
+                   {
+                      "code":"max_liability_cap",
+                      "value":"10000.00"
+                   },
+                   {
+                      "code":"mandatory_arbitration",
+                      "value":"false"
+                   },
+                   {
+                      "code":"court_jurisdiction",
+                      "value":"Mumbai"
+                   },
+                   {
+                      "code":"delay_interest",
+                      "value":"1000.00"
+                   },
+                   {
+                      "code":"tax_number",
+                      "value":"gst_number_of_sellerNP"
+                   }
+                ]
+             }
+          ]
        }
     }
  }

@@ -3,18 +3,53 @@
        "domain":"ONDC:RET10",
        "country":"IND",
        "city":"std:08288",
-       "action":"on_select",
+       "action":"confirm",
        "core_version":"1.2.0",
        "bap_id":"buyer-app-preprod-v2.ondc.org",
        "bap_uri":"https://buyer-app-preprod-v2.ondc.org/protocol/v1",
        "bpp_uri":"https://bridge.sellersetu.in/ondc",
        "transaction_id":"7df3747c-38f0-412d-90c0-810e38c453f1",
-       "message_id":"1317e92c-d015-4acb-9178-463d561eb83a",
-       "timestamp":"2024-02-28T13:41:23.646Z",
-       "bpp_id":"bridge.sellersetu.in"
+       "message_id":"6c94016e-4118-4931-9c0a-1042ec567ba3",
+       "timestamp":"2024-02-28T13:48:04.494Z",
+       "bpp_id":"bridge.sellersetu.in",
+       "ttl":"PT30S"
     },
     "message":{
        "order":{
+          "id":"2024-02-28-867788",
+          "state":"Created",
+          "billing":{
+             "address":{
+                "name":"ikshan",
+                "building":"OYO",
+                "locality":"4th Cross Road",
+                "city":"Bengaluru",
+                "state":"Karnataka",
+                "country":"IND",
+                "area_code":"560076"
+             },
+             "phone":"8882160205",
+             "name":"ikshan",
+             "email":"ibhardwaj_be21@thapar.edu",
+             "created_at":"2024-02-28T13:45:30.429Z",
+             "updated_at":"2024-02-28T13:45:30.429Z"
+          },
+          "items":[
+             {
+                "id":"6f0fa0ec-2d0a-41ab-bdb5-a4eb7a3755c5",
+                "quantity":{
+                   "count":2
+                },
+                "fulfillment_id":"MP2"
+             },
+             {
+                "id":"a2032aea-2593-4ffe-8f3b-1cc439adf5b8",
+                "quantity":{
+                   "count":2
+                },
+                "fulfillment_id":"MP2"
+             }
+          ],
           "provider":{
              "id":"671b2a30-a3ec-4de5-b423-e875d35927d8",
              "locations":[
@@ -23,44 +58,64 @@
                 }
              ]
           },
-          "items":[
-             {
-                "fulfillment_id":"MP2",
-                "id":"6f0fa0ec-2d0a-41ab-bdb5-a4eb7a3755c5"
-             },
-             {
-                "fulfillment_id":"MP2",
-                "id":"a2032aea-2593-4ffe-8f3b-1cc439adf5b8"
-             }
-          ],
           "fulfillments":[
              {
                 "id":"MP2",
-                "type":"Delivery",
-                "@ondc/org/provider_name":"MP2",
                 "tracking":false,
-                "@ondc/org/category":"Immediate Delivery",
-                "@ondc/org/TAT":"PT55M",
-                "state":{
-                   "descriptor":{
-                      "code":"Serviceable"
+                "end":{
+                   "contact":{
+                      "email":"ibhardwaj_be21@thapar.edu",
+                      "phone":"8882160205"
+                   },
+                   "person":{
+                      "name":"ikshan"
+                   },
+                   "location":{
+                      "gps":"12.891469134148641,77.60926589369774",
+                      "address":{
+                         "name":"ikshan",
+                         "building":"OYO",
+                         "locality":"4th Cross Road",
+                         "city":"Bengaluru",
+                         "state":"Karnataka",
+                         "country":"IND",
+                         "area_code":"560076"
+                      }
                    }
-                }
-             },
-             {
-                "id":"MP2",
-                "type":"Delivery",
-                "@ondc/org/provider_name":"MP2",
-                "tracking":false,
-                "@ondc/org/category":"Immediate Delivery",
-                "@ondc/org/TAT":"PT55M",
-                "state":{
-                   "descriptor":{
-                      "code":"Serviceable"
-                   }
-                }
+                },
+                "type":"Delivery"
              }
           ],
+          "payment":{
+             "uri":"https://juspay.in/",
+             "tl_method":"http/get",
+             "params":{
+                "amount":"4132.88",
+                "currency":"INR",
+                "transaction_id":"d2a4921d-61b8-4b46-baf8-0c4f17252072"
+             },
+             "status":"PAID",
+             "type":"ON-ORDER",
+             "collected_by":"BAP",
+             "@ondc/org/buyer_app_finder_fee_type":"percent",
+             "@ondc/org/buyer_app_finder_fee_amount":"3.0",
+             "@ondc/org/settlement_basis":"delivery",
+             "@ondc/org/settlement_window":"P1D",
+             "@ondc/org/withholding_amount":"10.00",
+             "@ondc/org/settlement_details":[
+                {
+                   "settlement_counterparty":"seller-app",
+                   "settlement_phase":"sale-amount",
+                   "settlement_type":"neft",
+                   "beneficiary_name":"SellerSetu Pvt. Ltd",
+                   "upi_address":"xyz@abc",
+                   "settlement_bank_account_no":"123654789",
+                   "settlement_ifsc_code":"123654789",
+                   "bank_name":"ABC BANK",
+                   "branch_name":"XYZ"
+                }
+             ]
+          },
           "quote":{
              "breakup":[
                 {
@@ -255,7 +310,29 @@
                 "value":"4132.88"
              },
              "ttl":"P1D"
-          }
+          },
+          "tags":[
+             {
+                "code":"bpp_terms",
+                "list":[
+                   {
+                      "code":"tax_number",
+                      "value":"gst_number_of_sellerNP"
+                   }
+                ]
+             },
+             {
+                "code":"bap_terms",
+                "list":[
+                   {
+                      "code":"tax_number",
+                      "value":"GSTIN1234567890"
+                   }
+                ]
+             }
+          ],
+          "created_at":"2024-02-28T13:48:04.494Z",
+          "updated_at":"2024-02-28T13:48:04.494Z"
        }
     }
  }
