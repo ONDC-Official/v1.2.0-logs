@@ -1,0 +1,154 @@
+{
+  "error": {
+    "code": "40002",
+    "type": "DOMAIN-ERROR",
+    "message": "[{item:_id:101,error:40002}]"
+  },
+  "context": {
+    "city": "std:080",
+    "action": "on_select",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bpp_id": "b-ondc-seller-bpp.nlincs.in",
+    "domain": "ONDC:RET10",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://b-ondc-seller-bpp.nlincs.in/bpp",
+    "country": "IND",
+    "timestamp": "2024-02-23T10:05:02.050Z",
+    "message_id": "45963d59-7e0e-4183-afaf-d376043b422d",
+    "core_version": "1.2.0",
+    "transaction_id": "4e71231b-55a0-45eb-9419-20739fafa683"
+  },
+  "message": {
+    "order": {
+      "items": [
+        {
+          "id": "100",
+          "fulfillment_id": "F1"
+        },
+        {
+          "id": "101",
+          "fulfillment_id": "F1"
+        }
+      ],
+      "quote": {
+        "ttl": "PT30M",
+        "price": {
+          "value": "890.00",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "value": "100.00",
+                "currency": "INR"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": "99"
+                },
+                "available": {
+                  "count": "99"
+                }
+              }
+            },
+            "price": {
+              "value": "700.00",
+              "currency": "INR"
+            },
+            "title": "Kelloggs Cereal 500g",
+            "@ondc/org/item_id": "100",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 7
+            }
+          },
+          {
+            "item": {
+              "price": {
+                "value": "18.00",
+                "currency": "INR"
+              },
+              "quantity": {
+                "maximum": {
+                  "count": "99"
+                },
+                "available": {
+                  "count": "99"
+                }
+              }
+            },
+            "price": {
+              "value": "90.00",
+              "currency": "INR"
+            },
+            "title": "Sunfeast Pasta Treat Instant Masala Pasta 100g",
+            "@ondc/org/item_id": "101",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 5
+            }
+          },
+          {
+            "item": {
+              "tags": [
+                {
+                  "code": "quote",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "fulfillment"
+                    }
+                  ]
+                }
+              ]
+            },
+            "price": {
+              "value": "100.00",
+              "currency": "INR"
+            },
+            "title": "Delivery Charges",
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "delivery"
+          }
+        ]
+      },
+      "provider": {
+        "id": "20971",
+        "locations": [
+          {
+            "id": "LOC560005"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "tracking": false,
+          "@ondc/org/TAT": "PT1H",
+          "@ondc/org/category": "Immediate Delivery",
+          "@ondc/org/provider_name": "Evergreen SuperMarket"
+        },
+        {
+          "id": "F2",
+          "type": "Self-Pickup",
+          "state": {
+            "descriptor": {
+              "code": "Serviceable"
+            }
+          },
+          "tracking": false,
+          "@ondc/org/TAT": "P0D",
+          "@ondc/org/category": "Takeaway",
+          "@ondc/org/provider_name": "Evergreen SuperMarket"
+        }
+      ]
+    }
+  }
+}
