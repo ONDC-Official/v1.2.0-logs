@@ -1,0 +1,219 @@
+{
+  "context": {
+    "bap_id": "integrations-preprod.channelier.com",
+    "bap_uri": "https://integrations-preprod.channelier.com/ondc",
+    "domain": "nic2004:60232",
+    "core_version": "1.2.0",
+    "bpp_id": "ref-logistics-app-preprod.ondc.org",
+    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+    "transaction_id": "01a98a7d-ab67-4cd2-adc9-10698c33bb47",
+    "message_id": "cc982041-1035-4051-a5da-5256b9c1fb9f",
+    "country": "IND",
+    "city": "std:011",
+    "timestamp": "2024-02-27T17:09:10.346Z",
+    "action": "on_init"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "f0503697-e942-4666-8e80-08f445de2c4e"
+      },
+      "items": [
+        {
+          "id": "Standard",
+          "fulfillment_id": "948f89ae-35b6-4fad-9eac-b322d16b5ae3",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Standard Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "948f89ae-35b6-4fad-9eac-b322d16b5ae3",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "28.545449, 77.026877",
+              "address": {
+                "name": "Orika Spices",
+                "building": "PLOT NO 38",
+                "locality": "Bamnoli Village",
+                "city": " South West Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110077"
+              }
+            },
+            "contact": {
+              "phone": "7551123716",
+              "email": "aishwarya.doshi@parasspices.in"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.537756, 77.131736",
+              "address": {
+                "name": "Ravinder",
+                "building": "Block F",
+                "locality": "DDA Flats E1 Road",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "IND",
+                "area_code": "110070"
+              }
+            },
+            "contact": {
+              "phone": "9896910497",
+              "email": "ravinder.7987@gmail.com"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "122.38"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "116.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.38"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BPP",
+        "@ondc/org/settlement_details": []
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
