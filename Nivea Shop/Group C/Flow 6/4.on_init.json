@@ -3,14 +3,14 @@
     "domain": "ONDC:RET13",
     "country": "IND",
     "city": "std:022",
-    "action": "on_status",
+    "action": "on_init",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://ondc-v2.niveashop.in/api",
-    "transaction_id": "79adb1bf-ad4a-4220-bd4f-ba81d8e704cd",
-    "message_id": "ff4dd9d6-d6b0-4448-8370-4c026df35bff",
-    "timestamp": "2024-02-29T09:27:59.783Z",
+    "transaction_id": "d10a05bf-00e4-429a-9272-9c423264f064",
+    "message_id": "75503321-c08e-49e1-acb7-48741edd9763",
+    "timestamp": "2024-02-29T12:19:54.191Z",
     "bpp_id": "ondc-v2.niveashop.in",
     "ttl": "PT30S"
   },
@@ -29,31 +29,56 @@
           "id": "43001186156771",
           "fulfillment_id": "Fulfillment1",
           "quantity": {
-            "count": 2
+            "count": 1
+          }
+        },
+        {
+          "id": "43001186189539",
+          "fulfillment_id": "Fulfillment1",
+          "quantity": {
+            "count": 1
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "553.00"
+          "value": "463.00"
         },
         "breakup": [
           {
             "title": "Body Lotion- Nourishing Body Milk (Very Dry Skin) - 400g",
             "@ondc/org/item_id": "43001186156771",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 1
             },
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "478"
+              "value": "239"
             },
             "item": {
               "price": {
                 "currency": "INR",
                 "value": "239.00"
+              }
+            }
+          },
+          {
+            "title": "Body Lotion- Nourishing Body Milk (Very Dry Skin) - 200g",
+            "@ondc/org/item_id": "43001186189539",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "149"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "149.00"
               }
             }
           },
@@ -79,79 +104,26 @@
               "email": "parmeshwar.rathod@schbang.com",
               "phone": "9076388126"
             },
-            "person": {
-              "name": "parmeshwar"
-            },
             "location": {
               "gps": "19.162016477047693,73.0781282715088",
               "address": {
-                "name": "parmeshwar",
                 "building": "police building",
-                "locality": "Nilaje Gaon Station Road",
                 "city": "Kalyan",
                 "state": "Maharashtra",
                 "country": "IND",
-                "area_code": "421204"
+                "area_code": "421204",
+                "locality": "Nilaje Gaon Station Road",
+                "name": "parmeshwar"
               }
-            },
-            "time": {
-              "range": {
-                "start": "2024-03-05T09:26:40.445Z",
-                "end": "2024-03-06T09:26:40.445Z"
-              }
-            }
-          },
-          "state": {
-            "descriptor": {
-              "code": "Order-picked-up"
-            }
-          },
-          "@ondc/org/provider_name": "Nivea Shop",
-          "@ondc/org/TAT": "P5D",
-          "start": {
-            "location": {
-              "id": "NIVEA_INDIA",
-              "address": {
-                "locality": "ANS compound - Thane",
-                "city": "Bhiwandi",
-                "area_code": "421302",
-                "state": "MH"
-              },
-              "descriptor": {
-                "name": "Nivea Shop",
-                "images": [
-                  "https://cdn.shopify.com/s/files/1/0481/5621/3409/files/new-nivea-logo-200-150_e8433df7-ec18-4373-b833-2868d736d1eb_200x150.png?v=1643998222"
-                ]
-              },
-              "gps": "19.2591222,73.0144914"
-            },
-            "contact": {
-              "phone": "2262487999",
-              "email": "care@beiersdorf.com"
-            },
-            "time": {
-              "range": {
-                "start": "2024-03-05T09:26:40.444Z",
-                "end": "2024-03-06T09:26:40.445Z"
-              },
-              "timestamp": "2024-02-29T09:27:09.000Z"
             }
           }
         }
       ],
       "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
-        "params": {
-          "amount": "289",
-          "currency": "INR",
-          "transaction_id": "d6c2a1af-3d84-4f4b-9c57-9a33254ea622"
-        },
-        "status": "PAID",
         "type": "ON-ORDER",
-        "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/return_window": "P7D",
         "@ondc/org/settlement_details": [
           {
             "settlement_counterparty": "seller-app",
@@ -164,7 +136,11 @@
             "bank_name": "KOTAK MAHINDRA BANK",
             "branch_name": "KOTAK MAHINDRA BANK, GURGAON"
           }
-        ]
+        ],
+        "params": {
+          "amount": "463.00",
+          "currency": "INR"
+        }
       },
       "tags": [
         {
@@ -173,47 +149,27 @@
             {
               "code": "tax_number",
               "value": "27NGBHG1392Y3Z2"
-            },
-            {
-              "code": "np_type",
-              "value": "ISN"
-            },
-            {
-              "code": "provider_tax_number",
-              "value": "BAJPC4350M"
-            }
-          ]
-        },
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "tax_number",
-              "value": "GSTIN1234567890"
             }
           ]
         }
       ],
-      "created_at": "2024-02-29T09:26:35.655Z",
+      "created_at": "2024-02-29T12:19:54.190Z",
       "billing": {
         "address": {
-          "name": "parmeshwar",
           "building": "police building",
-          "locality": "Nilaje Gaon Station Road",
           "city": "Kalyan",
           "state": "Maharashtra",
           "country": "IND",
-          "area_code": "421204"
+          "area_code": "421204",
+          "locality": "Nilaje Gaon Station Road",
+          "name": "parmeshwar"
         },
         "phone": "9076388126",
         "name": "parmeshwar",
         "email": "parmeshwar.rathod@schbang.com",
-        "created_at": "2024-02-29T09:26:02.413Z",
-        "updated_at": "2024-02-29T09:26:02.413Z"
-      },
-      "id": "2024-02-29-684346",
-      "state": "In-progress",
-      "updated_at": "2024-02-29T09:27:59.773Z"
+        "created_at": "2024-02-29T12:19:51.149Z",
+        "updated_at": "2024-02-29T12:19:51.149Z"
+      }
     }
   }
 }
