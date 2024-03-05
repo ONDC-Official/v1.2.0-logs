@@ -1,0 +1,217 @@
+{
+  "context": {
+    "action": "on_search",
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.2.0",
+    "bap_id": "biz.test.bitsila.com",
+    "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+    "bpp_id": "flash-api.staging.shadowfax.in",
+    "bpp_uri": "https://flash-api.staging.shadowfax.in/ondc/v1",
+    "transaction_id": "LOG-1016-1011-1760-dwhB",
+    "message_id": "6ce87fba-5b40-4339-8a68-f40a01af3e4c",
+    "timestamp": "2024-02-06T06:31:28.416Z"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "SFX"
+      },
+      "bpp/providers": [
+        {
+          "id": "SFX",
+          "descriptor": {
+            "name": "SFX",
+            "short_desc": "SFX",
+            "long_desc": "Shadowfax"
+          },
+          "categories": [
+            {
+              "id": "Immediate Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT40M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "Next Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT40M",
+                "timestamp": "2024-02-07"
+              }
+            },
+            {
+              "id": "Same Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT40M",
+                "timestamp": "2024-02-06"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT15M"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "id": "SFXImmediateDelivery",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "60 min delivery",
+                "short_desc": "60 min delivery for F&B",
+                "long_desc": "60 min delivery for F&B"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "1.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "SFXImmediateDeliveryRTO",
+              "parent_item_id": "SFXImmediateDelivery",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO Immediate Delivery",
+                "short_desc": "RTO Immediate Delivery for F&B",
+                "long_desc": "RTO Immediate Delivery for F&B"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0.4"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "SFXNextDayDelivery",
+              "parent_item_id": "",
+              "category_id": "NEXT DAY DELIVERY",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "NEXT DAY DELIVERY",
+                "short_desc": "NEXT DAY DELIVERY",
+                "long_desc": "NEXT DAY DELIVERY"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "1.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "SFXNextDayDeliveryRTO",
+              "parent_item_id": "SFXNextDayDelivery",
+              "category_id": "NEXT DAY DELIVERY",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "NEXT DAY DELIVERY",
+                "short_desc": "RTO Next Day Delivery",
+                "long_desc": "RTO Next Day Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0.4"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "SFXSameDayDelivery",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "1.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            },
+            {
+              "id": "SFXSameDayDeliveryRTO",
+              "parent_item_id": "SFXSameDayDelivery",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Same Day Delivery",
+                "short_desc": "RTO Same Day Delivery",
+                "long_desc": "RTO Same Day Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0.4"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT45M",
+                "timestamp": "2024-02-06"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
