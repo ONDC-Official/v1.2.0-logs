@@ -3,32 +3,27 @@
 		"domain": "nic2004:60232",
 		"country": "IND",
 		"city": "std:080",
-		"action": "init",
+		"action": "on_init",
 		"core_version": "1.2.0",
 		"bap_id": "api3.eksecond.in",
 		"bap_uri": "https://api3.eksecond.in/ondc",
 		"bpp_id": "ondc-preprod.loadshare.net",
 		"bpp_uri": "https://ondc-preprod.loadshare.net/logistics/bpp",
-		"transaction_id": "640878887738ccb085561214|2ce303f7-164b-4b13-a100-b668dbd44f59",
-		"message_id": "ff58224d-b076-4b2a-87ed-430c3d9200c2",
-		"timestamp": "2024-03-05T09:20:51.192Z",
-		"ttl": "PT30S"
+		"transaction_id": "640878887738ccb085561214|c3761d06-81e3-4160-b8dc-a9572192cf6a",
+		"message_id": "57f0a1d8-4455-4b47-baa2-070d593047e6",
+		"timestamp": "2024-03-05T09:13:34.659Z"
 	},
 	"message": {
 		"order": {
-			"items": [
-				{
-					"id": "immediate_delivery-PT1H30M",
-					"descriptor": {
-						"code": "P2P"
-					},
-					"category_id": "Immediate Delivery",
-					"fulfillment_id": "immediate_delivery-PT1H30M_f1"
-				}
-			],
 			"provider": {
 				"id": "LoadShare Networks"
 			},
+			"items": [
+				{
+					"id": "immediate_delivery-PT1H30M",
+					"fulfillment_id": "immediate_delivery-PT1H30M_f1"
+				}
+			],
 			"fulfillments": [
 				{
 					"id": "immediate_delivery-PT1H30M_f1",
@@ -68,30 +63,48 @@
 							"phone": "9849692156",
 							"email": "enjoyingmywork142@gmail.com"
 						}
-					}
+					},
+					"tags": [
+						{
+							"code": "rider_check",
+							"list": [
+								{
+									"code": "inline_check_for_rider",
+									"value": "yes"
+								}
+							]
+						}
+					]
 				}
 			],
 			"payment": {
 				"type": "POST-FULFILLMENT",
-				"@ondc/org/settlement_details": []
+				"collected_by": "BAP"
 			},
-			"billing": {
-				"name": "Ekseond Technologies",
-				"email": "najeeb@eksecond.in",
-				"phone": "9000912423",
-				"created_at": "2024-03-05T09:20:51.192Z",
-				"updated_at": "2024-03-05T09:20:51.192Z",
-				"address": {
-					"name": "Ekseond Technologies Pvt Ltd",
-					"street": "Maitrivan Colony",
-					"building": "8-7-171/10/14/B",
-					"locality": "Old Bowenpally",
-					"city": "secunderabad",
-					"state": "Telangana",
-					"country": "IND",
-					"area_code": "500011"
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "1.0"
 				},
-				"tax_number": "36AAHCE3132H1ZV"
+				"breakup": [
+					{
+						"@ondc/org/item_id": "immediate_delivery-PT1H30M",
+						"@ondc/org/title_type": "delivery",
+						"price": {
+							"currency": "INR",
+							"value": "1"
+						}
+					},
+					{
+						"@ondc/org/item_id": "immediate_delivery-PT1H30M",
+						"@ondc/org/title_type": "tax",
+						"price": {
+							"currency": "INR",
+							"value": "0"
+						}
+					}
+				],
+				"ttl": "PT15M"
 			}
 		}
 	}
