@@ -1,22 +1,22 @@
 {
   "context": {
-    "domain": "nic2004:60232",
-    "country": "IND",
-    "city": "std:080",
-    "action": "on_status",
-    "core_version": "1.2.0",
     "bap_id": "integrations-preprod.channelier.com",
     "bap_uri": "https://integrations-preprod.channelier.com/ondc",
+    "domain": "nic2004:60232",
+    "core_version": "1.2.0",
+    "ttl": "PT30S",
     "bpp_id": "preprod.logistics-seller.mp2.in",
     "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-    "transaction_id": "c851b5b6-bf99-425c-a690-ec64400e9252",
-    "message_id": "msg_uufne2i327wgdnur",
-    "timestamp": "2024-03-12T08:12:14.522Z"
+    "transaction_id": "28416b63-5c42-456a-a657-89c8b3dbaf91",
+    "message_id": "f700464c-1345-473e-acb1-b0714be5d6fa",
+    "country": "IND",
+    "city": "std:080",
+    "timestamp": "2024-03-12T06:42:42.896Z",
+    "action": "confirm"
   },
   "message": {
     "order": {
-      "id": "1bbd8aa0-d0d7-4e1c-9737-e188285a33fa",
-      "state": "In-progress",
+      "state": "Created",
       "provider": {
         "id": "MP2"
       },
@@ -27,47 +27,30 @@
           "category_id": "Same Day Delivery",
           "descriptor": {
             "code": "P2P"
-          },
-          "time": {
-            "label": "TAT",
-            "duration": "PT4H",
-            "timestamp": "2024-03-12"
           }
         }
       ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": 2
+      "billing": {
+        "name": "Arachnomesh Technologies Pvt Ltd",
+        "address": {
+          "name": "PF-43, B-Wing",
+          "building": "Crystal Plaza",
+          "locality": "Sector-7, Kharghar",
+          "city": "Navi Mumbai",
+          "state": "Maharashtra",
+          "country": "India",
+          "area_code": "410210"
         },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "mp2_sdd",
-            "@ondc/org/title_type": "delivery",
-            "price": {
-              "currency": "INR",
-              "value": 1.64
-            }
-          },
-          {
-            "@ondc/org/item_id": "mp2_sdd",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "currency": "INR",
-              "value": 0.36
-            }
-          }
-        ]
+        "email": "info@channelier.com",
+        "phone": "7291085339",
+        "tax_number": "27AAMCA8667N1ZQ",
+        "created_at": "2024-03-12T06:42:39.187Z",
+        "updated_at": "2024-03-12T06:42:39.187Z"
       },
       "fulfillments": [
         {
           "id": "mp2_sdd_f1",
           "type": "Delivery",
-          "state": {
-            "descriptor": {
-              "code": "Order-picked-up"
-            }
-          },
           "start": {
             "person": {
               "name": "Govindjee Jeeyo Namkeen"
@@ -90,22 +73,15 @@
             },
             "instructions": {
               "code": "3",
-              "short_desc": "7926",
-              "long_desc": "This OTP is to be shared with the Store Manager for pickup of the package",
-              "images": [
-                "https://s3.amazonaws.com/mp2-lsp/image1.png"
-              ]
-            },
-            "time": {
-              "duration": "PT2H",
-              "range": {
-                "start": "2024-03-12T08:10:37.775Z",
-                "end": "2024-03-12T10:10:37.775Z"
-              },
-              "timestamp": "2024-03-12T08:12:14.507Z"
+              "short_desc": "3595",
+              "long_desc": "This OTP is to be shared with the Store Manager for pickup of the package"
             }
           },
           "end": {
+            "contact": {
+              "email": "techpvec2@gmail.com",
+              "phone": "9479319331"
+            },
             "person": {
               "name": "Rajat Kumar Blr"
             },
@@ -120,58 +96,62 @@
                 "country": "IND",
                 "area_code": "560038"
               }
-            },
-            "contact": {
-              "phone": "9479319331",
-              "email": "techpvec2@gmail.com"
-            },
-            "time": {
-              "range": {
-                "start": "2024-03-12T10:10:37.775Z",
-                "end": "2024-03-12T10:10:37.775Z"
-              }
             }
           },
-          "tracking": true,
           "tags": [
             {
-              "code": "tracking",
+              "code": "state",
               "list": [
                 {
-                  "code": "gps_enabled",
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
                   "value": "yes"
                 }
               ]
             }
-          ],
-          "agent": {
-            "name": "MP2Delivery",
-            "phone": "9000012345"
-          }
+          ]
         }
       ],
       "payment": {
-        "collected_by": "BAP",
         "type": "POST-FULFILLMENT",
-        "status": "NOT-PAID"
+        "collected_by": "BAP"
       },
-      "billing": {
-        "name": "Arachnomesh Technologies Pvt Ltd",
-        "address": {
-          "name": "PF-43, B-Wing",
-          "building": "Crystal Plaza",
-          "locality": "Sector-7, Kharghar",
-          "city": "Navi Mumbai",
-          "state": "Maharashtra",
-          "country": "India",
-          "area_code": "410210"
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "2.0"
         },
-        "tax_number": "27AAMCA8667N1ZQ",
-        "phone": "7291085339",
-        "email": "info@channelier.com",
-        "created_at": "2024-03-12T08:10:06.680Z",
-        "updated_at": "2024-03-12T08:10:06.680Z"
+        "breakup": [
+          {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "1.64"
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.36"
+            }
+          }
+        ],
+        "ttl": "PT15M"
       },
+      "id": "653003b4-c9b2-42fc-997c-5769d6a8e481",
+      "created_at": "2024-03-12T06:42:42.896Z",
+      "updated_at": "2024-03-12T06:42:42.896Z",
       "@ondc/org/linked_order": {
         "items": [
           {
@@ -198,6 +178,7 @@
           },
           "address": {
             "name": "Govindjee Jeeyo Namkeen ",
+            "street": "Stage 1",
             "building": "Binnamangala",
             "locality": "Indiranagar",
             "city": "Bengaluru",
@@ -206,29 +187,27 @@
           }
         },
         "order": {
-          "id": "2024-03-12-791153",
+          "id": "2024-03-12-438368",
           "weight": {
             "unit": "gram",
             "value": 594
           },
           "dimensions": {
-            "length": {
-              "unit": "centimeter",
-              "value": 14
+            "height": {
+              "value": 14,
+              "unit": "centimeter"
             },
             "breadth": {
-              "unit": "centimeter",
-              "value": 14
+              "value": 14,
+              "unit": "centimeter"
             },
-            "height": {
-              "unit": "centimeter",
-              "value": 14
+            "length": {
+              "value": 14,
+              "unit": "centimeter"
             }
           }
         }
-      },
-      "updated_at": "2024-03-12T08:12:14.507Z",
-      "created_at": "2024-03-12T08:10:09.027Z"
+      }
     }
   }
 }
