@@ -7,22 +7,25 @@
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "ttl": "PT30S",
-    "action": "on_init",
+    "action": "on_status",
     "bpp_id": "preprod-api.farmersmandi.in/api",
     "bpp_uri": "https://preprod-api.farmersmandi.in/api/ondc/v1/",
-    "transaction_id": "82d63e6a-c357-4272-9fc3-b49b4f89f5e7",
-    "message_id": "a5bca7a8-8fd7-485c-bf62-946f2c6d0734",
-    "timestamp": "2024-03-13T13:51:23.304Z"
+    "transaction_id": "8b5e8550-b225-4926-a5fc-84db72b9663c",
+    "message_id": "30a9393b-1c5c-4ef4-9e95-fd2d31025709",
+    "timestamp": "2024-03-12T23:09:35.630Z"
   },
   "message": {
     "order": {
+      "id": "2024-03-12-352144",
+      "state": "In-progress",
       "provider": {
         "id": "FM_35",
         "locations": [
           {
             "id": "L4758"
           }
-        ]
+        ],
+        "rateable": true
       },
       "provider_location": {
         "id": "L4758"
@@ -33,14 +36,24 @@
           "fulfillment_id": "F1",
           "quantity": {
             "count": 2
-          }
+          },
+          "@ondc/org/returnable": true
+        },
+        {
+          "id": "FM_37",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 2
+          },
+          "@ondc/org/returnable": true
         },
         {
           "id": "FM_36",
           "fulfillment_id": "F1",
           "quantity": {
             "count": 2
-          }
+          },
+          "@ondc/org/returnable": true
         }
       ],
       "billing": {
@@ -56,8 +69,8 @@
         },
         "email": "goodgautam@gmail.com",
         "phone": "8137878484",
-        "created_at": "2024-03-13T13:51:23.218Z",
-        "updated_at": "2024-03-13T13:51:23.218Z"
+        "created_at": "2024-03-12T23:02:22.367Z",
+        "updated_at": "2024-03-12T23:02:22.367Z"
       },
       "cancellation_terms": [
         {
@@ -164,7 +177,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "157.10"
+          "value": "257.96"
         },
         "breakup": [
           {
@@ -182,6 +195,26 @@
               "value": "92.46"
             },
             "@ondc/org/item_id": "FM_35",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item"
+          },
+          {
+            "item": {
+              "id": "FM_37",
+              "price": {
+                "currency": "INR",
+                "value": "50.43"
+              },
+              "@ondc/org/returnable": true
+            },
+            "title": "fmBabyOnionpreprod1 (1 Nos)",
+            "price": {
+              "currency": "INR",
+              "value": "100.86"
+            },
+            "@ondc/org/item_id": "FM_37",
             "@ondc/org/item_quantity": {
               "count": 2
             },
@@ -220,8 +253,18 @@
         "ttl": "PT1H"
       },
       "payment": {
+        "uri": "https://juspay.in/",
+        "collected_by": "BAP",
+        "status": "PAID",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "257.96",
+          "currency": "INR",
+          "transaction_id": "pay_3e5a733b4a"
+        },
+        "type": "ON-ORDER",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
           {
             "settlement_counterparty": "seller-app",
@@ -253,17 +296,57 @@
                 "area_code": "560066"
               }
             },
+            "time": {
+              "timestamp": "2024-03-13T05:02:24.000Z",
+              "range": {
+                "start": "2024-03-13T05:02:24.000Z",
+                "end": "2024-03-13T05:02:24.000Z"
+              }
+            },
             "contact": {
               "phone": "8137878484",
               "email": "goodgautam@gmail.com"
+            },
+            "person": {
+              "name": "Gautam  Gurukumar"
             }
           },
           "state": {
             "descriptor": {
-              "code": "Serviceable"
+              "code": "Out-for-delivery"
             }
           },
           "tracking": false,
+          "start": {
+            "location": {
+              "id": "L4758",
+              "gps": "12.964568,77.736533",
+              "address": {
+                "door": "",
+                "name": "Gautam  Gurukumar",
+                "building": "Whitefield",
+                "street": "",
+                "locality": "new",
+                "ward": "",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "area_code": "560066"
+              },
+              "descriptor": {
+                "name": "farmersMandiPreprod"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-03-13T04:32:24.000Z",
+                "end": "2024-03-13T05:02:24.000Z"
+              }
+            },
+            "contact": {
+              "phone": "4343898982",
+              "email": "rajesh@fmandi.in"
+            }
+          },
           "@ondc/org/category": "Standard Delivery",
           "@ondc/org/TAT": "P1D",
           "@ondc/org/provider_name": "farmersMandiPreprod"
@@ -299,7 +382,9 @@
             }
           ]
         }
-      ]
+      ],
+      "created_at": "2024-03-12T23:02:24.157Z",
+      "updated_at": "2024-03-12T23:09:35.630Z"
     },
     "update_target": null
   }
