@@ -9,15 +9,15 @@
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://dev-api.shopeg.in/ondc/bpp",
     "transaction_id": "20632f76-1566-4e7b-9b5e-3c1416f79b00",
-    "message_id": "7bcfb6dc-dfe7-408e-8ccd-a0aa65432e9a",
-    "timestamp": "2024-03-14T05:40:15.706Z",
+    "message_id": "d7d6d9fb-68fc-49ed-86ac-badf17e710f7",
+    "timestamp": "2024-03-14T06:22:28.831Z",
     "bpp_id": "dev-api.shopeg.in",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "2024-03-14-353320",
-      "state": "In-progress",
+      "state": "Cancelled",
       "billing": {
         "address": {
           "name": "Vijai Chandra Prasad",
@@ -37,17 +37,31 @@
       "items": [
         {
           "quantity": {
-            "count": 2
+            "count": 0
           },
           "id": "06033c52-c733-4b26-8b43-846f3909c6c3",
           "fulfillment_id": "1"
         },
         {
           "quantity": {
-            "count": 2
+            "count": 0
           },
           "id": "78dc6dba-f96f-4e0f-a832-def925fa41b6",
           "fulfillment_id": "1"
+        },
+        {
+          "id": "06033c52-c733-4b26-8b43-846f3909c6c3",
+          "fulfillment_id": "1-RTO",
+          "quantity": {
+            "count": 2
+          }
+        },
+        {
+          "id": "78dc6dba-f96f-4e0f-a832-def925fa41b6",
+          "fulfillment_id": "1-RTO",
+          "quantity": {
+            "count": 2
+          }
         }
       ],
       "provider": {
@@ -85,7 +99,7 @@
                 "start": "2024-03-14T05:26:18.177Z",
                 "end": "2024-03-14T11:26:18.177Z"
               },
-              "timestamp": "2024-03-14T05:40:15.706Z"
+              "timestamp": "2024-03-14T06:22:28.831Z"
             }
           },
           "end": {
@@ -118,12 +132,132 @@
           "id": "1",
           "state": {
             "descriptor": {
-              "code": "Order-picked-up"
+              "code": "Cancelled"
             }
           },
           "type": "Delivery",
           "tracking": false,
-          "@ondc/org/provider_name": "Vijai ondc test shop"
+          "@ondc/org/provider_name": "Vijai ondc test shop",
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "011"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "dev-api.shopeg.in"
+                },
+                {
+                  "code": "retry_count",
+                  "value": "3"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "1-RTO"
+                }
+              ]
+            },
+            {
+              "code": "precancel_state",
+              "list": [
+                {
+                  "code": "fulfillment_state",
+                  "value": "Out-for-delivery"
+                },
+                {
+                  "code": "updated_at",
+                  "value": "2024-03-14T05:40:16.773Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-RTO",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Delivered"
+            }
+          },
+          "tags": [
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "06033c52-c733-4b26-8b43-846f3909c6c3"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-118.00"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "78dc6dba-f96f-4e0f-a832-def925fa41b6"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-228.00"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "misc"
+                },
+                {
+                  "code": "id",
+                  "value": "1"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-10.38"
+                }
+              ]
+            }
+          ],
+          "start": {
+            "time": {
+              "timestamp": "2024-03-14T06:22:27.901Z"
+            }
+          },
+          "end": {
+            "time": {
+              "timestamp": "2024-03-14T06:22:28.575Z"
+            }
+          }
         }
       ],
       "payment": {
@@ -164,12 +298,12 @@
             },
             "price": {
               "currency": "INR",
-              "value": "118.00"
+              "value": "0.00"
             },
             "@ondc/org/title_type": "item",
             "title": "Tasties Jeera Ajwain Rusk, 200 g",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 0
             }
           },
           {
@@ -182,12 +316,12 @@
             },
             "price": {
               "currency": "INR",
-              "value": "228.00"
+              "value": "0.00"
             },
             "@ondc/org/title_type": "item",
             "title": "Keya Parsley, 15 g Bottle",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 0
             }
           },
           {
@@ -201,56 +335,34 @@
           },
           {
             "@ondc/org/item_id": "1",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
             "price": {
               "currency": "INR",
-              "value": "13.83"
-            },
-            "@ondc/org/title_type": "misc",
-            "title": "Convenience Fee"
+              "value": "1.58"
+            }
           }
         ],
         "price": {
-          "currency": "INR",
-          "value": "404.48"
+          "value": "46.23",
+          "currency": "INR"
         },
         "ttl": "P1D"
       },
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "tax_number",
-              "value": "29AAJCB5249A1ZR"
-            },
-            {
-              "code": "np_type",
-              "value": "MSN"
-            },
-            {
-              "code": "provider_tax_number",
-              "value": "CGABC2223Z"
-            }
-          ]
-        },
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "tax_number",
-              "value": "GSTIN1234567890"
-            }
-          ]
-        }
-      ],
       "created_at": "2024-03-14T05:26:17.911Z",
-      "updated_at": "2024-03-14T05:40:15.706Z",
+      "updated_at": "2024-03-14T06:22:28.831Z",
       "documents": [
         {
           "label": "Invoice",
           "url": "https://dev-api.shopeg.in/api/client/order/ondc/invoice/2024-03-14-353320"
         }
-      ]
+      ],
+      "cancellation": {
+        "cancelled_by": "dev-api.shopeg.in",
+        "reason": {
+          "id": "011"
+        }
+      }
     }
   }
 }
