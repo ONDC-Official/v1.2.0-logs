@@ -3,20 +3,20 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_confirm",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "seller.udyamwell.in",
         "bap_uri": "https://seller.udyamwell.in",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
         "transaction_id": "ec7942c9-49cc-4bfb-ad4f-309035064d44",
-        "message_id": "ef4b7e0a-c423-4a0e-bbb8-89adda57ef55",
-        "timestamp": "2024-03-17T14:33:37.414Z"
+        "message_id": "msg_uu53cmsr7okb2fhw",
+        "timestamp": "2024-03-17T14:38:38.105Z"
     },
     "message": {
         "order": {
             "id": "2024-03-17-548933",
-            "state": "Accepted",
+            "state": "In-progress",
             "provider": {
                 "id": "MP2"
             },
@@ -65,18 +65,22 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Agent-assigned"
                         }
                     },
                     "start": {
                         "time": {
-                            "duration": "PT20M"
+                            "duration": "PT20M",
+                            "range": {
+                                "start": "2024-03-17T14:36:28.450Z",
+                                "end": "2024-03-17T14:56:28.450Z"
+                            }
                         },
                         "person": {
                             "name": "Udyamwell General Store"
                         },
                         "location": {
-                            "gps": "30.7047164, 76.70907700000001",
+                            "gps": "30.7467833, 76.642853",
                             "address": {
                                 "name": "PP35+VJP, Sector 71, Sahibzada Ajit Singh Nagar, Punjab 160071, India",
                                 "building": "building",
@@ -111,40 +115,42 @@
                         "contact": {
                             "phone": "8679625300",
                             "email": "sachinkorla9617@gmail.com"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-03-17T14:56:28.450Z",
+                                "end": "2024-03-17T15:11:28.450Z"
+                            }
                         }
                     },
+                    "tracking": true,
                     "tags": [
                         {
-                            "code": "weather_check",
+                            "code": "tracking",
                             "list": [
                                 {
-                                    "code": "raining",
-                                    "value": "no"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "state",
-                            "list": [
-                                {
-                                    "code": "ready_to_ship",
-                                    "value": "no"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "no"
+                                    "code": "gps_enabled",
+                                    "value": "yes"
                                 }
                             ]
                         }
-                    ],
-                    "tracking": true
+                    ]
                 }
             ],
+            "payment": {
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "neft",
+                        "upi_address": "abc@okicici.com",
+                        "settlement_bank_account_no": "414141411414",
+                        "settlement_ifsc_code": "HDFC0000128"
+                    }
+                ],
+                "status": "NOT-PAID"
+            },
             "billing": {
                 "name": "Akash Dhiman",
                 "address": {
@@ -161,19 +167,6 @@
                 "email": "dhimana865@gmail.com",
                 "created_at": "2024-03-17T14:32:24.183Z",
                 "updated_at": "2024-03-17T14:32:24.183Z"
-            },
-            "payment": {
-                "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_type": "neft",
-                        "upi_address": "abc@okicici.com",
-                        "settlement_bank_account_no": "414141411414",
-                        "settlement_ifsc_code": "HDFC0000128"
-                    }
-                ]
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -230,8 +223,8 @@
                     }
                 }
             },
-            "created_at": "2024-03-17T14:33:35.730Z",
-            "updated_at": "2024-03-17T14:33:37.414Z"
+            "updated_at": "2024-03-17T14:38:38.062Z",
+            "created_at": "2024-03-17T14:33:35.730Z"
         }
     }
 }
