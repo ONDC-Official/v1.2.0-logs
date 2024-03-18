@@ -1,0 +1,183 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "seller-app-preprod-v2.ondc.org",
+        "bap_uri": "https://seller-app-preprod-v2.ondc.org/protocol/logistics/v1/",
+        "bpp_id": "stage-ondc.qwqer.in",
+        "bpp_uri": "https://stage-ondc.qwqer.in/",
+        "transaction_id": "427b2173-02cb-4c39-af4d-2eef00ce87cc",
+        "message_id": "75555387-bf28-4459-bb5e-3e33915fb3f0",
+        "timestamp": "2024-03-14T06:13:41.434Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1"
+            },
+            "items": [
+                {
+                    "id": "F1",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P",
+                        "name": "Immediate Delivery",
+                        "long_desc": "Immediate Delivery",
+                        "short_desc": "Immediate Delivery"
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.980753609627966,77.5968647003174",
+                            "address": {
+                                "area_code": "560001",
+                                "name": "QWQER",
+                                "building": "dvydvyxdvh",
+                                "locality": "Vasant Nagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9207612472",
+                            "email": "sajithj03@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "email": "sajithj03@gmail.com",
+                            "phone": "09207612472"
+                        },
+                        "location": {
+                            "gps": "12.980847701611442,77.59676277637483",
+                            "address": {
+                                "building": "dhbhbcf",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560051",
+                                "locality": "Raj Bhavan Road",
+                                "name": "Sajith J"
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "55.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "55.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BPP"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "1"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "True"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "9.9"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://qwqer.in/terms/"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
