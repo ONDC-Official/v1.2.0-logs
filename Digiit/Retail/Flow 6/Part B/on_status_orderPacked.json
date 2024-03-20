@@ -1,22 +1,23 @@
 {
   "context": {
     "domain": "ONDC:RET10",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "preprod-bpp.dbs.digiit.io",
     "bpp_uri": "https://preprod-bpp.dbs.digiit.io",
+    "transaction_id": "fb0af4da-52b2-4391-a985-d6b595e57cd3",
+    "message_id": "52278c1d-3fc4-432e-923c-4c160c0d7be1",
     "city": "std:080",
     "country": "IND",
-    "action": "on_cancel",
-    "transaction_id": "a85a3e06-212d-4c36-a9ff-3398c4f832c2",
-    "message_id": "e772d2f6-a2aa-4dc5-9e2e-88ad2dc7a86d",
-    "timestamp": "2024-03-15T17:20:23.369Z"
+    "timestamp": "2024-03-18T15:54:42.935Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2024-03-15-731564",
-      "state": "Cancelled",
+      "id": "2024-03-18-610823",
+      "state": "In-progress",
       "provider": {
         "id": "327",
         "locations": [
@@ -28,25 +29,12 @@
       "items": [
         {
           "id": "1100",
-          "fulfillment_id": "ea70d9df-1db6-46f0-8747-437f969f3c2e",
-          "quantity": {
-            "count": 0
-          }
-        },
-        {
-          "id": "1100",
-          "fulfillment_id": "3575b6dd-2ec3-4693-a0af-cf3a55680232",
+          "fulfillment_id": "f8a7b899-dfd5-4b0a-8644-bbf8c2df0937",
           "quantity": {
             "count": 1
           }
         }
       ],
-      "cancellation": {
-        "cancelled_by": "preprod-bpp.dbs.digiit.io",
-        "reason": {
-          "id": "015"
-        }
-      },
       "billing": {
         "name": "Sharon S",
         "address": {
@@ -60,28 +48,25 @@
         },
         "email": "sharon@gmail.com",
         "phone": "6546456888",
-        "created_at": "2024-03-15T16:49:58.591Z",
-        "updated_at": "2024-03-15T16:49:58.591Z"
+        "created_at": "2024-03-18T15:04:53.983Z",
+        "updated_at": "2024-03-18T15:04:53.983Z"
       },
       "fulfillments": [
         {
-          "id": "ea70d9df-1db6-46f0-8747-437f969f3c2e",
+          "id": "f8a7b899-dfd5-4b0a-8644-bbf8c2df0937",
           "@ondc/org/provider_name": "freshon",
           "type": "Delivery",
           "tracking": true,
+          "@ondc/org/TAT": "P1D",
           "state": {
             "descriptor": {
-              "code": "Cancelled"
+              "code": "Packed"
             }
           },
           "start": {
             "location": {
-              "id": "327",
               "descriptor": {
-                "name": "freshon",
-                "images": [
-                  "https://97digiistorage183.blob.core.windows.net/organization/account/freshon.png"
-                ]
+                "name": "freshon"
               },
               "gps": "12.979412,77.4948076",
               "address": {
@@ -93,14 +78,15 @@
             },
             "time": {
               "range": {
-                "start": "2024-03-15T16:50:17.797Z",
-                "end": "2024-03-15T17:05:17.797Z"
+                "start": "2024-03-18T15:05:14.980Z",
+                "end": "2024-03-18T15:20:14.980Z"
               }
             },
             "instructions": {
-              "name": "Pending",
-              "short_desc": "7001",
-              "long_desc": "7001"
+              "code": "3",
+              "name": "Packed",
+              "short_desc": "7142",
+              "long_desc": "7142"
             },
             "contact": {
               "phone": "9845423200",
@@ -122,14 +108,15 @@
             },
             "time": {
               "range": {
-                "start": "2024-03-15T17:20:17.797Z",
-                "end": "2024-03-15T17:35:17.797Z"
+                "start": "2024-03-18T15:35:14.980Z",
+                "end": "2024-03-18T15:50:14.980Z"
               }
             },
             "instructions": {
-              "name": "Cancelled",
-              "short_desc": "6969",
-              "long_desc": "6969"
+              "code": "2",
+              "name": "Packed",
+              "short_desc": "5445",
+              "long_desc": "5445"
             },
             "person": {
               "name": "Sharon S"
@@ -138,74 +125,22 @@
               "phone": "6546456888"
             }
           },
-          "agent": {
-            "name": "Robert",
-            "phone": "9845423200"
-          },
           "tags": [
             {
-              "code": "cancel_request",
+              "code": "routing",
               "list": [
                 {
-                  "code": "reason_id",
-                  "value": "015"
-                },
-                {
-                  "code": "initiated_by",
-                  "value": "preprod-bpp.dbs.digiit.io"
-                },
-                {
-                  "code": "retry_count",
-                  "value": "3"
-                },
-                {
-                  "code": "rto_id",
-                  "value": "3575b6dd-2ec3-4693-a0af-cf3a55680232"
+                  "code": "type",
+                  "value": "P2P"
                 }
               ]
             },
             {
-              "code": "precancel_state",
+              "code": "tracking",
               "list": [
                 {
-                  "code": "fulfillment_state",
-                  "value": "Out-for-delivery"
-                },
-                {
-                  "code": "updated_at",
-                  "value": "2024-03-15T17:15:07.876Z"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "5f294705-55bf-4197-9227-d9e41ea08bf1",
-          "type": "Cancel",
-          "state": {
-            "descriptor": {
-              "code": "Cancelled"
-            }
-          },
-          "tags": [
-            {
-              "code": "quote_trail",
-              "list": [
-                {
-                  "code": "type",
-                  "value": "item"
-                },
-                {
-                  "code": "id",
-                  "value": "1100"
-                },
-                {
-                  "code": "currency",
-                  "value": "INR"
-                },
-                {
-                  "code": "value",
-                  "value": "-798.00"
+                  "code": "gps_enabled",
+                  "value": "yes"
                 }
               ]
             }
@@ -215,19 +150,19 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "25.00"
+          "value": "823.00"
         },
         "breakup": [
           {
             "@ondc/org/item_id": "1100",
             "@ondc/org/item_quantity": {
-              "count": 0
+              "count": 1
             },
             "title": "COCONUT OIL",
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "798.00"
             },
             "item": {
               "price": {
@@ -237,7 +172,7 @@
             }
           },
           {
-            "@ondc/org/item_id": "ea70d9df-1db6-46f0-8747-437f969f3c2e",
+            "@ondc/org/item_id": "f8a7b899-dfd5-4b0a-8644-bbf8c2df0937",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": {
@@ -253,7 +188,7 @@
         "tl_method": "http/get",
         "params": {
           "currency": "INR",
-          "transaction_id": "6e442cbb-b4af-46e9-9ee1-eac8d68c3e6e",
+          "transaction_id": "3a0465a8-3239-47e2-8718-76d704328840",
           "amount": "823.00"
         },
         "status": "PAID",
@@ -275,8 +210,8 @@
           }
         ]
       },
-      "created_at": "2024-03-15T16:50:15.001Z",
-      "updated_at": "2024-03-15T17:20:35.512Z"
+      "created_at": "2024-03-18T15:05:03.936Z",
+      "updated_at": "2024-03-18T15:54:42.594Z"
     }
   }
 }
