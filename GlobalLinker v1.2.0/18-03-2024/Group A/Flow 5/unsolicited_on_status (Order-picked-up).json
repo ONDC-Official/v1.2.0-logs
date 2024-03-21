@@ -1,0 +1,248 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bpp_uri": "https://gl-6912-httpapi.glstaging.in/gl/ondc",
+        "bpp_id": "gl-6912-httpapi.glstaging.in/gl/ondc",
+        "transaction_id": "c3ee2e33-baf8-44a4-a6dc-bb411132d899",
+        "message_id": "ce7565f1-7fb7-4b73-9077-4252fa4930e7",
+        "ttl": "PT30S",
+        "timestamp": "2024-03-18T08:21:40.130Z"
+    },
+    "message": {
+        "order": {
+            "id": "2024-03-18-874611",
+            "state": "In-progress",
+            "provider": {
+                "id": "groceryshop12",
+                "locations": [
+                    {
+                        "id": "groceryshop12_location"
+                    }
+                ]
+            },
+            "payment": {
+                "uri": "https://juspay.in/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "401.70",
+                    "transaction_id": "eba984fa-ef91-453f-b0ed-49b4354a35ee",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "0.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_status": "PAID",
+                        "settlement_type": "upi",
+                        "settlement_ifsc_code": "SBIN000827",
+                        "upi_address": "globallinker@ybl",
+                        "bank_name": "State Bank Of India",
+                        "branch_name": "Mumbai",
+                        "settlement_bank_account_no": "12345678901234",
+                        "beneficiary_name": "GlobalLinker"
+                    }
+                ]
+            },
+            "documents": [
+                {
+                    "url": "https://httpapi.globallinker.com/ondc/invoice?invoiceid=DmZeTs8hNTCcC8Dh4pAaPhWqsVnVTbrz&oid=5775557-4945",
+                    "label": "invoice"
+                }
+            ],
+            "items": [
+                {
+                    "id": "5775276_6459947_9621819",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "1"
+                },
+                {
+                    "id": "5775276_6459956_9621830",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "1"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "401.70",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "5775276_6459947_9621819",
+                        "title": "A Tata Tea Red Gold 100G",
+                        "price": {
+                            "currency": "INR",
+                            "value": "80.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "40.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "5775276_6459956_9621830",
+                        "title": "B Natural Juice Mango",
+                        "price": {
+                            "currency": "INR",
+                            "value": "300.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "100.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.30"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "11.40"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "billing": {
+                "name": "Ravikiran Jawalkar",
+                "address": {
+                    "building": "Mumbai",
+                    "name": "Ravikiran Jawalkar",
+                    "locality": "7th Cross Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560053"
+                },
+                "email": "ravikiran.j@digivation.in",
+                "phone": "9028370202",
+                "created_at": "2024-03-18T08:19:20.433Z",
+                "updated_at": "2024-03-18T08:19:20.433Z"
+            },
+            "created_at": "2024-03-18T08:20:39.911Z",
+            "updated_at": "2024-03-18T08:21:40.130Z",
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "@ondc/org/provider_name": "Grocery Shop",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
+                    "@ondc/org/TAT": "PT60M",
+                    "tags": [
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ],
+                    "start": {
+                        "location": {
+                            "address": {
+                                "locality": "Anandwan Apartment",
+                                "city": "Bengaluru",
+                                "area_code": "560034",
+                                "state": "Karnataka"
+                            },
+                            "gps": "12.9351929,77.62448069999999",
+                            "descriptor": {
+                                "name": "Grocery Shop"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7083538765",
+                            "email": "ondcstage003@gmail.com"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-03-18T11:00:00.000Z",
+                                "end": "2024-03-19T15:30:00.000Z"
+                            },
+                            "timestamp": "2024-03-18T08:21:40.130Z"
+                        },
+                        "instructions": {
+                            "code": "1",
+                            "name": "ONDC Order",
+                            "short_desc": "9028370202",
+                            "long_desc": "additional instructions for pickup"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "email": "ravikiran.j@digivation.in",
+                            "phone": "9028370202"
+                        },
+                        "location": {
+                            "address": {
+                                "building": "Mumbai",
+                                "name": "Ravikiran Jawalkar",
+                                "locality": "7th Cross Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560053"
+                            },
+                            "gps": "12.971082854746054,77.57809996604921"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-03-19T03:30:00.000Z",
+                                "end": "2024-03-21T15:30:00.000Z"
+                            }
+                        },
+                        "person": {
+                            "name": "Ravikiran Jawalkar"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
