@@ -1,48 +1,56 @@
 {
     "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
         "bap_id": "integrations-preprod.channelier.com",
         "bap_uri": "https://integrations-preprod.channelier.com/ondc",
-        "domain": "nic2004:60232",
-        "core_version": "1.2.0",
-        "transaction_id": "01a98a7d-ab67-4cd2-adc9-10698c33bb47",
-        "message_id": "1672a5d6-774b-45f9-8cb0-a031e8ff0855",
-        "country": "IND",
-        "city": "std:011",
-        "timestamp": "2024-02-27T17:08:39.350Z",
-        "action": "on_search",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
+        "transaction_id": "41ed50e3-5a7e-46fa-adf1-91f35132fdd8",
+        "message_id": "d927ff8f-9bb1-4542-b155-06a826549259",
+        "timestamp": "2024-03-19T07:09:53.541Z",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
     },
     "message": {
         "catalog": {
             "bpp/descriptor": {
-                "name": "ONDC Logistics Seller App by WITS"
+                "name": "MP2"
             },
             "bpp/providers": [
                 {
-                    "id": "f0503697-e942-4666-8e80-08f445de2c4e",
+                    "id": "MP2",
                     "descriptor": {
-                        "name": "ONDC Logistics Seller App by WITS",
-                        "long_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API.",
-                        "short_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API."
+                        "name": "MP2",
+                        "short_desc": "MP2",
+                        "long_desc": "MP2 Logistics Provider"
                     },
                     "categories": [
                         {
-                            "id": "Standard Delivery",
+                            "id": "Immediate Delivery",
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-02-27"
+                                "duration": "PT55M",
+                                "timestamp": "2024-03-19"
+                            }
+                        },
+                        {
+                            "id": "Same Day Delivery",
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT4H",
+                                "timestamp": "2024-03-19"
                             }
                         }
                     ],
                     "fulfillments": [
                         {
-                            "id": "948f89ae-35b6-4fad-9eac-b322d16b5ae3",
+                            "id": "mp2_express_f1",
                             "type": "Delivery",
                             "start": {
                                 "time": {
-                                    "duration": "P1D"
+                                    "duration": "PT20M"
                                 }
                             },
                             "tags": [
@@ -55,44 +63,72 @@
                                         },
                                         {
                                             "code": "motorable_distance",
-                                            "value": "0.00"
+                                            "value": "0.2"
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "id": "db94e992-702f-48b5-9e01-b7507248ab43",
+                            "id": "mp2_express_f1-RTO",
+                            "type": "RTO"
+                        },
+                        {
+                            "id": "mp2_sdd_f1",
+                            "type": "Delivery",
+                            "start": {
+                                "time": {
+                                    "duration": "PT2H"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "distance",
+                                    "list": [
+                                        {
+                                            "code": "motorable_distance_type",
+                                            "value": "kilometer"
+                                        },
+                                        {
+                                            "code": "motorable_distance",
+                                            "value": "0.2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "mp2_sdd_f1-RTO",
                             "type": "RTO"
                         }
                     ],
                     "items": [
                         {
-                            "id": "Standard",
+                            "id": "mp2_express",
                             "parent_item_id": "",
-                            "category_id": "Standard Delivery",
-                            "fulfillment_id": "948f89ae-35b6-4fad-9eac-b322d16b5ae3",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "mp2_express_f1",
                             "descriptor": {
                                 "code": "P2P",
-                                "name": "Standard Delivery",
-                                "long_desc": "Upto 1 day for Delivery",
-                                "short_desc": "Upto 1 day for Delivery"
+                                "name": "MP2 Express Delivery",
+                                "short_desc": "40 min delivery for FNB",
+                                "long_desc": "40 min delivery for FNB"
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "122.38"
+                                "value": "2.0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-02-27"
+                                "duration": "PT55M",
+                                "timestamp": "2024-03-19"
                             }
                         },
                         {
-                            "id": "rto",
-                            "parent_item_id": "Standard",
-                            "category_id": "Standard Delivery",
-                            "fulfillment_id": "db94e992-702f-48b5-9e01-b7507248ab43",
+                            "id": "mp2_express-RTO",
+                            "parent_item_id": "mp2_express",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "mp2_express_f1-RTO",
                             "descriptor": {
                                 "code": "P2P",
                                 "name": "RTO quote",
@@ -101,12 +137,54 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "36.71"
+                                "value": "0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "P1D",
-                                "timestamp": "2024-02-28"
+                                "duration": "PT55M",
+                                "timestamp": "2024-03-19"
+                            }
+                        },
+                        {
+                            "id": "mp2_sdd",
+                            "parent_item_id": "",
+                            "category_id": "Same Day Delivery",
+                            "fulfillment_id": "mp2_sdd_f1",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "MP2 SDD Delivery",
+                                "short_desc": "Same Day Delivery",
+                                "long_desc": "Same Day Delivery"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "2.0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT4H",
+                                "timestamp": "2024-03-19"
+                            }
+                        },
+                        {
+                            "id": "mp2_sdd-RTO",
+                            "parent_item_id": "mp2_sdd",
+                            "category_id": "Same Day Delivery",
+                            "fulfillment_id": "mp2_sdd_f1-RTO",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "RTO quote",
+                                "short_desc": "RTO quote",
+                                "long_desc": "RTO quote"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT4H",
+                                "timestamp": "2024-03-19"
                             }
                         }
                     ]
