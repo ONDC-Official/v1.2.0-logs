@@ -1,0 +1,277 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "country": "IND",
+      "city": "std:044",
+      "action": "on_init",
+      "core_version": "1.2.0",
+      "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+      "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+      "bpp_uri": "https://bpp-stage.walue.co.in/bpp/api",
+      "transaction_id": "1f65777c-a2d3-4906-bf95-8b7d78a3787c",
+      "message_id": "2fd455d3-9798-4730-a24a-ba1f72ba0b0f",
+      "timestamp": "2024-03-26T06:09:00.607Z",
+      "bpp_id": "bpp-stage.walue.co.in",
+      "ttl": "PT30S",
+      "parent_order_id": "1f65777c-a2d3-4906-bf95-8b7d78a3787c"
+    },
+    "created_at": {
+      "$date": "2024-03-26T06:09:00.871Z"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "fc55fd0d-ba35-4e4e-b910-b467ff82b978",
+          "locations": [
+            {
+              "id": "65fbd301c437f8b52c7d3a49"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "7482256a-0be3-4c09-b0a0-4049c885ea45",
+            "quantity": {
+              "count": 1
+            },
+            "tags": [
+              {
+                "code": "type",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "item"
+                  }
+                ]
+              }
+            ],
+            "fulfillment_id": "F1",
+            "location_id": "65fbd301c437f8b52c7d3a49"
+          }
+        ],
+        "billing": {
+          "address": {
+            "building": "11",
+            "city": "Chennai",
+            "state": "Tamil Nadu",
+            "country": "IND",
+            "area_code": "600033",
+            "locality": "Papatlamal Street",
+            "name": "aaa"
+          },
+          "phone": "9876543211",
+          "name": "aaa",
+          "email": "techlearning012@gmail.com",
+          "created_at": "2024-03-26T06:09:00.506Z",
+          "updated_at": "2024-03-26T06:09:00.506Z"
+        },
+        "fulfillments": [
+          {
+            "id": "F1",
+            "type": "Delivery",
+            "end": {
+              "contact": {
+                "email": "techlearning012@gmail.com",
+                "phone": "9876543211"
+              },
+              "location": {
+                "gps": "13.044941,80.219341",
+                "address": {
+                  "building": "11",
+                  "city": "Chennai",
+                  "state": "Tamil Nadu",
+                  "country": "IND",
+                  "area_code": "600033",
+                  "locality": "Papatlamal Street",
+                  "name": "aaa"
+                }
+              }
+            },
+            "tracking": false
+          }
+        ],
+        "quote": {
+          "price": {
+            "value": "1999",
+            "currency": "INR"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "7482256a-0be3-4c09-b0a0-4049c885ea45",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
+              "title": "Apple by Walue",
+              "@ondc/org/title_type": "item",
+              "price": {
+                "currency": "INR",
+                "value": "1999"
+              },
+              "item": {
+                "quantity": {
+                  "available": {
+                    "count": "9993"
+                  },
+                  "maximum": {
+                    "count": "9999"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "1999"
+                },
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "@ondc/org/item_id": "F1",
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          ],
+          "ttl": "PT30S"
+        },
+        "payment": {
+          "type": "ON-ORDER",
+          "collected_by": "BPP",
+          "uri": "https://snp.com/pg",
+          "status": "NOT-PAID",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_window": "P1D",
+          "@ondc/org/withholding_amount": "10.00",
+          "tags": [
+            {
+              "code": "bpp_collect",
+              "list": [
+                {
+                  "code": "success",
+                  "value": "Y"
+                },
+                {
+                  "code": "error",
+                  "value": ".."
+                }
+              ]
+            }
+          ],
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "beneficiary_name": "xxxxx",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX",
+              "bank_name": "xxxx",
+              "branch_name": "xxxx"
+            }
+          ]
+        },
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Pending",
+                "short_desc": "002"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "0.00",
+              "amount": {
+                "currency": "INR",
+                "value": "0.00"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Packed",
+                "short_desc": "001,003"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "10.00",
+              "amount": {
+                "currency": "INR",
+                "value": "195.57"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Order-picked-up",
+                "short_desc": "001,003"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "10.00",
+              "amount": {
+                "currency": "INR",
+                "value": "195.57"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Out-for-delivery",
+                "short_desc": "009"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "0.00",
+              "amount": {
+                "currency": "INR",
+                "value": "0.00"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Out-for-delivery",
+                "short_desc": "010,011,012,013,014,015"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "20.00",
+              "amount": {
+                "currency": "INR",
+                "value": "391.14"
+              }
+            }
+          }
+        ],
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "tax_number",
+                "value": "124354656768889"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

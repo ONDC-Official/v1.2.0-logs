@@ -1,0 +1,242 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "country": "IND",
+      "city": "std:044",
+      "action": "on_confirm",
+      "core_version": "1.2.0",
+      "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+      "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+      "bpp_uri": "https://bpp-stage.walue.co.in/bpp/api",
+      "transaction_id": "1f65777c-a2d3-4906-bf95-8b7d78a3787c",
+      "message_id": "bed35fd5-06a4-400e-9779-33c823aa7394",
+      "timestamp": "2024-03-26T06:09:31.749Z",
+      "bpp_id": "bpp-stage.walue.co.in",
+      "ttl": "PT30S"
+    },
+    "created_at": {
+      "$date": "2024-03-26T06:09:31.997Z"
+    },
+    "message": {
+      "order": {
+        "id": "2024-03-26-479051",
+        "state": "Created",
+        "provider": {
+          "id": "fc55fd0d-ba35-4e4e-b910-b467ff82b978",
+          "locations": [
+            {
+              "id": "65fbd301c437f8b52c7d3a49"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "7482256a-0be3-4c09-b0a0-4049c885ea45",
+            "quantity": {
+              "count": 1
+            },
+            "fulfillment_id": "F1",
+            "tags": [
+              {
+                "code": "type",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "item"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "billing": {
+          "address": {
+            "name": "aaa",
+            "building": "11",
+            "locality": "Papatlamal Street",
+            "city": "Chennai",
+            "state": "Tamil Nadu",
+            "country": "IND",
+            "area_code": "600033"
+          },
+          "phone": "9876543211",
+          "name": "aaa",
+          "email": "techlearning012@gmail.com",
+          "created_at": "2024-03-26T06:09:00.506Z",
+          "updated_at": "2024-03-26T06:09:00.506Z"
+        },
+        "fulfillments": [
+          {
+            "id": "F1",
+            "@ondc/org/provider_name": "i FOR TECH",
+            "state": {
+              "descriptor": {
+                "code": "Pending"
+              }
+            },
+            "type": "Delivery",
+            "tracking": false,
+            "start": {
+              "location": {
+                "id": "65fbd301c437f8b52c7d3a49",
+                "descriptor": {
+                  "name": "i FOR TECH"
+                },
+                "gps": "12.981217099211689,77.5949513481855",
+                "address": {
+                  "building": "Attic",
+                  "city": "Bengaluru",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560001",
+                  "locality": "Gandhi Nagar"
+                }
+              },
+              "time": {
+                "range": {
+                  "start": "2024-03-26T06:09:31.721Z",
+                  "end": "2024-03-26T06:09:31.721Z"
+                }
+              },
+              "contact": {
+                "email": "techlearning012@gmail.com",
+                "phone": "9876543211"
+              }
+            },
+            "end": {
+              "person": {
+                "name": "aaa"
+              },
+              "contact": {
+                "email": "techlearning012@gmail.com",
+                "phone": "9876543211"
+              },
+              "location": {
+                "gps": "13.044941,80.219341",
+                "address": {
+                  "name": "aaa",
+                  "building": "11",
+                  "locality": "Papatlamal Street",
+                  "city": "Chennai",
+                  "state": "Tamil Nadu",
+                  "country": "IND",
+                  "area_code": "600033"
+                }
+              },
+              "time": {
+                "range": {
+                  "start": "2024-03-26T06:09:31.721Z",
+                  "end": "2024-03-27T06:09:31.721Z"
+                }
+              }
+            },
+            "rateable": true
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "1999"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "7482256a-0be3-4c09-b0a0-4049c885ea45",
+              "@ondc/org/item_quantity": {
+                "count": 1
+              },
+              "title": "Apple by Walue",
+              "@ondc/org/title_type": "item",
+              "price": {
+                "currency": "INR",
+                "value": "1999"
+              },
+              "item": {
+                "quantity": {
+                  "available": {
+                    "count": "9993"
+                  },
+                  "maximum": {
+                    "count": "9999"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "1999"
+                },
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "@ondc/org/item_id": "F1",
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              }
+            }
+          ],
+          "ttl": "PT30S"
+        },
+        "payment": {
+          "uri": "https://razorpay.com/",
+          "tl_method": "http/get",
+          "params": {
+            "amount": "1999.00",
+            "currency": "INR",
+            "transaction_id": "order_NqsaxNleUM0MKK"
+          },
+          "status": "PAID",
+          "type": "ON-ORDER",
+          "collected_by": "BAP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "upi",
+              "beneficiary_name": "xxxxx",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX",
+              "bank_name": "xxxx",
+              "branch_name": "xxxx"
+            }
+          ]
+        },
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "tax_number",
+                "value": "124354656768889"
+              }
+            ]
+          },
+          {
+            "code": "bap_terms",
+            "list": [
+              {
+                "code": "tax_number",
+                "value": "GSTIN1234567890"
+              }
+            ]
+          }
+        ],
+        "created_at": "2024-03-26T06:09:31.624Z",
+        "updated_at": "2024-03-26T06:09:31.749Z"
+      }
+    }
+  }
