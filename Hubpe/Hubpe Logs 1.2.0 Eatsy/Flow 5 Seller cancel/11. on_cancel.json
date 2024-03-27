@@ -2,15 +2,15 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:080",
-        "action": "on_status",
+        "action": "on_cancel",
         "bap_id": "dev-preprod-buyer-ondc.ndh01.com/retail",
         "bpp_id": "staging.tmbill.com/tp/v1/ondc",
         "domain": "ONDC:RET11",
         "bap_uri": "https://dev-preprod-buyer-ondc.ndh01.com/retail/buyer",
         "bpp_uri": "https://staging.tmbill.com/tp/v1/ondc",
         "country": "IND",
-        "timestamp": "2024-03-27T11:04:53.063Z",
-        "message_id": "260c89ed-3ef4-41df-a71c-68e1c11f77af",
+        "timestamp": "2024-03-27T11:06:44.236Z",
+        "message_id": "46a6e84d-ae13-4d09-82c2-583ec5d29bcd",
         "core_version": "1.2.0",
         "transaction_id": "3da44f7b-0802-4972-bac1-6ce75a5fc79f"
     },
@@ -21,7 +21,21 @@
                 {
                     "id": "2775198::901000::G-1",
                     "quantity": {
+                        "count": 0
+                    },
+                    "fulfillment_id": "22446688739675_fulfillment_1"
+                },
+                {
+                    "id": "2775198::901000::G-1",
+                    "quantity": {
                         "count": 2
+                    },
+                    "fulfillment_id": "22446688739675_cancel_1"
+                },
+                {
+                    "id": "2775200::1155939::EP07",
+                    "quantity": {
+                        "count": 0
                     },
                     "fulfillment_id": "22446688739675_fulfillment_1"
                 },
@@ -30,13 +44,13 @@
                     "quantity": {
                         "count": 2
                     },
-                    "fulfillment_id": "22446688739675_fulfillment_1"
+                    "fulfillment_id": "22446688739675_cancel_1"
                 }
             ],
             "quote": {
                 "ttl": "PT1H",
                 "price": {
-                    "value": "523",
+                    "value": "0",
                     "currency": "INR"
                 },
                 "breakup": [
@@ -48,7 +62,7 @@
                             }
                         },
                         "price": {
-                            "value": "190.48",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Anda Bhurji",
@@ -60,7 +74,7 @@
                     },
                     {
                         "price": {
-                            "value": "9.52",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Tax",
@@ -75,7 +89,7 @@
                             }
                         },
                         "price": {
-                            "value": "260",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Egg Curry",
@@ -87,7 +101,7 @@
                     },
                     {
                         "price": {
-                            "value": "4",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Tax",
@@ -96,7 +110,7 @@
                     },
                     {
                         "price": {
-                            "value": "59",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "title": "Delivery Charges",
@@ -105,7 +119,7 @@
                     }
                 ]
             },
-            "state": "In-progress",
+            "state": "Cancelled",
             "billing": {
                 "name": "Eren Yeager",
                 "phone": "9097805960",
@@ -148,7 +162,6 @@
             },
             "provider": {
                 "id": "22446688739675",
-                "rateable": true,
                 "locations": [
                     {
                         "id": "22446688739675"
@@ -162,7 +175,7 @@
                 }
             ],
             "created_at": "2024-03-27T11:02:47.341Z",
-            "updated_at": "2024-03-27T11:04:53.063Z",
+            "updated_at": "2024-03-27T11:06:44.236Z",
             "fulfillments": [
                 {
                     "id": "22446688739675_fulfillment_1",
@@ -195,24 +208,23 @@
                     },
                     "tags": [
                         {
-                            "code": "routing",
+                            "code": "cancel_request",
                             "list": [
                                 {
-                                    "code": "type",
-                                    "value": "P2P"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "tracking",
-                            "list": [
-                                {
-                                    "code": "gps_enabled",
-                                    "value": "yes"
+                                    "code": "reason_id",
+                                    "value": "011"
                                 },
                                 {
-                                    "code": "url_enabled",
-                                    "value": "no"
+                                    "code": "initiated_by",
+                                    "value": "staging.tmbill.com/tp/v1/ondc"
+                                },
+                                {
+                                    "code": "retry_count",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "22446688739675_cancel_1"
                                 }
                             ]
                         }
@@ -223,8 +235,7 @@
                             "range": {
                                 "end": "2024-03-27T11:24:00.000Z",
                                 "start": "2024-03-27T11:04:00.000Z"
-                            },
-                            "timestamp": "2024-03-27T11:04:53.000Z"
+                            }
                         },
                         "contact": {
                             "email": "sid@tmbill.com",
@@ -249,20 +260,164 @@
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Order-picked-up",
-                            "name": "Order-picked-up"
+                            "code": "Cancelled",
+                            "name": "Cancelled"
                         }
                     },
                     "rateable": true,
                     "tracking": true,
                     "@ondc/org/TAT": "PT60M",
-                    "@ondc/org/provider_name": "TMBill",
-                    "agent": {
-                        "name": "Manmohan Singh",
-                        "phone": "9898989898"
+                    "@ondc/org/provider_name": "TMBill"
+                },
+                {
+                    "id": "22446688739675_cancel_1",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated",
+                            "name": "RTO-Initiated"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "2775198::901000::G-1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-190.48"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "2775198::901000::G-1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-9.52"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "2775200::1155939::EP07"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-260"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "2775200::1155939::EP07"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-4"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "22446688739675_fulfillment_1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-59"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ],
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-03-27T11:06:44.236Z"
+                        }
                     }
                 }
-            ]
+            ],
+            "cancellation": {
+                "reason": {
+                    "id": "011"
+                },
+                "cancelled_by": "staging.tmbill.com/tp/v1/ondc"
+            }
         }
     }
 }
