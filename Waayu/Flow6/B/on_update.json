@@ -1,49 +1,31 @@
 {
   "context": {
     "domain": "ONDC:RET11",
-    "action": "on_confirm",
+    "action": "on_update",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "owner.waayu.app/ondcpreprod",
     "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
-    "transaction_id": "ca193e7e-62aa-40c3-ad57-fbf4590587d4",
-    "message_id": "22eebd0c-650f-43f5-b036-273d3a8a3b58",
-    "city": "std:011",
+    "transaction_id": "822cdb80-4535-42cb-846c-f06f165ca3da",
+    "message_id": "c49acf22-d1d8-4b87-9079-b49c388197f8",
+    "city": "std:08288",
     "country": "IND",
-    "timestamp": "2024-03-28T14:10:24.702Z"
+    "timestamp": "2024-03-29T05:52:26.657Z"
   },
   "message": {
     "order": {
-      "id": "2024-03-28-622469",
-      "state": "Created",
-      "provider": {
-        "id": "35",
-        "locations": [{ "id": "L35" }],
-        "rateable": false
-      },
+      "id": "2024-03-29-731259",
+      "state": "Completed",
+      "provider": { "id": "35", "locations": [{ "id": "L35" }] },
       "items": [
-        {
-          "id": "185941",
-          "fulfillment_id": "WD111",
-          "quantity": { "count": 3 }
-        },
-        {
-          "id": "143679",
-          "fulfillment_id": "WD111",
-          "quantity": { "count": 2 }
-        },
-        {
-          "id": "135803",
-          "fulfillment_id": "WD111",
-          "quantity": { "count": 2 }
-        }
+        { "id": "185941", "fulfillment_id": "F35", "quantity": { "count": 2 } }
       ],
       "billing": {
         "name": "Pankaj Dhote",
         "address": {
           "name": "Pankaj Dhote",
-          "building": "near Aacharya Shanti Sagar Chawk",
+          "building": "Pankaj Dhote",
           "locality": "Unnamed Road",
           "city": "Pune",
           "state": "Maharashtra",
@@ -52,35 +34,30 @@
         },
         "email": "pankaj.dhote@desteksolutions.com",
         "phone": "9579269452",
-        "created_at": "2024-03-28T14:10:08.666Z",
-        "updated_at": "2024-03-28T14:10:08.666Z"
+        "created_at": "2024-03-29T05:36:48.659Z",
+        "updated_at": "2024-03-29T05:36:48.659Z"
       },
       "fulfillments": [
         {
           "id": "WD111",
           "@ondc/org/provider_name": "Coffee House",
-          "state": { "descriptor": { "code": "Pending" } },
+          "state": { "descriptor": { "code": "Order-delivered" } },
           "type": "Delivery",
           "tracking": true,
           "@ondc/org/TAT": "PT90M",
           "start": {
             "location": {
-              "id": "L1",
+              "id": "L35",
               "descriptor": { "name": "Coffee House" },
               "gps": "18.557404,73.928299",
               "address": {
                 "locality": "viman nagar pune",
-                "city": "Mumbai",
+                "city": "pune",
                 "area_code": "411014",
-                "state": "MH"
+                "state": "Maharashtra"
               }
             },
-            "time": {
-              "range": {
-                "start": "2024-03-28T14:15:22.702Z",
-                "end": "2024-03-28T14:55:22.702Z"
-              }
-            },
+            "time": { "timestamp": "2024-03-29T11:18:41.139Z" },
             "contact": {
               "phone": "9423946081",
               "email": "mandar@desteksolutions.com"
@@ -99,63 +76,89 @@
                 "area_code": "411014"
               }
             },
-            "time": {
-              "range": {
-                "start": "2024-03-28T14:20:22.702Z",
-                "end": "2024-03-28T15:45:22.702Z"
-              }
-            },
+            "time": { "timestamp": "2024-03-29T11:20:12.607Z" },
             "person": { "name": "Pankaj Dhote" },
             "contact": {
               "phone": "9579269452",
               "email": "pankaj.dhote@desteksolutions.com"
             }
           }
+        },
+        {
+          "id": "6606571a0e9c89a5730eedd8",
+          "type": "Return",
+          "state": { "descriptor": { "code": "Return_Initiated" } },
+          "tags": [
+            {
+              "code": "return_request",
+              "list": [
+                { "code": "id", "value": "6606571a0e9c89a5730eedd8" },
+                { "code": "item_id", "value": "185941" },
+                { "code": "item_quantity", "value": "1" },
+                { "code": "reason_id", "value": "003" },
+                {
+                  "code": "reason_desc",
+                  "value": "detailed description for return"
+                },
+                {
+                  "code": "images",
+                  "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-03-29-731259/152aafec-da4b-4755-8946-62b22c3a7140.png"
+                },
+                { "code": "ttl_approval", "value": "PT24H" },
+                { "code": "ttl_reverseqc", "value": "P3D" },
+                {
+                  "code": "initiated_by",
+                  "value": "buyer-app-preprod-v2.ondc.org"
+                }
+              ]
+            }
+          ]
         }
       ],
       "quote": {
+        "price": { "currency": "INR", "value": "952.5" },
         "breakup": [
           {
             "@ondc/org/item_id": "185941",
-            "@ondc/org/item_quantity": { "count": 3 },
+            "@ondc/org/item_quantity": { "count": 1 },
             "title": "Cheessy Alloo Masti Burger",
             "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "600" },
-            "item": { "price": { "currency": "INR", "value": "200" } }
+            "item": { "price": { "currency": "INR", "value": "200" } },
+            "price": { "currency": "INR", "value": "200" }
           },
           {
             "@ondc/org/item_id": "185941",
             "title": "Tax",
             "@ondc/org/title_type": "tax",
-            "price": { "currency": "INR", "value": "30" }
+            "price": { "currency": "INR", "value": "10" }
           },
           {
             "@ondc/org/item_id": "143679",
             "title": "Biscuit Cake",
             "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "700" },
-            "@ondc/org/item_quantity": { "count": 2 },
+            "price": { "currency": "INR", "value": "350" },
+            "@ondc/org/item_quantity": { "count": 1 },
             "item": { "price": { "currency": "INR", "value": "350" } }
           },
           {
             "@ondc/org/item_id": "143679",
             "title": "Tax",
             "@ondc/org/title_type": "tax",
-            "price": { "currency": "INR", "value": "35" }
+            "price": { "currency": "INR", "value": "17.5" }
           },
           {
             "@ondc/org/item_id": "135803",
             "title": "Spicy Chicken Sausage Pizza",
             "@ondc/org/title_type": "item",
-            "price": { "currency": "INR", "value": "200" },
-            "@ondc/org/item_quantity": { "count": 2 },
+            "price": { "currency": "INR", "value": "100" },
+            "@ondc/org/item_quantity": { "count": 1 },
             "item": { "price": { "currency": "INR", "value": "100" } }
           },
           {
             "@ondc/org/item_id": "135803",
             "title": "Tax",
             "@ondc/org/title_type": "tax",
-            "price": { "currency": "INR", "value": "10" }
+            "price": { "currency": "INR", "value": "5" }
           },
           {
             "@ondc/org/item_id": "WD111",
@@ -170,54 +173,49 @@
             "price": { "currency": "INR", "value": "10" }
           }
         ],
-        "price": { "currency": "INR", "value": "1635.00" },
         "ttl": "P1D"
       },
       "payment": {
-        "uri": "https://juspay.in/",
+        "uri": "https://razorpay.com/",
         "tl_method": "http/get",
         "params": {
           "currency": "INR",
-          "transaction_id": "b0f5f1b4-9b31-4f8f-8560-2ee2f7a27526",
-          "amount": "1635.00"
+          "transaction_id": "b61ba0ac-c13e-4e96-8ae8-77fd742c4251",
+          "amount": "952.50"
         },
         "status": "PAID",
         "type": "ON-ORDER",
         "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "",
+            "settlement_phase": "",
+            "beneficiary_name": "",
+            "settlement_type": "",
+            "upi_address": ""
+          }
+        ]
       },
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            { "code": "tax_number", "value": "27AAGCD0101J1Z4" },
-            { "code": "provider_tax_number", "value": "AAUFD4638D" }
-          ]
-        },
-        {
-          "code": "bap_terms",
-          "list": { "1": { "code": "tax_number", "value": "GSTIN1234567890" } }
-        }
-      ],
-      "created_at": "2024-03-28T14:10:22.702Z",
-      "updated_at": "2024-03-28T14:10:24.702Z"
+      "created_at": "2024-03-29T05:37:10.274Z",
+      "updated_at": "2024-03-29T11:20:12.607Z"
     }
   },
   "buyer_response": {
     "context": {
       "domain": "ONDC:RET11",
-      "action": "on_confirm",
+      "action": "on_update",
       "core_version": "1.2.0",
       "bap_id": "buyer-app-preprod-v2.ondc.org",
       "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
       "bpp_id": "owner.waayu.app/ondcpreprod",
       "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
-      "transaction_id": "ca193e7e-62aa-40c3-ad57-fbf4590587d4",
-      "message_id": "22eebd0c-650f-43f5-b036-273d3a8a3b58",
-      "city": "std:011",
+      "transaction_id": "822cdb80-4535-42cb-846c-f06f165ca3da",
+      "message_id": "c49acf22-d1d8-4b87-9079-b49c388197f8",
+      "city": "std:08288",
       "country": "IND",
-      "timestamp": "2024-03-28T14:10:24.702Z"
+      "timestamp": "2024-03-29T05:52:26.657Z"
     },
     "message": { "ack": { "status": "ACK" } }
   }
