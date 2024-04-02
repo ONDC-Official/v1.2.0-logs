@@ -3627,40 +3627,597 @@
                 }
             }
         },
-        "search_inc_refresh": {
+        "select": {
             "context": {
                 "domain": "ONDC:RET11",
-                "action": "search",
                 "country": "IND",
-                "city": "*",
+                "city": "std:022",
+                "action": "select",
                 "core_version": "1.2.0",
                 "bap_id": "buyer-app-preprod-v2.ondc.org",
                 "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-                "transaction_id": "3d0becba-742e-4e89-9b24-b37e3ad681e4",
-                "message_id": "68259af1-6655-40a2-b5f2-a8b013471fcf",
-                "timestamp": "2024-03-31T08:34:20.773Z",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "d1b6dcf1-3c8e-45a0-9c18-ed9991463220",
+                "timestamp": "2024-04-02T07:20:41.690Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
                 "ttl": "PT30S"
             },
             "message": {
-                "intent": {
-                    "fulfillment": {
-                        "type": "Delivery"
+                "order": {
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "quantity": {
+                                "count": 2
+                            },
+                            "location_id": "22344",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3478552",
+                            "quantity": {
+                                "count": 1
+                            },
+                            "location_id": "22344",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "fulfillments": [
+                        {
+                            "end": {
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "area_code": "400050"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "on_select": {
+            "context": {
+                "domain": "ONDC:RET11",
+                "country": "IND",
+                "city": "std:022",
+                "action": "on_select",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "d1b6dcf1-3c8e-45a0-9c18-ed9991463220",
+                "timestamp": "2024-04-02T07:20:41.733Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "tracking": true,
+                            "@ondc/org/category": "Immediate Delivery",
+                            "@ondc/org/TAT": "PT60M",
+                            "state": {
+                                "descriptor": {
+                                    "code": "Serviceable"
+                                }
+                            }
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn \u0026 Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0.0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    }
+                }
+            }
+        },
+        "init": {
+            "context": {
+                "domain": "ONDC:RET11",
+                "country": "IND",
+                "city": "std:022",
+                "action": "init",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "442df81d-2f11-480d-a282-b107df52f5e4",
+                "timestamp": "2024-04-02T07:21:21.223Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "quantity": {
+                                "count": 2
+                            },
+                            "location_id": "22344",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "fulfillment_id": "1"
+                        },
+                        {
+                            "id": "3478552",
+                            "quantity": {
+                                "count": 1
+                            },
+                            "location_id": "22344",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "fulfillment_id": "1"
+                        }
+                    ],
+                    "billing": {
+                        "address": {
+                            "building": "TTTTT",
+                            "city": "Mumbai",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "area_code": "400050",
+                            "locality": "Perry Road",
+                            "name": "Amit Badheka"
+                        },
+                        "phone": "09619115788",
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "type": "Delivery",
+                            "end": {
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "building": "TTTTT",
+                                        "city": "Mumbai",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "area_code": "400050",
+                                        "locality": "Perry Road",
+                                        "name": "Amit Badheka"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "on_init": {
+            "context": {
+                "domain": "ONDC:RET11",
+                "country": "IND",
+                "city": "std:022",
+                "action": "on_init",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "442df81d-2f11-480d-a282-b107df52f5e4",
+                "timestamp": "2024-04-02T07:21:21.253Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "tracking": false,
+                            "type": "Delivery",
+                            "end": {
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "building": "TTTTT",
+                                        "city": "Mumbai",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "area_code": "400050",
+                                        "locality": "Perry Road",
+                                        "name": "Amit Badheka"
+                                    }
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn \u0026 Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0.0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "address": {
+                            "building": "TTTTT",
+                            "city": "Mumbai",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "area_code": "400050",
+                            "locality": "Perry Road",
+                            "name": "Amit Badheka"
+                        },
+                        "phone": "09619115788",
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
                     },
                     "payment": {
                         "@ondc/org/buyer_app_finder_fee_type": "percent",
-                        "@ondc/org/buyer_app_finder_fee_amount": "3"
+                        "@ondc/org/buyer_app_finder_fee_amount": "3",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "settlement_counterparty": "seller-app",
+                                "settlement_phase": "sale-amount",
+                                "settlement_type": "neft",
+                                "settlement_bank_account_no": "12123333333",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "beneficiary_name": "Akwhqy",
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne"
+                            }
+                        ]
                     },
                     "tags": [
                         {
-                            "code": "catalog_inc",
+                            "code": "bpp_terms",
                             "list": [
                                 {
-                                    "code": "start_time",
-                                    "value": "2024-03-31T07:34:20.773Z"
+                                    "code": "provider_tax_number",
+                                    "value": "07AGRPL6614J2ZX"
                                 },
                                 {
-                                    "code": "end_time",
-                                    "value": "2024-03-31T08:34:20.773Z"
+                                    "code": "tax_number",
+                                    "value": "27AADCH9016M1Z9"
                                 }
                             ]
                         }
@@ -3668,36 +4225,2133 @@
                 }
             }
         },
-        "on_search_inc_refresh": {
+        "confirm": {
             "context": {
                 "domain": "ONDC:RET11",
-                "action": "on_search",
                 "country": "IND",
                 "city": "std:022",
+                "action": "confirm",
                 "core_version": "1.2.0",
                 "bap_id": "buyer-app-preprod-v2.ondc.org",
                 "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-                "transaction_id": "3d0becba-742e-4e89-9b24-b37e3ad681e4",
-                "message_id": "68259af1-6655-40a2-b5f2-a8b013471fcf",
-                "timestamp": "2024-03-31T08:34:20.773Z",
-                "ttl": "PT30S",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "e4af450d-c8f1-4d6d-b2b8-9213604772ab",
+                "timestamp": "2024-04-02T07:22:52.370Z",
                 "bpp_id": "ondc-preprod.hashtagloyalty.net",
-                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/"
+                "ttl": "PT30S"
             },
             "message": {
-                "catalog": {
-                    "bpp/providers": [
+                "order": {
+                    "id": "20240402638298",
+                    "state": "Created",
+                    "billing": {
+                        "address": {
+                            "name": "Amit Badheka",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "city": "Mumbai",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "area_code": "400050"
+                        },
+                        "phone": "09619115788",
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "quantity": {
+                                "count": 2
+                            },
+                            "fulfillment_id": "1",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "3478552",
+                            "quantity": {
+                                "count": 1
+                            },
+                            "fulfillment_id": "1",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "fulfillments": [
+                        {
+                            "@ondc/org/TAT": "PT60M",
+                            "id": "1",
+                            "tracking": false,
+                            "end": {
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "name": "Amit Badheka",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "city": "Mumbai",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "area_code": "400050"
+                                    }
+                                }
+                            },
+                            "type": "Delivery"
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "tl_method": "http/get",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "type": "ON-ORDER",
+                        "collected_by": "BAP",
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "settlement_counterparty": "seller-app",
+                                "settlement_phase": "sale-amount",
+                                "settlement_type": "neft",
+                                "settlement_bank_account_no": "12123333333",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "beneficiary_name": "Akwhqy",
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne"
+                            }
+                        ]
+                    },
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn \u0026 Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0.0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "tags": [
+                        {
+                            "code": "bpp_terms",
+                            "list": [
+                                {
+                                    "code": "tax_number",
+                                    "value": "27AADCH9016M1Z9"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "bap_terms",
+                            "list": [
+                                {
+                                    "code": "tax_number",
+                                    "value": "GSTIN1234567890"
+                                }
+                            ]
+                        }
+                    ],
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:22:52.370Z"
+                }
+            }
+        },
+        "on_confirm": {
+            "context": {
+                "domain": "ONDC:RET11",
+                "country": "IND",
+                "city": "std:022",
+                "action": "on_confirm",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "e4af450d-c8f1-4d6d-b2b8-9213604772ab",
+                "timestamp": "2024-04-02T07:22:52.418Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "20240402638298",
+                    "state": "Created",
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "tl_method": "http/get",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "type": "ON-ORDER",
+                        "collected_by": "BAP",
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "settlement_counterparty": "seller-app",
+                                "settlement_phase": "sale-amount",
+                                "settlement_type": "neft",
+                                "settlement_bank_account_no": "12123333333",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "beneficiary_name": "Akwhqy",
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne"
+                            }
+                        ]
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "tracking": true,
+                            "end": {
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "name": "Amit Badheka",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "city": "Mumbai",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "area_code": "400050"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "descriptor": {
+                                    "code": "Pending"
+                                }
+                            },
+                            "type": "Delivery",
+                            "start": {
+                                "location": {
+                                    "id": "22344",
+                                    "descriptor": {
+                                        "name": "Surat Chai "
+                                    },
+                                    "gps": "19.0625499, 72.8296467",
+                                    "address": {
+                                        "locality": "Bandra West",
+                                        "city": "Mumbai",
+                                        "area_code": "400050",
+                                        "state": "Maharashtra"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "9538612176",
+                                    "email": "ase9945@gmail.com"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn \u0026 Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    },
+                                    "tags": [
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0.0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "address": {
+                            "name": "Amit Badheka",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "city": "Mumbai",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "area_code": "400050"
+                        },
+                        "phone": "09619115788",
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "cancellation_terms": [
+                        {
+                            "fulfillment_state": {
+                                "descriptor": {
+                                    "code": "Pending",
+                                    "short_desc": ""
+                                }
+                            },
+                            "refund_eligible": true,
+                            "reason_required": true,
+                            "cancellation_fee": {
+                                "percentage": "0.00",
+                                "amount": {
+                                    "currency": "INR",
+                                    "value": "0.00"
+                                }
+                            }
+                        },
+                        {
+                            "fulfillment_state": {
+                                "descriptor": {
+                                    "code": "Packed",
+                                    "short_desc": "001,003"
+                                }
+                            },
+                            "refund_eligible": true,
+                            "reason_required": true,
+                            "cancellation_fee": {
+                                "percentage": "0",
+                                "amount": {
+                                    "currency": "INR",
+                                    "value": "0"
+                                }
+                            }
+                        },
+                        {
+                            "fulfillment_state": {
+                                "descriptor": {
+                                    "code": "Order-picked-up",
+                                    "short_desc": "001,003"
+                                }
+                            },
+                            "refund_eligible": false,
+                            "reason_required": true,
+                            "cancellation_fee": {
+                                "percentage": "100.00",
+                                "amount": {
+                                    "currency": "INR",
+                                    "value": 1103.48
+                                }
+                            }
+                        },
+                        {
+                            "fulfillment_state": {
+                                "descriptor": {
+                                    "code": "Out-for-delivery",
+                                    "short_desc": "009,010,011,012,013,014,015"
+                                }
+                            },
+                            "refund_eligible": false,
+                            "reason_required": true,
+                            "cancellation_fee": {
+                                "percentage": "100.00",
+                                "amount": {
+                                    "currency": "INR",
+                                    "value": 1103.48
+                                }
+                            }
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "code": "bpp_terms",
+                            "list": [
+                                {
+                                    "code": "np_type",
+                                    "value": "MSN"
+                                },
+                                {
+                                    "code": "tax_number",
+                                    "value": "27AADCH9016M1Z9"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "bap_terms",
+                            "list": [
+                                {
+                                    "code": "tax_number",
+                                    "value": "GSTIN1234567890"
+                                }
+                            ]
+                        }
+                    ],
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:22:52.418Z"
+                }
+            }
+        },
+        "on_status_pending": {
+            "context": {
+                "action": "on_status",
+                "timestamp": "2024-04-02T12:56:08.197Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "domain": "ONDC:RET11",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "64fae790-d683-4fd0-8cb7-5223c160cde4",
+                "city": "std:022",
+                "country": "IND",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "20240402638298",
+                    "state": "Created",
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "provider_location": {
+                        "id": "22344"
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "type": "ON-ORDER",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "tl_method": "http/get",
+                        "collected_by": "BAP",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "Akwhqy",
+                                "settlement_phase": "sale-amount",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "settlement_counterparty": "seller-app",
+                                "settlement_bank_account_no": "12123333333"
+                            }
+                        ],
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "@ondc/org/TAT": "PT60M",
+                            "tracking": true,
+                            "end": {
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "city": "Mumbai",
+                                        "name": "Amit Badheka",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "area_code": "400050"
+                                    }
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:08.202Z",
+                                        "end": "2024-04-02T07:56:08.202Z"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "descriptor": {
+                                    "code": "Created"
+                                }
+                            },
+                            "type": "Delivery",
+                            "start": {
+                                "location": {
+                                    "id": "22344",
+                                    "descriptor": {
+                                        "name": "Surat Chai "
+                                    },
+                                    "gps": "19.0625499, 72.8296467",
+                                    "address": {
+                                        "locality": "Bandra West",
+                                        "city": "Mumbai",
+                                        "area_code": "400050",
+                                        "state": "Maharashtra"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "9538612176",
+                                    "email": "ase9945@gmail.com"
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:08.202Z",
+                                        "end": "2024-04-02T07:56:08.202Z"
+                                    }
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn & Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "phone": "09619115788",
+                        "address": {
+                            "city": "Mumbai",
+                            "name": "Amit Badheka",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "area_code": "400050"
+                        },
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:26:08.202Z"
+                }
+            }
+        },
+        "on_status_packed": {
+            "context": {
+                "action": "on_status",
+                "timestamp": "2024-04-02T12:56:52.394Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "domain": "ONDC:RET11",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "ccd39020-0d92-4a93-b539-3dc015dc7ca1",
+                "city": "std:022",
+                "country": "IND",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "20240402638298",
+                    "state": "In-progress",
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "provider_location": {
+                        "id": "22344"
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "type": "ON-ORDER",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "tl_method": "http/get",
+                        "collected_by": "BAP",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "Akwhqy",
+                                "settlement_phase": "sale-amount",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "settlement_counterparty": "seller-app",
+                                "settlement_bank_account_no": "12123333333"
+                            }
+                        ],
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "@ondc/org/TAT": "PT60M",
+                            "tracking": true,
+                            "end": {
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "city": "Mumbai",
+                                        "name": "Amit Badheka",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "area_code": "400050"
+                                    }
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:52.399Z",
+                                        "end": "2024-04-02T07:56:52.399Z"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "descriptor": {
+                                    "code": "Packed"
+                                }
+                            },
+                            "type": "Delivery",
+                            "start": {
+                                "location": {
+                                    "id": "22344",
+                                    "descriptor": {
+                                        "name": "Surat Chai "
+                                    },
+                                    "gps": "19.0625499, 72.8296467",
+                                    "address": {
+                                        "locality": "Bandra West",
+                                        "city": "Mumbai",
+                                        "area_code": "400050",
+                                        "state": "Maharashtra"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "9538612176",
+                                    "email": "ase9945@gmail.com"
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:52.399Z",
+                                        "end": "2024-04-02T07:56:52.399Z"
+                                    }
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn & Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "phone": "09619115788",
+                        "address": {
+                            "city": "Mumbai",
+                            "name": "Amit Badheka",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "area_code": "400050"
+                        },
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:26:52.399Z"
+                }
+            }
+        },
+        "on_status_picked": {
+            "context": {
+                "action": "on_status",
+                "timestamp": "2024-04-02T13:02:42.001Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "domain": "ONDC:RET11",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "24d18f8c-90cf-44e1-9e5e-faeff869fd5b",
+                "city": "std:022",
+                "country": "IND",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "20240402638298",
+                    "state": "In-progress",
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "provider_location": {
+                        "id": "22344"
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "type": "ON-ORDER",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "tl_method": "http/get",
+                        "collected_by": "BAP",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "Akwhqy",
+                                "settlement_phase": "sale-amount",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "settlement_counterparty": "seller-app",
+                                "settlement_bank_account_no": "12123333333"
+                            }
+                        ],
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "@ondc/org/TAT": "PT7M",
+                            "tracking": true,
+                            "end": {
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "city": "Mumbai",
+                                        "name": "Amit Badheka",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "area_code": "400050"
+                                    }
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:58:50.000Z",
+                                        "end": "2024-04-02T08:28:50.000Z"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "descriptor": {
+                                    "code": "Order-picked-up"
+                                }
+                            },
+                            "type": "Delivery",
+                            "start": {
+                                "location": {
+                                    "id": "22344",
+                                    "descriptor": {
+                                        "name": "Surat Chai "
+                                    },
+                                    "gps": "19.0625499, 72.8296467",
+                                    "address": {
+                                        "locality": "Bandra West",
+                                        "city": "Mumbai",
+                                        "area_code": "400050",
+                                        "state": "Maharashtra"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "9538612176",
+                                    "email": "ase9945@gmail.com"
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:52.000Z",
+                                        "end": "2024-04-02T07:56:52.000Z"
+                                    },
+                                    "timestamp": "2024-04-02T07:32:41.000Z"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn & Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "phone": "09619115788",
+                        "address": {
+                            "city": "Mumbai",
+                            "name": "Amit Badheka",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "area_code": "400050"
+                        },
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:32:42.192Z"
+                }
+            }
+        },
+        "on_status_out_for_delivery": {
+            "context": {
+                "action": "on_status",
+                "timestamp": "2024-04-02T13:02:42.001Z",
+                "bpp_id": "ondc-preprod.hashtagloyalty.net",
+                "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+                "domain": "ONDC:RET11",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+                "message_id": "24d18f8c-90cf-44e1-9e5e-faeff869fd5b",
+                "city": "std:022",
+                "country": "IND",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order": {
+                    "id": "20240402638298",
+                    "state": "In-progress",
+                    "provider": {
+                        "id": "22344",
+                        "locations": [
+                            {
+                                "id": "22344"
+                            }
+                        ]
+                    },
+                    "provider_location": {
+                        "id": "22344"
+                    },
+                    "items": [
+                        {
+                            "id": "3478644",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 2
+                            }
+                        },
+                        {
+                            "id": "3478552",
+                            "fulfillment_id": "1",
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "payment": {
+                        "uri": "https://razorpay.com/",
+                        "type": "ON-ORDER",
+                        "params": {
+                            "amount": "1103.48",
+                            "currency": "INR",
+                            "transaction_id": "order_NtfZD3wmdn5ECZ"
+                        },
+                        "status": "PAID",
+                        "tl_method": "http/get",
+                        "collected_by": "BAP",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "bank_name": "HDFC",
+                                "branch_name": "PUne",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "Akwhqy",
+                                "settlement_phase": "sale-amount",
+                                "settlement_ifsc_code": "HDFC0000148",
+                                "settlement_counterparty": "seller-app",
+                                "settlement_bank_account_no": "12123333333"
+                            }
+                        ],
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "@ondc/org/provider_name": "Surat Chai ",
+                            "@ondc/org/TAT": "PT7M",
+                            "tracking": true,
+                            "end": {
+                                "person": {
+                                    "name": "Amit Badheka"
+                                },
+                                "contact": {
+                                    "email": "badheka.amit@gmail.com",
+                                    "phone": "09619115788"
+                                },
+                                "location": {
+                                    "gps": "19.059481327123834,72.82905457075687",
+                                    "address": {
+                                        "city": "Mumbai",
+                                        "name": "Amit Badheka",
+                                        "state": "Maharashtra",
+                                        "country": "IND",
+                                        "building": "TTTTT",
+                                        "locality": "Perry Road",
+                                        "area_code": "400050"
+                                    }
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:58:50.000Z",
+                                        "end": "2024-04-02T08:28:50.000Z"
+                                    }
+                                }
+                            },
+                            "state": {
+                                "descriptor": {
+                                    "code": "Out-for-delivery"
+                                }
+                            },
+                            "type": "Delivery",
+                            "start": {
+                                "location": {
+                                    "id": "22344",
+                                    "descriptor": {
+                                        "name": "Surat Chai "
+                                    },
+                                    "gps": "19.0625499, 72.8296467",
+                                    "address": {
+                                        "locality": "Bandra West",
+                                        "city": "Mumbai",
+                                        "area_code": "400050",
+                                        "state": "Maharashtra"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "9538612176",
+                                    "email": "ase9945@gmail.com"
+                                },
+                                "time": {
+                                    "range": {
+                                        "start": "2024-04-02T07:26:52.000Z",
+                                        "end": "2024-04-02T07:56:52.000Z"
+                                    },
+                                    "timestamp": "2024-04-02T07:32:41.000Z"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "rto_action",
+                                    "list": [
+                                        {
+                                            "code": "return_to_origin",
+                                            "value": "false"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "1103.48"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "@ondc/org/item_quantity": {
+                                    "count": 2
+                                },
+                                "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "207.6"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "103.8"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478644",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.38"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "title": "Mc Spicy Paneer Burger + Corn & Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                                "@ondc/org/title_type": "item",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "875.0"
+                                },
+                                "item": {
+                                    "quantity": {
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "99"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "875.0"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "3478552",
+                                "title": "Tax",
+                                "@ondc/org/title_type": "tax",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0"
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.5"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "billing": {
+                        "name": "Amit Badheka",
+                        "email": "badheka.amit@gmail.com",
+                        "phone": "09619115788",
+                        "address": {
+                            "city": "Mumbai",
+                            "name": "Amit Badheka",
+                            "state": "Maharashtra",
+                            "country": "IND",
+                            "building": "TTTTT",
+                            "locality": "Perry Road",
+                            "area_code": "400050"
+                        },
+                        "created_at": "2024-04-02T07:21:21.223Z",
+                        "updated_at": "2024-04-02T07:21:21.223Z"
+                    },
+                    "created_at": "2024-04-02T07:22:52.370Z",
+                    "updated_at": "2024-04-02T07:32:42.192Z"
+                }
+            }
+        },
+        "on_cancel": {
+    "context":
+    {
+        "action": "on_cancel",
+        "timestamp": "2024-04-02T13:06:11.644Z",
+        "bpp_id": "ondc-preprod.hashtagloyalty.net",
+        "bpp_uri": "https://ondc-preprod.hashtagloyalty.net/ondc/ondc-demo/",
+        "domain": "ONDC:RET11",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "transaction_id": "afdb1c8c-9f9e-440b-bd2a-c6714214aff7",
+        "message_id": "6bfc5822-ae98-42ac-848e-d6d1a08db6f2",
+        "city": "std:022",
+        "country": "IND",
+        "ttl": "PT30S"
+    },
+    "message":
+    {
+        "order":
+        {
+            "id": "20240402638298",
+            "state": "Cancelled",
+            "provider":
+            {
+                "id": "22344",
+                "locations":
+                [
+                    {
+                        "id": "22344"
+                    }
+                ]
+            },
+            "items":
+            [
+                {
+                    "id": "3478644",
+                    "fulfillment_id": "1",
+                    "quantity":
+                    {
+                        "count": 0
+                    }
+                },
+                {
+                    "id": "3478552",
+                    "fulfillment_id": "1",
+                    "quantity":
+                    {
+                        "count": 0
+                    }
+                },
+                {
+                    "id": "3478644",
+                    "fulfillment_id": "RTO1",
+                    "quantity":
+                    {
+                        "count": 2
+                    }
+                },
+                {
+                    "id": "3478552",
+                    "fulfillment_id": "RTO1",
+                    "quantity":
+                    {
+                        "count": 1
+                    }
+                }
+            ],
+            "payment":
+            {
+                "uri": "https://razorpay.com/",
+                "type": "ON-ORDER",
+                "params":
+                {
+                    "amount": "1103.48",
+                    "currency": "INR",
+                    "transaction_id": "order_NtfZD3wmdn5ECZ"
+                },
+                "status": "PAID",
+                "tl_method": "http/get",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/settlement_details":
+                [
+                    {
+                        "bank_name": "HDFC",
+                        "branch_name": "PUne",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "Akwhqy",
+                        "settlement_phase": "sale-amount",
+                        "settlement_ifsc_code": "HDFC0000148",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_bank_account_no": "12123333333"
+                    }
+                ],
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+            },
+            "fulfillments":
+            [
+                {
+                    "id": "1",
+                    "@ondc/org/provider_name": "Surat Chai ",
+                    "@ondc/org/TAT": "PT4M",
+                    "tracking": true,
+                    "end":
+                    {
+                        "person":
+                        {
+                            "name": "Amit Badheka"
+                        },
+                        "contact":
+                        {
+                            "email": "badheka.amit@gmail.com",
+                            "phone": "09619115788"
+                        },
+                        "location":
+                        {
+                            "gps": "19.059481327123834,72.82905457075687",
+                            "address":
+                            {
+                                "city": "Mumbai",
+                                "name": "Amit Badheka",
+                                "state": "Maharashtra",
+                                "country": "IND",
+                                "building": "TTTTT",
+                                "locality": "Perry Road",
+                                "area_code": "400050"
+                            }
+                        },
+                        "time":
+                        {
+                            "range":
+                            {
+                                "start": "2024-04-02T07:58:50.000Z",
+                                "end": "2024-04-02T08:28:50.000Z"
+                            }
+                        }
+                    },
+                    "state":
+                    {
+                        "descriptor":
+                        {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "type": "Delivery",
+                    "start":
+                    {
+                        "location":
                         {
                             "id": "22344",
-                            "time": {
-                                "label": "enable",
-                                "timestamp": "2024-03-31T07:54:01.912Z"
+                            "descriptor":
+                            {
+                                "name": "Surat Chai "
+                            },
+                            "gps": "19.0625499, 72.8296467",
+                            "address":
+                            {
+                                "locality": "Bandra West",
+                                "city": "Mumbai",
+                                "area_code": "400050",
+                                "state": "Maharashtra"
                             }
+                        },
+                        "contact":
+                        {
+                            "phone": "9538612176",
+                            "email": "ase9945@gmail.com"
+                        },
+                        "time":
+                        {
+                            "range":
+                            {
+                                "start": "2024-04-02T07:26:52.000Z",
+                                "end": "2024-04-02T07:56:52.000Z"
+                            }
+                        }
+                    },
+                    "tags":
+                    [
+                        {
+                            "code": "cancel_request",
+                            "list":
+                            [
+                                {
+                                    "code": "reason_id",
+                                    "value": "011"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc-preprod.hashtagloyalty.net"
+                                },
+                                {
+                                  "code": "rto_id",
+                                  "value": "RTO1"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list":
+                            [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Pending"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "RTO1",
+                    "@ondc/org/provider_name": "Surat Chai ",
+                    "@ondc/org/TAT": "PT4M",
+                    "state":
+                    {
+                        "descriptor":
+                        {
+                            "code": "RTO-Initiated"
+                        }
+                    },
+                    "type": "RTO",
+                    "tags":
+                    [
+                        {
+                            "code": "quote_trail",
+                            "list":
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "3478644"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-207.6"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list":
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "3478644"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-10.38"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list":
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "3478552"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-875.0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list":
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "tax"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "3478552"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list":
+                            [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-10.5"
+                                }
+                            ]
                         }
                     ]
                 }
+            ],
+            "quote":
+            {
+                "price":
+                {
+                    "currency": "INR",
+                    "value": "0"
+                },
+                "breakup":
+                [
+                    {
+                        "@ondc/org/item_id": "3478644",
+                        "@ondc/org/item_quantity":
+                        {
+                            "count": 2
+                        },
+                        "title": "Mc Saver Chicken Nuggets (4 Pc)",
+                        "@ondc/org/title_type": "item",
+                        "price":
+                        {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item":
+                        {
+                            "quantity":
+                            {
+                                "available":
+                                {
+                                    "count": "99"
+                                },
+                                "maximum":
+                                {
+                                    "count": "99"
+                                }
+                            },
+                            "price":
+                            {
+                                "currency": "INR",
+                                "value": "103.8"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3478644",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price":
+                        {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3478552",
+                        "@ondc/org/item_quantity":
+                        {
+                            "count": 0
+                        },
+                        "title": "Mc Spicy Paneer Burger + Corn & Cheese Burger + Mc Veggie Burger + Veg Maharaja Mac + 3 Fries (L)",
+                        "@ondc/org/title_type": "item",
+                        "price":
+                        {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item":
+                        {
+                            "quantity":
+                            {
+                                "available":
+                                {
+                                    "count": "99"
+                                },
+                                "maximum":
+                                {
+                                    "count": "99"
+                                }
+                            },
+                            "price":
+                            {
+                                "currency": "INR",
+                                "value": "875.0"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3478552",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price":
+                        {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price":
+                        {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "billing":
+            {
+                "name": "Amit Badheka",
+                "email": "badheka.amit@gmail.com",
+                "phone": "09619115788",
+                "address":
+                {
+                    "city": "Mumbai",
+                    "name": "Amit Badheka",
+                    "state": "Maharashtra",
+                    "country": "IND",
+                    "building": "TTTTT",
+                    "locality": "Perry Road",
+                    "area_code": "400050"
+                },
+                "created_at": "2024-04-02T07:21:21.223Z",
+                "updated_at": "2024-04-02T07:21:21.223Z"
+            },
+            "created_at": "2024-04-02T13:06:11.644Z",
+            "updated_at": "2024-04-02T13:10:11.644Z",
+            "cancellation":
+            {
+                "cancelled_by": "ondc-preprod.hashtagloyalty.net",
+                "reason":
+                {
+                    "id": "011"
+                }
             }
         }
+    }
+}
     },
-    "flow": "1"
+    "flow": "5"
 }
