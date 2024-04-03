@@ -1,6 +1,6 @@
 # Flow - 2
 ## Seller - seller-app-preprod-v2.ondc.org
-### Provider - Craver Store
+### Provider - Craver Restro
 
 a. Buyer selects multiple items (> 1 qty for each item) for checkout (`select_1.json`)
 
