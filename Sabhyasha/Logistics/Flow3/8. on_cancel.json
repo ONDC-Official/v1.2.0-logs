@@ -3,20 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_confirm",
+    "action": "on_cancel",
     "core_version": "1.2.0",
     "bap_id": "pre.production.artisanswizard.com",
     "bap_uri": "https://pre.production.artisanswizard.com/ondc",
     "bpp_id": "preprod.logistics-seller.mp2.in",
     "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
     "transaction_id": "cb816387-44ec-49af-8cd5-439a095e1f2f",
-    "message_id": "d6f11c9e-beae-4301-b033-f49e7eab628e_sabhyasha",
-    "timestamp": "2024-04-04T12:31:37.347Z"
+    "message_id": "a6030712-942b-4596-bbf5-0e2965ae8cd4_sabhyasha",
+    "timestamp": "2024-04-04T12:34:04.185Z"
   },
   "message": {
     "order": {
       "id": "2024-04-04-108297",
-      "state": "Accepted",
+      "state": "Cancelled",
       "provider": {
         "id": "MP2"
       },
@@ -38,7 +38,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "2.0"
+          "value": "0.0"
         },
         "breakup": [
           {
@@ -46,7 +46,7 @@
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "1.64"
+              "value": "0.0"
             }
           },
           {
@@ -54,7 +54,7 @@
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.36"
+              "value": "0.0"
             }
           }
         ]
@@ -65,7 +65,7 @@
           "type": "Delivery",
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Cancelled"
             }
           },
           "start": {
@@ -113,38 +113,28 @@
               "email": "satyaranjan.swain@grossky.com"
             }
           },
+          "tracking": false,
           "tags": [
             {
-              "code": "weather_check",
+              "code": "precancel_state",
               "list": [
                 {
-                  "code": "raining",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "code": "state",
-              "list": [
+                  "code": "fulfillment_state",
+                  "value": "Pending"
+                },
                 {
-                  "code": "ready_to_ship",
-                  "value": "no"
-                }
-              ]
-            },
-            {
-              "code": "rto_action",
-              "list": [
-                {
-                  "code": "return_to_origin",
-                  "value": "yes"
+                  "code": "updated_at",
+                  "value": "2024-04-04T12:31:35.640Z"
                 }
               ]
             }
-          ],
-          "tracking": true
+          ]
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT"
+      },
       "billing": {
         "name": "Sabhyasha Retail Tech Pvt. Ltd.",
         "address": {
@@ -161,10 +151,6 @@
         "email": "sabhyasha.art@gmail.com",
         "created_at": "2024-04-04T12:31:04.883Z",
         "updated_at": "2024-04-04T12:31:04.883Z"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -221,8 +207,14 @@
           }
         }
       },
+      "updated_at": "2024-04-04T12:31:37.347Z",
       "created_at": "2024-04-04T12:31:35.640Z",
-      "updated_at": "2024-04-04T12:31:37.347Z"
+      "cancellation": {
+        "cancelled_by": "pre.production.artisanswizard.com",
+        "reason": {
+          "id": "006"
+        }
+      }
     }
   }
 }
