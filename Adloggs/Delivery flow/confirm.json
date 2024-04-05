@@ -3,38 +3,55 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_update",
+        "action": "confirm",
         "core_version": "1.2.0",
         "bap_id": "biz.test.bitsila.com",
         "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
         "bpp_id": "preprod.ondc.adloggs.com",
         "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
-        "transaction_id": "LOG-3849-1001-1171-3Sff",
-        "message_id": "e47a35a1-f8bf-4c39-b601-27f93fcb4a9e",
-        "timestamp": "2024-04-05T08:30:53.338Z"
+        "transaction_id": "LOG-3849-1001-1164-Ow6h",
+        "message_id": "ac9319b5-9d21-4c62-9190-af8df93803cc",
+        "timestamp": "2024-04-04T12:28:46.101Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "3849-1001-1171",
-            "state": "Accepted",
+            "id": "3849-1001-1164",
+            "state": "Created",
             "provider": {
                 "id": "P1"
             },
             "items": [{
                 "id": "I1",
-                "time": {
-                    "label": "TAT",
-                    "duration": "PT55M",
-                    "timestamp": "2024-04-05"
-                },
                 "descriptor": {
                     "code": "P2P"
                 },
                 "category_id": "Immediate Delivery",
-                "fulfillment_id": "1"
+                "fulfillment_id": "1",
+                "time": {
+                    "label": "TAT",
+                    "duration": "PT55M",
+                    "timestamp": "2024-04-04"
+                }
             }],
+            "billing": {
+                "name": "Bitsila",
+                "address": {
+                    "name": "221, INNOBITS SOLUTIONS PVT LTD",
+                    "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
+                    "building": "221",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560085"
+                },
+                "tax_number": "29AAFCI9011D1ZQ",
+                "phone": "8951898275",
+                "email": "finance@bitsila.com",
+                "created_at": "2024-04-04T12:28:45.146Z",
+                "updated_at": "2024-04-04T12:28:45.146Z"
+            },
             "quote": {
-                "ttl": "PT15M",
                 "price": {
                     "value": "1.18",
                     "currency": "INR"
@@ -60,26 +77,24 @@
             "fulfillments": [{
                 "id": "1",
                 "type": "Delivery",
-                "state": {
-                    "descriptor": {
-                        "code": "Pending"
-                    }
-                },
-                "tracking": true,
-                "start": {
-                    "time": {
-                        "duration": "PT15M",
-                        "range": {
-                            "start": "2024-04-05T08:35:53.000Z",
-                            "end": "2024-04-05T08:50:53.000Z"
-                        }
+                "tags": [{
+                        "code": "state",
+                        "list": [{
+                            "code": "ready_to_ship",
+                            "value": "no"
+                        }]
                     },
+                    {
+                        "code": "rto_action",
+                        "list": [{
+                            "code": "return_to_origin",
+                            "value": "yes"
+                        }]
+                    }
+                ],
+                "start": {
                     "person": {
                         "name": "FandB Shop"
-                    },
-                    "contact": {
-                        "email": "test1@test.com",
-                        "phone": "9999999998"
                     },
                     "location": {
                         "id": "3849:4120",
@@ -94,20 +109,22 @@
                             "area_code": "560102"
                         }
                     },
+                    "contact": {
+                        "email": "test1@test.com",
+                        "phone": "9999999998"
+                    },
                     "instructions": {
                         "code": "1",
-                        "name": "ONDC order",
                         "short_desc": "7569316675",
                         "long_desc": "please contact respective person and confirm before taking the parcel"
+                    },
+                    "time": {
+                        "duration": "PT15M"
                     }
                 },
                 "end": {
                     "person": {
                         "name": "smruti behera"
-                    },
-                    "contact": {
-                        "email": "smruti.ranjan@bitsila.com",
-                        "phone": "7207734015"
                     },
                     "location": {
                         "gps": "12.914029, 77.637585",
@@ -122,15 +139,13 @@
                             "area_code": "560102"
                         }
                     },
+                    "contact": {
+                        "email": "smruti.ranjan@bitsila.com",
+                        "phone": "7207734015"
+                    },
                     "instructions": {
                         "code": "3",
                         "long_desc": "Bengaluru"
-                    },
-                    "time": {
-                        "range": {
-                            "start": "2024-04-05T08:50:53.000Z",
-                            "end": "2024-04-05T09:05:53.000Z"
-                        }
                     }
                 }
             }],
@@ -138,28 +153,11 @@
                 "type": "ON-ORDER",
                 "collected_by": "BAP"
             },
-            "billing": {
-                "name": "Bitsila",
-                "email": "finance@bitsila.com",
-                "phone": "8951898275",
-                "address": {
-                    "city": "Bengaluru",
-                    "name": "221, INNOBITS SOLUTIONS PVT LTD",
-                    "state": "Karnataka",
-                    "country": "India",
-                    "building": "221",
-                    "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
-                    "area_code": "560085"
-                },
-                "created_at": "2024-04-05T08:30:46.006Z",
-                "tax_number": "29AAFCI9011D1ZQ",
-                "updated_at": "2024-04-05T08:30:46.006Z"
-            },
             "@ondc/org/linked_order": {
                 "items": [{
-                    "price": {
-                        "value": "70.0",
-                        "currency": "INR"
+                    "category_id": "F&B",
+                    "descriptor": {
+                        "name": "Butter chicken"
                     },
                     "quantity": {
                         "count": 1,
@@ -168,13 +166,26 @@
                             "value": 0.5
                         }
                     },
-                    "descriptor": {
-                        "name": "Amul Taaza Homogenised Toned Milk"
-                    },
-                    "category_id": "F&B"
+                    "price": {
+                        "currency": "INR",
+                        "value": "100.0"
+                    }
                 }],
+                "provider": {
+                    "descriptor": {
+                        "name": "FandB Shop - FandB Shop"
+                    },
+                    "address": {
+                        "name": "FandB Shop",
+                        "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "building": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560102"
+                    }
+                },
                 "order": {
-                    "id": "3849-1001-1171",
+                    "id": "3849-1001-1164",
                     "weight": {
                         "unit": "kilogram",
                         "value": 0.5
@@ -193,23 +204,10 @@
                             "value": 0.1
                         }
                     }
-                },
-                "provider": {
-                    "address": {
-                        "city": "Bengaluru",
-                        "name": "FandB Shop",
-                        "state": "Karnataka",
-                        "building": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
-                        "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
-                        "area_code": "560102"
-                    },
-                    "descriptor": {
-                        "name": "FandB Shop - FandB Shop"
-                    }
                 }
             },
-            "updated_at": "2024-04-05T08:30:53.338Z",
-            "created_at": "2024-04-05T08:30:47.399Z"
+            "created_at": "2024-04-04T12:28:46.101Z",
+            "updated_at": "2024-04-04T12:28:46.101Z"
         }
     }
 }
