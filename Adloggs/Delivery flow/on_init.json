@@ -1,0 +1,189 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "biz.test.bitsila.com",
+        "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+        "bpp_id": "preprod.ondc.adloggs.com",
+        "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+        "transaction_id": "LOG-3849-1001-1164-Ow6h",
+        "message_id": "de8dfd8a-d0e8-4165-8298-ed1ba8f6285b",
+        "timestamp": "2024-04-04T12:28:45.855Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "P1"
+            },
+            "items": [{
+                "id": "I1",
+                "fulfillment_id": "1"
+            }],
+            "fulfillments": [{
+                "id": "1",
+                "type": "Delivery",
+                "start": {
+                    "location": {
+                        "id": "3849:4120",
+                        "gps": "12.911862, 77.6445923",
+                        "address": {
+                            "name": "FandB Shop",
+                            "city": "Bengaluru",
+                            "state": " Karnataka",
+                            "country": "India",
+                            "building": "Bengaluru",
+                            "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "phone": "9999999998",
+                        "email": "test1@test.com"
+                    }
+                },
+                "end": {
+                    "location": {
+                        "gps": "12.914029, 77.637585",
+                        "address": {
+                            "door": "smruti behera,13th Main Road,123",
+                            "name": "smruti behera",
+                            "building": "smruti behera,13th Main Road,123",
+                            "locality": "Bengaluru",
+                            "city": "Bengaluru",
+                            "state": "Karnataka",
+                            "country": "IND",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "phone": "7207734015",
+                        "email": "smruti.ranjan@bitsila.com"
+                    }
+                },
+                "tags": [{
+                    "code": "rider_check",
+                    "list": [{
+                        "code": "inline_check_for_rider",
+                        "value": "no"
+                    }]
+                }]
+            }],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "1.18"
+                },
+                "breakup": [{
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.18"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "collected_by": "BAP",
+                "type": "ON-ORDER"
+            },
+            "cancellation_terms": [{
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "1.18"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "1.18"
+                        }
+                    }
+                }
+            ],
+            "tags": [{
+                "code": "bpp_terms",
+                "list": [{
+                        "code": "max_liability",
+                        "value": "2"
+                    },
+                    {
+                        "code": "mandatory_arbitration",
+                        "value": "false"
+                    },
+                    {
+                        "code": "court_jurisdiction",
+                        "value": "Bengaluru"
+                    },
+                    {
+                        "code": "delay_interest",
+                        "value": "5"
+                    }
+                ]
+            }]
+        }
+    }
+}
