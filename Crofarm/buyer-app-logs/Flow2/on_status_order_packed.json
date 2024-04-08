@@ -3,21 +3,29 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:0522",
-        "action": "on_confirm",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "preprod-buyer.crofarm.com",
         "bap_uri": "https://preprod-buyer.crofarm.com/bap",
         "bpp_id": "ondc-seller-preprod.chattybao.com/ondc",
         "bpp_uri": "https://ondc-seller-preprod.chattybao.com/ondc/bpp",
         "transaction_id": "gruOHBW5OHTSiqRiyxn6ea05h9nTxNZt",
-        "message_id": "nZMOgruOHBW5OHTSiqRiyxn6ea05h9nTxNZt",
-        "timestamp": "2024-04-05T10:30:32.504Z",
+        "message_id": "f6a889f0-f339-11ee-8099-f1e80d1d6ee3",
+        "timestamp": "2024-04-05T10:47:57.199Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "gruOHBW5OHTSiqRiyxn6ea05h9nTxNZt",
-            "state": "Accepted",
+            "state": "In-progress",
+            "provider": {
+                "id": "MR8mcezPPQEA-r8EhP6UN9",
+                "locations": [
+                    {
+                        "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
+                    }
+                ]
+            },
             "items": [
                 {
                     "id": "2f3fad50-5dff-11ee-b94d-fbd52ac06897:MR8mcezPPQEA-r8EhP6UN9",
@@ -56,14 +64,6 @@
                     ]
                 }
             ],
-            "provider": {
-                "id": "MR8mcezPPQEA-r8EhP6UN9",
-                "locations": [
-                    {
-                        "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
-                    }
-                ]
-            },
             "billing": {
                 "address": {
                     "building": "8775",
@@ -117,7 +117,8 @@
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Packed",
+                            "name": "Packed"
                         }
                     },
                     "start": {
@@ -147,36 +148,6 @@
                     }
                 }
             ],
-            "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_type": "neft",
-                        "beneficiary_name": "CHATTYBAO TECHNOLOGIES PRIVATE LIMITED NODAL ACCOUNT",
-                        "upi_address": "",
-                        "settlement_bank_account_no": "661505602069",
-                        "settlement_ifsc_code": "ICIC0006615",
-                        "bank_name": "ICICI",
-                        "branch_name": "Sco 31, Sector 18, Udyog Vihar, Gurgaon - 122016, Haryana"
-                    }
-                ],
-                "uri": "https://otipy.com/",
-                "tl_method": "http/get",
-                "params": {
-                    "amount": "8052",
-                    "currency": "INR",
-                    "transaction_id": "XXX"
-                },
-                "status": "PAID",
-                "type": "ON-ORDER",
-                "collected_by": "BAP",
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
-                "@ondc/org/withholding_amount": "10.00"
-            },
             "quote": {
                 "price": {
                     "currency": "INR",
@@ -231,37 +202,39 @@
                 ],
                 "ttl": "P4D"
             },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "07AAJCC8423B1ZW"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "EWIQJ8928N"
-                        },
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        }
-                    ]
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "CHATTYBAO TECHNOLOGIES PRIVATE LIMITED NODAL ACCOUNT",
+                        "upi_address": "",
+                        "settlement_bank_account_no": "661505602069",
+                        "settlement_ifsc_code": "ICIC0006615",
+                        "bank_name": "ICICI",
+                        "branch_name": "Sco 31, Sector 18, Udyog Vihar, Gurgaon - 122016, Haryana"
+                    }
+                ],
+                "uri": "https://otipy.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "8052",
+                    "currency": "INR",
+                    "transaction_id": "XXX"
                 },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "1234567890"
-                        }
-                    ]
-                }
-            ],
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "10.00"
+            },
+            "documents": [],
             "created_at": "2024-04-05T10:30:32.092Z",
-            "updated_at": "2024-04-05T10:30:32.504Z",
-            "rateable": true
+            "updated_at": "2024-04-05T10:47:57.198Z"
         }
     }
 }
