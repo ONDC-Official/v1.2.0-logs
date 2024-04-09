@@ -2,8 +2,8 @@
     "context": {
         "domain": "nic2004:60232",
         "country": "IND",
-        "city": "std:0172",
-        "action": "confirm",
+        "city": "std:011",
+        "action": "on_confirm",
         "core_version": "1.2.0",
         "bap_id": "preprod.xpressbaazaar.com",
         "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
@@ -11,13 +11,13 @@
         "bpp_id": "ondc-mock-server-dev.thewitslab.com",
         "transaction_id": "46e2a0a7-3b54-4017-9cba-a676cb3104f9",
         "message_id": "a03d0bdf-d2d4-43cd-8378-84e8aa22f786",
-        "timestamp": "2024-04-09T10:50:27.576Z",
+        "timestamp": "2024-04-09T10:50:32.630Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "5c101d2b-92b6-459d-aa0d-85cd52c1195e",
-            "state": "Created",
+            "state": "Accepted",
             "provider": {
                 "id": "P1f31518ea-cfb6-4853-ab05-fb4d2fc23abc",
                 "locations": [
@@ -70,12 +70,20 @@
                 {
                     "id": "2",
                     "type": "Prepaid",
-                    "@ondc/org/ewaybillno": "e721cc90-29db-4c27-afb9-838144110134",
-                    "@ondc/org/ebnexpirydate": "2024-04-12T10:50:27.576Z",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
                     "@ondc/org/awb_no": "2024040949514867",
+                    "tracking": true,
                     "start": {
                         "time": {
-                            "duration": "PT15M"
+                            "duration": "PT15M",
+                            "range": {
+                                "start": "2024-04-09T10:50:32.630Z",
+                                "end": "2024-04-09T11:05:32.630Z"
+                            }
                         },
                         "person": {
                             "name": "TVS Private Limited"
@@ -137,7 +145,20 @@
                                 "content_type": "text/html",
                                 "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
                             }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-04-09T11:05:32.630Z",
+                                "end": "2024-04-09T11:20:32.630Z"
+                            }
                         }
+                    },
+                    "agent": {
+                        "name": "mayur",
+                        "phone": "9886098860"
+                    },
+                    "vehicle": {
+                        "registration": "3LMJ945"
                     },
                     "tags": [
                         {
@@ -174,6 +195,15 @@
                                     "value": ""
                                 }
                             ]
+                        },
+                        {
+                            "code": "weather_check",
+                            "list": [
+                                {
+                                    "code": "raining",
+                                    "value": "no"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -193,7 +223,7 @@
                 "phone": "76545654322",
                 "email": "abcd.efgh@gmail.com",
                 "created_at": "2024-04-08T12:32:18.401Z",
-                "updated_at": "2024-04-08T12:32:18.401Z"
+                "updated_at": "2024-04-09T10:50:32.630Z"
             },
             "payment": {
                 "@ondc/org/collection_amount": "628",
@@ -257,6 +287,72 @@
                     }
                 }
             },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                }
+            ],
             "tags": [
                 {
                     "code": "bpp_terms",
@@ -298,7 +394,7 @@
                 }
             ],
             "created_at": "2024-04-09T10:50:27.576Z",
-            "updated_at": "2024-04-09T10:50:27.576Z"
+            "updated_at": "2024-04-09T10:50:32.630Z"
         }
     }
 }
