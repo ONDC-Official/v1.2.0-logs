@@ -1,68 +1,72 @@
 {
             "context": {
                 "domain": "ONDC:RET10",
-                "country": "IND",
-                "city": "std:0522",
                 "action": "on_select",
+                "country": "IND",
+                "city": "std:0124",
                 "core_version": "1.2.0",
                 "bap_id": "preprod.easypay.co.in",
                 "bap_uri": "https://preprod.easypay.co.in/ecommerce/ondc/buyer",
-                "transaction_id": "e75c97fa-6d5f-4aab-92ae-3fb4f83360e9",
-                "message_id": "EASPY-ONDC-20240326150304--1870588297743",
-                "timestamp": "2024-03-27T10:37:37.224Z",
+                "transaction_id": "14f99c53-9ef3-4afe-8017-3754e0d810bd",
+                "message_id": "EASPY-ONDC-20240319160312-19623616186176",
+                "timestamp": "2024-04-09T09:45:38.214Z",
                 "ttl": "PT30S",
-                "bpp_id": "ondc-seller-preprod.chattybao.com/ondc",
-                "bpp_uri": "https://ondc-seller-preprod.chattybao.com/ondc/bpp"
+                "bpp_id": "storepreprod.krenai.in",
+                "bpp_uri": "https://storepreprod.krenai.in/ondc/"
             },
             "message": {
                 "order": {
-                    "provider": {
-                        "id": "MR8mcezPPQEA-r8EhP6UN9",
-                        "locations": [
-                            {
-                                "id": "33b5d8f0-b265-11ed-b3f2-ed62b63ba042"
-                            }
-                        ]
-                    },
-                    "items": [
-                        {
-                            "fulfillment_id": "1",
-                            "id": "ded21392-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9"
-                        }
-                    ],
                     "fulfillments": [
                         {
-                            "id": "1",
-                            "type": "Delivery",
-                            "@ondc/org/provider_name": "Chattybao Logistics",
+                            "id": "717",
                             "tracking": true,
-                            "@ondc/org/category": "Immediate Delivery",
-                            "@ondc/org/TAT": "PT90M",
                             "state": {
                                 "descriptor": {
                                     "code": "Serviceable"
                                 }
-                            }
+                            },
+                            "type": "Delivery",
+                            "@ondc/org/provider_name": "CENTRAL WAREHOUSING CORPORATION",
+                            "@ondc/org/TAT": "P5D",
+                            "@ondc/org/category": "Standard Delivery"
                         }
                     ],
+                    "items": [
+                        {
+                            "id": "4800024664",
+                            "fulfillment_id": "717"
+                        }
+                    ],
+                    "provider": {
+                        "id": "717",
+                        "locations": [
+                            {
+                                "id": "717"
+                            }
+                        ]
+                    },
                     "quote": {
                         "price": {
                             "currency": "INR",
-                            "value": "250"
+                            "value": "20.00"
                         },
                         "breakup": [
                             {
-                                "@ondc/org/item_id": "ded21392-1a41-11ee-8ddd-2bac5af1417f:MR8mcezPPQEA-r8EhP6UN9",
+                                "title": "Lahori Zeera",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "10.00"
+                                },
+                                "@ondc/org/item_id": "4800024664",
+                                "@ondc/org/title_type": "item",
                                 "@ondc/org/item_quantity": {
                                     "count": 1
                                 },
-                                "@ondc/org/title_type": "item",
-                                "title": "Aashirvaad Shudh Chakki Atta Whole Wheat 10 Kg",
-                                "price": {
-                                    "currency": "INR",
-                                    "value": "200"
-                                },
                                 "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "10.00"
+                                    },
                                     "quantity": {
                                         "available": {
                                             "count": "99"
@@ -70,24 +74,29 @@
                                         "maximum": {
                                             "count": "99"
                                         }
-                                    },
-                                    "price": {
-                                        "currency": "INR",
-                                        "value": "200"
                                     }
                                 }
                             },
                             {
-                                "@ondc/org/item_id": "1",
                                 "title": "Delivery Charges",
-                                "@ondc/org/title_type": "delivery",
                                 "price": {
                                     "currency": "INR",
-                                    "value": "50"
-                                }
+                                    "value": "10.00"
+                                },
+                                "@ondc/org/item_id": "717",
+                                "@ondc/org/title_type": "delivery"
+                            },
+                            {
+                                "title": "Convenience Fee",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "0.00"
+                                },
+                                "@ondc/org/item_id": "717",
+                                "@ondc/org/title_type": "misc"
                             }
                         ],
-                        "ttl": "P4D"
+                        "ttl": "PT5M"
                     }
                 }
             }
