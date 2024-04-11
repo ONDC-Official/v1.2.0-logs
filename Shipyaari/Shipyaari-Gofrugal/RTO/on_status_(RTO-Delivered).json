@@ -9,21 +9,21 @@
         "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
         "bpp_id": "ondcpp.yaarilabs.com",
         "bpp_uri": "https://ondcpp.yaarilabs.com/api/ondc/preprod",
-        "transaction_id": "e6c1a202-014f-4017-a249-c87a86072f3c",
-        "message_id": "7y7mxelxl14llpz8uuuo",
-        "timestamp": "2024-03-08T14:17:00.630Z"
+        "transaction_id": "6806acea-12df-4dbf-8608-3d3c946b83df",
+        "message_id": "y09j0oad896voul6nfcb",
+        "timestamp": "2024-03-28T13:45:01.224Z"
     },
     "message": {
         "order": {
-            "id": "CB4161942E20A4884E4DFF3B8FC67535",
+            "id": "A74A9CFBDFD8BE1171DFD0D016CAF3DA",
             "state": "Cancelled",
             "provider": {
                 "id": "2354"
             },
             "items": [
                 {
-                    "id": "YAARI-2354-20240308-ROIGUMCM81",
-                    "fulfillment_id": "SY-1709901820984-277",
+                    "id": "YAARI-2354-20240328-9WJOQ09062",
+                    "fulfillment_id": "SY-1711617602522-338",
                     "category_id": "Express Delivery",
                     "descriptor": {
                         "code": "P2H2P"
@@ -31,18 +31,31 @@
                     "time": {
                         "label": "TAT",
                         "duration": "P3D",
-                        "timestamp": "2024-03-09"
+                        "timestamp": "2024-03-31"
+                    }
+                },
+                {
+                    "id": "YAARI-2354-20240328-9WJOQ09062-RTO",
+                    "fulfillment_id": "SY-1711617602522-338-RTO",
+                    "category_id": "Express Delivery",
+                    "descriptor": {
+                        "code": "P2H2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P3D",
+                        "timestamp": "2024-03-31"
                     }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "88.5"
+                    "value": "177"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "YAARI-2354-20240308-ROIGUMCM81",
+                        "@ondc/org/item_id": "YAARI-2354-20240328-9WJOQ09062",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
@@ -50,25 +63,39 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "YAARI-2354-20240308-ROIGUMCM81",
+                        "@ondc/org/item_id": "YAARI-2354-20240328-9WJOQ09062",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
                             "value": "13.5"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "YAARI-2354-20240328-9WJOQ09062-RTO",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "YAARI-2354-20240328-9WJOQ09062-RTO",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR"
                         }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "id": "SY-1709901820984-277",
+                    "id": "SY-1711617602522-338",
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "RTO-Delivered"
+                            "code": "Cancelled"
                         }
                     },
-                    "@ondc/org/awb_no": "77002533591",
+                    "@ondc/org/awb_no": "77020783302",
                     "tracking": false,
                     "start": {
                         "person": {
@@ -91,12 +118,12 @@
                             "email": "abii@gmail.com"
                         },
                         "time": {
-                            "duration": "P3D",
+                            "duration": "P1D",
                             "range": {
-                                "start": "2024-03-09T01:30:00.000Z",
-                                "end": "2024-03-09T16:30:00.000Z"
+                                "start": "2024-03-29T01:30:00.000Z",
+                                "end": "2024-03-29T16:30:00.000Z"
                             },
-                            "timestamp": "2024-03-08T14:11:00.000Z"
+                            "timestamp": "2024-03-28T13:00:00.000Z"
                         }
                     },
                     "end": {
@@ -121,9 +148,64 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-03-11T01:30:00.000Z",
-                                "end": "2024-03-11T16:30:00.000Z"
+                                "start": "2024-03-31T01:30:00.000Z",
+                                "end": "2024-03-31T16:30:00.000Z"
                             }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rto_event",
+                            "list": [
+                                {
+                                    "code": "retry_count",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "SY-1711617602522-338-RTO"
+                                },
+                                {
+                                    "code": "cancellation_reason_id",
+                                    "value": "013"
+                                },
+                                {
+                                    "code": "cancelled_by",
+                                    "value": "ondcpp.yaarilabs.com"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-03-28T13:35:01.000Z"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "SY-1711617602522-338-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Delivered"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-03-28T13:35:01.211Z"
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "timestamp": "2024-03-28T13:45:01.190Z"
                         }
                     }
                 }
@@ -193,7 +275,7 @@
                     }
                 },
                 "order": {
-                    "id": "CB4161942E20A4884E4DFF3B8FC67535",
+                    "id": "2024-03-28-350732",
                     "weight": {
                         "unit": "gram",
                         "value": 1000
@@ -212,6 +294,12 @@
                             "value": 4
                         }
                     }
+                }
+            },
+            "cancellation": {
+                "cancelled_by": "ondcpp.yaarilabs.com",
+                "reason": {
+                    "id": "013"
                 }
             }
         }
