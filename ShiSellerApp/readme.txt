@@ -1,1 +1,1 @@
-Logs fpr ver 1.2
+Logs for ver 1.2
