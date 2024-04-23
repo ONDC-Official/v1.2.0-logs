@@ -10,14 +10,20 @@
 		"bpp_id": "ushopmicro-stage.hulcd.com",
 		"bpp_uri": "https://ushopmicro-stage.hulcd.com/ondcv2",
 		"transaction_id": "4d1c81ec-4b58-4af3-a812-59e8f7dd859f",
-		"message_id": "3d476f8d-185b-40f9-bb27-61be8162e707",
-		"timestamp": "2024-04-22T11:10:46.829Z",
+		"message_id": "d3e31b7c-e363-3643-8017-03c1720e9d5e",
+		"timestamp": "2024-04-22T11:09:44.730Z",
 		"ttl": "PT30S"
 	},
 	"message": {
 		"order": {
 			"id": "2024-04-22-299813",
-			"state": "Cancelled",
+			"state": "In-progress",
+			"documents": [
+				{
+					"url": "https://storage.googleapis.com/hul-retailer-propics-t/2024/04/IMAG64804a06e225.pdf",
+					"label": "Invoice"
+				}
+			],
 			"billing": {
 				"name": "Subodh Kumar",
 				"address": {
@@ -40,7 +46,7 @@
 					"type": "Delivery",
 					"state": {
 						"descriptor": {
-							"code": "Cancelled"
+							"code": "Out-for-delivery"
 						}
 					},
 					"tracking": true,
@@ -48,7 +54,10 @@
 						"location": {
 							"id": "338",
 							"descriptor": {
-								"name": "Shikhar 01 Store"
+								"name": "Shikhar 01 Store",
+								"images": [
+									"https://retailer-propics.s3-ap-south-1.amazonaws.com/ondc/grocery_banner.png"
+								]
 							},
 							"gps": "12.9896579,77.7309788",
 							"address": {
@@ -93,181 +102,38 @@
 						"contact": {
 							"phone": "8792882607",
 							"email": "ucansubodh@gmail.com"
-						},
-						"person": {
-							"name": "Subodh Kumar"
 						}
 					},
 					"tags": [
 						{
-							"code": "cancel_request",
+							"code": "routing",
 							"list": [
 								{
-									"code": "reason_id",
-									"value": "015"
-								},
-								{
-									"code": "initiated_by",
-									"value": "ushopmicro-stage.hulcd.com"
-								},
-								{
-									"code": "rto_id",
-									"value": "RTO-44454D4F2D303144"
-								},
-								{
-									"code": "retry_count",
-									"value": "2"
+									"code": "type",
+									"value": "P2P"
 								}
 							]
 						},
 						{
-							"code": "precancel_state",
+							"code": "tracking",
 							"list": [
 								{
-									"code": "fulfillment_state",
-									"value": "Out-for-delivery"
+									"code": "gps_enabled",
+									"value": "no"
 								},
 								{
-									"code": "updated_at",
-									"value": "2024-04-22T11:09:44.730Z"
+									"code": "url_enabled",
+									"value": "yes"
+								},
+								{
+									"code": "url",
+									"value": "https://ushopmicro-stage.hulcd.com/ondcv2/shipment/trackorder?id=2024-04-22-299813"
 								}
 							]
 						}
 					],
 					"@ondc/org/TAT": "PT8H",
 					"@ondc/org/provider_name": "Shikhar 01 Store"
-				},
-				{
-					"id": "RTO-44454D4F2D303144",
-					"type": "RTO",
-					"state": {
-						"descriptor": {
-							"code": "RTO-Delivered"
-						}
-					},
-					"tracking": true,
-					"start": {
-						"location": {
-							"gps": "12.975341,77.706272",
-							"address": {
-								"name": "Subodh Kumar",
-								"building": "Bren Avalon",
-								"locality": "3rd Main Road",
-								"city": "Bengaluru",
-								"state": "Karnataka",
-								"country": "IND",
-								"area_code": "560048"
-							}
-						},
-						"time": {
-							"timestamp": "2024-04-22T11:10:43.829Z"
-						}
-					},
-					"end": {
-						"location": {
-							"id": "338",
-							"descriptor": {
-								"name": "Shikhar 01 Store"
-							},
-							"gps": "12.9896579,77.7309788",
-							"address": {
-								"street": "ITPL Main Rd",
-								"locality": "Whitefield",
-								"city": "Bengaluru",
-								"state": "Karnataka",
-								"area_code": "560048"
-							}
-						},
-						"time": {
-							"timestamp": "2024-04-22T11:10:46.829Z"
-						}
-					},
-					"tags": [
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "item"
-								},
-								{
-									"code": "id",
-									"value": "302084"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-36.0"
-								}
-							]
-						},
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "item"
-								},
-								{
-									"code": "id",
-									"value": "76198"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-60.0"
-								}
-							]
-						},
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "misc"
-								},
-								{
-									"code": "id",
-									"value": "44454D4F2D303144"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-7.19"
-								}
-							]
-						},
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "delivery"
-								},
-								{
-									"code": "id",
-									"value": "44454D4F2D303144"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-100.0"
-								}
-							]
-						}
-					]
 				}
 			],
 			"payment": {
@@ -290,15 +156,14 @@
 						"settlement_type": "neft",
 						"settlement_bank_account_no": "50200057222741",
 						"settlement_ifsc_code": "UTIB0000333",
-						"beneficiary_name": "Subodh Kumar",
+						"beneficiary_name": "AECS Layout",
 						"bank_name": "Axis Bank Ltd.",
-						"branch_name": "AECS Layout",
-						"beneficiary_address": "Chinnapanahalli Main Road"
+						"branch_name": "AECS Layout"
 					}
 				]
 			},
 			"created_at": "2024-04-22T11:08:19.696Z",
-			"updated_at": "2024-04-22T11:10:46.829Z",
+			"updated_at": "2024-04-22T11:09:44.730Z",
 			"provider": {
 				"id": "DEMO-01",
 				"locations": [
@@ -312,43 +177,29 @@
 				{
 					"id": "302084",
 					"quantity": {
-						"count": 0
+						"count": 3
 					},
 					"fulfillment_id": "44454D4F2D303144"
 				},
 				{
 					"id": "76198",
 					"quantity": {
-						"count": 0
+						"count": 3
 					},
 					"fulfillment_id": "44454D4F2D303144"
-				},
-				{
-					"id": "302084",
-					"quantity": {
-						"count": 3
-					},
-					"fulfillment_id": "RTO-44454D4F2D303144"
-				},
-				{
-					"id": "76198",
-					"quantity": {
-						"count": 3
-					},
-					"fulfillment_id": "RTO-44454D4F2D303144"
 				}
 			],
 			"quote": {
 				"price": {
 					"currency": "INR",
-					"value": "0"
+					"value": "203.19"
 				},
 				"breakup": [
 					{
 						"title": "surf excel 10ml",
 						"price": {
 							"currency": "INR",
-							"value": "0.00"
+							"value": "36.0"
 						},
 						"item": {
 							"price": {
@@ -358,7 +209,7 @@
 						},
 						"@ondc/org/item_id": "302084",
 						"@ondc/org/item_quantity": {
-							"count": 0
+							"count": 3
 						},
 						"@ondc/org/title_type": "item"
 					},
@@ -366,7 +217,7 @@
 						"title": "Vim Lemon Dishwash Liquid Gel 140ml Pouch ",
 						"price": {
 							"currency": "INR",
-							"value": "0.00"
+							"value": "60.0"
 						},
 						"item": {
 							"price": {
@@ -376,7 +227,7 @@
 						},
 						"@ondc/org/item_id": "76198",
 						"@ondc/org/item_quantity": {
-							"count": 0
+							"count": 3
 						},
 						"@ondc/org/title_type": "item"
 					},
@@ -384,7 +235,7 @@
 						"title": "Convenience Fee",
 						"price": {
 							"currency": "INR",
-							"value": "0"
+							"value": "7.19"
 						},
 						"@ondc/org/item_id": "44454D4F2D303144",
 						"@ondc/org/title_type": "misc"
@@ -393,19 +244,13 @@
 						"title": "Delivery charges",
 						"price": {
 							"currency": "INR",
-							"value": "0"
+							"value": "100.0"
 						},
 						"@ondc/org/item_id": "44454D4F2D303144",
 						"@ondc/org/title_type": "delivery"
 					}
 				],
 				"ttl": "PT8H"
-			},
-			"cancellation": {
-				"cancelled_by": "ushopmicro-stage.hulcd.com",
-				"reason": {
-					"id": "015"
-				}
 			}
 		}
 	}
