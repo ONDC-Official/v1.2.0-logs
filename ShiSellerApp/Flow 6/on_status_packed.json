@@ -1,0 +1,317 @@
+{
+	"context": {
+		"domain": "ONDC:RET10",
+		"country": "IND",
+		"city": "std:080",
+		"action": "on_status",
+		"core_version": "1.2.0",
+		"bap_id": "buyer-app-preprod-v2.ondc.org",
+		"bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+		"bpp_id": "ushopmicro-stage.hulcd.com",
+		"bpp_uri": "https://ushopmicro-stage.hulcd.com/ondcv2",
+		"transaction_id": "1380da7f-3c7f-4381-8369-886836262e81",
+		"message_id": "8e598ed7-f77a-3384-b9c7-d8406914a30d",
+		"timestamp": "2024-04-23T13:06:09.095Z",
+		"ttl": "PT30S"
+	},
+	"message": {
+		"order": {
+			"id": "2024-04-23-177650",
+			"state": "In-progress",
+			"billing": {
+				"name": "Subodh Kumar",
+				"address": {
+					"name": "Subodh Kumar",
+					"building": "Bren Avalon",
+					"locality": "3rd Main Road",
+					"city": "Bengaluru",
+					"state": "Karnataka",
+					"country": "IND",
+					"area_code": "560048"
+				},
+				"email": "ucansubodh@gmail.com",
+				"phone": "8792882607",
+				"created_at": "2024-04-23T13:04:49.556Z",
+				"updated_at": "2024-04-23T13:04:49.556Z"
+			},
+			"fulfillments": [
+				{
+					"id": "44454D4F2D303144",
+					"type": "Delivery",
+					"state": {
+						"descriptor": {
+							"code": "Packed"
+						}
+					},
+					"tracking": false,
+					"start": {
+						"location": {
+							"id": "338",
+							"descriptor": {
+								"name": "Shikhar 01 Store",
+								"images": [
+									"https://retailer-propics.s3-ap-south-1.amazonaws.com/ondc/grocery_banner.png"
+								]
+							},
+							"gps": "12.9896579,77.7309788",
+							"address": {
+								"street": "ITPL Main Rd",
+								"locality": "Whitefield",
+								"city": "Bengaluru",
+								"state": "Karnataka",
+								"area_code": "560048"
+							}
+						},
+						"time": {
+							"range": {
+								"start": "2024-04-23T15:05:22.276Z",
+								"end": "2024-04-23T16:25:22.276Z"
+							}
+						},
+						"contact": {
+							"phone": "9986697491",
+							"email": "nitin.kumar@easyreach.co.in"
+						}
+					},
+					"end": {
+						"location": {
+							"gps": "12.975341,77.706272",
+							"address": {
+								"name": "Subodh Kumar",
+								"building": "Bren Avalon",
+								"locality": "3rd Main Road",
+								"city": "Bengaluru",
+								"state": "Karnataka",
+								"country": "IND",
+								"area_code": "560048"
+							}
+						},
+						"time": {
+							"range": {
+								"start": "2024-04-23T17:15:22.276Z",
+								"end": "2024-04-23T21:05:22.276Z"
+							}
+						},
+						"contact": {
+							"phone": "8792882607",
+							"email": "ucansubodh@gmail.com"
+						}
+					},
+					"tags": [
+						{
+							"code": "routing",
+							"list": [
+								{
+									"code": "type",
+									"value": "P2P"
+								}
+							]
+						}
+					],
+					"@ondc/org/TAT": "PT8H",
+					"@ondc/org/provider_name": "Shikhar 01 Store"
+				},
+				{
+					"id": "CAN-44454D4F2D303144",
+					"type": "Cancel",
+					"state": {
+						"descriptor": {
+							"code": "Cancelled"
+						}
+					},
+					"tags": [
+						{
+							"code": "cancel_request",
+							"list": [
+								{
+									"code": "reason_id",
+									"value": "002"
+								},
+								{
+									"code": "initiated_by",
+									"value": "ushopmicro-stage.hulcd.com"
+								}
+							]
+						},
+						{
+							"code": "quote_trail",
+							"list": [
+								{
+									"code": "type",
+									"value": "item"
+								},
+								{
+									"code": "id",
+									"value": "302084"
+								},
+								{
+									"code": "currency",
+									"value": "INR"
+								},
+								{
+									"code": "value",
+									"value": "-36.0"
+								}
+							]
+						}
+					]
+				}
+			],
+			"payment": {
+				"uri": "https://razorpay.com/",
+				"tl_method": "http/get",
+				"params": {
+					"transaction_id": "order_O24dduPbDQ3SgY",
+					"amount": "339.00",
+					"currency": "INR"
+				},
+				"type": "ON-ORDER",
+				"status": "PAID",
+				"collected_by": "BAP",
+				"@ondc/org/buyer_app_finder_fee_type": "percent",
+				"@ondc/org/buyer_app_finder_fee_amount": "3.0",
+				"@ondc/org/settlement_details": [
+					{
+						"settlement_counterparty": "seller-app",
+						"settlement_phase": "sale-amount",
+						"settlement_type": "neft",
+						"settlement_bank_account_no": "50200057222741",
+						"settlement_ifsc_code": "UTIB0000333",
+						"beneficiary_name": "AECS Layout",
+						"bank_name": "Axis Bank Ltd.",
+						"branch_name": "AECS Layout"
+					},
+					{
+						"settlement_counterparty": "buyer",
+						"settlement_phase": "refund",
+						"settlement_type": "upi",
+						"settlement_amount": "36",
+						"settlement_timestamp": "2024-04-23T13:06:01.329Z"
+					}
+				]
+			},
+			"created_at": "2024-04-23T13:05:22.186Z",
+			"updated_at": "2024-04-23T13:06:09.095Z",
+			"provider": {
+				"id": "DEMO-01",
+				"locations": [
+					{
+						"id": "338"
+					}
+				],
+				"@ondc/org/provider_name": "Shikhar 01 Store"
+			},
+			"items": [
+				{
+					"id": "76225",
+					"quantity": {
+						"count": 3
+					},
+					"fulfillment_id": "44454D4F2D303144"
+				},
+				{
+					"id": "302084",
+					"quantity": {
+						"count": 0
+					},
+					"fulfillment_id": "44454D4F2D303144"
+				},
+				{
+					"id": "76198",
+					"quantity": {
+						"count": 3
+					},
+					"fulfillment_id": "44454D4F2D303144"
+				},
+				{
+					"id": "302084",
+					"quantity": {
+						"count": 3
+					},
+					"fulfillment_id": "CAN-44454D4F2D303144"
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "303.00"
+				},
+				"breakup": [
+					{
+						"title": "Surf Excel Easy Wash Detergent Powder, 500 g",
+						"price": {
+							"currency": "INR",
+							"value": "231.0"
+						},
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "77.00"
+							}
+						},
+						"@ondc/org/item_id": "76225",
+						"@ondc/org/item_quantity": {
+							"count": 3
+						},
+						"@ondc/org/title_type": "item"
+					},
+					{
+						"title": "Vim Lemon Dishwash Liquid Gel 140ml Pouch ",
+						"price": {
+							"currency": "INR",
+							"value": "60.0"
+						},
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "20.00"
+							}
+						},
+						"@ondc/org/item_id": "76198",
+						"@ondc/org/item_quantity": {
+							"count": 3
+						},
+						"@ondc/org/title_type": "item"
+					},
+					{
+						"title": "surf excel 10ml",
+						"price": {
+							"currency": "INR",
+							"value": "0.0"
+						},
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "12.00"
+							}
+						},
+						"@ondc/org/item_id": "302084",
+						"@ondc/org/item_quantity": {
+							"count": 0
+						},
+						"@ondc/org/title_type": "item"
+					},
+					{
+						"title": "Convenience Fee",
+						"price": {
+							"currency": "INR",
+							"value": "12.00"
+						},
+						"@ondc/org/item_id": "44454D4F2D303144",
+						"@ondc/org/title_type": "misc"
+					},
+					{
+						"title": "Delivery charges",
+						"price": {
+							"currency": "INR",
+							"value": "0.0"
+						},
+						"@ondc/org/item_id": "44454D4F2D303144",
+						"@ondc/org/title_type": "delivery"
+					}
+				],
+				"ttl": "PT8H"
+			}
+		}
+	}
+}
