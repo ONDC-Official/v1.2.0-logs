@@ -5,9 +5,11 @@ To submit logs for protocol compliance verification, following steps need to be 
 
 >1. Create a fork of the "v1.2.0-logs" repository
 
->2. Create a branch with the name of your entity under "logs"
+>2. Create a folder with the name of your entity in the base dir
 
->3. Merge your logs into this branch (logs should include request & response payloads for all enabled APIs)
+>3. Update your logs in the dir of your forked repository (logs should include request & response payloads for all enabled APIs)
 
->4. Create PR for your branch
+>4. Create PR for your repo to ONDC repo
+
+>5. The PR will be approved and merged and verification comments will be provided in issue tagged to your entity
 
