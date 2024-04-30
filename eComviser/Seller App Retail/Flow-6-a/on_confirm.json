@@ -1,0 +1,244 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:0120",
+        "action": "on_confirm",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://ondc.ecomviser.com/api/v1",
+        "transaction_id": "94f43f63-ae1d-4bed-b4eb-0aaec4d6ee04",
+        "message_id": "deb03322-635f-4472-b043-a3b7a9afb2cb",
+        "timestamp": "2024-04-24T10:04:08.000Z",
+        "bpp_id": "ondc.ecomviser.com",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2024-04-24-935819",
+            "state": "Created",
+            "provider": {
+                "id": "2499586",
+                "locations": [
+                    {
+                        "id": "155064"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "13217521",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "228678"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "name": "Dheeraj",
+                    "building": "Webkul",
+                    "locality": "Unnamed Road",
+                    "city": "Noida",
+                    "state": "Uttar Pradesh",
+                    "country": "IND",
+                    "area_code": "201301"
+                },
+                "phone": "9876543210",
+                "name": "Dheeraj",
+                "email": "dheeraj@webkul.in",
+                "created_at": "2024-04-24T10:03:31.671Z",
+                "updated_at": "2024-04-24T10:03:31.671Z"
+            },
+            "fulfillments": [
+                {
+                    "@ondc/org/TAT": "PT60M",
+                    "id": "228678",
+                    "tracking": true,
+                    "end": {
+                        "contact": {
+                            "email": "dheeraj@webkul.in",
+                            "phone": "9876543210"
+                        },
+                        "person": {
+                            "name": "Dheeraj"
+                        },
+                        "location": {
+                            "gps": "28.62964862677281,77.37787306308748",
+                            "address": {
+                                "name": "Dheeraj",
+                                "building": "Webkul",
+                                "locality": "Unnamed Road",
+                                "city": "Noida",
+                                "state": "Uttar Pradesh",
+                                "country": "IND",
+                                "area_code": "201301"
+                            }
+                        }
+                    },
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "ondc.ecomviser.com",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "155064",
+                            "descriptor": {
+                                "name": "DKS Store"
+                            },
+                            "gps": "28.62972640,77.37783230",
+                            "address": {
+                                "name": "Dheeraj Sharma",
+                                "building": "Webkul H28",
+                                "locality": "Noida",
+                                "city": "Gautam Buddh Nagar",
+                                "area_code": "201301",
+                                "state": "Uttar Pradesh",
+                                "country": "India"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "support@webkul.in"
+                        },
+                        "person": {
+                            "name": "Dheeraj"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-04-24T10:04:10.000Z",
+                                "end": "2024-04-24T11:04:10.000Z"
+                            }
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "91.29"
+                },
+                "breakup": [
+                    {
+                        "title": "Coka Cola (Returnable)",
+                        "price": {
+                            "currency": "INR",
+                            "value": "76.00",
+                            "tags": [
+                                {
+                                    "code": "shipping_cost",
+                                    "list": [
+                                        {
+                                            "code": "total_item_shipping",
+                                            "value": "5.00"
+                                        },
+                                        {
+                                            "code": "unit_item_shipping",
+                                            "value": "2.5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "@ondc/org/item_id": "13217521",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "38.00"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Convenience fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2.69"
+                        },
+                        "@ondc/org/title_type": "misc",
+                        "@ondc/org/item_id": "228678"
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5"
+                        },
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "228678"
+                    },
+                    {
+                        "title": "Tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "7.6"
+                        },
+                        "@ondc/org/title_type": "tax",
+                        "@ondc/org/item_id": "13217521"
+                    }
+                ],
+                "ttl": "PT6H"
+            },
+            "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "91.29",
+                    "currency": "INR",
+                    "transaction_id": "order_O2Q5JDaVUJnudb"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "Dheeraj Sharma",
+                        "settlement_bank_account_no": "012011239380",
+                        "settlement_ifsc_code": "AX223DRFT",
+                        "bank_name": "Axis Bank",
+                        "branch_name": "AX223DRFT",
+                        "settlement_status": "NOT-PAID"
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "09AABCW0339G3ER"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "GSTIN1234567890"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2024-04-24T10:04:06.286Z",
+            "updated_at": "2024-04-24T10:04:08.000Z"
+        }
+    }
+}
