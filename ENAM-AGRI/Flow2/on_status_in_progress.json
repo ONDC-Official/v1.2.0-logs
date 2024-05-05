@@ -2,75 +2,38 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:080",
-        "action": "on_confirm",
+        "action": "on_status",
         "bap_id": "buypreprod.enam.gov.in",
         "bpp_id": "sellpreprod.enam.gov.in",
         "domain": "ONDC:AGR11",
         "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-05-04T04:22:20.898Z",
-        "message_id": "0863e250-8c03-48d4-80cf-985072e0343b",
+        "timestamp": "2024-05-04T04:26:09.500Z",
+        "message_id": "9e6d1260-3492-4bdb-b2b7-ed8e867a0ca0",
         "core_version": "1.2.0",
         "transaction_id": "1f1a8b33-7868-4f55-bf29-e503e856523c"
     },
     "message": {
         "order": {
             "id": "473",
-            "tags": [
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "accept_bpp_terms",
-                            "value": "Y"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "GSTIN000XXXXXXXXX"
-                        }
-                    ],
-                    "display": true
-                }
-            ],
             "items": [
                 {
                     "id": "110",
                     "quantity": {
-                        "count": 2,
-                        "selected": {
-                            "count": 2
-                        }
+                        "count": 2
                     },
                     "fulfillment_id": "105"
                 }
             ],
             "quote": {
-                "ttl": "P1D",
+                "ttl": "PT18H44M35.772S",
                 "price": {
-                    "value": "300.0",
+                    "value": "300",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "item": {
-                            "price": {
-                                "value": "150.0",
-                                "currency": "INR"
-                            },
-                            "quantity": {
-                                "maximum": {
-                                    "count": 10000
-                                },
-                                "available": {
-                                    "count": 8
-                                }
-                            }
-                        },
                         "price": {
                             "value": "150.0",
                             "currency": "INR"
@@ -84,26 +47,22 @@
                     }
                 ]
             },
-            "state": "Created",
+            "state": "In-progress",
             "billing": {
                 "name": "Sumit Kumar",
                 "email": "params966@gmail.com",
                 "phone": "8475950505",
                 "address": {
                     "city": "Gurugram",
-                    "door": "451",
                     "name": "Kumar Residence",
-                    "ward": "Fazilpur",
                     "state": "Bihar",
-                    "street": "Sohna",
                     "country": "IND",
                     "building": "Flora",
                     "locality": "Fatehpur",
                     "area_code": "122234"
                 },
-                "created_at": "2024-05-02T11:12:40.522Z",
-                "tax_number": "",
-                "updated_at": "2024-05-02T11:12:40.522Z"
+                "created_at": "2024-05-02T11:12:40.000Z",
+                "updated_at": "2024-05-02T11:12:40.000Z"
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
@@ -116,11 +75,12 @@
                 "status": "PAID",
                 "collected_by": "BAP",
                 "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/settlement_window": "2024-05-04 22:52:20.881149",
                 "@ondc/org/settlement_details": [
                     {
                         "bank_name": "HDFC",
                         "branch_name": "Chandigarh",
+                        "upi_address": "null",
                         "settlement_type": "neft",
                         "beneficiary_name": "Enum",
                         "settlement_phase": "sale-amount",
@@ -141,12 +101,18 @@
                     }
                 ]
             },
-            "created_at": "2024-05-04T09:52:20.773Z",
-            "updated_at": "2024-05-04T04:22:20.906Z",
+            "created_at": "2024-05-04T09:52:20.000Z",
+            "updated_at": "2024-05-04T04:39:51.338Z",
             "fulfillments": [
                 {
                     "id": "105",
                     "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-05-04T10:07:02.401Z",
+                                "start": "2024-05-04T10:07:02.401Z"
+                            }
+                        },
                         "person": {
                             "name": "param abc"
                         },
@@ -155,15 +121,11 @@
                             "phone": "8978560404"
                         },
                         "location": {
-                            "id": "112",
                             "gps": "12.453544,77.928379",
                             "address": {
                                 "city": "Gurugram",
-                                "door": "400",
                                 "name": "Default Address",
-                                "ward": "Fatehpur",
                                 "state": "Haryana",
-                                "street": "Sohna",
                                 "country": "IND",
                                 "building": "Flora",
                                 "locality": "Fazilpur",
@@ -171,20 +133,14 @@
                             }
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "Yes"
-                                }
-                            ],
-                            "display": true
-                        }
-                    ],
                     "type": "Self-Pickup",
                     "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-05-03T19:09:42.466Z",
+                                "start": "2024-05-03T19:09:42.442Z"
+                            }
+                        },
                         "contact": {
                             "phone": "7042218498"
                         },
@@ -203,7 +159,14 @@
                             }
                         }
                     },
-                    "tracking": false
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT0H3M",
+                    "@ondc/org/provider_name": "Akash Yadav"
                 }
             ]
         }
