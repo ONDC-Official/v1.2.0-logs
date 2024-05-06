@@ -7,30 +7,26 @@
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "message_id": "ab76fc8b-92d5-4d6e-8862-92c84fddd631",
-        "timestamp": "2024-04-30T10:56:41.966Z",
-        "transaction_id": "4d6c46a3-9656-464e-8862-c53e3745bcf0"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "302ced54-f1eb-40cf-9cd0-410ce9ee6710",
+        "message_id": "7d4b3a46-400d-45da-8f0a-1e42c5b2f421",
+        "timestamp": "2024-05-06T09:42:50.290Z"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "dfb27871-39e7-45f8-84c2-f2b264e3b47b"
+                "id": "MP2"
             },
             "items": [
                 {
-                    "id": "Standard",
-                    "fulfillment_id": "c482a210-3f0c-41cb-af5c-8d6628589dca",
-                    "descriptor": {
-                        "code": "P2P"
-                    },
-                    "category_id": "Immediate Delivery"
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "c482a210-3f0c-41cb-af5c-8d6628589dca",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
                     "start": {
                         "location": {
@@ -48,9 +44,6 @@
                         "contact": {
                             "phone": "9009120913",
                             "email": "vijendra@gmail.com"
-                        },
-                        "instructions": {
-                            "images": []
                         }
                     },
                     "end": {
@@ -69,9 +62,6 @@
                         "contact": {
                             "phone": "7689965008",
                             "email": "suryanash@kiko.live"
-                        },
-                        "instructions": {
-                            "images": []
                         }
                     },
                     "tags": [
@@ -87,133 +77,35 @@
                     ]
                 }
             ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "122.38"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "116.00"
+                            "value": "1.64"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "6.38"
+                            "value": "0.36"
                         }
                     }
                 ],
                 "ttl": "PT15M"
-            },
-            "payment": {
-                "type": "POST-FULFILLMENT",
-                "collected_by": "BAP",
-                "@ondc/org/settlement_details": []
-            },
-            "cancellation_terms": [
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Pending",
-                            "short_desc": ""
-                        }
-                    },
-                    "refund_eligible": true,
-                    "reason_required": false,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.0"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Agent-assigned",
-                            "short_desc": "001,003"
-                        }
-                    },
-                    "refund_eligible": true,
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "50"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Order-picked-up",
-                            "short_desc": "001,003"
-                        }
-                    },
-                    "refund_eligible": true,
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "100"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Out-for-delivery",
-                            "short_desc": "011,012,013,014,015"
-                        }
-                    },
-                    "refund_eligible": true,
-                    "reason_required": true,
-                    "cancellation_fee": {
-                        "amount": {
-                            "currency": "INR",
-                            "value": "100.0"
-                        }
-                    }
-                }
-            ],
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "max_liability_cap",
-                            "value": "10000"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "1000"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                        }
-                    ]
-                }
-            ]
+            }
         }
     }
 }
