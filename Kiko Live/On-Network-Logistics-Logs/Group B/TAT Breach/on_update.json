@@ -7,87 +7,69 @@
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "message_id": "fcc1eb04-fca4-4942-b69b-f0e9d9fd5845",
-        "timestamp": "2024-04-29T09:54:56.423Z",
-        "transaction_id": "c4ce089b-b79f-4cad-b271-fcaa2bd68033"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "653380ae-5474-4264-9d20-39b29747e5e4",
+        "message_id": "b0daec2c-b10b-491d-aa64-025444fc5cf2",
+        "timestamp": "2024-05-06T06:32:53.846Z"
     },
     "message": {
         "order": {
-            "id": "2024-04-29-339593",
-            "state": "In-progress",
+            "id": "2024-05-06-737634",
             "provider": {
-                "id": "db968047-ab30-4e32-9c8a-b86c7c9bdec7"
+                "id": "MP2"
             },
             "items": [
                 {
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
                     "time": {
                         "label": "TAT",
-                        "duration": "PT60M",
-                        "timestamp": "2024-04-29"
-                    },
-                    "id": "Standard",
-                    "fulfillment_id": "064ba29e-3db5-4dbe-8e48-55255e38cd4f",
-                    "category_id": "Immediate Delivery"
+                        "duration": "PT55M",
+                        "timestamp": "2024-05-06"
+                    }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "122.38"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "116.00"
-                        },
-                        "item": {
-                            "tags": []
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "delivery"
+                            "value": "1.64"
+                        }
                     },
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "6.38"
-                        },
-                        "item": {
-                            "tags": []
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "tax"
+                            "value": "0.36"
+                        }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "agent": {
-                        "name": "Yash Chopra",
-                        "mobile": "8755515025"
-                    },
-                    "vehicle": {
-                        "registration": "BH 23 VH 8989"
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "Agent-assigned"
-                        }
-                    },
-                    "id": "064ba29e-3db5-4dbe-8e48-55255e38cd4f",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
+                    "tracking": true,
                     "start": {
                         "time": {
+                            "duration": "PT20M",
                             "range": {
-                                "start": "2024-04-29T10:04:56.389Z",
-                                "end": "2024-04-29T10:19:56.389Z"
-                            },
-                            "duration": "PT15M"
+                                "start": "2024-05-06T06:32:53.845Z",
+                                "end": "2024-05-06T06:52:53.845Z"
+                            }
                         },
                         "person": {
                             "name": "Vijendra Patidar"
@@ -110,17 +92,11 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "512589",
-                            "images": []
+                            "short_desc": "9221",
+                            "long_desc": "Order Pick Up Confirmation Code"
                         }
                     },
                     "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-04-29T10:39:56.390Z",
-                                "end": "2024-04-29T10:54:56.390Z"
-                            }
-                        },
                         "person": {
                             "name": "Suryansh Kourav"
                         },
@@ -142,11 +118,21 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "793496",
-                            "images": []
+                            "short_desc": "4102",
+                            "long_desc": "Delivery Confirmation Code"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-05-06T06:52:53.845Z",
+                                "end": "2024-05-06T07:07:53.845Z"
+                            }
                         }
                     },
-                    "tracking": false
+                    "state": {
+                        "descriptor": {
+                            "code": "Searching-for-Agent"
+                        }
+                    }
                 }
             ],
             "billing": {
@@ -163,16 +149,50 @@
                 "tax_number": "22AAAAA0000A1Z5",
                 "phone": "7689965008",
                 "email": "suryanash@kiko.live",
-                "created_at": "2024-04-29T09:50:35.187Z",
-                "updated_at": "2024-04-29T09:50:35.187Z"
+                "created_at": "2024-05-06T06:22:58.796Z",
+                "updated_at": "2024-05-06T06:22:58.796Z"
             },
             "payment": {
                 "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "status": "NOT-PAID",
-                "@ondc/org/settlement_details": []
+                "type": "POST-FULFILLMENT"
             },
             "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Amul ghee"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "2400"
+                        }
+                    },
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "7 Up Nimbooz Masala Soda - With Real Lemon Juice, 500 Ml"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "35"
+                        }
+                    }
+                ],
                 "provider": {
                     "descriptor": {
                         "name": "Vijendra Grocery Store"
@@ -183,16 +203,15 @@
                         "locality": "Avior Park",
                         "city": "Mumbai",
                         "state": "Maharashtra",
-                        "country": "India",
                         "area_code": "400080"
                     }
                 },
                 "order": {
+                    "id": "2024-05-06-737634",
                     "weight": {
                         "unit": "kilogram",
-                        "value": 5
+                        "value": 5.5
                     },
-                    "id": "2024-04-29-339593",
                     "dimensions": {
                         "length": {
                             "unit": "centimeter",
@@ -207,28 +226,10 @@
                             "value": 6
                         }
                     }
-                },
-                "items": [
-                    {
-                        "descriptor": {
-                            "name": "Amul ghee"
-                        },
-                        "quantity": {
-                            "measure": {
-                                "value": 5,
-                                "unit": "kilogram"
-                            },
-                            "count": 1
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "2400"
-                        },
-                        "category_id": "Grocery"
-                    }
-                ]
+                }
             },
-            "updated_at": "2024-04-29T09:54:56.423Z"
+            "state": "In-progress",
+            "updated_at": "2024-05-06T06:32:53.846Z"
         }
     }
 }

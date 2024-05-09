@@ -1,126 +1,74 @@
 {
     "context": {
-        "action": "on_cancel",
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:022",
+        "action": "on_update",
+        "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "city": "std:022",
-        "core_version": "1.2.0",
-        "country": "IND",
-        "domain": "nic2004:60232",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "message_id": "1d9851cc-fa1b-41e8-8faa-33af6f4a3a63",
-        "timestamp": "2024-04-30T12:14:46.996Z",
-        "transaction_id": "41bdd5da-a806-437a-9b5c-96345ca37222"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "90468c5b-202f-4520-838c-e60a062a10af",
+        "message_id": "79368fca-4c96-42dd-8d2f-c3dc1d54eae9",
+        "timestamp": "2024-05-06T07:04:03.432Z"
     },
     "message": {
         "order": {
-            "id": "2024-04-30-190820",
-            "state": "Cancelled",
-            "cancellation": {
-                "cancelled_by": "ondc-api.kiko.live/ondc-seller-v2",
-                "reason": {
-                    "id": "006"
-                }
-            },
+            "id": "2024-05-06-806609",
             "provider": {
-                "id": "302fe9be-d2e5-463c-9105-844860973a81"
+                "id": "MP2"
             },
             "items": [
                 {
-                    "id": "Standard",
-                    "fulfillment_id": "1d4407da-7424-4d8e-b750-c96f2ebc22d1",
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
-                    "category_id": "Immediate Delivery",
                     "time": {
                         "label": "TAT",
-                        "duration": "PT60M",
-                        "timestamp": "2024-04-30"
+                        "duration": "PT55M",
+                        "timestamp": "2024-05-06"
                     }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "0"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
-                        },
-                        "item": {
-                            "tags": []
+                            "value": "1.64"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0"
-                        },
-                        "item": {
-                            "tags": []
+                            "value": "0.36"
                         }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "id": "1d4407da-7424-4d8e-b750-c96f2ebc22d1",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
-                    "state": {
-                        "descriptor": {
-                            "code": "Cancelled"
-                        }
-                    },
-                    "tags": [
-                        {
-                            "code": "state",
-                            "list": [
-                                {
-                                    "code": "ready_to_ship",
-                                    "value": "yes"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "yes"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "precancel_state",
-                            "list": [
-                                {
-                                    "code": "fulfillment_state",
-                                    "value": "Agent-assigned"
-                                },
-                                {
-                                    "code": "updated_at",
-                                    "value": "2024-04-30T12:10:04.861Z"
-                                }
-                            ]
-                        }
-                    ],
-                    "@ondc/org/awb_no": "1227262193237777",
-                    "tracking": false,
+                    "tracking": true,
                     "start": {
                         "time": {
-                            "duration": "PT15M",
+                            "duration": "PT20M",
                             "range": {
-                                "start": "2024-04-30T12:20:04.850Z",
-                                "end": "2024-04-30T12:35:04.850Z"
+                                "start": "2024-05-06T07:04:03.431Z",
+                                "end": "2024-05-06T07:24:03.431Z"
                             }
                         },
                         "person": {
@@ -144,17 +92,11 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "982741",
-                            "images": []
+                            "short_desc": "8720",
+                            "long_desc": "Order Pick Up Confirmation Code"
                         }
                     },
                     "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-04-30T12:55:04.850Z",
-                                "end": "2024-04-30T13:10:04.850Z"
-                            }
-                        },
                         "person": {
                             "name": "Suryansh Kourav"
                         },
@@ -176,16 +118,20 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "795151",
-                            "images": []
+                            "short_desc": "1649",
+                            "long_desc": "Delivery Confirmation Code"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-05-06T07:24:03.431Z",
+                                "end": "2024-05-06T07:39:03.431Z"
+                            }
                         }
                     },
-                    "agent": {
-                        "name": "Edmund Fritsch",
-                        "mobile": "8460605456"
-                    },
-                    "vehicle": {
-                        "registration": "KA 54 XYZ 1234"
+                    "state": {
+                        "descriptor": {
+                            "code": "Searching-for-Agent"
+                        }
                     }
                 }
             ],
@@ -203,13 +149,12 @@
                 "tax_number": "22AAAAA0000A1Z5",
                 "phone": "7689965008",
                 "email": "suryanash@kiko.live",
-                "created_at": "2024-04-30T12:04:39.323Z",
-                "updated_at": "2024-04-30T12:04:39.323Z"
+                "created_at": "2024-05-06T06:59:12.790Z",
+                "updated_at": "2024-05-06T06:59:12.790Z"
             },
             "payment": {
                 "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "status": "NOT-PAID"
+                "type": "POST-FULFILLMENT"
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -221,8 +166,8 @@
                         "quantity": {
                             "count": 1,
                             "measure": {
-                                "value": 5,
-                                "unit": "kilogram"
+                                "unit": "kilogram",
+                                "value": 5
                             }
                         },
                         "price": {
@@ -238,8 +183,8 @@
                         "quantity": {
                             "count": 1,
                             "measure": {
-                                "value": 0.5,
-                                "unit": "kilogram"
+                                "unit": "kilogram",
+                                "value": 0.5
                             }
                         },
                         "price": {
@@ -258,12 +203,11 @@
                         "locality": "Avior Park",
                         "city": "Mumbai",
                         "state": "Maharashtra",
-                        "country": "India",
                         "area_code": "400080"
                     }
                 },
                 "order": {
-                    "id": "2024-04-30-190820",
+                    "id": "2024-05-06-806609",
                     "weight": {
                         "unit": "kilogram",
                         "value": 5.5
@@ -284,7 +228,8 @@
                     }
                 }
             },
-            "updated_at": "2024-04-30T12:14:46.996Z"
+            "state": "In-progress",
+            "updated_at": "2024-05-06T07:04:03.432Z"
         }
     }
 }
