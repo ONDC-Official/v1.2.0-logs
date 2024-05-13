@@ -2,52 +2,65 @@
             "context": {
                 "ttl": "PT30S",
                 "city": "std:080",
-                "action": "on_status",
+                "action": "on_cancel",
                 "bap_id": "buypreprod.enam.gov.in",
                 "bpp_id": "sellpreprod.enam.gov.in",
                 "domain": "ONDC:AGR11",
                 "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
                 "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
                 "country": "IND",
-                "timestamp": "2024-05-04T04:25:55.486Z",
-                "message_id": "52a69c95-b151-4bcb-9967-8615fc0f9c2f",
+                "timestamp": "2024-05-11T15:52:31.735Z",
+                "message_id": "c2a9241c-806f-483c-a7b9-436b6b6ea056",
                 "core_version": "1.2.0",
-                "transaction_id": "1f1a8b33-7868-4f55-bf29-e503e856523c"
+                "transaction_id": "439f4ffd-98f7-4d5f-a344-2d1b6ffb0d82"
             },
             "message": {
                 "order": {
-                    "id": "473",
+                    "id": "713",
                     "items": [
                         {
-                            "id": "110",
+                            "id": "192",
                             "quantity": {
                                 "count": 2
                             },
-                            "fulfillment_id": "105"
+                            "fulfillment_id": "172"
+                        },
+                        {
+                            "id": "192",
+                            "quantity": {
+                                "count": 0
+                            },
+                            "fulfillment_id": "172"
                         }
                     ],
                     "quote": {
-                        "ttl": "PT18H44M35.772S",
+                        "ttl": "PT24H9M28.528S",
                         "price": {
-                            "value": "300",
+                            "value": "0",
                             "currency": "INR"
                         },
                         "breakup": [
                             {
+                                "item": {
+                                    "price": {
+                                        "value": "10.0",
+                                        "currency": "INR"
+                                    }
+                                },
                                 "price": {
-                                    "value": "150.0",
+                                    "value": "0",
                                     "currency": "INR"
                                 },
-                                "title": "KODO MILLET",
-                                "@ondc/org/item_id": "110",
+                                "title": "Dragon Fruit",
+                                "@ondc/org/item_id": "192",
                                 "@ondc/org/title_type": "item",
                                 "@ondc/org/item_quantity": {
-                                    "count": 2
+                                    "count": 0
                                 }
                             }
                         ]
                     },
-                    "state": "Accepted",
+                    "state": "Cancelled",
                     "billing": {
                         "name": "Sumit Kumar",
                         "email": "params966@gmail.com",
@@ -61,21 +74,21 @@
                             "locality": "Fatehpur",
                             "area_code": "122234"
                         },
-                        "created_at": "2024-05-02T11:12:40.000Z",
-                        "updated_at": "2024-05-02T11:12:40.000Z"
+                        "created_at": "2024-05-01T07:42:40.000Z",
+                        "updated_at": "2024-05-01T07:42:40.000Z"
                     },
                     "payment": {
                         "uri": "https://ondc.transaction.com/payment",
-                        "type": "ON-ORDER",
+                        "type": "ON-FULFILLMENT",
                         "params": {
-                            "amount": "300.0",
+                            "amount": "20.0",
                             "currency": "INR",
-                            "transaction_id": "175"
+                            "transaction_id": "282"
                         },
-                        "status": "PAID",
-                        "collected_by": "BAP",
+                        "status": "NOT-PAID",
+                        "collected_by": "BPP",
                         "@ondc/org/settlement_basis": "delivery",
-                        "@ondc/org/settlement_window": "2024-05-04 22:52:20.881149",
+                        "@ondc/org/settlement_window": "2024-05-12 21:21:38.574849",
                         "@ondc/org/settlement_details": [
                             {
                                 "bank_name": "HDFC",
@@ -89,28 +102,34 @@
                                 "settlement_bank_account_no": "50100987654123"
                             }
                         ],
-                        "@ondc/org/withholding_amount": "0",
+                        "@ondc/org/withholding_amount": "3.0",
                         "@ondc/org/buyer_app_finder_fee_type": "percent",
                         "@ondc/org/buyer_app_finder_fee_amount": "3.0"
                     },
                     "provider": {
-                        "id": "57",
+                        "id": "80",
                         "locations": [
                             {
-                                "id": "66"
+                                "id": "149"
                             }
                         ]
                     },
-                    "created_at": "2024-05-04T09:52:20.000Z",
-                    "updated_at": "2024-05-04T04:38:26.341Z",
+                    "created_at": "2024-05-11T15:51:38.000Z",
+                    "updated_at": "2024-05-11T15:52:35.595Z",
+                    "cancellation": {
+                        "reasons": {
+                            "id": "010"
+                        },
+                        "cancelled_by": "buypreprod.enam.gov.in"
+                    },
                     "fulfillments": [
                         {
-                            "id": "105",
+                            "id": "172",
                             "end": {
                                 "time": {
                                     "range": {
-                                        "end": "2024-05-04T10:07:02.401Z",
-                                        "start": "2024-05-04T10:07:02.401Z"
+                                        "end": "2024-05-11T15:52:35.595Z",
+                                        "start": "2024-05-11T15:52:35.595Z"
                                     }
                                 },
                                 "person": {
@@ -133,40 +152,70 @@
                                     }
                                 }
                             },
-                            "type": "Self-Pickup",
+                            "tags": [
+                                {
+                                    "code": "cancel_request",
+                                    "list": [
+                                        {
+                                            "code": "reason_id",
+                                            "value": "010"
+                                        },
+                                        {
+                                            "code": "initiated_by",
+                                            "value": "buypreprod.enam.gov.in"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "precancel_state",
+                                    "list": [
+                                        {
+                                            "code": "fulfillment_state",
+                                            "value": "Pending"
+                                        },
+                                        {
+                                            "code": "updated_at",
+                                            "value": "2024-05-11 21:21:38.57595"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "Delivery",
                             "start": {
                                 "time": {
                                     "range": {
-                                        "end": "2024-05-03T19:09:42.466Z",
-                                        "start": "2024-05-03T19:09:42.442Z"
+                                        "end": "2024-05-11T10:06:50.234Z",
+                                        "start": "2024-05-11T10:06:50.228Z"
                                     }
                                 },
                                 "contact": {
-                                    "phone": "7042218498"
+                                    "email": "test@gmail.com",
+                                    "phone": "8722222223"
                                 },
                                 "location": {
-                                    "id": "66",
-                                    "gps": "12.453544,77.928379",
+                                    "id": "149",
+                                    "gps": "17.4739167, 78.5118889",
                                     "address": {
-                                        "city": "BHAGIRATHIPURAM AGRAHARAM",
-                                        "state": "Arunachal Pradesh",
-                                        "street": "Fatehpur",
-                                        "locality": "Fatehpur",
-                                        "area_code": "122103"
+                                        "city": "GOSAPALLY",
+                                        "state": "Telangana",
+                                        "street": "Hafeezpet",
+                                        "locality": "Hafeezpet",
+                                        "area_code": "500084"
                                     },
                                     "descriptor": {
-                                        "name": "Default Pickup Location"
+                                        "name": "KD Fruits"
                                     }
                                 }
                             },
                             "state": {
                                 "descriptor": {
-                                    "code": "Pending"
+                                    "code": "Cancelled",
+                                    "name": "Cancelled"
                                 }
                             },
                             "tracking": false,
-                            "@ondc/org/TAT": "PT0H3M",
-                            "@ondc/org/provider_name": "Akash Yadav"
+                            "@ondc/org/TAT": "PT-23H-59M",
+                            "@ondc/org/provider_name": "kd"
                         }
                     ]
                 }
