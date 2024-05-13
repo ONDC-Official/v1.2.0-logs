@@ -7,90 +7,72 @@
     "core_version": "1.2.0",
     "bap_id": "ondc-pp-v2.dlyb.in",
     "bap_uri": "https://ondc-pp-v2.dlyb.in/v2/logisticsBuyer",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-    "transaction_id": "81fd00a9-aa6c-4b27-9424-5f0640c38e68_661544cc707ebec1462153ee",
-    "message_id": "3f5a9bf9-52cf-43ca-981b-4f1153f04758",
-    "timestamp": "2024-05-08T09:41:46.271Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "a16826e7-17f2-4569-a90f-c8ecb2c282fb_661544cc707ebec1462153ee",
+    "message_id": "b2e6a8df-1741-4c2c-8088-316bc1ecb855",
+    "timestamp": "2024-05-13T12:01:54.918Z"
   },
   "message": {
     "order": {
-      "id": "2024-05-08-566545",
-      "state": "In-progress",
+      "id": "2024-05-13-326780",
       "provider": {
-        "id": "2a1c773f-5d08-4840-9f47-debb6ccb84d3"
+        "id": "MP2"
       },
       "items": [
         {
+          "id": "mp2_sdd",
+          "fulfillment_id": "mp2_sdd_f1",
+          "category_id": "Same Day Delivery",
           "descriptor": {
             "code": "P2P"
           },
           "time": {
             "label": "TAT",
-            "duration": "P1D",
-            "timestamp": "2024-05-08"
-          },
-          "id": "Standard",
-          "fulfillment_id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
-          "category_id": "Same Day Delivery"
+            "duration": "PT4H",
+            "timestamp": "2024-05-13"
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "122.38"
+          "value": "2.0"
         },
         "breakup": [
           {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "116.00"
-            },
-            "item": {
-              "tags": []
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "delivery"
+              "value": "1.64"
+            }
           },
           {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "6.38"
-            },
-            "item": {
-              "tags": []
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "tax"
+              "value": "0.36"
+            }
           }
         ]
       },
       "fulfillments": [
         {
-          "agent": {
-            "name": "Hugh Walsh",
-            "mobile": "7145885368"
-          },
-          "vehicle": {
-            "registration": "KA 54 XYZ 1234"
-          },
-          "state": {
-            "descriptor": {
-              "code": "Agent-assigned"
-            }
-          },
-          "id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
+          "id": "mp2_sdd_f1",
           "type": "Delivery",
+          "tracking": true,
           "start": {
             "time": {
+              "duration": "PT2H",
               "range": {
-                "start": "2024-05-08T09:41:46.250Z",
-                "end": "2024-05-08T11:41:46.240Z"
-              },
-              "duration": "PT2H"
+                "start": "2024-05-13T12:01:54.917Z",
+                "end": "2024-05-13T14:01:54.917Z"
+              }
             },
             "person": {
-              "name": "ONDC Logistics Seller App by WITS"
+              "name": "MP2"
             },
             "location": {
               "gps": "12.932463,77.685220",
@@ -111,16 +93,10 @@
             "instructions": {
               "code": "4",
               "short_desc": "5050",
-              "images": []
+              "long_desc": "Confirmation Code for pickup"
             }
           },
           "end": {
-            "time": {
-              "range": {
-                "start": "2024-05-08T13:41:46.240Z",
-                "end": "2024-05-08T15:41:46.240Z"
-              }
-            },
             "person": {
               "name": "Dailybee customer name"
             },
@@ -141,10 +117,22 @@
               "email": "santosh@gmail.com"
             },
             "instructions": {
-              "images": []
+              "code": "1",
+              "short_desc": "5151",
+              "long_desc": "Confirmation Code for drop"
+            },
+            "time": {
+              "range": {
+                "start": "2024-05-13T14:01:54.917Z",
+                "end": "2024-05-13T14:01:54.917Z"
+              }
             }
           },
-          "tracking": false
+          "state": {
+            "descriptor": {
+              "code": "Searching-for-Agent"
+            }
+          }
         }
       ],
       "billing": {
@@ -158,19 +146,36 @@
           "country": "India",
           "area_code": "500081"
         },
-        "email": "satya@dailybee.in",
-        "phone": "8310103202",
         "tax_number": "36AAICK6920A1ZS",
-        "created_at": "2024-05-08T09:03:51.619Z",
-        "updated_at": "2024-05-08T09:03:51.620Z"
+        "phone": "8310103202",
+        "email": "satya@dailybee.in",
+        "created_at": "2024-05-13T12:01:15.149Z",
+        "updated_at": "2024-05-13T12:01:15.149Z"
       },
       "payment": {
         "collected_by": "BAP",
-        "type": "POST-FULFILLMENT",
-        "status": "NOT-PAID",
-        "@ondc/org/settlement_details": []
+        "type": "POST-FULFILLMENT"
       },
       "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "Grocery",
+            "descriptor": {
+              "name": "Basamti Rice"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "kilogram",
+                "value": 0.2
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "110.00"
+            }
+          }
+        ],
         "provider": {
           "descriptor": {
             "name": "Dailybee - Grocery Test scripts"
@@ -181,38 +186,19 @@
             "locality": "localityDoopanahalli, Indiranagar",
             "city": "Bengaluru",
             "state": "Karnataka",
-            "country": "India",
             "area_code": "560008"
           }
         },
         "order": {
+          "id": "2024-05-13-326780",
           "weight": {
-            "unit": "gram",
-            "value": 0.2
-          },
-          "id": "2024-05-08-566545"
-        },
-        "items": [
-          {
-            "descriptor": {
-              "name": "Bobbarlu Red"
-            },
-            "quantity": {
-              "measure": {
-                "value": 0.2,
-                "unit": "kilogram"
-              },
-              "count": 1
-            },
-            "price": {
-              "currency": "INR",
-              "value": "80.00"
-            },
-            "category_id": "Grocery"
+            "unit": "kilogram",
+            "value": 1
           }
-        ]
+        }
       },
-      "updated_at": "2024-05-08T09:41:46.271Z"
+      "state": "In-progress",
+      "updated_at": "2024-05-13T12:01:54.918Z"
     }
   }
 }
