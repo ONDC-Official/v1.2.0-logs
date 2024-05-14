@@ -7,30 +7,26 @@
     "core_version": "1.2.0",
     "bap_id": "ondc-pp-v2.dlyb.in",
     "bap_uri": "https://ondc-pp-v2.dlyb.in/v2/logisticsBuyer",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-    "transaction_id": "81fd00a9-aa6c-4b27-9424-5f0640c38e68_661544cc707ebec1462153ee",
-    "message_id": "8a1edc7b-b3e3-4c68-b6e0-96732097708f",
-    "timestamp": "2024-05-08T08:59:58.681Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "a16826e7-17f2-4569-a90f-c8ecb2c282fb_661544cc707ebec1462153ee",
+    "message_id": "e6cf9ddd-e199-46dc-872a-aa82920f88ef",
+    "timestamp": "2024-05-13T12:01:15.229Z"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "2a1c773f-5d08-4840-9f47-debb6ccb84d3"
+        "id": "MP2"
       },
       "items": [
         {
-          "id": "Standard",
-          "fulfillment_id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
-          "descriptor": {
-            "code": "P2P"
-          },
-          "category_id": "Same Day Delivery"
+          "id": "mp2_sdd",
+          "fulfillment_id": "mp2_sdd_f1"
         }
       ],
       "fulfillments": [
         {
-          "id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
+          "id": "mp2_sdd_f1",
           "type": "Delivery",
           "start": {
             "location": {
@@ -48,9 +44,6 @@
             "contact": {
               "phone": "9494202865",
               "email": "help@dailybee.in"
-            },
-            "instructions": {
-              "images": []
             }
           },
           "end": {
@@ -68,10 +61,7 @@
             },
             "contact": {
               "phone": "9999999999",
-              "email": ""
-            },
-            "instructions": {
-              "images": []
+              "email": "satya@dailybee.in"
             }
           },
           "tags": [
@@ -87,133 +77,35 @@
           ]
         }
       ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP"
+      },
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "122.38"
+          "value": "2.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "Standard",
+            "@ondc/org/item_id": "mp2_sdd",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "116.00"
+              "value": "1.64"
             }
           },
           {
-            "@ondc/org/item_id": "Standard",
+            "@ondc/org/item_id": "mp2_sdd",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "6.38"
+              "value": "0.36"
             }
           }
         ],
         "ttl": "PT15M"
-      },
-      "payment": {
-        "type": "POST-FULFILLMENT",
-        "collected_by": "BAP",
-        "@ondc/org/settlement_details": []
-      },
-      "cancellation_terms": [
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": false,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.0"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Agent-assigned",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "50"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "011,012,013,014,015"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100.0"
-            }
-          }
-        }
-      ],
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability",
-              "value": "2"
-            },
-            {
-              "code": "max_liability_cap",
-              "value": "10000"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "false"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Bengaluru"
-            },
-            {
-              "code": "delay_interest",
-              "value": "1000"
-            },
-            {
-              "code": "static_terms",
-              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-            }
-          ]
-        }
-      ]
+      }
     }
   }
 }
