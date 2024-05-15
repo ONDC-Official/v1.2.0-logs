@@ -1,98 +1,135 @@
 {
+    "error": {
+        "code": "40002",
+        "message": "[{\"message\":\"Item quantity unavailable\",\"item_id\":\"193\",\"error_code\":\"40002\"}]"
+    },
     "context": {
-        "domain": "ONDC:AGR11",
-        "country": "IND",
-        "city": "std:080",
+        "ttl": "PT30S",
+        "city": "std:040",
         "action": "on_select",
-        "core_version": "1.2.0",
         "bap_id": "buypreprod.enam.gov.in",
-        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_id": "sellpreprod.enam.gov.in",
+        "domain": "ONDC:AGR11",
+        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
-        "transaction_id": "f4fa6a99-fe45-4040-abb5-d0b9e3b3abd4",
-        "message_id": "34c3c649-6ac7-45f6-9ffb-7f590281a957",
-        "timestamp": "2024-04-26T07:44:48.002Z",
-        "ttl": "PT30S"
+        "country": "IND",
+        "timestamp": "2024-05-11T13:55:09.419Z",
+        "message_id": "f09fd8fd-8187-4422-81dd-94666ef39b66",
+        "core_version": "1.2.0",
+        "transaction_id": "98ce3112-98d4-4cd7-8052-e40bef06d501"
     },
     "message": {
         "order": {
+            "items": [
+                {
+                    "id": "192",
+                    "fulfillment_id": "172"
+                },
+                {
+                    "id": "193",
+                    "fulfillment_id": "172"
+                }
+            ],
             "quote": {
+                "ttl": "P1D",
                 "price": {
-                    "currency": "INR",
-                    "value": "980.0"
+                    "value": "20.0",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "100",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        },
-                        "@ondc/org/title_type": "item",
                         "item": {
                             "price": {
+                                "value": "10.0",
                                 "currency": "INR",
-                                "value": "490.0",
-                                "maximum_value": "490.0"
+                                "maximum_value": "10.0"
                             },
                             "quantity": {
-                                "available": {
-                                    "count": "99"
-                                },
                                 "maximum": {
-                                    "count": "99"
+                                    "count": "10000"
+                                },
+                                "available": {
+                                    "count": 100
                                 }
                             }
                         },
-                        "title": "MAIZE",
                         "price": {
+                            "value": "20.0",
                             "currency": "INR",
-                            "value": "490.0",
-                            "maximum_value": "490.0"
+                            "maximum_value": "20.0"
+                        },
+                        "title": "Dragon Fruit",
+                        "@ondc/org/item_id": "192",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "provider": {
-                "id": "6",
-                "locations": [
+                    },
                     {
-                        "id": "5"
+                        "item": {
+                            "price": {
+                                "value": "250.0",
+                                "currency": "INR",
+                                "maximum_value": "250.0"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "0"
+                                },
+                                "available": {
+                                    "count": 0
+                                }
+                            }
+                        },
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR",
+                            "maximum_value": "0.0"
+                        },
+                        "title": "Rambutan",
+                        "@ondc/org/item_id": "193",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        }
                     }
                 ]
             },
-            "items": [
-                {
-                    "id": "100",
-                    "fulfillment_id": "8"
-                }
-            ],
+            "provider": {
+                "id": "80",
+                "locations": [
+                    {
+                        "id": "149"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "id": "11",
-                    "type": "Self-Pickup",
-                    "@ondc/org/category": "Immediate Delivery",
+                    "id": "172",
+                    "type": "Delivery",
+                    "state": {},
+                    "tracking": false,
                     "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
-                        }
-                    },
-                    "tracking": false
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
                 },
                 {
-                    "id": "8",
-                    "type": "Delivery",
-                    "@ondc/org/category": "Immediate Delivery",
+                    "id": "173",
+                    "type": "Delivery and Self-Pickup",
+                    "state": {},
+                    "tracking": false,
                     "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
-                        }
-                    },
-                    "tracking": false
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
+                },
+                {
+                    "id": "174",
+                    "type": "Self-Pickup",
+                    "state": {},
+                    "tracking": false,
+                    "@ondc/org/TAT": "P1D",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
                 }
             ]
         }

@@ -7,87 +7,69 @@
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "message_id": "da126b86-6f91-4412-b17e-4c075cee01cd",
-        "timestamp": "2024-04-22T07:01:40.441Z",
-        "transaction_id": "fc32db92-64c4-4f09-b964-c50efdba35c2"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "302ced54-f1eb-40cf-9cd0-410ce9ee6710",
+        "message_id": "c5217cb4-7601-4ca9-b73e-e0aa9dc40e74",
+        "timestamp": "2024-05-06T10:22:58.494Z"
     },
     "message": {
         "order": {
-            "id": "2024-04-22-529954",
-            "state": "In-progress",
+            "id": "2024-05-06-397328",
             "provider": {
-                "id": "e4a80ad6-b509-4a37-b08f-d11809be1355"
+                "id": "MP2"
             },
             "items": [
                 {
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
                     "time": {
                         "label": "TAT",
-                        "duration": "PT60M",
-                        "timestamp": "2024-04-22"
-                    },
-                    "id": "Standard",
-                    "fulfillment_id": "f2bf0257-02f4-483f-be27-e5fb4b98a8b9",
-                    "category_id": "Standard Delivery"
+                        "duration": "PT55M",
+                        "timestamp": "2024-05-06"
+                    }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "122.38"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "116.00"
-                        },
-                        "item": {
-                            "tags": []
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "delivery"
+                            "value": "1.64"
+                        }
                     },
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "6.38"
-                        },
-                        "item": {
-                            "tags": []
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "tax"
+                            "value": "0.36"
+                        }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "agent": {
-                        "name": "Allison Kunze",
-                        "mobile": "8152446989"
-                    },
-                    "vehicle": {
-                        "registration": "KA 54 XYZ 1234"
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "Agent-assigned"
-                        }
-                    },
-                    "id": "f2bf0257-02f4-483f-be27-e5fb4b98a8b9",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
+                    "tracking": true,
                     "start": {
                         "time": {
                             "range": {
-                                "start": "2024-04-22T07:01:40.417Z",
-                                "end": "2024-04-22T07:16:40.417Z"
+                                "start": "2024-05-06T10:22:58.494Z",
+                                "end": "2024-05-06T10:42:58.494Z"
                             },
-                            "duration": "P1D"
+                            "duration": "PT20M"
                         },
                         "person": {
                             "name": "Vijendra Patidar"
@@ -97,7 +79,7 @@
                             "address": {
                                 "name": "Vijendra Patidar",
                                 "building": "Anand Vihar Colony",
-                                "locality": "Avior Corporate Park",
+                                "locality": "Avior Park",
                                 "city": "Mumbai",
                                 "state": "Maharashtra",
                                 "country": "India",
@@ -110,26 +92,20 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "684162",
-                            "images": []
+                            "short_desc": "1642",
+                            "long_desc": "Order Pick Up Confirmation Code"
                         }
                     },
                     "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-04-22T07:01:40.417Z",
-                                "end": "2024-04-22T07:16:40.417Z"
-                            }
-                        },
                         "person": {
                             "name": "Suryansh Kourav"
                         },
                         "location": {
-                            "gps": "19.17127737620742,72.95223180148105",
+                            "gps": "19.168573,72.939294",
                             "address": {
                                 "name": "Suryansh Kourav",
-                                "building": "12",
-                                "locality": "Sewaram Lalwani Road",
+                                "building": "Kalptaru",
+                                "locality": "Lal Bahadur Shastri Marg",
                                 "city": "Mumbai",
                                 "state": "Maharashtra",
                                 "country": "IND",
@@ -142,37 +118,81 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "101077",
-                            "images": []
+                            "short_desc": "6912",
+                            "long_desc": "Delivery Confirmation Code"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-05-06T10:42:58.494Z",
+                                "end": "2024-05-06T10:57:58.494Z"
+                            }
                         }
                     },
-                    "tracking": false
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    }
                 }
             ],
             "billing": {
+                "name": "Suryansh Kourav",
                 "address": {
                     "name": "Suryansh Kourav",
-                    "building": "12",
-                    "locality": "Sewaram Lalwani Road",
+                    "building": "Kalptaru",
+                    "locality": "Lal Bahadur Shastri Marg",
                     "city": "Mumbai",
                     "state": "Maharashtra",
                     "country": "IND",
                     "area_code": "400080"
                 },
+                "tax_number": "22AAAAA0000A1Z5",
                 "phone": "7689965008",
-                "name": "Suryansh Kourav",
                 "email": "suryanash@kiko.live",
-                "created_at": "2024-04-22T12:23:39.921Z",
-                "updated_at": "2024-04-22T12:23:39.921Z",
-                "tax_number": "22AAAAA0000A1Z5"
+                "created_at": "2024-05-06T09:42:49.396Z",
+                "updated_at": "2024-05-06T09:42:49.396Z"
             },
             "payment": {
                 "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "status": "NOT-PAID",
-                "@ondc/org/settlement_details": []
+                "type": "POST-FULFILLMENT"
             },
             "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "7 Up Nimbooz Masala Soda - With Real Lemon Juice, 500 Ml"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "35"
+                        }
+                    },
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Amul ghee"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "2400"
+                        }
+                    }
+                ],
                 "provider": {
                     "descriptor": {
                         "name": "Vijendra Grocery Store"
@@ -180,19 +200,18 @@
                     "address": {
                         "name": "Vijendra Patidar",
                         "building": "Anand Vihar Colony",
-                        "locality": "Avior Corporate Park",
+                        "locality": "Avior Park",
                         "city": "Mumbai",
                         "state": "Maharashtra",
-                        "country": "India",
                         "area_code": "400080"
                     }
                 },
                 "order": {
+                    "id": "2024-05-06-397328",
                     "weight": {
                         "unit": "kilogram",
                         "value": 5.5
                     },
-                    "id": "2024-04-22-529954",
                     "dimensions": {
                         "length": {
                             "unit": "centimeter",
@@ -207,45 +226,10 @@
                             "value": 6
                         }
                     }
-                },
-                "items": [
-                    {
-                        "descriptor": {
-                            "name": "Amul ghee"
-                        },
-                        "quantity": {
-                            "measure": {
-                                "value": 5,
-                                "unit": "kilogram"
-                            },
-                            "count": 1
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "2400"
-                        },
-                        "category_id": "Grocery"
-                    },
-                    {
-                        "descriptor": {
-                            "name": "7 Up Nimbooz Masala Soda - With Real Lemon Juice, 500 Ml"
-                        },
-                        "quantity": {
-                            "measure": {
-                                "value": 0.5,
-                                "unit": "kilogram"
-                            },
-                            "count": 1
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "35"
-                        },
-                        "category_id": "Grocery"
-                    }
-                ]
+                }
             },
-            "updated_at": "2024-04-22T07:01:40.441Z"
+            "state": "Accepted",
+            "updated_at": "2024-05-06T10:22:58.494Z"
         }
     }
 }
