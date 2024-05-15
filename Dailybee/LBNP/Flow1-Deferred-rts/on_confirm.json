@@ -7,79 +7,73 @@
     "core_version": "1.2.0",
     "bap_id": "ondc-pp-v2.dlyb.in",
     "bap_uri": "https://ondc-pp-v2.dlyb.in/v2/logisticsBuyer",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-    "transaction_id": "81fd00a9-aa6c-4b27-9424-5f0640c38e68_661544cc707ebec1462153ee",
-    "message_id": "b08870ff-c457-4173-80ae-8d724d9ac889",
-    "timestamp": "2024-05-08T09:03:52.129Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "a16826e7-17f2-4569-a90f-c8ecb2c282fb_661544cc707ebec1462153ee",
+    "message_id": "5edb6ea0-5cc9-4af1-a6a2-319cb16a5f25",
+    "timestamp": "2024-05-13T12:01:38.690Z"
   },
   "message": {
     "order": {
-      "id": "2024-05-08-566545",
+      "id": "2024-05-13-326780",
       "state": "Accepted",
       "provider": {
-        "id": "2a1c773f-5d08-4840-9f47-debb6ccb84d3"
+        "id": "MP2"
       },
       "items": [
         {
+          "id": "mp2_sdd",
+          "fulfillment_id": "mp2_sdd_f1",
+          "category_id": "Same Day Delivery",
           "descriptor": {
             "code": "P2P"
           },
           "time": {
             "label": "TAT",
-            "duration": "P1D",
-            "timestamp": "2024-05-08"
-          },
-          "id": "Standard",
-          "fulfillment_id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
-          "category_id": "Same Day Delivery"
+            "duration": "PT4H",
+            "timestamp": "2024-05-13"
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "122.38"
+          "value": "2.0"
         },
         "breakup": [
           {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "116.00"
-            },
-            "item": {
-              "tags": []
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "delivery"
+              "value": "1.64"
+            }
           },
           {
+            "@ondc/org/item_id": "mp2_sdd",
+            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "6.38"
-            },
-            "item": {
-              "tags": []
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "tax"
+              "value": "0.36"
+            }
           }
         ]
       },
       "fulfillments": [
         {
+          "id": "mp2_sdd_f1",
+          "type": "Delivery",
           "state": {
             "descriptor": {
               "code": "Pending"
             }
           },
-          "id": "22b21322-eee8-4bfd-ac78-d12a848fdb4d",
-          "type": "Delivery",
           "start": {
             "time": {
               "duration": "PT2H"
             },
             "person": {
-              "name": "ONDC Logistics Seller App by WITS"
+              "name": "MP2"
             },
             "location": {
               "gps": "12.932463,77.685220",
@@ -96,9 +90,6 @@
             "contact": {
               "phone": "9494202865",
               "email": "help@dailybee.in"
-            },
-            "instructions": {
-              "images": []
             }
           },
           "end": {
@@ -120,12 +111,18 @@
             "contact": {
               "phone": "9999999999",
               "email": "santosh@gmail.com"
-            },
-            "instructions": {
-              "images": []
             }
           },
           "tags": [
+            {
+              "code": "weather_check",
+              "list": [
+                {
+                  "code": "raining",
+                  "value": "no"
+                }
+              ]
+            },
             {
               "code": "state",
               "list": [
@@ -159,19 +156,36 @@
           "country": "India",
           "area_code": "500081"
         },
-        "email": "satya@dailybee.in",
-        "phone": "8310103202",
         "tax_number": "36AAICK6920A1ZS",
-        "created_at": "2024-05-08T09:03:51.619Z",
-        "updated_at": "2024-05-08T09:03:51.620Z"
+        "phone": "8310103202",
+        "email": "satya@dailybee.in",
+        "created_at": "2024-05-13T12:01:15.149Z",
+        "updated_at": "2024-05-13T12:01:15.149Z"
       },
       "payment": {
         "collected_by": "BAP",
-        "type": "POST-FULFILLMENT",
-        "status": "NOT-PAID",
-        "@ondc/org/settlement_details": []
+        "type": "POST-FULFILLMENT"
       },
       "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "Grocery",
+            "descriptor": {
+              "name": "Basamti Rice"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "kilogram",
+                "value": 1
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "110.00"
+            }
+          }
+        ],
         "provider": {
           "descriptor": {
             "name": "Dailybee - Grocery Test scripts"
@@ -182,136 +196,19 @@
             "locality": "localityDoopanahalli, Indiranagar",
             "city": "Bengaluru",
             "state": "Karnataka",
-            "country": "India",
             "area_code": "560008"
           }
         },
         "order": {
+          "id": "2024-05-13-326780",
           "weight": {
-            "unit": "gram",
-            "value": 0.2
-          },
-          "id": "2024-05-08-566545"
-        },
-        "items": [
-          {
-            "descriptor": {
-              "name": "Bobbarlu Red"
-            },
-            "quantity": {
-              "measure": {
-                "value": 0.2,
-                "unit": "kilogram"
-              },
-              "count": 1
-            },
-            "price": {
-              "currency": "INR",
-              "value": "80.00"
-            },
-            "category_id": "Grocery"
+            "unit": "kilogram",
+            "value": 1
           }
-        ]
+        }
       },
-      "cancellation_terms": [
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.0"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": false
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Agent-assigned",
-              "short_desc": "001,003"
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "50"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "011,012,013,014,015"
-            }
-          },
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100.0"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true
-        }
-      ],
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability",
-              "value": "2"
-            },
-            {
-              "code": "max_liability_cap",
-              "value": "10000"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "false"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Bengaluru"
-            },
-            {
-              "code": "delay_interest",
-              "value": "1000"
-            },
-            {
-              "code": "static_terms",
-              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-            }
-          ]
-        }
-      ],
-      "created_at": "2024-05-08T09:03:51.619Z",
-      "updated_at": "2024-05-08T09:03:52.129Z"
+      "created_at": "2024-05-13T12:01:38.664Z",
+      "updated_at": "2024-05-13T12:01:38.690Z"
     }
   }
 }
