@@ -1,77 +1,73 @@
 {
     "context": {
         "ttl": "PT30S",
-        "city": "std:0172",
-        "action": "on_init",
+        "city": "std:040",
+        "action": "confirm",
         "bap_id": "enambuyer-ondc-stg.bitxiatech.com",
         "bpp_id": "enamseller-ondc-stg.bitxiatech.com",
-        "domain": "ONDC:AGR11",
+        "domain": "ONDC:RET10",
         "bap_uri": "https://enambuyer-ondc-stg.bitxiatech.com/ondc/v1",
         "bpp_uri": "https://enamseller-ondc-stg.bitxiatech.com",
         "country": "IND",
-        "timestamp": "2024-05-16T18:58:34.639Z",
-        "message_id": "e3b9eeb0-f1fe-4a7a-bde6-1aacc22e84d3",
+        "timestamp": "2024-05-17T20:56:57.670Z",
+        "message_id": "37cade95-6081-4822-946a-7692686b3377",
         "core_version": "1.2.0",
-        "transaction_id": "19327931-58d9-45b5-af31-0ad53be480e6"
+        "transaction_id": "1ccaef0e-5339-4487-9662-9dc35897aa9f"
     },
     "message": {
         "order": {
+            "id": "448",
             "tags": [
                 {
-                    "code": "bpp_terms",
+                    "code": "bap_terms",
                     "list": [
                         {
                             "code": "tax_number",
                             "value": "14A00000001G1Z4"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "BBCDF1234E"
-                        },
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
                         }
                     ]
                 }
             ],
             "items": [
                 {
-                    "id": "327",
+                    "id": "359",
                     "quantity": {
-                        "count": 2
+                        "count": 2,
+                        "selected": {
+                            "count": 2
+                        }
                     },
-                    "fulfillment_id": "173"
+                    "fulfillment_id": "154"
                 }
             ],
             "quote": {
                 "ttl": "PT24H",
                 "price": {
-                    "value": "360.0",
+                    "value": "300.0",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
                         "item": {
                             "price": {
-                                "value": "180.0",
+                                "value": "150.0",
                                 "currency": "INR"
                             },
                             "quantity": {
                                 "maximum": {
-                                    "count": "10000"
+                                    "count": "99"
                                 },
                                 "available": {
-                                    "count": "10"
+                                    "count": "99"
                                 }
                             }
                         },
                         "price": {
-                            "value": "360.0",
+                            "value": "300.0",
                             "currency": "INR"
                         },
-                        "title": "Prawns",
-                        "@ondc/org/item_id": "327",
+                        "title": "Gond ka ladu",
+                        "@ondc/org/item_id": "359",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 2
@@ -79,6 +75,7 @@
                     }
                 ]
             },
+            "state": "Created",
             "billing": {
                 "name": "Sumit",
                 "email": "params966@gmail.com",
@@ -100,9 +97,14 @@
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
-                "type": "ON-FULFILLMENT",
-                "status": "NOT-PAID",
-                "collected_by": "BPP",
+                "type": "ON-ORDER",
+                "params": {
+                    "amount": "300.0",
+                    "currency": "INR",
+                    "transaction_id": "196"
+                },
+                "status": "PAID",
+                "collected_by": "BAP",
                 "@ondc/org/settlement_basis": "delivery",
                 "@ondc/org/settlement_window": "PT24H",
                 "@ondc/org/settlement_details": [
@@ -122,16 +124,19 @@
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0"
             },
             "provider": {
-                "id": "81",
+                "id": "74",
                 "locations": [
                     {
-                        "id": "274"
+                        "id": "217"
                     }
                 ]
             },
+            "created_at": "2024-05-17T20:56:57.670Z",
+            "updated_at": "2024-05-17T20:56:57.670Z",
+            "cancellation": {},
             "fulfillments": [
                 {
-                    "id": "173",
+                    "id": "154",
                     "end": {
                         "person": {
                             "name": "param abc"
@@ -157,35 +162,24 @@
                             }
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "Yes"
-                                }
-                            ]
-                        }
-                    ],
-                    "type": "Self-Pickup",
+                    "type": "Delivery",
                     "start": {
                         "contact": {
-                            "email": "lal.singh@gmail.com",
-                            "phone": "9137989943"
+                            "email": "test@gmai.com",
+                            "phone": "2222222222"
                         },
                         "location": {
-                            "id": "274",
-                            "gps": "30.7336667, 76.7725278",
+                            "id": "217",
+                            "gps": "17.4739167, 78.5118889",
                             "address": {
-                                "city": "CHARIHANI",
-                                "state": "Chandigarh",
-                                "street": "Normal Street",
-                                "locality": "Best Locality",
-                                "area_code": "160022"
+                                "city": "HYDERABAD",
+                                "state": "Telangana",
+                                "street": "AGWANA KALAN",
+                                "locality": "AMBERPET",
+                                "area_code": "500084"
                             },
                             "descriptor": {
-                                "name": "Normal Store"
+                                "name": "AMBERPET-AGWANA"
                             }
                         }
                     },
