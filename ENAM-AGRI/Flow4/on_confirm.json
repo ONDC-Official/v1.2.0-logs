@@ -2,21 +2,21 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:040",
-        "action": "confirm",
+        "action": "on_confirm",
         "bap_id": "enambuyer-ondc-stg.bitxiatech.com",
         "bpp_id": "enamseller-ondc-stg.bitxiatech.com",
         "domain": "ONDC:AGR11",
         "bap_uri": "https://enambuyer-ondc-stg.bitxiatech.com/ondc/v1",
         "bpp_uri": "https://enamseller-ondc-stg.bitxiatech.com",
         "country": "IND",
-        "timestamp": "2024-05-18T10:19:25.963Z",
-        "message_id": "cccc9864-19d9-4727-b13b-7a554728cd9f",
+        "timestamp": "2024-05-18T10:37:29.141Z",
+        "message_id": "fb6dbe52-31a5-48eb-9a04-9a8885482152",
         "core_version": "1.2.0",
-        "transaction_id": "8ccc6f4e-0f8d-4dd0-91a9-50e2ea8624bb"
+        "transaction_id": "59b2a96f-1b43-4548-ab7e-d89620d90b8c"
     },
     "message": {
         "order": {
-            "id": "452",
+            "id": "453",
             "tags": [
                 {
                     "code": "bap_terms",
@@ -52,41 +52,10 @@
             "quote": {
                 "ttl": "PT24H",
                 "price": {
-                    "value": "400.0",
+                    "value": "500.0",
                     "currency": "INR"
                 },
                 "breakup": [
-                    {
-                        "item": {
-                            "tags": [
-                                {
-                                    "code": "quote",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "offer",
-                                    "list": [
-                                        {
-                                            "code": "id",
-                                            "value": "KINGHLFWUI"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "price": {
-                            "value": "-100.0",
-                            "currency": "INR"
-                        },
-                        "title": "Discount",
-                        "@ondc/org/item_id": "361",
-                        "@ondc/org/title_type": "discount"
-                    },
                     {
                         "item": {
                             "price": {
@@ -98,7 +67,7 @@
                                     "count": "10000"
                                 },
                                 "available": {
-                                    "count": "8"
+                                    "count": "6"
                                 }
                             }
                         },
@@ -116,22 +85,6 @@
                 ]
             },
             "state": "Created",
-            "offers": [
-                {
-                    "id": "KINGHLFWUI",
-                    "tags": [
-                        {
-                            "code": "selection",
-                            "list": [
-                                {
-                                    "code": "apply",
-                                    "value": "yes"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
             "billing": {
                 "name": "Sumit",
                 "email": "params966@gmail.com",
@@ -153,14 +106,14 @@
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
-                "type": "ON-ORDER",
+                "type": "ON-FULFILLMENT",
                 "params": {
-                    "amount": "400.0",
+                    "amount": "500.0",
                     "currency": "INR",
-                    "transaction_id": "200"
+                    "transaction_id": "201"
                 },
-                "status": "PAID",
-                "collected_by": "BAP",
+                "status": "NOT-PAID",
+                "collected_by": "BPP",
                 "@ondc/org/settlement_basis": "delivery",
                 "@ondc/org/settlement_window": "PT24H",
                 "@ondc/org/settlement_details": [
@@ -187,8 +140,8 @@
                     }
                 ]
             },
-            "created_at": "2024-05-18T10:19:25.963Z",
-            "updated_at": "2024-05-18T10:19:25.963Z",
+            "created_at": "2024-05-18T10:37:29.043Z",
+            "updated_at": "2024-05-18T10:37:29.139Z",
             "cancellation": {},
             "fulfillments": [
                 {
@@ -250,8 +203,14 @@
                             }
                         }
                     },
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
                     "tracking": false,
-                    "@ondc/org/TAT": "PT48H"
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/provider_name": "Sumit Kumar"
                 }
             ]
         }
