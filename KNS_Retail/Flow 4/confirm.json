@@ -1,0 +1,251 @@
+{
+  "context": {
+    "action": "confirm",
+    "bap_id": "pramaan.ondc.org/alpha/mock-server",
+    "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+    "transaction_id": "1aa8018a-10a2-48b2-9634-30d819da5a9a",
+    "message_id": "6bc4d8dc-ee5c-45ff-b3dd-63882eb77e9c",
+    "city": "std:022",
+    "country": "IND",
+    "timestamp": "2024-05-17T08:06:50.525Z",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.mysellercentral.com",
+    "bpp_uri": "https://ondc.mysellercentral.com/api/ondc",
+    "core_version": "1.2.0",
+    "domain": "ONDC:RET16"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "name": "Mayur",
+        "address": {
+          "name": "7/6, August Kranti Marg",
+          "building": "Siri Fort Institutional",
+          "locality": "Siri Fort Institutional Area, Siri Fort",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "India",
+          "area_code": "110049"
+        },
+        "tax_number": "29AAACU1901H1ZK",
+        "phone": "9886098860",
+        "email": "sharique.efgh@gmail.com",
+        "created_at": "2024-05-17T08:06:36.644Z",
+        "updated_at": "2024-05-17T08:06:36.644Z"
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "contact": {
+              "email": "nobody@nomail.com",
+              "phone": "9886098860"
+            },
+            "location": {
+              "address": {
+                "area_code": "400069",
+                "building": "Siri Fort Institutional",
+                "city": "Dahisar",
+                "country": "IND",
+                "locality": "Siri Fort Institutional Area, Siri Fort",
+                "name": "Bhupendra Jogi",
+                "state": "Maharashtra"
+              },
+              "gps": "19.1129587, 72.8656954"
+            },
+            "person": {
+              "name": "mayur"
+            }
+          },
+          "id": "e91b0815-dd31-4ca9-829e-c9c0ad83ca82",
+          "@ondc/org/TAT": "P8D",
+          "tracking": true,
+          "type": "Delivery"
+        }
+      ],
+      "id": "XlX26Cro72cYPXar9MeJuETrzI6gKU4A",
+      "items": [
+        {
+          "id": "610",
+          "fulfillment_id": "e91b0815-dd31-4ca9-829e-c9c0ad83ca82",
+          "quantity": {
+            "count": 2
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "uri": "https://ondc.transaction.com/payment",
+        "status": "PAID",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P7D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "beneficiary_name": "KAS",
+            "upi_address": "9786543210@ybl",
+            "settlement_bank_account_no": "9876543210",
+            "settlement_ifsc_code": "9876543210",
+            "bank_name": "SBI",
+            "branch_name": "Mumbai"
+          }
+        ],
+        "time": {
+          "timestamp": "2024-05-17T08:06:37.893Z"
+        },
+        "tags": [
+          {
+            "code": "bap_collect",
+            "list": [
+              {
+                "code": "success",
+                "value": "Y"
+              },
+              {
+                "code": "error",
+                "value": ".."
+              }
+            ]
+          }
+        ],
+        "params": {
+          "currency": "INR",
+          "amount": "114.66",
+          "transaction_id": "1aa8018a-10a2-48b2-9634-30d819da5a9a"
+        },
+        "tl_method": "http/get"
+      },
+      "provider": {
+        "id": "51",
+        "locations": [
+          {
+            "id": "bX1nc4VU"
+          }
+        ]
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "114.66"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "610",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Towel",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "18"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "9"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "@ondc/org/item_id": "610",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "46.66"
+            }
+          },
+          {
+            "@ondc/org/item_id": "e91b0815-dd31-4ca9-829e-c9c0ad83ca82",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          }
+        ],
+        "ttl": "PT1H"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000.00"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000.00"
+            },
+            {
+              "code": "tax_number",
+              "value": "22ABCDE1234F1Z5"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "GASPM5433C"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "33AAAAA0000A1Z5"
+            }
+          ]
+        }
+      ],
+      "state": "Created",
+      "created_at": "2024-05-17T08:06:50.525Z",
+      "updated_at": "2024-05-17T08:06:50.525Z"
+    }
+  }
+}
