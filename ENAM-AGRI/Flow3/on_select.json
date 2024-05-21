@@ -1,98 +1,161 @@
 {
+    "error": {
+        "code": "40002",
+        "type": "DOMAIN-ERROR",
+        "message": "[{\"message\":\"Item quantity unavailable\",\"item_id\":\"362\",\"error_code\":\"40002\"}]"
+    },
     "context": {
-        "domain": "ONDC:AGR11",
-        "country": "IND",
-        "city": "std:080",
+        "ttl": "PT30S",
+        "city": "std:040",
         "action": "on_select",
+        "bap_id": "enambuyer-ondc-stg.bitxiatech.com",
+        "bpp_id": "enamseller-ondc-stg.bitxiatech.com",
+        "domain": "ONDC:AGR11",
+        "bap_uri": "https://enambuyer-ondc-stg.bitxiatech.com/ondc/v1",
+        "bpp_uri": "https://enamseller-ondc-stg.bitxiatech.com",
+        "country": "IND",
+        "timestamp": "2024-05-18T10:17:39.921Z",
+        "message_id": "dc3b0b64-4054-438d-a532-37e4c9d72a3e",
         "core_version": "1.2.0",
-        "bap_id": "buypreprod.enam.gov.in",
-        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
-        "bpp_id": "sellpreprod.enam.gov.in",
-        "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
-        "transaction_id": "f4427566-fcc0-4c50-82a1-b7354025c60f",
-        "message_id": "9eaef08d-ebfe-4c87-8afc-3deeddf2a979",
-        "timestamp": "2024-04-21T13:54:17.236Z",
-        "ttl": "PT30S"
+        "transaction_id": "8ccc6f4e-0f8d-4dd0-91a9-50e2ea8624bb"
     },
     "message": {
         "order": {
+            "items": [
+                {
+                    "id": "362",
+                    "fulfillment_id": "154"
+                },
+                {
+                    "id": "361",
+                    "fulfillment_id": "156"
+                }
+            ],
             "quote": {
+                "ttl": "PT24H",
                 "price": {
-                    "currency": "INR",
-                    "value": "100.0"
+                    "value": "500.0",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "52",
-                        "@ondc/org/item_quantity": {
-                            "count": "1"
-                        },
-                        "@ondc/org/title_type": "item",
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "100.0",
-                                "maximum_value": "100.0"
+                                "value": "150.0",
+                                "currency": "INR"
                             },
                             "quantity": {
-                                "available": {
-                                    "count": "99"
-                                },
                                 "maximum": {
-                                    "count": "10000"
+                                    "count": "0"
+                                },
+                                "available": {
+                                    "count": "0"
                                 }
                             }
                         },
-                        "title": "KODO MILLET",
                         "price": {
-                            "currency": "INR",
-                            "value": "100.0",
-                            "maximum_value": "100.0"
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "Talapia",
+                        "@ondc/org/item_id": "362",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
                         }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "provider": {
-                "id": "6",
-                "locations": [
+                    },
                     {
-                        "id": "5"
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "362",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "item": {
+                            "price": {
+                                "value": "250.0",
+                                "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "10000"
+                                },
+                                "available": {
+                                    "count": "8"
+                                }
+                            }
+                        },
+                        "price": {
+                            "value": "500.0",
+                            "currency": "INR"
+                        },
+                        "title": "King Fish",
+                        "@ondc/org/item_id": "361",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        }
+                    },
+                    {
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "361",
+                        "@ondc/org/title_type": "delivery"
                     }
                 ]
             },
-            "items": [
-                {
-                    "id": "52",
-                    "fulfillment_id": "11"
-                }
-            ],
+            "provider": {
+                "id": "74",
+                "locations": [
+                    {
+                        "id": "217"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "id": "8",
-                    "type": "Delivery",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
+                    "id": "155",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
                     },
-                    "tracking": false
+                    "tracking": false,
+                    "@ondc/org/TAT": "P2D",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
                 },
                 {
-                    "id": "11",
-                    "type": "Self-Pickup",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
+                    "id": "154",
+                    "type": "Delivery",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
                     },
-                    "tracking": false
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
+                },
+                {
+                    "id": "156",
+                    "type": "Self-Pickup",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    },
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/provider_name": "e-NAM"
                 }
             ]
         }
