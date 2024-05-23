@@ -1,0 +1,1311 @@
+{
+    "search": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "search",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "8a269aed-cd8c-44ef-84f8-135141eca616",
+              "timestamp": "2024-05-20T19:31:31.564Z",
+              "ttl": "PT30S"
+            },
+            "message": {
+              "intent": {
+                "category": {
+                  "id": "Standard Delivery"
+                },
+                "provider": {
+                  "time": {
+                    "days": "1,2,3,4,5,6,7",
+                    "schedule": {
+                      "frequency": "PT4H",
+                      "holidays": [
+                        "2024-06-08",
+                        "2024-06-09"
+                      ],
+                      "times": [
+                        "1100",
+                        "1900"
+                      ]
+                    },
+                    "duration": "PT30M",
+                    "range": {
+                      "start": "1000",
+                      "end": "1900"
+                    }
+                  }
+                },
+                "fulfillment": {
+                  "type": "Delivery",
+                  "start": {
+                    "location": {
+                      "gps": "18.910370, 72.819756",
+                      "address": {
+                        "area_code": "400005"
+                      }
+                    },
+                    "authorization": {
+                      "type": "272010"
+                    }
+                  },
+                  "end": {
+                    "location": {
+                      "gps": "18.998173, 72.827469",
+                      "address": {
+                        "area_code": "400013"
+                      }
+                    },
+                    "authorization": {
+                      "type": "272010"
+                    }
+                  }
+                },
+                "payment": {
+                  "type": "ON-FULFILLMENT",
+                  "@ondc/org/collection_amount": "205"
+                },
+                "@ondc/org/payload_details": {
+                  "weight": {
+                    "unit": "gram",
+                    "value": 50
+                  },
+                  "dimensions": {
+                    "length": {
+                      "unit": "centimeter",
+                      "value": 10
+                    },
+                    "breadth": {
+                      "unit": "centimeter",
+                      "value": 10
+                    },
+                    "height": {
+                      "unit": "centimeter",
+                      "value": 10
+                    }
+                  },
+                  "category": "Grocery",
+                  "value": {
+                    "currency": "INR",
+                    "value": "205"
+                  },
+                  "dangerous_goods": false
+                }
+              }
+            }
+          }
+    ],
+    "on_search": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "on_search",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "8a269aed-cd8c-44ef-84f8-135141eca616",
+              "timestamp": "2024-05-20T19:31:33.212Z"
+            },
+            "message": {
+              "catalog": {
+                "bpp/descriptor": {
+                  "name": "my.ithinklogistics.com"
+                },
+                "bpp/providers": [
+                  {
+                    "id": "29",
+                    "descriptor": {
+                      "name": "iThinkLogistics",
+                      "short_desc": "iThinkLogistics",
+                      "long_desc": "iThinkLogistics"
+                    },
+                    "categories": [
+                      {
+                        "id": "Standard Delivery",
+                        "time": {
+                          "label": "TAT",
+                          "duration": "P2D",
+                          "timestamp": "2024-05-23"
+                        }
+                      }
+                    ],
+                    "fulfillments": [
+                      {
+                        "id": "1",
+                        "type": "Delivery",
+                        "start": {
+                          "time": {
+                            "duration": "PT16H"
+                          }
+                        }
+                      },
+                      {
+                        "id": "2",
+                        "type": "RTO"
+                      }
+                    ],
+                    "items": [
+                      {
+                        "id": "29I1",
+                        "parent_item_id": "",
+                        "category_id": "Standard Delivery",
+                        "fulfillment_id": "1",
+                        "descriptor": {
+                          "code": "P2H2P",
+                          "name": "Standard Delivery",
+                          "short_desc": "Standard Delivery",
+                          "long_desc": "Standard Delivery"
+                        },
+                        "price": {
+                          "currency": "INR",
+                          "value": "37.76"
+                        },
+                        "time": {
+                          "label": "TAT",
+                          "duration": "P2D",
+                          "timestamp": "2024-05-23"
+                        }
+                      },
+                      {
+                        "id": "29I2",
+                        "parent_item_id": "29I1",
+                        "category_id": "Standard Delivery",
+                        "fulfillment_id": "2",
+                        "descriptor": {
+                          "code": "P2H2P",
+                          "name": "RTO quote",
+                          "short_desc": "RTO quote",
+                          "long_desc": "RTO quote"
+                        },
+                        "price": {
+                          "currency": "INR",
+                          "value": "32.00"
+                        },
+                        "time": {
+                          "label": "TAT",
+                          "duration": "P2D",
+                          "timestamp": "2024-05-23"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+    ],
+    "init": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "init",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "781f5cb9-ce5f-4d5e-94d7-ca6edeb04449",
+              "timestamp": "2024-05-20T19:36:25.880Z",
+              "ttl": "PT30S"
+            },
+            "message": {
+              "order": {
+                "provider": {
+                  "id": "29"
+                },
+                "items": [
+                  {
+                    "id": "29I1",
+                    "fulfillment_id": "1",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                      "code": "P2H2P"
+                    }
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "1",
+                    "type": "Delivery",
+                    "start": {
+                      "location": {
+                        "gps": "18.910370, 72.819756",
+                        "address": {
+                          "name": "lakme",
+                          "building": "H1 T2 main building",
+                          "locality": "B block sector 63",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400005"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543210",
+                        "email": "abcd.efgh@gmail.com"
+                      }
+                    },
+                    "end": {
+                      "location": {
+                        "gps": "18.998173, 72.827469",
+                        "address": {
+                          "name": "Pawan Maurya",
+                          "building": "H1 T3 Main building",
+                          "locality": "Late Dattaji Nalavade Flyover",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400013"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543213",
+                        "email": "pawan.maurya@ens.enterprises"
+                      }
+                    }
+                  }
+                ],
+                "billing": {
+                  "name": "lakme",
+                  "address": {
+                    "name": "lakme",
+                    "building": "H1 T2 main building",
+                    "locality": "B block sector 63",
+                    "city": "Mumbai",
+                    "state": "Maharashtra",
+                    "country": "India",
+                    "area_code": "400005"
+                  },
+                  "tax_number": "27AAECJ1349N1Z8",
+                  "phone": "9876543210",
+                  "email": "abcd.efgh@gmail.com",
+                  "created_at": "2024-05-20T19:36:25.880Z",
+                  "updated_at": "2024-05-20T19:36:25.880Z"
+                },
+                "payment": {
+                  "@ondc/org/settlement_details": [
+                    {
+                      "beneficiary_name": "xxxxx",
+                      "settlement_bank_account_no": "XXXXXXXXXX",
+                      "settlement_counterparty": "buyer-app",
+                      "settlement_ifsc_code": "XXXXXXXXX",
+                      "settlement_type": "upi",
+                      "upi_address": "gft@oksbi"
+                    }
+                  ],
+                  "collected_by": "BPP",
+                  "type": "ON-FULFILLMENT"
+                }
+              }
+            }
+          }
+    ],
+    "on_init": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "on_init",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "781f5cb9-ce5f-4d5e-94d7-ca6edeb04449",
+              "timestamp": "2024-05-20T19:36:26.885Z"
+            },
+            "message": {
+              "order": {
+                "provider": {
+                  "id": "29"
+                },
+                "items": [
+                  {
+                    "id": "29I1",
+                    "fulfillment_id": "1"
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "start": {
+                      "location": {
+                        "gps": "18.910370, 72.819756",
+                        "address": {
+                          "name": "lakme",
+                          "building": "H1 T2 main building",
+                          "locality": "B block sector 63",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400005"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543210",
+                        "email": "abcd.efgh@gmail.com"
+                      }
+                    },
+                    "end": {
+                      "location": {
+                        "gps": "18.998173, 72.827469",
+                        "address": {
+                          "name": "Pawan Maurya",
+                          "building": "H1 T3 Main building",
+                          "locality": "Late Dattaji Nalavade Flyover",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400013"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543213",
+                        "email": "pawan.maurya@ens.enterprises"
+                      }
+                    }
+                  }
+                ],
+                "quote": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "37.76"
+                  },
+                  "breakup": [
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "delivery",
+                      "price": {
+                        "currency": "INR",
+                        "value": "37.76"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "tax",
+                      "price": {
+                        "currency": "INR",
+                        "value": "0.00"
+                      }
+                    }
+                  ],
+                  "ttl": "P2D"
+                },
+                "payment": {
+                  "type": "ON-FULFILLMENT",
+                  "collected_by": "BPP",
+                  "@ondc/org/settlement_details": [
+                    {
+                      "settlement_counterparty": "Logistics",
+                      "settlement_type": "neft",
+                      "settlement_bank_account_no": "6464424002",
+                      "settlement_ifsc_code": "HSBC0400002",
+                      "bank_name": "HSBC Bank",
+                      "branch_name": "Mahatma Gandhi Road,Mumbai",
+                      "beneficiary_name": "Ithink LGS QC",
+                      "beneficiary_address": "HSBC Bank,Mahatma Gandhi Road,Mumbai",
+                      "settlement_status": "NOT-PAID"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+    ],
+    "confirm": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "confirm",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "6cdb63ff-ca5a-4400-a43a-c263b784f164",
+              "timestamp": "2024-05-20T19:38:21.729Z",
+              "ttl": "PT30S"
+            },
+            "message": {
+              "order": {
+                "id": "458215c4-4782-417d-b1b8-f87b01a4d82a",
+                "state": "Created",
+                "provider": {
+                  "id": "29"
+                },
+                "items": [
+                  {
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                      "code": "P2H2P"
+                    },
+                    "id": "29I1",
+                    "fulfillment_id": "1",
+                    "time": {
+                      "duration": "PT45M",
+                      "label": "TAT",
+                      "timestamp": "2023-06-06"
+                    }
+                  }
+                ],
+                "quote": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "37.76"
+                  },
+                  "breakup": [
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "delivery",
+                      "price": {
+                        "currency": "INR",
+                        "value": "37.76"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "tax",
+                      "price": {
+                        "currency": "INR",
+                        "value": "0.00"
+                      }
+                    }
+                  ]
+                },
+                "fulfillments": [
+                  {
+                    "id": "1",
+                    "type": "Delivery",
+                    "@ondc/org/awb_no": "2024052085655728",
+                    "start": {
+                      "time": {
+                        "duration": "PT15M"
+                      },
+                      "person": {
+                        "name": "lakme"
+                      },
+                      "location": {
+                        "gps": "18.910370, 72.819756",
+                        "address": {
+                          "name": "lakme",
+                          "building": "H1 T2 main building",
+                          "locality": "B block sector 63",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400005"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543210",
+                        "email": "abcd.efgh@gmail.com"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141321",
+                        "long_desc": "startInst.short_desc",
+                        "images": [
+                          "https://cdn.shopify.com/s/files/1/0745/3822/1866/products/SkinFirmingFaceWash_Front_600x_cada4099-d02f-4e45-bc42-bd7451eb7207.jpg?v=1680775438"
+                        ],
+                        "additional_desc": {
+                          "content_type": "image/x-png",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      }
+                    },
+                    "end": {
+                      "person": {
+                        "name": "Pawan Maurya"
+                      },
+                      "location": {
+                        "gps": "18.998173, 72.827469",
+                        "address": {
+                          "name": "Pawan Maurya",
+                          "building": "H1 T3 Main building",
+                          "locality": "Late Dattaji Nalavade Flyover",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400013"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543213",
+                        "email": "pawan.maurya@ens.enterprises"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141320",
+                        "long_desc": "startInst.short_desc",
+                        "additional_desc": {
+                          "content_type": "text/html",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      }
+                    },
+                    "tags": [
+                      {
+                        "code": "state",
+                        "list": [
+                          {
+                            "code": "ready_to_ship",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "code": "rto_action",
+                        "list": [
+                          {
+                            "code": "return_to_origin",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "billing": {
+                  "name": "lakme",
+                  "address": {
+                    "name": "lakme",
+                    "building": "H1 T2 main building",
+                    "locality": "B block sector 63",
+                    "city": "Mumbai",
+                    "state": "Maharashtra",
+                    "country": "India",
+                    "area_code": "400005"
+                  },
+                  "tax_number": "27AAECJ1349N1Z8",
+                  "phone": "9876543210",
+                  "email": "abcd.efgh@gmail.com",
+                  "created_at": "2024-05-20T19:36:25.880Z",
+                  "updated_at": "2024-05-20T19:36:25.880Z"
+                },
+                "payment": {
+                  "@ondc/org/collection_amount": "205",
+                  "collected_by": "BPP",
+                  "type": "ON-FULFILLMENT",
+                  "@ondc/org/settlement_details": []
+                },
+                "@ondc/org/linked_order": {
+                  "items": [
+                    {
+                      "category_id": "Grocery",
+                      "descriptor": {
+                        "name": "Lakmé Color Crush Nail Art, P3"
+                      },
+                      "quantity": {
+                        "count": 1,
+                        "measure": {
+                          "unit": "kilogram",
+                          "value": 1
+                        }
+                      },
+                      "price": {
+                        "currency": "INR",
+                        "value": "155"
+                      }
+                    }
+                  ],
+                  "provider": {
+                    "descriptor": {
+                      "name": "lakme"
+                    },
+                    "address": {
+                      "area_code": "400005",
+                      "building": "H1 T2 main building",
+                      "city": "Mumbai",
+                      "locality": "B block sector 63",
+                      "name": "lakme",
+                      "street": "H1 T2 main building",
+                      "state": "MH"
+                    }
+                  },
+                  "order": {
+                    "id": "2024-05-20-269962",
+                    "weight": {
+                      "unit": "gram",
+                      "value": 50
+                    },
+                    "dimensions": {
+                      "length": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "breadth": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "height": {
+                        "unit": "centimeter",
+                        "value": 10
+                      }
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "bpp_terms",
+                    "list": [
+                      {
+                        "code": "max_liability",
+                        "value": "2"
+                      },
+                      {
+                        "code": "max_liability_cap",
+                        "value": "10000"
+                      },
+                      {
+                        "code": "mandatory_arbitration",
+                        "value": "false"
+                      },
+                      {
+                        "code": "court_jurisdiction",
+                        "value": "Bengaluru"
+                      },
+                      {
+                        "code": "delay_interest",
+                        "value": "1000"
+                      },
+                      {
+                        "code": "static_terms",
+                        "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "bap_terms",
+                    "list": [
+                      {
+                        "code": "accept_bpp_terms",
+                        "value": "Y"
+                      }
+                    ]
+                  }
+                ],
+                "created_at": "2024-05-20T19:38:21.735Z",
+                "updated_at": "2024-05-20T19:38:21.735Z"
+              }
+            }
+          }
+    ],
+    "on_confirm": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "on_confirm",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "6cdb63ff-ca5a-4400-a43a-c263b784f164",
+              "timestamp": "2024-05-20T19:38:22.815Z"
+            },
+            "message": {
+              "order": {
+                "id": "458215c4-4782-417d-b1b8-f87b01a4d82a",
+                "state": "Accepted",
+                "provider": {
+                  "id": "29"
+                },
+                "items": [
+                  {
+                    "id": "29I1",
+                    "fulfillment_id": "1",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                      "code": "P2H2P"
+                    },
+                    "time": {
+                      "label": "TAT",
+                      "duration": "P2D",
+                      "timestamp": "2024-05-23"
+                    }
+                  }
+                ],
+                "quote": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "37.76"
+                  },
+                  "breakup": [
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "delivery",
+                      "price": {
+                        "currency": "INR",
+                        "value": "37.76"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "tax",
+                      "price": {
+                        "currency": "INR",
+                        "value": "0.00"
+                      }
+                    }
+                  ]
+                },
+                "fulfillments": [
+                  {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                      "descriptor": {
+                        "code": "Pending"
+                      }
+                    },
+                    "@ondc/org/awb_no": "NDD2297076",
+                    "tracking": false,
+                    "tags": [
+                      {
+                        "code": "state",
+                        "list": [
+                          {
+                            "code": "ready_to_ship",
+                            "value": "no"
+                          }
+                        ]
+                      },
+                      {
+                        "code": "rto_action",
+                        "list": [
+                          {
+                            "code": "return_to_origin",
+                            "value": "no"
+                          }
+                        ]
+                      }
+                    ],
+                    "start": {
+                      "person": {
+                        "name": "lakme"
+                      },
+                      "location": {
+                        "gps": "18.910370, 72.819756",
+                        "address": {
+                          "name": "lakme",
+                          "building": "H1 T2 main building",
+                          "locality": "B block sector 63",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400005"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543210",
+                        "email": "abcd.efgh@gmail.com"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141321",
+                        "long_desc": "startInst.short_desc",
+                        "images": [
+                          "https://cdn.shopify.com/s/files/1/0745/3822/1866/products/SkinFirmingFaceWash_Front_600x_cada4099-d02f-4e45-bc42-bd7451eb7207.jpg?v=1680775438"
+                        ],
+                        "additional_desc": {
+                          "content_type": "image/x-png",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      },
+                      "time": {
+                        "duration": "PT16H"
+                      }
+                    },
+                    "end": {
+                      "person": {
+                        "name": "Pawan Maurya"
+                      },
+                      "location": {
+                        "gps": "18.998173, 72.827469",
+                        "address": {
+                          "name": "Pawan Maurya",
+                          "building": "H1 T3 Main building",
+                          "locality": "Late Dattaji Nalavade Flyover",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400013"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543213",
+                        "email": "pawan.maurya@ens.enterprises"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141320",
+                        "long_desc": "startInst.short_desc",
+                        "additional_desc": {
+                          "content_type": "text/html",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "billing": {
+                  "name": "lakme",
+                  "address": {
+                    "name": "lakme",
+                    "building": "H1 T2 main building",
+                    "locality": "B block sector 63",
+                    "city": "Mumbai",
+                    "state": "Maharashtra",
+                    "country": "India",
+                    "area_code": "400005"
+                  },
+                  "tax_number": "27AAECJ1349N1Z8",
+                  "phone": "9876543210",
+                  "email": "abcd.efgh@gmail.com",
+                  "created_at": "2024-05-20T19:36:25.880Z",
+                  "updated_at": "2024-05-20T19:36:25.880Z"
+                },
+                "created_at": "2024-05-20T19:38:21.735Z",
+                "updated_at": "2024-05-20T19:38:22.815Z",
+                "payment": {
+                  "@ondc/org/collection_amount": "205",
+                  "collected_by": "BPP",
+                  "type": "ON-FULFILLMENT",
+                  "@ondc/org/settlement_details": []
+                },
+                "@ondc/org/linked_order": {
+                  "items": [
+                    {
+                      "category_id": "Grocery",
+                      "descriptor": {
+                        "name": "Lakmé Color Crush Nail Art, P3"
+                      },
+                      "quantity": {
+                        "count": 1,
+                        "measure": {
+                          "unit": "kilogram",
+                          "value": 1
+                        }
+                      },
+                      "price": {
+                        "currency": "INR",
+                        "value": "155"
+                      }
+                    }
+                  ],
+                  "provider": {
+                    "descriptor": {
+                      "name": "lakme"
+                    },
+                    "address": {
+                      "area_code": "400005",
+                      "building": "H1 T2 main building",
+                      "city": "Mumbai",
+                      "locality": "B block sector 63",
+                      "name": "lakme",
+                      "street": "H1 T2 main building",
+                      "state": "MH"
+                    }
+                  },
+                  "order": {
+                    "id": "2024-05-20-269962",
+                    "weight": {
+                      "unit": "gram",
+                      "value": 50
+                    },
+                    "dimensions": {
+                      "length": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "breadth": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "height": {
+                        "unit": "centimeter",
+                        "value": 10
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+    ],
+    "cancel": [
+        {
+            "context": {
+                "domain": "nic2004:60232",
+                "country": "IND",
+                "city": "std:022",
+                "action": "cancel",
+                "core_version": "1.2.0",
+                "bap_id": "preprod.xpressbaazaar.com",
+                "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+                "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+                "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+                "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+                "message_id": "2f039b3a-29b4-40af-9e4f-d967c91e93a6",
+                "timestamp": "2024-05-20T19:40:31.906Z",
+                "ttl": "PT30S"
+            },
+            "message": {
+                "order_id": "458215c4-4782-417d-b1b8-f87b01a4d82a",
+                "cancellation_reason_id": "010"
+            }
+        }
+    ],
+    "on_cancel": [
+        {
+            "context": {
+              "domain": "nic2004:60232",
+              "country": "IND",
+              "city": "std:022",
+              "action": "on_cancel",
+              "core_version": "1.2.0",
+              "bap_id": "preprod.xpressbaazaar.com",
+              "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+              "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+              "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+              "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
+              "message_id": "2f039b3a-29b4-40af-9e4f-d967c91e93a6",
+              "timestamp": "2024-05-20T19:40:32.249Z"
+            },
+            "message": {
+              "order": {
+                "id": "458215c4-4782-417d-b1b8-f87b01a4d82a",
+                "state": "Cancelled",
+                "cancellation": {
+                  "cancelled_by": "preprod.xpressbaazaar.com",
+                  "reason": {
+                    "id": "010"
+                  }
+                },
+                "provider": {
+                  "id": "29"
+                },
+                "items": [
+                  {
+                    "id": "29I1",
+                    "fulfillment_id": "1",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                      "code": "P2H2P"
+                    },
+                    "time": {
+                      "label": "TAT",
+                      "duration": "P2D",
+                      "timestamp": "2024-05-23"
+                    }
+                  },
+                  {
+                    "id": "29I2",
+                    "fulfillment_id": "2",
+                    "category_id": "Standard Delivery",
+                    "descriptor": {
+                      "code": "P2H2P"
+                    },
+                    "time": {
+                      "label": "TAT",
+                      "duration": "P2D",
+                      "timestamp": "2024-05-23"
+                    }
+                  }
+                ],
+                "quote": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "69.76"
+                  },
+                  "breakup": [
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "delivery",
+                      "price": {
+                        "currency": "INR",
+                        "value": "37.76"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I1",
+                      "@ondc/org/title_type": "tax",
+                      "price": {
+                        "currency": "INR",
+                        "value": "0.00"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I2",
+                      "@ondc/org/title_type": "rto",
+                      "price": {
+                        "currency": "INR",
+                        "value": "32.00"
+                      }
+                    },
+                    {
+                      "@ondc/org/item_id": "29I2",
+                      "@ondc/org/title_type": "tax",
+                      "price": {
+                        "currency": "INR",
+                        "value": "0.00"
+                      }
+                    }
+                  ]
+                },
+                "fulfillments": [
+                  {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                      "descriptor": {
+                        "code": "Cancelled"
+                      }
+                    },
+                    "@ondc/org/awb_no": "NDD2297076",
+                    "tracking": false,
+                    "tags": [
+                      {
+                        "code": "rto_event",
+                        "list": [
+                          {
+                            "code": "retry_count",
+                            "value": "2"
+                          },
+                          {
+                            "code": "rto_id",
+                            "value": "2"
+                          },
+                          {
+                            "code": "cancellation_reason_id",
+                            "value": "010"
+                          },
+                          {
+                            "code": "sub_reason_id",
+                            "value": ""
+                          },
+                          {
+                            "code": "cancelled_by",
+                            "value": "preprod.xpressbaazaar.com"
+                          }
+                        ]
+                      },
+                      {
+                        "code": "precancel_state",
+                        "list": [
+                          {
+                            "code": "fulfillment_state",
+                            "value": "Pending"
+                          },
+                          {
+                            "code": "updated_at",
+                            "value": "1970-01-01T00:00:00.000Z"
+                          }
+                        ]
+                      }
+                    ],
+                    "start": {
+                      "person": {
+                        "name": "lakme"
+                      },
+                      "location": {
+                        "gps": "18.910370, 72.819756",
+                        "address": {
+                          "name": "lakme",
+                          "building": "H1 T2 main building",
+                          "locality": "B block sector 63",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400005"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543210",
+                        "email": "abcd.efgh@gmail.com"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141320",
+                        "long_desc": "startInst.short_desc",
+                        "images": [
+                          "https://cdn.shopify.com/s/files/1/0745/3822/1866/products/SkinFirmingFaceWash_Front_600x_cada4099-d02f-4e45-bc42-bd7451eb7207.jpg?v=1680775438"
+                        ],
+                        "additional_desc": {
+                          "content_type": "image/x-png",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      },
+                      "time":
+                      {
+                        "duration":"PT15M",
+                        "range":
+                        {
+                          "start":"2023-06-06T22:30:00.000Z",
+                          "end":"2023-06-06T22:45:00.000Z"
+                        }
+                      }
+                    },
+                    "end": {
+                      "person": {
+                        "name": "Pawan Maurya"
+                      },
+                      "location": {
+                        "gps": "18.998173, 72.827469",
+                        "address": {
+                          "name": "Pawan Maurya",
+                          "building": "H1 T3 Main building",
+                          "locality": "Late Dattaji Nalavade Flyover",
+                          "city": "Mumbai",
+                          "state": "Maharashtra",
+                          "country": "India",
+                          "area_code": "400013"
+                        }
+                      },
+                      "contact": {
+                        "phone": "9876543213",
+                        "email": "pawan.maurya@ens.enterprises"
+                      },
+                      "instructions": {
+                        "code": "2",
+                        "short_desc": "141320",
+                        "long_desc": "startInst.short_desc",
+                        "additional_desc": {
+                          "content_type": "text/html",
+                          "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                        }
+                      },
+                      "time":
+                      {
+                        "range":
+                        {
+                          "start":"2023-06-06T23:00:00.000Z",
+                          "end":"2023-06-06T23:15:00.000Z"
+                        }
+                      }
+          
+                    }
+                  },
+                  {
+                    "id": "2",
+                    "type": "RTO",
+                    "state": {
+                      "descriptor": {
+                        "code": "RTO-Initiated"
+                      }
+                    },
+                    "start": {
+                      "time": {
+                        "timestamp": "2024-05-20T19:40:32.249Z"
+                      }
+                    }
+                  }
+                ],
+                "payment": {
+                  "@ondc/org/collection_amount": "205",
+                  "collected_by": "BPP",
+                  "type": "ON-FULFILLMENT",
+                  "@ondc/org/settlement_details": []
+                },
+                "billing": {
+                  "name": "lakme",
+                  "address": {
+                    "name": "lakme",
+                    "building": "H1 T2 main building",
+                    "locality": "B block sector 63",
+                    "city": "Mumbai",
+                    "state": "Maharashtra",
+                    "country": "India",
+                    "area_code": "400005"
+                  },
+                  "tax_number": "27AAECJ1349N1Z8",
+                  "phone": "9876543210",
+                  "email": "abcd.efgh@gmail.com",
+                  "created_at": "2024-05-20T19:36:25.880Z",
+                  "updated_at": "2024-05-20T19:36:25.880Z"
+                },
+                "@ondc/org/linked_order": {
+                  "items": [
+                    {
+                      "category_id": "Grocery",
+                      "descriptor": {
+                        "name": "Lakmu00e9 Color Crush Nail Art, P3"
+                      },
+                      "quantity": {
+                        "count": 1,
+                        "measure": {
+                          "unit": "kilogram",
+                          "value": 1
+                        }
+                      },
+                      "price": {
+                        "currency": "INR",
+                        "value": "155"
+                      }
+                    }
+                  ],
+                  "provider": {
+                    "descriptor": {
+                      "name": "lakme"
+                    },
+                    "address": {
+                      "area_code": "400005",
+                      "building": "H1 T2 main building",
+                      "city": "Mumbai",
+                      "locality": "B block sector 63",
+                      "name": "lakme",
+                      "street": "H1 T2 main building",
+                      "state": "MH"
+                    }
+                  },
+                  "order": {
+                    "id": "2024-05-20-269962",
+                    "weight": {
+                      "unit": "gram",
+                      "value": 50
+                    },
+                    "dimensions": {
+                      "length": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "breadth": {
+                        "unit": "centimeter",
+                        "value": 10
+                      },
+                      "height": {
+                        "unit": "centimeter",
+                        "value": 10
+                      }
+                    }
+                  }
+                },
+                "created_at": "2024-05-20T19:38:21.735Z",
+                "updated_at": "2024-05-20T19:40:32.249Z"
+              }
+            }
+          }
+    ]
+}
