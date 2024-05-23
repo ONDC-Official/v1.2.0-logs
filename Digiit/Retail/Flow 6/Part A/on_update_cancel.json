@@ -9,14 +9,15 @@
     "city": "std:080",
     "country": "IND",
     "action": "on_update",
-    "transaction_id": "c6199cba-8113-4d66-963a-dd00b74872cc",
-    "message_id": "91064031-432b-4495-9ac8-04e441a67f44",
-    "timestamp": "2024-03-18T14:52:38.363Z"
+    "transaction_id": "6588acc3-ca7b-47f1-add8-184fe4af2f2c",
+    "message_id": "5399e30c-cb2c-4614-a49e-80068ab9a01d",
+    "timestamp": "2024-05-21T10:22:39.657Z",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "2024-03-18-556669",
-      "state": "Completed",
+      "id": "2024-05-21-714107",
+      "state": "Accepted",
       "provider": {
         "id": "327",
         "locations": [
@@ -27,15 +28,15 @@
       },
       "items": [
         {
-          "id": "1101",
-          "fulfillment_id": "c4ab27fd-d35c-46d2-9798-c5a2629d3dc4",
+          "id": "1100",
+          "fulfillment_id": "111818dd-b9a6-4dd3-93b8-bcc3d8f0aafb",
           "quantity": {
             "count": 1
           }
         },
         {
-          "id": "1101",
-          "fulfillment_id": "4a0ce22a-e08b-4ffc-9449-75c5c348d68b",
+          "id": "1100",
+          "fulfillment_id": "8c1f49ba-6821-4732-9443-da82e6d20179",
           "quantity": {
             "count": 1
           }
@@ -54,22 +55,24 @@
         },
         "email": "sharon@gmail.com",
         "phone": "6546456888",
-        "created_at": "2024-03-18T14:39:30.779Z",
-        "updated_at": "2024-03-18T14:39:30.779Z"
+        "created_at": "2024-05-21T10:16:49.712Z",
+        "updated_at": "2024-05-21T10:16:49.712Z"
       },
       "fulfillments": [
         {
-          "id": "c4ab27fd-d35c-46d2-9798-c5a2629d3dc4",
+          "id": "111818dd-b9a6-4dd3-93b8-bcc3d8f0aafb",
           "@ondc/org/provider_name": "freshon",
           "type": "Delivery",
           "tracking": true,
+          "@ondc/org/TAT": "P1D",
           "state": {
             "descriptor": {
-              "code": "Order-picked-up"
+              "code": "Pending"
             }
           },
           "start": {
             "location": {
+              "id": "327",
               "descriptor": {
                 "name": "freshon"
               },
@@ -82,16 +85,10 @@
               }
             },
             "time": {
-              "timestamp": "2024-03-18T14:46:32.528Z",
               "range": {
-                "start": "2024-03-18T14:39:41.863Z",
-                "end": "2024-03-18T14:54:41.863Z"
+                "start": "2024-05-21T10:17:30.327Z",
+                "end": "2024-05-21T10:32:30.327Z"
               }
-            },
-            "instructions": {
-              "name": "PickedUp",
-              "short_desc": "2464",
-              "long_desc": "2464"
             },
             "contact": {
               "phone": "9845423200",
@@ -113,14 +110,9 @@
             },
             "time": {
               "range": {
-                "start": "2024-03-18T15:09:41.863Z",
-                "end": "2024-03-18T15:24:41.863Z"
+                "start": "2024-05-21T10:47:30.327Z",
+                "end": "2024-05-21T11:02:30.327Z"
               }
-            },
-            "instructions": {
-              "name": "OrderPickedUp",
-              "short_desc": "8771",
-              "long_desc": "8771"
             },
             "person": {
               "name": "Sharon S"
@@ -128,67 +120,23 @@
             "contact": {
               "phone": "6546456888"
             }
-          },
-          "agent": {
-            "name": "Robert",
-            "phone": "9845423200"
           }
         },
         {
-          "id": "254",
-          "@ondc/org/provider_name": "freshon",
-          "type": "Return",
+          "id": "8c1f49ba-6821-4732-9443-da82e6d20179",
+          "type": "Cancel",
           "state": {
             "descriptor": {
-              "code": "Return_Picked"
-            }
-          },
-          "start": {
-            "location": {
-              "gps": "12.99003195320145,77.46993184089662",
-              "address": {
-                "name": "Sharon S",
-                "building": "No.10",
-                "locality": "Magadi Main Road",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "IND",
-                "area_code": "560091"
-              }
-            },
-            "time": {
-              "timestamp": "2024-03-18T14:52:21.221Z",
-              "range": {
-                "start": "2024-03-18T14:39:41.863Z",
-                "end": "2024-03-18T14:54:41.863Z"
-              }
-            }
-          },
-          "end": {
-            "location": {
-              "descriptor": {
-                "name": "freshon"
-              },
-              "gps": "12.979412000,77.494807600",
-              "address": {
-                "locality": "#13, 4th Main, 2nd Stage, A Block",
-                "city": "BANGALORE",
-                "state": "Karnataka",
-                "area_code": "560069"
-              }
+              "code": "Cancelled"
             }
           },
           "tags": [
             {
-              "code": "return_request",
+              "code": "cancel_request",
               "list": [
                 {
-                  "code": "id",
-                  "value": "254"
-                },
-                {
                   "code": "item_id",
-                  "value": "1101"
+                  "value": "1100"
                 },
                 {
                   "code": "item_quantity",
@@ -196,23 +144,15 @@
                 },
                 {
                   "code": "reason_id",
-                  "value": "001"
+                  "value": "008"
                 },
                 {
                   "code": "reason_desc",
-                  "value": "detailed description for return"
-                },
-                {
-                  "code": "currency",
-                  "value": "INR"
-                },
-                {
-                  "code": "value",
-                  "value": "157.50"
+                  "value": "Order not ready for pickup"
                 },
                 {
                   "code": "initiated_by",
-                  "value": "buyer-app-preprod-v2.ondc.org"
+                  "value": "preprod-bpp.dbs.digiit.io"
                 }
               ]
             },
@@ -225,7 +165,7 @@
                 },
                 {
                   "code": "id",
-                  "value": "1101"
+                  "value": "1100"
                 },
                 {
                   "code": "currency",
@@ -233,7 +173,7 @@
                 },
                 {
                   "code": "value",
-                  "value": "-157.50"
+                  "value": "-798.00"
                 }
               ]
             }
@@ -243,11 +183,11 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "182.50"
+          "value": "798.00"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "1101",
+            "@ondc/org/item_id": "1100",
             "@ondc/org/item_quantity": {
               "count": 1
             },
@@ -255,33 +195,33 @@
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "157.50"
+              "value": "798.00"
             },
             "item": {
               "price": {
                 "currency": "INR",
-                "value": "157.50"
+                "value": "798.00"
               }
             }
           },
           {
-            "@ondc/org/item_id": "c4ab27fd-d35c-46d2-9798-c5a2629d3dc4",
+            "@ondc/org/item_id": "111818dd-b9a6-4dd3-93b8-bcc3d8f0aafb",
             "title": "Delivery charges",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "25.0"
+              "value": "0.00"
             }
           }
         ],
         "ttl": "P1D"
       },
       "payment": {
-        "uri": "https://juspay.in/",
+        "uri": "https://razorpay.com/",
         "params": {
           "currency": "INR",
-          "transaction_id": "2bb75de6-dd19-460a-89be-e4a95d89efcd",
-          "amount": "182.50"
+          "transaction_id": "order_OD6jXymgYUx1fO",
+          "amount": "1621.00"
         },
         "status": "PAID",
         "type": "ON-ORDER",
@@ -302,8 +242,8 @@
           }
         ]
       },
-      "created_at": "2024-03-18T14:41:14.897Z",
-      "updated_at": "2024-03-18T14:52:38.363Z"
+      "created_at": "2024-05-21T10:17:26.384Z",
+      "updated_at": "2024-05-21T10:22:39.657Z"
     }
   }
 }
