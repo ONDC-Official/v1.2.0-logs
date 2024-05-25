@@ -2,21 +2,21 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:040",
-        "action": "confirm",
+        "action": "on_update",
         "bap_id": "buypreprod.enam.gov.in",
         "bpp_id": "sellpreprod.enam.gov.in",
         "domain": "ONDC:RET10",
         "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-05-25T15:35:44.691Z",
-        "message_id": "a27a954b-9fb5-47cc-a59d-b715955cd8fc",
+        "timestamp": "2024-05-25T16:15:30.743Z",
+        "message_id": "94d29b18-79c8-4338-960a-ea86d5799138",
         "core_version": "1.2.0",
-        "transaction_id": "38a71368-8a79-456e-a425-89e246c30342"
+        "transaction_id": "367adb31-1abf-4812-91ee-e621ef92b222"
     },
     "message": {
         "order": {
-            "id": "1044",
+            "id": "1045",
             "tags": [
                 {
                     "code": "bpp_terms",
@@ -49,10 +49,14 @@
                 {
                     "id": "1368",
                     "quantity": {
-                        "count": 2,
-                        "selected": {
-                            "count": 2
-                        }
+                        "count": 1
+                    },
+                    "fulfillment_id": "ECAL-28e32662-d9a2-478d-8337-2190679b9d69"
+                },
+                {
+                    "id": "1368",
+                    "quantity": {
+                        "count": 3
                     },
                     "fulfillment_id": "246"
                 }
@@ -60,84 +64,82 @@
             "quote": {
                 "ttl": "PT24H",
                 "price": {
-                    "value": "300.0",
+                    "value": "450.0",
                     "currency": "INR"
                 },
                 "breakup": [
-                    {
-                        "price": {
-                            "value": "0.0",
-                            "currency": "INR"
-                        },
-                        "title": "Delivery charges",
-                        "@ondc/org/item_id": "246",
-                        "@ondc/org/title_type": "delivery"
-                    },
                     {
                         "item": {
                             "price": {
                                 "value": "150.0",
                                 "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "99"
+                                },
+                                "available": {
+                                    "count": "99"
+                                }
                             }
                         },
                         "price": {
-                            "value": "300.0",
+                            "value": "450.0",
                             "currency": "INR"
                         },
                         "title": "Kiwano",
                         "@ondc/org/item_id": "1368",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 3
                         }
                     }
                 ]
             },
-            "state": "Created",
+            "state": "Accepted",
             "billing": {
                 "name": "Shivam Gupta",
                 "email": "8468894669@enam.email.com",
                 "phone": "8468894669",
                 "address": {
                     "city": "Hyderabad",
-                    "door": "511",
                     "name": "Default Address",
-                    "ward": "530",
                     "state": "Telangana",
-                    "street": "Rto Street",
                     "country": "IND",
                     "building": "Bahvani Mandir",
                     "locality": "Kondapur",
                     "area_code": "500084"
                 },
-                "created_at": "2024-05-25T15:35:41.000Z",
-                "updated_at": "2024-05-25T15:35:41.000Z"
+                "created_at": "2024-05-25T16:13:43.000Z",
+                "updated_at": "2024-05-25T16:13:43.000Z"
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
-                "type": "ON-FULFILLMENT",
+                "type": "ON-ORDER",
                 "params": {
-                    "amount": "300.0",
-                    "currency": "INR",
-                    "transaction_id": "958"
+                    "amount": "600.0",
+                    "currency": "INR"
                 },
-                "status": "NOT-PAID",
-                "collected_by": "BPP",
+                "status": "PAID",
+                "collected_by": "BAP",
                 "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/settlement_window": "2024-05-26 16:14:07.099696",
                 "@ondc/org/settlement_details": [
                     {
                         "bank_name": "HDFC",
                         "branch_name": "Chandigarh",
+                        "upi_address": "null",
                         "settlement_type": "rtgs",
                         "beneficiary_name": "Enum",
                         "settlement_phase": "sale-amount",
+                        "settlement_amount": "600.0",
+                        "settlement_status": "PAID",
                         "settlement_ifsc_code": "HDFC0000887",
                         "settlement_counterparty": "seller-app",
                         "settlement_bank_account_no": "50100987654123"
                     }
                 ],
-                "@ondc/org/withholding_amount": "0",
+                "@ondc/org/withholding_amount": "0.0",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0"
             },
@@ -149,29 +151,78 @@
                     }
                 ]
             },
-            "created_at": "2024-05-25T15:35:44.691Z",
-            "updated_at": "2024-05-25T15:35:44.691Z",
+            "created_at": "2024-05-25T16:14:07.100Z",
+            "updated_at": "2024-05-25T16:15:30.720Z",
             "fulfillments": [
+                {
+                    "id": "ECAL-28e32662-d9a2-478d-8337-2190679b9d69",
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc.bpp_id"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "409"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-150.0"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tracking": false,
+                    "provider_id": "116"
+                },
                 {
                     "id": "246",
                     "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-06-01T16:14:07.100Z",
+                                "start": "2024-05-25T16:14:07.100Z"
+                            }
+                        },
                         "person": {
                             "name": "Shivam Gupta"
                         },
                         "contact": {
+                            "email": "null",
                             "phone": "8468894669"
                         },
                         "location": {
-                            "id": "5337",
                             "gps": "17.4739167,78.5118889",
                             "address": {
-                                "city": "Hyderabad",
-                                "door": "511",
+                                "city": "IND",
                                 "name": "Default Address",
-                                "ward": "530",
                                 "state": "Telangana",
-                                "street": "Rto Street",
-                                "country": "IND",
                                 "building": "Bahvani Mandir",
                                 "locality": "Kondapur",
                                 "area_code": "500084"
@@ -180,7 +231,14 @@
                     },
                     "type": "Delivery",
                     "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-05-24T18:53:55.252Z",
+                                "start": "2024-05-24T18:52:32.496Z"
+                            }
+                        },
                         "contact": {
+                            "email": "buvisupport@gmail.com",
                             "phone": "8978560404"
                         },
                         "location": {
@@ -188,6 +246,7 @@
                             "gps": "17.4739167, 78.5118889",
                             "address": {
                                 "city": "AGWANA KALAN",
+                                "name": "Bhui Store kondapur",
                                 "state": "Telangana",
                                 "street": "HYDERABAD",
                                 "locality": "AMBERPET",
@@ -198,8 +257,16 @@
                             }
                         }
                     },
+                    "state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
                     "tracking": false,
-                    "@ondc/org/TAT": "PT48H"
+                    "provider_id": "116",
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/provider_name": "Bhui Store kondapur"
                 }
             ]
         }

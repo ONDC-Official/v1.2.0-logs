@@ -2,65 +2,66 @@
     "context": {
         "ttl": "PT30S",
         "city": "std:040",
-        "action": "on_cancel",
+        "action": "on_status",
         "bap_id": "buypreprod.enam.gov.in",
         "bpp_id": "sellpreprod.enam.gov.in",
         "domain": "ONDC:RET10",
         "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-05-25T15:35:52.583Z",
-        "message_id": "c0c46ef7-ed99-4637-8b79-98590e3d2d3c",
+        "timestamp": "2024-05-25T16:41:15.356Z",
+        "message_id": "910431b0-e669-4c18-a804-5f4ac59ad71d",
         "core_version": "1.2.0",
-        "transaction_id": "38a71368-8a79-456e-a425-89e246c30342"
+        "transaction_id": "367adb31-1abf-4812-91ee-e621ef92b222"
     },
     "message": {
         "order": {
-            "id": "1044",
+            "id": "1045",
             "items": [
+                {
+                    "id": "1368",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "246"
+                },
+                {
+                    "id": "1368",
+                    "quantity": {
+                        "count": -1
+                    },
+                    "fulfillment_id": "ECAL-28e32662-d9a2-478d-8337-2190679b9d69"
+                },
                 {
                     "id": "1368",
                     "quantity": {
                         "count": 2
                     },
-                    "fulfillment_id": "ECAL-e0f5896c-c532-4979-b1fa-9732133cc302"
-                },
-                {
-                    "id": "1368",
-                    "quantity": {
-                        "count": 0
-                    },
-                    "fulfillment_id": "246"
+                    "fulfillment_id": "ENAM_RET_1855"
                 }
             ],
             "quote": {
-                "ttl": "PT24H",
+                "ttl": "PT24H1M34.271S",
                 "price": {
-                    "value": "0",
+                    "value": "600",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "item": {
-                            "price": {
-                                "value": "150.0",
-                                "currency": "INR"
-                            }
-                        },
                         "price": {
-                            "value": "0",
+                            "value": "150",
                             "currency": "INR"
                         },
                         "title": "Kiwano",
                         "@ondc/org/item_id": "1368",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 0
+                            "count": 1
                         }
                     }
                 ]
             },
-            "state": "Cancelled",
+            "state": "Completed",
             "billing": {
                 "name": "Shivam Gupta",
                 "email": "8468894669@enam.email.com",
@@ -77,18 +78,18 @@
                     "locality": "Kondapur",
                     "area_code": "500084"
                 },
-                "created_at": "2024-05-25T15:35:41.000Z",
-                "updated_at": "2024-05-25T15:35:41.000Z"
+                "created_at": "2024-05-25T16:13:43.000Z",
+                "updated_at": "2024-05-25T16:13:43.000Z"
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
-                "type": "ON-FULFILLMENT",
+                "type": "ON-ORDER",
                 "params": {
-                    "amount": "300.0",
+                    "amount": "600",
                     "currency": "INR",
-                    "transaction_id": "958"
+                    "transaction_id": "959"
                 },
-                "status": "NOT-PAID",
+                "status": "PAID",
                 "collected_by": "BPP",
                 "@ondc/org/settlement_basis": "delivery",
                 "@ondc/org/settlement_window": "PT24H",
@@ -106,7 +107,7 @@
                 ],
                 "@ondc/org/withholding_amount": "0",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+                "@ondc/org/buyer_app_finder_fee_amount": "3"
             },
             "provider": {
                 "id": "116",
@@ -116,23 +117,64 @@
                     }
                 ]
             },
-            "created_at": "2024-05-25T15:35:44.000Z",
-            "updated_at": "2024-05-25T15:36:59.954Z",
-            "cancellation": {
-                "reason": {
-                    "id": "010"
-                },
-                "cancelled_by": "buypreprod.enam.gov.in"
-            },
+            "created_at": "2024-05-25T16:14:06.000Z",
+            "updated_at": "2024-05-25T16:41:15.356Z",
             "fulfillments": [
+                {
+                    "id": "ECAL-28e32662-d9a2-478d-8337-2190679b9d69",
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc.bpp_id"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "409"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-150.0"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tracking": false
+                },
                 {
                     "id": "246",
                     "end": {
                         "time": {
                             "range": {
-                                "end": "2024-06-01T15:36:59.954Z",
-                                "start": "2024-05-25T15:36:59.954Z"
-                            }
+                                "end": "2024-05-24T18:58:07.287Z",
+                                "start": "2024-05-24T19:00:48.606Z"
+                            },
+                            "timestamp": "2024-05-24T19:00:48.606Z"
                         },
                         "person": {
                             "name": "Shivam Gupta"
@@ -154,41 +196,14 @@
                             }
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "cancel_request",
-                            "list": [
-                                {
-                                    "code": "reason_id",
-                                    "value": "010"
-                                },
-                                {
-                                    "code": "initiated_by",
-                                    "value": "buypreprod.enam.gov.in"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "precancel_state",
-                            "list": [
-                                {
-                                    "code": "fulfillment_state",
-                                    "value": "Pending"
-                                },
-                                {
-                                    "code": "updated_at",
-                                    "value": "2024-05-25T15:35:44.752Z"
-                                }
-                            ]
-                        }
-                    ],
                     "type": "Delivery",
                     "start": {
                         "time": {
                             "range": {
                                 "end": "2024-05-24T18:58:07.287Z",
                                 "start": "2024-05-24T19:00:48.606Z"
-                            }
+                            },
+                            "timestamp": "2024-05-24T19:00:48.606Z"
                         },
                         "contact": {
                             "phone": "8978560404"
@@ -210,8 +225,7 @@
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Cancelled",
-                            "name": "Cancelled"
+                            "code": "Order-delivered"
                         }
                     },
                     "tracking": false,
@@ -219,8 +233,70 @@
                     "@ondc/org/provider_name": "Bhui Store kondapur"
                 },
                 {
-                    "id": "ECAL-e0f5896c-c532-4979-b1fa-9732133cc302",
+                    "id": "ENAM_RET_1855",
                     "tags": [
+                        {
+                            "code": "return_request",
+                            "list": [
+                                {
+                                    "code": "id",
+                                    "value": "ENAM_RET_1855"
+                                },
+                                {
+                                    "code": "item_id",
+                                    "value": "1368"
+                                },
+                                {
+                                    "code": "item_quantity",
+                                    "value": "2"
+                                },
+                                {
+                                    "code": "reason_id",
+                                    "value": "001"
+                                },
+                                {
+                                    "code": "reason_desc",
+                                    "value": "ondc test"
+                                },
+                                {
+                                    "code": "images",
+                                    "value": "https://s3-ap-south-1.amazonaws.com/pre-prod-buyer-bucket/buyer/84/returnItems/1498/1716654755147_kinwano.JPG"
+                                },
+                                {
+                                    "code": "ttl_approval",
+                                    "value": "PT24H"
+                                },
+                                {
+                                    "code": "ttl_reverseqc",
+                                    "value": "PT72H"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "buypreprod.enam.gov.in"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "reverseqc_input",
+                            "list": [
+                                {
+                                    "code": "P001",
+                                    "value": "Kiwano"
+                                },
+                                {
+                                    "code": "P003",
+                                    "value": "2"
+                                },
+                                {
+                                    "code": "Q001",
+                                    "value": ""
+                                },
+                                {
+                                    "code": "Q004",
+                                    "value": ""
+                                }
+                            ]
+                        },
                         {
                             "code": "quote_trail",
                             "list": [
@@ -230,7 +306,7 @@
                                 },
                                 {
                                     "code": "id",
-                                    "value": "1368"
+                                    "value": "409"
                                 },
                                 {
                                     "code": "currency",
@@ -243,13 +319,15 @@
                             ]
                         }
                     ],
-                    "type": "Cancel",
+                    "type": "Return",
                     "state": {
                         "descriptor": {
-                            "code": "Cancelled"
+                            "code": "Return_Delivered"
                         }
                     },
-                    "tracking": false
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT72H",
+                    "@ondc/org/provider_name": "Bhui Store kondapur"
                 }
             ]
         }
