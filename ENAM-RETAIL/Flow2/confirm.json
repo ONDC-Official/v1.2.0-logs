@@ -3,41 +3,58 @@
         "ttl": "PT30S",
         "city": "std:040",
         "action": "confirm",
-        "bap_id": "enambuyer-ondc-stg.bitxiatech.com",
-        "bpp_id": "enamseller-ondc-stg.bitxiatech.com",
+        "bap_id": "buypreprod.enam.gov.in",
+        "bpp_id": "sellpreprod.enam.gov.in",
         "domain": "ONDC:RET10",
-        "bap_uri": "https://enambuyer-ondc-stg.bitxiatech.com/ondc/v1",
-        "bpp_uri": "https://enamseller-ondc-stg.bitxiatech.com",
+        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
+        "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-05-17T20:26:54.678Z",
-        "message_id": "2130dbcf-0a33-487e-84fd-6cb43471ecb7",
+        "timestamp": "2024-05-25T15:16:23.694Z",
+        "message_id": "d1f2421c-eb3e-4024-88e0-bc7e54f0ce6a",
         "core_version": "1.2.0",
-        "transaction_id": "9f336ccc-bb79-4bb1-9824-7c84fa33ac7e"
+        "transaction_id": "e4a321fa-77a1-405c-a6b9-fd055b8e4dbd"
     },
     "message": {
         "order": {
-            "id": "447",
+            "id": "1041",
             "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "06AADCH5529B1ZY"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "BBCDF1234E"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        }
+                    ]
+                },
                 {
                     "code": "bap_terms",
                     "list": [
                         {
                             "code": "tax_number",
-                            "value": "14A00000001G1Z4"
+                            "value": "GSTIN1234567890"
                         }
                     ]
                 }
             ],
             "items": [
                 {
-                    "id": "359",
+                    "id": "1368",
                     "quantity": {
                         "count": 2,
                         "selected": {
                             "count": 2
                         }
                     },
-                    "fulfillment_id": "156"
+                    "fulfillment_id": "246"
                 }
             ],
             "quote": {
@@ -48,26 +65,27 @@
                 },
                 "breakup": [
                     {
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "246",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
                         "item": {
                             "price": {
                                 "value": "150.0",
                                 "currency": "INR"
-                            },
-                            "quantity": {
-                                "maximum": {
-                                    "count": "99"
-                                },
-                                "available": {
-                                    "count": "99"
-                                }
                             }
                         },
                         "price": {
                             "value": "300.0",
                             "currency": "INR"
                         },
-                        "title": "Gond ka ladu",
-                        "@ondc/org/item_id": "359",
+                        "title": "Kiwano",
+                        "@ondc/org/item_id": "1368",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 2
@@ -77,41 +95,41 @@
             },
             "state": "Created",
             "billing": {
-                "name": "Sumit",
-                "email": "params966@gmail.com",
-                "phone": "8475950505",
+                "name": "Shivam Gupta",
+                "email": "8468894669@enam.email.com",
+                "phone": "8468894669",
                 "address": {
-                    "city": "Gurugram",
-                    "door": "541",
-                    "name": "Residence",
-                    "ward": "Fazilpur",
-                    "state": "Haryana",
-                    "street": "Sohna",
+                    "city": "Hyderabad",
+                    "door": "511",
+                    "name": "Default Address",
+                    "ward": "530",
+                    "state": "Telangana",
+                    "street": "Rto Street",
                     "country": "IND",
-                    "building": "Flora",
-                    "locality": "Fatehpur",
-                    "area_code": "124109"
+                    "building": "Bahvani Mandir",
+                    "locality": "Kondapur",
+                    "area_code": "500084"
                 },
-                "created_at": "2024-05-14T09:20:44.503Z",
-                "updated_at": "2024-05-14T09:20:44.503Z"
+                "created_at": "2024-05-25T15:15:55.000Z",
+                "updated_at": "2024-05-25T15:15:55.000Z"
             },
             "payment": {
                 "uri": "https://ondc.transaction.com/payment",
-                "type": "ON-FULFILLMENT",
+                "type": "ON-ORDER",
                 "params": {
                     "amount": "300.0",
                     "currency": "INR",
-                    "transaction_id": "195"
+                    "transaction_id": "955"
                 },
-                "status": "NOT-PAID",
-                "collected_by": "BPP",
+                "status": "PAID",
+                "collected_by": "BAP",
                 "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "PT24H",
+                "@ondc/org/settlement_window": "P1D",
                 "@ondc/org/settlement_details": [
                     {
                         "bank_name": "HDFC",
                         "branch_name": "Chandigarh",
-                        "settlement_type": "neft",
+                        "settlement_type": "rtgs",
                         "beneficiary_name": "Enum",
                         "settlement_phase": "sale-amount",
                         "settlement_ifsc_code": "HDFC0000887",
@@ -119,78 +137,64 @@
                         "settlement_bank_account_no": "50100987654123"
                     }
                 ],
-                "@ondc/org/withholding_amount": "3.0",
+                "@ondc/org/withholding_amount": "0",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0"
             },
             "provider": {
-                "id": "74",
+                "id": "116",
                 "locations": [
                     {
-                        "id": "217"
+                        "id": "288"
                     }
                 ]
             },
-            "created_at": "2024-05-17T20:26:54.678Z",
-            "updated_at": "2024-05-17T20:26:54.678Z",
-            "cancellation": {},
+            "created_at": "2024-05-25T15:16:23.694Z",
+            "updated_at": "2024-05-25T15:16:23.694Z",
             "fulfillments": [
                 {
-                    "id": "156",
+                    "id": "246",
                     "end": {
                         "person": {
-                            "name": "param abc"
+                            "name": "Shivam Gupta"
                         },
                         "contact": {
-                            "email": "params966@gmail.com",
-                            "phone": "8978560404"
+                            "phone": "8468894669"
                         },
                         "location": {
-                            "id": "208",
-                            "gps": "12.453544,77.928379",
+                            "id": "5337",
+                            "gps": "17.4739167,78.5118889",
                             "address": {
-                                "city": "Ghaziabad",
-                                "door": "9th floor",
-                                "name": "905 Ebony A",
-                                "ward": "Hindon",
-                                "state": "Uttar Pradesh",
-                                "street": "Shalimar",
+                                "city": "Hyderabad",
+                                "door": "511",
+                                "name": "Default Address",
+                                "ward": "530",
+                                "state": "Telangana",
+                                "street": "Rto Street",
                                 "country": "IND",
-                                "building": " Shalimar Garden",
-                                "locality": "Shalimar",
-                                "area_code": "201005"
+                                "building": "Bahvani Mandir",
+                                "locality": "Kondapur",
+                                "area_code": "500084"
                             }
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "Yes"
-                                }
-                            ]
-                        }
-                    ],
-                    "type": "Self-Pickup",
+                    "type": "Delivery",
                     "start": {
                         "contact": {
-                            "email": "test@gmai.com",
-                            "phone": "2222222222"
+                            "phone": "8978560404"
                         },
                         "location": {
-                            "id": "217",
+                            "id": "288",
                             "gps": "17.4739167, 78.5118889",
                             "address": {
-                                "city": "HYDERABAD",
+                                "city": "AGWANA KALAN",
                                 "state": "Telangana",
-                                "street": "AGWANA KALAN",
+                                "street": "HYDERABAD",
                                 "locality": "AMBERPET",
                                 "area_code": "500084"
                             },
                             "descriptor": {
-                                "name": "AMBERPET-AGWANA"
+                                "name": "Bhui Store kondapur"
                             }
                         }
                     },

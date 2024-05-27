@@ -1,22 +1,21 @@
 {
   "context": {
     "domain": "ONDC:RET16",
-    "country": "IND",
-    "city": "std:06755",
     "action": "on_update",
     "core_version": "1.2.0",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "pre.production.artisanswizard.com",
     "bpp_uri": "https://pre.production.artisanswizard.com/ondc",
-    "transaction_id": "11ed8032-8349-4c95-8e8e-b737681282b0",
-    "message_id": "5dd793ad-ee16-4d2b-9908-c043fe304218",
-    "timestamp": "2024-05-08T13:06:46.000Z",
-    "ttl": "PT30S"
+    "transaction_id": "690c7c6d-f4be-4610-bd27-d6facb683b15",
+    "message_id": "3f09f4cc-7142-4000-9871-981f96be695b",
+    "city": "std:06755",
+    "country": "IND",
+    "timestamp": "2024-05-22T13:15:11.000Z"
   },
   "message": {
     "order": {
-      "id": "2024-05-08-865815",
+      "id": "2024-05-22-791500",
       "state": "Completed",
       "provider": {
         "id": "22",
@@ -27,11 +26,18 @@
         ]
       },
       "items": [
+         {
+          "id": "16",
+          "fulfillment_id": "C1",
+          "quantity": {
+            "count": 1
+          }
+        },
         {
           "id": "16",
           "fulfillment_id": "F1",
           "quantity": {
-            "count": 1
+            "count": 0
           }
         },
         {
@@ -40,13 +46,6 @@
           "quantity": {
             "count": 0
           }
-        },
-        {
-          "id": "65",
-          "fulfillment_id": "F1",
-          "quantity": {
-            "count": 1
-          }
         }
       ],
       "fulfillments": [
@@ -54,7 +53,8 @@
           "id": "F1",
           "type": "Delivery",
           "tracking": false,
-          "@ondc/org/provider_name": "Sabhyasha Retail Tech Pvt. Ltd.",
+          "@ondc/org/TAT": "P7DT55M",
+          "@ondc/org/provider_name": "Sabhyasha Retail Tech Private Limited",
           "state": {
             "descriptor": {
               "code": "Order-delivered"
@@ -62,8 +62,9 @@
           },
           "start": {
             "location": {
+              "id": "3",
               "descriptor": {
-                "name": "Sabhyasha Retail Tech Pvt. Ltd."
+                "name": "Sabhyasha Retail Tech Private Limited"
               },
               "gps": "20.27731880, 85.86221050",
               "address": {
@@ -74,10 +75,15 @@
               }
             },
             "time": {
-              
+              "range": {
+                "start": "2024-05-22T13:29:26.000Z",
+                "end": "2024-05-22T17:29:26.000Z"
+              },
+              "timestamp": "2024-05-22T12:40:45.000Z"
             },
             "contact": {
-              "phone": "8926273115"
+              "phone": "8926273115",
+              "email": "sabhyasha.art@gmail.com"
             }
           },
           "end": {
@@ -94,7 +100,11 @@
               }
             },
             "time": {
-              
+              "range": {
+                "start": "2024-05-22T19:29:26.000Z",
+                "end": "2024-05-23T00:29:26.000Z"
+              },
+              "timestamp": "2024-05-22T12:41:05.000Z"
             },
             "person": {
               "name": "Satyaranjan Swain"
@@ -106,9 +116,54 @@
           }
         },
         {
+          "id": "C1",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "002"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "pre.production.artisanswizard.com"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "16"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-600.0"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "id": "R1",
           "type": "Return",
-          "@ondc/org/provider_name": "Sabhyasha Retail Tech Pvt. Ltd.",
+          "@ondc/org/provider_name": "Sabhyasha Retail Tech Private Limited",
           "state": {
             "descriptor": {
               "code": "Return_Delivered"
@@ -125,7 +180,7 @@
           },
           "end": {
             "time": {
-              "timestamp": "2024-05-08T13:06:46.000Z"
+              "timestamp": "2024-05-22T13:14:10.000Z"
             }
           },
           "tags": [
@@ -154,7 +209,7 @@
                 },
                 {
                   "code": "images",
-                  "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-05-08-865815/cc45d3e6-8e43-4471-9cba-f1e525df9f39.png"
+                  "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-05-22-791500/4c6ee040-df82-44bd-91ab-f02836a29880.png"
                 },
                 {
                   "code": "ttl_approval",
@@ -166,7 +221,7 @@
                 },
                 {
                   "code": "initiated_by",
-                  "value": "pre.production.artisanswizard.com"
+                  "value": "buyer-app-preprod-v2.ondc.org"
                 }
               ]
             }
@@ -176,34 +231,25 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "1202.0"
+          "value": "602.0"
         },
         "breakup": [
           {
             "@ondc/org/item_id": "16",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 0
             },
             "title": " Pattachitra Wooden Cow Fridge Magnet - Handmade Home DecorShort ",
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "600.0"
+              "value": "0.00"
             },
             "item": {
               "price": {
                 "currency": "INR",
                 "value": "1000.0"
               }
-            }
-          },
-          {
-            "@ondc/org/item_id": "16",
-            "title": "Discount",
-            "@ondc/org/title_type": "discount",
-            "price": {
-              "currency": "INR",
-              "value": "-400.0"
             }
           },
           {
@@ -222,33 +268,6 @@
                 "currency": "INR",
                 "value": "1000.0"
               }
-            }
-          },
-          {
-            "@ondc/org/item_id": "65",
-            "@ondc/org/item_quantity": {
-              "count": 1
-            },
-            "title": "Pattachitra Goat - Fridge Magnet",
-            "@ondc/org/title_type": "item",
-            "price": {
-              "currency": "INR",
-              "value": "600.0"
-            },
-            "item": {
-              "price": {
-                "currency": "INR",
-                "value": "1000.0"
-              }
-            }
-          },
-          {
-            "@ondc/org/item_id": "65",
-            "title": "Discount",
-            "@ondc/org/title_type": "discount",
-            "price": {
-              "currency": "INR",
-              "value": "-400.0"
             }
           },
           {
@@ -294,7 +313,7 @@
         "@ondc/org/buyer_app_finder_fee_amount": "3.0"
       },
       "created_at": "2024-05-08T12:47:44.000Z",
-      "updated_at": "2024-05-08T12:47:44.000Z"
+      "updated_at": "2024-05-22T13:15:11.000Z"
     }
   }
 }
