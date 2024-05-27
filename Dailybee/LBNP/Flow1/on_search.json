@@ -7,38 +7,49 @@
     "core_version": "1.2.0",
     "bap_id": "ondc-pp-v2.dlyb.in",
     "bap_uri": "https://ondc-pp-v2.dlyb.in/v2/logisticsBuyer",
-    "transaction_id": "f05499bf-58c1-4a9c-9ed0-8f6f0c6ef5c5_661544cc707ebec1462153ee",
-    "message_id": "64cf986a-3b51-4148-9b98-2845859d2e68",
-    "timestamp": "2024-05-08T12:03:48.887Z",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
+    "transaction_id": "04944edd-d6cf-4509-bee0-d371645d2dbf_661544cc707ebec1462153ee",
+    "message_id": "2e60f72e-8a3f-4f14-a374-6cf3def960a7",
+    "timestamp": "2024-05-13T10:54:24.419Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
   },
   "message": {
     "catalog": {
       "bpp/descriptor": {
-        "name": "ONDC Logistics Seller App by WITS"
+        "name": "MP2",
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              }
+            ]
+          }
+        ]
       },
       "bpp/providers": [
         {
-          "id": "27790b39-d2a8-4845-9dd0-de8843d59878",
+          "id": "MP2",
           "descriptor": {
-            "name": "ONDC Logistics Seller App by WITS",
-            "long_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API.",
-            "short_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API."
+            "name": "MP2",
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider"
           },
           "categories": [
             {
               "id": "Same Day Delivery",
               "time": {
                 "label": "TAT",
-                "duration": "P1D",
-                "timestamp": "2024-05-08"
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
               }
             }
           ],
           "fulfillments": [
             {
-              "id": "8f58f907-23d3-43b3-a3b3-0a5dc9012938",
+              "id": "mp2_sdd_f1",
               "type": "Delivery",
               "start": {
                 "time": {
@@ -55,44 +66,44 @@
                     },
                     {
                       "code": "motorable_distance",
-                      "value": "0.00"
+                      "value": "0.27"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "b6c3df4e-53f3-42da-b1e6-6b86e41eb728",
+              "id": "mp2_sdd_f1-RTO",
               "type": "RTO"
             }
           ],
           "items": [
             {
-              "id": "Standard",
+              "id": "mp2_sdd",
               "parent_item_id": "",
               "category_id": "Same Day Delivery",
-              "fulfillment_id": "8f58f907-23d3-43b3-a3b3-0a5dc9012938",
+              "fulfillment_id": "mp2_sdd_f1",
               "descriptor": {
                 "code": "P2P",
-                "name": "Same Day Delivery",
-                "long_desc": "Upto 1 day for Delivery",
-                "short_desc": "Upto 1 day for Delivery"
+                "name": "MP2 SDD Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
               },
               "price": {
                 "currency": "INR",
-                "value": "122.38"
+                "value": "2.0"
               },
               "time": {
                 "label": "TAT",
-                "duration": "P1D",
-                "timestamp": "2024-05-08"
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
               }
             },
             {
-              "id": "rto",
-              "parent_item_id": "Standard",
+              "id": "mp2_sdd-RTO",
+              "parent_item_id": "mp2_sdd",
               "category_id": "Same Day Delivery",
-              "fulfillment_id": "b6c3df4e-53f3-42da-b1e6-6b86e41eb728",
+              "fulfillment_id": "mp2_sdd_f1-RTO",
               "descriptor": {
                 "code": "P2P",
                 "name": "RTO quote",
@@ -101,12 +112,12 @@
               },
               "price": {
                 "currency": "INR",
-                "value": "36.71"
+                "value": "0"
               },
               "time": {
                 "label": "TAT",
-                "duration": "P1D",
-                "timestamp": "2024-05-09"
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
               }
             }
           ]
