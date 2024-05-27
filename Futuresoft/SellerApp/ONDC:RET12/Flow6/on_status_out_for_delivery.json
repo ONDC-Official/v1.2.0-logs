@@ -3,21 +3,21 @@
         "domain": "ONDC:RET12",
         "country": "IND",
         "city": "std:0120",
-        "action": "on_update",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_id": "bamboologyondc.preprod.clouddeploy.in",
         "bpp_uri": "https://bamboologyondc.preprod.clouddeploy.in/ondc",
         "transaction_id": "d3d44fda-eb80-4ffb-8a32-657ecc55c920",
-        "message_id": "f01fa478-98b7-43c0-b92c-24812357fb70",
-        "timestamp": "2024-05-27T14:27:19.898Z",
+        "message_id": "a383683f-6e79-4530-8db8-c48b892c72f3",
+        "timestamp": "2024-05-27T13:26:19.606Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "2024-05-27-965578",
-            "state": "Completed",
+            "state": "In-progress",
             "provider": {
                 "id": "bamboologyondc.preprod.clouddeploy.in",
                 "locations": [
@@ -116,7 +116,7 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Out-for-delivery"
                         }
                     },
                     "tracking": true,
@@ -181,54 +181,33 @@
                             "range": {
                                 "start": "2024-06-05T13:17:17.425Z",
                                 "end": "2024-06-05T13:17:17.425Z"
-                            },
-                            "timestamp": "2024-05-27T13:27:39.065Z"
-                        }
-                    }
-                },
-                {
-                    "id": "665498459827292ff74f8b0d",
-                    "type": "Return",
-                    "state": {
-                        "descriptor": {
-                            "code": "Return_Initiated"
+                            }
                         }
                     },
                     "tags": [
                         {
-                            "code": "return_request",
+                            "code": "routing",
                             "list": [
                                 {
-                                    "code": "item_id",
-                                    "value": "gid://shopify/ProductVariant/44611706585343"
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "no"
                                 },
                                 {
-                                    "code": "item_quantity",
-                                    "value": "2"
+                                    "code": "url_enabled",
+                                    "value": "yes"
                                 },
                                 {
-                                    "code": "reason_id",
-                                    "value": "001"
-                                },
-                                {
-                                    "code": "reason_desc",
-                                    "value": "detailed description for return"
-                                },
-                                {
-                                    "code": "images",
-                                    "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-05-27-965578/235b0adf-fcff-4cec-b1eb-8619ab6da841.png"
-                                },
-                                {
-                                    "code": "ttl_approval",
-                                    "value": "PT24H"
-                                },
-                                {
-                                    "code": "ttl_reverseqc",
-                                    "value": "P3D"
-                                },
-                                {
-                                    "code": "initiated_by",
-                                    "value": "buyer-app-preprod-v2.ondc.org"
+                                    "code": "url",
+                                    "value": "https://abc.dummytrackingurl.com"
                                 }
                             ]
                         }
@@ -310,18 +289,11 @@
                         "settlement_ifsc_code": "XXXXXXXXX",
                         "bank_name": "xxxx",
                         "branch_name": "xxxx"
-                    },
-                    {
-                        "settlement_counterparty": "buyer",
-                        "settlement_phase": "refund",
-                        "settlement_type": "netbanking",
-                        "settlement_amount": "1200",
-                        "settlement_timestamp": "2024-05-27T14:46:33.942Z"
                     }
                 ]
             },
             "created_at": "2024-05-27T13:17:17.425Z",
-            "updated_at": "2024-05-27T14:27:19.898Z",
+            "updated_at": "2024-05-27T13:26:19.606Z",
             "documents": [
                 {
                     "url": "https://fsondc.blob.core.windows.net/ondc/2024-05-27-965578.pdf",
