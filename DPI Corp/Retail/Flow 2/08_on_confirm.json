@@ -1,0 +1,214 @@
+{
+  "context": {
+    "action": "on_confirm",
+    "domain": "ONDC:RET10",
+    "city": "std:080",
+    "country": "IND",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "core_version": "1.2.0",
+    "transaction_id": "0c54ed42-c10f-473b-a13d-ce23fc09f782",
+    "message_id": "f6959ed5-94b1-4095-859f-bc7066c804df",
+    "timestamp": "2024-05-28T07:30:41.464Z",
+    "ttl": "PT30S",
+    "bpp_id": "ondc.dpicorp.io",
+    "bpp_uri": "https://ondc.dpicorp.io/sellers/hook"
+  },
+  "message": {
+    "order": {
+      "id": "2024-05-28-823347",
+      "state": "Created",
+      "transaction_id": "0c54ed42-c10f-473b-a13d-ce23fc09f782",
+      "provider": {
+        "id": "6203b5bf3aae670023897520",
+        "locations": [
+          {
+            "id": "L-1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "62074e69a464e3ff3d4d9bd3",
+          "fulfillment_id": "1",
+          "quantity": {
+            "count": 3
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "Lido Mall",
+        "phone": "9587551153",
+        "email": "bhupen.pal@dpicorp.in",
+        "address": {
+          "name": "Lido Mall",
+          "building": "Lido Mall",
+          "locality": "Old Madras Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560008"
+        },
+        "created_at": "2024-05-28T07:29:46.917Z",
+        "updated_at": "2024-05-28T07:29:46.917Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/provider_name": "DPI Corp Delivery",
+          "@ondc/org/TAT": "PT60M",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "start": {
+            "location": {
+              "id": "L-1",
+              "gps": "12.9756123,77.6006444",
+              "descriptor": {
+                "name": "Gvv"
+              },
+              "address": {
+                "name": "DPI Corp",
+                "door": "DPI Corp",
+                "locality": "Church Street",
+                "street": "Church Street",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "9999999999",
+              "email": "support@dpicorp.io"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.972994,77.621215",
+              "address": {
+                "name": "Lido Mall",
+                "building": "Lido Mall",
+                "locality": "Old Madras Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560008"
+              }
+            },
+            "person": {
+              "name": "Lido Mall"
+            },
+            "contact": {
+              "phone": "9587551153",
+              "email": "bhupen.pal@dpicorp.in"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "150"
+        },
+        "breakup": [
+          {
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_id": "62074e69a464e3ff3d4d9bd3",
+            "@ondc/org/item_quantity": {
+              "count": 3
+            },
+            "title": "Lays Potato Chips - Classic Salted, Best-Quality, 115 g",
+            "price": {
+              "currency": "INR",
+              "value": "150"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "50"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "62074e69a464e3ff3d4d9bd3",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "misc",
+            "title": "Convenience Fee",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "packing",
+            "title": "Packing charges",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "params": {
+          "currency": "INR",
+          "amount": "150"
+        },
+        "status": "NOT-PAID",
+        "type": "ON-FULFILLMENT",
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "DPI Corporation Private Limited",
+            "settlement_bank_account_no": "50200093791682",
+            "settlement_ifsc_code": "HDFC0000354",
+            "bank_name": "HDFC Bank Limited",
+            "branch_name": "Sarjapur Road"
+          }
+        ]
+      },
+      "tags": [],
+      "created_at": "2024-05-28T07:30:40.132Z",
+      "updated_at": "2024-05-28T07:30:41.464Z"
+    }
+  }
+}
