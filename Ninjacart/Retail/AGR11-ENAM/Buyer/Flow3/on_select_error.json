@@ -1,0 +1,112 @@
+{
+    "context": {
+        "domain": "ONDC:AGR11",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_select",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-b2c-buyer-api.trafyn.site",
+        "bap_uri": "https://ondc-b2c-buyer-api.trafyn.site/",
+        "bpp_id": "sellpreprod.enam.gov.in",
+        "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
+        "transaction_id": "1adfa929-df58-4692-8a6c-762bc0a142c8",
+        "message_id": "1717073332441",
+        "timestamp": "2024-05-30T12:48:52.657Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "105",
+                "locations": [
+                    {
+                        "id": "244"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "1378",
+                    "fulfillment_id": "224"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "224",
+                    "type": "Delivery",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/provider_name": "e-NAM",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                },
+                {
+                    "id": "225",
+                    "type": "Self-Pickup",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/provider_name": "e-NAM",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "1440.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "1378",
+                        "@ondc/org/item_quantity": {
+                            "count": 12
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.0"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": 12
+                                },
+                                "maximum": {
+                                    "count": 10000
+                                }
+                            }
+                        },
+                        "title": "WATERMELON",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1440.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "224",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                ],
+                "ttl": "PT24H"
+            }
+        }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "[{\"message\":\"Item quantity unavailable\",\"item_id\":\"1378\",\"error_code\":\"40002\"}]"
+    }
+}
