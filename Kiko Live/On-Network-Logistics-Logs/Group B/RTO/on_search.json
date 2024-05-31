@@ -1,48 +1,48 @@
 {
     "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:022",
         "action": "on_search",
+        "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "city": "std:022",
-        "core_version": "1.2.0",
-        "country": "IND",
-        "domain": "nic2004:60232",
-        "message_id": "f3a05c71-1a9b-4dfe-af0b-8f2748f4a9ab",
-        "timestamp": "2024-04-29T10:28:20.151Z",
-        "transaction_id": "dbf514c5-7e91-430b-be9b-df16e920e951",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
+        "transaction_id": "11973d06-bf59-4524-aa89-90d826b0d916",
+        "message_id": "92e66878-752f-4b68-87ca-622b5f9de60f",
+        "timestamp": "2024-05-06T05:57:53.992Z",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
     },
     "message": {
         "catalog": {
             "bpp/descriptor": {
-                "name": "ONDC Logistics Seller App by WITS"
+                "name": "MP2"
             },
             "bpp/providers": [
                 {
-                    "id": "7fc3a32e-18cd-48dc-83d2-6f6b3ac4c0cd",
+                    "id": "MP2",
                     "descriptor": {
-                        "name": "ONDC Logistics Seller App by WITS",
-                        "long_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API.",
-                        "short_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API."
+                        "name": "MP2",
+                        "short_desc": "MP2",
+                        "long_desc": "MP2 Logistics Provider"
                     },
                     "categories": [
                         {
                             "id": "Immediate Delivery",
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-04-29"
+                                "duration": "PT55M",
+                                "timestamp": "2024-05-06"
                             }
                         }
                     ],
                     "fulfillments": [
                         {
-                            "id": "27fd39c4-12cf-431d-bbb7-073cb768fc73",
+                            "id": "mp2_immediate_f1",
                             "type": "Delivery",
                             "start": {
                                 "time": {
-                                    "duration": "PT15M"
+                                    "duration": "PT20M"
                                 }
                             },
                             "tags": [
@@ -55,44 +55,44 @@
                                         },
                                         {
                                             "code": "motorable_distance",
-                                            "value": "1.66"
+                                            "value": "1.14"
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "id": "40b96bef-2d4c-4155-9eb6-b4d3f24f5389",
+                            "id": "mp2_immediate_f1-RTO",
                             "type": "RTO"
                         }
                     ],
                     "items": [
                         {
-                            "id": "Standard",
+                            "id": "mp2_immediate",
                             "parent_item_id": "",
                             "category_id": "Immediate Delivery",
-                            "fulfillment_id": "27fd39c4-12cf-431d-bbb7-073cb768fc73",
+                            "fulfillment_id": "mp2_immediate_f1",
                             "descriptor": {
                                 "code": "P2P",
-                                "name": "Immediate Delivery",
-                                "long_desc": "Upto 60 mins for Delivery",
-                                "short_desc": "Upto 60 mins for Delivery"
+                                "name": "MP2 Immediate Delivery",
+                                "short_desc": "Immediate Delivery by MP2",
+                                "long_desc": "Immediate Delivery by MP2"
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "122.38"
+                                "value": "2.0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-04-29"
+                                "duration": "PT55M",
+                                "timestamp": "2024-05-06"
                             }
                         },
                         {
-                            "id": "rto",
-                            "parent_item_id": "Standard",
+                            "id": "mp2_immediate-RTO",
+                            "parent_item_id": "mp2_immediate",
                             "category_id": "Immediate Delivery",
-                            "fulfillment_id": "40b96bef-2d4c-4155-9eb6-b4d3f24f5389",
+                            "fulfillment_id": "mp2_immediate_f1-RTO",
                             "descriptor": {
                                 "code": "P2P",
                                 "name": "RTO quote",
@@ -101,12 +101,12 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "36.71"
+                                "value": "0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "P1D",
-                                "timestamp": "2024-04-30"
+                                "duration": "PT55M",
+                                "timestamp": "2024-05-06"
                             }
                         }
                     ]

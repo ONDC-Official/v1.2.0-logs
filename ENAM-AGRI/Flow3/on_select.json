@@ -1,100 +1,94 @@
 {
     "context": {
-        "domain": "ONDC:AGR11",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_select",
-        "core_version": "1.2.0",
-        "bap_id": "buypreprod.enam.gov.in",
-        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
-        "bpp_id": "sellpreprod.enam.gov.in",
-        "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
-        "transaction_id": "f4fa6a99-fe45-4040-abb5-d0b9e3b3abd4",
-        "message_id": "34c3c649-6ac7-45f6-9ffb-7f590281a957",
-        "timestamp": "2024-04-26T07:44:48.002Z",
-        "ttl": "PT30S"
+      "ttl": "PT30S",
+      "city": "std:040",
+      "action": "on_select",
+      "bap_id": "buypreprod.enam.gov.in",
+      "bpp_id": "sellpreprod.enam.gov.in",
+      "domain": "ONDC:AGR11",
+      "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
+      "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
+      "country": "IND",
+      "timestamp": "2024-05-25T11:21:52.535Z",
+      "message_id": "eb11406c-a271-4a03-bf3f-6877937bb68c",
+      "core_version": "1.2.0",
+      "transaction_id": "a2996111-1ebf-4168-aa70-321c559b364a"
     },
     "message": {
-        "order": {
-            "quote": {
+      "order": {
+        "items": [
+          {
+            "id": "1366",
+            "fulfillment_id": "246"
+          }
+        ],
+        "quote": {
+          "ttl": "PT24H",
+          "price": {
+            "value": "300.0",
+            "currency": "INR"
+          },
+          "breakup": [
+            {
+              "item": {
                 "price": {
-                    "currency": "INR",
-                    "value": "980.0"
+                  "value": "150.0",
+                  "currency": "INR"
                 },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "100",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "490.0",
-                                "maximum_value": "490.0"
-                            },
-                            "quantity": {
-                                "available": {
-                                    "count": "99"
-                                },
-                                "maximum": {
-                                    "count": "99"
-                                }
-                            }
-                        },
-                        "title": "MAIZE",
-                        "price": {
-                            "currency": "INR",
-                            "value": "490.0",
-                            "maximum_value": "490.0"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "provider": {
-                "id": "6",
-                "locations": [
-                    {
-                        "id": "5"
-                    }
-                ]
-            },
-            "items": [
-                {
-                    "id": "100",
-                    "fulfillment_id": "8"
+                "quantity": {
+                  "maximum": {
+                    "count": "1000"
+                  },
+                  "available": {
+                    "count": "100"
+                  }
                 }
-            ],
-            "fulfillments": [
-                {
-                    "id": "11",
-                    "type": "Self-Pickup",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
-                        }
-                    },
-                    "tracking": false
-                },
-                {
-                    "id": "8",
-                    "type": "Delivery",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
-                    "state": {
-                        "descriptor": {
-                            "code": "Serviceable"
-                        }
-                    },
-                    "tracking": false
-                }
-            ]
-        }
+              },
+              "price": {
+                "value": "300.0",
+                "currency": "INR"
+              },
+              "title": "Durian",
+              "@ondc/org/item_id": "1366",
+              "@ondc/org/title_type": "item",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              }
+            },
+            {
+              "price": {
+                "value": "0.0",
+                "currency": "INR"
+              },
+              "title": "Delivery charges",
+              "@ondc/org/item_id": "246",
+              "@ondc/org/title_type": "delivery"
+            }
+          ]
+        },
+        "provider": {
+          "id": "116",
+          "locations": [
+            {
+              "id": "288"
+            }
+          ]
+        },
+        "fulfillments": [
+          {
+            "id": "246",
+            "type": "Delivery",
+            "state": {
+              "descriptor": {
+                "code": "Serviceable"
+              }
+            },
+            "tracking": false,
+            "@ondc/org/TAT": "PT48H",
+            "@ondc/org/category": "Standard Delivery",
+            "@ondc/org/provider_name": "e-NAM"
+          }
+        ]
+      }
     }
-}
+  }

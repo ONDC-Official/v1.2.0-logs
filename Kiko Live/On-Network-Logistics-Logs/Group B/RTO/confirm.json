@@ -7,66 +7,66 @@
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "message_id": "2498f5b4-9845-44d9-8cc5-c806ba78a76a",
-        "timestamp": "2024-04-29T10:31:06.819Z",
-        "transaction_id": "dbf514c5-7e91-430b-be9b-df16e920e951",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "message_id": "c2430972-d1ae-4a87-ad20-a314e9ad9e3e",
+        "timestamp": "2024-05-06T05:58:18.919Z",
+        "transaction_id": "11973d06-bf59-4524-aa89-90d826b0d916",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-04-29-161891",
+            "id": "2024-05-06-396088",
             "state": "Created",
             "provider": {
-                "id": "7fc3a32e-18cd-48dc-83d2-6f6b3ac4c0cd"
+                "id": "MP2"
             },
             "items": [
                 {
-                    "id": "Standard",
-                    "fulfillment_id": "27fd39c4-12cf-431d-bbb7-073cb768fc73",
+                    "id": "mp2_immediate",
+                    "category_id": "Immediate Delivery",
+                    "fulfillment_id": "mp2_immediate_f1",
                     "descriptor": {
                         "code": "P2P"
                     },
-                    "category_id": "Immediate Delivery",
                     "time": {
                         "label": "TAT",
-                        "duration": "PT60M",
-                        "timestamp": "2024-04-29"
+                        "duration": "PT55M",
+                        "timestamp": "2024-05-06"
                     }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "122.38"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "116.00"
+                            "value": "1.64"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "6.38"
+                            "value": "0.36"
                         }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "id": "27fd39c4-12cf-431d-bbb7-073cb768fc73",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
                     "start": {
                         "time": {
-                            "duration": "PT15M"
+                            "duration": "PT20M"
                         },
                         "person": {
                             "name": "Vijendra Patidar"
@@ -89,7 +89,7 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "202059",
+                            "short_desc": "524089",
                             "long_desc": "Order Pick Up Confirmation Code"
                         }
                     },
@@ -115,7 +115,7 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "557182",
+                            "short_desc": "659377",
                             "long_desc": "Delivery Confirmation Code"
                         }
                     },
@@ -155,8 +155,8 @@
                 "tax_number": "22AAAAA0000A1Z5",
                 "phone": "7689965008",
                 "email": "suryanash@kiko.live",
-                "created_at": "2024-04-29T10:30:13.387Z",
-                "updated_at": "2024-04-29T10:30:13.387Z"
+                "created_at": "2024-05-06T05:58:10.767Z",
+                "updated_at": "2024-05-06T05:58:10.767Z"
             },
             "payment": {
                 "collected_by": "BAP",
@@ -164,23 +164,6 @@
             },
             "@ondc/org/linked_order": {
                 "items": [
-                    {
-                        "category_id": "Grocery",
-                        "descriptor": {
-                            "name": "Amul ghee"
-                        },
-                        "quantity": {
-                            "count": 1,
-                            "measure": {
-                                "unit": "kilogram",
-                                "value": 5
-                            }
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "2400"
-                        }
-                    },
                     {
                         "category_id": "Grocery",
                         "descriptor": {
@@ -196,6 +179,23 @@
                         "price": {
                             "currency": "INR",
                             "value": "35"
+                        }
+                    },
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Amul ghee"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "2400"
                         }
                     }
                 ],
@@ -214,7 +214,7 @@
                     }
                 },
                 "order": {
-                    "id": "2024-04-29-161891",
+                    "id": "2024-05-06-396088",
                     "weight": {
                         "unit": "kilogram",
                         "value": 5.5
@@ -235,48 +235,8 @@
                     }
                 }
             },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "max_liability_cap",
-                            "value": "10000"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "1000"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "accept_bpp_terms",
-                            "value": "Y"
-                        }
-                    ]
-                }
-            ],
-            "created_at": "2024-04-29T10:31:06.819Z",
-            "updated_at": "2024-04-29T10:31:06.819Z"
+            "created_at": "2024-05-06T05:58:18.919Z",
+            "updated_at": "2024-05-06T05:58:18.919Z"
         }
     }
 }
