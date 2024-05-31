@@ -1,0 +1,202 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "owner.waayu.app/ondcpreprod",
+    "bpp_uri": "https://owner.waayu.app/ondcpreprod/",
+    "transaction_id": "c69ec518-1557-4305-ac92-8cd332d9c2f2",
+    "message_id": "139feb99-ba34-4d7f-ab86-68e1b09b0bdc",
+    "city": "std:020",
+    "country": "IND",
+    "timestamp": "2024-05-31T06:27:42.621Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-05-31-150387",
+      "state": "In-progress",
+      "provider": {
+        "id": "35",
+        "rateable": true,
+        "locations": [{ "id": "L35" }]
+      },
+      "items": [
+        {
+          "id": "143679",
+          "fulfillment_id": "WD111",
+          "quantity": { "count": 2 }
+        },
+        {
+          "id": "141640",
+          "fulfillment_id": "WD111",
+          "quantity": { "count": 3 }
+        }
+      ],
+      "billing": {
+        "name": "Pankaj Dhote",
+        "address": {
+          "name": "Pankaj Dhote",
+          "building": "near Aacharya Shanti Sagar Chawk",
+          "locality": "Unnamed Road",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "IND",
+          "area_code": "411014"
+        },
+        "email": "pankaj.dhote@desteksolutions.com",
+        "phone": "9579269452",
+        "created_at": "2024-05-31T06:18:54.376Z",
+        "updated_at": "2024-05-31T06:18:54.376Z"
+      },
+      "fulfillments": [
+        {
+          "id": "WD111",
+          "@ondc/org/provider_name": "Coffee House",
+          "state": { "descriptor": { "code": "Order-picked-up" } },
+          "type": "Delivery",
+          "tracking": true,
+          "@ondc/org/TAT": "PT90M",
+          "start": {
+            "location": {
+              "descriptor": { "name": "Coffee House" },
+              "gps": "18.557404,73.928299",
+              "address": {
+                "locality": "viman nagar pune",
+                "city": "Pune",
+                "area_code": "411014",
+                "state": "Maharashtra"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-05-31T06:25:27.307Z",
+                "end": "2024-05-31T06:55:27.307Z"
+              },
+              "timestamp": "2024-05-31T06:27:29.228Z"
+            },
+            "contact": {
+              "phone": "9423946081",
+              "email": "mandar@desteksolutions.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "18.567463157396705,73.92617583274843",
+              "address": {
+                "name": "Pankaj Dhote",
+                "building": "Pankaj Dhote",
+                "locality": "Unnamed Road",
+                "city": "Pune",
+                "state": "Maharashtra",
+                "country": "IND",
+                "area_code": "411014"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-05-31T06:55:27.307Z",
+                "end": "2024-05-31T08:20:27.307Z"
+              }
+            },
+            "person": { "name": "Pankaj Dhote" },
+            "contact": { "phone": "9579269452" }
+          },
+          "tags": [
+            {
+              "code": "routing",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "P2P"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "143679",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Biscuit Cake",
+            "@ondc/org/title_type": "item",
+            "item": { "price": { "currency": "INR", "value": "350" } },
+            "price": { "currency": "INR", "value": "700" }
+          },
+          {
+            "@ondc/org/item_id": "143679",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "35" }
+          },
+          {
+            "@ondc/org/item_id": "141640",
+            "title": "Corn and Peas Sub",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "600" },
+            "@ondc/org/item_quantity": { "count": 3 },
+            "item": { "price": { "currency": "INR", "value": "200" } }
+          },
+          {
+            "@ondc/org/item_id": "141640",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "30" }
+          },
+          {
+            "@ondc/org/item_id": "WD111",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50" }
+          },
+          {
+            "@ondc/org/item_id": "WD111",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "10" }
+          }
+        ],
+        "price": { "currency": "INR", "value": "1425" },
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "order_OH01McrYmrXEdI",
+          "amount": "1425"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "beneficiary_name": "Destek Infosolutions Pvt Ltd",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "091505008154",
+            "settlement_ifsc_code": "ICIC0000915",
+            "bank_name": "ICICI Bank",
+            "branch_name": "Viman Nagar, Pune"
+          }
+        ]
+      },
+      "documents": [
+        {
+          "url": "https://owner.waayu.app/view_invoice.php?orderid=6162",
+          "label": "Invoice"
+        }
+      ],
+      "created_at": "2024-05-31T06:20:27.307Z",
+      "updated_at": "2024-05-31T06:27:42.621Z"
+    }
+  }
+}
