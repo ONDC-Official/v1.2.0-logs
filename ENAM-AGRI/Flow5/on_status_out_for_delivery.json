@@ -1,43 +1,25 @@
 {
     "context": {
         "ttl": "PT30S",
-        "city": "std:040",
-        "action": "on_init",
+        "city": "std:0129",
+        "action": "on_status",
         "bap_id": "buypreprod.enam.gov.in",
         "bpp_id": "sellpreprod.enam.gov.in",
-        "domain": "ONDC:RET10",
+        "domain": "ONDC:AGR11",
         "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-05-25T15:35:41.444Z",
-        "message_id": "89344c39-7ef3-4ea5-8f17-f82c6ca3bd39",
+        "timestamp": "2024-06-03T23:44:32.751Z",
+        "message_id": "827b623f-20e3-43a7-9464-0df42135b1d9",
         "core_version": "1.2.0",
-        "transaction_id": "38a71368-8a79-456e-a425-89e246c30342"
+        "transaction_id": "582e1f6b-eaff-4ccc-baf4-870d4f51ccfc"
     },
     "message": {
         "order": {
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "06AADCH5529B1ZY"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "BBCDF1234E"
-                        },
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        }
-                    ]
-                }
-            ],
+            "id": "1134",
             "items": [
                 {
-                    "id": "1368",
+                    "id": "1397",
                     "quantity": {
                         "count": 2
                     },
@@ -45,34 +27,19 @@
                 }
             ],
             "quote": {
-                "ttl": "PT24H",
+                "ttl": "P1D",
                 "price": {
-                    "value": "300.0",
+                    "value": "200",
                     "currency": "INR"
                 },
                 "breakup": [
                     {
                         "price": {
-                            "value": "0.0",
+                            "value": "100.0",
                             "currency": "INR"
                         },
-                        "title": "Delivery charges",
-                        "@ondc/org/item_id": "246",
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "item": {
-                            "price": {
-                                "value": "150.0",
-                                "currency": "INR"
-                            }
-                        },
-                        "price": {
-                            "value": "300.0",
-                            "currency": "INR"
-                        },
-                        "title": "Kiwano",
-                        "@ondc/org/item_id": "1368",
+                        "title": "Sardines Fish",
+                        "@ondc/org/item_id": "1397",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 2
@@ -80,42 +47,44 @@
                     }
                 ]
             },
+            "state": "In-progress",
             "billing": {
                 "name": "Shivam Gupta",
                 "email": "8468894669@enam.email.com",
                 "phone": "8468894669",
                 "address": {
                     "city": "Hyderabad",
-                    "door": "511",
                     "name": "Default Address",
-                    "ward": "530",
                     "state": "Telangana",
-                    "street": "Rto Street",
                     "country": "IND",
-                    "building": "Bahvani Mandir",
-                    "locality": "Kondapur",
+                    "building": "511, Bahvani Mandir",
+                    "locality": "530, Rto Street, Kondapur",
                     "area_code": "500084"
                 },
-                "created_at": "2024-05-25T15:35:41.000Z",
-                "updated_at": "2024-05-25T15:35:41.000Z"
+                "created_at": "2024-06-03T23:41:24.000Z",
+                "updated_at": "2024-06-03T23:41:24.000Z"
             },
             "payment": {
-                "uri": "https://ondc.transaction.com/payment",
                 "type": "ON-FULFILLMENT",
+                "params": {
+                    "amount": "200.0",
+                    "currency": "INR",
+                    "transaction_id": "null"
+                },
                 "status": "NOT-PAID",
                 "collected_by": "BPP",
                 "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/settlement_window": "PT24H",
                 "@ondc/org/settlement_details": [
                     {
-                        "bank_name": "HDFC",
-                        "branch_name": "Chandigarh",
+                        "bank_name": "IDFC",
+                        "branch_name": "Gurgaon",
                         "settlement_type": "rtgs",
-                        "beneficiary_name": "Enum",
+                        "beneficiary_name": "enam",
                         "settlement_phase": "sale-amount",
-                        "settlement_ifsc_code": "HDFC0000887",
-                        "settlement_counterparty": "seller-app",
-                        "settlement_bank_account_no": "50100987654123"
+                        "settlement_ifsc_code": "IDFB0020101",
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_bank_account_no": "21483543961"
                     }
                 ],
                 "@ondc/org/withholding_amount": "0",
@@ -130,35 +99,48 @@
                     }
                 ]
             },
+            "created_at": "2024-06-03T23:41:28.000Z",
+            "updated_at": "2024-06-03T23:44:32.751Z",
             "fulfillments": [
                 {
                     "id": "246",
                     "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-05-24T18:58:07.287Z",
+                                "start": "2024-05-24T19:00:48.606Z"
+                            },
+                            "timestamp": "2024-05-24T19:00:48.606Z"
+                        },
                         "person": {
                             "name": "Shivam Gupta"
                         },
                         "contact": {
+                            "email": "null",
                             "phone": "8468894669"
                         },
                         "location": {
-                            "id": "5337",
                             "gps": "17.4739167,78.5118889",
                             "address": {
                                 "city": "Hyderabad",
-                                "door": "511",
                                 "name": "Default Address",
-                                "ward": "530",
                                 "state": "Telangana",
-                                "street": "Rto Street",
                                 "country": "IND",
-                                "building": "Bahvani Mandir",
-                                "locality": "Kondapur",
+                                "building": "511, Bahvani Mandir",
+                                "locality": "530, Rto Street, Kondapur",
                                 "area_code": "500084"
                             }
                         }
                     },
                     "type": "Delivery",
                     "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-05-24T18:58:07.287Z",
+                                "start": "2024-05-24T19:00:48.606Z"
+                            },
+                            "timestamp": "2024-05-24T19:00:48.606Z"
+                        },
                         "contact": {
                             "phone": "8978560404"
                         },
@@ -177,8 +159,14 @@
                             }
                         }
                     },
+                    "state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
                     "tracking": false,
-                    "@ondc/org/TAT": "PT48H"
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/provider_name": "Bhui Store kondapur"
                 }
             ]
         }
