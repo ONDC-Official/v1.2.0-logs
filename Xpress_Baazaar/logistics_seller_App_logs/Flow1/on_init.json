@@ -1,0 +1,159 @@
+{
+    "context": {
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:0120",
+      "action": "on_init",
+      "core_version": "1.2.0",
+      "bap_id": "preprod.xpressbaazaar.com",
+      "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+      "bpp_id": "onpp.grouptci.com",
+      "bpp_uri": "https://onpp.grouptci.com/ondc",
+      "transaction_id": "d80599c8-5651-4a9a-9f7d-cf90732f0527",
+      "message_id": "25535f74-5c8d-4af9-9ba0-e85ad40180a6",
+      "timestamp": "2024-05-30T21:05:30.500Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "7ec771c0-b381-489f-84db-4d2d4143fcdc",
+          "locations": [
+            {
+              "id": "7ec771c0-b381-489f-84db-4d2d4143fcdc"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "588a2ab1-cc78-408b-83f9-47b8a901b7ce",
+            "fulfillment_id": "1"
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "1",
+            "type": "Delivery",
+            "start": {
+              "location": {
+                "gps": "28.625579, 77.361272",
+                "address": {
+                  "name": "My store name",
+                  "building": "My building name",
+                  "locality": "My street name",
+                  "city": "Noida",
+                  "state": "Uttar Pradesh",
+                  "country": "India",
+                  "area_code": "201309"
+                }
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com"
+              }
+            },
+            "end": {
+              "location": {
+                "gps": "28.563676, 77.241307",
+                "address": {
+                  "name": "My house #",
+                  "building": "My house or building name",
+                  "locality": "My street name",
+                  "city": "New Delhi",
+                  "state": "Delhi",
+                  "country": "India",
+                  "area_code": "110024"
+                }
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com"
+              }
+            }
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "590.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "588a2ab1-cc78-408b-83f9-47b8a901b7ce",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "500.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "588a2ab1-cc78-408b-83f9-47b8a901b7ce",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "90.00"
+              }
+            }
+          ],
+          "ttl": "PT45M"
+        },
+        "payment": {
+          "@ondc/org/collection_amount": "300.00",
+          "collected_by": "BPP",
+          "type": "ON-FULFILLMENT",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_type": "upi",
+              "beneficiary_name": "xxxxx",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX"
+            }
+          ]
+        },
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Pending"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "0.00"
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Agent-assigned"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "100.00"
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Order-picked-up"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "100.00"
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Out-for-delivery"
+              }
+            },
+            "cancellation_fee": {
+              "percentage": "100.00"
+            }
+          }
+        ]
+      }
+    }
+  }
