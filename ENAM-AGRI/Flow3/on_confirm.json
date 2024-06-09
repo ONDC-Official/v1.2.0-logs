@@ -9,14 +9,14 @@
         "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
         "country": "IND",
-        "timestamp": "2024-06-09T11:11:25.637Z",
-        "message_id": "0c16915f-f72b-4c23-81c8-f0e860d7c065",
+        "timestamp": "2024-06-09T17:56:53.023Z",
+        "message_id": "90333972-683f-4acd-b21e-c4b24e517b2f",
         "core_version": "1.2.0",
-        "transaction_id": "c372e10e-2136-41ee-9c62-01c520141cac"
+        "transaction_id": "44dba081-5f35-4c18-ba6c-a6b9eb0aee04"
     },
     "message": {
         "order": {
-            "id": "1229",
+            "id": "1236",
             "tags": [
                 {
                     "code": "bpp_terms",
@@ -47,7 +47,7 @@
             ],
             "items": [
                 {
-                    "id": "1428",
+                    "id": "1430",
                     "quantity": {
                         "count": 2
                     },
@@ -64,7 +64,7 @@
             "quote": {
                 "ttl": "P1D",
                 "price": {
-                    "value": "530.0",
+                    "value": "760.0",
                     "currency": "INR"
                 },
                 "breakup": [
@@ -76,6 +76,41 @@
                         "title": "Delivery charges",
                         "@ondc/org/item_id": "246",
                         "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "quote",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "offer",
+                                    "list": [
+                                        {
+                                            "code": "id",
+                                            "value": "CADBXN9YZ0"
+                                        },
+                                        {
+                                            "code": "type",
+                                            "value": "discount"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "price": {
+                            "value": "-40.0",
+                            "currency": "INR"
+                        },
+                        "title": "Offer",
+                        "@ondc/org/item_id": "1430",
+                        "@ondc/org/title_type": "offer"
                     },
                     {
                         "price": {
@@ -107,62 +142,27 @@
                     {
                         "item": {
                             "price": {
-                                "value": "200.0",
+                                "value": "300.0",
                                 "currency": "INR"
                             }
                         },
                         "price": {
-                            "value": "400.0",
+                            "value": "600.0",
                             "currency": "INR"
                         },
-                        "title": "Eno",
-                        "@ondc/org/item_id": "1428",
+                        "title": "Cadbury Gems",
+                        "@ondc/org/item_id": "1430",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
                             "count": 2
                         }
-                    },
-                    {
-                        "item": {
-                            "tags": [
-                                {
-                                    "code": "quote",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "offer",
-                                    "list": [
-                                        {
-                                            "code": "id",
-                                            "value": "ENOARF01JB"
-                                        },
-                                        {
-                                            "code": "type",
-                                            "value": "discount"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "price": {
-                            "value": "-70.0",
-                            "currency": "INR"
-                        },
-                        "title": "Offer",
-                        "@ondc/org/item_id": "1428",
-                        "@ondc/org/title_type": "offer"
                     }
                 ]
             },
             "state": "Created",
             "offers": [
                 {
-                    "id": "ENOARF01JB",
+                    "id": "CADBXN9YZ0",
                     "tags": [
                         {
                             "code": "selection",
@@ -189,30 +189,32 @@
                     "locality": "530, Rto Street, Kondapur",
                     "area_code": "500084"
                 },
-                "created_at": "2024-06-09T11:11:06.000Z",
-                "updated_at": "2024-06-09T11:11:06.000Z"
+                "created_at": "2024-06-09T17:56:49.000Z",
+                "updated_at": "2024-06-09T17:56:49.000Z"
             },
             "payment": {
-                "type": "ON-ORDER",
+                "type": "ON-FULFILLMENT",
                 "params": {
-                    "amount": "530.0",
-                    "currency": "INR",
-                    "transaction_id": "1228"
+                    "amount": "760.0",
+                    "currency": "INR"
                 },
-                "status": "PAID",
-                "collected_by": "BAP",
+                "status": "NOT-PAID",
+                "collected_by": "BPP",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
                 "@ondc/org/settlement_details": [
                     {
-                        "bank_name": "HDFC",
-                        "branch_name": "Chandigarh",
+                        "bank_name": "IDFC",
+                        "branch_name": "Gurgaon",
                         "settlement_type": "rtgs",
-                        "beneficiary_name": "Enum",
+                        "beneficiary_name": "enam",
                         "settlement_phase": "sale-amount",
-                        "settlement_ifsc_code": "HDFC0000887",
-                        "settlement_counterparty": "seller-app",
-                        "settlement_bank_account_no": "50100987654123"
+                        "settlement_ifsc_code": "IDFB0020101",
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_bank_account_no": "21483543961"
                     }
                 ],
+                "@ondc/org/withholding_amount": "0",
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3.0"
             },
@@ -224,8 +226,8 @@
                     }
                 ]
             },
-            "created_at": "2024-06-09T11:11:25.503Z",
-            "updated_at": "2024-06-09T11:11:25.637Z",
+            "created_at": "2024-06-09T17:56:52.892Z",
+            "updated_at": "2024-06-09T17:56:53.023Z",
             "cancellation": {},
             "fulfillments": [
                 {
@@ -282,27 +284,6 @@
                 },
                 {
                     "id": "247",
-                    "end": {
-                        "person": {
-                            "name": "Shivam Gupta"
-                        },
-                        "contact": {
-                            "email": "enam.helpdesk@gmail.com",
-                            "phone": "8468894669"
-                        },
-                        "location": {
-                            "gps": "28.6225833,77.2127222",
-                            "address": {
-                                "city": "New Delhi",
-                                "name": "Default Address",
-                                "state": "Delhi",
-                                "country": "IND",
-                                "building": "511, Bahvani Mandir",
-                                "locality": "530, Rto Street, Patrapali",
-                                "area_code": "110001"
-                            }
-                        }
-                    },
                     "type": "Self-Pickup",
                     "start": {
                         "contact": {
