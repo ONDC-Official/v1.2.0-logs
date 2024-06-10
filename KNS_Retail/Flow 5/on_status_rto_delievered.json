@@ -8,16 +8,16 @@
     "bpp_id": "ondc.mysellercentral.com",
     "bpp_uri": "https://ondc.mysellercentral.com/api/ondc",
     "transaction_id": "cec2862a-fe80-48d6-8bb7-7df1b42235bc",
-    "message_id": "6585c456-3eeb-401d-b85a-2662b2f36ab7",
+    "message_id": "d70e42c2-30b1-48a0-8c97-ea56f7da750c",
     "city": "std:022",
     "country": "IND",
-    "timestamp": "2024-06-07T08:16:02.464Z",
+    "timestamp": "2024-06-07T08:19:33.160Z",
     "ttl": "PT30S"
   },
   "message": {
     "order": {
       "id": "2024-06-07-263991",
-      "state": "In-progress",
+      "state": "Cancelled",
       "provider": {
         "id": "51",
         "locations": [
@@ -30,6 +30,13 @@
         {
           "id": "614",
           "fulfillment_id": "37493073-d812-47c8-af50-b619f1b3bc38",
+          "quantity": {
+            "count": 0
+          }
+        },
+        {
+          "id": "614",
+          "fulfillment_id": "ac762481-1f29-450b-af97-106f27dd4889",
           "quantity": {
             "count": 1
           }
@@ -46,24 +53,29 @@
           "country": "IND",
           "area_code": "400059"
         },
-        "tax_number": null,
         "email": "aniket@kascommerce.com",
         "phone": "9876543210",
-        "created_at": "2024-06-07T08:15:09.060Z",
-        "updated_at": "2024-06-07T05:53:41.372Z"
+        "created_at": "2024-06-07T08:14:45.866Z",
+        "updated_at": "2024-06-07T08:14:45.866Z"
+      },
+      "cancellation": {
+        "cancelled_by": "ondc.mysellercentral.com",
+        "reason": {
+          "id": "011"
+        }
       },
       "fulfillments": [
         {
           "id": "37493073-d812-47c8-af50-b619f1b3bc38",
           "@ondc/org/provider_name": "KAS Store",
-          "type": "Delivery",
-          "tracking": false,
-          "@ondc/org/TAT": "P7D",
           "state": {
             "descriptor": {
-              "code": "Out-for-delivery"
+              "code": "Cancelled"
             }
           },
+          "type": "Delivery",
+          "tracking": true,
+          "@ondc/org/TAT": "P7D",
           "start": {
             "location": {
               "id": "bX1nc4VU",
@@ -74,11 +86,11 @@
               "address": {
                 "name": "Acme Plaza",
                 "building": "Acme Plaza",
-                "locality": "Mathuradas Vasanji Road",
+                "locality": "JB Nagar Chakala",
                 "city": "Mumbai",
+                "area_code": "400069",
                 "state": "Maharashtra",
-                "country": "IND",
-                "area_code": "400059"
+                "country": "IND"
               }
             },
             "time": {
@@ -87,13 +99,6 @@
                 "end": "2024-06-08T08:15:12.832Z"
               },
               "timestamp": "2024-06-07T08:15:57.629Z"
-            },
-            "instructions": {
-              "code": "1",
-              "name": "ONDC Order",
-              "short_desc": "value of PCC",
-              "long_desc": "additional instructions for pickup",
-              "images": []
             },
             "contact": {
               "phone": "9834824098",
@@ -104,7 +109,7 @@
             "location": {
               "gps": "19.112919,72.865683",
               "address": {
-                "name": "Aniket Mishra",
+                "name": "Acme Plaza",
                 "building": "Acme Plaza",
                 "locality": "Mathuradas Vasanji Road",
                 "city": "Mumbai",
@@ -119,40 +124,178 @@
                 "end": "2024-06-14T08:15:12.832Z"
               }
             },
-            "instructions": {
-              "code": "3",
-              "name": "ONDC Order",
-              "short_desc": "value of DCC",
-              "long_desc": "additional instructions for delivery",
-              "images": []
+            "person": {
+              "name": "Aniket Mishra"
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "aniket@kascommerce.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "retry_count",
+                  "value": "1"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "ac762481-1f29-450b-af97-106f27dd4889"
+                },
+                {
+                  "code": "reason_id",
+                  "value": "011"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "ondc.mysellercentral.com"
+                }
+              ]
+            },
+            {
+              "code": "igm_request",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "Issue1"
+                }
+              ]
+            },
+            {
+              "code": "precancel_state",
+              "list": [
+                {
+                  "code": "fulfillment_state",
+                  "value": "order-cancelled"
+                },
+                {
+                  "code": "updated_at",
+                  "value": "2024-06-07T08:16:02.464Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ac762481-1f29-450b-af97-106f27dd4889",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Delivered"
+            }
+          },
+          "start": {
+            "location": {
+              "gps": "19.112919,72.865683",
+              "address": {
+                "name": "Acme Plaza",
+                "building": "Acme Plaza",
+                "locality": "Mathuradas Vasanji Road",
+                "city": "Mumbai",
+                "state": "Maharashtra",
+                "country": "IND",
+                "area_code": "400059"
+              }
+            },
+            "time": {
+              "timestamp": "2024-06-07T08:16:37.455Z"
             },
             "person": {
               "name": "Aniket Mishra"
             },
             "contact": {
-              "phone": "9876543210"
+              "phone": "9876543210",
+              "email": "aniket@kascommerce.com"
+            }
+          },
+          "end": {
+            "location": {
+              "id": "bX1nc4VU",
+              "descriptor": {
+                "name": "KAS Store"
+              },
+              "gps": "19.1129587,72.8656954",
+              "address": {
+                "name": "Acme Plaza",
+                "building": "Acme Plaza",
+                "locality": "JB Nagar Chakala",
+                "city": "Mumbai",
+                "area_code": "400069",
+                "state": "Maharashtra",
+                "country": "IND"
+              }
+            },
+            "time": {
+              "timestamp": "2024-06-07T08:19:33.160Z"
+            },
+            "contact": {
+              "phone": "9834824098",
+              "email": "anket@mail.com"
             }
           },
           "tags": [
             {
-              "code": "routing",
+              "code": "quote_trail",
               "list": [
                 {
                   "code": "type",
-                  "value": "P2P"
+                  "value": "tax"
+                },
+                {
+                  "code": "id",
+                  "value": "614"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-23.33"
                 }
               ]
             },
             {
-              "code": "tracking",
+              "code": "quote_trail",
               "list": [
                 {
-                  "code": "gps_enabled",
-                  "value": "no"
+                  "code": "type",
+                  "value": "item"
                 },
                 {
-                  "code": "url_enabled",
-                  "value": "no"
+                  "code": "id",
+                  "value": "614"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-1502"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "delivery"
+                },
+                {
+                  "code": "id",
+                  "value": "ac762481-1f29-450b-af97-106f27dd4889"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "0.00"
                 }
               ]
             }
@@ -162,36 +305,26 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "1575.33"
+          "value": "50"
         },
+        "ttl": "P1D",
         "breakup": [
           {
             "@ondc/org/item_id": "614",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 0
             },
             "title": "Sofa",
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "1502"
+              "value": "0.00"
             },
             "item": {
               "price": {
                 "currency": "INR",
                 "value": "1502"
-              },
-              "tags": [
-                {
-                  "code": "type",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    }
-                  ]
-                }
-              ]
+              }
             }
           },
           {
@@ -200,7 +333,7 @@
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "23.33"
+              "value": "0.00"
             }
           },
           {
@@ -209,11 +342,19 @@
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "50"
+              "value": "50.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "ac762481-1f29-450b-af97-106f27dd4889",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
             }
           }
-        ],
-        "ttl": "PT1H"
+        ]
       },
       "payment": {
         "uri": "https://razorpay.com/",
@@ -249,7 +390,7 @@
         }
       ],
       "created_at": "2024-06-07T08:15:09.060Z",
-      "updated_at": "2024-06-07T08:16:02.464Z"
+      "updated_at": "2024-06-07T08:19:33.160Z"
     }
   }
 }
