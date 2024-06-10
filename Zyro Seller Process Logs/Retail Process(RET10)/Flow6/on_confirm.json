@@ -3,7 +3,7 @@
 		"domain": "ONDC:RET10",
 		"country": "IND",
 		"city": "std:0120",
-		"action": "on_update",
+		"action": "on_confirm",
 		"core_version": "1.2.0",
 		"bap_id": "buyer-app-preprod-v2.ondc.org",
 		"bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
@@ -11,94 +11,29 @@
 		"bpp_uri": "https://ondcapi.xoomsales.com/seller/process/",
 		"transaction_id": "2bb82bc5-5bca-4c9c-b6ea-41b41e3b2e00",
 		"message_id": "86bc6fea-c74b-4812-8bef-2997d1dba898",
-		"timestamp": "2024-06-05T05:48:13.897Z",
+		"timestamp": "2024-06-05T05:47:46.359Z",
 		"ttl": null
 	},
 	"message": {
 		"order": {
 			"id": "2024-06-05-329844",
 			"state": "Created",
-			"cancellation": null,
 			"items": [
+				{
+					"id": "5612",
+					"fulfillment_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
+					"quantity": {
+						"count": 1
+					}
+				},
 				{
 					"id": "5615",
 					"fulfillment_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
 					"quantity": {
 						"count": 1
-					},
-					"tags": null
-				},
-				{
-					"id": "5612",
-					"fulfillment_id": "",
-					"quantity": {
-						"count": 1
-					},
-					"tags": {
-						"status": "Cancelled"
 					}
 				}
 			],
-			"quote": {
-				"price": {
-					"currency": "INR",
-					"value": "250"
-				},
-				"breakup": [
-					{
-						"@ondc/org/item_id": "5615",
-						"@ondc/org/title_type": "item",
-						"@ondc/org/item_quantity": {
-							"count": 1
-						},
-						"price": {
-							"currency": "INR",
-							"value": "165"
-						},
-						"item": {
-							"price": {
-								"currency": "INR",
-								"value": "165"
-							}
-						},
-						"title": null
-					},
-					{
-						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
-						"@ondc/org/title_type": "delivery",
-						"@ondc/org/item_quantity": null,
-						"price": {
-							"currency": "INR",
-							"value": "50"
-						},
-						"item": null,
-						"title": null
-					},
-					{
-						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
-						"@ondc/org/title_type": "packing",
-						"@ondc/org/item_quantity": null,
-						"price": {
-							"currency": "INR",
-							"value": "20"
-						},
-						"item": null,
-						"title": null
-					},
-					{
-						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
-						"@ondc/org/title_type": "misc",
-						"@ondc/org/item_quantity": null,
-						"price": {
-							"currency": "INR",
-							"value": "15.00"
-						},
-						"item": null,
-						"title": null
-					}
-				],
-				"ttl": null
-			},
 			"billing": {
 				"name": "Dipu Maurya",
 				"address": {
@@ -117,31 +52,112 @@
 				"created_at": "2024-06-05T05:47:21.297Z",
 				"updated_at": "2024-06-05T05:47:21.297Z"
 			},
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "269"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "5612",
+						"@ondc/org/item_quantity": {
+							"count": 1
+						},
+						"@ondc/org/title_type": "item",
+						"title": "Fresho Capsicum - Green (Loose)",
+						"price": {
+							"currency": "INR",
+							"value": "19"
+						},
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "19"
+							}
+						}
+					},
+					{
+						"@ondc/org/item_id": "5615",
+						"@ondc/org/item_quantity": {
+							"count": 1
+						},
+						"@ondc/org/title_type": "item",
+						"title": "Fresho Banana - Yelakki",
+						"price": {
+							"currency": "INR",
+							"value": "165"
+						},
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "165"
+							}
+						}
+					},
+					{
+						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
+						"@ondc/org/item_quantity": null,
+						"@ondc/org/title_type": "delivery",
+						"title": "Delivery charges",
+						"price": {
+							"currency": "INR",
+							"value": "50"
+						},
+						"item": null
+					},
+					{
+						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
+						"@ondc/org/item_quantity": null,
+						"@ondc/org/title_type": "packing",
+						"title": "Packing charges",
+						"price": {
+							"currency": "INR",
+							"value": "20"
+						},
+						"item": null
+					},
+					{
+						"@ondc/org/item_id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
+						"@ondc/org/item_quantity": null,
+						"@ondc/org/title_type": "misc",
+						"title": "Convenience Fee",
+						"price": {
+							"currency": "INR",
+							"value": "15.00"
+						},
+						"item": null
+					}
+				],
+				"ttl": "P1D"
+			},
 			"fulfillments": [
 				{
 					"id": "703f5a4e-8982-4ec5-882b-f1a0f3177d07",
 					"@ondc/org/provider_name": "iThink Logistics",
-					"@ondc/org/TAT": null,
-					"type": "Delivery",
-					"tracking": false,
 					"state": {
 						"descriptor": {
-							"code": "Pending"
+							"code": "Pending",
+							"name": "iThink Logistics"
 						}
 					},
+					"type": "Delivery",
+					"tracking": false,
 					"start": {
 						"location": {
+							"id": "zyro_store_loc_2",
 							"descriptor": {
+								"code": "ZYRO-ONDC-2",
 								"name": "Keshav Store"
 							},
 							"gps": "28.579819260284307,77.44521994845796",
 							"address": {
-								"name": "Keshav Store",
-								"building": "",
+								"name": null,
+								"building": null,
+								"door": null,
 								"locality": "Nirala Greenshire",
 								"city": "Noida",
 								"state": "UP",
-								"country": "IND",
+								"country": null,
 								"area_code": "201309"
 							}
 						},
@@ -149,12 +165,18 @@
 							"range": {
 								"start": "2024-06-05T05:47:46.140Z",
 								"end": "2024-06-06T05:47:46.140Z"
-							},
-							"timestamp": "2024-06-05T05:48:13.743Z"
+							}
 						},
-						"instructions": null,
-						"authorization": null,
-						"contact": null
+						"instructions": {
+							"code": "2",
+							"name": "Ready to ship",
+							"short_desc": "9999999991",
+							"long_desc": "additional instructions"
+						},
+						"contact": {
+							"phone": "9999999991",
+							"email": "keshav1@myzyro.com"
+						}
 					},
 					"end": {
 						"location": {
@@ -162,6 +184,7 @@
 							"address": {
 								"name": "Dipu Maurya",
 								"building": "Nirala greenshir",
+								"door": "",
 								"locality": "Unnamed Road",
 								"city": "Noida",
 								"state": "Uttar Pradesh",
@@ -173,96 +196,26 @@
 							"range": {
 								"start": "2024-06-10T05:47:46.140Z",
 								"end": "2024-06-11T05:47:46.140Z"
-							},
-							"timestamp": "2024-06-05T05:48:13.743Z"
+							}
 						},
 						"instructions": null,
-						"authorization": null,
-						"person": null,
-						"contact": null
-					},
-					"tags": null
-				},
-				{
-					"id": "5612",
-					"@ondc/org/provider_name": null,
-					"@ondc/org/TAT": null,
-					"type": "Cancel",
-					"tracking": false,
-					"state": {
-						"descriptor": {
-							"code": "Cancelled"
+						"contact": {
+							"phone": "9654626669",
+							"email": ""
 						}
 					},
-					"start": null,
-					"end": null,
-					"tags": [
-						{
-							"code": "cancel_request",
-							"list": [
-								{
-									"code": "reason_id",
-									"value": "002"
-								},
-								{
-									"code": "initiated_by",
-									"value": "ondcapi.xoomsales.com"
-								}
-							]
-						},
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "item"
-								},
-								{
-									"code": "id",
-									"value": "5612"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-19"
-								}
-							]
-						},
-						{
-							"code": "quote_trail",
-							"list": [
-								{
-									"code": "type",
-									"value": "item"
-								},
-								{
-									"code": "id",
-									"value": "5612"
-								},
-								{
-									"code": "currency",
-									"value": "INR"
-								},
-								{
-									"code": "value",
-									"value": "-19"
-								}
-							]
-						}
-					]
+					"rateable": true
 				}
 			],
 			"payment": {
-				"url": "https://razorpay.com/",
+				"uri": "https://razorpay.com/",
+				"tl_method": "http/get",
 				"type": "ON-ORDER",
 				"collected_by": "BAP",
 				"params": {
 					"currency": "INR",
 					"transaction_id": "order_OIy9cOXqB3H3NX",
-					"amount": "250"
+					"amount": "269"
 				},
 				"status": "PAID",
 				"@ondc/org/buyer_app_finder_fee_type": "percent",
@@ -282,10 +235,7 @@
 						"settlement_reference": null,
 						"settlement_timestamp": null
 					}
-				],
-				"@ondc/org/settlement_basis": null,
-				"@ondc/org/settlement_window": null,
-				"@ondc/org/withholding_amount": null
+				]
 			},
 			"provider": {
 				"id": "ZYRO-ONDC-2",
@@ -296,8 +246,10 @@
 				],
 				"rateable": true
 			},
-			"created_at": "2024-06-05T05:48:13.897Z",
-			"updated_at": "2024-06-05T05:48:13.897Z"
+			"tags": null,
+			"cancellation_terms": null,
+			"created_at": "2024-06-05T05:47:45.476Z",
+			"updated_at": "2024-06-05T05:47:45.476Z"
 		}
 	}
 }
