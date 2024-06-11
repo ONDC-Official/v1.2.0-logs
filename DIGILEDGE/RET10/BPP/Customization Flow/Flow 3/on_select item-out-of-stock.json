@@ -9,9 +9,9 @@
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_id": "seller.ondc.digiledge.in",
         "bpp_uri": "https://seller.ondc.digiledge.in/v1/preprod",
-        "transaction_id": "2af05cb3-8c5e-4574-8e17-36fd042a73e1",
-        "message_id": "b442425c-dfec-4a96-a500-9913ffaa39c5",
-        "timestamp": "2024-03-12T05:46:42.349Z",
+        "transaction_id": "893fecbc-4ddb-4446-a3f0-5e4421108f2f",
+        "message_id": "8d0210cb-c109-4e23-981b-3df1de5d61bd",
+        "timestamp": "2024-04-01T10:16:25.143Z",
         "ttl": "PT30S"
     },
     "message": {
@@ -39,31 +39,32 @@
                     "id": "F1",
                     "type": "Delivery",
                     "@ondc/org/category": "Standard Delivery",
-                    "@ondc/org/TAT": "PT60M",
+                    "@ondc/org/TAT": "PT4H",
                     "@ondc/org/provider_name": "Sri Sakthi Rice",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
-                    }
+                    },
+                    "tracking": false
                 },
                 {
                     "id": "F2",
                     "type": "Self-Pickup",
                     "@ondc/org/category": "Takeaway",
                     "@ondc/org/TAT": "PT60M",
-                    "@ondc/org/provider_name": "Sri Sakthi Rice",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
-                    }
+                    },
+                    "tracking": false
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "380.00"
+                    "value": "420.00"
                 },
                 "breakup": [
                     {
@@ -79,10 +80,10 @@
                             },
                             "quantity": {
                                 "available": {
-                                    "count": "4"
+                                    "count": "99"
                                 },
                                 "maximum": {
-                                    "count": "22"
+                                    "count": "42"
                                 }
                             }
                         },
@@ -120,6 +121,33 @@
                     },
                     {
                         "@ondc/org/item_id": "F1",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F2",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F2",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
                         "@ondc/org/title_type": "delivery",
                         "title": "Delivery Charges",
                         "price": {
@@ -135,6 +163,6 @@
     "error": {
         "type": "DOMAIN-ERROR",
         "code": "40002",
-        "message": "message.order.item[1].id=1da4bbe6-21f3-43ee-b7cf-a3a3b97c1ff1 is out-of-stock"
+        "message": "[{\"item_id\":\"1da4bbe6-21f3-43ee-b7cf-a3a3b97c1ff1\",\"error\":\"40002\"}]"
     }
 }

@@ -5,116 +5,78 @@
         "city": "std:080",
         "action": "confirm",
         "core_version": "1.2.0",
-        "bap_id": "preprod.ondc.adya.ai",
-        "bap_uri": "https://preprod.ondc.adya.ai/api/v1/ondc/lsp_bap/adya_lsp_bap",
-        "transaction_id": "e23c0fc4-6a55-4c25-bd8e-7bf216b782ad",
-        "message_id": "b68e2226-9edd-48e6-9b42-5ab87c0528b4",
-        "timestamp": "2023-12-04T12:31:44.597Z",
-        "ttl": "PT30S",
+        "bap_id": "biz.test.bitsila.com",
+        "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
         "bpp_id": "preprod.ondc.adloggs.com",
-        "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi"
+        "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+        "transaction_id": "LOG-3849-1001-1176-cdSP",
+        "message_id": "c02bfa06-cbd7-4f64-ba3d-f6a9418e3f42",
+        "timestamp": "2024-04-08T12:00:19.948Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "4b7787ce-c082-4f52-babf-8e6f04179151",
+            "id": "3849-1001-1176",
             "state": "Created",
             "provider": {
                 "id": "P1"
             },
             "items": [{
                 "id": "I1",
-                "fulfillment_id": "1",
-                "category_id": "Immediate Delivery",
                 "descriptor": {
                     "code": "P2P"
                 },
+                "category_id": "Immediate Delivery",
+                "fulfillment_id": "1",
                 "time": {
                     "label": "TAT",
-                    "duration": "PT45M",
-                    "timestamp": "2023-12-04"
+                    "duration": "PT55M",
+                    "timestamp": "2024-04-08"
                 }
             }],
+            "billing": {
+                "name": "Bitsila",
+                "address": {
+                    "name": "221, INNOBITS SOLUTIONS PVT LTD",
+                    "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
+                    "building": "221",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560085"
+                },
+                "tax_number": "29AAFCI9011D1ZQ",
+                "phone": "8951898275",
+                "email": "finance@bitsila.com",
+                "created_at": "2024-04-08T12:00:18.831Z",
+                "updated_at": "2024-04-08T12:00:18.831Z"
+            },
             "quote": {
                 "price": {
-                    "currency": "INR",
-                    "value": "56.64"
+                    "value": "1.18",
+                    "currency": "INR"
                 },
                 "breakup": [{
-                        "@ondc/org/item_id": "I1",
-                        "@ondc/org/title_type": "delivery",
                         "price": {
-                            "currency": "INR",
-                            "value": "48.00"
-                        }
+                            "value": "1.00",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "delivery"
                     },
                     {
-                        "@ondc/org/item_id": "I1",
-                        "@ondc/org/title_type": "tax",
                         "price": {
-                            "currency": "INR",
-                            "value": "8.64"
-                        }
+                            "value": "0.18",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax"
                     }
                 ]
             },
             "fulfillments": [{
                 "id": "1",
                 "type": "Delivery",
-                "start": {
-                    "location": {
-                        "gps": "12.9765944,77.5992708",
-                        "address": {
-                            "name": "Adya Store",
-                            "building": "sai towers",
-                            "locality": "Garden Colony",
-                            "city": "Bengaluru",
-                            "state": "Karnataka",
-                            "country": "India",
-                            "area_code": "560001"
-                        }
-                    },
-                    "contact": {
-                        "phone": "7569316657",
-                        "email": "sairashaik36@gmail.com"
-                    },
-                    "person": {
-                        "name": "Adya Store"
-                    },
-                    "time": {
-                        "duration": "PT15M"
-                    },
-                    "instructions": {
-                        "code": "1",
-                        "name": "ONDC order",
-                        "short_desc": "7569316675",
-                        "long_desc": "please contact respective person and confirm before taking the parcel"
-                    }
-                },
-                "end": {
-                    "location": {
-                        "gps": "12.921820,77.587460",
-                        "address": {
-                            "building": "4th T Block East",
-                            "locality": "Pattabhirama Nagar",
-                            "city": "Bengaluru",
-                            "state": "Karnataka",
-                            "country": "India",
-                            "area_code": "560041",
-                            "name": "Bannu"
-                        }
-                    },
-                    "contact": {
-                        "phone": "7569316675",
-                        "email": "shaik@gmail.com"
-                    },
-                    "person": {
-                        "name": "Bannu"
-                    },
-                    "instructions": {
-                        "code": "3",
-                        "long_desc": "please check the information of buyer and deliver the parcel"
-                    }
-                },
                 "tags": [{
                         "code": "state",
                         "list": [{
@@ -129,112 +91,124 @@
                             "value": "yes"
                         }]
                     }
-                ]
-            }],
-            "billing": {
-                "name": "Bannu",
-                "address": {
-                    "building": "4th T Block East",
-                    "name": "Bannu",
-                    "locality": "Pattabhirama Nagar",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "INDIA",
-                    "area_code": "560041"
+                ],
+                "start": {
+                    "person": {
+                        "name": "FandB Shop"
+                    },
+                    "location": {
+                        "id": "3849:4120",
+                        "gps": "12.916691283211073, 77.64782934951943",
+                        "address": {
+                            "city": "Bengaluru",
+                            "name": "FandB Shop",
+                            "state": " Karnataka",
+                            "country": "India",
+                            "building": "Bengaluru",
+                            "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "email": "test1@test.com",
+                        "phone": "9999999998"
+                    },
+                    "instructions": {
+                        "code": "1",
+                        "name": "ONDC order",
+                        "short_desc": "7569316675",
+                        "long_desc": "please contact respective person and confirm before taking the parcel"
+                    },
+                    "time": {
+                        "duration": "PT15M"
+                    }
                 },
-                "tax_number": "18AABCU9603R1ZM",
-                "phone": "7569316675",
-                "email": "shaik@gmail.com",
-                "created_at": "2023-12-04T12:31:01.635Z",
-                "updated_at": "2023-12-04T12:31:01.635Z"
-            },
+                "end": {
+                    "person": {
+                        "name": "Anupam Testingw"
+                    },
+                    "location": {
+                        "gps": "12.9180305, 77.6372603",
+                        "address": {
+                            "city": "Bengaluru Urban",
+                            "door": "Anupam Testingw,Testing,Testing 4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                            "name": "Anupam Testingw",
+                            "state": "Karnataka",
+                            "country": "India",
+                            "building": "Anupam Testingw,Testing,Testing 4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                            "locality": "Bengaluru Urban",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "email": "smruti.ranjan@bitsila.com",
+                        "phone": "8077045298"
+                    },
+                    "instructions": {
+                        "code": "3",
+                        "long_desc": "Bengaluru Urban"
+                    }
+                }
+            }],
             "payment": {
                 "type": "ON-ORDER",
                 "collected_by": "BAP"
             },
             "@ondc/org/linked_order": {
                 "items": [{
-                    "category_id": "Fashion",
+                    "category_id": "F&B",
                     "descriptor": {
-                        "name": "Multicolor Sweater"
+                        "name": "Parota 1"
                     },
                     "quantity": {
-                        "count": 1,
+                        "count": 2,
                         "measure": {
                             "unit": "kilogram",
-                            "value": 0.2
+                            "value": 0.5
                         }
                     },
                     "price": {
                         "currency": "INR",
-                        "value": "491.00"
+                        "value": "70.0"
                     }
                 }],
                 "provider": {
                     "descriptor": {
-                        "name": "Adya Store"
+                        "name": "FandB Shop - FandB Shop"
                     },
                     "address": {
-                        "name": "Adya Store",
-                        "locality": "Garden Colony",
+                        "name": "FandB Shop",
+                        "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "building": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
                         "city": "Bengaluru",
                         "state": "Karnataka",
-                        "area_code": "560001",
-                        "building": "sai towers"
+                        "area_code": "560102"
                     }
                 },
                 "order": {
-                    "id": "a7dc72f5-1bd0-491c-97ad-36d411f7a301",
+                    "id": "3849-1001-1176",
                     "weight": {
                         "unit": "kilogram",
-                        "value": 0.2
+                        "value": 1.0
                     },
                     "dimensions": {
+                        "height": {
+                            "unit": "meter",
+                            "value": 0.1
+                        },
                         "length": {
-                            "unit": "centimeter",
-                            "value": 10
+                            "unit": "meter",
+                            "value": 0.1
                         },
                         "breadth": {
-                            "unit": "centimeter",
-                            "value": 10
-                        },
-                        "height": {
-                            "unit": "centimeter",
-                            "value": 10
+                            "unit": "meter",
+                            "value": 0.1
                         }
                     }
                 }
             },
-            "created_at": "2023-12-04T12:31:44.597Z",
-            "updated_at": "2023-12-04T12:31:44.597Z",
-            "tags": [{
-                    "code": "bpp_terms",
-                    "list": [{
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "5"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [{
-                        "code": "accept_bpp_terms",
-                        "value": "Y"
-                    }]
-                }
-            ]
+            "created_at": "2024-04-08T12:00:19.948Z",
+            "updated_at": "2024-04-08T12:00:19.948Z"
         }
     }
 }

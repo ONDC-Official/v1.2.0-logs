@@ -1,0 +1,1 @@
+rsf buyer app mystore

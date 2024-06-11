@@ -9,16 +9,16 @@
         "bap_uri": "https://ondc-qa.gofrugalretail.com/ondc-service_1_0/ondc/logistics",
         "bpp_id": "my.ithinklogistics.com/ondc/preprod",
         "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
-        "transaction_id": "0eb1fe02-71f0-455d-baa6-77519305fbc2",
-        "message_id": "9f18d265-f384-2cc2-4135-2a434a20fd85",
-        "timestamp": "2024-03-06T07:29:41.075Z"
+        "transaction_id": "d5f14045-d6d0-4cbf-b03c-13be4c9d653f",
+        "message_id": "42966866-d08c-ba3b-9061-65350f4242da",
+        "timestamp": "2024-04-04T07:27:51.959Z"
     },
     "message": {
         "order": {
-            "id": "B258FE15CB6A648DE3CBCBD81A91F81E",
+            "id": "B6D82935AF988A8F20A6C1C1274F37B0",
             "state": "Cancelled",
             "cancellation": {
-                "cancelled_by": "ondc-qa.gofrugalretail.com",
+                "cancelled_by": "my.ithinklogistics.com",
                 "reason": {
                     "id": "013"
                 }
@@ -32,10 +32,15 @@
                         "code": "P2H2P"
                     },
                     "category_id": "Express Delivery",
-                    "fulfillment_id": "1"
+                    "fulfillment_id": "1",
+                    "time": {
+                        "label": "TAT",
+                        "duration": "P5DT2H",
+                        "timestamp": "2024-04-04"
+                    }
                 }, {
                     "id": "3I2",
-                    "fulfillment_id": "1-RTO",
+                    "fulfillment_id": "2",
                     "category_id": "Express Delivery",
                     "descriptor": {
                         "code": "P2H2P"
@@ -45,22 +50,36 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "0.50"
+                    "value": "1.00"
                 },
                 "breakup": [{
+                        "@ondc/org/item_id": "3I1",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
                             "value": "0.50"
-                        },
-                        "@ondc/org/item_id": "3I1",
-                        "@ondc/org/title_type": "delivery"
+                        }
                     }, {
+                        "@ondc/org/item_id": "3I1",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
                             "value": "0.00"
-                        },
-                        "@ondc/org/item_id": "3I1",
-                        "@ondc/org/title_type": "tax"
+                        }
+                    }, {
+                        "@ondc/org/item_id": "3I2",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.50"
+                        }
+                    }, {
+                        "@ondc/org/item_id": "3I2",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
                     }
                 ]
             },
@@ -72,7 +91,7 @@
                             "code": "Cancelled"
                         }
                     },
-                    "@ondc/org/awb_no": "24562010971036",
+                    "@ondc/org/awb_no": "24562011513260",
                     "tracking": false,
                     "tags": [{
                             "code": "rto_event",
@@ -81,7 +100,7 @@
                                     "value": "2"
                                 }, {
                                     "code": "rto_id",
-                                    "value": "3I2"
+                                    "value": "2"
                                 }, {
                                     "code": "cancellation_reason_id",
                                     "value": "013"
@@ -90,7 +109,17 @@
                                     "value": ""
                                 }, {
                                     "code": "cancelled_by",
-                                    "value": "ondc-qa.gofrugalretail.com"
+                                    "value": "my.ithinklogistics.com"
+                                }
+                            ]
+                        }, {
+                            "code": "precancel_state",
+                            "list": [{
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                }, {
+                                    "code": "updated_at",
+                                    "value": "2024-04-04T07:27:51.959Z"
                                 }
                             ]
                         }
@@ -117,8 +146,16 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "4293",
+                            "short_desc": "3307",
                             "long_desc": "QR code will be attached to package"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-03-30T09:30:00.000Z",
+                                "end": "2024-03-30T12:30:00.000Z"
+                            },
+                            "timestamp": "2024-03-30T10:50:12.000Z",
+                            "duration": "PT8H"
                         }
                     },
                     "end": {
@@ -126,15 +163,15 @@
                             "name": "cholke shubham"
                         },
                         "location": {
-                            "gps": "12.353333285419613,76.56626713878754",
+                            "gps": "28.57728604839182,77.32378946191258",
                             "address": {
                                 "name": "cholke shubham",
                                 "building": "sai",
-                                "locality": "Road Number 5",
-                                "city": "Mysuru",
-                                "state": "Karnataka",
+                                "locality": "Unnamed Road",
+                                "city": "Noida",
+                                "state": "Uttar Pradesh",
                                 "country": "IND",
-                                "area_code": "570018"
+                                "area_code": "201301"
                             }
                         },
                         "contact": {
@@ -143,7 +180,26 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "2359"
+                            "short_desc": "1516"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-04-04T03:30:00.000Z",
+                                "end": "2024-04-04T14:30:00.000Z"
+                            }
+                        }
+                    }
+                }, {
+                    "id": "2",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-04-04T07:27:51.959Z"
                         }
                     }
                 }
@@ -178,8 +234,8 @@
                 "email": "accounts@gofrugal.com",
                 "phone": "9840812985",
                 "tax_number": "33AACCG2423J1ZZ",
-                "created_at": "2024-03-05T13:33:05.048Z",
-                "updated_at": "2024-03-05T13:33:05.048Z"
+                "created_at": "2024-03-30T04:15:59.867Z",
+                "updated_at": "2024-03-30T04:15:59.867Z"
             },
             "@ondc/org/linked_order": {
                 "items": [{
@@ -189,13 +245,13 @@
                         "quantity": {
                             "count": 1,
                             "measure": {
-                                "value": 500,
-                                "unit": "gram"
+                                "value": 1,
+                                "unit": "kilogram"
                             }
                         },
                         "price": {
                             "currency": "INR",
-                            "value": "500.00"
+                            "value": "1000.00"
                         },
                         "category_id": "Grocery"
                     }
@@ -215,9 +271,9 @@
                     }
                 },
                 "order": {
-                    "id": "2024-03-05-503569",
+                    "id": "2024-03-30-861369",
                     "weight": {
-                        "value": 500,
+                        "value": 1000,
                         "unit": "gram"
                     },
                     "dimensions": {
@@ -236,8 +292,8 @@
                     }
                 }
             },
-            "created_at": "2024-03-05T13:33:12.137Z",
-            "updated_at": "2024-03-06T07:29:41.075Z"
+            "created_at": "2024-03-30T04:16:32.302Z",
+            "updated_at": "2024-04-04T07:27:51.959Z"
         }
     }
 }
