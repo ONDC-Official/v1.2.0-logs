@@ -9,38 +9,20 @@
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_uri": "https://ondc.retailware.in/",
         "transaction_id": "7bd8146b-c296-4093-903c-072af3cba200",
-        "message_id": "07396519-12e9-bcd1-2caf-b87cfc7a7c52",
-        "timestamp": "2024-06-12T10:23:39.000Z",
+        "message_id": "cfada424-6a3a-5ef6-cff4-dd8bc2b8cda2",
+        "timestamp": "2024-06-12T10:33:34.702Z",
         "bpp_id": "ondc.retailware.in",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "2024-06-12-832505",
-            "state": "Accepted",
-            "created_at": "2024-06-12T10:18:52.568Z",
-            "updated_at": "2024-06-12T10:23:39.000Z",
+            "state": "Completed",
             "provider": {
                 "id": "26",
                 "locations": [{
                     "id": "26_0_location"
                 }]
-            },
-            "billing": {
-                "address": {
-                    "building": "Lotus Court",
-                    "city": "Pune",
-                    "state": "Maharashtra",
-                    "country": "IND",
-                    "area_code": "411037",
-                    "locality": "Padmavibhushan Dr Chintaman Dwarakanath Deshmukh Road",
-                    "name": "Manoj Hogale"
-                },
-                "phone": "8793739491",
-                "name": "Manoj Hogale",
-                "email": "manoj.hogale@retailware.info",
-                "created_at": "2024-06-12T10:16:56.385Z",
-                "updated_at": "2024-06-12T10:16:56.385Z"
             },
             "items": [{
                     "id": "26_1092",
@@ -210,6 +192,22 @@
                 ],
                 "ttl": "P1D"
             },
+            "billing": {
+                "address": {
+                    "building": "Lotus Court",
+                    "city": "Pune",
+                    "state": "Maharashtra",
+                    "country": "IND",
+                    "area_code": "411037",
+                    "locality": "Padmavibhushan Dr Chintaman Dwarakanath Deshmukh Road",
+                    "name": "Manoj Hogale"
+                },
+                "phone": "8793739491",
+                "name": "Manoj Hogale",
+                "email": "manoj.hogale@retailware.info",
+                "created_at": "2024-06-12T10:16:56.385Z",
+                "updated_at": "2024-06-12T10:16:56.385Z"
+            },
             "fulfillments": [{
                     "id": "Fulfillment1",
                     "@ondc/org/provider_name": "J K SUPERMARKET",
@@ -218,7 +216,7 @@
                     "@ondc/org/TAT": "PT60M",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Order-delivered"
                         }
                     },
                     "start": {
@@ -236,10 +234,7 @@
                             }
                         },
                         "time": {
-                            "range": {
-                                "start": null,
-                                "end": null
-                            }
+                            "timestamp": "2024-06-12T10:29:25.000Z"
                         },
                         "contact": {
                             "phone": "9762697992",
@@ -260,10 +255,7 @@
                             }
                         },
                         "time": {
-                            "range": {
-                                "start": null,
-                                "end": null
-                            }
+                            "timestamp": "2024-06-12T10:31:03.000Z"
                         },
                         "person": {
                             "name": "Manoj Hogale"
@@ -273,18 +265,15 @@
                             "email": "manoj.hogale@retailware.info"
                         }
                     },
-                    "tags": [{
-                        "code": "cancel_request",
-                        "list": [{
-                                "code": "reason_id",
-                                "value": ""
-                            },
-                            {
-                                "code": "initiated_by",
-                                "value": ""
-                            }
-                        ]
-                    }]
+                    "agent": {
+                        "name": "J K SUPERMARKET",
+                        "phone": "8793739491"
+                    },
+                    "vehicle": {
+                        "category": "mini-truck",
+                        "registration": "3LVJ945",
+                        "size": "small"
+                    }
                 },
                 {
                     "id": "C1",
@@ -342,11 +331,80 @@
                                 },
                                 {
                                     "code": "value",
-                                    "value": "0.00"
+                                    "value": "0"
                                 }
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "R1",
+                    "type": "Return",
+                    "@ondc/org/provider_name": "J K SUPERMARKET",
+                    "state": {
+                        "descriptor": {
+                            "code": "Return_Approved"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "26_0_location",
+                            "gps": "18.483590,73.869309",
+                            "address": {
+                                "locality": "Pune",
+                                "city": "Pune",
+                                "area_code": "411037",
+                                "state": "MAHARASHTRA"
+                            }
+                        },
+                        "time": {
+                            "timestamp": "2024-06-12T10:34:38.000Z"
+                        }
+                    },
+                    "tags": [{
+                        "code": "return_request",
+                        "list": [{
+                                "code": "id",
+                                "value": "6669797c630572fbe2411a65"
+                            },
+                            {
+                                "code": "item_id",
+                                "value": "26_1334"
+                            },
+                            {
+                                "code": "parent_item_id",
+                                "value": ""
+                            },
+                            {
+                                "code": "item_quantity",
+                                "value": "2"
+                            },
+                            {
+                                "code": "reason_id",
+                                "value": "003"
+                            },
+                            {
+                                "code": "reason_desc",
+                                "value": "detailed description for return"
+                            },
+                            {
+                                "code": "images",
+                                "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-06-12-832505/65e16682-6b3e-4ee0-92bb-9a91f0410331.png"
+                            },
+                            {
+                                "code": "ttl_approval",
+                                "value": "PT24H"
+                            },
+                            {
+                                "code": "ttl_reverseqc",
+                                "value": "P3D"
+                            },
+                            {
+                                "code": "initiated_by",
+                                "value": "buyer-app-preprod-v2.ondc.org"
+                            }
+                        ]
+                    }]
                 }
             ],
             "payment": {
@@ -373,7 +431,9 @@
                     "bank_name": "IDFC BANK LIMITED",
                     "branch_name": "PUNE BUND GARDEN ROAD"
                 }]
-            }
+            },
+            "created_at": "2024-06-12T10:18:52.568Z",
+            "updated_at": "2024-06-12T10:33:34.702Z"
         }
     }
 }
