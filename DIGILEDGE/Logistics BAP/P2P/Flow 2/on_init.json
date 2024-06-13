@@ -1,62 +1,51 @@
 {
     "context": {
-        "domain": "ONDC:RET16",
+        "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "confirm",
+        "action": "on_init",
         "core_version": "1.2.0",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-        "bpp_id": "seller.ondc.digiledge.in",
-        "bpp_uri": "https://seller.ondc.digiledge.in/v1/preprod",
-        "transaction_id": "5c9ba2a1-04dd-4646-a8c7-078c4572839d",
-        "message_id": "4285c840-2235-41c8-bba3-66f18fd4dc41",
-        "timestamp": "2024-06-10T11:27:49.923Z",
-        "ttl": "PT30S"
+        "bap_id": "logistics.ondc.digiledge.in",
+        "bap_uri": "https://logistics.ondc.digiledge.in",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "20f2b990-351a-4a22-a4ec-70f79c0b2551",
+        "message_id": "e6f3ecc7-2fd2-4c30-a870-b1170f4f172c",
+        "timestamp": "2024-06-11T10:30:45.585Z"
     },
     "message": {
         "order": {
-            "id": "2024-06-10-298740",
-            "state": "Created",
             "provider": {
-                "id": "THEHO56995613",
-                "locations": [
-                    {
-                        "id": "78e04005-1de7-41f1-8062-a88682b50b87"
-                    }
-                ]
+                "id": "MP2"
             },
             "items": [
                 {
-                    "id": "2f822cfd-5a26-495d-9209-f2988a5c2222",
-                    "fulfillment_id": "F1",
-                    "quantity": {
-                        "count": 1
-                    }
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1"
                 }
             ],
-            "billing": {
-                "name": "shabir",
-                "address": {
-                    "name": "shabir",
-                    "building": "234",
-                    "locality": "3rd Cross Road",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IND",
-                    "area_code": "560032"
-                },
-                "email": "shabir@digiledge.in",
-                "phone": "9791223128",
-                "created_at": "2024-06-10T11:27:31.396Z",
-                "updated_at": "2024-06-10T11:27:31.396Z"
-            },
             "fulfillments": [
                 {
-                    "id": "F1",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
-                    "@ondc/org/TAT": "PT24H55M",
-                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "gps": "13.022028,77.634833",
+                            "address": {
+                                "name": "The Food and Bevarage Store",
+                                "building": "CastlePG",
+                                "locality": "Amrita Nagar",
+                                "city": "BENGALURU URBAN",
+                                "state": "KARNATAKA",
+                                "country": "IND",
+                                "area_code": "560043"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7983097678",
+                            "email": "moazondc@digiledge.in"
+                        }
+                    },
                     "end": {
                         "location": {
                             "gps": "13.023290,77.586823",
@@ -73,136 +62,50 @@
                         "contact": {
                             "phone": "9791223128",
                             "email": "shabir@digiledge.in"
-                        },
-                        "person": {
-                            "name": "shabir"
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "351.00"
+                    "value": "2.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "2f822cfd-5a26-495d-9209-f2988a5c2222",
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "@ondc/org/title_type": "item",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "339"
-                            }
-                        },
-                        "title": "NATURES PLUS Coco Peat Block - Coir Fibre Dust, 5 Kg",
-                        "price": {
-                            "currency": "INR",
-                            "value": "339.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "@ondc/org/title_type": "packing",
-                        "title": "Packing charges",
-                        "price": {
-                            "currency": "INR",
-                            "value": "10.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "delivery",
-                        "title": "Delivery Charges",
                         "price": {
                             "currency": "INR",
                             "value": "1.69"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "F1",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "tax",
-                        "item": {
-                            "tags": [
-                                {
-                                    "code": "quote",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "fulfillment"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        "title": "Tax",
                         "price": {
                             "currency": "INR",
                             "value": "0.31"
                         }
                     }
                 ],
-                "ttl": "P1D"
-            },
-            "payment": {
-                "uri": "https://razorpay.com/",
-                "tl_method": "http/get",
-                "params": {
-                    "transaction_id": "order_OL2cYM1rEGCJ6b",
-                    "amount": "351.00",
-                    "currency": "INR"
-                },
-                "type": "ON-ORDER",
-                "status": "PAID",
-                "collected_by": "BAP",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_type": "neft",
-                        "settlement_bank_account_no": "173010200000374",
-                        "settlement_ifsc_code": "UTIB0000004",
-                        "bank_name": "AXIS BANK",
-                        "branch_name": "BENGALURU",
-                        "beneficiary_name": "BENGALURU"
-                    }
-                ]
-            },
-            "created_at": "2024-06-10T11:27:49.923Z",
-            "updated_at": "2024-06-10T11:27:49.923Z",
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "provider_tax_number",
-                            "value": "DSJPP2449L"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "29AAECI3602B1Z2"
-                        },
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "GSTIN1234567890"
-                        }
-                    ]
-                }
-            ]
+                "ttl": "PT15M"
+            }
         }
     }
 }
