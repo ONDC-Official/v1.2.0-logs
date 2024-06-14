@@ -1,0 +1,238 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bpp_uri": "https://gl-6912-httpapi.glstaging.in/gl/ondc",
+        "bpp_id": "gl-6912-httpapi.glstaging.in/gl/ondc",
+        "transaction_id": "c97f3b38-5e48-4d78-9af1-1fc3d7d6522b",
+        "message_id": "7fd0d88c-5c7f-4534-80d6-c69d805c7ece",
+        "ttl": "PT30S",
+        "timestamp": "2024-06-14T07:09:28.890Z"
+    },
+    "message": {
+        "order": {
+            "id": "2024-06-14-278197",
+            "state": "In-progress",
+            "provider": {
+                "id": "groceryshop12",
+                "locations": [
+                    {
+                        "id": "groceryshop12_location"
+                    }
+                ]
+            },
+            "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "579.89",
+                    "transaction_id": "order_OMYHi7lSfQp0js",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_ifsc_code": "SBIN000827",
+                        "bank_name": "State Bank Of India",
+                        "branch_name": "Mumbai",
+                        "settlement_bank_account_no": "12345678901234",
+                        "beneficiary_name": "GlobalLinker"
+                    }
+                ]
+            },
+            "documents": [
+                {
+                    "url": "https://gl-6912-httpapi.glstaging.in/ondc/invoice?invoiceid=DmZeTs8hNTCcC8Dh4pAaPhWqsVnVTbrz&oid=5775557-5431",
+                    "label": "Invoice"
+                }
+            ],
+            "items": [
+                {
+                    "id": "5775276_6459952_9621825",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "1"
+                },
+                {
+                    "id": "5775276_6459961_9621836",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "1"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "579.89",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "5775276_6459952_9621825",
+                        "title": "B Natural Juice Cloudy Apple",
+                        "price": {
+                            "currency": "INR",
+                            "value": "238.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "119.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "5775276_6459961_9621836",
+                        "title": "B Natural Juicelitchi Inc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "315.00"
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "105.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10.30"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "16.59"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "billing": {
+                "name": "Ravikiran Jawalkar",
+                "address": {
+                    "building": "Prestige Residency",
+                    "name": "Ravikiran Jawalkar",
+                    "locality": "7th Cross Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560053"
+                },
+                "email": "ravikiran.j@digivation.in",
+                "phone": "9028370202",
+                "created_at": "2024-06-14T07:04:53.866Z",
+                "updated_at": "2024-06-14T07:04:53.866Z"
+            },
+            "created_at": "2024-06-14T07:05:19.254Z",
+            "updated_at": "2024-06-14T07:09:28.890Z",
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "@ondc/org/provider_name": "Grocery Shop",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
+                    "@ondc/org/TAT": "P3D",
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        }
+                    ],
+                    "start": {
+                        "location": {
+                            "address": {
+                                "locality": "Anandwan Apartment",
+                                "city": "Bengaluru",
+                                "area_code": "560034",
+                                "state": "Karnataka"
+                            },
+                            "id": "groceryshop12_location",
+                            "gps": "12.9351929,77.62448069999999",
+                            "descriptor": {
+                                "name": "Grocery Shop"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7083538765",
+                            "email": "ondcstage003@gmail.com"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-06-14T10:00:00.000Z",
+                                "end": "2024-06-15T15:30:00.000Z"
+                            },
+                            "timestamp": "2024-06-14T07:08:56.156Z"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "email": "ravikiran.j@digivation.in",
+                            "phone": "9028370202"
+                        },
+                        "location": {
+                            "address": {
+                                "building": "Prestige Residency",
+                                "name": "Ravikiran Jawalkar",
+                                "locality": "7th Cross Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560053"
+                            },
+                            "gps": "12.971083,77.578100"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-06-15T03:30:00.000Z",
+                                "end": "2024-06-17T15:30:00.000Z"
+                            }
+                        },
+                        "person": {
+                            "name": "Ravikiran Jawalkar"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
