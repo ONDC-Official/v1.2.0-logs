@@ -8,16 +8,16 @@
         "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_uri": "https://ondc.ecomviser.com/api/v1",
-        "transaction_id": "d8f208e0-ea9b-460b-808a-892685398d8c",
-        "message_id": "666ae6eb5cb91670e51a1-0ce7",
-        "timestamp": "2024-06-13T18:02:43.000Z",
+        "transaction_id": "f4f998d3-3a3f-4f78-bc13-e1e0c91c0295",
+        "message_id": "666af714799ba24c6426c-f837",
+        "timestamp": "2024-06-13T13:41:40.000Z",
         "bpp_id": "ondc.ecomviser.com",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-06-13-883269",
-            "state": "Cancelled",
+            "id": "2024-06-13-498046",
+            "state": "In-progress",
             "provider": {
                 "id": "2499586",
                 "locations": [
@@ -31,12 +31,12 @@
                     "id": "13515471",
                     "fulfillment_id": "228678",
                     "quantity": {
-                        "count": 0
+                        "count": 3
                     }
                 },
                 {
                     "id": "13515471",
-                    "fulfillment_id": "rto-shipping",
+                    "fulfillment_id": "cancel-shipping",
                     "quantity": {
                         "count": 1
                     }
@@ -69,8 +69,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-06-13T11:45:09.000Z",
-                                "end": "2024-06-13T12:15:09.000Z"
+                                "start": "2024-06-13T13:41:41.000Z",
+                                "end": "2024-06-13T14:11:41.000Z"
                             }
                         }
                     },
@@ -78,7 +78,7 @@
                     "@ondc/org/provider_name": "ondc.ecomviser.com",
                     "state": {
                         "descriptor": {
-                            "code": "Out-for-delivery"
+                            "code": "Agent-assigned"
                         }
                     },
                     "start": {
@@ -101,93 +101,35 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-06-13T11:45:09.000Z",
-                                "end": "2024-06-13T12:15:09.000Z"
-                            },
-                            "timestamp": "2024-06-13T11:40:09.000Z"
+                                "start": "2024-06-13T13:41:41.000Z",
+                                "end": "2024-06-13T14:11:41.000Z"
+                            }
                         }
-                    },
-                    "tags": [
-                        {
-                            "code": "routing",
-                            "list": [
-                                {
-                                    "code": "type",
-                                    "value": "P2P"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "tracking",
-                            "list": [
-                                {
-                                    "code": "gps_enabled",
-                                    "value": "yes"
-                                },
-                                {
-                                    "code": "url_enabled",
-                                    "value": "no"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 },
                 {
-                    "id": "rto-shipping",
-                    "type": "RTO",
+                    "id": "cancel-shipping",
+                    "type": "Cancel",
+                    "@ondc/org/provider_name": "ondc.ecomviser.com",
                     "state": {
                         "descriptor": {
-                            "code": "RTO-Disposed"
-                        }
-                    },
-                    "start": {
-                        "contact": {
-                            "email": "dheeraj@webkul.in",
-                            "phone": "9876543210"
-                        },
-                        "person": {
-                            "name": "DKS Ginger Sec-63"
-                        },
-                        "location": {
-                            "gps": "28.625401,77.375175",
-                            "address": {
-                                "name": "DKS Ginger Sec-63",
-                                "building": "Ginger Noida Sector-63",
-                                "locality": "Shaheed Hawaldar Padam Singh Dhama Marg",
-                                "city": "Noida",
-                                "state": "Uttar Pradesh",
-                                "country": "IND",
-                                "area_code": "201301"
-                            }
-                        },
-                        "time": {
-                            "timestamp": "2024-06-13T18:02:43.000Z",
-                            "range": {
-                                "start": "2024-06-13T11:46:12.000Z",
-                                "end": "2024-06-13T12:16:12.000Z"
-                            }
-                        }
-                    },
-                    "end": {
-                        "location": {
-                            "id": "155064",
-                            "descriptor": {
-                                "name": "DKS Store"
-                            },
-                            "gps": "28.62972640,77.37783230",
-                            "address": {
-                                "locality": "Noida",
-                                "city": "Noida",
-                                "area_code": "201301",
-                                "state": "Uttar Pradesh"
-                            }
-                        },
-                        "contact": {
-                            "phone": "9876543210",
-                            "email": "support@webkul.in"
+                            "code": "Cancelled"
                         }
                     },
                     "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc.ecomviser.com"
+                                }
+                            ]
+                        },
                         {
                             "code": "quote_trail",
                             "list": [
@@ -205,7 +147,7 @@
                                 },
                                 {
                                     "code": "value",
-                                    "value": "-110.00"
+                                    "value": "-110"
                                 }
                             ]
                         }
@@ -215,19 +157,19 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "8.54"
+                    "value": "349.16"
                 },
                 "breakup": [
                     {
                         "title": "Sliced Bread (Returnable)",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "330"
                         },
                         "@ondc/org/item_id": "13515471",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 0
+                            "count": 3
                         },
                         "item": {
                             "price": {
@@ -240,7 +182,7 @@
                         "title": "Convenience fee",
                         "price": {
                             "currency": "INR",
-                            "value": "3.54"
+                            "value": "14.16"
                         },
                         "@ondc/org/title_type": "misc",
                         "@ondc/org/item_id": "228678"
@@ -270,16 +212,16 @@
                 "phone": "9876543210",
                 "name": "DKS Ginger Sec-63",
                 "email": "dheeraj@webkul.in",
-                "created_at": "2024-06-13T11:43:05.107Z",
-                "updated_at": "2024-06-13T11:43:05.107Z"
+                "created_at": "2024-06-13T13:22:03.118Z",
+                "updated_at": "2024-06-13T13:22:03.118Z"
             },
             "payment": {
                 "uri": "https://razorpay.com/",
                 "tl_method": "http/get",
                 "params": {
-                    "amount": "118.54",
+                    "amount": "459.16",
                     "currency": "INR",
-                    "transaction_id": "order_OMEUOwVpOgLFh7"
+                    "transaction_id": "order_OMGAwW26s16Xnc"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER",
@@ -299,14 +241,8 @@
                     }
                 ]
             },
-            "created_at": "2024-06-13T11:43:27.086Z",
-            "updated_at": "2024-06-13T18:02:43.000Z",
-            "documents": [
-                {
-                    "label": "Invoice",
-                    "url": "https://seller.ecomviser.com/index.php?p=invoice_download&key=MTAwMzM0NjI6MjQ5OTU4NjplY29tdmlzZXI="
-                }
-            ]
+            "created_at": "2024-06-13T13:22:58.377Z",
+            "updated_at": "2024-06-13T13:41:40.000Z"
         }
     }
 }
