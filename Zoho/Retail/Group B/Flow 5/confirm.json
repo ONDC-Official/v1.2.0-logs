@@ -1,86 +1,134 @@
 {
     "context": {
-        "transaction_id": "61370e95-2261-490f-8b8e-a0edc026f15d",
-        "bpp_id": "ondc-connect.localzoho.com",
+        "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:080",
-        "message_id": "cb91c6c8-1e7f-4da0-8748-b4b75c06674f",
-        "core_version": "1.2.0",
-        "ttl": "PT30S",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "domain": "ONDC:RET10",
-        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
         "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-        "timestamp": "2024-06-16T07:41:21.372Z"
+        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
+        "transaction_id": "61370e95-2261-490f-8b8e-a0edc026f15d",
+        "message_id": "cb91c6c8-1e7f-4da0-8748-b4b75c06674f",
+        "timestamp": "2024-06-16T07:41:21.372Z",
+        "bpp_id": "ondc-connect.localzoho.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "id": "2024-06-16-327242",
+            "state": "Created",
+            "billing": {
+                "address": {
+                    "name": "Akilan",
+                    "building": "sd",
+                    "locality": "Yemalur Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560103"
+                },
+                "phone": "9999999999",
+                "name": "Akilan",
+                "email": "sd@gmail.com",
+                "created_at": "2024-06-16T07:41:15.662Z",
+                "updated_at": "2024-06-16T07:41:15.662Z"
+            },
+            "items": [
+                {
+                    "id": "3000002326265",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "3000005222369"
+                }
+            ],
+            "provider": {
+                "id": "3000000603069",
+                "locations": [
+                    {
+                        "id": "3000000603069"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
                     "@ondc/org/TAT": "PT1H25M",
+                    "id": "3000005222369",
+                    "tracking": true,
                     "end": {
+                        "contact": {
+                            "email": "sd@gmail.com",
+                            "phone": "9999999999"
+                        },
                         "person": {
                             "name": "Akilan"
                         },
-                        "contact": {
-                            "phone": "9999999999",
-                            "email": "sd@gmail.com"
-                        },
                         "location": {
+                            "gps": "12.930680,77.675964",
                             "address": {
-                                "country": "IND",
-                                "city": "Bengaluru",
-                                "area_code": "560103",
                                 "name": "Akilan",
+                                "building": "sd",
                                 "locality": "Yemalur Road",
+                                "city": "Bengaluru",
                                 "state": "Karnataka",
-                                "building": "sd"
-                            },
-                            "gps": "12.930680,77.675964"
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
                         }
                     },
-                    "id": "3000005222369",
-                    "type": "Delivery",
-                    "tracking": "true"
+                    "type": "Delivery"
                 }
             ],
+            "payment": {
+                "params": {
+                    "amount": "199.05",
+                    "currency": "INR"
+                },
+                "status": "NOT-PAID",
+                "type": "ON-FULFILLMENT",
+                "collected_by": "BPP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_details": []
+            },
             "quote": {
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "3000002326265",
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "95.00"
+                                "value": "95.00",
+                                "currency": "INR"
                             }
                         },
-                        "price": {
-                            "currency": "INR",
-                            "value": "190.00"
+                        "@ondc/org/item_id": "3000002326265",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "SAKTHI SAMBAR POWDER",
-                        "@ondc/org/item_quantity": {
-                            "count": "2"
-                        }
+                        "price": {
+                            "value": "190.00",
+                            "currency": "INR"
+                        },
+                        "title": "SAKTHI SAMBAR POWDER"
                     },
                     {
                         "@ondc/org/item_id": "3000005222369",
-                        "price": {
-                            "currency": "INR",
-                            "value": "2.00"
-                        },
                         "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "value": "2.00",
+                            "currency": "INR"
+                        },
                         "title": "Delivery charges"
                     },
                     {
                         "@ondc/org/item_id": "3000005222369",
-                        "price": {
-                            "currency": "INR",
-                            "value": "7.05"
-                        },
                         "@ondc/org/title_type": "misc",
+                        "price": {
+                            "value": "7.05",
+                            "currency": "INR"
+                        },
                         "title": "Convenience Fee"
                     }
                 ],
@@ -89,56 +137,6 @@
                     "value": "199.05"
                 },
                 "ttl": "PT15M"
-            },
-            "updated_at": "2024-06-16T07:41:21.372Z",
-            "provider": {
-                "locations": [
-                    {
-                        "id": "3000000603069"
-                    }
-                ],
-                "id": "3000000603069"
-            },
-            "created_at": "2024-06-16T07:41:21.372Z",
-            "payment": {
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "collected_by": "BPP",
-                "params": {
-                    "amount": "199.05",
-                    "currency": "INR"
-                },
-                "type": "ON-FULFILLMENT",
-                "status": "NOT-PAID",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-                "@ondc/org/settlement_details": []
-            },
-            "id": "2024-06-16-327242",
-            "state": "Created",
-            "items": [
-                {
-                    "quantity": {
-                        "count": "2"
-                    },
-                    "id": "3000002326265",
-                    "fulfillment_id": "3000005222369"
-                }
-            ],
-            "billing": {
-                "address": {
-                    "country": "IND",
-                    "city": "Bengaluru",
-                    "area_code": "560103",
-                    "name": "Akilan",
-                    "locality": "Yemalur Road",
-                    "state": "Karnataka",
-                    "building": "sd"
-                },
-                "updated_at": "2024-06-16T07:41:15.662Z",
-                "phone": "9999999999",
-                "name": "Akilan",
-                "created_at": "2024-06-16T07:41:15.662Z",
-                "email": "sd@gmail.com"
             },
             "tags": [
                 {
@@ -163,7 +161,9 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "created_at": "2024-06-16T07:41:21.372Z",
+            "updated_at": "2024-06-16T07:41:21.372Z"
         }
     }
 }
