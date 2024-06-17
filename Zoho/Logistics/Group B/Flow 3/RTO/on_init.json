@@ -1,97 +1,111 @@
 {
     "context": {
-        "transaction_id": "0dd83b0d-730d-461e-a15f-2fe459376426",
-        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "domain": "nic2004:60232",
-        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
         "action": "on_init",
-        "message_id": "1172d0f7-527e-4019-ba4f-48162d4bcff3",
         "core_version": "1.2.0",
-        "bap_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/logistics",
         "bap_id": "ondc-connect.localzoho.com",
-        "timestamp": "2024-06-12T07:13:14.651Z"
+        "bap_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/logistics",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "61370e95-2261-490f-8b8e-a0edc026f15d",
+        "message_id": "7bf4a998-e2d7-4ffa-bbbb-d679c275655b",
+        "timestamp": "2024-06-16T07:41:16.411Z"
     },
     "message": {
         "order": {
-            "fulfillments": [
-                {
-                    "start": {
-                        "contact": {
-                            "phone": "7904741400"
-                        },
-                        "location": {
-                            "address": {
-                                "country": "IND",
-                                "city": "Bengaluru Urban",
-                                "area_code": "560103",
-                                "name": "SHERIN BLR STORE",
-                                "locality": "WHITEFIELD",
-                                "state": "Karnataka",
-                                "building": "door no 5"
-                            },
-                            "gps": "12.929869,77.684837"
-                        }
-                    },
-                    "end": {
-                        "contact": {
-                            "phone": "7904741400"
-                        },
-                        "location": {
-                            "address": {
-                                "country": "IND",
-                                "city": "Bengaluru",
-                                "area_code": "560103",
-                                "name": "sherin shafa A",
-                                "locality": "4th Cross Road",
-                                "state": "Karnataka",
-                                "building": "BUILDING NEWm"
-                            },
-                            "gps": "12.929930,77.675194"
-                        }
-                    },
-                    "id": "mp2_immediate_f1",
-                    "type": "Delivery"
-                }
-            ],
-            "quote": {
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "mp2_immediate",
-                        "price": {
-                            "currency": "INR",
-                            "value": "1.69"
-                        },
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "@ondc/org/item_id": "mp2_immediate",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.31"
-                        },
-                        "@ondc/org/title_type": "tax"
-                    }
-                ],
-                "price": {
-                    "currency": "INR",
-                    "value": "2.0"
-                }
-            },
             "provider": {
                 "id": "MP2"
-            },
-            "payment": {
-                "collected_by": "BAP",
-                "type": "POST-FULFILLMENT"
             },
             "items": [
                 {
                     "id": "mp2_immediate",
                     "fulfillment_id": "mp2_immediate_f1"
                 }
-            ]
+            ],
+            "fulfillments": [
+                {
+                    "id": "mp2_immediate_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.929869,77.684837",
+                            "address": {
+                                "name": "SHERIN BLR STORE",
+                                "building": "door no 5",
+                                "locality": "WHITEFIELD",
+                                "city": "Bengaluru Urban",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7904741400",
+                            "email": "sherin.h@zohotest.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.930680,77.675964",
+                            "address": {
+                                "name": "Akilan",
+                                "building": "sd",
+                                "locality": "Yemalur Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9999999999",
+                            "email": "sd@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "2.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.69"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.31"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            }
         }
     }
 }
