@@ -1,72 +1,114 @@
 {
     "context": {
-        "transaction_id": "9d4e1be1-e5d6-49dd-9432-53873a22b970",
-        "bpp_id": "ondc-connect.localzoho.com",
-        "country": "IND",
-        "city": "std:080",
-        "message_id": "8c37266c-0139-482e-b689-3f2fbe4f1e3a",
-        "core_version": "1.2.0",
-        "ttl": "PT30S",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "domain": "ONDC:RET10",
-        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
         "action": "confirm",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-        "timestamp": "2024-05-15T11:13:38.033Z"
+        "bpp_id": "ondc-connect.localzoho.com",
+        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "country": "IND",
+        "domain": "ONDC:RET10",
+        "message_id": "38313223-e07f-4936-8aa7-0fc23b91fe65",
+        "timestamp": "2024-06-16T08:29:42.961Z",
+        "transaction_id": "b298b32d-2e89-49bd-a6b6-6dd311c93cbc",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "billing": {
+                "address": {
+                    "area_code": "560103",
+                    "building": "Tower Building",
+                    "city": "Bengaluru",
+                    "country": "IND",
+                    "locality": "Yemalur Road",
+                    "name": "Karthick",
+                    "state": "Karnataka"
+                },
+                "created_at": "2024-06-16T08:29:36.542Z",
+                "email": "gjack.karthick@gmail.com",
+                "name": "Karthick",
+                "phone": "8883824177",
+                "updated_at": "2024-06-16T08:29:36.542Z"
+            },
+            "created_at": "2024-06-16T08:29:42.961Z",
             "fulfillments": [
                 {
-                    "@ondc/org/TAT": "PT1H55M",
+                    "@ondc/org/TAT": "PT1H25M",
                     "end": {
-                        "person": {
-                            "name": "sherin shafa"
-                        },
                         "contact": {
-                            "phone": "9952291326",
-                            "email": "sherin.h@gofrugal.com"
+                            "email": "gjack.karthick@gmail.com",
+                            "phone": "8883824177"
                         },
                         "location": {
                             "address": {
-                                "country": "IND",
-                                "city": "Bengaluru",
                                 "area_code": "560103",
-                                "name": "sherin shafa",
-                                "locality": "4th Cross Road",
-                                "state": "Karnataka",
-                                "building": "2nd floor"
+                                "building": "Tower Building",
+                                "city": "Bengaluru",
+                                "country": "IND",
+                                "locality": "Yemalur Road",
+                                "name": "Karthick",
+                                "state": "Karnataka"
                             },
-                            "gps": "12.929977587374657,77.67521033983907"
+                            "gps": "12.930284,77.675550"
+                        },
+                        "person": {
+                            "name": "Karthick"
                         }
                     },
-                    "id": "3000002585835",
-                    "type": "Delivery",
-                    "tracking": "false"
+                    "id": "3000005222819",
+                    "tracking": true,
+                    "type": "Delivery"
                 }
             ],
+            "id": "2024-06-16-469711",
+            "items": [
+                {
+                    "fulfillment_id": "3000005222819",
+                    "id": "3000002326265",
+                    "quantity": {
+                        "count": 5
+                    }
+                },
+                {
+                    "fulfillment_id": "3000005222819",
+                    "id": "3000004551763",
+                    "quantity": {
+                        "count": 4
+                    }
+                }
+            ],
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_details": [
+                ],
+                "collected_by": "BPP",
+                "params": {
+                    "amount": "909.19",
+                    "currency": "INR"
+                },
+                "status": "NOT-PAID",
+                "type": "ON-FULFILLMENT"
+            },
+            "provider": {
+                "id": "3000000603069",
+                "locations": [
+                    {
+                        "id": "3000000603069"
+                    }
+                ]
+            },
             "quote": {
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "3000002326257",
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "55.00"
-                            }
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "165.00"
+                        "@ondc/org/item_id": "3000002326265",
+                        "@ondc/org/item_quantity": {
+                            "count": 5
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "SAKTHI SAMBAR POWDER",
-                        "@ondc/org/item_quantity": {
-                            "count": "3"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "3000002326265",
                         "item": {
                             "price": {
                                 "currency": "INR",
@@ -77,97 +119,52 @@
                             "currency": "INR",
                             "value": "475.00"
                         },
-                        "@ondc/org/title_type": "item",
-                        "title": "SAKTHI SAMBAR POWDER",
-                        "@ondc/org/item_quantity": {
-                            "count": "5"
-                        }
+                        "title": "SAKTHI SAMBAR POWDER"
                     },
                     {
-                        "@ondc/org/item_id": "3000002585835",
+                        "@ondc/org/item_id": "3000004551763",
+                        "@ondc/org/item_quantity": {
+                            "count": 4
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "100.00"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "400.00"
+                        },
+                        "title": "AACHI CHILLY POWDER"
+                    },
+                    {
+                        "@ondc/org/item_id": "3000005222819",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
                             "value": "2.00"
                         },
-                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery charges"
                     },
                     {
-                        "@ondc/org/item_id": "3000002585835",
+                        "@ondc/org/item_id": "3000005222819",
+                        "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
-                            "value": "23.56"
+                            "value": "32.19"
                         },
-                        "@ondc/org/title_type": "misc",
                         "title": "Convenience Fee"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "665.56"
+                    "value": "909.19"
                 },
                 "ttl": "PT15M"
             },
-            "updated_at": "2024-05-15T11:13:38.033Z",
-            "provider": {
-                "locations": [
-                    {
-                        "id": "3000000603069"
-                    }
-                ],
-                "id": "3000000603069"
-            },
-            "created_at": "2024-05-15T11:13:38.033Z",
-            "payment": {
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "collected_by": "BAP",
-                "params": {
-                    "transaction_id": "order_OAkUJ44KXYAK3X",
-                    "amount": "665.56",
-                    "currency": "INR"
-                },
-                "type": "ON-ORDER",
-                "uri": "https://razorpay.com/",
-                "tl_method": "http/get",
-                "status": "PAID",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-                "@ondc/org/settlement_details": []
-            },
-            "id": "2024-05-15-332433",
             "state": "Created",
-            "items": [
-                {
-                    "quantity": {
-                        "count": "3"
-                    },
-                    "id": "3000002326257",
-                    "fulfillment_id": "3000002585835"
-                },
-                {
-                    "quantity": {
-                        "count": "5"
-                    },
-                    "id": "3000002326265",
-                    "fulfillment_id": "3000002585835"
-                }
-            ],
-            "billing": {
-                "address": {
-                    "country": "IND",
-                    "city": "Bengaluru",
-                    "area_code": "560103",
-                    "name": "sherin shafa",
-                    "locality": "4th Cross Road",
-                    "state": "Karnataka",
-                    "building": "2nd floor"
-                },
-                "updated_at": "2024-05-15T11:13:12.022Z",
-                "phone": "9952291326",
-                "name": "sherin shafa",
-                "created_at": "2024-05-15T11:13:12.022Z",
-                "email": "sherin.h@gofrugal.com"
-            },
             "tags": [
                 {
                     "code": "bpp_terms",
@@ -175,6 +172,10 @@
                         {
                             "code": "tax_number",
                             "value": "33AACCZ3115C1ZW"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "AAAGM0289C"
                         }
                     ]
                 },
@@ -187,7 +188,8 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "updated_at": "2024-06-16T08:29:42.961Z"
         }
     }
 }
