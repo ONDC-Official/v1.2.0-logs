@@ -1,102 +1,128 @@
 {
-    "context": {
-      "domain": "nic2004:60232",
-      "country": "IND",
-      "city": "std:022",
-      "action": "on_search",
-      "core_version": "1.2.0",
-      "bap_id": "preprod.xpressbaazaar.com",
-      "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-      "bpp_id": "my.ithinklogistics.com/ondc/preprod",
-      "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
-      "transaction_id": "1fb150ba-ad82-445f-81f7-3f45b8a97705",
-      "message_id": "db0944c0-4764-419a-a7c9-f24a84bd13c0",
-      "timestamp": "2024-05-20T08:27:31.457Z"
-    },
-    "message": {
-      "catalog": {
-        "bpp/descriptor": {
-          "name": "my.ithinklogistics.com"
-        },
-        "bpp/providers": [
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_search",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.xpressbaazaar.com",
+    "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+    "transaction_id": "6fcc1241-281a-4f27-8270-52b05fcdd4a8",
+    "message_id": "524670c1-f83b-4d45-9575-2bdf25d3bea6",
+    "timestamp": "2024-06-15T09:33:03.827Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "MP2",
+        "tags": [
           {
-            "id": "29",
-            "descriptor": {
-              "name": "iThinkLogistics",
-              "short_desc": "iThinkLogistics",
-              "long_desc": "iThinkLogistics"
-            },
-            "categories": [
+            "code": "bpp_terms",
+            "list": [
               {
-                "id": "Standard Delivery",
-                "time": {
-                  "label": "TAT",
-                  "duration": "P2D",
-                  "timestamp": "2024-05-23"
-                }
-              }
-            ],
-            "fulfillments": [
-              {
-                "id": "1",
-                "type": "Delivery",
-                "start": {
-                  "time": {
-                    "duration": "P1D"
-                  }
-                }
-              },
-              {
-                "id": "2",
-                "type": "RTO"
-              }
-            ],
-            "items": [
-              {
-                "id": "29I1",
-                "parent_item_id": "",
-                "category_id": "Standard Delivery",
-                "fulfillment_id": "1",
-                "descriptor": {
-                  "code": "P2H2P",
-                  "name": "Standard Delivery",
-                  "short_desc": "Standard Delivery",
-                  "long_desc": "Standard Delivery"
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "37.76"
-                },
-                "time": {
-                  "label": "TAT",
-                  "duration": "P2D",
-                  "timestamp": "2024-05-22"
-                }
-              },
-              {
-                "id": "29I2",
-                "parent_item_id": "29I1",
-                "category_id": "Standard Delivery",
-                "fulfillment_id": "2",
-                "descriptor": {
-                  "code": "P2H2P",
-                  "name": "RTO quote",
-                  "short_desc": "RTO quote",
-                  "long_desc": "RTO quote"
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "32.00"
-                },
-                "time": {
-                  "label": "TAT",
-                  "duration": "P3D",
-                  "timestamp": "2024-05-23"
-                }
+                "code": "static_terms",
+                "value": ""
               }
             ]
           }
         ]
-      }
+      },
+      "bpp/providers": [
+        {
+          "id": "MP2",
+          "descriptor": {
+            "name": "MP2",
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider"
+          },
+          "categories": [
+            {
+              "id": "Same Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-06-15"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "mp2_sdd_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT2H"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "6.52"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "mp2_sdd_f1-RTO",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "id": "mp2_sdd",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "MP2 SDD Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "2.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-06-15"
+              }
+            },
+            {
+              "id": "mp2_sdd-RTO",
+              "parent_item_id": "mp2_sdd",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-06-15"
+              }
+            }
+          ]
+        }
+      ]
     }
   }
+}

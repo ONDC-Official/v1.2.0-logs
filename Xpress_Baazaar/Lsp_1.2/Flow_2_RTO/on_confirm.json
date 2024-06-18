@@ -2,81 +2,157 @@
   "context": {
     "domain": "nic2004:60232",
     "country": "IND",
-    "city": "std:022",
+    "city": "std:080",
     "action": "on_confirm",
     "core_version": "1.2.0",
     "bap_id": "preprod.xpressbaazaar.com",
     "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-    "bpp_id": "my.ithinklogistics.com/ondc/preprod",
-    "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
-    "transaction_id": "6f757134-27d3-48dd-9fba-0d834c8117b0",
-    "message_id": "c6c9ace1-5e6d-482e-8f67-f5c7b6bc6eb5",
-    "timestamp": "2024-05-20T11:19:08.418Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "d29f5874-13ca-4fe6-a914-78ce9520564f",
+    "message_id": "0b9e3f5b-e385-44d1-aa01-44cd8b51735e",
+    "timestamp": "2024-06-15T09:52:20.712Z"
   },
   "message": {
     "order": {
-      "id": "eb1a0031-01ee-4c73-a298-164dccd4ab41",
+      "id": "a7c90773-df54-486f-b22f-0844cc",
       "state": "Accepted",
       "provider": {
-        "id": "29"
+        "id": "MP2"
       },
       "items": [
         {
-          "id": "29I1",
-          "fulfillment_id": "1",
-          "category_id": "Standard Delivery",
+          "id": "mp2_sdd",
+          "fulfillment_id": "mp2_sdd_f1",
+          "category_id": "Same Day Delivery",
           "descriptor": {
-            "code": "P2H2P"
+            "code": "P2P"
           },
           "time": {
             "label": "TAT",
-            "duration": "P2D",
-            "timestamp": "2024-05-23"
+            "duration": "PT4H",
+            "timestamp": "2024-06-15"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "37.76"
+          "value": "2.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "29I1",
+            "@ondc/org/item_id": "mp2_sdd",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "37.76"
+              "value": "1.69"
             }
           },
           {
-            "@ondc/org/item_id": "29I1",
+            "@ondc/org/item_id": "mp2_sdd",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "0.31"
             }
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "1",
+          "id": "mp2_sdd_f1",
           "type": "Delivery",
           "state": {
             "descriptor": {
               "code": "Pending"
             }
           },
-          "@ondc/org/awb_no": "NDD2297074",
-          "tracking": false,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2024-06-15T09:52:20.214Z",
+                "end": "2024-06-15T11:52:20.214Z"
+              },
+              "duration": "PT2H"
+            },
+            "person": {
+              "name": "AGARO"
+            },
+            "location": {
+              "gps": "12.933050,77.589828",
+              "address": {
+                "name": "AGARO",
+                "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                "locality": "gautam buddha",
+                "city": "Karnataka",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560029"
+              }
+            },
+            "contact": {
+              "phone": "7654329075",
+              "email": "abcd.efgh@gmail.com"
+            },
+            "instructions": {
+              "code": "2",
+              "short_desc": "382759",
+              "long_desc": "startInst.short_desc",
+              "additional_desc": {
+                "content_type": "image/x-png",
+                "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+              }
+            }
+          },
+          "end": {
+            "person": {
+              "name": "som"
+            },
+            "location": {
+              "gps": "12.923601,77.586925",
+              "address": {
+                "name": "som",
+                "building": "B-16 secound floor",
+                "locality": "36th A Cross Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              }
+            },
+            "contact": {
+              "phone": "09453658871",
+              "email": "somnath.yadav@ens.enterprises"
+            },
+            "instructions": {
+              "code": "2",
+              "short_desc": "382760",
+              "long_desc": "startInst.short_desc"
+            },
+            "time": {
+              "range": {
+                "start": "2024-06-15T11:52:20.214Z",
+                "end": "2024-06-15T13:52:20.214Z"
+              }
+            }
+          },
           "tags": [
+            {
+              "code": "weather_check",
+              "list": [
+                {
+                  "code": "raining",
+                  "value": "no"
+                }
+              ]
+            },
             {
               "code": "state",
               "list": [
                 {
                   "code": "ready_to_ship",
-                  "value": "no"
+                  "value": "yes"
                 }
               ]
             },
@@ -85,143 +161,82 @@
               "list": [
                 {
                   "code": "return_to_origin",
-                  "value": "no"
+                  "value": "yes"
                 }
               ]
             }
           ],
-          "start": {
-            "person": {
-              "name": "lakme"
-            },
-            "location": {
-              "gps": "18.910370, 72.819756",
-              "address": {
-                "name": "lakme",
-                "building": "H1 T2 main building",
-                "locality": "B block sector 63",
-                "city": "Mumbai",
-                "state": "Maharashtra",
-                "country": "India",
-                "area_code": "400005"
-              }
-            },
-            "contact": {
-              "phone": "9876543210",
-              "email": "abcd.efgh@gmail.com"
-            },
-            "instructions": {
-              "code": "2",
-              "short_desc": "820922",
-              "long_desc": "startInst.short_desc",
-              "images": [
-                "https://cdn.shopify.com/s/files/1/0745/3822/1866/products/SkinFirmingFaceWash_Front_600x_cada4099-d02f-4e45-bc42-bd7451eb7207.jpg?v=1680775438"
-              ],
-              "additional_desc": {
-                "content_type": "image/x-png",
-                "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
-              }
-            },
-            "time": {
-              "duration": "P1D"
-            }
-          },
-          "end": {
-            "person": {
-              "name": "Pawan Maurya"
-            },
-            "location": {
-              "gps": "18.998173, 72.827469",
-              "address": {
-                "name": "Pawan Maurya",
-                "building": "H1 T3 Main building",
-                "locality": "Late Dattaji Nalavade Flyover",
-                "city": "Mumbai",
-                "state": "Maharashtra",
-                "country": "India",
-                "area_code": "400013"
-              }
-            },
-            "contact": {
-              "phone": "9876543213",
-              "email": "pawan.maurya@ens.enterprises"
-            },
-            "instructions": {
-              "code": "2",
-              "short_desc": "820921",
-              "long_desc": "startInst.short_desc",
-              "additional_desc": {
-                "content_type": "text/html",
-                "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
-              }
-            }
-          }
+          "tracking": true
         }
       ],
       "billing": {
-        "name": "lakme",
+        "name": "AGARO",
         "address": {
-          "name": "lakme",
-          "building": "H1 T2 main building",
-          "locality": "B block sector 63",
-          "city": "Mumbai",
-          "state": "Maharashtra",
+          "name": "AGARO",
+          "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+          "locality": "gautam buddha",
+          "city": "Karnataka",
+          "state": "Karnataka",
           "country": "India",
-          "area_code": "400005"
+          "area_code": "560029"
         },
-        "tax_number": "27AAECJ1349N1Z8",
-        "phone": "9876543210",
+        "tax_number": "24AAACC1206D1ZM",
+        "phone": "7654329075",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-05-20T11:15:45.633Z",
-        "updated_at": "2024-05-20T11:15:45.633Z"
+        "created_at": "2024-06-15T09:50:39.688Z",
+        "updated_at": "2024-06-15T09:50:39.688Z"
       },
-      "created_at": "2024-05-20T11:19:08.168Z",
-      "updated_at": "2024-05-20T11:19:08.418Z",
       "payment": {
-        "@ondc/org/collection_amount": "350",
-        "collected_by": "BPP",
-        "type": "ON-FULFILLMENT",
-        "@ondc/org/settlement_details": []
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
       },
       "@ondc/org/linked_order": {
         "items": [
           {
             "category_id": "Grocery",
             "descriptor": {
-              "name": "Lakmé 9to5 Black Impact Liner"
+              "name": "Agaro Imperial Glass Containers - 370, 640, 1050 ml - Cyan"
             },
             "quantity": {
               "count": 1,
               "measure": {
                 "unit": "kilogram",
-                "value": 1
+                "value": 0.5
               }
             },
             "price": {
               "currency": "INR",
-              "value": "300"
+              "value": "290"
             }
           }
         ],
         "provider": {
           "descriptor": {
-            "name": "lakme"
+            "name": "AGARO"
           },
           "address": {
-            "area_code": "400005",
-            "building": "H1 T2 main building",
-            "city": "Mumbai",
-            "locality": "B block sector 63",
-            "name": "lakme",
-            "street": "H1 T2 main building",
-            "state": "MH"
+            "name": "AGARO",
+            "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+            "locality": "gautam buddha",
+            "city": "Karnataka",
+            "state": "Karnataka",
+            "area_code": "560029"
           }
         },
         "order": {
-          "id": "2024-05-20-232727",
+          "id": "2024-06-15-700782",
           "weight": {
             "unit": "gram",
-            "value": 50
+            "value": 500
           },
           "dimensions": {
             "length": {
@@ -238,7 +253,9 @@
             }
           }
         }
-      }
+      },
+      "created_at": "2024-06-15T09:52:20.214Z",
+      "updated_at": "2024-06-15T09:52:20.712Z"
     }
   }
 }
