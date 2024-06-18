@@ -3,20 +3,21 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:0120",
-        "action": "on_confirm",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_uri": "https://ondc.ecomviser.com/api/v1",
-        "transaction_id": "d020e1de-fd1c-4a77-8ba5-848537d051ac",
-        "message_id": "f3843eb9-464e-4eb2-b789-7289351a4b06",
-        "timestamp": "2024-06-13T11:02:30.000Z",
-        "bpp_id": "ondc.ecomviser.com"
+        "transaction_id": "88bc1ad5-1c16-4b4a-9daf-510588a0c49a",
+        "message_id": "666a9816808cd364a8712-cb3e",
+        "timestamp": "2024-06-13T06:56:22.000Z",
+        "bpp_id": "ondc.ecomviser.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-06-13-444722",
-            "state": "Created",
+            "id": "2024-06-13-272351",
+            "state": "In-progress",
             "provider": {
                 "id": "2499586",
                 "locations": [
@@ -28,28 +29,12 @@
             "items": [
                 {
                     "id": "13515471",
+                    "fulfillment_id": "228678",
                     "quantity": {
-                        "count": 2
-                    },
-                    "fulfillment_id": "228678"
+                        "count": 1
+                    }
                 }
             ],
-            "billing": {
-                "address": {
-                    "name": "DKS Ginger Sec-63",
-                    "building": "Ginger Noida Sector-63",
-                    "locality": "Shaheed Hawaldar Padam Singh Dhama Marg",
-                    "city": "Noida",
-                    "state": "Uttar Pradesh",
-                    "country": "IND",
-                    "area_code": "201301"
-                },
-                "phone": "9876543210",
-                "name": "DKS Ginger Sec-63",
-                "email": "dheeraj@webkul.in",
-                "created_at": "2024-06-13T11:02:06.060Z",
-                "updated_at": "2024-06-13T11:02:06.060Z"
-            },
             "fulfillments": [
                 {
                     "@ondc/org/TAT": "PT60M",
@@ -74,13 +59,19 @@
                                 "country": "IND",
                                 "area_code": "201301"
                             }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-06-13T06:56:23.000Z",
+                                "end": "2024-06-13T07:26:23.000Z"
+                            }
                         }
                     },
                     "type": "Delivery",
                     "@ondc/org/provider_name": "ondc.ecomviser.com",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Agent-assigned"
                         }
                     },
                     "start": {
@@ -103,8 +94,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-06-13T11:02:31.000Z",
-                                "end": "2024-06-13T12:02:31.000Z"
+                                "start": "2024-06-13T06:56:23.000Z",
+                                "end": "2024-06-13T07:26:23.000Z"
                             }
                         }
                     }
@@ -113,19 +104,19 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "232.08"
+                    "value": "118.54"
                 },
                 "breakup": [
                     {
                         "title": "Sliced Bread (Returnable)",
                         "price": {
                             "currency": "INR",
-                            "value": "220"
+                            "value": "110"
                         },
                         "@ondc/org/item_id": "13515471",
                         "@ondc/org/title_type": "item",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 1
                         },
                         "item": {
                             "price": {
@@ -138,7 +129,7 @@
                         "title": "Convenience fee",
                         "price": {
                             "currency": "INR",
-                            "value": "7.08"
+                            "value": "3.54"
                         },
                         "@ondc/org/title_type": "misc",
                         "@ondc/org/item_id": "228678"
@@ -155,13 +146,29 @@
                 ],
                 "ttl": "PT6H"
             },
+            "billing": {
+                "address": {
+                    "name": "DKS Ginger Sec-63",
+                    "building": "Ginger Noida Sector-63",
+                    "locality": "Shaheed Hawaldar Padam Singh Dhama Marg",
+                    "city": "Noida",
+                    "state": "Uttar Pradesh",
+                    "country": "IND",
+                    "area_code": "201301"
+                },
+                "phone": "9876543210",
+                "name": "DKS Ginger Sec-63",
+                "email": "dheeraj@webkul.in",
+                "created_at": "2024-06-13T06:54:41.277Z",
+                "updated_at": "2024-06-13T06:54:41.277Z"
+            },
             "payment": {
                 "uri": "https://razorpay.com/",
                 "tl_method": "http/get",
                 "params": {
-                    "amount": "232.08",
+                    "amount": "118.54",
                     "currency": "INR",
-                    "transaction_id": "order_OMDn6pmxic4KDD"
+                    "transaction_id": "order_OM9Zl9SNjVKexK"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER",
@@ -181,36 +188,8 @@
                     }
                 ]
             },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "09AABCW0339G3ZD"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "AABCW0277G"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "GSTIN1234567890"
-                        }
-                    ]
-                }
-            ],
-            "created_at": "2024-06-13T11:02:29.534Z",
-            "updated_at": "2024-06-13T11:02:30.000Z"
+            "created_at": "2024-06-13T06:55:07.271Z",
+            "updated_at": "2024-06-13T06:56:22.000Z"
         }
     }
 }
