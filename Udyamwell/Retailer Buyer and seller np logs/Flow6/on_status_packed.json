@@ -1,0 +1,282 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://seller.udyamwell.in/",
+        "transaction_id": "036a63b7-483f-4108-8a36-482ad6493697",
+        "message_id": "05beed41-931a-4def-a1ba-1fb7d8b552f7",
+        "timestamp": "2024-06-16T04:55:42.907Z",
+        "bpp_id": "seller.udyamwell.in",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2024-06-16-426549",
+            "state": "In-progress",
+            "billing": {
+                "address": {
+                    "name": "test",
+                    "building": "Royal place",
+                    "locality": "1st Cross Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560076"
+                },
+                "phone": "7018713034",
+                "name": "test",
+                "email": "test@yopmail.com",
+                "created_at": "2024-06-16T04:48:25.625Z",
+                "updated_at": "2024-06-16T04:48:25.625Z"
+            },
+            "items": [
+                {
+                    "id": "66464eb56b5922ef1a1df3e4",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "1bb4f297-c59d-4cd1-bed1-7144082629f7"
+                },
+                {
+                    "id": "6647addb438ef5dc40bac767",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "1bb4f297-c59d-4cd1-bed1-7144082629f7"
+                },
+                {
+                    "id": "66464eb56b5922ef1a1df3e4",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "UWC1"
+                }
+            ],
+            "provider": {
+                "id": "65c729244f2d6bf0e260b8d0",
+                "locations": [
+                    {
+                        "id": "L1"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "@ondc/org/TAT": "PT60M",
+                    "id": "1bb4f297-c59d-4cd1-bed1-7144082629f7",
+                    "tracking": true,
+                    "end": {
+                        "time": {
+                            "range": {
+                                "start": "2024-06-16T05:40:21.077Z",
+                                "end": "2024-06-16T05:55:21.077Z"
+                            }
+                        },
+                        "contact": {
+                            "email": "test@yopmail.com",
+                            "phone": "7018713034"
+                        },
+                        "person": {
+                            "name": "test"
+                        },
+                        "location": {
+                            "gps": "12.899232,77.602168",
+                            "address": {
+                                "name": "test",
+                                "building": "Royal place",
+                                "locality": "1st Cross Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560076"
+                            }
+                        }
+                    },
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "@ondc/org/provider_name": "Udyamwell General Store",
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2024-06-16T05:05:21.077Z",
+                                "end": "2024-06-16T05:20:21.077Z"
+                            }
+                        },
+                        "location": {
+                            "gps": "12.8843048, 77.5962764",
+                            "address": {
+                                "name": "Udyamwell General Store",
+                                "building": "building",
+                                "locality": "street no 18",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560068"
+                            },
+                            "descriptor": {
+                                "name": "Udyamwell General Store"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7018713034",
+                            "email": "dhimana865@gmail.com"
+                        }
+                    }
+                },
+                {
+                    "id": "UWC1",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "seller.udyamwell.in"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "66464eb56b5922ef1a1df3e4"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-2380"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "6072.00",
+                    "currency": "INR",
+                    "transaction_id": "order_ONJ1lZpBB2Y9Iv"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "upi_address": "abc@okicici.com",
+                        "settlement_bank_account_no": "414141411414",
+                        "settlement_ifsc_code": "HDFC0000128",
+                        "beneficiary_name": "Udyamwell",
+                        "bank_name": "PNB",
+                        "branch_name": "Palampur"
+                    },
+                    {
+                        "settlement_counterparty": "buyer",
+                        "settlement_phase": "refund",
+                        "settlement_type": "neft",
+                        "settlement_amount": "2380",
+                        "settlement_timestamp": "2024-06-16T04:50:22.679Z"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "3692"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "66464eb56b5922ef1a1df3e4",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "A2 Gir Cow Ghee",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2380"
+                        },
+                        "item": {
+                            "price": {
+                                "value": "2380.00",
+                                "currency": "INR"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "6647addb438ef5dc40bac767",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
+                        "title": "Stone Pressed Black Mustard Oil",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1170"
+                        },
+                        "item": {
+                            "price": {
+                                "value": "390.00",
+                                "currency": "INR"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "1bb4f297-c59d-4cd1-bed1-7144082629f7",
+                        "price": {
+                            "currency": "INR",
+                            "value": "122"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1bb4f297-c59d-4cd1-bed1-7144082629f7",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "created_at": "2024-06-16T04:49:21.890Z",
+            "updated_at": "2024-06-16T04:55:42.907Z"
+        }
+    }
+}

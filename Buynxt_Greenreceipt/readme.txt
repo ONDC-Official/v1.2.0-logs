@@ -1,0 +1,1 @@
+All 6 flows logs of Ret:14 resubmitted by Buynxt Pvt ltd(subscriber_id: api.greenreceipt.in) named RET 14 Updated folder, after resolving all feedback issues provided by log validation team and also attached log validation responses in RET14 folder, we are getting some error in log validation response but we cross checked it with our payload, these are not valid errors.
