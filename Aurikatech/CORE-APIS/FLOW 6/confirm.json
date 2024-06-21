@@ -1,221 +1,210 @@
 {
-  "context": {
-      "domain": "ONDC:RET12",
-      "country": "IND",
-      "city": "std:020",
-      "action": "confirm",
-      "core_version": "1.2.0",
-      "bap_id": "buyer-app-preprod-v2.ondc.org",
-      "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-      "bpp_uri": "https://aurikatech.com/seller-app/api/v1",
-      "transaction_id": "14dd4ac2-7810-4cd5-8f3a-438ec6c28e6d",
-      "message_id": "b7ea0874-3b0a-4240-ab8c-cbc38a8ecb1a",
-      "timestamp": "2024-06-15T05:57:34.416Z",
-      "bpp_id": "aurikatech.com",
-      "ttl": "PT30S"
-  },
-  "message": {
-      "order": {
-          "id": "2024-06-15-807136",
-          "state": "Created",
-          "billing": {
-              "address": {
-                  "name": "Vansh",
-                  "building": "The Lake District",
-                  "locality": "Som Rao G Marg",
-                  "city": "Pune",
-                  "state": "Maharashtra",
-                  "country": "IND",
-                  "area_code": "411030"
-              },
-              "phone": "7017366984",
-              "name": "Vansh",
-              "email": "vanshraghav2018@gmail.com",
-              "created_at": "2024-06-15T05:57:12.003Z",
-              "updated_at": "2024-06-15T05:57:12.003Z"
-          },
-          "items": [
-              {
-                  "id": "883893ad-b8aa-485c-af67-bdfecff9ba84",
-                  "quantity": {
-                      "count": 2
-                  },
-                  "fulfillment_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589"
-              }
-          ],
-          "provider": {
-              "id": "86c6daf0-1956-4c2c-a87c-72c8a18ea627",
-              "locations": [
-                  {
-                      "id": "662b8a07f459102ce5263023"
-                  }
-              ]
-          },
-          "fulfillments": [
-              {
-                  "@ondc/org/TAT": "PT72H",
-                  "id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
-                  "tracking": false,
-                  "end": {
-                      "contact": {
-                          "email": "vanshraghav2018@gmail.com",
-                          "phone": "7017366984"
-                      },
-                      "person": {
-                          "name": "Vansh"
-                      },
-                      "location": {
-                          "gps": "18.504144,73.844477",
-                          "address": {
-                              "name": "Vansh",
-                              "building": "The Lake District",
-                              "locality": "Som Rao G Marg",
-                              "city": "Pune",
-                              "state": "Maharashtra",
-                              "country": "IND",
-                              "area_code": "411030"
-                          }
-                      }
-                  },
-                  "type": "Delivery"
-              }
-          ],
-          "payment": {
-              "uri": "https://razorpay.com/",
-              "tl_method": "http/get",
-              "params": {
-                  "amount": "51493.75",
-                  "currency": "INR",
-                  "transaction_id": "order_OLLWla6SlHxubQ"
-              },
-              "status": "PAID",
-              "type": "ON-ORDER",
-              "collected_by": "BAP",
-              "@ondc/org/buyer_app_finder_fee_type": "percent",
-              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-              "@ondc/org/settlement_basis": "delivery",
-              "@ondc/org/settlement_window": "P1D",
-              "@ondc/org/withholding_amount": "0.00",
-              "@ondc/org/settlement_details": [
-                  {
-                      "settlement_counterparty": "seller-app",
-                      "settlement_phase": "sale-amount",
-                      "settlement_type": "neft",
-                      "upi_address": "gft@oksbi",
-                      "settlement_bank_account_no": "34234343434",
-                      "settlement_ifsc_code": "SBIN0002345",
-                      "beneficiary_name": "VANSH",
-                      "bank_name": "SBI",
-                      "branch_name": "PUNE"
-                  }
-              ]
-          },
-          "quote": {
-              "price": {
-                  "currency": "INR",
-                  "value": "51493.75"
-              },
-              "breakup": [
-                  {
-                      "@ondc/org/item_id": "883893ad-b8aa-485c-af67-bdfecff9ba84",
-                      "@ondc/org/item_quantity": {
-                          "count": 2
-                      },
-                      "title": "Test Product",
-                      "@ondc/org/title_type": "item",
-                      "price": {
-                          "currency": "INR",
-                          "value": "50000.00"
-                      },
-                      "item": {
-                          "price": {
-                              "currency": "INR",
-                              "value": "25000"
-                          }
-                      },
-                      "tags": [
-                          {
-                              "code": "type",
-                              "list": [
-                                  {
-                                      "code": "type",
-                                      "value": "item"
-                                  }
-                              ]
-                          }
-                      ]
-                  },
-                  {
-                      "@ondc/org/item_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
-                      "title": "Delivery charges",
-                      "@ondc/org/title_type": "delivery",
-                      "price": {
-                          "currency": "INR",
-                          "value": "493.75"
-                      }
-                  },
-                  {
-                      "@ondc/org/item_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
-                      "title": "Convenience Fee",
-                      "@ondc/org/title_type": "misc",
-                      "price": {
-                          "currency": "INR",
-                          "value": "1000"
-                      }
-                  }
-              ],
-              "ttl": "P1D"
-          },
-          "tags": [
-              {
-                  "code": "bpp_terms",
-                  "list": [
-                      {
-                          "code": "max_liability",
-                          "value": "2"
-                      },
-                      {
-                          "code": "max_liability_cap",
-                          "value": "10000.00"
-                      },
-                      {
-                          "code": "mandatory_arbitration",
-                          "value": "false"
-                      },
-                      {
-                          "code": "court_jurisdiction",
-                          "value": "Pune"
-                      },
-                      {
-                          "code": "delay_interest",
-                          "value": "7.50"
-                      },
-                      {
-                          "code": "tax_number",
-                          "value": "01ABCDE1122E1ZY"
-                      },
-                      {
-                          "code": "provider_tax_number",
-                          "value": "ABCDE1234F"
-                      },
-                      {
-                          "code": "np_type",
-                          "value": "MSN"
-                      }
-                  ]
-              },
-              {
-                  "code": "bap_terms",
-                  "list": [
-                      {
-                          "code": "tax_number",
-                          "value": "GSTIN1234567890"
-                      }
-                  ]
-              }
-          ],
-          "created_at": "2024-06-15T05:57:34.416Z",
-          "updated_at": "2024-06-15T05:57:34.416Z"
-      }
-  }
-}
+    "context": {
+        "domain": "ONDC:RET12",
+        "country": "IND",
+        "city": "std:020",
+        "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://aurikatech.com/seller-app/api/v1",
+        "transaction_id": "14dd4ac2-7810-4cd5-8f3a-438ec6c28e6d",
+        "message_id": "b7ea0874-3b0a-4240-ab8c-cbc38a8ecb1a",
+        "timestamp": "2024-06-20T05:57:34.416Z",
+        "bpp_id": "aurikatech.com",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+        "id": "2024-06-20-807136",
+        "state": "Created",
+        "billing": {
+            "address": {
+            "name": "Vansh",
+            "building": "The Lake District",
+            "locality": "Som Rao G Marg",
+            "city": "Pune",
+            "state": "Maharashtra",
+            "country": "IND",
+            "area_code": "411030"
+            },
+            "phone": "7017366984",
+            "name": "Vansh",
+            "email": "vanshraghav2018@gmail.com",
+            "created_at": "2024-06-20T05:57:12.003Z",
+            "updated_at": "2024-06-20T05:57:12.003Z"
+        },
+        "items": [
+            {
+            "id": "883893ad-b8aa-485c-af67-bdfecff9ba84",
+            "quantity": {
+                "count": 2
+            },
+            "fulfillment_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589"
+            }
+        ],
+        "provider": {
+            "id": "86c6daf0-1956-4c2c-a87c-72c8a18ea627",
+            "locations": [
+            {
+                "id": "662b8a07f459102ce5263023"
+            }
+            ]
+        },
+        "fulfillments": [
+            {
+            "@ondc/org/TAT": "PT72H",
+            "id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
+            "tracking": false,
+            "end": {
+                "contact": {
+                "email": "vanshraghav2018@gmail.com",
+                "phone": "7017366984"
+                },
+                "person": {
+                "name": "Vansh"
+                },
+                "location": {
+                "gps": "18.504144,73.844477",
+                "address": {
+                    "name": "Vansh",
+                    "building": "The Lake District",
+                    "locality": "Som Rao G Marg",
+                    "city": "Pune",
+                    "state": "Maharashtra",
+                    "country": "IND",
+                    "area_code": "411030"
+                }
+                }
+            },
+            "type": "Delivery"
+            }
+        ],
+        "payment": {
+            "uri": "https://razorpay.com/",
+            "tl_method": "http/get",
+            "params": {
+            "amount": "51493.75",
+            "currency": "INR",
+            "transaction_id": "order_OLLWla6SlHxubQ"
+            },
+            "status": "PAID",
+            "type": "ON-ORDER",
+            "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_window": "P1D",
+            "@ondc/org/withholding_amount": "0.00",
+            "@ondc/org/settlement_details": [
+            {
+                "settlement_counterparty": "seller-app",
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "upi_address": "gft@oksbi",
+                "settlement_bank_account_no": "34234343434",
+                "settlement_ifsc_code": "SBIN0002345",
+                "beneficiary_name": "VANSH",
+                "bank_name": "SBI",
+                "branch_name": "PUNE"
+            }
+            ]
+        },
+        "quote": {
+            "price": {
+            "currency": "INR",
+            "value": "51493.75"
+            },
+            "breakup": [
+            {
+                "@ondc/org/item_id": "883893ad-b8aa-485c-af67-bdfecff9ba84",
+                "@ondc/org/item_quantity": {
+                "count": 2
+                },
+                "title": "Test Product",
+                "@ondc/org/title_type": "item",
+                "price": {
+                "currency": "INR",
+                "value": "50000.00"
+                },
+                "item": {
+                "price": {
+                    "currency": "INR",
+                    "value": "25000"
+                }
+                }
+            },
+            {
+                "@ondc/org/item_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
+                "title": "Delivery charges",
+                "@ondc/org/title_type": "delivery",
+                "price": {
+                "currency": "INR",
+                "value": "493.75"
+                }
+            },
+            {
+                "@ondc/org/item_id": "a9dc459b-beee-4c5c-add7-65c3a9bf5589",
+                "title": "Convenience Fee",
+                "@ondc/org/title_type": "misc",
+                "price": {
+                "currency": "INR",
+                "value": "1000"
+                }
+            }
+            ],
+            "ttl": "P1D"
+        },
+        "tags": [
+            {
+            "code": "bpp_terms",
+            "list": [
+                {
+                "code": "max_liability",
+                "value": "2"
+                },
+                {
+                "code": "max_liability_cap",
+                "value": "10000.00"
+                },
+                {
+                "code": "mandatory_arbitration",
+                "value": "false"
+                },
+                {
+                "code": "court_jurisdiction",
+                "value": "Pune"
+                },
+                {
+                "code": "delay_interest",
+                "value": "7.50"
+                },
+                {
+                "code": "tax_number",
+                "value": "01ABCDE1122E1ZY"
+                },
+                {
+                "code": "provider_tax_number",
+                "value": "ABCDE1234F"
+                },
+                {
+                "code": "np_type",
+                "value": "MSN"
+                }
+            ]
+            },
+            {
+            "code": "bap_terms",
+            "list": [
+                {
+                "code": "tax_number",
+                "value": "GSTIN1234567890"
+                }
+            ]
+            }
+        ],
+        "created_at": "2024-06-20T05:57:34.416Z",
+        "updated_at": "2024-06-20T05:57:34.416Z"
+        }
+    }
+    }
