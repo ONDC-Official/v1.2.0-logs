@@ -3,35 +3,34 @@
       "domain": "nic2004:60232",
       "country": "IND",
       "city": "std:080",
-      "action": "confirm",
+      "action": "on_confirm",
       "core_version": "1.2.0",
       "bap_id": "preprod.xpressbaazaar.com",
       "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-      "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
       "bpp_id": "preprod.logistics-seller.mp2.in",
+      "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
       "transaction_id": "5d145809-0332-4f15-861c-b0c4925eaaaa",
       "message_id": "c2193172-887a-4b90-839a-9cb0f00e15af",
-      "timestamp": "2024-06-20T11:42:33.548Z",
-      "ttl": "PT30S"
+      "timestamp": "2024-06-20T11:42:34.046Z"
     },
     "message": {
       "order": {
         "id": "589f96b0-dfa4-4338-ab24-e72f1a",
-        "state": "Created",
+        "state": "Accepted",
         "provider": {
           "id": "MP2"
         },
         "items": [
           {
+            "id": "mp2_immediate",
+            "fulfillment_id": "mp2_immediate_f1",
             "category_id": "Immediate Delivery",
             "descriptor": {
               "code": "P2P"
             },
-            "id": "mp2_immediate",
-            "fulfillment_id": "mp2_immediate_f1",
             "time": {
-              "duration": "PT55M",
               "label": "TAT",
+              "duration": "PT55M",
               "timestamp": "2024-06-20"
             }
           }
@@ -64,9 +63,17 @@
           {
             "id": "mp2_immediate_f1",
             "type": "Delivery",
-            "@ondc/org/awb_no": "2024062002348188",
+            "state": {
+              "descriptor": {
+                "code": "Pending"
+              }
+            },
             "start": {
               "time": {
+                "range": {
+                  "start": "2024-06-20T11:42:33.548Z",
+                  "end": "2024-06-20T12:02:33.548Z"
+                },
                 "duration": "PT20M"
               },
               "person": {
@@ -76,12 +83,12 @@
                 "gps": "12.933050,77.589828",
                 "address": {
                   "name": "AGARO",
-                  "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                  "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
                   "locality": "gautam buddha",
                   "city": "Karnataka",
                   "state": "Karnataka",
-                  "area_code": "560029",
-                  "country": "India"
+                  "country": "India",
+                  "area_code": "560029"
                 }
               },
               "contact": {
@@ -118,9 +125,24 @@
                 "code": "2",
                 "short_desc": "931732",
                 "long_desc": "startInst.short_desc"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-06-20T12:02:33.548Z",
+                  "end": "2024-06-20T12:37:33.548Z"
+                }
               }
             },
             "tags": [
+              {
+                "code": "weather_check",
+                "list": [
+                  {
+                    "code": "raining",
+                    "value": "no"
+                  }
+                ]
+              },
               {
                 "code": "state",
                 "list": [
@@ -139,7 +161,8 @@
                   }
                 ]
               }
-            ]
+            ],
+            "tracking": true
           }
         ],
         "billing": {
@@ -166,7 +189,6 @@
             {
               "settlement_counterparty": "buyer-app",
               "settlement_type": "upi",
-              "beneficiary_name": "xxxxx",
               "upi_address": "gft@oksbi",
               "settlement_bank_account_no": "XXXXXXXXXX",
               "settlement_ifsc_code": "XXXXXXXXX"
@@ -203,7 +225,6 @@
               "locality": "gautam buddha",
               "city": "Karnataka",
               "state": "Karnataka",
-              "country": "India",
               "area_code": "560041"
             }
           },
@@ -230,7 +251,7 @@
           }
         },
         "created_at": "2024-06-20T11:42:33.548Z",
-        "updated_at": "2024-06-20T11:42:33.548Z"
+        "updated_at": "2024-06-20T11:42:34.046Z"
       }
     }
   }

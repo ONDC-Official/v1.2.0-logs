@@ -3,35 +3,47 @@
       "domain": "nic2004:60232",
       "country": "IND",
       "city": "std:080",
-      "action": "confirm",
+      "action": "on_status",
       "core_version": "1.2.0",
       "bap_id": "preprod.xpressbaazaar.com",
       "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-      "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
       "bpp_id": "preprod.logistics-seller.mp2.in",
-      "transaction_id": "5d145809-0332-4f15-861c-b0c4925eaaaa",
-      "message_id": "c2193172-887a-4b90-839a-9cb0f00e15af",
-      "timestamp": "2024-06-20T11:42:33.548Z",
-      "ttl": "PT30S"
+      "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+      "transaction_id": "f2f54588-52a9-4068-99b4-97448c7fe9ba",
+      "message_id": "msg_uuoxpi6e44ugjzr3",
+      "timestamp": "2024-06-20T12:49:00.466Z"
     },
     "message": {
       "order": {
-        "id": "589f96b0-dfa4-4338-ab24-e72f1a",
-        "state": "Created",
+        "id": "3d1663b4-15a2-4f0a-892e-02e435",
+        "state": "Cancelled",
         "provider": {
           "id": "MP2"
         },
         "items": [
           {
+            "id": "mp2_immediate",
+            "fulfillment_id": "mp2_immediate_f1",
             "category_id": "Immediate Delivery",
             "descriptor": {
               "code": "P2P"
             },
-            "id": "mp2_immediate",
-            "fulfillment_id": "mp2_immediate_f1",
             "time": {
-              "duration": "PT55M",
               "label": "TAT",
+              "duration": "PT55M",
+              "timestamp": "2024-06-20"
+            }
+          },
+          {
+            "id": "mp2_immediate-RTO",
+            "fulfillment_id": "mp2_immediate_f1-RTO",
+            "category_id": "Immediate Delivery",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "time": {
+              "label": "TAT",
+              "duration": "PT55M",
               "timestamp": "2024-06-20"
             }
           }
@@ -57,6 +69,22 @@
                 "currency": "INR",
                 "value": "3.81"
               }
+            },
+            {
+              "@ondc/org/item_id": "mp2_immediate-RTO",
+              "@ondc/org/title_type": "rto",
+              "price": {
+                "currency": "INR",
+                "value": "0.0"
+              }
+            },
+            {
+              "@ondc/org/item_id": "mp2_immediate-RTO",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "0.0"
+              }
             }
           ]
         },
@@ -64,10 +92,19 @@
           {
             "id": "mp2_immediate_f1",
             "type": "Delivery",
-            "@ondc/org/awb_no": "2024062002348188",
+            "state": {
+              "descriptor": {
+                "code": "Cancelled"
+              }
+            },
             "start": {
               "time": {
-                "duration": "PT20M"
+                "range": {
+                  "start": "2024-06-20T12:46:15.245Z",
+                  "end": "2024-06-20T13:06:15.245Z"
+                },
+                "duration": "PT20M",
+                "timestamp": "2024-06-20T12:48:12.684Z"
               },
               "person": {
                 "name": "AGARO"
@@ -76,12 +113,12 @@
                 "gps": "12.933050,77.589828",
                 "address": {
                   "name": "AGARO",
-                  "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                  "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
                   "locality": "gautam buddha",
                   "city": "Karnataka",
                   "state": "Karnataka",
-                  "area_code": "560029",
-                  "country": "India"
+                  "country": "India",
+                  "area_code": "560029"
                 }
               },
               "contact": {
@@ -90,8 +127,15 @@
               },
               "instructions": {
                 "code": "2",
-                "short_desc": "037420",
-                "long_desc": "startInst.short_desc"
+                "short_desc": "924339",
+                "long_desc": "startInst.short_desc",
+                "additional_desc": {
+                  "content_type": "image/x-png",
+                  "url": "https://docs.google.com/document/d/109QZntPo0zQeqh4Il2T__blfNduLBb9MIibGlqlH8PU/edit?usp=sharing"
+                },
+                "images": [
+                  "https://s3.amazonaws.com/mp2-lsp/image1.png"
+                ]
               }
             },
             "end": {
@@ -116,32 +160,109 @@
               },
               "instructions": {
                 "code": "2",
-                "short_desc": "931732",
+                "short_desc": "629051",
                 "long_desc": "startInst.short_desc"
+              },
+              "time": {
+                "range": {
+                  "start": "2024-06-20T13:06:15.245Z",
+                  "end": "2024-06-20T13:41:15.245Z"
+                }
               }
             },
+            "tracking": false,
             "tags": [
               {
-                "code": "state",
+                "code": "tracking",
                 "list": [
                   {
-                    "code": "ready_to_ship",
+                    "code": "gps_enabled",
                     "value": "yes"
                   }
                 ]
               },
               {
-                "code": "rto_action",
+                "code": "precancel_state",
                 "list": [
                   {
-                    "code": "return_to_origin",
-                    "value": "yes"
+                    "code": "fulfillment_state",
+                    "value": "Out-for-delivery"
+                  },
+                  {
+                    "code": "updated_at",
+                    "value": "2024-06-20T12:48:12.684Z"
+                  }
+                ]
+              },
+              {
+                "code": "rto_event",
+                "list": [
+                  {
+                    "code": "retry_count",
+                    "value": "0"
+                  },
+                  {
+                    "code": "rto_id",
+                    "value": "mp2_immediate_f1-RTO"
+                  },
+                  {
+                    "code": "cancellation_reason_id",
+                    "value": "017"
+                  },
+                  {
+                    "code": "cancelled_by",
+                    "value": "preprod.logistics-seller.mp2.in"
+                  },
+                  {
+                    "code": "sub_reason_id",
+                    "value": ""
                   }
                 ]
               }
             ]
+          },
+          {
+            "id": "mp2_immediate_f1-RTO",
+            "type": "RTO",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Delivered"
+              }
+            },
+            "start": {
+              "time": {
+                "range": {
+                  "start": "2024-06-20T12:48:38.614Z",
+                  "end": "2024-06-20T13:43:38.614Z"
+                },
+                "timestamp": "2024-06-20T12:48:38.614Z"
+              }
+            },
+            "end": {
+              "time": {
+                "range": {
+                  "start": "2024-06-20T12:49:00.434Z",
+                  "end": "2024-06-20T13:44:00.434Z"
+                },
+                "timestamp": "2024-06-20T12:49:00.434Z"
+              }
+            }
           }
         ],
+        "payment": {
+          "collected_by": "BAP",
+          "type": "POST-FULFILLMENT",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "buyer-app",
+              "settlement_type": "upi",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX"
+            }
+          ],
+          "status": "NOT-PAID"
+        },
         "billing": {
           "name": "AGARO",
           "address": {
@@ -156,22 +277,8 @@
           "tax_number": "24AAACC1206D1ZM",
           "phone": "7654329075",
           "email": "abcd.efgh@gmail.com",
-          "created_at": "2024-06-20T11:37:46.944Z",
-          "updated_at": "2024-06-20T11:37:46.944Z"
-        },
-        "payment": {
-          "collected_by": "BAP",
-          "type": "POST-FULFILLMENT",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "buyer-app",
-              "settlement_type": "upi",
-              "beneficiary_name": "xxxxx",
-              "upi_address": "gft@oksbi",
-              "settlement_bank_account_no": "XXXXXXXXXX",
-              "settlement_ifsc_code": "XXXXXXXXX"
-            }
-          ]
+          "created_at": "2024-06-20T12:45:04.077Z",
+          "updated_at": "2024-06-20T12:45:04.077Z"
         },
         "@ondc/org/linked_order": {
           "items": [
@@ -203,12 +310,11 @@
               "locality": "gautam buddha",
               "city": "Karnataka",
               "state": "Karnataka",
-              "country": "India",
               "area_code": "560041"
             }
           },
           "order": {
-            "id": "2024-06-20-722633",
+            "id": "2024-06-20-975962",
             "weight": {
               "unit": "gram",
               "value": 500
@@ -229,8 +335,14 @@
             }
           }
         },
-        "created_at": "2024-06-20T11:42:33.548Z",
-        "updated_at": "2024-06-20T11:42:33.548Z"
+        "updated_at": "2024-06-20T12:49:00.434Z",
+        "created_at": "2024-06-20T12:46:15.245Z",
+        "cancellation": {
+          "cancelled_by": "preprod.logistics-seller.mp2.in",
+          "reason": {
+            "id": "017"
+          }
+        }
       }
     }
   }
