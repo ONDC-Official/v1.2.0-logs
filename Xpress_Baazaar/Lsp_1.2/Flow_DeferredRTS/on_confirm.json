@@ -3,35 +3,34 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "confirm",
+    "action": "on_confirm",
     "core_version": "1.2.0",
     "bap_id": "preprod.xpressbaazaar.com",
     "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
     "bpp_id": "preprod.logistics-seller.mp2.in",
-    "transaction_id": "136a4b11-bd9e-480c-92a4-08ed05f00d21",
-    "message_id": "52e58052-3767-4314-adb9-b7f5db4193c2",
-    "timestamp": "2024-06-21T09:08:22.449Z",
-    "ttl": "PT30S"
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "de8aad0b-8b28-4876-9244-ddca29a6a515",
+    "message_id": "00cf82c3-abfc-41d2-b034-804d1fc44c3a",
+    "timestamp": "2024-06-21T06:33:34.706Z"
   },
   "message": {
     "order": {
-      "id": "2775e073-9729-4541-9ff8-aa681a",
-      "state": "Created",
+      "id": "c3445d10-580f-484f-8918-49be97",
+      "state": "Accepted",
       "provider": {
         "id": "MP2"
       },
       "items": [
         {
+          "id": "mp2_immediate",
+          "fulfillment_id": "mp2_immediate_f1",
           "category_id": "Immediate Delivery",
           "descriptor": {
             "code": "P2P"
           },
-          "id": "mp2_immediate",
-          "fulfillment_id": "mp2_immediate_f1",
           "time": {
-            "duration": "PT55M",
             "label": "TAT",
+            "duration": "PT55M",
             "timestamp": "2024-06-21"
           }
         }
@@ -58,17 +57,20 @@
               "value": "3.81"
             }
           }
-        ] 
+        ]
       },
       "fulfillments": [
         {
           "id": "mp2_immediate_f1",
           "type": "Delivery",
-          "@ondc/org/awb_no": "2024062191998269",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
           "start": {
             "time": {
               "duration": "PT20M"
-
             },
             "person": {
               "name": "Sundry Grocery"
@@ -77,12 +79,12 @@
               "gps": "12.933050,77.589828",
               "address": {
                 "name": "Sundry Grocery",
-               "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                "building": "B-16 2nd floor Shop No H224D,560029, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
                 "locality": "gautam buddha",
                 "city": "Karnataka",
                 "state": "Karnataka",
-                "area_code": "560029",
-                "country": "India"
+                "country": "India",
+                "area_code": "560029"
               }
             },
             "contact": {
@@ -91,7 +93,7 @@
             },
             "instructions": {
               "code": "2",
-              "short_desc": "680000",
+              "short_desc": "618904",
               "long_desc": "startInst.short_desc" 
             }
           },
@@ -103,7 +105,7 @@
               "gps": "12.923601,77.586925",
               "address": {
                 "name": "Divya  Prabhakar",
-                "building": "B-16 secound floor",
+               "building": "B-16 secound floor",
                 "locality": "36th A Cross Road",
                 "city": "Bengaluru",
                 "state": "Karnataka",
@@ -117,17 +119,26 @@
             },
             "instructions": {
               "code": "2",
-              "short_desc": "337789",
+              "short_desc": "437428",
               "long_desc": "startInst.short_desc"
             }
           },
           "tags": [
             {
+              "code": "weather_check",
+              "list": [
+                {
+                  "code": "raining",
+                  "value": "no"
+                }
+              ]
+            },
+            {
               "code": "state",
               "list": [
                 {
                   "code": "ready_to_ship",
-                  "value": "yes"
+                  "value": "no"
                 }
               ]
             },
@@ -140,7 +151,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "tracking": true
         }
       ],
       "billing": {
@@ -157,8 +169,8 @@
         "tax_number": "27AAECJ1349N1Z9",
         "phone": "09034562789",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-06-21T09:07:27.482Z",
-        "updated_at": "2024-06-21T09:07:27.482Z"
+        "created_at": "2024-06-21T06:29:14.093Z",
+        "updated_at": "2024-06-21T06:29:14.093Z"
       },
       "payment": {
         "collected_by": "BAP",
@@ -167,7 +179,6 @@
           {
             "settlement_counterparty": "buyer-app",
             "settlement_type": "upi",
-            "beneficiary_name": "xxxxx",
             "upi_address": "gft@oksbi",
             "settlement_bank_account_no": "XXXXXXXXXX",
             "settlement_ifsc_code": "XXXXXXXXX"
@@ -179,10 +190,10 @@
           {
             "category_id": "Grocery",
             "descriptor": {
-              "name": "Slurrp Farm No Maida Millet Noodles | Not Fried, No MSG | Classic Millet and Mild Millet Noodles Combo | Pack of 2-192g Each"
+              "name": "Amul Mithai Mate (Liquid, 400g Tin)"
             },
             "quantity": {
-              "count": 2,
+              "count": 1,
               "measure": {
                 "unit": "kilogram",
                 "value": 0.5
@@ -190,7 +201,7 @@
             },
             "price": {
               "currency": "INR",
-              "value": "232"
+              "value": "138.6"
             }
           }
         ],
@@ -204,15 +215,14 @@
             "locality": "365, 38th Cross Road, Jayanagar 9th Block, Jaya Nagar",
             "city": "Bengluru",
             "state": "Karnataka",
-            "country": "India",
             "area_code": "560041"
           }
         },
         "order": {
-          "id": "2024-06-21-807005",
+          "id": "2024-06-21-806976",
           "weight": {
             "unit": "gram",
-            "value": 1000
+            "value": 500
           },
           "dimensions": {
             "length": {
@@ -230,8 +240,8 @@
           }
         }
       },
-      "created_at": "2024-06-21T09:08:22.449Z",
-      "updated_at": "2024-06-21T09:08:22.449Z"
+      "created_at": "2024-06-21T06:33:34.249Z",
+      "updated_at": "2024-06-21T06:33:34.706Z"
     }
   }
 }
