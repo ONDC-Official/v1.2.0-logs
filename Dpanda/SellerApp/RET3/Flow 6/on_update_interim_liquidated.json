@@ -29,14 +29,21 @@
       "items": [
         {
           "id": "24289862",
+          "fulfillment_id": "RETURN2",
+          "quantity": {
+            "count": 1
+          }
+        },
+        {
+          "id": "24289862",
           "fulfillment_id": "F1",
           "quantity": {
-            "count": 2
+            "count": 1
           }
         },
         {
           "id": "24328040",
-          "fulfillment_id": "CANCELLED1",
+          "fulfillment_id": "CANCEL1",
           "quantity": {
             "count": 2
           }
@@ -50,7 +57,7 @@
         },
         {
           "id": "24328041",
-          "fulfillment_id": "1",
+          "fulfillment_id": "F1",
           "quantity": {
             "count": 2
           }
@@ -136,24 +143,28 @@
           "type": "Return",
           "state": {
             "descriptor": {
-              "code": "Return_Approved"
+              "code": "Return_Delivered"
             }
           },
           "tags": [
             {
-              "code": "reverseqc_input",
+              "code": "quote_trail",
               "list": [
                 {
-                  "code": "P001",
-                  "value": "chia seeds test product Chia Seeds - 100g"
+                  "code": "type",
+                  "value": "item"
                 },
                 {
-                  "code": "P003",
-                  "value": "1"
+                  "code": "id",
+                  "value": "24289862"
                 },
                 {
-                  "code": "Q001",
-                  "value": ""
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-1000.0"
                 }
               ]
             },
@@ -234,6 +245,50 @@
                   ]
                 }
               ]
+            },
+            {
+              "id": "RETURN1",
+              "type": "Return",
+              "state": {
+                "descriptor": {
+                  "code": "Return_Initiated"
+                }
+              },
+              "tags": [
+                {
+                  "code": "return_request",
+                  "list": [
+                    {
+                      "code": "item_id",
+                      "value": "24328041"
+                    },
+                    {
+                      "code": "item_quantity",
+                      "value": "1"
+                    },
+                    {
+                      "code": "reason_id",
+                      "value": "002"
+                    },
+                    {
+                      "code": "reason_desc",
+                      "value": "detailed description for return"
+                    },
+                    {
+                      "code": "ttl_approval",
+                      "value": "PT24H"
+                    },
+                    {
+                      "code": "ttl_reverseqc",
+                      "value": "P3D"
+                    },
+                    {
+                      "code": "initiated_by",
+                      "value": "buyer-app-preprod-v2.ondc.org"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -242,19 +297,19 @@
         "ttl": "P1D",
         "price": {
           "currency": "INR",
-          "value": "2420.00"
+          "value": "1920.00"
         },
         "breakup": [
           {
             "@ondc/org/item_id": "24289862",
             "@ondc/org/item_quantity": {
-              "count": 2
+              "count": 1
             },
             "title": "chia seeds test product Chia Seeds - 100g",
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "1000.00"
+              "value": "500.00"
             }
           },
           {

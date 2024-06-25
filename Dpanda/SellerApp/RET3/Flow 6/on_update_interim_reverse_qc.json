@@ -36,7 +36,7 @@
         },
         {
           "id": "24328040",
-          "fulfillment_id": "CANCELLED1",
+          "fulfillment_id": "CANCEL1",
           "quantity": {
             "count": 2
           }
@@ -50,7 +50,7 @@
         },
         {
           "id": "24328041",
-          "fulfillment_id": "1",
+          "fulfillment_id": "F1",
           "quantity": {
             "count": 2
           }
@@ -132,31 +132,14 @@
           }
         },
         {
-          "id": "RETURN2",
+          "id": "RETURN1",
           "type": "Return",
           "state": {
             "descriptor": {
-              "code": "Return_Approved"
+              "code": "Return_Initiated"
             }
           },
           "tags": [
-            {
-              "code": "reverseqc_input",
-              "list": [
-                {
-                  "code": "P001",
-                  "value": "chia seeds test product Chia Seeds - 100g"
-                },
-                {
-                  "code": "P003",
-                  "value": "1"
-                },
-                {
-                  "code": "Q001",
-                  "value": ""
-                }
-              ]
-            },
             {
               "code": "return_request",
               "list": [
@@ -189,49 +172,49 @@
                   "value": "buyer-app-preprod-v2.ondc.org"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "CANCEL1",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tags": [
             {
-              "id": "CANCEL1",
-              "type": "Cancel",
-              "state": {
-                "descriptor": {
-                  "code": "Cancelled"
-                }
-              },
-              "tags": [
+              "code": "cancel_request",
+              "list": [
                 {
-                  "code": "cancel_request",
-                  "list": [
-                    {
-                      "code": "reason_id",
-                      "value": "002"
-                    },
-                    {
-                      "code": "initiated_by",
-                      "value": "preprod.ondc.dpanda.in"
-                    }
-                  ]
+                  "code": "reason_id",
+                  "value": "002"
                 },
                 {
-                  "code": "quote_trail",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    },
-                    {
-                      "code": "id",
-                      "value": "24328040"
-                    },
-                    {
-                      "code": "currency",
-                      "value": "INR"
-                    },
-                    {
-                      "code": "value",
-                      "value": "-3000.0"
-                    }
-                  ]
+                  "code": "initiated_by",
+                  "value": "preprod.ondc.dpanda.in"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "24328040"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-3000.0"
                 }
               ]
             }
