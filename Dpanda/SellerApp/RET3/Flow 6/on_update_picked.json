@@ -17,7 +17,7 @@
   "message": {
     "order": {
       "id": "2024-06-21-447585",
-      "state": "Completed",
+      "state": "Accepted",
       "provider": {
         "id": "ondc-dpanda",
         "locations": [
@@ -29,7 +29,7 @@
       "items": [
         {
           "id": "24289862",
-          "fulfillment_id": "RETURN2",
+          "fulfillment_id": "RETURN1",
           "quantity": {
             "count": 1
           }
@@ -57,16 +57,9 @@
         },
         {
           "id": "24328041",
-          "fulfillment_id": "RETURN2",
-          "quantity": {
-            "count": 1
-          }
-        },
-        {
-          "id": "24328041",
           "fulfillment_id": "F1",
           "quantity": {
-            "count": 1
+            "count": 2
           }
         }
       ],
@@ -150,7 +143,7 @@
           "type": "Return",
           "state": {
             "descriptor": {
-              "code": "Return_Delivered"
+              "code": "Return_Picked"
             }
           },
           "tags": [
@@ -171,7 +164,7 @@
                 },
                 {
                   "code": "value",
-                  "value": "-1000.0"
+                  "value": "-500.0"
                 }
               ]
             },
@@ -207,114 +200,49 @@
                   "value": "buyer-app-preprod-v2.ondc.org"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "CANCEL1",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tags": [
             {
-              "id": "CANCEL1",
-              "type": "Cancel",
-              "state": {
-                "descriptor": {
-                  "code": "Cancelled"
-                }
-              },
-              "tags": [
+              "code": "cancel_request",
+              "list": [
                 {
-                  "code": "cancel_request",
-                  "list": [
-                    {
-                      "code": "reason_id",
-                      "value": "002"
-                    },
-                    {
-                      "code": "initiated_by",
-                      "value": "preprod.ondc.dpanda.in"
-                    }
-                  ]
+                  "code": "reason_id",
+                  "value": "002"
                 },
                 {
-                  "code": "quote_trail",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    },
-                    {
-                      "code": "id",
-                      "value": "24328040"
-                    },
-                    {
-                      "code": "currency",
-                      "value": "INR"
-                    },
-                    {
-                      "code": "value",
-                      "value": "-3000.0"
-                    }
-                  ]
+                  "code": "initiated_by",
+                  "value": "preprod.ondc.dpanda.in"
                 }
               ]
             },
             {
-              "id": "RETURN2",
-              "type": "Return",
-              "state": {
-                "descriptor": {
-                  "code": "Liquidated"
-                }
-              },
-              "tags": [
+              "code": "quote_trail",
+              "list": [
                 {
-                  "code": "quote_trail",
-                  "list": [
-                    {
-                      "code": "type",
-                      "value": "item"
-                    },
-                    {
-                      "code": "id",
-                      "value": "24328041"
-                    },
-                    {
-                      "code": "currency",
-                      "value": "INR"
-                    },
-                    {
-                      "code": "value",
-                      "value": "-710.0"
-                    }
-                  ]
+                  "code": "type",
+                  "value": "item"
                 },
                 {
-                  "code": "return_request",
-                  "list": [
-                    {
-                      "code": "item_id",
-                      "value": "24328041"
-                    },
-                    {
-                      "code": "item_quantity",
-                      "value": "1"
-                    },
-                    {
-                      "code": "reason_id",
-                      "value": "002"
-                    },
-                    {
-                      "code": "reason_desc",
-                      "value": "detailed description for return"
-                    },
-                    {
-                      "code": "ttl_approval",
-                      "value": "PT24H"
-                    },
-                    {
-                      "code": "ttl_reverseqc",
-                      "value": "P3D"
-                    },
-                    {
-                      "code": "initiated_by",
-                      "value": "buyer-app-preprod-v2.ondc.org"
-                    }
-                  ]
+                  "code": "id",
+                  "value": "24328040"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-3000.0"
                 }
               ]
             }
@@ -325,7 +253,7 @@
         "ttl": "P1D",
         "price": {
           "currency": "INR",
-          "value": "1210.00"
+          "value": "1920.00"
         },
         "breakup": [
           {
@@ -355,13 +283,13 @@
           {
             "@ondc/org/item_id": "24328041",
             "@ondc/org/item_quantity": {
-              "count": 1
+              "count": 2
             },
             "title": "Pure Neem Wood Comb test product leaf comb green wood test 101",
             "@ondc/org/title_type": "item",
             "price": {
               "currency": "INR",
-              "value": "710.00"
+              "value": "1420.00"
             }
           }
         ]
