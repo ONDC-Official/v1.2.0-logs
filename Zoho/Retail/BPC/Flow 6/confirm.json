@@ -1,197 +1,206 @@
 {
     "context": {
-        "transaction_id": "44c02a13-9a16-4545-a0e6-418b8b38f9dc",
-        "bpp_id": "ondc-connect.localzoho.com",
+        "domain": "ONDC:RET13",
         "country": "IND",
         "city": "std:080",
-        "message_id": "80592fc5-3b75-4850-b274-81f45714b2ff",
-        "core_version": "1.2.0",
-        "ttl": "PT30S",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "domain": "ONDC:RET10",
-        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
         "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-        "timestamp": "2024-06-07T13:40:41.035Z"
+        "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
+        "transaction_id": "6d01a813-7687-41f0-bc53-e3b4917bc882",
+        "message_id": "20b18242-8c00-43f0-b92d-8317850279eb",
+        "timestamp": "2024-06-26T07:05:48.403Z",
+        "bpp_id": "ondc-connect.localzoho.com",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
+            "id": "2024-06-26-504024",
+            "state": "Created",
+            "billing": {
+                "address": {
+                    "name": "sherin shafa",
+                    "building": "2nd floor",
+                    "locality": "4th Cross Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560103"
+                },
+                "phone": "9952291326",
+                "name": "sherin shafa",
+                "email": "sherin.h@gofrugal.com",
+                "created_at": "2024-06-26T07:05:10.401Z",
+                "updated_at": "2024-06-26T07:05:10.401Z"
+            },
+            "items": [
+                {
+                    "id": "3000006139703",
+                    "quantity": {
+                        "count": 3
+                    },
+                    "fulfillment_id": "213BAC2B86939637"
+                },
+                {
+                    "id": "3000005802441",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "213BAC2B86939637"
+                },
+                {
+                    "id": "3000005817175",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "213BAC2B86939637"
+                }
+            ],
+            "provider": {
+                "id": "3000002215103",
+                "locations": [
+                    {
+                        "id": "3000002215103"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "@ondc/org/TAT": "PT49H",
+                    "@ondc/org/TAT": "PT48H30M",
+                    "id": "213BAC2B86939637",
+                    "tracking": false,
                     "end": {
+                        "contact": {
+                            "email": "sherin.h@gofrugal.com",
+                            "phone": "9952291326"
+                        },
                         "person": {
                             "name": "sherin shafa"
                         },
-                        "contact": {
-                            "phone": "9952291326",
-                            "email": "sherin.h@gofrugal.com"
-                        },
                         "location": {
+                            "gps": "12.930033,77.675384",
                             "address": {
-                                "country": "IND",
-                                "city": "Bengaluru",
-                                "area_code": "560103",
                                 "name": "sherin shafa",
+                                "building": "2nd floor",
                                 "locality": "4th Cross Road",
+                                "city": "Bengaluru",
                                 "state": "Karnataka",
-                                "building": "2nd floor"
-                            },
-                            "gps": "12.929977587374657,77.67521033983907"
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
                         }
                     },
-                    "id": "E353926D8DC767CA",
-                    "type": "Delivery",
-                    "tracking": "false"
+                    "type": "Delivery"
                 }
             ],
+            "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "2793.90",
+                    "currency": "INR",
+                    "transaction_id": "order_ORIhN9CDGKY9De"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_details": [
+                    {
+                        "bank_name": "Axis Bank",
+                        "beneficiary_name": "Zoho Corporation",
+                        "branch_name": "Velachery-Chennai",
+                        "settlement_bank_account_no": "910020019889016",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_ifsc_code": "UTIB0000234",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft"
+                    }
+                ]
+            },
             "quote": {
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "3000002577537",
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "1555.00"
+                                "value": "255.00",
+                                "currency": "INR"
                             }
                         },
-                        "price": {
-                            "currency": "INR",
-                            "value": "3110.00"
+                        "@ondc/org/item_id": "3000006139703",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "INDIA GATE BASMATHI CLASSIC RICE",
-                        "@ondc/org/item_quantity": {
-                            "count": "2"
-                        }
+                        "price": {
+                            "value": "765.00",
+                            "currency": "INR"
+                        },
+                        "title": "MY GLAMM LIPGLOSS"
                     },
                     {
-                        "@ondc/org/item_id": "3000002579065",
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "1111.00"
+                                "value": "215.00",
+                                "currency": "INR"
                             }
                         },
-                        "price": {
-                            "currency": "INR",
-                            "value": "1111.00"
+                        "@ondc/org/item_id": "3000005802441",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "INDIA GATE BASMATHI CLASSIC RICE",
-                        "@ondc/org/item_quantity": {
-                            "count": "1"
-                        }
+                        "price": {
+                            "value": "430.00",
+                            "currency": "INR"
+                        },
+                        "title": "LAKME WHITE BEAUTY CREAM"
                     },
                     {
-                        "@ondc/org/item_id": "3000002326239",
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "510.00"
+                                "value": "750.00",
+                                "currency": "INR"
                             }
                         },
-                        "price": {
-                            "currency": "INR",
-                            "value": "1020.00"
+                        "@ondc/org/item_id": "3000005817175",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         },
                         "@ondc/org/title_type": "item",
-                        "title": "Gold Winner Refined Sunflower Oil Pouch",
-                        "@ondc/org/item_quantity": {
-                            "count": "2"
-                        }
+                        "price": {
+                            "value": "1500.00",
+                            "currency": "INR"
+                        },
+                        "title": "PEARS Soft and Fresh Soap"
                     },
                     {
-                        "@ondc/org/item_id": "E353926D8DC767CA",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        },
+                        "@ondc/org/item_id": "213BAC2B86939637",
                         "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "value": "0.00",
+                            "currency": "INR"
+                        },
                         "title": "Delivery charges"
                     },
                     {
-                        "@ondc/org/item_id": "E353926D8DC767CA",
-                        "price": {
-                            "currency": "INR",
-                            "value": "192.34"
-                        },
+                        "@ondc/org/item_id": "213BAC2B86939637",
                         "@ondc/org/title_type": "misc",
+                        "price": {
+                            "value": "98.90",
+                            "currency": "INR"
+                        },
                         "title": "Convenience Fee"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "5433.34"
+                    "value": "2793.90"
                 },
                 "ttl": "PT15M"
-            },
-            "updated_at": "2024-06-07T13:40:41.035Z",
-            "provider": {
-                "locations": [
-                    {
-                        "id": "3000000603069"
-                    }
-                ],
-                "id": "3000000603069"
-            },
-            "created_at": "2024-06-07T13:40:41.035Z",
-            "payment": {
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "collected_by": "BAP",
-                "params": {
-                    "transaction_id": "order_OJtH9D8O3BZDZd",
-                    "amount": "5433.34",
-                    "currency": "INR"
-                },
-                "type": "ON-ORDER",
-                "uri": "https://razorpay.com/",
-                "tl_method": "http/get",
-                "status": "PAID",
-                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-                "@ondc/org/settlement_details": []
-            },
-            "id": "2024-06-07-568877",
-            "state": "Created",
-            "items": [
-                {
-                    "quantity": {
-                        "count": "2"
-                    },
-                    "id": "3000002577537",
-                    "fulfillment_id": "E353926D8DC767CA"
-                },
-                {
-                    "quantity": {
-                        "count": "1"
-                    },
-                    "id": "3000002579065",
-                    "fulfillment_id": "E353926D8DC767CA"
-                },
-                {
-                    "quantity": {
-                        "count": "2"
-                    },
-                    "id": "3000002326239",
-                    "fulfillment_id": "E353926D8DC767CA"
-                }
-            ],
-            "billing": {
-                "address": {
-                    "country": "IND",
-                    "city": "Bengaluru",
-                    "area_code": "560103",
-                    "name": "sherin shafa",
-                    "locality": "4th Cross Road",
-                    "state": "Karnataka",
-                    "building": "2nd floor"
-                },
-                "updated_at": "2024-06-07T13:40:00.811Z",
-                "phone": "9952291326",
-                "name": "sherin shafa",
-                "created_at": "2024-06-07T13:40:00.811Z",
-                "email": "sherin.h@gofrugal.com"
             },
             "tags": [
                 {
@@ -216,7 +225,9 @@
                         }
                     ]
                 }
-            ]
+            ],
+            "created_at": "2024-06-26T07:05:48.403Z",
+            "updated_at": "2024-06-26T07:05:48.403Z"
         }
     }
 }
