@@ -3,20 +3,20 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_confirm",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "seller.udyamwell.in",
         "bap_uri": "https://seller.udyamwell.in",
         "bpp_id": "my.ithinklogistics.com/ondc/preprod",
         "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
         "transaction_id": "614d4509-a943-4c58-8e28-4526df626a51",
-        "message_id": "dede2130-599a-4402-9c17-804ffd983eb3",
-        "timestamp": "2024-06-26T12:43:24.182Z"
+        "message_id": "f6f8a24f-92a7-da63-4e68-e2ac684e6c43",
+        "timestamp": "2024-06-26T13:03:25.641Z"
     },
     "message": {
         "order": {
             "id": "2024-06-26-859303",
-            "state": "Accepted",
+            "state": "In-progress",
             "provider": {
                 "id": "1"
             },
@@ -63,33 +63,13 @@
                 {
                     "id": "1",
                     "type": "Delivery",
+                    "@ondc/org/awb_no": "1323184157820",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Out-for-delivery"
                         }
                     },
-                    "@ondc/org/awb_no": "1323184157820",
                     "tracking": false,
-                    "tags": [
-                        {
-                            "code": "state",
-                            "list": [
-                                {
-                                    "code": "ready_to_ship",
-                                    "value": "no"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "rto_action",
-                            "list": [
-                                {
-                                    "code": "return_to_origin",
-                                    "value": "yes"
-                                }
-                            ]
-                        }
-                    ],
                     "start": {
                         "person": {
                             "name": "Udyamwell General Store"
@@ -111,7 +91,23 @@
                             "email": "dhimana865@gmail.com"
                         },
                         "time": {
-                            "duration": "PT23H"
+                            "range": {
+                                "start": "2024-06-27T09:30:00.000Z",
+                                "end": "2024-06-27T12:30:00.000Z"
+                            },
+                            "timestamp": "2024-06-26T13:00:14.000Z"
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions for delivery",
+                            "images": [
+                                "https://itl-uploads.s3.ap-south-1.amazonaws.com/uploads/shipping/c8d263e1ca74559005afda7dfca5f6c8.pdf"
+                            ],
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://my.ithinklogistics.com/delivery-instructions"
+                            }
                         }
                     },
                     "end": {
@@ -133,32 +129,21 @@
                         "contact": {
                             "email": "test@yopmail.com",
                             "phone": "7018713034"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-06-29T03:30:00.000Z",
+                                "end": "2024-06-29T14:30:00.000Z"
+                            }
                         }
                     }
                 }
             ],
-            "billing": {
-                "address": {
-                    "building": "Royal place",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IND",
-                    "area_code": "560066",
-                    "locality": "ITPL Main Road",
-                    "name": "test"
-                },
-                "phone": "7018713034",
-                "name": "test",
-                "email": "test@yopmail.com",
-                "created_at": "2024-06-26T12:43:19.055Z",
-                "updated_at": "2024-06-26T12:43:19.055Z",
-                "tax_number": "22ABCDE1234A1Z1"
-            },
-            "created_at": "2024-06-26T12:43:23.781Z",
-            "updated_at": "2024-06-26T12:43:24.182Z",
             "payment": {
-                "collected_by": "BAP",
+                "@ondc/org/collection_amount": "140.00",
                 "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "status": "NOT-PAID",
                 "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "Logistics",
@@ -172,6 +157,23 @@
                         "settlement_status": "NOT-PAID"
                     }
                 ]
+            },
+            "billing": {
+                "name": "test",
+                "address": {
+                    "building": "Royal place",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066",
+                    "locality": "ITPL Main Road",
+                    "name": "test"
+                },
+                "tax_number": "22ABCDE1234A1Z1",
+                "phone": "7018713034",
+                "email": "test@yopmail.com",
+                "created_at": "2024-06-26T12:43:19.055Z",
+                "updated_at": "2024-06-26T12:43:19.055Z"
             },
             "@ondc/org/linked_order": {
                 "items": [
