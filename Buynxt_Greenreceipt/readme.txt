@@ -1,1 +1,1 @@
-All 6 flows logs of Ret:14 submitted by Buynxt Pvt ltd(subscriber_id: api.greenreceipt.in)
+All 6 flows logs of Ret:14 resubmitted by Buynxt Pvt ltd(subscriber_id: api.greenreceipt.in) named RET 14 folder, after resolving all feedback issues provided by log validation team and also attached log validation responses in RET14 folder.
