@@ -3,35 +3,35 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_update",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "seller.udyamwell.in",
         "bap_uri": "https://seller.udyamwell.in",
         "bpp_id": "my.ithinklogistics.com/ondc/preprod",
         "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
         "transaction_id": "736e6f65-9794-44c6-83bc-24f07631dc56",
-        "message_id": "95885a6c-3fb5-48b0-b5cc-a05613564953",
-        "timestamp": "2024-06-26T12:05:40.480Z"
+        "message_id": "7e5e4e1b-21ec-4fe9-4be2-442c72f01d8c",
+        "timestamp": "2024-06-26T12:15:54.077Z"
     },
     "message": {
         "order": {
             "id": "2024-06-26-957596",
-            "state": "Accepted",
+            "state": "In-progress",
             "provider": {
                 "id": "1"
             },
             "items": [
                 {
                     "id": "1I1",
-                    "category_id": "Express Delivery",
                     "fulfillment_id": "1",
+                    "category_id": "Express Delivery",
                     "descriptor": {
                         "code": "P2H2P"
                     },
                     "time": {
                         "label": "TAT",
                         "duration": "P2D",
-                        "timestamp": "2024-06-28"
+                        "timestamp": "2024-06-29"
                     }
                 }
             ],
@@ -63,12 +63,12 @@
                 {
                     "id": "1",
                     "type": "Delivery",
+                    "@ondc/org/awb_no": "1323184157817",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Out-for-delivery"
                         }
                     },
-                    "@ondc/org/awb_no": "1323184157817",
                     "tracking": false,
                     "start": {
                         "person": {
@@ -94,14 +94,15 @@
                             "range": {
                                 "start": "2024-06-27T09:30:00.000Z",
                                 "end": "2024-06-27T12:30:00.000Z"
-                            }
+                            },
+                            "timestamp": "2024-06-26T12:14:32.000Z"
                         },
                         "instructions": {
                             "code": "3",
                             "short_desc": "1234",
                             "long_desc": "additional instructions for delivery",
                             "images": [
-                                "https://itl-uploads.s3.ap-south-1.amazonaws.com/uploads/shipping/411a07af1f7b106a93389a4c237ccd0c.pdf"
+                                "https://itl-uploads.s3.ap-south-1.amazonaws.com/uploads/shipping/798399066744da515ef3d5a3d25a4d28.pdf"
                             ],
                             "additional_desc": {
                                 "content_type": "text/html",
@@ -134,36 +135,15 @@
                                 "start": "2024-06-29T03:30:00.000Z",
                                 "end": "2024-06-29T14:30:00.000Z"
                             }
-                        },
-                        "end": {
-                            "instructions": {
-                                "short_desc": "1300",
-                                "code": "2"
-                            }
                         }
                     }
                 }
             ],
-            "billing": {
-                "address": {
-                    "building": "Royal place",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IND",
-                    "area_code": "560066",
-                    "locality": "ITPL Main Road",
-                    "name": "test"
-                },
-                "phone": "7018713034",
-                "name": "test",
-                "email": "test@yopmail.com",
-                "created_at": "2024-06-26T12:05:04.419Z",
-                "updated_at": "2024-06-26T12:05:04.419Z",
-                "tax_number": "22ABCDE1234A1Z1"
-            },
             "payment": {
-                "collected_by": "BAP",
+                "@ondc/org/collection_amount": "140.00",
                 "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "status": "NOT-PAID",
                 "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "Logistics",
@@ -177,6 +157,23 @@
                         "settlement_status": "NOT-PAID"
                     }
                 ]
+            },
+            "billing": {
+                "name": "test",
+                "address": {
+                    "building": "Royal place",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066",
+                    "locality": "ITPL Main Road",
+                    "name": "test"
+                },
+                "tax_number": "22ABCDE1234A1Z1",
+                "phone": "7018713034",
+                "email": "test@yopmail.com",
+                "created_at": "2024-06-26T12:05:04.419Z",
+                "updated_at": "2024-06-26T12:05:04.419Z"
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -233,8 +230,7 @@
                         }
                     }
                 }
-            },
-            "updated_at": "2024-06-26T12:05:40.480Z"
+            }
         }
     }
 }

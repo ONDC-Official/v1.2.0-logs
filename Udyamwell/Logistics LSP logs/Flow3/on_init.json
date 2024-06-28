@@ -7,56 +7,39 @@
         "core_version": "1.2.0",
         "bap_id": "seller.udyamwell.in",
         "bap_uri": "https://seller.udyamwell.in",
-        "bpp_id": "preprod.logistics-seller.mp2.in",
-        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-        "transaction_id": "01d8845b-3d8d-4de4-988d-99c4b4de02ba",
-        "message_id": "0d521142-8d44-46b7-89e4-14e0e75d867a",
-        "timestamp": "2024-03-17T09:04:13.937Z"
+        "bpp_id": "my.ithinklogistics.com/ondc/preprod",
+        "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
+        "transaction_id": "2180c78b-a0d7-4a7f-9589-1bd07dd39d45",
+        "message_id": "047aa701-2a87-44f1-991c-33858dab7fa7",
+        "timestamp": "2024-06-27T10:11:44.338Z"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "MP2"
+                "id": "1"
             },
             "items": [
                 {
-                    "id": "mp2_express",
-                    "fulfillment_id": "mp2_express_f1"
+                    "id": "1I1",
+                    "fulfillment_id": "1"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "mp2_express_f1",
+                    "id": "1",
                     "type": "Delivery",
+                    "tracking": false,
                     "start": {
                         "location": {
-                            "gps": "30.7047164, 76.70907700000001",
+                            "gps": "12.884305, 77.596276",
                             "address": {
-                                "name": "name",
+                                "locality": "street no 18",
                                 "building": "building",
-                                "locality": "sector 71",
-                                "city": "Sahibzada Ajit Singh Nagar",
-                                "state": "Punjab",
+                                "city": "Bengaluru",
+                                "area_code": "560076",
+                                "state": "Karnataka",
                                 "country": "IND",
-                                "area_code": "140031"
-                            }
-                        },
-                        "contact": {
-                            "phone": "8713034",
-                            "email": "dhimana865@gmail.com"
-                        }
-                    },
-                    "end": {
-                        "location": {
-                            "gps": "30.709086783174005,76.71846136450769",
-                            "address": {
-                                "name": "Akash Dhiman",
-                                "building": "abc",
-                                "locality": "Street 1",
-                                "city": "Mohali",
-                                "state": "Punjab",
-                                "country": "IND",
-                                "area_code": "160059"
+                                "name": "Udyamwell General Store"
                             }
                         },
                         "contact": {
@@ -64,78 +47,67 @@
                             "email": "dhimana865@gmail.com"
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "rider_check",
-                            "list": [
-                                {
-                                    "code": "inline_check_for_rider",
-                                    "value": "yes"
-                                }
-                            ]
+                    "end": {
+                        "contact": {
+                            "email": "test@yopmail.com",
+                            "phone": "7018713034"
+                        },
+                        "location": {
+                            "gps": "12.986876,77.732034",
+                            "address": {
+                                "building": "Royal place",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560066",
+                                "locality": "ITPL Main Road",
+                                "name": "test"
+                            }
                         }
-                    ]
+                    }
                 }
             ],
-            "tags":[
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "max_liability_cap",
-                            "value": "10000"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "1000"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                        }
-                    ]
-                }
-            ],
-            "payment": {
-                "type": "POST-FULFILLMENT",
-                "collected_by": "BAP"
-            },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "2.0"
+                    "value": "75.52"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "mp2_express",
+                        "@ondc/org/item_id": "1I1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "1.64"
+                            "value": "75.52"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "mp2_express",
+                        "@ondc/org/item_id": "1I1",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0.36"
+                            "value": "0.00"
                         }
                     }
                 ],
-                "ttl": "PT15M"
+                "ttl": "P3D"
+            },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "Logistics",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "6464424002",
+                        "settlement_ifsc_code": "HSBC0400002",
+                        "bank_name": "HSBC Bank",
+                        "branch_name": "Mahatma Gandhi Road,Mumbai",
+                        "beneficiary_name": "Ithink LGS QC",
+                        "beneficiary_address": "HSBC Bank,Mahatma Gandhi Road,Mumbai",
+                        "settlement_status": "NOT-PAID"
+                    }
+                ]
             }
         }
     }
