@@ -2,77 +2,21 @@
   "context": {
     "ttl": "PT30S",
     "city": "std:011",
-    "action": "on_confirm",
+    "action": "on_status",
     "bap_id": "ondc-preprod.craver.in",
     "bpp_id": "ca.aqmtechnologies.com",
     "domain": "ONDC:RET11",
-    "bap_uri": "https://ondc-preprod.craver.in/bapl/",
+    "bap_uri": "https://ondc-preprod.craver.in/bapl",
     "bpp_uri": "https://ca.aqmtechnologies.com/api/bpp",
     "country": "IND",
-    "timestamp": "2024-06-21T13:00:48.506Z",
-    "message_id": "27480388-396d-4697-bbaf-870374e412be",
+    "timestamp": "2024-06-21T13:00:49.614Z",
+    "message_id": "1ca43ba1-061c-4346-aa9f-bf8f2c3d04ae",
     "core_version": "1.2.0",
     "transaction_id": "78471411-e1ae-3a03-060e-4c28809c249d"
   },
   "message": {
     "order": {
       "id": "35bd78ec9551",
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability_cap",
-              "value": "10000.00"
-            },
-            {
-              "code": "max_liability",
-              "value": "2"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "false"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Bengaluru"
-            },
-            {
-              "code": "delay_interest",
-              "value": "1000.00"
-            },
-            {
-              "code": "np_type",
-              "value": "MSN"
-            },
-            {
-              "code": "tax_number",
-              "value": "91ABCDE1234F1Z6"
-            },
-            {
-              "code": "provider_tax_number",
-              "value": "XYZAB6789N"
-            }
-          ]
-        },
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "accept_bpp_terms",
-              "value": "Y"
-            },
-            {
-              "code": "static_terms",
-              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-            },
-            {
-              "code": "tax_number",
-              "value": "08AALCC3026A1Z5"
-            }
-          ]
-        }
-      ],
       "items": [
         {
           "id": "AQM_Item_Barbecue_1_pr_1_1",
@@ -176,7 +120,7 @@
           }
         ]
       },
-      "state": "Created",
+      "state": "In-progress",
       "billing": {
         "name": "AKSHAY",
         "email": "example@example.com",
@@ -228,13 +172,17 @@
         ]
       },
       "created_at": "2024-06-21T13:00:48.466Z",
-      "updated_at": "2024-06-21T13:00:48.506Z",
+      "updated_at": "2024-06-21T13:00:49.614Z",
       "fulfillments": [
         {
           "id": "b215f491-45c8-4863-95b1-7e88224e4898",
           "end": {
-            "person": {
-              "name": "AKSHAY"
+            "time": {
+              "range": {
+                "end": "2024-06-21T13:00:44.614Z",
+                "start": "2024-06-21T13:00:39.614Z"
+              },
+              "timestamp": "2024-06-21T13:00:44.614Z"
             },
             "contact": {
               "email": "example@example.com",
@@ -253,14 +201,44 @@
               }
             }
           },
+          "tags": [
+            {
+              "code": "tracking",
+              "list": [
+                {
+                  "code": "gps_enabled",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "routing",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "P2P"
+                }
+              ]
+            }
+          ],
           "type": "Delivery",
+          "agent": {
+            "name": "AQM Delivery Agent",
+            "phone": "9876543210"
+          },
           "start": {
+            "time": {
+              "range": {
+                "end": "2024-06-21T13:00:44.614Z",
+                "start": "2024-06-21T13:00:39.614Z"
+              },
+              "timestamp": "2024-06-21T13:00:39.614Z"
+            },
             "contact": {
               "email": "abc@xyz.com",
               "phone": "1234567890"
             },
             "location": {
-              "id": "fa5a523f-b70b-4945-954e-bea5946db932",
               "gps": "28.679848,77.069918",
               "address": {
                 "city": "Some City",
@@ -275,95 +253,12 @@
           },
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Order-picked-up"
             }
           },
-          "rateable": true,
           "tracking": true,
-          "@ondc/org/TAT": "PT150M",
+          "@ondc/org/TAT": "PT2H",
           "@ondc/org/provider_name": "AQM Delivery Partner"
-        }
-      ],
-      "cancellation_terms": [
-        {
-          "reason_required": false,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "50.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Packed",
-              "short_desc": "001,003"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "50.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "009"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "100.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "011,012,013,014,015"
-            }
-          }
         }
       ]
     }
