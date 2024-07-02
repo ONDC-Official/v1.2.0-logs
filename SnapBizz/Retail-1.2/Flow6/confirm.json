@@ -9,18 +9,27 @@
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
     "country": "IND",
-    "timestamp": "2024-05-15T13:01:35.285Z",
-    "message_id": "77c0b265-7141-4e7d-af2a-0480dddec1e3",
+    "timestamp": "2024-07-02T04:50:14.299Z",
+    "message_id": "0137c461-177f-419d-b569-f6c66e0b346d",
     "core_version": "1.2.0",
-    "transaction_id": "6e86d4b3-3f3c-483f-82c3-6a8f12651d0b"
+    "transaction_id": "97fc4aa2-5947-46b6-9df8-8b1a0c3c25de"
   },
   "message": {
     "order": {
-      "id": "2024-05-15-144454",
+      "id": "2024-07-02-152807",
       "tags": [
         {
           "code": "bpp_terms",
-          "list": [{ "code": "tax_number", "value": "22ABCTY1234D1Z5" }]
+          "list": [
+            { "code": "max_liability", "value": "2" },
+            { "code": "max_liability_cap", "value": "10000.00" },
+            { "code": "mandatory_arbitration", "value": "false" },
+            { "code": "court_jurisdiction", "value": "Bengaluru" },
+            { "code": "delay_interest", "value": "7.50" },
+            { "code": "tax_number", "value": "22ABCTY1234D1Z5" },
+            { "code": "np_type", "value": "ISN" },
+            { "code": "provider_tax_number", "value": "ABCTY1234D" }
+          ]
         },
         {
           "code": "bap_terms",
@@ -29,30 +38,30 @@
       ],
       "items": [
         {
-          "id": "0ef375c1-c01d-44e0-a739-2be4fdc641b6",
-          "quantity": { "count": 1 },
-          "fulfillment_id": "21fba106-de5a-414f-9fe9-f6d5d6428bdb"
+          "id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+          "quantity": { "count": 3 },
+          "fulfillment_id": "0c0e8140-eb8c-4863-9831-c93f24d73729"
         }
       ],
       "quote": {
-        "price": { "value": "30.00", "currency": "INR" },
+        "ttl": "P1D",
+        "price": { "value": "100.00", "currency": "INR" },
         "breakup": [
           {
-            "item": { "price": { "value": "20", "currency": "INR" } },
-            "price": { "value": "20.00", "currency": "INR" },
-            "title": "Fevicol 50G Craft Glue",
-            "@ondc/org/item_id": "0ef375c1-c01d-44e0-a739-2be4fdc641b6",
+            "item": { "price": { "value": "30", "currency": "INR" } },
+            "price": { "value": "90.00", "currency": "INR" },
+            "title": "Surf Excel Bar 250 Gm",
+            "@ondc/org/item_id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
             "@ondc/org/title_type": "item",
-            "@ondc/org/item_quantity": { "count": 1 }
+            "@ondc/org/item_quantity": { "count": 3 }
           },
           {
             "price": { "value": "10.00", "currency": "INR" },
             "title": "Delivery charges",
-            "@ondc/org/item_id": "21fba106-de5a-414f-9fe9-f6d5d6428bdb",
+            "@ondc/org/item_id": "0c0e8140-eb8c-4863-9831-c93f24d73729",
             "@ondc/org/title_type": "delivery"
           }
-        ],
-        "ttl": "P1D"
+        ]
       },
       "state": "Created",
       "billing": {
@@ -68,29 +77,48 @@
           "locality": "HAL Airport Road",
           "area_code": "560037"
         },
-        "created_at": "2024-05-15T13:01:25.454Z",
-        "updated_at": "2024-05-15T13:01:25.454Z"
+        "created_at": "2024-07-02T04:50:07.906Z",
+        "updated_at": "2024-07-02T04:50:07.906Z"
       },
       "payment": {
-        "type": "ON-FULFILLMENT",
-        "params": { "amount": "30.00", "currency": "INR" },
-        "status": "NOT-PAID",
-        "collected_by": "BPP",
+        "uri": "https://razorpay.com/",
+        "type": "ON-ORDER",
+        "params": {
+          "amount": "100.00",
+          "currency": "INR",
+          "transaction_id": "97fc4aa2-5947-46b6-9df8-8b1a0c3c25de"
+        },
+        "status": "PAID",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "Axis Bank",
+            "branch_name": "Marathahalli",
+            "upi_address": "success@upi",
+            "settlement_type": "upi",
+            "beneficiary_name": "Alice",
+            "settlement_phase": "sale-amount",
+            "settlement_ifsc_code": "UTIB0000300",
+            "settlement_counterparty": "seller-app",
+            "settlement_bank_account_no": "923020035581060"
+          }
+        ],
         "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0"
       },
       "provider": {
-        "id": "e4997570-92b3-44ac-9e0a-d4be2e6e68c6",
-        "locations": [{ "id": "3f0b37cb-9ab4-48d6-b03f-50f1eb851163" }]
+        "id": "34bf3b2c-37e3-4539-b494-c88d3107ac54",
+        "locations": [{ "id": "f17a9598-6ed7-4fa4-9b13-e0e913d04a30" }]
       },
-      "created_at": "2024-05-15T13:01:30.085Z",
-      "updated_at": "2024-05-15T13:01:30.085Z",
+      "created_at": "2024-07-02T04:50:14.299Z",
+      "updated_at": "2024-07-02T04:50:14.299Z",
       "fulfillments": [
         {
-          "id": "21fba106-de5a-414f-9fe9-f6d5d6428bdb",
+          "id": "0c0e8140-eb8c-4863-9831-c93f24d73729",
           "end": {
             "person": { "name": "Bob Alice" },
-            "contact": { "phone": "9886098860" },
+            "contact": { "phone": "7510704054" },
             "location": {
               "gps": "12.956864,77.700445",
               "address": {
@@ -98,14 +126,14 @@
                 "name": "Bob Alice",
                 "state": "Karnataka",
                 "country": "IND",
-                "building": "my building name or house #",
-                "locality": "my street name",
+                "building": "Alice",
+                "locality": "HAL Airport Road",
                 "area_code": "560037"
               }
             }
           },
           "type": "Delivery",
-          "tracking": true,
+          "tracking": false,
           "@ondc/org/TAT": "PT3H"
         }
       ]
