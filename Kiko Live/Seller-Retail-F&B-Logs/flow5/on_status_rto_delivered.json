@@ -7,16 +7,16 @@
       "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
       "bpp_id": "ondc-api.kiko.live/ondc-seller-v2",
       "bpp_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-      "transaction_id": "69a4cb58-abce-40d0-909d-58d89f348b99",
-      "message_id": "db941c13-0cb7-43dd-b155-e55b1dfe2ae9",
+      "transaction_id": "4c1033d2-d822-41d5-b199-d048f6c52ad1",
+      "message_id": "t7cosdty-rtwc-7l5a-fcyz-o1eugrf8gkl0",
       "city": "std:080",
       "country": "IND",
-      "timestamp": "2024-06-25T11:41:58.041Z",
+      "timestamp": "2024-06-25T12:52:59.131Z",
       "ttl": "PT30S"
     },
     "message": {
       "order": {
-        "id": "2024-06-25-680103",
+        "id": "2024-06-25-713782",
         "state": "Cancelled",
         "provider": {
           "id": "6386154b42674fabf7bdabf4",
@@ -31,15 +31,15 @@
             "quantity": {
               "count": 0
             },
-            "id": "65ceebe9fa759b16650a0800",
+            "id": "667917594095652025ddd1e4",
             "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4"
           },
           {
             "quantity": {
               "count": 1
             },
-            "id": "65ceebe9fa759b16650a0800",
-            "fulfillment_id": "Cancel-fulfillment-6386154b42674fabf7bdabf4"
+            "id": "667917594095652025ddd1e4",
+            "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4-RTO"
           }
         ],
         "billing": {
@@ -55,14 +55,8 @@
           "phone": "9904391009",
           "name": "Aditya Das",
           "email": "adityadas.iitkgp@gmail.com",
-          "created_at": "2024-06-25T11:41:22.988Z",
-          "updated_at": "2024-06-25T11:41:22.988Z"
-        },
-        "cancellation": {
-          "cancelled_by": "buyer-app-preprod-v2.ondc.org",
-          "reason": {
-            "id": "001"
-          }
+          "created_at": "2024-06-25T12:48:10.875Z",
+          "updated_at": "2024-06-25T12:48:10.875Z"
         },
         "fulfillments": [
           {
@@ -91,9 +85,10 @@
               },
               "time": {
                 "range": {
-                  "start": "2024-06-25T11:41:26.648Z",
-                  "end": "2024-06-26T05:41:26.648Z"
-                }
+                  "start": "2024-06-25T12:48:14.524Z",
+                  "end": "2024-06-26T06:48:14.524Z"
+                },
+                "timestamp": "2024-06-25T12:48:46.017Z"
               },
               "contact": {
                 "phone": "9009120913",
@@ -115,8 +110,8 @@
               },
               "time": {
                 "range": {
-                  "start": "2024-06-26T05:41:26.648Z",
-                  "end": "2024-06-26T11:41:26.648Z"
+                  "start": "2024-06-26T06:48:14.524Z",
+                  "end": "2024-06-26T12:48:14.524Z"
                 }
               },
               "person": {
@@ -133,12 +128,20 @@
                 "code": "cancel_request",
                 "list": [
                   {
+                    "code": "retry_count",
+                    "value": "3"
+                  },
+                  {
+                    "code": "rto_id",
+                    "value": "fulfillment-6386154b42674fabf7bdabf4-RTO"
+                  },
+                  {
                     "code": "reason_id",
-                    "value": "001"
+                    "value": "014"
                   },
                   {
                     "code": "initiated_by",
-                    "value": "buyer-app-preprod-v2.ondc.org"
+                    "value": "ondc-api.kiko.live/ondc-seller-v2"
                   }
                 ]
               },
@@ -147,38 +150,57 @@
                 "list": [
                   {
                     "code": "fulfillment_state",
-                    "value": "Cancelled"
+                    "value": "Out-for-delivery"
                   },
                   {
                     "code": "updated_at",
-                    "value": "2024-06-25T11:41:26.648Z"
+                    "value": "2024-06-25T12:48:50.363Z"
                   }
                 ]
               }
             ]
           },
           {
-            "id": "Cancel-fulfillment-6386154b42674fabf7bdabf4",
-            "type": "Cancel",
+            "id": "fulfillment-6386154b42674fabf7bdabf4-RTO",
+            "type": "RTO",
             "state": {
               "descriptor": {
-                "code": "Cancelled"
+                "code": "RTO-Delivered"
+              }
+            },
+            "start": {
+              "time": {
+                "timestamp": "2024-06-25T12:52:59.118Z"
+              },
+              "location": {
+                "gps": "12.981214,77.595029",
+                "address": {
+                  "name": "Aditya Das",
+                  "building": "new apartment",
+                  "locality": "Raj Bhavan Road",
+                  "city": "Bengaluru",
+                  "state": "Karnataka",
+                  "country": "IND",
+                  "area_code": "560001"
+                }
+              }
+            },
+            "end": {
+              "location": {
+                "id": "location-6386154b42674fabf7bdabf4",
+                "gps": "12.982017,77.587606",
+                "descriptor": {
+                  "name": "Vijendra Grocery Store"
+                },
+                "address": {
+                  "locality": "H-123, Surya Shop",
+                  "city": "Bangalore",
+                  "area_code": "560001",
+                  "state": "Karnataka"
+                }
               }
             },
             "tags": [
-              {
-                "code": "cancel_request",
-                "list": [
-                  {
-                    "code": "reason_id",
-                    "value": "001"
-                  },
-                  {
-                    "code": "initiated_by",
-                    "value": "buyer-app-preprod-v2.ondc.org"
-                  }
-                ]
-              },
               {
                 "code": "quote_trail",
                 "list": [
@@ -188,7 +210,7 @@
                   },
                   {
                     "code": "id",
-                    "value": "65ceebe9fa759b16650a0800"
+                    "value": "667917594095652025ddd1e4"
                   },
                   {
                     "code": "currency",
@@ -196,7 +218,7 @@
                   },
                   {
                     "code": "value",
-                    "value": "-95"
+                    "value": "-57"
                   }
                 ]
               }
@@ -206,15 +228,15 @@
         "quote": {
           "price": {
             "currency": "INR",
-            "value": "48"
+            "value": "31"
           },
           "breakup": [
             {
-              "@ondc/org/item_id": "65ceebe9fa759b16650a0800",
+              "@ondc/org/item_id": "667917594095652025ddd1e4",
               "@ondc/org/item_quantity": {
                 "count": 0
               },
-              "title": "vishal",
+              "title": "Garlic Bread",
               "@ondc/org/title_type": "item",
               "price": {
                 "currency": "INR",
@@ -223,17 +245,17 @@
               "item": {
                 "price": {
                   "currency": "INR",
-                  "value": "95"
+                  "value": "57"
                 }
               }
             },
             {
-              "@ondc/org/item_id": "65ceebe9fa759b16650a0800",
+              "@ondc/org/item_id": "667917594095652025ddd1e4",
               "title": "Tax",
               "@ondc/org/title_type": "tax",
               "price": {
                 "currency": "INR",
-                "value": "5"
+                "value": "3"
               }
             },
             {
@@ -260,7 +282,7 @@
               "@ondc/org/title_type": "packing",
               "price": {
                 "currency": "INR",
-                "value": "20.00"
+                "value": "5.00"
               }
             }
           ],
@@ -268,8 +290,8 @@
         },
         "payment": {
           "params": {
-            "amount": "143.00",
-            "transaction_id": "69a4cb58-abce-40d0-909d-58d89f348b99",
+            "amount": "88.00",
+            "transaction_id": "4c1033d2-d822-41d5-b199-d048f6c52ad1",
             "currency": "INR"
           },
           "status": "PAID",
@@ -293,8 +315,8 @@
             }
           ]
         },
-        "created_at": "2024-06-25T11:41:26.026Z",
-        "updated_at": "2024-06-25T11:41:58.041Z"
+        "created_at": "2024-06-25T12:48:13.914Z",
+        "updated_at": "2024-06-25T12:52:59.131Z"
       }
     }
   }
