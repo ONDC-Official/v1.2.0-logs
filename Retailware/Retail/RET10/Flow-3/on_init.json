@@ -8,18 +8,18 @@
         "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_uri": "https://ondc.retailware.in/",
-        "transaction_id": "7ac73441-1308-438e-b662-ecb960fbe18d",
-        "message_id": "6dece615-150e-44c1-8ad5-0f027ba2e76a",
-        "timestamp": "2024-04-23T12:18:04.338Z",
+        "transaction_id": "ba999525-dca4-40ce-b997-099b57d06866",
+        "message_id": "0fedb2ba-ec9d-4247-b1ea-27d86690a853",
+        "timestamp": "2024-06-12T09:39:51.855Z",
         "bpp_id": "ondc.retailware.in",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "1",
+                "id": "26",
                 "locations": [{
-                    "id": "1_0_location"
+                    "id": "26_0_location"
                 }]
             },
             "billing": {
@@ -35,13 +35,13 @@
                 "phone": "8793739491",
                 "name": "Manoj Hogale",
                 "email": "manoj.hogale@retailware.info",
-                "created_at": "2024-04-23T12:18:04.042Z",
-                "updated_at": "2024-04-23T12:18:04.042Z"
+                "created_at": "2024-06-12T09:39:49.855Z",
+                "updated_at": "2024-06-12T09:39:49.855Z"
             },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "370.00"
+                    "value": "357.00"
                 },
                 "ttl": "P1D",
                 "breakup": [{
@@ -50,34 +50,46 @@
                         },
                         "price": {
                             "currency": "INR",
-                            "value": "330.00"
+                            "value": "152.00"
                         },
-                        "@ondc/org/item_id": "1_5433",
+                        "@ondc/org/item_id": "26_736",
                         "@ondc/org/title_type": "item",
-                        "title": "KIRTI CHAMPION SOYABEAN REFINED OIL 1 LITRE",
+                        "title": "CHANADAL  1KG",
                         "item": {
+                            "unitized": {
+                                "measure": {
+                                    "unit": "kilogram",
+                                    "value": "1"
+                                }
+                            },
                             "price": {
                                 "currency": "INR",
-                                "value": "165.00"
+                                "value": "76.00"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "1_5433",
-                        "title": "Tax",
-                        "@ondc/org/title_type": "tax",
+                        "@ondc/org/item_quantity": {
+                            "count": 3
+                        },
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "1_5433",
-                        "title": "Discount",
-                        "@ondc/org/title_type": "discount",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
+                            "value": "165.00"
+                        },
+                        "@ondc/org/item_id": "26_1094",
+                        "@ondc/org/title_type": "item",
+                        "title": "MUNG 500GM",
+                        "item": {
+                            "unitized": {
+                                "measure": {
+                                    "unit": "gram",
+                                    "value": "500"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "55.00"
+                            }
                         }
                     },
                     {
@@ -112,35 +124,33 @@
             "payment": {
                 "@ondc/org/buyer_app_finder_fee_type": "percent",
                 "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
-                "@ondc/org/withholding_amount": "10.00",
-                "tags": [{
-                    "code": "bpp_collect",
-                    "list": [{
-                        "code": "success",
-                        "value": "Y"
-                    }]
-                }],
                 "@ondc/org/settlement_details": [{
                     "settlement_counterparty": "seller-app",
                     "settlement_phase": "sale-amount",
-                    "settlement_type": "upi",
-                    "upi_address": "gft@oksbi",
-                    "settlement_bank_account_no": "1234567879000",
-                    "settlement_ifsc_code": "000123",
-                    "beneficiary_name": "ondc.retailindia.in",
-                    "bank_name": "retailindia",
-                    "branch_name": "Ahmednagar"
+                    "settlement_type": "neft",
+                    "upi_address": "",
+                    "settlement_bank_account_no": "10173249046",
+                    "settlement_ifsc_code": "IDFB0041351",
+                    "beneficiary_name": "RETAILWARE SOFTECH PVT LTD",
+                    "bank_name": "IDFC BANK LIMITED",
+                    "branch_name": "PUNE BUND GARDEN ROAD"
                 }]
             },
             "items": [{
-                "quantity": {
-                    "count": 2
+                    "quantity": {
+                        "count": 2
+                    },
+                    "id": "26_736",
+                    "fulfillment_id": "Fulfillment1"
                 },
-                "id": "1_5433",
-                "fulfillment_id": "Fulfillment1"
-            }],
+                {
+                    "quantity": {
+                        "count": 3
+                    },
+                    "id": "26_1094",
+                    "fulfillment_id": "Fulfillment1"
+                }
+            ],
             "fulfillments": [{
                 "id": "Fulfillment1",
                 "type": "Delivery",
@@ -163,111 +173,19 @@
                 },
                 "tracking": false
             }],
-            "cancellation_terms": [{
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Pending",
-                            "short_desc": "002"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Packed",
-                            "short_desc": "001,003"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "10",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "37.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Order-picked-up",
-                            "short_desc": "001,003"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "10",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "37.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Out-for-delivery",
-                            "short_desc": "009"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "0",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    }
-                },
-                {
-                    "fulfillment_state": {
-                        "descriptor": {
-                            "code": "Out-for-delivery",
-                            "short_desc": "010,011,012,013,014,015"
-                        }
-                    },
-                    "cancellation_fee": {
-                        "percentage": "20",
-                        "amount": {
-                            "currency": "INR",
-                            "value": "74.00"
-                        }
-                    }
-                }
-            ],
             "tags": [{
                 "code": "bpp_terms",
                 "list": [{
-                        "code": "max_liability",
-                        "value": "2"
-                    },
-                    {
-                        "code": "max_liability_cap",
-                        "value": "10000.00"
-                    },
-                    {
-                        "code": "mandatory_arbitration",
-                        "value": "false"
-                    },
-                    {
-                        "code": "court_jurisdiction",
-                        "value": "mumbai"
-                    },
-                    {
-                        "code": "delay_interest",
-                        "value": "8.0"
-                    },
-                    {
                         "code": "tax_number",
                         "value": "27AAPFU0939F1ZV"
                     },
                     {
                         "code": "provider_tax_number",
                         "value": "ABCTY1234D"
+                    },
+                    {
+                        "code": "np_type",
+                        "value": "MSN"
                     }
                 ]
             }]

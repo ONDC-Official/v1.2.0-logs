@@ -1,98 +1,144 @@
 {
     "context": {
-        "domain": "ONDC:AGR11",
-        "country": "IND",
-        "city": "std:080",
+        "ttl": "PT30S",
+        "city": "std:011",
         "action": "on_select",
-        "core_version": "1.2.0",
         "bap_id": "buypreprod.enam.gov.in",
-        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_id": "sellpreprod.enam.gov.in",
+        "domain": "ONDC:AGR11",
+        "bap_uri": "https://buypreprod.enam.gov.in/ondc/v1",
         "bpp_uri": "https://sellpreprod.enam.gov.in/ondc/v1",
-        "transaction_id": "f4fa6a99-fe45-4040-abb5-d0b9e3b3abd4",
-        "message_id": "34c3c649-6ac7-45f6-9ffb-7f590281a957",
-        "timestamp": "2024-04-26T07:44:48.002Z",
-        "ttl": "PT30S"
+        "country": "IND",
+        "timestamp": "2024-06-09T17:55:43.845Z",
+        "message_id": "bcf75cd6-6e90-4525-85e4-dbd62de29b16",
+        "core_version": "1.2.0",
+        "transaction_id": "44dba081-5f35-4c18-ba6c-a6b9eb0aee04"
     },
     "message": {
         "order": {
+            "items": [
+                {
+                    "id": "1430",
+                    "fulfillment_id": "247"
+                },
+                {
+                    "id": "1429",
+                    "fulfillment_id": "246"
+                }
+            ],
             "quote": {
+                "ttl": "P1D",
                 "price": {
-                    "currency": "INR",
-                    "value": "980.0"
+                    "value": "800.0",
+                    "currency": "INR"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "100",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
                         },
-                        "@ondc/org/title_type": "item",
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "246",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "0.0",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery charges",
+                        "@ondc/org/item_id": "247",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
                         "item": {
                             "price": {
-                                "currency": "INR",
-                                "value": "490.0",
-                                "maximum_value": "490.0"
+                                "value": "100.0",
+                                "currency": "INR"
                             },
                             "quantity": {
-                                "available": {
-                                    "count": "99"
-                                },
                                 "maximum": {
-                                    "count": "99"
+                                    "count": "10000"
+                                },
+                                "available": {
+                                    "count": "90"
                                 }
                             }
                         },
-                        "title": "MAIZE",
                         "price": {
-                            "currency": "INR",
-                            "value": "490.0",
-                            "maximum_value": "490.0"
+                            "value": "200.0",
+                            "currency": "INR"
+                        },
+                        "title": "Hajmola",
+                        "@ondc/org/item_id": "1429",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
                         }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "provider": {
-                "id": "6",
-                "locations": [
+                    },
                     {
-                        "id": "5"
+                        "item": {
+                            "price": {
+                                "value": "300.0",
+                                "currency": "INR"
+                            },
+                            "quantity": {
+                                "maximum": {
+                                    "count": "10000"
+                                },
+                                "available": {
+                                    "count": "100"
+                                }
+                            }
+                        },
+                        "price": {
+                            "value": "600.0",
+                            "currency": "INR"
+                        },
+                        "title": "Cadbury Gems",
+                        "@ondc/org/item_id": "1430",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        }
                     }
                 ]
             },
-            "items": [
-                {
-                    "id": "100",
-                    "fulfillment_id": "8"
-                }
-            ],
+            "provider": {
+                "id": "116",
+                "locations": [
+                    {
+                        "id": "288"
+                    }
+                ]
+            },
             "fulfillments": [
                 {
-                    "id": "11",
+                    "id": "247",
                     "type": "Self-Pickup",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
                     },
-                    "tracking": false
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT24H",
+                    "@ondc/org/category": "Takeaway",
+                    "@ondc/org/provider_name": "Bhui Store kondapur"
                 },
                 {
-                    "id": "8",
+                    "id": "246",
                     "type": "Delivery",
-                    "@ondc/org/category": "Immediate Delivery",
-                    "@ondc/org/TAT": "P1D",
-                    "@ondc/org/provider_name": "e-NAM",
                     "state": {
                         "descriptor": {
                             "code": "Serviceable"
                         }
                     },
-                    "tracking": false
+                    "tracking": false,
+                    "@ondc/org/TAT": "PT48H",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/provider_name": "Bhui Store kondapur"
                 }
             ]
         }
