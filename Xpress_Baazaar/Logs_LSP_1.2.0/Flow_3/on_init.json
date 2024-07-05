@@ -1,0 +1,121 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.xpressbaazaar.com",
+        "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "50875a61-82d2-4d26-b9ec-0af6ef24795e",
+        "message_id": "553867b3-bcd3-475d-b952-cbbb3c0d96f2",
+        "timestamp": "2024-07-04T17:57:59.999Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "MP2"
+            },
+            "items": [
+                {
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "mp2_immediate_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.933050,77.589828",
+                            "address": {
+                                "name": "AGARO",
+                                "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                                "locality": "gautam buddha",
+                                "city": "Karnataka",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560029"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7654329075",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.923647,77.586118",
+                            "address": {
+                                "name": "som",
+                                "building": "Start Tower",
+                                "locality": "11th Main Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9453658871",
+                            "email": "somnath.yadav@ens.enterprises"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "xxxxx",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "25.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "21.19"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.81"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            }
+        }
+    }
+}
