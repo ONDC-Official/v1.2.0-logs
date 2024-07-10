@@ -1,44 +1,54 @@
 {
             "context": {
-                "domain": "ONDC:RET12",
+                "domain": "ONDC:RET10",
                 "action": "update",
+                "country": "IND",
+                "city": "std:080",
                 "core_version": "1.2.0",
                 "bap_id": "b-ondcbap.nlincs.in",
                 "bap_uri": "https://b-ondcbap.nlincs.in/bap",
-                "bpp_id": "b-ondc-seller-bpp.nlincs.in",
-                "bpp_uri": "https://b-ondc-seller-bpp.nlincs.in/bpp",
-                "transaction_id": "667c57faccaa02598b45ed0f553d3800",
-                "message_id": "296f1d6230334626c7205bf7efbca310",
-                "city": "std:044",
-                "country": "IND",
-                "timestamp": "2024-05-29T11:13:40.906Z"
+                "transaction_id": "e32e7bfaeec4d3d20798c6a29f218c00",
+                "message_id": "f43ac7f6-e206-4809-aede-2dcb4e72f445",
+                "bpp_id": "preprod-ondc.addble.com",
+                "bpp_uri": "https://preprod-ondc.addble.com/",
+                "timestamp": "2024-06-24T09:17:07.501Z"
             },
             "message": {
                 "update_target": "payment",
                 "order": {
-                    "id": "2024-42579-76378",
+                    "id":  "2024-9372-87048",
                     "fulfillments": [
                         {
-                            "id": "C3035",
+                            "id": "f8bf5743-9259-4219-9a1c-8b1fdbd6361b",
                             "type": "Cancel"
                         }
                     ],
                     "payment": {
-                         "@ondc/org/settlement_details": [
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "5",
+                        "@ondc/org/settlement_details": [
                             {
-                                "bank_name": "IDFC FIRST BANK LIMITED",
-                                "branch_name": "BKC Naman Chambers Branch",
-                                "upi_address": "",
-                                "settlement_type": "neft",
-                                "beneficiary_name": "NSTORE TECHNOLOGIES PRIVATE LIMITED",
-                                "settlement_phase": "sale-amount",
-                                "settlement_amount": "399",
-                                "settlement_timestamp": "2024-05-29T11:13:40.906Z",
-                                "settlement_ifsc_code": "IDFB0040101",
                                 "settlement_counterparty": "seller-app",
-                                "settlement_bank_account_no": "10112822953"
+                                "settlement_phase": "sale-amount",
+                                "settlement_bank_account_no": "100000",
+                                "settlement_ifsc_code": "IDFB0000000",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "ADDBLE SOLUTIONS PRIVATE LIMITED-ONDC",
+                                "bank_name": "IDFC FIRST Bank",
+                                "branch_name": "Park Street Branch",
+                                "settlement_amount": "497.00",
+                                "settlement_timestamp": "2024-06-24T09:13:09.508Z"
                             }
-                        ]
+                        ],
+                        "tl_method": "http/get",
+                        "params": {
+                            "currency": "INR",
+                            "transaction_id": "order_OQXhFf39sdcu06",
+                            "amount": "497.00"
+                        },
+                        "status": "PAID",
+                        "type": "ON-ORDER",
+                        "collected_by": "BAP"
                     }
                 }
             }

@@ -1,0 +1,187 @@
+{
+  "context": {
+    "domain": "ONDC:RET13",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp4",
+    "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/adaptor-v2-preprod/adp4/bpp",
+    "transaction_id": "599fed11-3fff-4e4a-a41a-50b36a70abb4",
+    "message_id": "f4fdfe7b-0fe8-48fa-851b-39c397bf83ca",
+    "timestamp": "2024-07-09T08:54:10.963Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-07-09-633685",
+      "state": "Created",
+      "provider": {
+        "id": "a080a2be-be01-4c4b-b844-c8b03e626ce0",
+        "locations": [{ "id": "6ea3fbcd-95b6-41f3-92f1-1532a363e149" }]
+      },
+      "billing": {
+        "address": {
+          "name": "Testing",
+          "country": "IND",
+          "locality": "1st Main Road",
+          "building": "Main Building",
+          "city": "Bengaluru",
+          "area_code": "560020",
+          "state": "Karnataka"
+        },
+        "phone": "9988998899",
+        "name": "Testing",
+        "email": "test@testing.com",
+        "created_at": "2024-07-09T08:53:47.330Z",
+        "updated_at": "2024-07-09T08:53:47.330Z"
+      },
+      "items": [
+        {
+          "id": "777e2dde-4d68-4086-8d4b-97e7ee96dcdc",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "19a8b813-2a9e-4e69-a821-da40198ca721"
+        },
+        {
+          "id": "2d5ab9c3-bbb7-4921-b0a4-a42f3f98cf11",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "19a8b813-2a9e-4e69-a821-da40198ca721"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "19a8b813-2a9e-4e69-a821-da40198ca721",
+          "state": { "descriptor": { "code": "Pending" } },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "6ea3fbcd-95b6-41f3-92f1-1532a363e149",
+              "gps": "18.5708499,73.7716326",
+              "address": {
+                "locality": "Laxman Nagar",
+                "building": "202, D. M. Arcade, Chickpet Rd, Ragipet, Mamulpet, Chickpet, Bengaluru, Karnataka 560053, India",
+                "city": "Bengaluru",
+                "area_code": "411045",
+                "state": "Maharashtra"
+              },
+              "descriptor": { "name": "Protean Store" }
+            },
+            "contact": {
+              "phone": "9900990099",
+              "email": "support@protean.in"
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-09T09:09:10.942Z",
+                "end": "2024-07-10T23:00:00.942Z"
+              }
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.998738,77.582043",
+              "address": {
+                "name": "Testing",
+                "country": "IND",
+                "locality": "1st Main Road",
+                "building": "Main Building",
+                "city": "Bengaluru",
+                "area_code": "560020",
+                "state": "Karnataka"
+              }
+            },
+            "contact": { "phone": "9988998899", "email": "test@testing.com" },
+            "time": {
+              "range": {
+                "start": "2024-07-11T10:00:00.942Z",
+                "end": "2024-07-13T23:00:00.942Z"
+              }
+            },
+            "person": { "name": "Testing" }
+          },
+          "@ondc/org/provider_name": "Protean Store",
+          "@ondc/org/TAT": "PT136H"
+        }
+      ],
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "params": {
+          "amount": "450.00",
+          "currency": "INR",
+          "transaction_id": "order_OWTUfKY54g6xfi"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "protean tech",
+            "settlement_bank_account_no": "9900990099009",
+            "settlement_ifsc_code": "SBIN0050007",
+            "bank_name": "SBI BANK",
+            "branch_name": "City Pune"
+          }
+        ]
+      },
+      "quote": {
+        "ttl": "PT24H",
+        "price": { "currency": "INR", "value": "450.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "777e2dde-4d68-4086-8d4b-97e7ee96dcdc",
+            "title": "Loreal Mosturizer 200g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "160.0" },
+            "@ondc/org/item_quantity": { "count": 2 },
+            "item": { "price": { "currency": "INR", "value": "80.0" } }
+          },
+          {
+            "@ondc/org/item_id": "2d5ab9c3-bbb7-4921-b0a4-a42f3f98cf11",
+            "title": "Loreal Mosturizer 100g",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "90.0" },
+            "@ondc/org/item_quantity": { "count": 2 },
+            "item": { "price": { "currency": "INR", "value": "45.0" } }
+          },
+          {
+            "@ondc/org/item_id": "19a8b813-2a9e-4e69-a821-da40198ca721",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": { "currency": "INR", "value": "100.0" }
+          },
+          {
+            "@ondc/org/item_id": "19a8b813-2a9e-4e69-a821-da40198ca721",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "100.0" }
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "27AAAAP0267H2ZN" },
+            { "code": "provider_tax_number", "value": "SSSSP2423K" },
+            { "code": "np_type", "value": "MSN" }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "GSTIN1234567890" }]
+        }
+      ],
+      "created_at": "2024-07-09T08:54:09.754Z",
+      "updated_at": "2024-07-09T08:54:10.963Z"
+    }
+  }
+}
