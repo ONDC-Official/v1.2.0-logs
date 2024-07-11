@@ -2,55 +2,21 @@
   "context": {
     "ttl": "PT30S",
     "city": "std:011",
-    "action": "on_init",
+    "action": "on_status",
     "bap_id": "ondc-preprod.craver.in",
     "bpp_id": "ca.aqmtechnologies.com",
     "domain": "ONDC:RET11",
-    "bap_uri": "https://ondc-preprod.craver.in/bapl/",
+    "bap_uri": "https://ondc-preprod.craver.in/bapl",
     "bpp_uri": "https://ca.aqmtechnologies.com/api/bpp",
     "country": "IND",
-    "timestamp": "2024-06-21T12:57:00.909Z",
-    "message_id": "9248bea0-39d4-4c8f-b560-4b834b687cda",
+    "timestamp": "2024-06-21T12:57:35.933Z",
+    "message_id": "f1f15721-e46e-4fe2-8fdb-79a93980bf7e",
     "core_version": "1.2.0",
     "transaction_id": "1e91f9ef-dead-3a03-1f58-40feb94eff38"
   },
   "message": {
     "order": {
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability",
-              "value": "2"
-            },
-            {
-              "code": "max_liability_cap",
-              "value": "10000.00"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "false"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Bengaluru"
-            },
-            {
-              "code": "delay_interest",
-              "value": "1000.00"
-            },
-            {
-              "code": "tax_number",
-              "value": "91ABCDE1234F1Z6"
-            },
-            {
-              "code": "provider_tax_number",
-              "value": "XYZAB6789N"
-            }
-          ]
-        }
-      ],
+      "id": "4768fe7455f7",
       "items": [
         {
           "id": "AQM_Item_Bao_1_pr_1_1",
@@ -219,6 +185,7 @@
           }
         ]
       },
+      "state": "In-progress",
       "billing": {
         "name": "AKSHAY",
         "email": "example@example.com",
@@ -236,17 +203,17 @@
         "updated_at": "2024-06-21T12:57:00.863Z"
       },
       "payment": {
-        "tags": [
-          {
-            "code": "bpp_collect",
-            "list": [
-              {
-                "code": "success",
-                "value": "Y"
-              }
-            ]
-          }
-        ],
+        "type": "ON-ORDER",
+        "params": {
+          "amount": "485",
+          "currency": "INR",
+          "transaction_id": "4768fe7455f7"
+        },
+        "status": "PAID",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P7D",
         "@ondc/org/settlement_details": [
           {
             "upi_address": "abc@okupi",
@@ -256,22 +223,34 @@
             "settlement_counterparty": "seller-app"
           }
         ],
+        "@ondc/org/withholding_amount": "0",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3"
       },
       "provider": {
         "id": "AQM-BPP-PROVIDER-1",
+        "rateable": true,
         "locations": [
           {
             "id": "AQM-BPP-PROVIDER-1-LOCATION-1"
           }
         ]
       },
+      "created_at": "2024-06-21T12:57:34.894Z",
+      "updated_at": "2024-06-21T12:57:35.933Z",
       "fulfillments": [
         {
           "id": "23ffbd89-bdd4-4a32-a950-15646e14f874",
           "end": {
+            "time": {
+              "range": {
+                "end": "2024-06-21T12:57:30.933Z",
+                "start": "2024-06-21T12:57:25.933Z"
+              },
+              "timestamp": "2024-06-21T12:57:30.933Z"
+            },
             "contact": {
+              "email": "example@example.com",
               "phone": "8169849280"
             },
             "location": {
@@ -287,90 +266,64 @@
               }
             }
           },
+          "tags": [
+            {
+              "code": "tracking",
+              "list": [
+                {
+                  "code": "gps_enabled",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "routing",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "P2P"
+                }
+              ]
+            }
+          ],
           "type": "Delivery",
-          "tracking": true
-        }
-      ],
-      "cancellation_terms": [
-        {
-          "reason_required": false,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
+          "agent": {
+            "name": "AQM Delivery Agent",
+            "phone": "9876543210"
+          },
+          "start": {
+            "time": {
+              "range": {
+                "end": "2024-06-21T12:57:30.933Z",
+                "start": "2024-06-21T12:57:25.933Z"
+              },
+              "timestamp": "2024-06-21T12:57:25.933Z"
+            },
+            "contact": {
+              "email": "abc@xyz.com",
+              "phone": "1234567890"
+            },
+            "location": {
+              "gps": "28.679848,77.069918",
+              "address": {
+                "city": "Some City",
+                "state": "Delhi",
+                "locality": "Some Locality",
+                "area_code": "110064"
+              },
+              "descriptor": {
+                "name": "AQM Provider Store 1"
+              }
             }
           },
-          "fulfillment_state": {
+          "state": {
             "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "50.00",
-              "currency": "INR"
+              "code": "Order-picked-up"
             }
           },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Packed",
-              "short_desc": "001,003"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "50.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "0.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "009"
-            }
-          }
-        },
-        {
-          "reason_required": true,
-          "refund_eligible": true,
-          "cancellation_fee": {
-            "amount": {
-              "value": "100.00",
-              "currency": "INR"
-            }
-          },
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "011,012,013,014,015"
-            }
-          }
+          "tracking": true,
+          "@ondc/org/TAT": "PT2H",
+          "@ondc/org/provider_name": "AQM Delivery Partner"
         }
       ]
     }
