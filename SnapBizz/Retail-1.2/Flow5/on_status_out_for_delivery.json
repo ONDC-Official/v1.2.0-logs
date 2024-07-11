@@ -1,0 +1,164 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
+    "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
+    "transaction_id": "fabab2ef-1c1a-499a-96d3-440264f6231d",
+    "message_id": "3a6a7462-758a-4c30-b812-b0657878e20b",
+    "timestamp": "2024-07-01T21:02:36.760Z"
+  },
+  "message": {
+    "order": {
+      "id": "2024-07-01-320924",
+      "state": "In-progress",
+      "provider": {
+        "id": "34bf3b2c-37e3-4539-b494-c88d3107ac54",
+        "locations": [{ "id": "f17a9598-6ed7-4fa4-9b13-e0e913d04a30" }]
+      },
+      "items": [
+        {
+          "id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+          "quantity": { "count": 3 },
+          "fulfillment_id": "a9dfd4da-aeed-461c-bb09-5be13c85b193"
+        }
+      ],
+      "billing": {
+        "name": "Bob Alice",
+        "address": {
+          "name": "Bob Alice",
+          "building": "Alice",
+          "locality": "HAL Airport Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560037"
+        },
+        "email": "bob@gmail.com",
+        "phone": "09874563210",
+        "created_at": "2024-07-01T19:30:55.405Z",
+        "updated_at": "2024-07-01T19:30:55.405Z"
+      },
+      "fulfillments": [
+        {
+          "id": "a9dfd4da-aeed-461c-bb09-5be13c85b193",
+          "tags": [
+            { "code": "routing", "list": [{ "code": "type", "value": "P2P" }] }
+          ],
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT60M",
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/provider_name": "Vishal",
+          "state": { "descriptor": { "code": "Out-for-delivery" } },
+          "tracking": true,
+          "start": {
+            "location": {
+              "id": "f17a9598-6ed7-4fa4-9b13-e0e913d04a30",
+              "gps": "12.910796,77.684601",
+              "address": {
+                "city": "Bengaluru",
+                "name": "Bob Alice",
+                "state": "Karnataka",
+                "country": "IND",
+                "building": "Alice",
+                "locality": "HAL Airport Road",
+                "area_code": "560037"
+              },
+              "descriptor": { "name": "V B store" }
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-01T19:31:03.605Z",
+                "end": "2024-07-01T20:31:03.605Z"
+              },
+              "timestamp": "2024-07-01T21:01:49.659Z"
+            },
+            "contact": { "phone": "7510704054" }
+          },
+          "end": {
+            "location": {
+              "gps": "12.910796,77.684601",
+              "address": {
+                "city": "Bengaluru",
+                "name": "Bob Alice",
+                "state": "Karnataka",
+                "country": "IND",
+                "building": "Alice",
+                "locality": "HAL Airport Road",
+                "area_code": "560037"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-01T19:31:03.605Z",
+                "end": "2024-07-01T21:31:03.605Z"
+              }
+            },
+            "contact": { "phone": "09874563210", "email": "bob@gmail.com" },
+            "person": { "name": "Bob Alice" }
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "90.00" },
+        "ttl": "P1D",
+        "breakup": [
+          {
+            "item": { "price": { "value": "30", "currency": "INR" } },
+            "price": { "value": "90.00", "currency": "INR" },
+            "title": "Surf Excel Bar 250 Gm",
+            "@ondc/org/item_id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 3 }
+          },
+          {
+            "price": { "value": "0.00", "currency": "INR" },
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "a9dfd4da-aeed-461c-bb09-5be13c85b193",
+            "@ondc/org/title_type": "delivery"
+          }
+        ]
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "fabab2ef-1c1a-499a-96d3-440264f6231d",
+          "amount": "90.00"
+        },
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "State Bank Of India",
+            "branch_name": "Andaman Nicobar",
+            "upi_address": "9916784111@upi",
+            "settlement_type": "upi",
+            "beneficiary_name": "-",
+            "settlement_phase": "sale-amount",
+            "settlement_ifsc_code": "SBIN0002001",
+            "settlement_counterparty": "seller-app",
+            "settlement_bank_account_no": "29837293879283"
+          }
+        ]
+      },
+      "created_at": "2024-07-01T19:31:03.605Z",
+      "updated_at": "2024-07-01T21:02:36.760Z",
+      "documents": [
+        {
+          "url": "https://snapmerchant-test.snapbizz.com/order-details/242",
+          "label": "Invoice"
+        }
+      ]
+    }
+  }
+}

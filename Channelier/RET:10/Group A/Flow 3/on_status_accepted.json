@@ -1,189 +1,220 @@
 {
-  "context": {
-    "bpp_id": "integrations-preprod.channelier.com",
-    "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
-    "domain": "ONDC:RET10",
-    "core_version": "1.2.0",
-    "ttl": "PT30S",
-    "bap_id": "buyer-app-preprod-v2.ondc.org",
-    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-    "transaction_id": "bfaadb4c-97ab-4eb7-893d-5ba769d34e9f",
-    "message_id": "9011ab10-5c9c-4e1d-985a-79cfed83d49f",
-    "country": "IND",
-    "city": "std:011",
-    "timestamp": "2024-02-02T06:37:09.543Z",
-    "action": "on_status"
-  },
-  "message": {
-    "order": {
-      "id": "2024-02-02-581065",
-      "state": "Accepted",
-      "provider": { "id": "CU19", "locations": [{ "id": "L1" }] },
-      "provider_location": { "id": "L1" },
-      "items": [
-        {
-          "id": "CU19I0",
-          "quantity": { "count": 3 },
-          "fulfillment_id": "L-F-1706855532686"
-        },
-        {
-          "id": "CU19I1",
-          "quantity": { "count": 2 },
-          "fulfillment_id": "L-F-1706855532686"
-        }
-      ],
-      "documents": [],
-      "billing": {
-        "name": "Ravinder",
-        "address": {
-          "name": "Ravinder",
-          "building": "Block F",
-          "locality": "DDA Flats E1 Road",
-          "city": "New Delhi",
-          "state": "Delhi",
-          "country": "IND",
-          "area_code": "110070"
-        },
-        "email": "ravinder.7987@gmail.com",
-        "phone": "9896910497",
-        "created_at": "2024-02-02T06:33:17.789Z",
-        "updated_at": "2024-02-02T06:33:17.789Z"
-      },
-      "fulfillments": [
-        {
-          "id": "L-F-1706855532686",
-          "type": "Delivery",
-          "@ondc/org/TAT": "P7DT48H",
-          "@ondc/org/provider_name": "Orika Spices",
-          "state": { "descriptor": { "code": "Pending", "images": [] } },
-          "tracking": false,
-          "start": {
-            "location": {
-              "id": "L1",
-              "descriptor": { "name": "Orika Spices", "images": [] },
-              "gps": "28.545449,77.026877",
-              "address": {
-                "door": "38",
-                "name": "Orika Spices",
-                "building": "PLOT NO 38",
-                "street": " DWARKA SECTOR 28",
-                "locality": "Bamnoli Village",
-                "ward": "10",
-                "city": " South West Delhi",
-                "state": "Delhi",
-                "country": "India",
-                "area_code": "110077"
-              }
-            },
-            "time": {
-              "range": {
-                "start": "2024-02-02T06:34:20.718Z",
-                "end": "2024-02-04T06:34:20.718Z"
-              }
-            },
-            "contact": {
-              "phone": "7551123716",
-              "email": "aishwarya.doshi@parasspices.in"
-            }
-          },
-          "end": {
-            "location": {
-              "gps": "28.537756182126003,77.13173595413136",
-              "address": {
-                "name": "Ravinder",
-                "building": "Block F",
-                "locality": "DDA Flats E1 Road",
-                "city": "New Delhi",
-                "state": "Delhi",
-                "country": "IND",
-                "area_code": "110070"
-              }
-            },
-            "time": {
-              "range": {
-                "start": "2024-02-02T06:34:25.718Z",
-                "end": "2024-02-11T06:34:20.718Z"
-              }
-            },
-            "contact": {
-              "phone": "9896910497",
-              "email": "ravinder.7987@gmail.com"
-            },
-            "person": { "name": "Ravinder" }
-          }
-        }
-      ],
-      "quote": {
-        "price": { "currency": "INR", "value": "707.62" },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "CU19I0",
-            "@ondc/org/item_quantity": { "count": 3 },
-            "@ondc/org/title_type": "item",
-            "item": {
-              "price": { "currency": "INR", "value": "104.00" }
-            },
-            "title": "SOUTHERN MASALA POWDER- 80G",
-            "price": { "currency": "INR", "value": "312.00" }
-          },
-          {
-            "@ondc/org/item_id": "CU19I1",
-            "@ondc/org/item_quantity": { "count": 2 },
-            "@ondc/org/title_type": "item",
-            "item": {
-              "price": { "currency": "INR", "value": "144.00" }
-            },
-            "title": "MALABAR BLACK PEPPER POWDER- 80G",
-            "price": { "currency": "INR", "value": "288.00" }
-          },
-          {
-            "@ondc/org/item_id": "L-F-1706855532686",
-            "@ondc/org/title_type": "delivery",
-            "title": "Delivery Charges",
-            "price": { "currency": "INR", "value": "107.62" }
-          }
-        ],
-        "ttl": "P1D"
-      },
-      "payment": {
-        "uri": "https://juspay.in/",
-        "tl_method": "http/get",
-        "params": {
-          "transaction_id": "a308a47d-1811-46ce-92d1-385c6911216f",
-          "amount": "707.62",
-          "currency": "INR"
-        },
-        "type": "ON-ORDER",
-        "status": "PAID",
-        "collected_by": "BAP",
-        "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-        "@ondc/org/settlement_basis": "delivery",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "seller-app",
-            "settlement_phase": "sale-amount",
-            "settlement_type": "neft",
-            "settlement_bank_account_no": "10140183023",
-            "settlement_ifsc_code": "IDFB0040101",
-            "bank_name": "IDFC Bank Limited",
-            "branch_name": "Bkc Naman Chambers Branch",
-            "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
-          }
-        ]
-      },
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [{ "code": "tax_number", "value": "27AAMCA8667N1ZQ" }]
-        },
-        {
-          "code": "bap_terms",
-          "list": [{ "code": "tax_number", "value": "BUYER-APP-GSTN-ONDC" }]
-        }
-      ],
-      "created_at": "2024-02-02T06:33:20.603Z",
-      "updated_at": "2024-02-02T06:37:09.509Z"
-    }
-  }
+	"context": {
+		"bpp_id": "integrations-preprod.channelier.com",
+		"bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+		"domain": "ONDC:RET10",
+		"core_version": "1.2.0",
+		"ttl": "PT30S",
+		"bap_id": "buyer-app-preprod-v2.ondc.org",
+		"bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+		"transaction_id": "70bf78e6-0c96-4174-bb36-45ffe3d5c855",
+		"message_id": "e017983d-3ab4-4228-be8a-4ef0c21e3dcb",
+		"country": "IND",
+		"city": "std:011",
+		"timestamp": "2024-03-20T06:40:43.043Z",
+		"action": "on_status"
+	},
+	"message": {
+		"order": {
+			"id": "2024-03-20-660364",
+			"state": "Accepted",
+			"provider": {
+				"id": "CU19",
+				"locations": [
+					{
+						"id": "L1"
+					}
+				]
+			},
+			"items": [
+				{
+					"id": "CU19I1",
+					"quantity": {
+						"count": 2
+					},
+					"fulfillment_id": "L-F-1710916794848"
+				}
+			],
+			"documents": [],
+			"billing": {
+				"name": "Ravinder",
+				"address": {
+					"name": "Ravinder",
+					"building": "Block F",
+					"locality": "DDA Flats E1 Road",
+					"city": "New Delhi",
+					"state": "Delhi",
+					"country": "IND",
+					"area_code": "110070"
+				},
+				"email": "ravinder.7987@gmail.com",
+				"phone": "9896910497",
+				"created_at": "2024-03-20T06:40:13.443Z",
+				"updated_at": "2024-03-20T06:40:13.443Z"
+			},
+			"fulfillments": [
+				{
+					"id": "L-F-1710916794848",
+					"type": "Delivery",
+					"@ondc/org/TAT": "P7DT48H",
+					"@ondc/org/provider_name": "Orika Spices",
+					"state": {
+						"descriptor": {
+							"code": "Pending",
+							"images": []
+						}
+					},
+					"tracking": false,
+					"start": {
+						"location": {
+							"id": "L1",
+							"descriptor": {
+								"name": "Orika Spices",
+								"images": []
+							},
+							"gps": "28.545449,77.026877",
+							"address": {
+								"door": "38",
+								"name": "Orika Spices",
+								"building": "PLOT NO 38",
+								"street": " DWARKA SECTOR 28",
+								"locality": "Bamnoli Village",
+								"ward": "10",
+								"city": " South West Delhi",
+								"state": "Delhi",
+								"country": "India",
+								"area_code": "110077"
+							}
+						},
+						"time": {
+							"range": {
+								"start": "2024-03-20T06:41:21.085Z",
+								"end": "2024-03-22T06:41:21.085Z"
+							}
+						},
+						"contact": {
+							"phone": "7551123716",
+							"email": "aishwarya.doshi@parasspices.in"
+						}
+					},
+					"end": {
+						"location": {
+							"gps": "28.537756182126003,77.13173595413136",
+							"address": {
+								"name": "Ravinder",
+								"building": "Block F",
+								"locality": "DDA Flats E1 Road",
+								"city": "New Delhi",
+								"state": "Delhi",
+								"country": "IND",
+								"area_code": "110070"
+							}
+						},
+						"time": {
+							"range": {
+								"start": "2024-03-20T06:41:26.085Z",
+								"end": "2024-03-29T06:41:21.085Z"
+							}
+						},
+						"contact": {
+							"phone": "9896910497",
+							"email": "ravinder.7987@gmail.com"
+						},
+						"person": {
+							"name": "Ravinder"
+						}
+					}
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "505.62"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "CU19I1",
+						"@ondc/org/item_quantity": {
+							"count": 2
+						},
+						"@ondc/org/title_type": "item",
+						"item": {
+							"price": {
+								"currency": "INR",
+								"value": "199.00"
+							}
+						},
+						"title": "MALABAR BLACK PEPPER POWDER- 80G",
+						"price": {
+							"currency": "INR",
+							"value": "398.00"
+						}
+					},
+					{
+						"@ondc/org/item_id": "L-F-1710916794848",
+						"@ondc/org/title_type": "delivery",
+						"title": "Delivery Charges",
+						"price": {
+							"currency": "INR",
+							"value": "107.62"
+						}
+					}
+				],
+				"ttl": "P1D"
+			},
+			"payment": {
+				"uri": "https://juspay.in/",
+				"tl_method": "http/get",
+				"params": {
+					"transaction_id": "e3ed15b7-c7b4-48b3-bf0e-9b8a5576623a",
+					"amount": "505.62",
+					"currency": "INR"
+				},
+				"type": "ON-ORDER",
+				"status": "PAID",
+				"collected_by": "BAP",
+				"@ondc/org/buyer_app_finder_fee_type": "percent",
+				"@ondc/org/buyer_app_finder_fee_amount": "3.0",
+				"@ondc/org/settlement_basis": "delivery",
+				"@ondc/org/settlement_details": [
+					{
+						"settlement_counterparty": "seller-app",
+						"settlement_phase": "sale-amount",
+						"settlement_type": "neft",
+						"settlement_bank_account_no": "10140183023",
+						"settlement_ifsc_code": "IDFB0040101",
+						"bank_name": "IDFC Bank Limited",
+						"branch_name": "Bkc Naman Chambers Branch",
+						"beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
+					}
+				]
+			},
+			"tags": [
+				{
+					"code": "bpp_terms",
+					"list": [
+						{
+							"code": "np_type",
+							"value": "MSN"
+						},
+						{
+							"code": "tax_number",
+							"value": "27AAMCA8667N1ZQ"
+						}
+					]
+				},
+				{
+					"code": "bap_terms",
+					"list": [
+						{
+							"code": "tax_number",
+							"value": "GSTIN1234567890"
+						}
+					]
+				}
+			],
+			"created_at": "2024-03-20T06:40:20.993Z",
+			"updated_at": "2024-03-20T06:40:43.035Z"
+		}
+	}
 }
