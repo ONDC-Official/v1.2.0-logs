@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_confirm",
+        "action": "on_status",
         "bap_id": "buyer-app-preprod-v2.ondc.org",
         "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
         "bpp_id": "ondc-connect.localzoho.com",
@@ -9,9 +9,10 @@
         "core_version": "1.2.0",
         "country": "IND",
         "domain": "ONDC:RET13",
-        "message_id": "02602a72-0f40-46c3-83cd-66a91feedd4c",
-        "timestamp": "2024-07-16T11:45:34.454Z",
-        "transaction_id": "49b436c4-166b-4171-8489-90f81555eb82"
+        "message_id": "f8b62cfe-1626-4b68-a058-a632b233e73a",
+        "timestamp": "2024-07-16T11:48:49.237Z",
+        "transaction_id": "49b436c4-166b-4171-8489-90f81555eb82",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -39,6 +40,12 @@
                         "contact": {
                             "phone": "9952291326"
                         },
+                        "instructions": {
+                            "name": "Proof of delivery",
+                            "code": "3",
+                            "short_desc": "-",
+                            "long_desc": "-"
+                        },
                         "location": {
                             "address": {
                                 "area_code": "560103",
@@ -53,6 +60,12 @@
                         },
                         "person": {
                             "name": "sherin shafa"
+                        },
+                        "time": {
+                            "range": {
+                                "end": "2024-07-16T12:23:03.123Z",
+                                "start": "2024-07-16T12:08:03.123Z"
+                            }
                         }
                     },
                     "id": "3000009408173",
@@ -62,6 +75,12 @@
                         "contact": {
                             "email": "sherin.h+1@zohotest.com",
                             "phone": "7904741400"
+                        },
+                        "instructions": {
+                            "name": "Proof of pickup",
+                            "code": "3",
+                            "short_desc": "8483",
+                            "long_desc": "-"
                         },
                         "location": {
                             "address": {
@@ -73,23 +92,50 @@
                             "descriptor": {
                                 "name": "NEW BLR STORE"
                             },
-                            "gps": "12.929869,77.684837",
-                            "id": "3000002215103"
+                            "gps": "12.929869,77.684837"
                         },
                         "time": {
                             "range": {
-                                "end": "2024-07-16T13:15:33.442Z",
-                                "start": "2024-07-16T12:15:33.442Z"
+                                "end": "2024-07-16T13:15:34.454Z",
+                                "start": "2024-07-16T12:15:34.454Z"
                             }
                         }
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Agent-assigned"
                         }
                     },
                     "type": "Delivery",
-                    "tracking": true
+                    "tracking": true,
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://track.mp2.in/r/2400C0D9E96689552ECB41C2C183D270"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "items": [
@@ -114,7 +160,9 @@
                         "settlement_counterparty": "seller-app",
                         "settlement_ifsc_code": "UTIB0000234",
                         "settlement_phase": "sale-amount",
-                        "settlement_type": "neft"
+                        "settlement_type": "neft",
+                        "settlement_status": "PAID",
+                        "settlement_timestamp": "2024-07-16T11:45:34.454Z"
                     }
                 ],
                 "params": {
@@ -181,36 +229,8 @@
                 },
                 "ttl": "PT15M"
             },
-            "state": "Accepted",
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "33AACCZ3115C1ZW"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "AAAGM0289C"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "GSTIN1234567890"
-                        }
-                    ]
-                }
-            ],
-            "updated_at": "2024-07-16T11:45:34.454Z"
+            "state": "In-progress",
+            "updated_at": "2024-07-16T11:48:49.195Z"
         }
     }
 }
