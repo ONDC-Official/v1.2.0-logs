@@ -1,0 +1,219 @@
+{
+    "context": {
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:080",
+      "action": "on_init",
+      "core_version": "1.2.0",
+      "bap_id": "ondc-preprod.wemotive.in/foodpe",
+      "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
+      "bpp_id": "ref-logistics-app-preprod.ondc.org",
+      "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+      "transaction_id": "43fa57ac-ab20-45de-be5e-08193100cf66",
+      "message_id": "5abd61fc-d7ca-4f92-899f-f80f04afbfa3",
+      "timestamp": "2024-07-16T17:34:56.840Z"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "b08156ed-8983-4c04-a4d8-e03947cbc9e5"
+        },
+        "items": [
+          {
+            "id": "Standard",
+            "fulfillment_id": "a170d695-ecd5-4924-907d-de0693d258d2",
+            "descriptor": {
+              "code": "P2P"
+            },
+            "category_id": "Immediate Delivery",
+            "time": {
+              "label": "TAT",
+              "duration": "PT60M",
+              "timestamp": "2024-07-16"
+            }
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "a170d695-ecd5-4924-907d-de0693d258d2",
+            "type": "Delivery",
+            "start": {
+              "person": {
+                "name": "person_name"
+              },
+              "location": {
+                "gps": "12.453544,77.928379",
+                "address": {
+                  "area_code": "560041"
+                }
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com"
+              },
+              "instructions": {
+                "images": []
+              }
+            },
+            "end": {
+              "person": {
+                "name": "person_name"
+              },
+              "location": {
+                "gps": "12.453544,77.928379",
+                "address": {
+                  "area_code": "560001"
+                }
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com"
+              },
+              "instructions": {
+                "images": []
+              }
+            },
+            "tags": [
+              {
+                "code": "rider_check",
+                "list": [
+                  {
+                    "code": "inline_check_for_rider",
+                    "value": "yes"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "122.38"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "Standard",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "116.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "Standard",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "6.38"
+              }
+            }
+          ],
+          "ttl": "PT15M"
+        },
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/collection_amount": "0",
+          "@ondc/org/settlement_details": []
+        },
+        "cancellation_terms": [
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Pending",
+                "short_desc": ""
+              }
+            },
+            "refund_eligible": true,
+            "reason_required": false,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "0.0"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Agent-assigned",
+                "short_desc": "001,003"
+              }
+            },
+            "refund_eligible": true,
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "50"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Order-picked-up",
+                "short_desc": "001,003"
+              }
+            },
+            "refund_eligible": true,
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "100"
+              }
+            }
+          },
+          {
+            "fulfillment_state": {
+              "descriptor": {
+                "code": "Out-for-delivery",
+                "short_desc": "011,012,013,014,015"
+              }
+            },
+            "refund_eligible": true,
+            "reason_required": true,
+            "cancellation_fee": {
+              "amount": {
+                "currency": "INR",
+                "value": "100.0"
+              }
+            }
+          }
+        ],
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "max_liability",
+                "value": "2"
+              },
+              {
+                "code": "max_liability_cap",
+                "value": "10000"
+              },
+              {
+                "code": "mandatory_arbitration",
+                "value": "false"
+              },
+              {
+                "code": "court_jurisdiction",
+                "value": "Bengaluru"
+              },
+              {
+                "code": "delay_interest",
+                "value": "1000"
+              },
+              {
+                "code": "static_terms",
+                "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
