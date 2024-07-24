@@ -8,37 +8,64 @@
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
     "country": "IND",
-    "timestamp": "2024-07-02T04:52:58.424Z",
-    "message_id": "d38aaa70-c9c3-4565-b70d-508de565aa7b",
+    "timestamp": "2024-07-17T08:45:01.068Z",
+    "message_id": "6cbd2dcc-6d15-4bc2-b77f-3c58ba61f0ce",
     "core_version": "1.2.0",
-    "transaction_id": "97fc4aa2-5947-46b6-9df8-8b1a0c3c25de"
+    "transaction_id": "f287adaf-a8cb-497a-afe4-e08c9bdbfbf9"
   },
   "message": {
     "order": {
-      "id": "2024-07-02-152807",
+      "id": "2024-07-17-116107",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "22ABCTY1234D1Z5" },
+            { "code": "provider_tax_number", "value": "ABCTY1234D" },
+            { "code": "np_type", "value": "MSN" }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "GSTIN1234567890" }]
+        }
+      ],
       "items": [
         {
-          "id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
-          "quantity": { "count": 3 },
-          "fulfillment_id": "0c0e8140-eb8c-4863-9831-c93f24d73729"
+          "id": "3f0a4865-6dbb-4269-8ab3-64f7df9296e6",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "16879ea9-a1f8-4181-98c3-8cd324cfa670"
+        },
+        {
+          "id": "be408aa8-cbe3-4a1c-b934-4b9dd2590b3f",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "16879ea9-a1f8-4181-98c3-8cd324cfa670"
         }
       ],
       "quote": {
-        "ttl": "P1D",
-        "price": { "value": "100.00", "currency": "INR" },
+        "ttl": "PT60S",
+        "price": { "value": "200.00", "currency": "INR" },
         "breakup": [
           {
-            "item": { "price": { "value": "30", "currency": "INR" } },
-            "price": { "value": "90.00", "currency": "INR" },
-            "title": "Surf Excel Bar 250 Gm",
-            "@ondc/org/item_id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+            "item": { "price": { "value": "40.00", "currency": "INR" } },
+            "price": { "value": "80.00", "currency": "INR" },
+            "title": "Nescafe Sunrise Instant Coffee 200Gm",
+            "@ondc/org/item_id": "3f0a4865-6dbb-4269-8ab3-64f7df9296e6",
             "@ondc/org/title_type": "item",
-            "@ondc/org/item_quantity": { "count": 3 }
+            "@ondc/org/item_quantity": { "count": 2 }
+          },
+          {
+            "item": { "price": { "value": "55.00", "currency": "INR" } },
+            "price": { "value": "110.00", "currency": "INR" },
+            "title": "Maggi Noodles Masala 2 Minute 2 - 280 Gm",
+            "@ondc/org/item_id": "be408aa8-cbe3-4a1c-b934-4b9dd2590b3f",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": { "count": 2 }
           },
           {
             "price": { "value": "10.00", "currency": "INR" },
             "title": "Delivery charges",
-            "@ondc/org/item_id": "0c0e8140-eb8c-4863-9831-c93f24d73729",
+            "@ondc/org/item_id": "16879ea9-a1f8-4181-98c3-8cd324cfa670",
             "@ondc/org/title_type": "delivery"
           }
         ]
@@ -57,25 +84,24 @@
           "locality": "HAL Airport Road",
           "area_code": "560037"
         },
-        "created_at": "2024-07-02T04:50:17.099Z",
-        "updated_at": "2024-07-02T04:50:17.299Z"
+        "created_at": "2024-07-17T01:41:47.040Z",
+        "updated_at": "2024-07-17T07:24:34.362Z"
       },
       "payment": {
-        "uri": "https://ondc.transaction.com/payment",
+        "uri": "https://razorpay.com/",
         "type": "ON-ORDER",
         "params": {
-          "amount": "90.00",
+          "amount": "190.00",
           "currency": "INR",
-          "transaction_id": "97fc4aa2-5947-46b6-9df8-8b1a0c3c25de"
+          "transaction_id": "f287adaf-a8cb-497a-afe4-e08c9bdbfbf9"
         },
         "status": "PAID",
+        "tl_method": "http/get",
         "collected_by": "BAP",
         "@ondc/org/settlement_details": [
           {
             "bank_name": "Axis Bank",
-            "settlement_amount": "100.00",
             "branch_name": "Marathahalli",
-            "settlement_timestamp": "2023-06-03T11:00:00.000Z",
             "upi_address": "success@upi",
             "settlement_type": "upi",
             "beneficiary_name": "Alice",
@@ -86,26 +112,27 @@
           }
         ],
         "@ondc/org/buyer_app_finder_fee_type": "percent",
-        "@ondc/org/buyer_app_finder_fee_amount": "3"
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
       },
       "provider": {
         "id": "34bf3b2c-37e3-4539-b494-c88d3107ac54",
         "locations": [{ "id": "f17a9598-6ed7-4fa4-9b13-e0e913d04a30" }]
       },
-      "created_at": "2024-07-02T04:50:17.099Z",
-      "updated_at": "2024-07-02T04:52:58.424Z",
+      "documents": [{ "url": "https://invoice_url", "label": "Invoice" }],
+      "created_at": "2024-07-17T01:41:47.040Z",
+      "updated_at": "2024-07-17T08:45:01.068Z",
       "fulfillments": [
         {
-          "id": "0c0e8140-eb8c-4863-9831-c93f24d73729",
+          "id": "16879ea9-a1f8-4181-98c3-8cd324cfa670",
           "end": {
             "time": {
               "range": {
-                "end": "2024-07-02T06:50:17.299Z",
-                "start": "2024-07-02T04:50:17.299Z"
+                "end": "2024-07-17T03:41:47.240Z",
+                "start": "2024-07-17T01:41:47.240Z"
               }
             },
             "person": { "name": "Bob Alice" },
-            "contact": { "email": "bob@gmail.com", "phone": "7510704054" },
+            "contact": { "email": "bob@gmail.com", "phone": "09874563210" },
             "location": {
               "gps": "12.956864,77.700445",
               "address": {
@@ -123,8 +150,8 @@
           "start": {
             "time": {
               "range": {
-                "end": "2024-07-02T05:50:17.299Z",
-                "start": "2024-07-02T04:50:17.299Z"
+                "end": "2024-07-17T02:41:47.240Z",
+                "start": "2024-07-17T01:41:47.240Z"
               }
             },
             "contact": { "email": "info@snapbizz.com", "phone": "7510704054" },
@@ -134,6 +161,7 @@
               "address": {
                 "city": "Bengaluru",
                 "state": "Karnataka",
+                "street": null,
                 "locality": "HAL Airport Road",
                 "area_code": "560037"
               },
@@ -142,21 +170,25 @@
           },
           "state": { "descriptor": { "code": "Pending" } },
           "tracking": false,
-          "@ondc/org/TAT": "PT60M",
+          "@ondc/org/TAT": "P1D",
           "@ondc/org/provider_name": "V B store"
         },
         {
           "id": "21fba106-de5a-414f-9fe9-fsnapbizzbdb",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
           "tags": [
             {
               "code": "cancel_request",
               "list": [
-                { "code": "retry_count", "value": "2" },
                 {
-                  "code": "rto_id",
-                  "value": "21fba106-de5a-414f-9fe9-fsnapbizzbdb"
+                  "code": "reason_id",
+                  "value": "002"
                 },
-                { "code": "reason_id", "value": "002" },
                 {
                   "code": "initiated_by",
                   "value": "pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz"
@@ -166,18 +198,25 @@
             {
               "code": "quote_trail",
               "list": [
-                { "code": "type", "value": "item" },
+                {
+                  "code": "type",
+                  "value": "item"
+                },
                 {
                   "code": "id",
-                  "value": "32041007-19f4-42dc-8a25-bf153c9e12ae"
+                  "value": "3f0a4865-6dbb-4269-8ab3-64f7df9296e6"
                 },
-                { "code": "currency", "value": "INR" },
-                { "code": "value", "value": "00.00" }
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "00.0"
+                }
               ]
             }
-          ],
-          "type": "Cancel",
-          "state": { "descriptor": { "code": "Cancelled" } }
+          ]
         }
       ]
     }
