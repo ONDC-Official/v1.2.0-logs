@@ -1,0 +1,81 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "update",
+    "core_version": "1.2.0",
+    "bap_id": "backend-preprod.onlyusable.com",
+    "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+    "bpp_id": "ondc-api.kiko.live/ondc-seller-v2",
+    "bpp_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
+    "transaction_id": "07c52e48-c753-44ba-8ed6-0415a8115456",
+    "message_id": "887ec648-eaf4-4ce1-8641-d0e74691a60f",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2024-07-26T06:22:45.253Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": "payment",
+    "order": {
+      "id": "8bb585e5-042d-4181-8303-5beedb51",
+      "fulfillments": [
+        {
+          "id": "Cancelled-8386efd6-8131-469e-9918-1068d09bc29c",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "002"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "ondc-api.kiko.live/ondc-seller-v2"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "669a4b4eb176559e11d3f015"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-600"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer",
+            "settlement_phase": "refund",
+            "settlement_type": "upi",
+            "settlement_amount": "600",
+            "settlement_timestamp": "2024-07-26T06:22:45.253Z"
+          }
+        ]
+      }
+    }
+  }
+}

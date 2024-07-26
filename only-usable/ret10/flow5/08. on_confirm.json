@@ -1,0 +1,228 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "backend-preprod.onlyusable.com",
+    "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+    "bpp_id": "ondc-api.kiko.live/ondc-seller-v2",
+    "bpp_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
+    "transaction_id": "ee21c101-11db-48ed-96b2-e9c2e249dee4",
+    "message_id": "cf100696-7300-4d0f-9f30-772512085315",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2024-07-23T04:23:36.168Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "f5cf69ff-e551-44aa-a74a-c2be2b23",
+      "state": "Created",
+      "provider": {
+        "id": "669a40e751732342e7c14d90",
+        "locations": [
+          {
+            "id": "location-669a40e751732342e7c14d90"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "669a4b4eb176559e11d3f015",
+          "fulfillment_id": "fulfillment-669a40e751732342e7c14d90",
+          "quantity": {
+            "count": 2
+          },
+          "tags": []
+        }
+      ],
+      "billing": {
+        "name": "Banda Shah",
+        "phone": "1232123212",
+        "address": {
+          "name": "Raj-12",
+          "building": "Mahal vila",
+          "locality": "rajya",
+          "city": "desh",
+          "state": "karnataka",
+          "area_code": "560001",
+          "country": "IND"
+        },
+        "created_at": "2024-07-23T04:23:32.262Z",
+        "updated_at": "2024-07-23T04:23:32.262Z"
+      },
+      "fulfillments": [
+        {
+          "id": "fulfillment-669a40e751732342e7c14d90",
+          "@ondc/org/provider_name": "Only Usable store",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "location-669a40e751732342e7c14d90",
+              "gps": "12.95279,77.605534",
+              "descriptor": {
+                "name": "Only Usable store"
+              },
+              "address": {
+                "locality": "43 town west",
+                "city": "Bengaluru Urban",
+                "area_code": "560025",
+                "state": "Karnataka"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-23T04:23:36.168Z",
+                "end": "2024-07-23T22:23:36.168Z"
+              }
+            },
+            "contact": {
+              "phone": "8560026379",
+              "email": "sunil@onlyusable.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.95279,77.605534",
+              "address": {
+                "name": "Raj-12",
+                "building": "Mahal vila",
+                "locality": "rajya",
+                "city": "desh",
+                "state": "karnataka",
+                "area_code": "560001",
+                "country": "IND"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-07-23T22:23:36.168Z",
+                "end": "2024-07-24T04:23:36.168Z"
+              }
+            },
+            "person": {
+              "name": "Raj-12"
+            },
+            "contact": {
+              "phone": "1232123212"
+            }
+          },
+          "@ondc/org/TAT": "PT24H"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "701"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "669a4b4eb176559e11d3f015",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Frooti Drink - Fresh N Juicy Mango, 300 Ml Bottle",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "678.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "339.00"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "fulfillment-669a40e751732342e7c14d90",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "20.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "fulfillment-669a40e751732342e7c14d90",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "3.00"
+            }
+          }
+        ],
+        "ttl": "PT6H"
+      },
+      "payment": {
+        "params": {
+          "currency": "INR",
+          "transaction_id": "some-random",
+          "amount": "701.00"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "1",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P7D",
+        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "upi_address": "",
+            "beneficiary_name": "SMOOTH TAG TECHNOLOGIES PRIVATE LIMITED",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "50200057222741",
+            "settlement_ifsc_code": "HDFC0000015",
+            "settlement_phase": "sale-amount",
+            "bank_name": "HDFC BANK LTD ",
+            "branch_name": "MUMBAI - MULUND WEST (WEST)"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "provider_tax_number",
+              "value": "ABCDE1234D"
+            },
+            {
+              "code": "tax_number",
+              "value": "01ABCDE1234D1Z1"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "tax_number",
+              "value": "08ABCDE1234D6Z2"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-07-23T04:23:33.889Z",
+      "updated_at": "2024-07-23T04:23:36.168Z"
+    }
+  }
+}
