@@ -1,0 +1,86 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+      "action": "on_select",
+      "version": "2.0.2",
+      "bap_id": "dakshdepa.sumasoft.com",
+      "bap_uri": "https://dakshdepa.sumasoft.com",
+      "bpp_id": "preprod.xpressbaazaar.com",
+      "bpp_uri": "https://preprod.xpressbaazaar.com/v1/",
+      "transaction_id": "9568beb3-265a-4730-be4e-c00ba2e5e30a",
+      "message_id": "4e90afaf-2d02-4ed9-9659-45d702a82f8e",
+      "timestamp": "2024-06-13T06:36:10.928Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+          "locations": [{ "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1" }]
+        },
+        "items": [
+          {
+            "id": "61e9f77a-e9fc-44eb-8175-f213013ebdd9",
+            "location_ids": ["da57e18c-9a89-4cac-ac20-9f8f06df4be1"],
+            "fulfillment_ids": ["1"],
+            "quantity": { "selected": { "count": 200 } },
+            "add_ons": [{ "id": "78787723" }],
+            "tags": [
+              {
+                "descriptor": { "code": "BUYER_TERMS" },
+                "list": [
+                  {
+                    "descriptor": { "code": "ITEM_REQ" },
+                    "value": "free text on Item Customization"
+                  },
+                  {
+                    "descriptor": { "code": "PACKAGING_REQ" },
+                    "value": "free text on packaging Customization"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+            "@ondc/org/provider_name": "Freshclub",
+            "@ondc/org/category": "Standard Delivery",
+            "@ondc/org/TAT": "P7D",
+            "tracking": false,
+            "state": { "descriptor": { "code": "Serviceable" } }
+          }
+        ],
+        "quote": {
+          "price": { "currency": "INR", "value": "156550" },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "61e9f77a-e9fc-44eb-8175-f213013ebdd9",
+              "@ondc/org/item_quantity": { "count": 200 },
+              "title": "freshclubproduct1",
+              "@ondc/org/title_type": "item",
+              "price": { "currency": "INR", "value": "156400" },
+              "item": { "price": { "currency": "INR", "value": "782" } }
+            },
+            {
+              "@ondc/org/item_id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": { "currency": "INR", "value": "125" }
+            },
+            {
+              "@ondc/org/item_id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+              "title": "Packing charges",
+              "@ondc/org/title_type": "packing",
+              "price": { "currency": "INR", "value": "25" }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "payments": [{ "type": "ON-FULFILLMENT", "collected_by": "BPP" }]
+      }
+    }
+  }
+  

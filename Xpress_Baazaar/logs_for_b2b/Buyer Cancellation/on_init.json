@@ -1,0 +1,158 @@
+{
+    "context": {
+      "domain": "ONDC:RET10",
+      "location": { "city": { "code": "std:080" }, "country": { "code": "IND" } },
+      "action": "on_init",
+      "version": "2.0.2",
+      "bap_id": "dakshdepa.sumasoft.com",
+      "bap_uri": "https://dakshdepa.sumasoft.com",
+      "bpp_id": "preprod.xpressbaazaar.com",
+      "bpp_uri": "https://preprod.xpressbaazaar.com/v1/",
+      "transaction_id": "9568beb3-265a-4730-be4e-c00ba2e5e30a",
+      "message_id": "582eb99f-a7c1-46ae-8174-936757d2d96f",
+      "timestamp": "2024-06-13T06:37:12.928Z",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "provider": { "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1" },
+        "provider_location": { "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1" },
+        "items": [
+          {
+            "id": "61e9f77a-e9fc-44eb-8175-f213013ebdd9",
+            "fulfillment_ids": ["1"],
+            "quantity": { "selected": { "count": 200 } },
+            "add_ons": [{ "id": "78787723" }],
+            "tags": [
+              {
+                "descriptor": { "code": "BUYER_TERMS" },
+                "list": [
+                  {
+                    "descriptor": { "code": "ITEM_REQ" },
+                    "value": "free text on Item Customization"
+                  },
+                  {
+                    "descriptor": { "code": "PACKAGING_REQ" },
+                    "value": "free text on packaging Customization"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "billing": {
+          "name": "ONDC buyer",
+          "address": "22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001",
+          "state": { "name": "Karnataka" },
+          "city": { "name": "Bengaluru" },
+          "tax_id": "07AAPCA6346P1ZX",
+          "email": "nobody@nomail.com",
+          "phone": "9886098860"
+        },
+        "fulfillments": [
+          {
+            "id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+            "type": "Delivery",
+            "@ondc/org/provider_name": "Freshclub",
+            "@ondc/org/category": "Standard Delivery",
+            "@ondc/org/TAT": "P7D",
+            "tracking": false,
+            "stops": [
+              {
+                "type": "end",
+                "location": {
+                  "gps": "12.974002,77.613458",
+                  "address": "My House #, My buildin",
+                  "city": { "name": "Bengaluru" },
+                  "country": { "code": "IND" },
+                  "area_code": "560001",
+                  "state": { "name": "Karnataka" }
+                },
+                "contact": { "phone": "9886098860" }
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": { "currency": "INR", "value": "156550" },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "61e9f77a-e9fc-44eb-8175-f213013ebdd9",
+              "@ondc/org/item_quantity": { "count": 200 },
+              "title": "freshclubproduct1",
+              "@ondc/org/title_type": "item",
+              "price": { "currency": "INR", "value": "156400" },
+              "item": { "price": { "currency": "INR", "value": "782" } }
+            },
+            {
+              "@ondc/org/item_id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+              "title": "Delivery charges",
+              "@ondc/org/title_type": "delivery",
+              "price": { "currency": "INR", "value": "125" }
+            },
+            {
+              "@ondc/org/item_id": "da57e18c-9a89-4cac-ac20-9f8f06df4be1",
+              "title": "Packing charges",
+              "@ondc/org/title_type": "packing",
+              "price": { "currency": "INR", "value": "25" }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "payments": [
+          {
+            "type": "ON-FULFILLMENT",
+            "collected_by": "BPP",
+            "uri": "https://snp.com/pg",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_window": "P1D",
+            "@ondc/org/withholding_amount": "10.00",
+            "tags": [
+              {
+                "descriptor": { "code": "BPP_payment" },
+                "list": [
+                  {
+                    "descriptor": { "code": "signature" },
+                    "value": "xxxxxxxxxxxxxx"
+                  },
+                  { "descriptor": { "code": "dsa" }, "value": "ED25519" },
+                  { "descriptor": { "code": "ttl" }, "value": "PT30M" }
+                ]
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "descriptor": { "code": "buyer_id" },
+            "list": [
+              { "descriptor": { "code": "buyer_id_code" }, "value": "gst" },
+              {
+                "descriptor": { "code": "buyer_id_no" },
+                "value": "xxxxxxxxxxxxxxx"
+              }
+            ]
+          },
+          {
+            "descriptor": { "code": "bpp_terms" },
+            "list": [
+              { "descriptor": { "code": "max_liability" }, "value": "2" },
+              { "descriptor": { "code": "max_liability_cap" }, "value": "10000" },
+              {
+                "descriptor": { "code": "mandatory_arbitration" },
+                "value": "false"
+              },
+              {
+                "descriptor": { "code": "court_jurisdiction" },
+                "value": "Bengaluru"
+              },
+              { "descriptor": { "code": "delay_interest" }, "value": "1000" }
+            ]
+          }
+        ]
+      }
+    }
+  }
+  
