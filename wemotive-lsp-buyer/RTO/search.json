@@ -1,84 +1,83 @@
 {
-    "context": {
-      "domain": "nic2004:60232",
-      "country": "IND",
-      "city": "std:080",
-      "action": "search",
-      "core_version": "1.2.0",
-      "bap_id": "ondc-preprod.wemotive.in/foodpe",
-      "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
-      "transaction_id": "43fa57ac-ab20-45de-be5e-08193100cf66",
-      "message_id": "5abd61fc-d7ca-4f92-899f-f80f04afbfa3",
-      "timestamp": "2024-07-16T17:34:54.053Z",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "intent": {
-        "category": {
-          "id": "Immediate Delivery"
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "search",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-preprod.wemotive.in/foodpe",
+    "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
+    "transaction_id": "645b34a1-2cdf-46f7-91a0-85ebf1c24be9",
+    "message_id": "5c74ebd4-924b-4226-8822-63f23fb972ce",
+    "timestamp": "2024-07-26T07:49:48.925Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "id": "Immediate Delivery"
+      },
+      "payment": {
+        "type": "ON-ORDER"
+      },
+      "@ondc/org/payload_details": {
+        "weight": {
+          "unit": "kilogram",
+          "value": 1
         },
-        "provider": {
-          "time": {
-            "days": "1,2,3,4,5,6,7",
-            "schedule": {
-              "holidays": []
-            },
-            "duration": "PT30M",
-            "range": {
-              "start": "1100",
-              "end": "2200"
-            }
-          }
+        "value": {
+          "currency": "INR",
+          "value": "300.00"
         },
-        "fulfillment": {
-          "type": "Delivery",
-          "start": {
-            "location": {
-              "gps": "12.453544,77.928379",
-              "address": {
-                "area_code": "560041"
-              }
-            }
-          },
-          "end": {
-            "location": {
-              "gps": "12.453544,77.928379",
-              "address": {
-                "area_code": "560001"
-              }
-            }
-          }
-        },
-        "payment": {
-          "type": "POST-FULFILLMENT",
-          "@ondc/org/collection_amount": "100"
-        },
-        "@ondc/org/payload_details": {
-          "weight": {
-            "unit": "kilogram",
+        "dimensions": {
+          "length": {
+            "unit": "centimeter",
             "value": 1
           },
-          "dimensions": {
-            "length": {
-              "unit": "centimeter",
-              "value": 1
-            },
-            "breadth": {
-              "unit": "centimeter",
-              "value": 1
-            },
-            "height": {
-              "unit": "centimeter",
-              "value": 1
+          "breadth": {
+            "unit": "centimeter",
+            "value": 1
+          },
+          "height": {
+            "unit": "centimeter",
+            "value": 1
+          }
+        },
+        "category": "Grocery",
+        "dangerous_goods": false
+      },
+      "fulfillment": {
+        "type": "Delivery",
+        "start": {
+          "location": {
+            "gps": "12.9166912, 77.6478293",
+            "address": {
+              "area_code": "560102"
             }
+          }
+        },
+        "end": {
+          "location": {
+            "gps": "12.9180305, 77.6372603",
+            "address": {
+              "area_code": "560102"
+            }
+          }
+        }
+      },
+      "provider": {
+        "time": {
+          "days": "1,2,3,4,5,6,7",
+          "range": {
+            "start": "0700",
+            "end": "2355"
           },
-          "category": "Grocery",
-          "value": {
-            "currency": "INR",
-            "value": "300.00"
+          "schedule": {
+            "holidays": []
           },
-          "dangerous_goods": false
+          "duration": "PT15M"
         }
       }
     }
   }
+}
