@@ -1,1 +1,1 @@
-All 6 flows logs of Ret:10 is submitted by Buynxt Pvt ltd(subscriber_id: api.greenreceipt.in) named RET 10 folder.
+RET10 Flow 1 logs are resubmitted after corrections in updated folder RET10_updated_25_07_24.
