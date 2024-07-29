@@ -1,237 +1,177 @@
 {
-   "context": {
-       "domain": "ONDC:RET16",
-       "country": "IND",
-       "city": "std:011",
-       "action": "on_init",
-       "core_version": "1.2.0",
-       "bap_id": "buyer-app-preprod-v2.ondc.org",
-       "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-       "bpp_uri": "https://bridge.sellersetu.in/ondc",
-       "transaction_id": "282d5675-09ac-4804-a419-c5545fa94cf2",
-       "message_id": "3220524b-d532-4a6b-b57c-18a68352f140",
-       "timestamp": "2024-05-07T03:50:14.762Z",
-       "bpp_id": "bridge.sellersetu.in"
-   },
-   "message": {
-       "order": {
-           "provider": {
-               "id": "d4665463-7965-414e-a9be-aaf702899e45",
-               "locations": [
-                   {
-                       "id": "7d3eb924-419f-4edf-8ccc-61775ca4af81"
-                   }
-               ]
-           },
-           "items": [
-               {
-                   "id": "ed0b0ab8-81b2-4362-be27-ca0bdc6690df",
-                   "quantity": {
-                       "count": 2
-                   },
-                   "location_id": "7d3eb924-419f-4edf-8ccc-61775ca4af81",
-                   "fulfillment_id": "MP2"
-               },
-               {
-                   "id": "f0f8eea0-6506-46f5-8dda-dce3075052d8",
-                   "quantity": {
-                       "count": 2
-                   },
-                   "location_id": "7d3eb924-419f-4edf-8ccc-61775ca4af81",
-                   "fulfillment_id": "MP2"
-               }
-           ],
-           "billing": {
-               "address": {
-                   "building": "A-1818",
-                   "city": "New Delhi",
-                   "state": "Delhi",
-                   "country": "IND",
-                   "area_code": "110041",
-                   "locality": "Gali Number 4",
-                   "name": "Ikshan Bhardwaj"
-               },
-               "phone": "8882160205",
-               "name": "Ikshan Bhardwaj",
-               "email": "ikshan090@gmail.com",
-               "created_at": "2024-05-07T03:50:14.464Z",
-               "updated_at": "2024-05-07T03:50:14.464Z"
-           },
-           "fulfillments": [
-               {
-                   "id": "MP2",
-                   "type": "Delivery",
-                   "end": {
-                       "contact": {
-                           "email": "ikshan090@gmail.com",
-                           "phone": "8882160205"
-                       },
-                       "location": {
-                           "gps": "28.679077,77.069709",
-                           "address": {
-                               "building": "A-1818",
-                               "city": "New Delhi",
-                               "state": "Delhi",
-                               "country": "IND",
-                               "area_code": "110041",
-                               "locality": "Gali Number 4",
-                               "name": "Ikshan Bhardwaj"
-                           }
-                       }
-                   },
-                   "tracking": false
-               }
-           ],
-           "quote": {
-               "breakup": [
-                   {
-                       "@ondc/org/item_id": "ed0b0ab8-81b2-4362-be27-ca0bdc6690df",
-                       "@ondc/org/item_quantity": {
-                           "count": 2
-                       },
-                       "title": "Sofa",
-                       "@ondc/org/title_type": "item",
-                       "price": {
-                           "currency": "INR",
-                           "value": "1198.0"
-                       },
-                       "item": {
-                           "price": {
-                               "currency": "INR",
-                               "value": "599.0"
-                           }
-                       }
-                   },
-                   {
-                       "@ondc/org/item_id": "f0f8eea0-6506-46f5-8dda-dce3075052d8",
-                       "@ondc/org/item_quantity": {
-                           "count": 2
-                       },
-                       "title": "Coffee Table",
-                       "@ondc/org/title_type": "item",
-                       "price": {
-                           "currency": "INR",
-                           "value": "798.0"
-                       },
-                       "item": {
-                           "price": {
-                               "currency": "INR",
-                               "value": "399.0"
-                           }
-                       }
-                   },
-                   {
-                       "@ondc/org/item_id": "MP2",
-                       "title": "Delivery charges",
-                       "@ondc/org/title_type": "delivery",
-                       "price": {
-                           "currency": "INR",
-                           "value": "2.0"
-                       }
-                   }
-               ],
-               "ttl": "P1D",
-               "price": {
-                   "currency": "INR",
-                   "value": "1998.0"
-               }
-           },
-           "payment": {
-               "type": "ON-FULFILLMENT",
-               "collected_by": "BPP",
-               "uri": "https://snp.com/pg",
-               "status": "NOT-PAID",
-               "@ondc/org/buyer_app_finder_fee_type": "percent",
-               "@ondc/org/buyer_app_finder_fee_amount": "3",
-               "@ondc/org/settlement_basis": "delivery",
-               "@ondc/org/settlement_window": "P1D",
-               "@ondc/org/withholding_amount": "10.00",
-               "tags": [],
-               "@ondc/org/settlement_details": [
-                   {
-                       "settlement_counterparty": "seller-app",
-                       "settlement_phase": "sale-amount",
-                       "settlement_type": "upi",
-                       "beneficiary_name": "SellerSetu Pvt. Ltd",
-                       "upi_address": "xyz@abc",
-                       "settlement_bank_account_no": "123654789",
-                       "settlement_ifsc_code": "123654789",
-                       "bank_name": "ABC BANK",
-                       "branch_name": "XYZ"
-                   }
-               ]
-           },
-           "cancellation_terms": [
-               {
-                   "fulfillment_state": {
-                       "descriptor": {
-                           "code": "Pending",
-                           "short_desc": "002,005,007"
-                       }
-                   },
-                   "cancellation_fee": {
-                       "percentage": "0.00",
-                       "amount": {
-                           "currency": "INR",
-                           "value": "0.00"
-                       }
-                   }
-               },
-               {
-                   "fulfillment_state": {
-                       "descriptor": {
-                           "code": "Packed",
-                           "short_desc": "005,007"
-                       }
-                   },
-                   "cancellation_fee": {
-                       "percentage": "0.00",
-                       "amount": {
-                           "currency": "INR",
-                           "value": "0.00"
-                       }
-                   }
-               }
-           ],
-           "tags": [
-               {
-                   "code": "bpp_terms",
-                   "list": [
-                       {
-                           "code": "max_liability",
-                           "value": "2"
-                       },
-                       {
-                           "code": "max_liability_cap",
-                           "value": "10000.00"
-                       },
-                       {
-                           "code": "mandatory_arbitration",
-                           "value": "false"
-                       },
-                       {
-                           "code": "np_type",
-                           "value": "MSN"
-                       },
-                       {
-                           "code": "court_jurisdiction",
-                           "value": "Mumbai"
-                       },
-                       {
-                           "code": "delay_interest",
-                           "value": "1000.00"
-                       },
-                       {
-                           "code": "tax_number",
-                           "value": "27ABLCS3119B1ZJ"
-                       },
-                       {
-                           "code": "provider_tax_number",
-                           "value": "GDRPB6059N"
-                       }
-                   ]
-               }
-           ]
-       }
-   }
+    "context": {
+        "domain": "ONDC:RET16",
+        "country": "IND",
+        "city": "std:0124",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://bridge.sellersetu.in/ondc",
+        "transaction_id": "304b9507-39fc-4a42-af70-1a31dcbca0e7",
+        "message_id": "440962ae-43ae-4ec2-8e05-e8a2d2f1e73f",
+        "timestamp": "2024-07-20T09:46:24.561Z",
+        "bpp_id": "bridge.sellersetu.in"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+                "locations": [
+                    {
+                        "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "b697adce-d184-4720-a79d-d1caa50171db",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                    "fulfillment_id": "mp2_sdd_f1"
+                },
+                {
+                    "id": "9ce01b4a-82db-4ac6-8b05-dd495046ce12",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                    "fulfillment_id": "mp2_sdd_f1"
+                }
+            ],
+            "billing": {
+                "address": {
+                    "building": "street",
+                    "city": "Gurugram",
+                    "state": "Haryana",
+                    "country": "IND",
+                    "area_code": "122001",
+                    "locality": "Khandsa Marg",
+                    "name": "Chaitanya Keyal"
+                },
+                "phone": "9148043218",
+                "name": "Chaitanya Keyal",
+                "email": "chaitanya@sellersetu.in",
+                "created_at": "2024-07-20T09:46:22.153Z",
+                "updated_at": "2024-07-20T09:46:22.153Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "mp2_sdd_f1",
+                    "type": "Delivery",
+                    "end": {
+                        "contact": {
+                            "email": "chaitanya@sellersetu.in",
+                            "phone": "9148043218"
+                        },
+                        "location": {
+                            "gps": "28.455714,77.022169",
+                            "address": {
+                                "building": "street",
+                                "city": "Gurugram",
+                                "state": "Haryana",
+                                "country": "IND",
+                                "area_code": "122001",
+                                "locality": "Khandsa Marg",
+                                "name": "Chaitanya Keyal"
+                            }
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Armchair",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1598.0"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "799.0"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "9ce01b4a-82db-4ac6-8b05-dd495046ce12",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Office Chair",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "398.0"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "199.0"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_sdd_f1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "25.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D",
+                "price": {
+                    "currency": "INR",
+                    "value": "2021.0"
+                }
+            },
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "SellerSetu Pvt. Ltd",
+                        "upi_address": "xyz@abc",
+                        "settlement_bank_account_no": "123654789",
+                        "settlement_ifsc_code": "123654789",
+                        "bank_name": "ABC BANK",
+                        "branch_name": "XYZ"
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "27ABLCS3119B1ZJ"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "GDRPB6059N"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }

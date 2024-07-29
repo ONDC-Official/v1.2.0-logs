@@ -1,0 +1,219 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-preprod.wemotive.in/foodpe",
+    "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
+    "bpp_id": "ref-logistics-app-preprod.ondc.org",
+    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+    "transaction_id": "645b34a1-2cdf-46f7-91a0-85ebf1c24be9",
+    "message_id": "7a645090-3a8d-43f4-a6df-d4a4e6854ec6",
+    "timestamp": "2024-07-26T07:49:51.777Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "1219c6fc-3b61-47fc-9cd8-722b8469aab2"
+      },
+      "items": [
+        {
+          "id": "Standard",
+          "fulfillment_id": "11264671-ed5b-439e-ab6a-f1a7f77b5968",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Immediate Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "11264671-ed5b-439e-ab6a-f1a7f77b5968",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.9166912, 77.6478293",
+              "address": {
+                "name": "My store name",
+                "building": "My building name",
+                "locality": "My street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560102"
+              }
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "abcd.efgh@gmail.com"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.9180305, 77.6372603",
+              "address": {
+                "name": "My store name",
+                "building": "My building name",
+                "locality": "My street name",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560102"
+              }
+            },
+            "contact": {
+              "phone": "9886098861",
+              "email": "abcd.efghj@gmail.com"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "122.38"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "116.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.38"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": []
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
