@@ -9,46 +9,14 @@
     "bap_uri": "https://logistics-qa.trafyn.site/logistics/ondc",
     "bpp_id": "ondc-preprod-lsp.olacabs.com",
     "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
-    "transaction_id": "trans_25-07-2024-01234",
-    "message_id": "39593b84-1f7d-4108-b058-f109b239e55d",
-    "timestamp": "2024-07-24T08:53:18.393Z"
+    "transaction_id": "trans_010824",
+    "message_id": "3f826d37-913b-4305-a1c0-2e4af5616c07",
+    "timestamp": "2024-08-01T07:03:23.831Z"
   },
   "message": {
     "order": {
-      "provider": {
-        "id": "OLA"
-      },
-      "items": [
-        {
-          "id": "ola_express",
-          "fulfillment_id": "ola_express_f1"
-        }
-      ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "30.0"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "ola_express",
-            "@ondc/org/title_type": "delivery",
-            "price": {
-              "currency": "INR",
-              "value": "30.0"
-            }
-          },
-          {
-            "@ondc/org/item_id": "ola_express",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "0"
-            }
-          }
-        ],
-        "ttl": "PT15M"
-      },
+      "provider": { "id": "OLA" },
+      "items": [{ "id": "ola_express","fulfillment_id": "ola_express_f1" }],
       "fulfillments": [
         {
           "id": "ola_express_f1",
@@ -84,13 +52,32 @@
                 "area_code": "560102"
               }
             },
-            "contact": {
-              "phone": "8498996168",
-              "email": "harshit.pandey@ninjacart.com"
+            "contact": { "phone": "8498996168","email": "harshit.pandey@ninjacart.com"}
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
             }
-          }
+          ]
         }
       ],
+      "quote": {
+        "price": { "currency": "INR", "value": "30.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "30.0" }
+          },
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "0" }
+          }
+        ],
+        "ttl": "PT15M"
+      },
       "payment": {
         "type": "POST-FULFILLMENT",
         "collected_by": "BAP",
