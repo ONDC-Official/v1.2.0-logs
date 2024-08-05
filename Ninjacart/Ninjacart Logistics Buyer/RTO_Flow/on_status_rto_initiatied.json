@@ -3,26 +3,46 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_update",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "logistics-qa.trafyn.site",
     "bap_uri": "https://logistics-qa.trafyn.site/logistics/ondc",
     "bpp_id": "ondc-preprod-lsp.olacabs.com",
     "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
-    "transaction_id": "trans_010824",
-    "message_id": "746c4040-8aad-42a9-99eb-63f9b16e462b",
-    "timestamp": "2024-08-01T07:04:12.580Z"
+    "transaction_id": "trans_2024-07-30-abc",
+    "message_id": "bbf65d2c-b8e8-4ee0-ad7b-02173a074e73",
+    "timestamp": "2024-07-31T07:49:05.988Z"
   },
   "message": {
     "order": {
-      "id": "010824",
-      "state": "In-progress",
+      "id": "20240730abc",
+      "state": "Cancelled",
       "provider": { "id": "OLA" },
+      "cancellation": {
+        "cancelled_by": "ondc-preprod-lsp.olacabs.com",
+        "reason": { "id": "017" }
+      },
       "items": [
         {
           "id": "ola_express",
           "category_id": "Immediate Delivery",
-          "fulfillment_id":"ola_express_f1",
+          "fulfillment_id": "ola_express_f1",
+          "descriptor": {
+            "name": "OLA",
+            "code": "P2P",
+            "short_desc": "OLA",
+            "long_desc": "OLA"
+          },
+          "time": {
+            "label": "TAT",
+            "timestamp": "2024-07-30",
+            "duration": "PT55M"
+          }
+        },
+        {
+          "id": "ola_express-RTO",
+          "category_id": "Immediate Delivery",
+          "fulfillment_id": "ola_express_f1-RTO",
           "descriptor": { "code": "P2P" }
         }
       ],
@@ -40,41 +60,43 @@
         "email": "ondc-support@ninjacart.com",
         "phone": "6366426208",
         "tax_number": "123456789012345",
-        "created_at": "2024-08-01T07:03:23.643Z",
-        "updated_at": "2024-08-01T07:03:23.643Z"
+        "created_at": "2024-07-30T16:35:21.827Z",
+        "updated_at": "2024-07-30T16:35:21.827Z"
       },
       "fulfillments": [
         {
-          "id": "299051d6-89fd-4fde-9499-620b14413909",
+          "id": "ola_express_f1",
           "type": "Delivery",
-          "state": { "descriptor": { "code": "Searching-for-Agent" } },
-          "tracking": true,
+          "state": { "descriptor": { "code": "Cancelled" } },
+          "tracking": false,
+          "agent": { "name": "Abdul", "phone": "8197484037" },
           "start": {
             "location": {
-              "gps": "12.909999,77.654784",
+              "gps": "12.91729515,77.64905127",
               "address": {
                 "name": "Chopserve - HSR Layout",
-                "building": "1216-1217, 24th Main Rd",
-                "locality": "1216-1217, 24th Main Rd,1st Sector",
-                "city": " Vanganahalli",
+                "building": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+                "locality": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+                "city": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
                 "state": "Karnataka",
                 "country": "IND",
                 "area_code": "560102"
               }
             },
             "time": {
+              "timestamp": "2024-07-30T11:35:57.106Z",
               "range": {
-                "start": "2024-08-01T07:04:12.580Z",
-                "end": "2024-08-01T07:24:12.580Z"
+                "start": "2024-07-31T06:19:47.703Z",
+                "end": "2024-07-31T06:39:47.703Z"
               }
             },
-            "instructions": { "code": "2", "short_desc": "010824" },
-            "contact": { "phone": "7395935123","email": "harshit.pandey@ninjacart.com"},
+            "instructions": { "images": ["123"] },
+            "contact": { "phone": "7395935123" },
             "person": { "name": "Chopserve - HSR Layout" }
           },
           "end": {
             "location": {
-              "gps": "12.909080,77.642252",
+              "gps": "12.91729715,77.64905927",
               "address": {
                 "name": "Vijay Kumar",
                 "building": "Sai Krishna residency",
@@ -82,23 +104,50 @@
                 "city": "Bengaluru",
                 "state": "Karnataka",
                 "country": "IND",
-                "area_code": "560102"
+                "area_code": "560103"
               }
             },
             "time": {
               "range": {
-                "start": "2024-08-01T07:24:12.580Z",
-                "end": "2024-08-01T07:39:12.580Z"
+                "start": "2024-07-31T06:39:47.703Z",
+                "end": "2024-07-31T06:54:47.703Z"
               }
             },
             "instructions": { "code": "3" },
-            "contact": { "phone": "8498996168","email": "harshit.pandey@ninjacart.com" },
+            "contact": { "phone": "8498996168" },
             "person": { "name": "Vijay Kumar" }
+          },
+          "tags": [
+            {
+              "code": "tracking",
+              "list": [
+                { "code": "gps_enabled", "value": "yes" },
+                { "code": "url_enabled", "value": "yes" },
+                {
+                  "code": "url",
+                  "value": "https://webapps.stg.corp.olacabs.com/1----1-m_i98"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ola_express_f1-RTO",
+          "type": "RTO",
+          "state": { "descriptor": { "code": "RTO-Initiated" } },
+          "start": {
+            "time": {
+              "timestamp": "2024-07-30T11:37:38.203Z",
+              "range": {
+                "start": "2024-07-30T11:37:38.203Z",
+                "end": "2024-07-30T12:32:38.203Z"
+              }
+            }
           }
         }
       ],
       "quote": {
-        "price": { "currency": "INR", "value": "30.0" },
+        "price": { "currency": "INR", "value": "60.0" },
         "breakup": [
           {
             "@ondc/org/item_id": "ola_express",
@@ -109,11 +158,17 @@
             "@ondc/org/item_id": "ola_express",
             "@ondc/org/title_type": "tax",
             "price": { "currency": "INR", "value": "0" }
+          },
+          {
+            "@ondc/org/title_type": "rto",
+            "title": "ola_express",
+            "price": { "currency": "INR", "value": "30" }
           }
         ]
       },
       "payment": {
         "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID",
         "collected_by": "BAP",
         "@ondc/org/settlement_details": [
           {
@@ -125,8 +180,8 @@
           }
         ]
       },
-      "created_at": "2024-08-01T07:03:24.656Z",
-      "updated_at": "2024-08-01T07:04:12.580Z",
+      "created_at": "2024-07-30T16:35:21.827Z",
+      "updated_at": "2024-07-31T06:19:47.704Z",
       "@ondc/org/linked_order": {
         "items": [
           {
@@ -143,15 +198,15 @@
           "descriptor": { "name": "Chopserve - HSR Layout" },
           "address": {
             "name": "Chopserve - HSR Layout",
-            "building": "1216-1217, 24th Main Rd",
-            "locality": "1216-1217, 24th Main Rd,1st Sector",
-            "city": " Vanganahalli",
+            "building": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+            "locality": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+            "city": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
             "state": "Karnataka",
             "area_code": "560102"
           }
         },
         "order": {
-          "id": "010824",
+          "id": "2024-07-30-abc",
           "weight": { "value": 0.5, "unit": "kilogram" }
         }
       }
