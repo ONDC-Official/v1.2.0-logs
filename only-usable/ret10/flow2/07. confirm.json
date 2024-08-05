@@ -1,0 +1,184 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "backend-preprod.onlyusable.com",
+    "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+    "bpp_id": "bridge.sellersetu.in",
+    "bpp_uri": "https://bridge.sellersetu.in/ondc",
+    "transaction_id": "623b8b79-967e-4b84-8643-6ff6145f6c89",
+    "message_id": "0a62ef44-70c2-4cbd-8482-34454641f5ed",
+    "city": "std:0124",
+    "country": "IND",
+    "timestamp": "2024-08-02T11:18:08.415Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "e7b84530-b856-4c0a-9589-f11b7ad7",
+      "state": "Created",
+      "provider": {
+        "id": "9b10cd88-ac64-4410-b5f4-9880cfa369af",
+        "locations": [
+          {
+            "id": "3bffe214-874f-4ac7-bb33-3b2e274311f3"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "7b5c5822-7bb8-48a8-9e4a-691252aa28f1",
+          "parent_item_id": "",
+          "location_id": "3bffe214-874f-4ac7-bb33-3b2e274311f3",
+          "quantity": {
+            "count": 2
+          },
+          "tags": [],
+          "fulfillment_id": "mp2_sdd_f1"
+        }
+      ],
+      "billing": {
+        "name": "Banda Shah",
+        "phone": "1232123212",
+        "email": "buyer@gmail.com",
+        "address": {
+          "name": "Raj-12",
+          "building": "Mahal vila",
+          "locality": "rajya",
+          "city": "desh",
+          "state": "Karnataka",
+          "area_code": "122001",
+          "country": "IND"
+        },
+        "created_at": "2024-08-02T11:18:06.136Z",
+        "updated_at": "2024-08-02T11:18:06.136Z"
+      },
+      "fulfillments": [
+        {
+          "id": "mp2_sdd_f1",
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "PT55M",
+          "end": {
+            "person": {
+              "name": "Banda Shah"
+            },
+            "contact": {
+              "phone": "1232123212",
+              "email": "buyer@gmail.com"
+            },
+            "location": {
+              "gps": "28.460123,77.026351",
+              "address": {
+                "name": "Raj-12",
+                "building": "Mahal vila",
+                "locality": "rajya",
+                "city": "desh",
+                "state": "Karnataka",
+                "area_code": "122001",
+                "country": "IND"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "7b5c5822-7bb8-48a8-9e4a-691252aa28f1",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Ground Cumin",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "300.0"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "150.0"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_sdd_f1",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "25.0"
+            }
+          }
+        ],
+        "ttl": "P1D",
+        "price": {
+          "currency": "INR",
+          "value": "325.0"
+        }
+      },
+      "payment": {
+        "params": {
+          "currency": "INR",
+          "transaction_id": "some-random",
+          "amount": "325.0"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "1",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "Sellersetu",
+            "upi_address": "myupi@upi",
+            "settlement_bank_account_no": "123654789",
+            "settlement_ifsc_code": "123654789",
+            "bank_name": "Test Bank",
+            "branch_name": "Test Bank"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "27ABLCS3119B1ZJ"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "GDRPB6059N"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "tax_number",
+              "value": "08ABCDE1234D6Z2"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-08-02T11:18:08.415Z",
+      "updated_at": "2024-08-02T11:18:08.415Z"
+    }
+  }
+}
