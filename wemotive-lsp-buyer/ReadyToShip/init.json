@@ -3,15 +3,16 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_init",
+        "action": "init",
         "core_version": "1.2.0",
         "bap_id": "ondc-preprod.wemotive.in/foodpe",
         "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-        "transaction_id": "3fe85522-5905-463c-a075-7b7b2eff34d6",
-        "message_id": "c955e8cf-163a-422b-b79e-ac0797bb1087",
-        "timestamp": "2024-08-08T05:55:10.342Z"
+        "transaction_id": "64b86443-d68f-4eed-b4a8-5c9021fab496",
+        "message_id": "ae1e2ea4-9fba-4d7c-9bbb-b00b188568f7",
+        "timestamp": "2024-08-08T08:06:17.169Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
@@ -20,8 +21,12 @@
             },
             "items": [
                 {
-                    "id": "mp2_immediate",
-                    "fulfillment_id": "mp2_immediate_f1"
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "id": "mp2_immediate"
                 }
             ],
             "fulfillments": [
@@ -63,48 +68,29 @@
                             "phone": "9886098861",
                             "email": "abcd.efghj@gmail.com"
                         }
-                    },
-                    "tags": [
-                        {
-                            "code": "rider_check",
-                            "list": [
-                                {
-                                    "code": "inline_check_for_rider",
-                                    "value": "yes"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
+            "billing": {
+                "name": "FoodPe",
+                "address": {
+                    "name": "Estancia",
+                    "building": "Estancia IT Park",
+                    "locality": "Guduvanchery",
+                    "city": "Chennai",
+                    "state": "Tamil Nadu",
+                    "country": "IND",
+                    "area_code": "600103"
+                },
+                "tax_number": "27AACCW9208K1ZX",
+                "phone": "9886098810",
+                "email": "abcd.efgh@gmail.com",
+                "created_at": "2024-08-08T08:06:17.169Z",
+                "updated_at": "2024-08-08T08:06:17.169Z"
+            },
             "payment": {
                 "type": "POST-FULFILLMENT",
                 "collected_by": "BAP"
-            },
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "25.0"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "mp2_immediate",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "21.19"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "mp2_immediate",
-                        "@ondc/org/title_type": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "3.81"
-                        }
-                    }
-                ],
-                "ttl": "PT15M"
             }
         }
     }
