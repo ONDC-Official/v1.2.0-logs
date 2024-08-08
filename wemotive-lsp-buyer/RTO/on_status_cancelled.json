@@ -3,20 +3,20 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:080",
-        "action": "on_confirm",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "ondc-preprod.wemotive.in/foodpe",
         "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
         "bpp_id": "preprod.logistics-seller.mp2.in",
         "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-        "transaction_id": "10624eb5-b36c-4170-a5b9-578eb80834b1",
-        "message_id": "4b1dd035-ed0c-4809-a197-c2512ef06337",
-        "timestamp": "2024-08-08T06:22:34.737Z"
+        "transaction_id": "3fe85522-5905-463c-a075-7b7b2eff34d6",
+        "message_id": "msg_uue5v3whpl55woh7",
+        "timestamp": "2024-08-08T06:00:25.416Z"
     },
     "message": {
         "order": {
-            "id": "8858-4106-2159999",
-            "state": "Accepted",
+            "id": "8858-4106-2458999",
+            "state": "Cancelled",
             "provider": {
                 "id": "MP2"
             },
@@ -24,6 +24,19 @@
                 {
                     "id": "mp2_immediate",
                     "fulfillment_id": "mp2_immediate_f1",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT55M",
+                        "timestamp": "2024-08-08"
+                    }
+                },
+                {
+                    "id": "mp2_immediate-RTO",
+                    "fulfillment_id": "mp2_immediate_f1-RTO",
                     "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
@@ -56,6 +69,22 @@
                             "currency": "INR",
                             "value": "3.81"
                         }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_immediate-RTO",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_immediate-RTO",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
                     }
                 ]
             },
@@ -65,12 +94,17 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Cancelled"
                         }
                     },
                     "start": {
                         "time": {
-                            "duration": "PT20M"
+                            "range": {
+                                "start": "2024-08-08T05:55:12.257Z",
+                                "end": "2024-08-08T06:15:12.257Z"
+                            },
+                            "duration": "PT20M",
+                            "timestamp": "2024-08-08T05:59:14.467Z"
                         },
                         "person": {
                             "name": "Raju"
@@ -90,6 +124,18 @@
                         "contact": {
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "123ABC",
+                            "long_desc": "additional instructions for pickup",
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://reverse_qc_sop_form.htm"
+                            },
+                            "images": [
+                                "https://s3.amazonaws.com/mp2-lsp/image1.png"
+                            ]
                         }
                     },
                     "end": {
@@ -111,40 +157,97 @@
                         "contact": {
                             "phone": "9886098861",
                             "email": "abcd.efghj@gmail.com"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-08-08T06:15:12.257Z",
+                                "end": "2024-08-08T06:50:12.257Z"
+                            }
                         }
                     },
+                    "tracking": false,
                     "tags": [
                         {
-                            "code": "weather_check",
+                            "code": "tracking",
                             "list": [
                                 {
-                                    "code": "raining",
-                                    "value": "no"
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://track.mp2.in/r/8858-4106-2458999"
                                 }
                             ]
                         },
                         {
-                            "code": "state",
+                            "code": "precancel_state",
                             "list": [
                                 {
-                                    "code": "ready_to_ship",
-                                    "value": "no"
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-08-08T05:59:14.467Z"
                                 }
                             ]
                         },
                         {
-                            "code": "rto_action",
+                            "code": "rto_event",
                             "list": [
                                 {
-                                    "code": "return_to_origin",
-                                    "value": "no"
+                                    "code": "retry_count",
+                                    "value": "0"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "mp2_immediate_f1-RTO"
+                                },
+                                {
+                                    "code": "cancellation_reason_id",
+                                    "value": "015"
+                                },
+                                {
+                                    "code": "cancelled_by",
+                                    "value": "preprod.logistics-seller.mp2.in"
+                                },
+                                {
+                                    "code": "sub_reason_id",
+                                    "value": ""
                                 }
                             ]
                         }
-                    ],
-                    "tracking": true
+                    ]
+                },
+                {
+                    "id": "mp2_immediate_f1-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Disposed"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2024-08-08T05:59:44.632Z",
+                                "end": "2024-08-08T06:54:44.632Z"
+                            },
+                            "timestamp": "2024-08-08T05:59:44.632Z"
+                        }
+                    }
                 }
             ],
+            "payment": {
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT",
+                "status": "NOT-PAID"
+            },
             "billing": {
                 "name": "FoodPe",
                 "address": {
@@ -159,12 +262,8 @@
                 "tax_number": "27AACCW9208K1ZX",
                 "phone": "9886098810",
                 "email": "abcd.efgh@gmail.com",
-                "created_at": "2024-08-08T06:22:24.866Z",
-                "updated_at": "2024-08-08T06:22:24.866Z"
-            },
-            "payment": {
-                "collected_by": "BAP",
-                "type": "POST-FULFILLMENT"
+                "created_at": "2024-08-08T05:55:00.952Z",
+                "updated_at": "2024-08-08T05:55:00.952Z"
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -200,7 +299,7 @@
                     }
                 },
                 "order": {
-                    "id": "8858-4106-2159999",
+                    "id": "8858-4106-2458999",
                     "weight": {
                         "unit": "kilogram",
                         "value": 1
@@ -221,8 +320,14 @@
                     }
                 }
             },
-            "created_at": "2024-08-08T06:22:34.309Z",
-            "updated_at": "2024-08-08T06:22:34.737Z"
+            "updated_at": "2024-08-08T06:00:25.392Z",
+            "created_at": "2024-08-08T05:55:12.257Z",
+            "cancellation": {
+                "cancelled_by": "preprod.logistics-seller.mp2.in",
+                "reason": {
+                    "id": "015"
+                }
+            }
         }
     }
-}   
+}

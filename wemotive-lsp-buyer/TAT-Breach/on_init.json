@@ -1,219 +1,111 @@
 {
-  "context": {
-    "domain": "nic2004:60232",
-    "country": "IND",
-    "city": "std:080",
-    "action": "on_init",
-    "core_version": "1.2.0",
-    "bap_id": "ondc-preprod.wemotive.in/foodpe",
-    "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-    "transaction_id": "935eef5f-d50f-4e5b-b43b-1e102f83666a",
-    "message_id": "dd42690b-615b-4fbb-80c7-a1ce9602a66a",
-    "timestamp": "2024-08-05T12:55:22.842Z"
-  },
-  "message": {
-    "order": {
-      "provider": {
-        "id": "30b28db0-7be0-4067-907c-46599426468a"
-      },
-      "items": [
-        {
-          "id": "Standard",
-          "fulfillment_id": "51b29662-6239-4fb9-9711-4df259f0df69",
-          "descriptor": {
-            "code": "P2P"
-          },
-          "category_id": "Immediate Delivery"
-        }
-      ],
-      "fulfillments": [
-        {
-          "id": "51b29662-6239-4fb9-9711-4df259f0df69",
-          "type": "Delivery",
-          "start": {
-            "location": {
-              "gps": "12.9166912, 77.6478293",
-              "address": {
-                "name": "My store name",
-                "building": "My building name",
-                "locality": "My street name",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "India",
-                "area_code": "560102"
-              }
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-preprod.wemotive.in/foodpe",
+        "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "10624eb5-b36c-4170-a5b9-578eb80834b1",
+        "message_id": "892c18bc-067b-492e-b549-601f5262320c",
+        "timestamp": "2024-08-08T06:22:31.920Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "MP2"
             },
-            "contact": {
-              "phone": "9886098860",
-              "email": "abcd.efgh@gmail.com"
-            },
-            "instructions": {
-              "images": []
-            }
-          },
-          "end": {
-            "location": {
-              "gps": "12.9180305, 77.6372603",
-              "address": {
-                "name": "My store name",
-                "building": "My building name",
-                "locality": "My street name",
-                "city": "Bengaluru",
-                "state": "Karnataka",
-                "country": "India",
-                "area_code": "560102"
-              }
-            },
-            "contact": {
-              "phone": "9886098861",
-              "email": "abcd.efghj@gmail.com"
-            },
-            "instructions": {
-              "images": []
-            }
-          },
-          "tags": [
-            {
-              "code": "rider_check",
-              "list": [
+            "items": [
                 {
-                  "code": "inline_check_for_rider",
-                  "value": "yes"
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1"
                 }
-              ]
+            ],
+            "fulfillments": [
+                {
+                    "id": "mp2_immediate_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.923424,77.620651",
+                            "address": {
+                                "name": "SHERIN OUTLET 2",
+                                "building": "44",
+                                "locality": "KORAMANGLA",
+                                "city": "Bengaluru Urban",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560035"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.930033,77.675384",
+                            "address": {
+                                "name": "sherin shafa",
+                                "building": "2nd floor",
+                                "locality": "4th Cross Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560103"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098861",
+                            "email": "abcd.efghj@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "25.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "21.19"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.81"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
             }
-          ]
         }
-      ],
-      "quote": {
-        "price": {
-          "currency": "INR",
-          "value": "122.38"
-        },
-        "breakup": [
-          {
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "delivery",
-            "price": {
-              "currency": "INR",
-              "value": "116.00"
-            }
-          },
-          {
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "currency": "INR",
-              "value": "6.38"
-            }
-          }
-        ],
-        "ttl": "PT15M"
-      },
-      "payment": {
-        "type": "ON-ORDER",
-        "collected_by": "BAP",
-        "@ondc/org/settlement_details": []
-      },
-      "cancellation_terms": [
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Pending",
-              "short_desc": ""
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": false,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "0.0"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Agent-assigned",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "50"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Order-picked-up",
-              "short_desc": "001,003"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100"
-            }
-          }
-        },
-        {
-          "fulfillment_state": {
-            "descriptor": {
-              "code": "Out-for-delivery",
-              "short_desc": "011,012,013,014,015"
-            }
-          },
-          "refund_eligible": true,
-          "reason_required": true,
-          "cancellation_fee": {
-            "amount": {
-              "currency": "INR",
-              "value": "100.0"
-            }
-          }
-        }
-      ],
-      "tags": [
-        {
-          "code": "bpp_terms",
-          "list": [
-            {
-              "code": "max_liability",
-              "value": "2"
-            },
-            {
-              "code": "max_liability_cap",
-              "value": "10000"
-            },
-            {
-              "code": "mandatory_arbitration",
-              "value": "false"
-            },
-            {
-              "code": "court_jurisdiction",
-              "value": "Bengaluru"
-            },
-            {
-              "code": "delay_interest",
-              "value": "1000"
-            },
-            {
-              "code": "static_terms",
-              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-            }
-          ]
-        }
-      ]
     }
-  }
 }
