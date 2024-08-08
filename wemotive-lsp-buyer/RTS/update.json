@@ -1,126 +1,105 @@
 {
     "context": {
-      "domain": "nic2004:60232",
-      "action": "update",
-      "core_version": "1.2.0",
-      "bap_id": "ondc-preprod.wemotive.in/foodpe",
-      "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
-      "bpp_id": "ref-logistics-app-preprod.ondc.org",
-      "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-      "transaction_id": "3c791d30-df94-43ea-a16e-c66e04730b40",
-      "message_id": "2385d35a-8f77-4a90-a474-86a798d909d9",
-      "city": "std:080",
-      "country": "IND",
-      "timestamp": "2024-07-16T17:32:00.916Z",
-      "ttl": "PT30S"
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "update",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-preprod.wemotive.in/foodpe",
+        "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "a9091f8b-0d3c-4c63-9f7a-fc2b8a20e614",
+        "message_id": "c799c435-1220-44a5-8690-701d0a7f613c",
+        "timestamp": "2024-08-08T07:32:32.534Z",
+        "ttl": "PT30S"
     },
     "message": {
-      "update_target": "fulfillment",
-      "order": {
-        "items": [
-          {
-            "id": "Standard",
-            "category_id": "Immediate Delivery",
-            "descriptor": {
-              "code": "P2P"
-            }
-          }
-        ],
-        "fulfillments": [
-          {
-            "id": "b19c1dfa-2423-4428-8059-7905594a94ab",
-            "type": "Delivery",
-            "start": {
-              "instructions": {
-                "long_desc": "additional instructions for pickup",
-                "additional_desc": {
-                  "content_type": "text/html",
-                  "url": "https://reverse_qc_sop_form.htm"
+        "update_target": "fulfillment",
+        "order": {
+            "id": "8858-4207-2161999",
+            "items": [
+                {
+                    "id": "mp2_immediate",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    }
                 }
-              },
-              "authorization": {
-                "type": "OTP",
-                "token": "OTP code",
-                "valid_from": "2023-06-06T12:00:00.000Z",
-                "valid_to": "2023-06-06T14:00:00.000Z"
-              }
+            ],
+            "fulfillments": [
+                {
+                    "id": "mp2_immediate_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "123ABC",
+                            "long_desc": "please contact respective person and confirm before taking the parcel"
+                        }
+                    },
+                    "end": {
+                        "instructions": {
+                            "code": "3",
+                            "long_desc": "No description"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Atta"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "150.00"
+                        }
+                    }
+                ],
+                "order": {
+                    "id": "8858-4207-2161999",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 1
+                    },
+                    "dimensions": {
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 1
+                        }
+                    }
+                }
             },
-            "end": {
-              "instructions": {
-                "code": "2",
-                "short_desc": "value of DCC",
-                "long_desc": "additional instructions for delivery"
-              }
-            },
-            "tags": [
-              {
-                "code": "state",
-                "list": [
-                  {
-                    "code": "ready_to_ship",
-                    "value": "yes"
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "@ondc/org/linked_order": {
-          "provider": {
-            "descriptor": {
-              "name": "Aadishwar Store"
-            },
-            "address": {
-              "name": "KHB Towers",
-              "building": "Building or House No",
-              "locality": "Koramangala",
-              "city": "Bengaluru",
-              "state": "Karnataka",
-              "area_code": "560070"
-            }
-          },
-          "order": {
-            "weight": {
-              "unit": "kilogram",
-              "value": 5
-            },
-            "id": "3849-1001-101",
-            "dimensions": {
-              "length": {
-                "unit": "centimeter",
-                "value": 15
-              },
-              "breadth": {
-                "unit": "centimeter",
-                "value": 10
-              },
-              "height": {
-                "unit": "centimeter",
-                "value": 10
-              }
-            }
-          },
-          "items": [
-            {
-              "descriptor": {
-                "name": "Atta"
-              },
-              "quantity": {
-                "measure": {
-                  "value": 0.5,
-                  "unit": "kilogram"
-                },
-                "count": 2
-              },
-              "price": {
-                "currency": "INR",
-                "value": "150.00"
-              },
-              "category_id": "Grocery"
-            }
-          ]
-        },
-        "updated_at": "2023-06-06T23:00:00.000Z"
-      }
+            "updated_at": "2024-08-08T07:32:32.534Z"
+        }
     }
-  }
+}
