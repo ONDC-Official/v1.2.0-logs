@@ -1,0 +1,98 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.xpressbaazaar.com",
+    "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
+    "bpp_id": "onpp.grouptci.com",
+    "bpp_uri": "https://onpp.grouptci.com/ondc",
+    "transaction_id": "c88bcf29-d1c8-4d38-a18b-324c799ef816",
+    "message_id": "568c5a3b-a2c7-48d8-90e6-cc261d0435fd",
+    "timestamp": "2024-08-07T04:30:30.864Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "7ec771c0-b381-489f-84db-4d2d4143fcdc" },
+      "items": [{ "id": "33068-P2P", "fulfillment_id": "1" }],
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.933050,77.589828",
+              "address": {
+                "name": "AGARO",
+                "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                "locality": "gautam buddha",
+                "city": "Karnataka",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560029"
+              }
+            },
+            "contact": { "phone": "7654329075", "email": "abcd.efgh@gmail.com" }
+          },
+          "end": {
+            "location": {
+              "gps": "12.988079,77.733532",
+              "address": {
+                "name": "Somnath Yadav",
+                "building": "B-16 tifon tower",
+                "locality": "1st Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560066"
+              }
+            },
+            "contact": {
+              "phone": "9453658871",
+              "email": "somnath.yadav@ens.enterprises"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "1181" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "33068-P2P",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "1001" }
+          },
+          {
+            "@ondc/org/item_id": "33068-P2P",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "180" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "@ondc/org/settlement_details": [
+          {
+            "beneficiary_name": "aman",
+            "settlement_bank_account_no": "1430001000",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "BARBOS12234",
+            "settlement_type": "upi",
+            "upi_address": "95647836@ybl"
+          }
+        ],
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT"
+      } 
+    }
+  }
+}
