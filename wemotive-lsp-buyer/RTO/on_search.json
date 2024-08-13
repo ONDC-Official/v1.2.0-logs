@@ -1,117 +1,128 @@
 {
-  "context": {
-    "domain": "nic2004:60232",
-    "country": "IND",
-    "city": "std:080",
-    "action": "on_search",
-    "core_version": "1.2.0",
-    "bap_id": "ondc-preprod.wemotive.in/foodpe",
-    "bap_uri": "https://ondc-preprod.wemotive.in/foodpe/logistics/protocol",
-    "transaction_id": "645b34a1-2cdf-46f7-91a0-85ebf1c24be9",
-    "message_id": "5c74ebd4-924b-4226-8822-63f23fb972ce",
-    "timestamp": "2024-07-26T07:49:49.855Z",
-    "bpp_id": "ref-logistics-app-preprod.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
-  },
-  "message": {
-    "catalog": {
-      "bpp/descriptor": {
-        "name": "ONDC Logistics Seller App by WITS"
-      },
-      "bpp/providers": [
-        {
-          "id": "1219c6fc-3b61-47fc-9cd8-722b8469aab2",
-          "descriptor": {
-            "name": "ONDC Logistics Seller App by WITS",
-            "long_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API.",
-            "short_desc": "ONDC Logistics Seller App: Your all-in-one refrence logistics solution to test ONDC API."
-          },
-          "categories": [
-            {
-              "id": "Immediate Delivery",
-              "time": {
-                "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2024-07-26"
-              }
-            }
-          ],
-          "fulfillments": [
-            {
-              "id": "11264671-ed5b-439e-ab6a-f1a7f77b5968",
-              "type": "Delivery",
-              "start": {
-                "time": {
-                  "duration": "PT15M"
-                }
-              },
-              "tags": [
-                {
-                  "code": "distance",
-                  "list": [
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-preprod.wemotive.in/foodpe",
+        "bap_uri": "https://steadily-eminent-crayfish.ngrok-free.app/protocol",
+        "transaction_id": "d8e706a8-3395-4e12-9245-1a086abea4d2",
+        "message_id": "479942ee-db14-4b2f-9421-f47467a8febe",
+        "timestamp": "2024-08-12T07:55:16.015Z",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
+    },
+    "message": {
+        "catalog": {
+            "bpp/descriptor": {
+                "name": "MP2",
+                "tags": [
                     {
-                      "code": "motorable_distance_type",
-                      "value": "kilometer"
-                    },
-                    {
-                      "code": "motorable_distance",
-                      "value": "1.78"
+                        "code": "bpp_terms",
+                        "list": [
+                            {
+                                "code": "static_terms",
+                                "value": ""
+                            }
+                        ]
                     }
-                  ]
+                ]
+            },
+            "bpp/providers": [
+                {
+                    "id": "MP2",
+                    "descriptor": {
+                        "name": "MP2",
+                        "short_desc": "MP2",
+                        "long_desc": "MP2 Logistics Provider"
+                    },
+                    "categories": [
+                        {
+                            "id": "Immediate Delivery",
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2024-08-12"
+                            }
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "mp2_immediate_f1",
+                            "type": "Delivery",
+                            "start": {
+                                "time": {
+                                    "duration": "PT20M"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "distance",
+                                    "list": [
+                                        {
+                                            "code": "motorable_distance_type",
+                                            "value": "kilometer"
+                                        },
+                                        {
+                                            "code": "motorable_distance",
+                                            "value": "7.17"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "mp2_immediate_f1-RTO",
+                            "type": "RTO"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "mp2_immediate",
+                            "parent_item_id": "",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "mp2_immediate_f1",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "MP2 Immediate Delivery",
+                                "short_desc": "Immediate Delivery by MP2",
+                                "long_desc": "Immediate Delivery by MP2"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "25.0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2024-08-12"
+                            }
+                        },
+                        {
+                            "id": "mp2_immediate-RTO",
+                            "parent_item_id": "mp2_immediate",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "mp2_immediate_f1-RTO",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "RTO quote",
+                                "short_desc": "RTO quote",
+                                "long_desc": "RTO quote"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2024-08-12"
+                            }
+                        }
+                    ]
                 }
-              ]
-            },
-            {
-              "id": "d0543150-8d4e-46b2-9d7c-cc7045b74e24",
-              "type": "RTO"
-            }
-          ],
-          "items": [
-            {
-              "id": "Standard",
-              "parent_item_id": "",
-              "category_id": "Immediate Delivery",
-              "fulfillment_id": "11264671-ed5b-439e-ab6a-f1a7f77b5968",
-              "descriptor": {
-                "code": "P2P",
-                "name": "Immediate Delivery",
-                "long_desc": "Upto 60 mins for Delivery",
-                "short_desc": "Upto 60 mins for Delivery"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "122.38"
-              },
-              "time": {
-                "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2024-07-26"
-              }
-            },
-            {
-              "id": "rto",
-              "parent_item_id": "Standard",
-              "category_id": "Immediate Delivery",
-              "fulfillment_id": "d0543150-8d4e-46b2-9d7c-cc7045b74e24",
-              "descriptor": {
-                "code": "P2P",
-                "name": "RTO quote",
-                "short_desc": "RTO quote",
-                "long_desc": "RTO quote"
-              },
-              "price": {
-                "currency": "INR",
-                "value": "36.71"
-              },
-              "time": {
-                "label": "TAT",
-                "duration": "P1D",
-                "timestamp": "2024-07-27"
-              }
-            }
-          ]
+            ]
         }
-      ]
     }
-  }
 }
