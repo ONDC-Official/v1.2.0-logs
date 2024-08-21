@@ -1,0 +1,161 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://cosmos-ondcapi.kiko.live/ondc-seller",
+    "transaction_id": "6cb21e36-ced5-4494-9515-e1b5d5a5c467",
+    "message_id": "16101473-bcb6-47e0-9a15-7cb24f6253fd",
+    "timestamp": "2024-08-16T13:34:52.939Z",
+    "bpp_id": "cosmos-ondcapi.kiko.live/ondc-seller",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-08-16-130556",
+      "state": "Created",
+      "billing": {
+        "address": {
+          "name": "sonu parmar",
+          "building": "Cubbon park",
+          "locality": "Raj Bhavan Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560001"
+        },
+        "phone": "9827351952",
+        "name": "sonu parmar",
+        "email": "sonu.linkites@gmail.com",
+        "created_at": "2024-08-16T13:33:31.876Z",
+        "updated_at": "2024-08-16T13:33:31.876Z"
+      },
+      "items": [
+        {
+          "id": "66bc6665fb591805904ef74c",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4"
+        },
+        {
+          "id": "66bc6665fb591805904ef74a",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4"
+        }
+      ],
+      "provider": {
+        "id": "6386154b42674fabf7bdabf4",
+        "locations": [{ "id": "location-6386154b42674fabf7bdabf4" }]
+      },
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "PT6H",
+          "id": "fulfillment-6386154b42674fabf7bdabf4",
+          "tracking": false,
+          "end": {
+            "contact": {
+              "email": "sonu.linkites@gmail.com",
+              "phone": "9827351952"
+            },
+            "person": { "name": "sonu parmar" },
+            "location": {
+              "gps": "12.981141,77.596632",
+              "address": {
+                "name": "sonu parmar",
+                "building": "Cubbon park",
+                "locality": "Raj Bhavan Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "969.00",
+          "currency": "INR",
+          "transaction_id": "order_OlaYk92N32o1Wy"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P7D",
+        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "beneficiary_name": "COSMOS ONLINE PRIVATE LIMITED",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "0154201002471",
+            "settlement_ifsc_code": "CNRB000154",
+            "settlement_phase": "sale-amount",
+            "bank_name": "CANARA BANK",
+            "branch_name": "MULUND CAMP MUMBAI"
+          }
+        ]
+      },
+      "quote": {
+        "price": { "currency": "INR", "value": "969.00" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "66bc6665fb591805904ef74c",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Haldiram Mini Bhakarwadi 200gm",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "116.00" },
+            "item": { "price": { "currency": "INR", "value": "58.00" } }
+          },
+          {
+            "@ondc/org/item_id": "66bc6665fb591805904ef74a",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Dry Fruits Badam 400gm",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "830.00" },
+            "item": { "price": { "currency": "INR", "value": "415.00" } }
+          },
+          {
+            "@ondc/org/item_id": "fulfillment-6386154b42674fabf7bdabf4",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "20.00" }
+          },
+          {
+            "@ondc/org/item_id": "fulfillment-6386154b42674fabf7bdabf4",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "3.00" }
+          }
+        ],
+        "ttl": "PT6H"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "22BCWPP0324R1Z5" },
+            { "code": "np_type", "value": "ISN" },
+            { "code": "provider_tax_number", "value": "BCWPP0324R" }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "GSTIN1234567890" }]
+        }
+      ],
+      "created_at": "2024-08-16T13:34:52.939Z",
+      "updated_at": "2024-08-16T13:34:52.939Z"
+    }
+  }
+}
