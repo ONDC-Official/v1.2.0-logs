@@ -1,0 +1,203 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
+    "transaction_id": "467a13d8-146b-485a-a395-6c58fb80a143",
+    "message_id": "10fa5617-7227-4460-ac45-0ca49057d8db",
+    "timestamp": "2024-08-02T04:28:52.380Z",
+    "bpp_id": "pilot-gateway-1.beckn.nsdl.co.in/preprod/seller/adaptor/snapbizz",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-08-02-274272",
+      "state": "Created",
+      "billing": {
+        "address": {
+          "name": "Charles Bob",
+          "building": "CT Home",
+          "locality": "HN Halli Lake Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560035"
+        },
+        "phone": "7510704000",
+        "name": "Charles Bob",
+        "email": "alicect@gmail.com",
+        "created_at": "2024-08-02T04:28:26.920Z",
+        "updated_at": "2024-08-02T04:28:26.920Z"
+      },
+      "items": [
+        {
+          "id": "3f0a4865-6dbb-4269-8ab3-64f7df9296e6",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "a27c8647-eb87-474a-8463-96309e3170d1"
+        },
+        {
+          "id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "a27c8647-eb87-474a-8463-96309e3170d1"
+        }
+      ],
+      "provider": {
+        "id": "34bf3b2c-37e3-4539-b494-c88d3107ac54",
+        "locations": [
+          {
+            "id": "f17a9598-6ed7-4fa4-9b13-e0e913d04a30"
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "PT3H",
+          "id": "a27c8647-eb87-474a-8463-96309e3170d1",
+          "tracking": false,
+          "end": {
+            "contact": {
+              "email": "alicect@gmail.com",
+              "phone": "7510704000"
+            },
+            "person": {
+              "name": "Charles Bob"
+            },
+            "location": {
+              "gps": "12.907111,77.691431",
+              "address": {
+                "name": "Charles Bob",
+                "building": "CT Home",
+                "locality": "HN Halli Lake Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560035"
+              }
+            }
+          },
+          "type": "Delivery"
+        }
+      ],
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "150.00",
+          "currency": "INR",
+          "transaction_id": "order_OftnIu9DPSno3r"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "beneficiary_name": "Alice",
+            "upi_address": "success@upi",
+            "bank_name": "Axis Bank",
+            "branch_name": "Marathahalli",
+            "settlement_bank_account_no": "923020035581060",
+            "settlement_ifsc_code": "UTIB0000300"
+          }
+        ]
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "150.00"
+        },
+        "breakup": [
+          {
+            "item": {
+              "price": {
+                "value": "30",
+                "currency": "INR"
+              }
+            },
+            "price": {
+              "value": "60.00",
+              "currency": "INR"
+            },
+            "title": "Ruchi Gold Oil, Palmolein, 1L",
+            "@ondc/org/item_id": "32041007-19f4-42dc-8a25-bf153c9e12ae",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            }
+          },
+          {
+            "item": {
+              "price": {
+                "value": "40",
+                "currency": "INR"
+              }
+            },
+            "price": {
+              "value": "80.00",
+              "currency": "INR"
+            },
+            "title": "Nescafe Sunrise Instant Coffee 200Gm",
+            "@ondc/org/item_id": "3f0a4865-6dbb-4269-8ab3-64f7df9296e6",
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            }
+          },
+          {
+            "price": {
+              "value": "10.00",
+              "currency": "INR"
+            },
+            "title": "Delivery charges",
+            "@ondc/org/item_id": "a27c8647-eb87-474a-8463-96309e3170d1",
+            "@ondc/org/title_type": "delivery"
+          }
+        ],
+        "ttl": "PT60S"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "22ABCTY1230D1Z5"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "ABCTY1234D"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "GSTIN1234567890"
+            }
+          ]
+        }
+      ],
+      "created_at": "2024-08-02T04:28:52.380Z",
+      "updated_at": "2024-08-02T04:28:52.380Z"
+    }
+  }
+}
