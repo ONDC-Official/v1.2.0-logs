@@ -1,13 +1,13 @@
 {
   "context": {
-    "action": "on_init",
-    "transaction_id": "059aaae8-9fc0-4dce-bf35-085ec650e540",
-    "message_id": "862a18cb-4bc6-4568-a835-538267df95dc",
+    "action": "on_confirm",
+    "transaction_id": "f3f5c68b-0e1a-4aee-8f30-88c15618fc80",
+    "message_id": "c7cd7235-9150-4872-825b-5b2e2d8afcde",
     "city": "std:080",
     "domain": "ONDC:RET12",
     "country": "IND",
     "core_version": "1.2.0",
-    "timestamp": "2024-08-07T13:28:45.655Z",
+    "timestamp": "2024-08-22T09:11:59.112Z",
     "bap_id": "buyer-app-preprod-v2.ondc.org",
     "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
     "bpp_id": "api.test.esamudaay.com/ondc/sdk/bpp/retail/esamudaay",
@@ -89,15 +89,6 @@
               "currency": "INR",
               "value": "1115.10"
             }
-          },
-          {
-            "@ondc/org/item_id": "Fulfillment1",
-            "@ondc/org/title_type": "delivery",
-            "title": "Delivery Charges",
-            "price": {
-              "currency": "INR",
-              "value": "0"
-            }
           }
         ],
         "ttl": "P1D"
@@ -105,8 +96,38 @@
       "fulfillments": [
         {
           "id": "Fulfillment1",
+          "start": {
+            "location": {
+              "id": "8c93cbd8-2890-4f1f-b44c-4aec793ed0d2",
+              "gps": "12.984554178662162,77.5563445687294",
+              "address": {
+                "name": "Anushree's Jewellery Business",
+                "building": "5/11 Bee Avenue",
+                "street": "Rajkumar road",
+                "locality": "Rajajinagar",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560010"
+              },
+              "descriptor": {
+                "name": "Anushree's Jewellery Business"
+              }
+            },
+            "contact": {
+              "phone": "9148196081",
+              "email": "shrilakshmi@esamudaay.com"
+            },
+            "time": {
+              "range": {
+                "start": "2024-08-22T09:12:00.097Z",
+                "end": "2024-08-24T09:12:00.097Z"
+              }
+            }
+          },
           "type": "Delivery",
           "tracking": false,
+          "@ondc/org/TAT": "P2D",
           "end": {
             "contact": {
               "phone": "8762710999"
@@ -122,8 +143,23 @@
                 "locality": "Raj Bhavan Road",
                 "area_code": "560001"
               }
+            },
+            "person": {
+              "name": "Pranav"
+            },
+            "time": {
+              "range": {
+                "start": "2024-08-22T09:27:00.097Z",
+                "end": "2024-08-24T09:27:46.097Z"
+              }
             }
-          }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "@ondc/org/provider_name": "Anushree's Jewellery Business"
         }
       ],
       "billing": {
@@ -137,12 +173,22 @@
           "locality": "Raj Bhavan Road",
           "area_code": "560001"
         },
-        "updated_at": "2024-08-07T13:28:34.030Z",
-        "created_at": "2024-08-07T13:28:34.030Z",
+        "updated_at": "2024-08-22T09:11:17.216Z",
+        "created_at": "2024-08-22T09:11:17.216Z",
         "phone": "8762710999",
         "email": "pranav@codezyng.com"
       },
       "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "32615.10",
+          "currency": "INR",
+          "transaction_id": "order_OntIbOO2QtLnRW"
+        },
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BAP",
         "@ondc/org/buyer_app_finder_fee_type": "percent",
         "@ondc/org/buyer_app_finder_fee_amount": "3.0",
         "@ondc/org/settlement_details": [
@@ -158,6 +204,10 @@
           }
         ]
       },
+      "id": "2024-08-22-420777",
+      "state": "Created",
+      "created_at": "2024-08-22T09:11:48.159Z",
+      "updated_at": "2024-08-22T09:11:59.112Z",
       "tags": [
         {
           "code": "bpp_terms",
@@ -173,6 +223,15 @@
             {
               "code": "provider_tax_number",
               "value": "QWERT0000Z"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "GSTIN1234567890"
             }
           ]
         }
