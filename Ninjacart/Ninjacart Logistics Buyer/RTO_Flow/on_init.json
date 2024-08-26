@@ -1,0 +1,151 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "logistics-qa.trafyn.site",
+    "bap_uri": "https://logistics-qa.trafyn.site/logistics/ondc",
+    "bpp_id": "ondc-preprod-lsp.olacabs.com",
+    "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
+    "transaction_id": "trans_2024-07-30-abc",
+    "message_id": "d3009045-494c-4b57-9010-2da329d90dff",
+    "timestamp": "2024-07-30T11:11:18.260Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "OLA"
+      },
+      "items": [
+        {
+          "id": "ola_express",
+          "fulfillment_id": "ola_express_f1"
+        }
+      ],
+      "quote": {
+        "ttl": "PT15M",
+        "price": {
+          "currency": "INR",
+          "value": "30.0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "30.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "ola_express_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.917295,77.649051",
+              "address": {
+                "name": "Chopserve - HSR Layout",
+                "building": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+                "locality": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+                "city": "1216-1217, 24th Main Rd, Vanganahalli, 1st Sector, HSR Layout, ",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560102"
+              }
+            },
+            "contact": {
+              "phone": "7395935123",
+              "email": "harshit.pandey@ninjacart.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.91729715,77.64905927",
+              "address": {
+                "name": "Vijay Kumar",
+                "building": "Sai Krishna residency",
+                "locality": "Yemalur Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560103"
+              }
+            },
+            "contact": {
+              "phone": "8498996168",
+              "email": "harshit.pandey@ninjacart.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft",
+            "beneficiary_name": "\"OLA FLEET TECHNOLOGIES PRIVATE LIMITED\"",
+            "settlement_bank_account_no": "\"915020065848680\"",
+            "settlement_ifsc_code": "\"UTIB0001506\""
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "2000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://www.olacabs.com/tnc?doc=india-tnc-website"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
