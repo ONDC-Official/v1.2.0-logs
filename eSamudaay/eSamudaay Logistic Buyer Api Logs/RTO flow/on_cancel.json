@@ -3,19 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_update",
+    "action": "on_cancel",
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
     "bpp_id": "preprod.pidge-lsp.mp2.in",
     "bpp_uri": "https://preprod.pidge-lsp.mp2.in/ondc",
-    "transaction_id": "29c16af0-e225-4a1c-8066-b6657b42c71b",
-    "message_id": "69bb1acb-4441-4134-82c5-3ea72663c3a4",
-    "timestamp": "2024-08-26T06:50:55.160Z"
+    "transaction_id": "7dd925e8-59c3-40fa-b0e9-8b2a4b3de33c",
+    "message_id": "msg_uuc2425nukbflezc",
+    "timestamp": "2024-08-26T07:46:38.393Z"
   },
   "message": {
     "order": {
-      "id": "04a3d03b-a149-4329-bb57-b86c7c7243b4",
+      "id": "87666472-e481-44f5-9a10-fe7153f4e272",
+      "state": "Cancelled",
       "provider": {
         "id": "Pidge"
       },
@@ -32,12 +33,25 @@
             "duration": "PT55M",
             "timestamp": "2024-08-26"
           }
+        },
+        {
+          "id": "pidge_immediate-RTO",
+          "fulfillment_id": "pidge_immediate_f1-RTO",
+          "category_id": "Immediate Delivery",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "PT55M",
+            "timestamp": "2024-08-26"
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "11.8"
+          "value": "23.6"
         },
         "breakup": [
           {
@@ -55,6 +69,22 @@
               "currency": "INR",
               "value": "1.8"
             }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate-RTO",
+            "@ondc/org/title_type": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "10.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate-RTO",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "1.8"
+            }
           }
         ]
       },
@@ -62,14 +92,19 @@
         {
           "id": "pidge_immediate_f1",
           "type": "Delivery",
-          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
           "start": {
             "time": {
               "duration": "PT20M",
               "range": {
-                "start": "2024-08-26T06:50:55.160Z",
-                "end": "2024-08-26T07:10:55.160Z"
-              }
+                "start": "2024-08-26T07:09:40.202Z",
+                "end": "2024-08-26T07:29:40.202Z"
+              },
+              "timestamp": "2024-08-26T07:32:29.590Z"
             },
             "person": {
               "name": "Codezyng Test Store"
@@ -89,10 +124,6 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
-            },
-            "instructions": {
-              "code": "2",
-              "short_desc": "f6b6"
             }
           },
           "end": {
@@ -117,18 +148,89 @@
             },
             "time": {
               "range": {
-                "start": "2024-08-26T07:10:55.160Z",
-                "end": "2024-08-26T07:25:55.160Z"
+                "start": "2024-08-26T07:29:40.202Z",
+                "end": "2024-08-26T07:44:40.202Z"
               }
             }
           },
+          "tracking": false,
+          "tags": [
+            {
+              "code": "precancel_state",
+              "list": [
+                {
+                  "code": "fulfillment_state",
+                  "value": "At-delivery"
+                },
+                {
+                  "code": "updated_at",
+                  "value": "2024-08-26T07:46:38.393Z"
+                }
+              ]
+            },
+            {
+              "code": "rto_event",
+              "list": [
+                {
+                  "code": "retry_count",
+                  "value": "0"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "pidge_immediate_f1-RTO"
+                },
+                {
+                  "code": "cancellation_reason_id",
+                  "value": "011"
+                },
+                {
+                  "code": "cancelled_by",
+                  "value": "preprod.pidge-lsp.mp2.in"
+                },
+                {
+                  "code": "sub_reason_id",
+                  "value": ""
+                }
+              ]
+            }
+          ],
+          "agent": {
+            "name": "Murgan",
+            "phone": "9110621889"
+          }
+        },
+        {
+          "id": "pidge_immediate_f1-RTO",
+          "type": "RTO",
           "state": {
             "descriptor": {
-              "code": "Searching-for-Agent"
+              "code": "RTO-Initiated"
+            }
+          },
+          "start": {
+            "time": {
+              "range": {
+                "start": "2024-08-26T07:46:38.222Z",
+                "end": "2024-08-26T08:41:38.222Z"
+              },
+              "timestamp": "2024-08-26T07:46:38.222Z"
             }
           }
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "eSamudaay",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "123456789012",
+            "settlement_ifsc_code": "SBIN0001234"
+          }
+        ]
+      },
       "billing": {
         "name": "eSamudaay",
         "address": {
@@ -143,21 +245,8 @@
         "tax_number": "12ABCDE12343D4E",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-08-26T06:50:01.714Z",
-        "updated_at": "2024-08-26T06:50:01.714Z"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "eSamudaay",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "123456789012",
-            "settlement_ifsc_code": "SBIN0001234"
-          }
-        ]
+        "created_at": "2024-08-26T07:03:49.767Z",
+        "updated_at": "2024-08-26T07:03:49.767Z"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -167,7 +256,7 @@
               "name": "headphone"
             },
             "quantity": {
-              "count": 2,
+              "count": 1,
               "measure": {
                 "unit": "unit",
                 "value": 1.0
@@ -193,7 +282,7 @@
           }
         },
         "order": {
-          "id": "a8f6b6",
+          "id": "3fa8ff",
           "weight": {
             "unit": "kilogram",
             "value": 1.0
@@ -214,8 +303,14 @@
           }
         }
       },
-      "state": "In-progress",
-      "updated_at": "2024-08-26T06:50:55.160Z"
+      "updated_at": "2024-08-26T07:46:38.371Z",
+      "created_at": "2024-08-26T07:03:49.767Z",
+      "cancellation": {
+        "cancelled_by": "preprod.pidge-lsp.mp2.in",
+        "reason": {
+          "id": "011"
+        }
+      }
     }
   }
 }
