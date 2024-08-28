@@ -9,14 +9,20 @@
     "city": "std:080",
     "country": "IND",
     "action": "on_status",
-    "transaction_id": "44c231ea-77ac-42ee-adfb-8b2e7d5c2e4e",
-    "message_id": "9f03892e-056c-49ed-a39e-2bea863e8a2a",
-    "timestamp": "2024-08-11T04:05:28.220Z"
+    "transaction_id": "996bc7f2-c3f2-4062-845f-a143801ef4eb",
+    "message_id": "ca8a44bc-c791-45a1-b1da-e917c44a987a",
+    "timestamp": "2024-08-27T11:53:28.540Z"
   },
   "message": {
     "order": {
-      "id": "2024-08-11-534906",
-      "state": "In-progress",
+      "id": "b32a6bc5-0d31-43c3-aafc-2bf80cedb11a",
+      "state": "Cancelled",
+      "cancellation": {
+        "cancelled_by": "preprod-bpp.iway.digiit.io",
+        "reason": {
+          "id": "015"
+        }
+      },
       "provider": {
         "id": "107-Account-DER-292"
       },
@@ -24,24 +30,37 @@
         {
           "id": "18",
           "category_id": "Next Day Delivery",
-          "fulfillment_id": "003f46a1-2c16-4bfc-bafb-f49c21bbb0a2",
+          "fulfillment_id": "57777c26-933f-4f51-b19d-ded37e1da3bc",
           "descriptor": {
             "code": "P2P"
           },
           "time": {
             "label": "TAT",
             "duration": "P1D",
-            "timestamp": "2024-08-12"
+            "timestamp": "2024-08-28"
+          }
+        },
+        {
+          "id": "rto-item-18",
+          "category_id": "Next Day Delivery",
+          "fulfillment_id": "57777c26-933f-4f51-b19d-ded37e1da3bc-RTO",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "P1D",
+            "timestamp": "2024-08-28"
           }
         }
       ],
       "fulfillments": [
         {
-          "id": "003f46a1-2c16-4bfc-bafb-f49c21bbb0a2",
+          "id": "57777c26-933f-4f51-b19d-ded37e1da3bc",
           "type": "Delivery",
           "state": {
             "descriptor": {
-              "code": "Out-for-delivery"
+              "code": "Cancelled"
             }
           },
           "tracking": true,
@@ -68,10 +87,10 @@
             "time": {
               "duration": "P1D",
               "range": {
-                "start": "2024-08-12T05:33:28.000Z",
-                "end": "2024-08-12T05:48:28.000Z"
+                "start": "2024-08-28T13:20:38.535Z",
+                "end": "2024-08-28T13:35:38.535Z"
               },
-              "timestamp": "2024-08-11T04:05:10.749Z"
+              "timestamp": "2024-08-27T11:52:21.089Z"
             }
           },
           "end": {
@@ -96,8 +115,8 @@
             },
             "time": {
               "range": {
-                "start": "2024-08-12T06:03:28.000Z",
-                "end": "2024-08-12T06:18:28.000Z"
+                "start": "2024-08-28T13:50:38.535Z",
+                "end": "2024-08-28T14:05:38.535Z"
               }
             }
           },
@@ -116,12 +135,56 @@
               ]
             }
           ]
+        },
+        {
+          "id": "57777c26-933f-4f51-b19d-ded37e1da3bc-RTO",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Disposed"
+            }
+          },
+          "start": {
+            "location": {
+              "gps": "12.908886,77.549124",
+              "address": {
+                "name": "Yokesh",
+                "building": "No.10",
+                "locality": "1st Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560061"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-08-27T11:53:08.954Z",
+                "end": "2024-08-27T12:08:08.954Z"
+              },
+              "timestamp": "2024-08-27T11:53:08.954Z"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.916472500,77.541683800",
+              "address": {
+                "name": "VayClenz",
+                "building": "Shriram Adithya Apartment-Gate-I, 4th cross, Ittamadu PO",
+                "locality": "Banashankari 3rd Stage, Subramanyapura",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560061"
+              }
+            }
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "20.00"
+          "value": "41.00"
         },
         "breakup": [
           {
@@ -138,6 +201,14 @@
             "price": {
               "currency": "INR",
               "value": "0.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "rto-item-18",
+            "@ondc/org/title_type": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "21.00"
             }
           }
         ]
@@ -172,13 +243,13 @@
             "quantity": {
               "count": 1,
               "measure": {
-                "unit": "gram",
-                "value": 72
+                "unit": "litre",
+                "value": 1
               }
             },
             "price": {
               "currency": "INR",
-              "value": "784.00"
+              "value": "222.88"
             }
           }
         ],
@@ -196,10 +267,10 @@
           }
         },
         "order": {
-          "id": "2024-08-11-534906",
+          "id": "2024-08-27-369400",
           "weight": {
-            "unit": "gram",
-            "value": 72
+            "unit": "litre",
+            "value": 1
           },
           "dimensions": {
             "length": {
