@@ -1,0 +1,122 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:0124",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "bridge.sellersetu.in",
+    "bap_uri": "https://bridge.sellersetu.in/ondc",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "b6cfe371-ff01-4345-83c5-b30f9faec500",
+    "message_id": "63e232e9-1352-47f5-889e-72525093de23",
+    "timestamp": "2024-09-03T17:59:01.339Z",
+    "req_path": "bridge.sellersetu.in"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "MP2"
+      },
+      "items": [
+        {
+          "id": "mp2_immediate",
+          "fulfillment_id": "mp2_immediate_f1"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "mp2_sdd_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "28.4554726,77.0219019",
+              "address": {
+                "name": "K",
+                "building": "none",
+                "locality": "Locality ABC XYZ",
+                "city": "Gurgaon",
+                "state": "Haryana",
+                "country": "India",
+                "area_code": "122001"
+              }
+            },
+            "contact": {
+              "phone": "8882160205",
+              "email": "official@sellersetu.in"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.455714,77.022169",
+              "address": {
+                "name": "Chaitanya Keyal",
+                "building": "street",
+                "locality": "Khandsa Marg",
+                "city": "Gurugram",
+                "state": "Haryana",
+                "country": "IND",
+                "area_code": "122001"
+              }
+            },
+            "contact": {
+              "phone": "9148043218",
+              "email": "chaitanya@sellersetu.in"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "25.0"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "21.19"
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "3.81"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      }
+    }
+  }
+}
