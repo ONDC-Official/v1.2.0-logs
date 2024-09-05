@@ -1,0 +1,128 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "action": "on_search",
+    "country": "IND",
+    "city": "std:0124",
+    "core_version": "1.2.0",
+    "bap_id": "pramaan.ondc.org/alpha/mock-server",
+    "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/lspbuyer",
+    "transaction_id": "d87041d8-9892-4dd5-b6fe-68c228fa12ab",
+    "message_id": "4f987e7f-45e8-4dd8-96d6-f1172757a8d6",
+    "timestamp": "2024-09-05T10:50:18.971Z",
+    "bpp_id": "ondc-lsp-stg.pidge.in",
+    "bpp_uri": "https://ondc-lsp-stg.pidge.in/ondc"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "Pidge",
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "bpp/providers": [
+        {
+          "id": "Pidge",
+          "descriptor": {
+            "name": "Pidge",
+            "short_desc": "Pidge",
+            "long_desc": "Pidge Logistics"
+          },
+          "categories": [
+            {
+              "id": "Immediate Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-09-05"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "pidge_immediate_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT20M"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "2.28"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "pidge_immediate_f1-RTO",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "id": "pidge_immediate",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "pidge_immediate_f1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Pidge Logistics",
+                "short_desc": "Immediate Delivery powered by Pidge",
+                "long_desc": "Immediate Delivery powered by Pidge"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "11.8"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-09-05"
+              }
+            },
+            {
+              "id": "pidge_immediate-RTO",
+              "parent_item_id": "pidge_immediate",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "pidge_immediate_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-09-05"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
