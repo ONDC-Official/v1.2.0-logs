@@ -1,0 +1,55 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "schemaErr0": "/message/catalog/bpp~1descriptor/symbol descriptor/symbol should be URLs or can be empty strings as well",
+                "schemaErr1": "/message/catalog/bpp~1providers/0/items/0/tags/0/list/0/value Country must be in ISO 3166-1 format (three-letter country code)",
+                "schemaErr2": "/message/catalog/bpp~1providers/0/items/1/tags/0/list/0/value Country must be in ISO 3166-1 format (three-letter country code)",
+                "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]",
+                "prvdr0/tags/timing/order": "The timings object must be present for Order in the tags"
+            },
+            "on_select": {
+                "ttstat": "/fulfillments[0]/@ondc/org/TAT (O2D) in /on_select can't be equal to @ondc/org/time_to_ship (O2S) in /on_search"
+            },
+            "on_init": {
+                "providertaxNumber": "provider_tax_number must be present for on_init"
+            },
+            "on_confirm": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'person'",
+                "schemaErr5": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "message.order.tags[0].list": "Pan_id shouldn't be same in tax_number and provider_tax_number in message.order.tags[0].list",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+                "message/order/tags/bpp_terms": "List of bpp_terms mismatched in message/order/tags/bpp_terms for on_init and on_confirm here Code 'provider_tax_number' present in first list but not in second list."
+            },
+            "on_cancel": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "schemaErr1": "/message/order/fulfillments/1/state/descriptor/code must be equal to one of the allowed values (Cancelled,RTO-Initiated)",
+                "schemaErr2": "/message/order/fulfillments/1/start must have required property 'location'",
+                "schemaErr3": "/message/order/fulfillments/1/start must have required property 'contact'",
+                "schemaErr4": "/message/order/fulfillments/1/end must have required property 'location'",
+                "schemaErr5": "/message/order/fulfillments/1/end must have required property 'person'",
+                "schemaErr6": "/message/order/fulfillments/1/end must have required property 'contact'",
+                "itemCount[0]": "Item count can't be 0 for /on_cancel in cancel shipment",
+                "itemCount": "Total item count in message/order/items doesn't match with item count of /on_select",
+                "invalidItemID[item]": "Item ID [item] not present in items array",
+                "Fulfillment_mismatch": "The count of cancellation fulfillmentns is not equal to the count of forward fulfillments or invalid fulfillment id.",
+                "ffID 1": "fulfillment id 1 does not exist in /on_cancel items.fulfillment_id",
+                "ordrupdtd": "order.updated_at timestamp should be greater than order.created_at timestamp",
+                "invalidState": "Delivery state should be Cancelled for on_cancel",
+                "precancelState.updatedAt": "precancel_state.updated_at of on_cancel is not equal with the on_confirm order.updated_at"
+            }
+        },
+        "bpp_id": "seller-app-preprod-v2.ondc.org",
+        "bap_id": "buyer.ondc.digiledge.in",
+        "domain": "ONDC:RET10",
+        "reportTimestamp": "2024-07-04T05:24:32.226Z"
+    },
+    "signature": "fxcYbKgvxG9lyuqKtG2ftnQYkofIwRHcPqW+W9gApwoqy2wXDKpWX2BRkNzBXC4vZiH5vTRV4cS41j7cU8FIDQ==",
+    "signTimestamp": "2024-07-04T05:24:32.226Z"
+}
