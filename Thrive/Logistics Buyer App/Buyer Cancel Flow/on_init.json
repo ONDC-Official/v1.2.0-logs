@@ -1,205 +1,115 @@
 {
-  "context": {
-      "domain": "nic2004:60232",
-      "action": "on_init",
-      "country": "IND",
-      "city": "std:011",
-      "core_version": "1.2.0",
-      "bap_id": "ondc-logistics-preprod.hashtagloyalty.net",
-      "bap_uri": "https://ondc-logistics-preprod.hashtagloyalty.net/ondc/logistics",
-      "transaction_id": "36167983-YSJL",
-      "message_id": "a2048b5e2dbe43be625b2873946a5e55",
-      "timestamp": "2024-08-27T12:21:06.589Z",
-      "bpp_id": "pramaan.ondc.org/alpha/mock-server",
-      "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/lspseller",
-      "ttl": "PT30S"
-  },
-  "message": {
-      "order": {
-          "provider": {
-              "id": "P1f31518ea-cfb6-4853-ab05-fb4d2fc23abc",
-              "locations": [
-                  {
-                      "id": "d861c861-d3f5-44cf-88af-92c8cd784249"
-                  }
-              ]
-          },
-          "items": [
-              {
-                  "id": "3478576",
-                  "fulfillment_id": "6b805313-1efd-4346-aa71-1481f8669133"
-              }
-          ],
-          "fulfillments": [
-              {
-                  "id": "6b805313-1efd-4346-aa71-1481f8669133",
-                  "type": "Delivery",
-                  "start": {
-                      "location": {
-                          "gps": "19.0625499,72.8296467",
-                          "address": {
-                              "name": "Surat Chai",
-                              "building": "10, Dr Ambedkar Rd, Pali Village, Bandra West, Mumbai, Maharashtra 400050, India",
-                              "locality": "Bandra West",
-                              "city": "Mumbai",
-                              "state": "Maharashtra",
-                              "country": "India",
-                              "area_code": "400050"
-                          }
-                      },
-                      "contact": {
-                          "phone": "9538612176",
-                          "email": "harshalp@hashtagloyalty.com"
-                      }
-                  },
-                  "end": {
-                      "location": {
-                          "gps": "19.063574392482572,72.8404844",
-                          "address": {
-                              "name": "Home",
-                              "building": "Hsusjjs",
-                              "locality": "",
-                              "city": "Mumbai",
-                              "state": "Maharashtra",
-                              "country": "India",
-                              "area_code": "400051"
-                          }
-                      },
-                      "contact": {
-                          "phone": "7203057589",
-                          "email": "chintanr@hashtagloyalty.com"
-                      }
-                  },
-                  "tags": [
-                      {
-                          "code": "rider_check",
-                          "list": [
-                              {
-                                  "code": "inline_check_for_rider",
-                                  "value": "yes"
-                              }
-                          ]
-                      }
-                  ]
-              }
-          ],
-          "quote": {
-              "price": {
-                  "currency": "INR",
-                  "value": "0"
-              },
-              "breakup": [
-                  
-              ],
-              "ttl": "PT45M"
-          },
-          "payment": {
-              "collected_by": "BAP",
-              "type": "ON-ORDER",
-              "@ondc/org/settlement_details": [
-                  {
-                      "settlement_counterparty": "seller-app",
-                      "settlement_type": "upi",
-                      "beneficiary_name": "Wits Innovation Lab",
-                      "upi_address": "wil@oksbi",
-                      "settlement_bank_account_no": "3946815533100995",
-                      "settlement_ifsc_code": "SBIN0011513"
-                  }
-              ]
-          },
-          "cancellation_terms": [
-              {
-                  "fulfillment_state": {
-                      "descriptor": {
-                          "code": "Pending",
-                          "short_desc": "008"
-                      }
-                  },
-                  "cancellation_fee": {
-                      "percentage": "0.00",
-                      "amount": {
-                          "currency": "INR",
-                          "value": "0.00"
-                      }
-                  }
-              },
-              {
-                  "fulfillment_state": {
-                      "descriptor": {
-                          "code": "Agent-assigned",
-                          "short_desc": "001,003"
-                      }
-                  },
-                  "cancellation_fee": {
-                      "percentage": "100.00",
-                      "amount": {
-                          "currency": "INR",
-                          "value": "50.00"
-                      }
-                  }
-              },
-              {
-                  "fulfillment_state": {
-                      "descriptor": {
-                          "code": "Order-picked-up",
-                          "short_desc": "001,003"
-                      }
-                  },
-                  "cancellation_fee": {
-                      "percentage": "100.00",
-                      "amount": {
-                          "currency": "INR",
-                          "value": "50.00"
-                      }
-                  }
-              },
-              {
-                  "fulfillment_state": {
-                      "descriptor": {
-                          "code": "Out-for-delivery",
-                          "short_desc": "011,012,013,014,015"
-                      }
-                  },
-                  "cancellation_fee": {
-                      "percentage": "100.00",
-                      "amount": {
-                          "currency": "INR",
-                          "value": "50.00"
-                      }
-                  }
-              }
-          ],
-          "tags": [
-              {
-                  "code": "bpp_terms",
-                  "list": [
-                      {
-                          "code": "max_liability",
-                          "value": "2"
-                      },
-                      {
-                          "code": "max_liability_cap",
-                          "value": "10000"
-                      },
-                      {
-                          "code": "mandatory_arbitration",
-                          "value": "false"
-                      },
-                      {
-                          "code": "court_jurisdiction",
-                          "value": "Bengaluru"
-                      },
-                      {
-                          "code": "delay_interest",
-                          "value": "1000"
-                      },
-                      {
-                          "code": "static_terms",
-                          "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                      }
-                  ]
-              }
-          ]
-      }
-  }
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:022",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-logistics-preprod.hashtagloyalty.net",
+        "bap_uri": "https://ondc-logistics-preprod.hashtagloyalty.net/ondc/logistics",
+        "action": "on_init",
+        "transaction_id": "36168170-XXER",
+        "message_id": "36bcd07e6d565714c21e834017ff9079",
+        "timestamp": "2024-09-09T04:40:19.340Z",
+        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
+        "bpp_id": "ref-logistics-app-preprod.ondc.org"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "31ea52a4-33dd-4751-8b00-0b193c38e267"
+            },
+            "items": [
+                {
+                    "id": "Standard",
+                    "fulfillment_id": "e64c8a5a-c795-4e80-abb3-5264ce3cb8b8",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "category_id": "Immediate Delivery"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "e64c8a5a-c795-4e80-abb3-5264ce3cb8b8",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "19.0625499,72.8296467",
+                            "address": {
+                                "name": "Surat Chai",
+                                "building": "10, Dr Ambedkar Rd, Pali Village, Bandra West, Mumbai, Maharashtra 400050, India",
+                                "locality": "Bandra West",
+                                "city": "Mumbai",
+                                "state": "Maharashtra",
+                                "country": "India",
+                                "area_code": "400050"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9538612176",
+                            "email": "harshalp@hashtagloyalty.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "19.063574392482572,72.8404844",
+                            "address": {
+                                "name": "Home",
+                                "building": "Mangeshi Sanskar E wing",
+                                "locality": "Near KDMC I ward office",
+                                "city": "Mumbai",
+                                "state": "Maharashtra",
+                                "country": "India",
+                                "area_code": "400051"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7203057589",
+                            "email": "chintanr@hashtagloyalty.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "99.12"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "84.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "15.12"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            }
+        }
+    }
 }
