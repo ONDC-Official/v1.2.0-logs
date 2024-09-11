@@ -1,0 +1,63 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_select",
+    "core_version": "1.2.0",
+    "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+    "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ondc.bharatrath.app/bapl",
+    "transaction_id": "f919f3fd-e360-4865-b6f5-73ac77f6b9cb",
+    "message_id": "26c00bcb-5c4b-4554-98f8-1302c0cf2b52",
+    "timestamp": "2024-09-10T06:26:09.985Z",
+    "bpp_id": "ondc.bharatrath.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "61", "locations": [{ "id": "1" }] },
+      "fulfillments": [
+        {
+          "id": "1",
+          "@ondc/org/provider_name": "Bharatrath Logistics",
+          "tracking": true,
+          "@ondc/org/category": "Next Day Delivery",
+          "@ondc/org/TAT": "P1D",
+          "provider_id": "61",
+          "type": "Delivery",
+          "state": { "descriptor": { "code": "Non-serviceable" } },
+          "end": { "location": { "gps": "12.967917,77.588889", "address": { "area_code": "560002" } } }
+        }
+      ],
+      "quote": {
+        "price": { "value": "200.00", "currency": "INR" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1496",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "STOLE",
+            "@ondc/org/title_type": "item",
+            "price": { "value": "200.00", "currency": "INR" },
+            "item": {
+              "title": "STOLE",
+              "price": { "currency": "INR", "value": "200.00" },
+              "quantity": { "available": { "count": "99" }, "maximum": { "count": "99" } },
+              "tags": [{ "code": "type", "list": [{ "code": "type", "value": "item" }] }]
+            }
+          },
+          { "title": "Delivery charges", "@ondc/org/title_type": "delivery", "@ondc/org/item_id": "1", "price": { "currency": "INR", "value": "0" } }
+        ],
+        "ttl": "P1D"
+      },
+      "items": [
+        {
+          "id": "1496",
+          "tags": [{ "code": "type", "list": [{ "code": "type", "value": "item" }] }],
+          "fulfillment_id": "6b805313-1efd-4346-aa71-1481f8669133"
+        }
+      ],
+      "payment": { "type": "ON-FULFILLMENT" }
+    }
+  }
+}
