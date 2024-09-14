@@ -3,20 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:0124",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "preprod.logistics-buyer.mp2.in",
     "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
     "bpp_id": "ondc-lsp-preprd.pidge.in",
     "bpp_uri": "https://ondc-lsp-preprd.pidge.in/ondc",
     "transaction_id": "txnsprg_qyb3jeokvywz_dtkmgd",
-    "message_id": "msgsprg_244p6w_hx7k4i",
-    "timestamp": "2024-09-10T10:26:10.756Z"
+    "message_id": "msg_uuwoadmjmtbs4ar7",
+    "timestamp": "2024-09-10T10:26:43.227Z"
   },
   "message": {
     "order": {
       "id": "ordsprg_244p6w_cl7bnq_5678",
-      "state": "Accepted",
+      "state": "In-progress",
       "provider": { "id": "Pidge" },
       "items": [
         {
@@ -50,7 +50,7 @@
         {
           "id": "pidge_immediate_f1",
           "type": "Delivery",
-          "state": { "descriptor": { "code": "Pending" } },
+          "state": { "descriptor": { "code": "Agent-assigned" } },
           "start": {
             "time": {
               "range": {
@@ -97,23 +97,28 @@
               }
             }
           },
+          "tracking": true,
           "tags": [
             {
-              "code": "weather_check",
-              "list": [{ "code": "raining", "value": "no" }]
-            },
-            {
-              "code": "state",
-              "list": [{ "code": "ready_to_ship", "value": "yes" }]
-            },
-            {
-              "code": "rto_action",
-              "list": [{ "code": "return_to_origin", "value": "yes" }]
+              "code": "tracking",
+              "list": [
+                { "code": "gps_enabled", "value": "yes" },
+                { "code": "url_enabled", "value": "yes" },
+                {
+                  "code": "url",
+                  "value": "https://t.pidge.in/?id=D6USdVoSHosPS7fBLgNFk"
+                }
+              ]
             }
           ],
-          "tracking": true
+          "agent": { "name": "Arun P test", "phone": "9990552336" }
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID"
+      },
       "billing": {
         "name": "MP2 Innovations LLP",
         "address": {
@@ -131,7 +136,6 @@
         "created_at": "2024-09-10T10:26:08.944Z",
         "updated_at": "2024-09-10T10:26:08.944Z"
       },
-      "payment": { "collected_by": "BAP", "type": "POST-FULFILLMENT" },
       "@ondc/org/linked_order": {
         "items": [
           {
@@ -165,8 +169,8 @@
           }
         }
       },
-      "created_at": "2024-09-10T10:26:10.632Z",
-      "updated_at": "2024-09-10T10:26:10.756Z"
+      "updated_at": "2024-09-10T10:26:43.207Z",
+      "created_at": "2024-09-10T10:26:10.632Z"
     }
   }
 }
