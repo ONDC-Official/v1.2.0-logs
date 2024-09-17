@@ -1,51 +1,57 @@
 {
   "context": {
       "domain": "nic2004:60232",
-      "action": "on_status",
+      "action": "on_cancel",
       "core_version": "1.2.0",
       "bap_id": "sellerpreprod.easypay.co.in",
       "bap_uri": "https://sellerpreprod.easypay.co.in/ecommerce/ondc/seller-logistic",
       "bpp_id": "ref-logistics-app-preprod.ondc.org",
       "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
       "transaction_id": "cfedb38d-0c3e-4be0-811a-17e56f39058aEP",
-      "message_id": "21fcb124-00a3-47a0-b525-abe06652d6e1",
+      "message_id": "d02cb329-6e39-4fe6-8d8b-8eff1c689f48",
       "city": "std:020",
       "country": "IND",
-      "timestamp": "2024-09-16T16:34:24.667Z"
+      "timestamp": "2024-09-16T16:34:13.087Z"
   },
   "message": {
       "order": {
           "id": "2024-09-16-466693EP",
           "state": "Cancelled",
+          "cancellation": {
+              "cancelled_by": "ref-logistics-app-preprod.ondc.org",
+              "reason": {
+                  "id": "013"
+              }
+          },
           "provider": {
               "id": "f913c968-f018-4920-a1e9-74922f7f5a12"
           },
           "items": [
               {
+                  "id": "Standard",
+                  "fulfillment_id": "e8e4ecac-c406-4e92-b710-4e935ae4d5d4",
                   "descriptor": {
                       "code": "P2P"
                   },
+                  "category_id": "Standard Delivery",
                   "time": {
                       "label": "TAT",
                       "duration": "P4D",
                       "timestamp": "2024-09-16"
-                  },
-                  "id": "Standard",
-                  "fulfillment_id": "e8e4ecac-c406-4e92-b710-4e935ae4d5d4",
-                  "category_id": "Standard Delivery"
+                  }
               },
               {
+                  "id": "rto",
+                  "fulfillment_id": "4d8ed515-0081-454b-a285-534c1ca30808",
                   "descriptor": {
                       "code": "P2P"
                   },
+                  "category_id": "Standard Delivery",
                   "time": {
                       "label": "TAT",
                       "duration": "P4D",
                       "timestamp": "2024-09-20"
-                  },
-                  "id": "rto",
-                  "fulfillment_id": "4d8ed515-0081-454b-a285-534c1ca30808",
-                  "category_id": "Standard Delivery"
+                  }
               }
           ],
           "quote": {
@@ -55,62 +61,56 @@
               },
               "breakup": [
                   {
+                      "@ondc/org/item_id": "Standard",
+                      "@ondc/org/title_type": "delivery",
                       "price": {
                           "currency": "INR",
                           "value": "84.00"
-                      },
-                      "@ondc/org/item_id": "Standard",
-                      "@ondc/org/title_type": "delivery"
+                      }
                   },
                   {
+                      "@ondc/org/item_id": "Standard",
+                      "@ondc/org/title_type": "tax",
                       "price": {
                           "currency": "INR",
                           "value": "15.12"
-                      },
-                      "@ondc/org/item_id": "Standard",
-                      "@ondc/org/title_type": "tax"
+                      }
                   },
                   {
+                      "@ondc/org/item_id": "rto",
+                      "@ondc/org/title_type": "rto",
                       "price": {
                           "currency": "INR",
                           "value": "26.77"
-                      },
-                      "@ondc/org/item_id": "rto",
-                      "@ondc/org/title_type": "rto"
+                      }
                   },
                   {
+                      "@ondc/org/item_id": "rto",
+                      "@ondc/org/title_type": "tax",
                       "price": {
                           "currency": "INR",
                           "value": "2.97"
-                      },
-                      "@ondc/org/item_id": "rto",
-                      "@ondc/org/title_type": "tax"
+                      }
                   }
               ]
           },
           "fulfillments": [
               {
-                  "agent": {
-                      "name": "Sonia Schultz",
-                      "phone": "7015305221"
-                  },
-                  "vehicle": {
-                      "registration": "KA 54 XYZ 1234"
-                  },
+                  "id": "e8e4ecac-c406-4e92-b710-4e935ae4d5d4",
+                  "type": "Delivery",
                   "state": {
                       "descriptor": {
                           "code": "Cancelled"
                       }
                   },
-                  "id": "e8e4ecac-c406-4e92-b710-4e935ae4d5d4",
-                  "type": "Delivery",
+                  "tracking": false,
                   "start": {
                       "time": {
+                          "duration": "P1D",
                           "range": {
                               "start": "2024-09-16T16:31:43.386Z",
                               "end": "2024-09-16T16:46:43.386Z"
                           },
-                          "duration": "PT15M",
                           "timestamp": "2024-09-16T16:32:30.399Z"
                       },
                       "person": {
@@ -164,29 +164,55 @@
                           "email": "hitesh@gmail.com"
                       }
                   },
+                  "agent": {
+                      "name": "Sonia Schultz",
+                      "phone": "7015305221"
+                  },
+                  "vehicle": {
+                      "registration": "KA 54 XYZ 1234"
+                  },
                   "tags": [
                       {
-                          "code": "tracking",
+                          "code": "rto_event",
                           "list": [
                               {
-                                  "code": "gps_enabled",
-                                  "value": "yes"
+                                  "code": "retry_count",
+                                  "value": "1"
                               },
                               {
-                                  "code": "url_enabled",
-                                  "value": "no"
+                                  "code": "rto_id",
+                                  "value": "4d8ed515-0081-454b-a285-534c1ca30808"
+                              },
+                              {
+                                  "code": "cancellation_reason_id",
+                                  "value": "013"
+                              },
+                              {
+                                  "code": "sub_reason_id",
+                                  "value": "004"
+                              },
+                              {
+                                  "code": "cancelled_by",
+                                  "value": "ref-logistics-app-preprod.ondc.org"
+                              }
+                          ]
+                      },
+                      {
+                          "code": "precancel_state",
+                          "list": [
+                              {
+                                  "code": "fulfillment_state",
+                                  "value": "Out-for-delivery"
+                              },
+                              {
+                                  "code": "updated_at",
+                                  "value": "2024-09-16T16:33:58.823Z"
                               }
                           ]
                       }
-                  ],
-                  "tracking": true
+                  ]
               },
               {
-                  "state": {
-                      "descriptor": {
-                          "code": "RTO-Delivered"
-                      }
-                  },
                   "id": "4d8ed515-0081-454b-a285-534c1ca30808",
                   "type": "RTO",
                   "start": {
@@ -215,8 +241,7 @@
                           "range": {
                               "start": "2024-09-16T17:19:13.070Z",
                               "end": "2024-09-16T17:34:13.070Z"
-                          },
-                          "timestamp": "2024-09-16T16:34:24.562Z"
+                          }
                       },
                       "location": {
                           "gps": "18.563207,73.914186",
@@ -231,14 +256,14 @@
                           }
                       }
                   },
-                  "tracking": true
+                  "tracking": true,
+                  "state": {
+                      "descriptor": {
+                          "code": "RTO-Initiated"
+                      }
+                  }
               }
           ],
-          "payment": {
-              "collected_by": "BAP",
-              "type": "POST-FULFILLMENT",
-              "status": "NOT-PAID"
-          },
           "billing": {
               "name": "Easy Pay Pvt Ltd",
               "address": {
@@ -256,27 +281,54 @@
               "created_at": "2024-09-16T16:30:55.166Z",
               "updated_at": "2024-09-16T16:30:55.166Z"
           },
+          "payment": {
+              "collected_by": "BAP",
+              "type": "POST-FULFILLMENT",
+              "status": "NOT-PAID"
+          },
           "@ondc/org/linked_order": {
-              "provider": {
-                  "descriptor": {
-                      "name": "Jay SuperMart"
+              "items": [
+                  {
+                      "category_id": "Grocery",
+                      "descriptor": {
+                          "name": "Badam Pak Patanjali - 500g"
+                      },
+                      "quantity": {
+                          "count": 2,
+                          "measure": {
+                              "value": 500,
+                              "unit": "gram"
+                          }
+                      },
+                      "price": {
+                          "currency": "INR",
+                          "value": "245.0"
+                      }
                   },
-                  "address": {
-                      "name": "Solitaire Business Hub",
-                      "building": "Viman nagar",
-                      "locality": "Pune",
-                      "city": "Pune",
-                      "state": "MAHARASHTRA",
-                      "country": "India",
-                      "area_code": "411014"
+                  {
+                      "category_id": "Grocery",
+                      "descriptor": {
+                          "name": "Just Organik Healthy Seed Mix (Mix seeds)"
+                      },
+                      "quantity": {
+                          "count": 2,
+                          "measure": {
+                              "value": 250,
+                              "unit": "gram"
+                          }
+                      },
+                      "price": {
+                          "currency": "INR",
+                          "value": "248.0"
+                      }
                   }
-              },
+              ],
               "order": {
+                  "id": "2024-09-16-466693",
                   "weight": {
                       "unit": "kilogram",
                       "value": 1.5
                   },
-                  "id": "2024-09-16-466693",
                   "dimensions": {
                       "length": {
                           "unit": "centimeter",
@@ -292,49 +344,23 @@
                       }
                   }
               },
-              "items": [
-                  {
-                      "descriptor": {
-                          "name": "Badam Pak Patanjali - 500g"
-                      },
-                      "quantity": {
-                          "measure": {
-                              "value": 500,
-                              "unit": "gram"
-                          },
-                          "count": 2
-                      },
-                      "price": {
-                          "currency": "INR",
-                          "value": "245.0"
-                      },
-                      "category_id": "Grocery"
+              "provider": {
+                  "descriptor": {
+                      "name": "Jay SuperMart"
                   },
-                  {
-                      "descriptor": {
-                          "name": "Just Organik Healthy Seed Mix (Mix seeds)"
-                      },
-                      "quantity": {
-                          "measure": {
-                              "value": 250,
-                              "unit": "gram"
-                          },
-                          "count": 2
-                      },
-                      "price": {
-                          "currency": "INR",
-                          "value": "248.0"
-                      },
-                      "category_id": "Grocery"
+                  "address": {
+                      "name": "Solitaire Business Hub",
+                      "building": "Viman nagar",
+                      "locality": "Pune",
+                      "city": "Pune",
+                      "state": "MAHARASHTRA",
+                      "country": "India",
+                      "area_code": "411014"
                   }
-              ]
-          },
-          "cancellation": {
-              "cancelled_by": "ref-logistics-app-preprod.ondc.org",
-              "reason": {
-                  "id": "013"
               }
-          }
+          },
+          "updated_at": "2024-09-16T16:34:13.087Z",
+          "created_at": "2024-09-16T16:31:21.376Z"
       }
   }
 }
