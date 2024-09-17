@@ -1,81 +1,53 @@
 {
   "context": {
-    "action": "search",
+    "domain": "nic2004:60232",
     "country": "IND",
-    "city": "std:0120",
-    "bap_id": "pramaan.ondc.org/alpha/mock-server",
-    "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/lspbuyer",
-    "transaction_id": "45e08df1-1a8b-4bc3-b0c4-110fa8e66a75",
-    "message_id": "1f89c91d-11b9-4968-ad7d-7968198f4f99",
-    "timestamp": "2024-09-06T11:02:46.828Z",
-    "ttl": "PT30S",
+    "city": "std:0124",
+    "action": "search",
     "core_version": "1.2.0",
-    "domain": "nic2004:60232"
+    "bap_id": "preprod.logistics-buyer.mp2.in",
+    "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
+    "transaction_id": "txnsprg_kzqyde2wjylx_zh6qgn",
+    "message_id": "msgsprg_kzqyde2wjylx_2e5iqy",
+    "timestamp": "2024-09-10T10:28:49.158Z",
+    "ttl": "PT30S"
   },
   "message": {
     "intent": {
-      "category": {
-        "id": "Immediate Delivery"
-      },
+      "category": { "id": "Standard Delivery" },
       "provider": {
         "time": {
           "days": "1,2,3,4,5,6,7",
-          "schedule": {
-            "holidays": []
-          },
-          "duration": "PT30M",
-          "range": {
-            "start": "1100",
-            "end": "2100"
-          }
+          "schedule": { "holidays": ["2024-12-25"] },
+          "range": { "start": "0700", "end": "2100" },
+          "duration": "PT0M"
         }
       },
       "fulfillment": {
         "type": "Delivery",
         "start": {
           "location": {
-            "gps": "28.5238229,77.5207881",
-            "address": {
-              "area_code": "201306"
-            }
+            "gps": "28.3899,77.0651",
+            "address": { "area_code": "122001" }
           }
         },
         "end": {
           "location": {
-            "gps": "28.5139522,77.5241832",
-            "address": {
-              "area_code": "201306"
-            }
+            "gps": "28.3976,77.0721",
+            "address": { "area_code": "122001" }
           }
         }
       },
-      "payment": {
-        "type": "POST-FULFILLMENT"
-      },
+      "payment": { "type": "POST-FULFILLMENT" },
       "@ondc/org/payload_details": {
-        "weight": {
-          "unit": "kilogram",
-          "value": 1
-        },
+        "weight": { "unit": "kilogram", "value": 3 },
         "dimensions": {
-          "length": {
-            "unit": "centimeter",
-            "value": 1
-          },
-          "breadth": {
-            "unit": "centimeter",
-            "value": 1
-          },
-          "height": {
-            "unit": "centimeter",
-            "value": 1
-          }
+          "length": { "unit": "centimeter", "value": 10 },
+          "breadth": { "unit": "centimeter", "value": 10 },
+          "height": { "unit": "centimeter", "value": 10 }
         },
-        "category": "Grocery",
-        "value": {
-          "currency": "INR",
-          "value": "300.00"
-        },
+        "category": "F&B",
+        "value": { "currency": "INR", "value": "135.0" },
         "dangerous_goods": false
       }
     }
