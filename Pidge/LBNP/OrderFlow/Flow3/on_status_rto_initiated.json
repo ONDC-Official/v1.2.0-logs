@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_confirm",
+    "action": "on_cancel",
     "bap_id": "ondc-lbnp-preprd.pidge.in",
     "bap_uri": "https://ondc-lbnp-preprd.pidge.in/ondc",
     "bpp_id": "ondc-lsp-preprd.pidge.in",
@@ -9,9 +9,9 @@
     "core_version": "1.2.0",
     "country": "IND",
     "domain": "nic2004:60232",
-    "message_id": "f1b57010-1ae5-454e-b2e3-f1c7c73cdf23",
-    "timestamp": "2024-09-18T13:41:16.580Z",
-    "transaction_id": "57404cdb-9a0d-4b66-afc8-6579571f055f"
+    "message_id": "msg_uubwtczurjysq4lb",
+    "timestamp": "2024-09-18T13:58:13.476Z",
+    "transaction_id": "545511d7-90ab-417f-9f9d-125ce8936bb2"
   },
   "message": {
     "order": {
@@ -42,7 +42,7 @@
             "height": { "unit": "centimeter", "value": 25 },
             "length": { "unit": "centimeter", "value": 25 }
           },
-          "id": "57404cdb-9a0d-4b66-afc8-6579571f055f",
+          "id": "545511d7-90ab-417f-9f9d-125ce8936bb2",
           "weight": { "unit": "kilogram", "value": 0.5 }
         },
         "provider": {
@@ -67,16 +67,21 @@
           "name": "Pidge",
           "state": "Haryana"
         },
-        "created_at": "2024-09-18T13:41:16.207Z",
+        "created_at": "2024-09-18T13:57:01.603Z",
         "email": "grievanceofficer@pidge.in",
         "name": "PIDGE TECHNOLOGIES PVT LTD",
         "phone": "9319482670",
         "tax_number": "06AAJCR2779K1ZT",
-        "updated_at": "2024-09-18T13:41:16.207Z"
+        "updated_at": "2024-09-18T13:57:01.603Z"
       },
-      "created_at": "2024-09-18T13:41:16.557Z",
+      "cancellation": {
+        "cancelled_by": "ondc-lsp-preprd.pidge.in",
+        "reason": { "id": "015" }
+      },
+      "created_at": "2024-09-18T13:57:02.069Z",
       "fulfillments": [
         {
+          "agent": { "name": "Arun P test", "phone": "9990552336" },
           "end": {
             "contact": { "email": "customer@pidge.in", "phone": "9324999349" },
             "location": {
@@ -94,8 +99,8 @@
             "person": { "name": "Shabbir" },
             "time": {
               "range": {
-                "end": "2024-09-18T14:36:16.557Z",
-                "start": "2024-09-18T14:01:16.557Z"
+                "end": "2024-09-18T14:52:02.069Z",
+                "start": "2024-09-18T14:17:02.069Z"
               }
             }
           },
@@ -123,37 +128,76 @@
             "time": {
               "duration": "PT20M",
               "range": {
-                "end": "2024-09-18T14:01:16.557Z",
-                "start": "2024-09-18T13:41:16.557Z"
+                "end": "2024-09-18T14:17:02.069Z",
+                "start": "2024-09-18T13:57:02.069Z"
+              },
+              "timestamp": "2024-09-18T13:57:20.204Z"
+            }
+          },
+          "state": { "descriptor": { "code": "Cancelled" } },
+          "tags": [
+            {
+              "code": "precancel_state",
+              "list": [
+                { "code": "fulfillment_state", "value": "Out-for-delivery" },
+                { "code": "updated_at", "value": "2024-09-18T13:57:20.204Z" }
+              ]
+            },
+            {
+              "code": "rto_event",
+              "list": [
+                { "code": "retry_count", "value": "0" },
+                { "code": "rto_id", "value": "pidge_immediate_f1-RTO" },
+                { "code": "cancellation_reason_id", "value": "015" },
+                { "code": "cancelled_by", "value": "ondc-lsp-preprd.pidge.in" },
+                { "code": "sub_reason_id", "value": "" }
+              ]
+            }
+          ],
+          "tracking": false,
+          "type": "Delivery"
+        },
+        {
+          "end": {
+            "time": {
+              "range": {
+                "end": "2024-09-18T14:33:12.191Z",
+                "start": "2024-09-18T13:58:12.191Z"
               }
             }
           },
-          "state": { "descriptor": { "code": "Pending" } },
-          "tags": [
-            {
-              "code": "weather_check",
-              "list": [{ "code": "raining", "value": "no" }]
-            },
-            {
-              "code": "state",
-              "list": [{ "code": "ready_to_ship", "value": "yes" }]
-            },
-            {
-              "code": "rto_action",
-              "list": [{ "code": "return_to_origin", "value": "yes" }]
+          "id": "pidge_immediate_f1-RTO",
+          "start": {
+            "time": {
+              "range": {
+                "end": "2024-09-18T14:53:12.191Z",
+                "start": "2024-09-18T13:58:12.191Z"
+              },
+              "timestamp": "2024-09-18T13:58:12.191Z"
             }
-          ],
-          "tracking": true,
-          "type": "Delivery"
+          },
+          "state": { "descriptor": { "code": "RTO-Initiated" } },
+          "type": "RTO"
         }
       ],
-      "id": "mf_00_q18bZy_RODQdWq59Sh0wJ",
+      "id": "fz_00_q18bZy_RODQdWq59Sh0wJ",
       "items": [
         {
           "category_id": "Immediate Delivery",
           "descriptor": { "code": "P2P" },
           "fulfillment_id": "pidge_immediate_f1",
           "id": "pidge_immediate",
+          "time": {
+            "duration": "PT55M",
+            "label": "TAT",
+            "timestamp": "2024-09-18"
+          }
+        },
+        {
+          "category_id": "Immediate Delivery",
+          "descriptor": { "code": "P2P" },
+          "fulfillment_id": "pidge_immediate_f1-RTO",
+          "id": "pidge_immediate-RTO",
           "time": {
             "duration": "PT55M",
             "label": "TAT",
@@ -174,12 +218,22 @@
             "@ondc/org/item_id": "pidge_immediate",
             "@ondc/org/title_type": "tax",
             "price": { "currency": "INR", "value": "0.0" }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate-RTO",
+            "@ondc/org/title_type": "rto",
+            "price": { "currency": "INR", "value": "0.0" }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate-RTO",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "0.0" }
           }
         ],
         "price": { "currency": "INR", "value": "0.0" }
       },
-      "state": "Accepted",
-      "updated_at": "2024-09-18T13:41:16.580Z"
+      "state": "Cancelled",
+      "updated_at": "2024-09-18T13:58:13.458Z"
     }
   }
 }

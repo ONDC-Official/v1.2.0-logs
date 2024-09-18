@@ -1,6 +1,6 @@
 {
   "context": {
-    "action": "on_init",
+    "action": "init",
     "bap_id": "ondc-lbnp-preprd.pidge.in",
     "bap_uri": "https://ondc-lbnp-preprd.pidge.in/ondc",
     "bpp_id": "ondc-lsp-preprd.pidge.in",
@@ -9,12 +9,30 @@
     "core_version": "1.2.0",
     "country": "IND",
     "domain": "nic2004:60232",
-    "message_id": "a6b16927-b22a-4130-9cbb-f8309c7a8d91",
-    "timestamp": "2024-09-18T13:41:16.297Z",
-    "transaction_id": "57404cdb-9a0d-4b66-afc8-6579571f055f"
+    "message_id": "858e8681-e2cb-4b08-8d99-313bb9165947",
+    "timestamp": "2024-09-18T13:57:01.603Z",
+    "transaction_id": "545511d7-90ab-417f-9f9d-125ce8936bb2",
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
+      "billing": {
+        "address": {
+          "area_code": "122002",
+          "building": "Tower A, 6th Floor",
+          "city": "Gurgaon",
+          "country": "IND",
+          "locality": "M3M Urbana Business Park",
+          "name": "Pidge",
+          "state": "Haryana"
+        },
+        "created_at": "2024-09-18T13:57:01.603Z",
+        "email": "grievanceofficer@pidge.in",
+        "name": "PIDGE TECHNOLOGIES PVT LTD",
+        "phone": "9319482670",
+        "tax_number": "06AAJCR2779K1ZT",
+        "updated_at": "2024-09-18T13:57:01.603Z"
+      },
       "fulfillments": [
         {
           "end": {
@@ -48,36 +66,31 @@
               "gps": "28.630643,77.277623"
             }
           },
-          "tags": [
-            {
-              "code": "rider_check",
-              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
-            }
-          ],
           "type": "Delivery"
         }
       ],
       "items": [
-        { "fulfillment_id": "pidge_immediate_f1", "id": "pidge_immediate" }
+        {
+          "category_id": "Immediate Delivery",
+          "descriptor": {
+            "code": "P2P",
+            "long_desc": "Immediate Delivery powered by Pidge",
+            "name": "Pidge Logistics",
+            "short_desc": "Immediate Delivery powered by Pidge"
+          },
+          "fulfillment_id": "pidge_immediate_f1",
+          "id": "pidge_immediate",
+          "parent_item_id": "",
+          "price": { "currency": "INR", "value": "0" },
+          "time": {
+            "duration": "PT55M",
+            "label": "TAT",
+            "timestamp": "2024-09-18"
+          }
+        }
       ],
       "payment": { "collected_by": "BAP", "type": "POST-FULFILLMENT" },
-      "provider": { "id": "Pidge" },
-      "quote": {
-        "breakup": [
-          {
-            "@ondc/org/item_id": "pidge_immediate",
-            "@ondc/org/title_type": "delivery",
-            "price": { "currency": "INR", "value": "0.0" }
-          },
-          {
-            "@ondc/org/item_id": "pidge_immediate",
-            "@ondc/org/title_type": "tax",
-            "price": { "currency": "INR", "value": "0.0" }
-          }
-        ],
-        "price": { "currency": "INR", "value": "0.0" },
-        "ttl": "PT15M"
-      }
+      "provider": { "id": "Pidge" }
     }
   }
 }
