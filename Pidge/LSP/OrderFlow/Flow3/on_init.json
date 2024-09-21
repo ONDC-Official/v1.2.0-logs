@@ -1,0 +1,83 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:011",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.logistics-buyer.mp2.in",
+    "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
+    "bpp_id": "ondc-lsp-preprd.pidge.in",
+    "bpp_uri": "https://ondc-lsp-preprd.pidge.in/ondc",
+    "transaction_id": "txnmp2pre_2izmwbhwl43x_ligqdg",
+    "message_id": "msgmp2pre_ovmaya_pzbhwh",
+    "timestamp": "2024-09-17T11:17:15.013Z"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "Pidge" },
+      "items": [
+        { "id": "pidge_immediate", "fulfillment_id": "pidge_immediate_f1" }
+      ],
+      "fulfillments": [
+        {
+          "id": "pidge_immediate_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "28.6306,77.2776",
+              "address": {
+                "name": "Pidge final test",
+                "building": "Laxmi Nagar metro station",
+                "locality": "Laxmi Nagar, Block U, Shakarpur",
+                "city": "Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110092"
+              }
+            },
+            "contact": { "phone": "9980657876", "email": "noreply@mp2.in" }
+          },
+          "end": {
+            "location": {
+              "gps": "28.6374289,77.28673730000001",
+              "address": {
+                "name": "",
+                "building": "V3S Mall, Vikas Marg",
+                "locality": "Laxmi Nagar Commercial Complex, Swasthya Vihar",
+                "city": "Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110092"
+              }
+            },
+            "contact": { "phone": "9980987687", "email": "noreply@mp2.in" }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
+            }
+          ]
+        }
+      ],
+      "payment": { "type": "POST-FULFILLMENT", "collected_by": "BAP" },
+      "quote": {
+        "price": { "currency": "INR", "value": "11.8" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "10.0" }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "1.8" }
+          }
+        ],
+        "ttl": "PT15M"
+      }
+    }
+  }
+}
