@@ -1,0 +1,111 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
+    "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
+    "bpp_id": "preprod.pidge-lsp.mp2.in",
+    "bpp_uri": "https://preprod.pidge-lsp.mp2.in/ondc",
+    "transaction_id": "dbcdcaa8-c8c1-4cd6-9756-0d538e5e413b",
+    "message_id": "8dc72474-b5cb-4f12-962a-cce3fafb3d5b",
+    "timestamp": "2024-08-20T09:54:07.223Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "Pidge"
+      },
+      "items": [
+        {
+          "id": "pidge_immediate",
+          "fulfillment_id": "pidge_immediate_f1"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "pidge_immediate_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.949415732309127, 77.5846804305911",
+              "address": {
+                "name": "Codezyng Test Store",
+                "building": "E Samudaay Store",
+                "locality": "Mavalli",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560004"
+              }
+            },
+            "contact": {
+              "phone": "9000000000",
+              "email": "vignesh@esamudaay.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.945602, 77.573401",
+              "address": {
+                "name": "pidge logistics test address",
+                "building": "Sai Home",
+                "locality": "Basavanagudi",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560004"
+              }
+            },
+            "contact": {
+              "phone": "7846898204",
+              "email": "vignesh@codezyng.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP"
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "11.8"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "10.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "1.8"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      }
+    }
+  }
+}
