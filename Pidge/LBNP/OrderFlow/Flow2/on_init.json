@@ -1,0 +1,83 @@
+{
+  "context": {
+    "action": "on_init",
+    "bap_id": "ondc-lbnp-preprd.pidge.in",
+    "bap_uri": "https://ondc-lbnp-preprd.pidge.in/ondc",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "city": "std:011",
+    "core_version": "1.2.0",
+    "country": "IND",
+    "domain": "nic2004:60232",
+    "message_id": "93c921f1-22a1-4e49-90d1-21b1ed8479f3",
+    "timestamp": "2024-09-19T11:57:53.871Z",
+    "transaction_id": "dc59a660-38b6-47f3-bd48-61cc7f902202"
+  },
+  "message": {
+    "order": {
+      "fulfillments": [
+        {
+          "end": {
+            "contact": { "email": "customer@pidge.in", "phone": "9324999349" },
+            "location": {
+              "address": {
+                "area_code": "110092",
+                "building": "nirman vihar metoro",
+                "city": "New Delhi",
+                "country": "IND",
+                "locality": "New Delhi",
+                "name": "Shabbir",
+                "state": "Delhi"
+              },
+              "gps": "28.637871,77.285385"
+            }
+          },
+          "id": "mp2_immediate_f1",
+          "start": {
+            "contact": { "email": "sender@pidge.in", "phone": "9990552336" },
+            "location": {
+              "address": {
+                "area_code": "110092",
+                "building": "laxmi nagar mtero",
+                "city": "Delhi",
+                "country": "IND",
+                "locality": "Delhi",
+                "name": "Arun Barhela",
+                "state": "Delhi"
+              },
+              "gps": "28.630643,77.277623"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
+            }
+          ],
+          "type": "Delivery"
+        }
+      ],
+      "items": [
+        { "fulfillment_id": "mp2_immediate_f1", "id": "mp2_immediate" }
+      ],
+      "payment": { "collected_by": "BAP", "type": "POST-FULFILLMENT" },
+      "provider": { "id": "MP2" },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "21.19" }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "3.81" }
+          }
+        ],
+        "price": { "currency": "INR", "value": "25.0" },
+        "ttl": "PT15M"
+      }
+    }
+  }
+}
