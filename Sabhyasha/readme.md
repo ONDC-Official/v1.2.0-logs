@@ -1,4 +1,5 @@
 All logs including 
--- Retail
--- Logistics
--- IGM
+-- **Retail**
+-- **Logistics**
+-- **IGM**
+-- **RSP**
