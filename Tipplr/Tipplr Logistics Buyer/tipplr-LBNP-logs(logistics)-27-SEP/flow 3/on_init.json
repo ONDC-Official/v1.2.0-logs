@@ -1,0 +1,219 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.tipplr.in",
+    "bap_uri": "https://preprod.tipplr.in/ondc/logistics/v2",
+    "transaction_id": "7c9d987e-1012-4fd5-9ade-c06870f77006",
+    "message_id": "1f559d8b-3dda-4387-8d64-05c66a137d23",
+    "timestamp": "2024-09-27T11:34:10.099Z",
+    "bpp_id": "ref-logistics-app-stage.ondc.org",
+    "bpp_uri": "https://ref-logistics-app-stage.ondc.org"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "36fd303e-3b4a-4ebe-8acb-63a30a663eda"
+      },
+      "items": [
+        {
+          "id": "Standard",
+          "fulfillment_id": "5da87192-00b1-4ed7-8b14-4b426735d52c",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Immediate Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "5da87192-00b1-4ed7-8b14-4b426735d52c",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.979612,77.590846",
+              "address": {
+                "name": "Tipplr-samrudh veg testing",
+                "building": "Ambedkar Bheedhi  XHHR+R8X",
+                "locality": " Sampangi Rama Nagara  Bengaluru",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "8310422896",
+              "email": "hello@tipplr.in"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.987301,77.595352",
+              "address": {
+                "name": "punith home ",
+                "building": "Cunningham Crescent Road",
+                "locality": "Vasanthnagar",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560052"
+              }
+            },
+            "contact": {
+              "phone": "8553957123",
+              "email": "foodspacetechnology@gmail.com"
+            },
+            "instructions": {
+              "images": []
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "138.60"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "132.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.60"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": []
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true,
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
