@@ -3,46 +3,61 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:022",
+        "action": "on_search",
         "core_version": "1.2.0",
         "bap_id": "ondc-logistics-preprod.hashtagloyalty.net",
         "bap_uri": "https://ondc-logistics-preprod.hashtagloyalty.net/ondc/logistics",
-        "action": "on_search",
-        "transaction_id": "36168170-XXER",
-        "message_id": "7cc418dd090de4d239de189c9ec4617d",
-        "timestamp": "2024-09-09T04:40:10.809Z",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
+        "transaction_id": "36168317-OCUN",
+        "message_id": "7af0a5fc82bbd9cf62c193a1446409b1",
+        "timestamp": "2024-09-25T13:34:26.513Z",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
     },
     "message": {
         "catalog": {
             "bpp/descriptor": {
-                "name": "ONDC Logistics"
+                "name": "MP2",
+                "tags": [
+                    {
+                        "code": "bpp_terms",
+                        "list": [
+                            {
+                                "code": "static_terms",
+                                "value": ""
+                            },
+                            {
+                                "code": "np_type",
+                                "value": "Normal"
+                            }
+                        ]
+                    }
+                ]
             },
             "bpp/providers": [
                 {
-                    "id": "31ea52a4-33dd-4751-8b00-0b193c38e267",
+                    "id": "MP2",
                     "descriptor": {
-                        "name": "ONDC Logistics",
-                        "long_desc": "ONDC Logistics to delivery your goods in one go",
-                        "short_desc": "ONDC Logistics to delivery your goods in one go"
+                        "name": "MP2",
+                        "short_desc": "MP2",
+                        "long_desc": "MP2 Logistics Provider"
                     },
                     "categories": [
                         {
                             "id": "Immediate Delivery",
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-09-09"
+                                "duration": "PT55M",
+                                "timestamp": "2024-09-25"
                             }
                         }
                     ],
                     "fulfillments": [
                         {
-                            "id": "e64c8a5a-c795-4e80-abb3-5264ce3cb8b8",
+                            "id": "mp2_immediate_f1",
                             "type": "Delivery",
                             "start": {
                                 "time": {
-                                    "duration": "PT15M"
+                                    "duration": "PT20M"
                                 }
                             },
                             "tags": [
@@ -55,44 +70,44 @@
                                         },
                                         {
                                             "code": "motorable_distance",
-                                            "value": "1.44"
+                                            "value": "1.83"
                                         }
                                     ]
                                 }
                             ]
                         },
                         {
-                            "id": "66a675a5-ce41-4b76-b77b-a0f278ec73b3",
+                            "id": "mp2_immediate_f1-RTO",
                             "type": "RTO"
                         }
                     ],
                     "items": [
                         {
-                            "id": "Standard",
+                            "id": "mp2_immediate",
                             "parent_item_id": "",
                             "category_id": "Immediate Delivery",
-                            "fulfillment_id": "e64c8a5a-c795-4e80-abb3-5264ce3cb8b8",
+                            "fulfillment_id": "mp2_immediate_f1",
                             "descriptor": {
                                 "code": "P2P",
-                                "name": "Immediate Delivery",
-                                "long_desc": "Upto 60 mins for Delivery",
-                                "short_desc": "Upto 60 mins for Delivery"
+                                "name": "MP2 Immediate Delivery",
+                                "short_desc": "Immediate Delivery by MP2",
+                                "long_desc": "Immediate Delivery by MP2"
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "99.12"
+                                "value": "25.0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-09-09"
+                                "duration": "PT55M",
+                                "timestamp": "2024-09-25"
                             }
                         },
                         {
-                            "id": "rto",
-                            "parent_item_id": "Standard",
+                            "id": "mp2_immediate-RTO",
+                            "parent_item_id": "mp2_immediate",
                             "category_id": "Immediate Delivery",
-                            "fulfillment_id": "66a675a5-ce41-4b76-b77b-a0f278ec73b3",
+                            "fulfillment_id": "mp2_immediate_f1-RTO",
                             "descriptor": {
                                 "code": "P2P",
                                 "name": "RTO quote",
@@ -101,12 +116,12 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "29.74"
+                                "value": "0"
                             },
                             "time": {
                                 "label": "TAT",
-                                "duration": "PT60M",
-                                "timestamp": "2024-09-09"
+                                "duration": "PT55M",
+                                "timestamp": "2024-09-25"
                             }
                         }
                     ]
