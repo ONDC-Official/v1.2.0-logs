@@ -3,46 +3,40 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:011",
-        "core_version": "1.2.0",
         "action": "on_status",
-        "transaction_id": "063aa124-3ccc-4981-81dd-fd8dbb14a187",
-        "message_id": "55896f0e-a408-41c6-b513-10a95ebfc672",
-        "timestamp": "2024-10-03T06:48:11.517Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "core_version": "1.2.0",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT30S",
-        "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/lspseller",
-        "bpp_id": "pramaan.ondc.org/alpha/mock-server"
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "b32ddad4-cfb4-475b-9974-c8783719d625",
+        "message_id": "92597754-4797-4a3f-878b-619d8e02640b",
+        "timestamp": "2024-10-03T15:25:11.750Z"
     },
     "message": {
         "order": {
             "id": "O2",
-            "state": "Created",
+            "state": "Cancelled",
             "provider": {
-                "id": "P1f31518ea-cfb6-4853-ab05-fb4d2fc23abc",
-                "locations": [
-                    {
-                        "id": "d861c861-d3f5-44cf-88af-92c8cd784249"
-                    }
-                ]
+                "id": "Zypp"
             },
             "items": [
                 {
-                    "id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
-                    "fulfillment_id": "6b805313-1efd-4346-aa71-1481f8669133",
+                    "id": "zypp_immediate",
+                    "fulfillment_id": "zypp_immediate_f1",
                     "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
                     "time": {
                         "label": "TAT",
-                        "duration": "PT45M",
-                        "timestamp": "2023-06-06"
+                        "duration": "PT55M",
+                        "timestamp": "2024-10-03"
                     }
                 },
                 {
-                    "id": "787e56d3-72bb-4189-8adc-5adc8323c81b",
-                    "fulfillment_id": "4814d3a4-918c-4238-bfc0-d4b16150aedb",
+                    "id": "zypp_immediate-RTO",
+                    "fulfillment_id": "zypp_immediate_f1-RTO",
                     "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
@@ -57,23 +51,23 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "1"
+                    "value": "0.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
+                        "@ondc/org/item_id": "zypp_immediate",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0.82"
+                            "value": "0.0"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
+                        "@ondc/org/item_id": "zypp_immediate",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "0.18"
+                            "value": "0.0"
                         }
                     }
                 ]
@@ -84,36 +78,31 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Cancelled"
                         }
                     },
-                    "tracking": true,
                     "start": {
+                        "time": {
+                            "duration": "PT20M"
+                        },
+                        "person": {
+                            "name": "person_name"
+                        },
                         "location": {
                             "gps": "12.453544,77.928379",
                             "address": {
-                                "area_code": "560041",
                                 "name": "My store name",
                                 "building": "My building name",
                                 "locality": "My street name",
                                 "city": "Bengaluru",
                                 "state": "Karnataka",
-                                "country": "India"
+                                "country": "India",
+                                "area_code": "560041"
                             }
                         },
                         "contact": {
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
-                        },
-                        "person": {
-                            "name": "person_name"
-                        },
-                        "time": {
-                            "range": {
-                                "start": "2024-10-03T06:48:11.515Z",
-                                "end": "2024-10-03T07:08:11.515Z"
-                            },
-                            "timestamp": "2024-10-03T06:48:11.515Z"
                         },
                         "instructions": {
                             "code": "2",
@@ -126,45 +115,32 @@
                         }
                     },
                     "end": {
+                        "person": {
+                            "name": "person_name"
+                        },
                         "location": {
                             "gps": "12.453544,77.928379",
                             "address": {
-                                "area_code": "560076",
                                 "name": "My house #",
                                 "building": "My house or building name",
                                 "locality": "My street name",
                                 "city": "Bengaluru",
                                 "state": "Karnataka",
-                                "country": "India"
+                                "country": "India",
+                                "area_code": "560076"
                             }
                         },
                         "contact": {
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
                         },
-                        "person": {
-                            "name": "person_name"
-                        },
                         "instructions": {
                             "code": "2",
                             "short_desc": "value of PCC",
                             "long_desc": "additional instructions for pickup"
-                        },
-                        "time": {
-                            "range": {
-                                "start": "2024-10-03T07:28:11.515Z",
-                                "end": "2024-10-03T08:08:11.515Z"
-                            },
-                            "timestamp": "2024-10-03T06:48:11.515Z"
                         }
                     },
-                    "agent": {
-                        "name": "mayur",
-                        "phone": "9886098860"
-                    },
-                    "vehicle": {
-                        "registration": "3LMJ945"
-                    },
+                    "tracking": false,
                     "tags": [
                         {
                             "code": "tracking",
@@ -175,11 +151,24 @@
                                 },
                                 {
                                     "code": "url_enabled",
-                                    "value": "no"
+                                    "value": "yes"
                                 },
                                 {
                                     "code": "url",
-                                    "value": "https://sellerNP.com/ondc/tracking_url"
+                                    "value": "https://track.mp2.in/r/O2"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Pending"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-10-03T14:56:12.856Z"
                                 }
                             ]
                         }
@@ -187,22 +176,19 @@
                 }
             ],
             "payment": {
-                "type": "POST-FULFILLMENT",
                 "@ondc/org/collection_amount": "300.00",
                 "collected_by": "BPP",
+                "type": "POST-FULFILLMENT",
                 "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "buyer-app",
                         "settlement_type": "upi",
                         "upi_address": "gft@oksbi",
                         "settlement_bank_account_no": "XXXXXXXXXX",
-                        "settlement_ifsc_code": "XXXXXXXXX",
-                        "settlement_status": "PAID",
-                        "settlement_reference": "XXXXXXXXX",
-                        "settlement_timestamp": "2024-10-03T06:48:11.515Z"
+                        "settlement_ifsc_code": "XXXXXXXXX"
                     }
                 ],
-                "status": "PAID"
+                "status": "NOT-PAID"
             },
             "billing": {
                 "name": "ONDC Logistics Buyer NP",
@@ -276,10 +262,17 @@
                     }
                 }
             },
-            "tags": []
+            "updated_at": "2024-10-03T14:56:12.924Z",
+            "created_at": "2024-10-03T14:56:12.856Z",
+            "cancellation": {
+                "cancelled_by": "ondc.sequelstring.com/buyer/protocol",
+                "reason": {
+                    "id": "997"
+                }
+            }
         }
     },
     "_id": {
-        "$oid": "66fe3e2b611c80b381d0c6cd"
+        "$oid": "66feb7577981419efa4863c6"
     }
 }
