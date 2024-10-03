@@ -1,41 +1,285 @@
 {
     "context": {
         "domain": "nic2004:60232",
-        "location": {
-            "country": {
-                "code": "IND"
-            },
-            "city": {
-                "code": "*"
-            }
-        },
-        "version": "2.0.0",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.0",
         "action": "on_status",
-        "transaction_id": "29a9b64c-aaa2-4a32-853c-1f45ae86db10",
-        "message_id": "3922b56f-1ff9-4b52-ab85-f3cab91e0767",
-        "timestamp": "2024-09-23T06:58:04.282Z",
+        "transaction_id": "063aa124-3ccc-4981-81dd-fd8dbb14a187",
+        "message_id": "55896f0e-a408-41c6-b513-10a95ebfc672",
+        "timestamp": "2024-10-03T06:48:11.517Z",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT10M",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "ttl": "PT30S",
+        "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/lspseller",
+        "bpp_id": "pramaan.ondc.org/alpha/mock-server"
     },
     "message": {
         "order": {
-            "state": "Completed",
+            "id": "O2",
+            "state": "Created",
+            "provider": {
+                "id": "P1f31518ea-cfb6-4853-ab05-fb4d2fc23abc",
+                "locations": [
+                    {
+                        "id": "d861c861-d3f5-44cf-88af-92c8cd784249"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
+                    "fulfillment_id": "6b805313-1efd-4346-aa71-1481f8669133",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT45M",
+                        "timestamp": "2023-06-06"
+                    }
+                },
+                {
+                    "id": "787e56d3-72bb-4189-8adc-5adc8323c81b",
+                    "fulfillment_id": "4814d3a4-918c-4238-bfc0-d4b16150aedb",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT45M",
+                        "timestamp": "2023-06-06"
+                    }
+                }
+            ],
             "quote": {
                 "price": {
-                    "value": "108"
-                }
+                    "currency": "INR",
+                    "value": "1"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.82"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4d1cd6e8-2332-409e-ba3f-2ea325697a6a",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.18"
+                        }
+                    }
+                ]
             },
-            "fulfillments": [],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "tracking": true,
+                    "start": {
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "area_code": "560041",
+                                "name": "My store name",
+                                "building": "My building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-03T06:48:11.515Z",
+                                "end": "2024-10-03T07:08:11.515Z"
+                            },
+                            "timestamp": "2024-10-03T06:48:11.515Z"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup",
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://reverse_qc_sop_form.htm"
+                            }
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "area_code": "560076",
+                                "name": "My house #",
+                                "building": "My house or building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-03T07:28:11.515Z",
+                                "end": "2024-10-03T08:08:11.515Z"
+                            },
+                            "timestamp": "2024-10-03T06:48:11.515Z"
+                        }
+                    },
+                    "agent": {
+                        "name": "mayur",
+                        "phone": "9886098860"
+                    },
+                    "vehicle": {
+                        "registration": "3LMJ945"
+                    },
+                    "tags": [
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "no"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://sellerNP.com/ondc/tracking_url"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
             "payment": {
                 "type": "POST-FULFILLMENT",
-                "status": "PAID",
-                "time": {
-                    "timestamp": "2024-09-23T06:58:04.282Z"
+                "@ondc/org/collection_amount": "300.00",
+                "collected_by": "BPP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX",
+                        "settlement_status": "PAID",
+                        "settlement_reference": "XXXXXXXXX",
+                        "settlement_timestamp": "2024-10-03T06:48:11.515Z"
+                    }
+                ],
+                "status": "PAID"
+            },
+            "billing": {
+                "name": "ONDC Logistics Buyer NP",
+                "address": {
+                    "name": "My house or building no",
+                    "building": "My house or building name",
+                    "locality": "Jayanagar",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560076"
+                },
+                "tax_number": "XXXXXXXXXXXXXXX",
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com",
+                "created_at": "2023-02-06T21:30:00.000Z",
+                "updated_at": "2023-02-06T21:30:00.000Z"
+            },
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Atta"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "150.00"
+                        }
+                    }
+                ],
+                "provider": {
+                    "descriptor": {
+                        "name": "Aadishwar Store"
+                    },
+                    "address": {
+                        "name": "KHB Towers",
+                        "building": "Building or House No",
+                        "locality": "Koramangala",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560070"
+                    }
+                },
+                "order": {
+                    "id": "O1",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 1
+                    },
+                    "dimensions": {
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 1
+                        }
+                    }
                 }
-            }
+            },
+            "tags": []
         }
+    },
+    "_id": {
+        "$oid": "66fe3e2b611c80b381d0c6cd"
     }
 }
