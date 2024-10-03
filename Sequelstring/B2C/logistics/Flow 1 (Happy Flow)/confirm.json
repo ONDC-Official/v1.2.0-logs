@@ -1,48 +1,31 @@
 {
     "context": {
         "domain": "nic2004:60232",
-        "location": {
-            "country": {
-                "code": "IND"
-            },
-            "city": {
-                "code": "*"
-            }
-        },
-        "version": "2.0.0",
-        "action": "on_cancel",
-        "transaction_id": "29a9b64c-aaa2-4a32-853c-1f45ae86db10",
-        "message_id": "529642e8-62ac-4f50-853b-6d1f500136ac",
-        "timestamp": "2024-09-23T06:57:58.231Z",
-        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "country": "IND",
+        "city": "std:011",
+        "action": "confirm",
+        "core_version": "1.2.0",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
-        "ttl": "PT30S",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "b32ddad4-cfb4-475b-9974-c8783719d625",
+        "message_id": "67b9d228-f3d1-4327-8961-b6bcad3b9940",
+        "timestamp": "2024-10-03T14:56:12.856Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "O2",
-            "state": "Cancelled",
-            "cancellation": {
-                "cancelled_by": "logistics_buyer.com",
-                "reason": {
-                    "id": "011"
-                }
-            },
+            "state": "Created",
             "provider": {
-                "id": "P1",
-                "locations": [
-                    {
-                        "id": "L1"
-                    }
-                ]
+                "id": "Zypp"
             },
             "items": [
                 {
-                    "id": "I1",
-                    "fulfillment_id": "1",
-                    "category_id": " Same Day Delivery",
+                    "id": "zypp_immediate",
+                    "fulfillment_id": "zypp_immediate_f1",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
@@ -53,9 +36,9 @@
                     }
                 },
                 {
-                    "id": "I2",
-                    "fulfillment_id": "2",
-                    "category_id": " Same Day Delivery",
+                    "id": "zypp_immediate-RTO",
+                    "fulfillment_id": "zypp_immediate_f1-RTO",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
@@ -69,23 +52,23 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "59.00"
+                    "value": "25.0"
                 },
                 "breakup": [
                     {
-                        "item_id": "I1",
-                        "title_type": "delivery",
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "50.00"
+                            "value": "21.19"
                         }
                     },
                     {
-                        "item_id": "I1",
-                        "title_type": "tax",
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "9.00"
+                            "value": "3.81"
                         }
                     }
                 ]
@@ -94,17 +77,45 @@
                 {
                     "id": "1",
                     "type": "Delivery",
-                    "state": {
-                        "descriptor": {
-                            "code": "Cancelled"
-                        }
-                    },
-                    "awb_no": "1227262193237777",
-                    "tracking": "false",
-                    "start": {
-                        "person": {
-                            "name": "person_name"
+                    "@ondc/org/awb_no": "1227262193237777",
+                    "tags": [
+                        {
+                            "code": "state",
+                            "list": [
+                                {
+                                    "code": "ready_to_ship",
+                                    "value": "no"
+                                }
+                            ]
                         },
+                        {
+                            "code": "rto_action",
+                            "list": [
+                                {
+                                    "code": "return_to_origin",
+                                    "value": "no"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "reverseqc_input",
+                            "list": [
+                                {
+                                    "code": "P001",
+                                    "value": "Atta"
+                                },
+                                {
+                                    "code": "P003",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "Q001",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "start": {
                         "location": {
                             "gps": "12.453544,77.928379",
                             "address": {
@@ -121,27 +132,23 @@
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
                         },
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "time": {
+                            "duration": "PT15M"
+                        },
                         "instructions": {
                             "code": "2",
                             "short_desc": "value of PCC",
-                            "long_desc": "QR code will be attached to package",
+                            "long_desc": "additional instructions for pickup",
                             "additional_desc": {
                                 "content_type": "text/html",
                                 "url": "https://reverse_qc_sop_form.htm"
                             }
-                        },
-                        "time": {
-                            "duration": "PT15M",
-                            "range": {
-                                "start": "2024-09-23T06:57:39.435Z",
-                                "end": "2024-09-23T06:57:39.435Z"
-                            }
                         }
                     },
                     "end": {
-                        "person": {
-                            "name": "person_name"
-                        },
                         "location": {
                             "gps": "12.453544,77.928379",
                             "address": {
@@ -158,42 +165,15 @@
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
                         },
+                        "person": {
+                            "name": "person_name"
+                        },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "value of PCC"
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup"
                         }
-                    },
-                    "agent": {
-                        "name": "agent_name",
-                        "phone": "9886098860"
-                    },
-                    "vehicle": {
-                        "registration": "3LVJ945"
-                    },
-                    "tags": [
-                        {
-                            "code": "igm_request",
-                            "list": [
-                                {
-                                    "code": "id",
-                                    "value": "Issue1"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "precancel_state",
-                            "list": [
-                                {
-                                    "code": "fulfillment_state",
-                                    "value": "Order-picked-up"
-                                },
-                                {
-                                    "code": "updated_at",
-                                    "value": "2023-06-06T23:15:00.000Z"
-                                }
-                            ]
-                        }
-                    ]
+                    }
                 }
             ],
             "billing": {
@@ -213,7 +193,21 @@
                 "created_at": "2023-02-06T21:30:00.000Z",
                 "updated_at": "2023-02-06T21:30:00.000Z"
             },
-            "linked_order": {
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/collection_amount": "300.00",
+                "collected_by": "BPP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX"
+                    }
+                ]
+            },
+            "@ondc/org/linked_order": {
                 "items": [
                     {
                         "category_id": "Grocery",
@@ -268,7 +262,11 @@
                     }
                 }
             },
-            "updated_at": "2024-09-23T06:57:39.435Z"
+            "created_at": "2024-10-03T14:56:12.856Z",
+            "updated_at": "2024-10-03T14:56:12.856Z"
         }
+    },
+    "_id": {
+        "$oid": "66feb08c898c6a735e6562f0"
     }
 }
