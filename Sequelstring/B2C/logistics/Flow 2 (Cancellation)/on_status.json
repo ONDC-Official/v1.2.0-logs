@@ -1,0 +1,278 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:011",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "b32ddad4-cfb4-475b-9974-c8783719d625",
+        "message_id": "92597754-4797-4a3f-878b-619d8e02640b",
+        "timestamp": "2024-10-03T15:25:11.750Z"
+    },
+    "message": {
+        "order": {
+            "id": "O2",
+            "state": "Cancelled",
+            "provider": {
+                "id": "Zypp"
+            },
+            "items": [
+                {
+                    "id": "zypp_immediate",
+                    "fulfillment_id": "zypp_immediate_f1",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT55M",
+                        "timestamp": "2024-10-03"
+                    }
+                },
+                {
+                    "id": "zypp_immediate-RTO",
+                    "fulfillment_id": "zypp_immediate_f1-RTO",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT45M",
+                        "timestamp": "2023-06-06"
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "duration": "PT20M"
+                        },
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "My store name",
+                                "building": "My building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup",
+                            "additional_desc": {
+                                "content_type": "text/html",
+                                "url": "https://reverse_qc_sop_form.htm"
+                            }
+                        }
+                    },
+                    "end": {
+                        "person": {
+                            "name": "person_name"
+                        },
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "My house #",
+                                "building": "My house or building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560076"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "value of PCC",
+                            "long_desc": "additional instructions for pickup"
+                        }
+                    },
+                    "tracking": false,
+                    "tags": [
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://track.mp2.in/r/O2"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Pending"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-10-03T14:56:12.856Z"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "@ondc/org/collection_amount": "300.00",
+                "collected_by": "BPP",
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX"
+                    }
+                ],
+                "status": "NOT-PAID"
+            },
+            "billing": {
+                "name": "ONDC Logistics Buyer NP",
+                "address": {
+                    "name": "My house or building no",
+                    "building": "My house or building name",
+                    "locality": "Jayanagar",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560076"
+                },
+                "tax_number": "XXXXXXXXXXXXXXX",
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com",
+                "created_at": "2023-02-06T21:30:00.000Z",
+                "updated_at": "2023-02-06T21:30:00.000Z"
+            },
+            "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Atta"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "150.00"
+                        }
+                    }
+                ],
+                "provider": {
+                    "descriptor": {
+                        "name": "Aadishwar Store"
+                    },
+                    "address": {
+                        "name": "KHB Towers",
+                        "building": "Building or House No",
+                        "locality": "Koramangala",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560070"
+                    }
+                },
+                "order": {
+                    "id": "O1",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 1
+                    },
+                    "dimensions": {
+                        "length": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "breadth": {
+                            "unit": "centimeter",
+                            "value": 1
+                        },
+                        "height": {
+                            "unit": "centimeter",
+                            "value": 1
+                        }
+                    }
+                }
+            },
+            "updated_at": "2024-10-03T14:56:12.924Z",
+            "created_at": "2024-10-03T14:56:12.856Z",
+            "cancellation": {
+                "cancelled_by": "ondc.sequelstring.com/buyer/protocol",
+                "reason": {
+                    "id": "997"
+                }
+            }
+        }
+    },
+    "_id": {
+        "$oid": "66feb7577981419efa4863c6"
+    }
+}
