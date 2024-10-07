@@ -1,0 +1,93 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "action": "search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "seller.pre.prod.shopcircuit.ai",
+        "bap_uri": "https://asia-southeast2-pre-prod-logistics-buyer.cloudfunctions.net/api",
+        "transaction_id": "a53c2b65-2752-4a9b-b872-88311e5522f8",
+        "message_id": "56bf54f6-2eb0-4702-99bf-513cac2d03ed",
+        "timestamp": "2024-10-07T10:56:19.294Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "id": "Standard Delivery"
+            },
+            "provider": {
+                "time": {
+                    "days": "1,2,3,4,5,6,7",
+                    "schedule": {
+                        "holidays": [
+                            "2024-10-12T00:00:00.000Z",
+                            "2024-12-25T00:00:00.000Z"
+                        ]
+                    },
+                    "duration": "PT30M",
+                    "range": {
+                        "start": "1100",
+                        "end": "2100"
+                    }
+                }
+            },
+            "fulfillment": {
+                "type": "Delivery",
+                "start": {
+                    "location": {
+                        "gps": "12.907079, 77.641274",
+                        "address": {
+                            "area_code": "560102"
+                        }
+                    },
+                    "authorization": {
+                        "type": "OTP"
+                    }
+                },
+                "end": {
+                    "location": {
+                        "gps": "26.868025, 81.009771",
+                        "address": {
+                            "area_code": "226010"
+                        }
+                    },
+                    "authorization": {
+                        "type": "OTP"
+                    }
+                }
+            },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/collection_amount": "300.00"
+            },
+            "@ondc/org/payload_details": {
+                "weight": {
+                    "unit": "kilogram",
+                    "value": 0.5
+                },
+                "dimensions": {
+                    "length": {
+                        "unit": "centimeter",
+                        "value": 30
+                    },
+                    "breadth": {
+                        "unit": "centimeter",
+                        "value": 5
+                    },
+                    "height": {
+                        "unit": "centimeter",
+                        "value": 25
+                    }
+                },
+                "category": "Fashion",
+                "value": {
+                    "currency": "INR",
+                    "value": "500.00"
+                },
+                "dangerous_goods": false
+            }
+        }
+    }
+}
