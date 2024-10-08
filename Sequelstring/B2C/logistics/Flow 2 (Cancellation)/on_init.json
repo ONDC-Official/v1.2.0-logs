@@ -1,0 +1,124 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:011",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "b32ddad4-cfb4-475b-9974-c8783719d625",
+        "message_id": "5163f579-e78b-41fa-9ed5-3ead310270d9",
+        "timestamp": "2024-10-03T14:56:06.766Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "Zypp"
+            },
+            "items": [
+                {
+                    "id": "zypp_immediate",
+                    "fulfillment_id": "zypp_immediate_f1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "zypp_immediate_f1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "My store name",
+                                "building": "My building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "My house #",
+                                "building": "My house or building name",
+                                "locality": "My street name",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560076"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "xxxxx",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "XXXXXXXXXX",
+                        "settlement_ifsc_code": "XXXXXXXXX"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "25.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "21.19"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "zypp_immediate",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "3.81"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            }
+        }
+    },
+    "_id": {
+        "$oid": "66feb086898c6a735e6562e6"
+    }
+}

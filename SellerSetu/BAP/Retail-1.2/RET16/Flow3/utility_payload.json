@@ -2,22 +2,21 @@
   "domain": "ONDC:RET16",
   "version": "1.2.0",
   "bap_id": "preprod-ondc.letsboho.in",
-  "bpp_id": "bridge.sellersetu.in",
+  "bpp_id": "integrations-preprod.channelier.com",
   "payload": {
     "search_full_catalog_refresh": {
       "context": {
         "domain": "ONDC:RET16",
         "action": "search",
         "country": "IND",
-        "city": "std:0124",
+        "city": "std:011",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "transaction_id": "5b3509f2-94dc-4964-9920-dbcc69a8e773",
-        "message_id": "2711888d-ecd3-4ebc-a910-75972a38c16a",
-        "timestamp": "2024-08-20T12:36:37.106Z",
-        "ttl": "PT30S",
-        "req_path": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "c76f19ba-e269-4b77-bc3f-74a82b0cb91e",
+        "message_id": "c45e7836-2c2b-4138-9296-8617d7dfa1fb",
+        "timestamp": "2024-09-26T08:46:13.633Z",
+        "ttl": "PT30S"
       },
       "message": {
         "intent": {
@@ -27,40 +26,53 @@
           "payment": {
             "@ondc/org/buyer_app_finder_fee_type": "percent",
             "@ondc/org/buyer_app_finder_fee_amount": "3"
-          }
+          },
+          "tags": [
+            {
+              "code": "bap_terms",
+              "list": [
+                {
+                  "code": "static_terms",
+                  "value": ""
+                },
+                {
+                  "code": "static_terms_new",
+                  "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+                },
+                {
+                  "code": "effective_date",
+                  "value": "2025-10-01T00:00:00.000Z"
+                }
+              ]
+            }
+          ]
         }
       }
     },
     "on_search_full_catalog_refresh": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "action": "on_search",
-        "country": "IND",
-        "city": "std:0124",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "transaction_id": "5b3509f2-94dc-4964-9920-dbcc69a8e773",
-        "message_id": "2711888d-ecd3-4ebc-a910-75972a38c16a",
-        "timestamp": "2024-08-20T12:36:38.143Z",
-        "bpp_id": "bridge.sellersetu.in",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "c76f19ba-e269-4b77-bc3f-74a82b0cb91e",
+        "message_id": "c45e7836-2c2b-4138-9296-8617d7dfa1fb",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T08:46:13.651Z",
+        "action": "on_search"
       },
       "message": {
         "catalog": {
-          "bpp/fulfillments": [
-            {
-              "id": "F1",
-              "type": "Delivery"
-            }
-          ],
           "bpp/descriptor": {
-            "name": "SellerSetu Staging",
-            "symbol": "https://development-ironcore.s3.amazonaws.com/organization/Untitled_design-2.png",
-            "short_desc": "shops",
-            "long_desc": "shops",
+            "name": "channelier",
+            "symbol": "https://play-lh.googleusercontent.com/4iFePUtS2o6Sw24ogR2ZaQGERUg3rZKN7hYOR6Bn8kJkCTFrfpxJZhwqfMAg5KgS9OY",
+            "short_desc": "Channelier is a MSN, which empowers the merchants to be connected with e-commerce",
+            "long_desc": "Channelier is a MSN, which empowers the merchants to be connected with e-commerce",
             "images": [
-              "https://development-ironcore.s3.amazonaws.com/organization/Untitled_design-2.png"
+              "https://play-lh.googleusercontent.com/4iFePUtS2o6Sw24ogR2ZaQGERUg3rZKN7hYOR6Bn8kJkCTFrfpxJZhwqfMAg5KgS9OY"
             ],
             "tags": [
               {
@@ -69,822 +81,80 @@
                   {
                     "code": "np_type",
                     "value": "MSN"
+                  },
+                  {
+                    "code": "accept_bap_terms",
+                    "value": "Y"
+                  },
+                  {
+                    "code": "collect_payment",
+                    "value": "N"
                   }
                 ]
               }
             ]
           },
+          "bpp/fulfillments": [
+            {
+              "id": "1",
+              "type": "Delivery"
+            }
+          ],
           "bpp/providers": [
             {
-              "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
-              "time": {
-                "label": "enable",
-                "timestamp": "2024-07-16T10:05:26.589Z"
+              "id": "CU10",
+              "descriptor": {
+                "name": "My WakeUp Innovation  (Karnataka)",
+                "symbol": "https://integrations.channelier.com/images/Logo/wakeup.png",
+                "short_desc": "Our aim is to provide the best and pure wooden furniture along with a range of comfortable luxury mattresses. With our strong emphasis on product development innovation, process efficiency, cost optimization, and customer experience perfection, we quickly gained recognition in the market.",
+                "long_desc": "Founded in 2014 in Haryana, Wakeup started its journey as a sleep solution and furniture firm with a vision to revolutionize the Indian furniture and mattress industry. Our aim is to provide the best and pure wooden furniture along with a range of comfortable luxury mattresses. With our strong emphasis on product development innovation, process efficiency, cost optimization, and customer experience perfection, we quickly gained recognition in the market.Since our inception, we have been driven by the passion to create high-quality goods that surpass our competitors in terms of efficiency and affordability. With a vast collection of over 500 wooden furniture designs, we are committed to continuously expanding our range to cater to your diverse needs. We pride ourselves on using premium-quality solid Sheesham wood to craft the finest wooden products, ensuring exceptional quality and durability.",
+                "images": [
+                  "https://integrations.channelier.com/images/Logo/wakeup.png"
+                ]
               },
-              "items": [
-                {
-                  "id": "bb9e222f-d205-4f01-b4e8-d2d6edadbef8",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-16T09:31:03.188Z"
-                  },
-                  "parent_item_id": "c95011c6-89b5-482f-9ed8-ac0eae9cdea9",
-                  "descriptor": {
-                    "name": "Dining Table",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Dining%20Table/Dining_Table_lv2vm",
-                    "short_desc": "Dining Table",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Dining%20Table/Dining_Table_lv2vm"
-                    ],
-                    "code": "1:0644650988327"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "1000.0",
-                    "maximum_value": "1000.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-26"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "3f411b2e-2939-425a-9c4b-cdbbbcb4fe17",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-18T05:02:20.951Z"
-                  },
-                  "descriptor": {
-                    "name": "Bed",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bed/Bed_k1i77s",
-                    "short_desc": "Bed",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bed/Bed_k1i77s"
-                    ],
-                    "code": "1:0066311030914"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "1199.0",
-                    "maximum_value": "1199.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "cccd1e19-5259-4619-888b-28612ecba713",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-13T07:30:04.382Z"
-                  },
-                  "parent_item_id": "c95011c6-89b5-482f-9ed8-ac0eae9cdea9",
-                  "descriptor": {
-                    "name": "Dining Table",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Dining%20Table/Dining_Table_lv2vm",
-                    "short_desc": "Dining Table",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Dining%20Table/Dining_Table_lv2vm"
-                    ],
-                    "code": "1:0644650988327"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "2"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "899.0",
-                    "maximum_value": "899.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "28696569-282b-467b-b438-8f50debfa7db",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-19T17:45:18.684Z"
-                  },
-                  "descriptor": {
-                    "name": "Sofa",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Sofa/Sofa_7vsfyh",
-                    "short_desc": "Sofa",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Sofa/Sofa_7vsfyh",
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Sofa/Sofa_v81mm"
-                    ],
-                    "code": "1:0737993415787"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "599.0",
-                    "maximum_value": "599.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "b697adce-d184-4720-a79d-d1caa50171db",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-19T09:42:20.431Z"
-                  },
-                  "descriptor": {
-                    "name": "Armchairs",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Armchair/Armchair_n1drg",
-                    "short_desc": "Armchairs",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Armchair/Armchair_n1drg",
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Armchair/Armchair_6kecop"
-                    ],
-                    "code": "1:0847321008725"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "800.0",
-                    "maximum_value": "800.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "18f16aa5-d74c-4376-b140-ceb9c6d80f17",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-19T09:42:20.360Z"
-                  },
-                  "descriptor": {
-                    "name": "Bookshelf",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bookshelf/Bookshelf_ipm50a",
-                    "short_desc": "Bookshelf",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bookshelf/Bookshelf_ipm50a",
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bookshelf/Bookshelf_b2mxxn",
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Bookshelf/Bookshelf_m158di"
-                    ],
-                    "code": "1:0716243862076"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "480.0",
-                    "maximum_value": "499.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                },
-                {
-                  "id": "9ce01b4a-82db-4ac6-8b05-dd495046ce12",
-                  "time": {
-                    "label": "enable",
-                    "timestamp": "2024-08-16T11:25:18.190Z"
-                  },
-                  "descriptor": {
-                    "name": "Office Chair",
-                    "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Office%20Chair/Office_Chair_smatk",
-                    "short_desc": "Office Chair",
-                    "long_desc": "Description of the product",
-                    "images": [
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Office%20Chair/Office_Chair_smatk",
-                      "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/product-images/Office%20Chair/Office_Chair_so6cb"
-                    ],
-                    "code": "1:0090234004745"
-                  },
-                  "quantity": {
-                    "unitized": {
-                      "measure": {
-                        "unit": "unit",
-                        "value": "1"
-                      }
-                    },
-                    "available": {
-                      "count": "99"
-                    },
-                    "maximum": {
-                      "count": "99"
-                    }
-                  },
-                  "price": {
-                    "currency": "INR",
-                    "value": "199.0",
-                    "maximum_value": "199.0"
-                  },
-                  "category_id": "Furniture",
-                  "fulfillment_id": "F1",
-                  "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
-                  "@ondc/org/returnable": true,
-                  "@ondc/org/cancellable": true,
-                  "@ondc/org/return_window": "P7D",
-                  "@ondc/org/seller_pickup_return": true,
-                  "@ondc/org/time_to_ship": "PT15M",
-                  "@ondc/org/available_on_cod": false,
-                  "tags": [
-                    {
-                      "code": "origin",
-                      "list": [
-                        {
-                          "code": "country",
-                          "value": "IND"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attribute",
-                      "list": [
-                        {
-                          "code": "brand",
-                          "value": "GUCCI"
-                        },
-                        {
-                          "code": "colour",
-                          "value": "#FFFFFF"
-                        },
-                        {
-                          "code": "height",
-                          "value": "50"
-                        },
-                        {
-                          "code": "length",
-                          "value": "10"
-                        },
-                        {
-                          "code": "weight",
-                          "value": "10"
-                        },
-                        {
-                          "code": "breadth",
-                          "value": "100"
-                        },
-                        {
-                          "code": "material",
-                          "value": "wood"
-                        },
-                        {
-                          "code": "colour_name",
-                          "value": "white"
-                        }
-                      ]
-                    }
-                  ],
-                  "@ondc/org/statutory_reqs_packaged_commodities": {
-                    "manufacturer_or_packer_name": "Gucci",
-                    "manufacturer_or_packer_address": "London",
-                    "common_or_generic_name_of_commodity": "Sofa",
-                    "month_year_of_manufacture_packing_import": "2023-11-25"
-                  },
-                  "@ondc/org/contact_details_consumer_care": "Seller,official@sellersetu.in,8882160205"
-                }
-              ],
               "fulfillments": [
                 {
-                  "id": "F1",
+                  "id": "1",
                   "type": "Delivery",
                   "contact": {
-                    "phone": "8882160205",
-                    "email": "official@sellersetu.in"
+                    "phone": "8929991588",
+                    "email": "innovationwakeup@gmail.com"
                   }
                 }
               ],
-              "descriptor": {
-                "name": "Kiraana Dukaan SellerSetu",
-                "symbol": "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/store-images/benefits-of-tech-in-healthcare-1536x922.jpg",
-                "short_desc": "Kiraana Dukaan SellerSetu",
-                "long_desc": "Furniture store",
-                "images": [
-                  "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/store-images/store.jpeg",
-                  "https://development-ironcore.s3.amazonaws.com/store/ff221647-8cca-444c-ba7a-ab71222615d5-Kiraana%20Dukaan%20SellerSetu/store-images/benefits-of-tech-in-healthcare-1536x922.jpg"
-                ]
-              },
-              "ttl": "P1D",
               "locations": [
                 {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
+                  "gps": "28.719744,77.106029",
+                  "address": {
+                    "street": "NEAR SECT. 5, ROHINI,",
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
+                  },
                   "time": {
-                    "label": "enable",
-                    "timestamp": "2024-06-27T17:35:41.353Z",
+                    "range": {
+                      "start": "0000",
+                      "end": "2359"
+                    },
                     "days": "1,2,3,4,5,6,7",
                     "schedule": {
                       "holidays": []
                     },
-                    "range": {
-                      "end": "2359",
-                      "start": "0000"
-                    }
-                  },
-                  "gps": "28.4554726,77.0219019",
-                  "address": {
-                    "locality": "Locality ABC XYZ",
-                    "street": "Street Church Hill",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.639Z"
                   },
                   "circle": {
-                    "gps": "28.4554726,77.0219019",
+                    "gps": "28.719744,77.106029",
                     "radius": {
                       "unit": "km",
-                      "value": "5"
+                      "value": "500"
                     }
                   }
                 }
               ],
-              "categories": [
-                {
-                  "id": "c95011c6-89b5-482f-9ed8-ac0eae9cdea9",
-                  "descriptor": {
-                    "name": "Dining Table"
-                  },
-                  "tags": [
-                    {
-                      "code": "type",
-                      "list": [
-                        {
-                          "code": "type",
-                          "value": "variant_group"
-                        }
-                      ]
-                    },
-                    {
-                      "code": "attr",
-                      "list": [
-                        {
-                          "code": "name",
-                          "value": "item.quantity.unitized.measure"
-                        },
-                        {
-                          "code": "seq",
-                          "value": "1"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
               "tags": [
-                {
-                  "code": "order_value",
-                  "list": [
-                    {
-                      "code": "min_value",
-                      "value": "70.00"
-                    }
-                  ]
-                },
                 {
                   "code": "timing",
                   "list": [
@@ -894,7 +164,7 @@
                     },
                     {
                       "code": "location",
-                      "value": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                      "value": "L1"
                     },
                     {
                       "code": "day_from",
@@ -923,7 +193,7 @@
                     },
                     {
                       "code": "location",
-                      "value": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                      "value": "L1"
                     },
                     {
                       "code": "day_from",
@@ -939,7 +209,7 @@
                     },
                     {
                       "code": "time_to",
-                      "value": "2200"
+                      "value": "2359"
                     }
                   ]
                 },
@@ -948,11 +218,11 @@
                   "list": [
                     {
                       "code": "location",
-                      "value": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                      "value": "L1"
                     },
                     {
                       "code": "category",
-                      "value": "Furniture"
+                      "value": "Home Furnishing - Bedding and Linen"
                     },
                     {
                       "code": "type",
@@ -968,72 +238,905 @@
                     }
                   ]
                 }
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "select_out_of_stock": {
-      "context": {
-        "domain": "ONDC:RET16",
-        "country": "IND",
-        "city": "std:0124",
-        "action": "select",
-        "core_version": "1.2.0",
-        "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "0de86d65-a527-41ae-8115-5e2fe000673c",
-        "timestamp": "2024-08-20T20:00:19.309Z",
-        "bpp_id": "bridge.sellersetu.in",
-        "ttl": "PT30S",
-        "req_path": "bridge.sellersetu.in"
-      },
-      "message": {
-        "order": {
-          "items": [
-            {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "quantity": {
-                "count": 2
+              ],
+              "time": {
+                "label": "enable",
+                "timestamp": "2024-09-26T08:46:13.651Z"
               },
-              "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
-            },
-            {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "quantity": {
-                "count": 2
-              },
-              "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
-            },
-            {
-              "id": "18f16aa5-d74c-4376-b140-ceb9c6d80f17",
-              "quantity": {
-                "count": 2
-              },
-              "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
-            }
-          ],
-          "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
-            "locations": [
-              {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
-              }
-            ]
-          },
-          "fulfillments": [
-            {
-              "end": {
-                "location": {
-                  "gps": "28.3114,76.8738",
-                  "address": {
-                    "area_code": "122413"
+              "ttl": "P15D",
+              "items": [
+                {
+                  "id": "CU10I0",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed | Luxury Mattress, 5-star Hotel Double Mattress, Bouncy Mattress ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed | Luxury Mattress, 5-star Hotel Double Mattress, Bouncy Mattress ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "19485.00",
+                    "maximum_value": "31879.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I1",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "33277.00",
+                    "maximum_value": "52688.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I3",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed |( Single Size- 84x30x8 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x30x8 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x30x8 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "13963.00",
+                    "maximum_value": "21381.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I4",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed |( Single Size- 84x36x8 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x36x8 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x36x8 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "16339.00",
+                    "maximum_value": "25020.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I5",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed |( Single Size- 84x42x8 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x42x8 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x42x8 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "18734.00",
+                    "maximum_value": "28687.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I6",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Single Bed |( Single Size- 84x42x12 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x42x12 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Single Bed | Luxury Mattress, 5-star Hotel Single Mattress, Bouncy Mattress ( Single Size- 84x42x12 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "27803.00",
+                    "maximum_value": "42326.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I7",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 84x60x8 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 84x60x8 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 84x60x8 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "24084.00",
+                    "maximum_value": "38132.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I8",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 84x66x10 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 84x66x10 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Queen Bed | Luxury Mattress, 5-star Hotel Queen Mattress, Bouncy Mattress ( Queen Size- 84x66x10 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "33164.00",
+                    "maximum_value": "50487.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
+                  }
+                },
+                {
+                  "id": "CU10I9",
+                  "@ondc/org/available_on_cod": false,
+                  "@ondc/org/cancellable": true,
+                  "@ondc/org/contact_details_consumer_care": "Wakeup Innovation,innovationwakeup@gmail.com,8929991588",
+                  "@ondc/org/return_window": "P0D",
+                  "@ondc/org/returnable": true,
+                  "@ondc/org/seller_pickup_return": true,
+                  "@ondc/org/statutory_reqs_packaged_commodities": {
+                    "manufacturer_or_packer_name": "WAKEUP INNOVATION PRIVATE LIMITED",
+                    "manufacturer_or_packer_address": "WAKEUP INNOVATION PRIVATE LIMITED, Karnataka",
+                    "common_or_generic_name_of_commodity": "Mattress",
+                    "month_year_of_manufacture_packing_import": "06/2023"
+                  },
+                  "@ondc/org/time_to_ship": "PT2H",
+                  "category_id": "Home Furnishing - Bedding and Linen",
+                  "descriptor": {
+                    "name": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, King Bed |( King Size- 84x72x12 inch, White , Navy Blue )",
+                    "code": "Tue Oct 18 2078 10:00:00 GMT+0530 (India Standard Time)",
+                    "symbol": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/1200px-Veg_symbol.svg.png",
+                    "short_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, King Bed | Luxury Mattress, 5-star Hotel King Mattress, Bouncy Mattress ( King Size- 84x72x12 inch, White , Navy Blue )",
+                    "long_desc": "Wakeup India Spring Pillowtop Hybrid Mattress | 10 Year Warranty | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, King Bed | Luxury Mattress, 5-star Hotel King Mattress, Bouncy Mattress ( King Size- 84x72x12 inch, White , Navy Blue )",
+                    "images": [
+                      "https://integrations.channelier.com/images/CU8/CU8_0_1.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_2.jpg",
+                      "https://integrations.channelier.com/images/CU8/CU8_0_3.jpg"
+                    ]
+                  },
+                  "fulfillment_id": "1",
+                  "location_id": "L1",
+                  "parent_item_id": "",
+                  "price": {
+                    "currency": "INR",
+                    "value": "42135.00",
+                    "maximum_value": "66713.00"
+                  },
+                  "quantity": {
+                    "available": {
+                      "count": "99"
+                    },
+                    "maximum": {
+                      "count": "99"
+                    },
+                    "unitized": {
+                      "measure": {
+                        "value": "1",
+                        "unit": "unit"
+                      }
+                    }
+                  },
+                  "tags": [
+                    {
+                      "code": "origin",
+                      "list": [
+                        {
+                          "code": "country",
+                          "value": "IND"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "attribute",
+                      "list": [
+                        {
+                          "code": "brand",
+                          "value": "Wakeup"
+                        },
+                        {
+                          "code": "colour",
+                          "value": "#FFFFFF"
+                        },
+                        {
+                          "code": "material",
+                          "value": "linen"
+                        },
+                        {
+                          "code": "weight",
+                          "value": "10000"
+                        },
+                        {
+                          "code": "length",
+                          "value": "200"
+                        },
+                        {
+                          "code": "breadth",
+                          "value": "120"
+                        },
+                        {
+                          "code": "height",
+                          "value": "10"
+                        }
+                      ]
+                    }
+                  ],
+                  "time": {
+                    "label": "enable",
+                    "timestamp": "2024-09-25T15:37:00.645Z"
                   }
                 }
-              }
+              ]
             }
           ]
         }
@@ -1041,56 +1144,51 @@
     },
     "on_select_out_of_stock": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "country": "IND",
-        "city": "std:0124",
-        "action": "on_select",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "0de86d65-a527-41ae-8115-5e2fe000673c",
-        "timestamp": "2024-08-20T20:00:22.821Z",
-        "bpp_id": "bridge.sellersetu.in"
-      },
-      "error": {
-        "type": "DOMAIN-ERROR",
-        "code": "40002",
-        "message": "[{\"item_id\": \"18f16aa5-d74c-4376-b140-ceb9c6d80f17\", \"error\": \"40002\"}]"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "00b57c55-5816-450f-b61d-493708c13129",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T08:59:05.422Z",
+        "action": "on_select"
       },
       "message": {
         "order": {
+          "items": [
+            {
+              "id": "CU10I1",
+              "fulfillment_id": "L-F-1727341145845"
+            },
+            {
+              "id": "CU10I0",
+              "fulfillment_id": "L-F-1727341145845"
+            },
+            {
+              "id": "CU10I3",
+              "fulfillment_id": "L-F-1727341145845"
+            }
+          ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
-          "items": [
-            {
-              "fulfillment_id": "mp2_sdd_f1",
-              "id": "28696569-282b-467b-b438-8f50debfa7db"
-            },
-            {
-              "fulfillment_id": "mp2_sdd_f1",
-              "id": "18f16aa5-d74c-4376-b140-ceb9c6d80f17"
-            },
-            {
-              "fulfillment_id": "mp2_sdd_f1",
-              "id": "b697adce-d184-4720-a79d-d1caa50171db"
-            }
-          ],
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
+              "id": "L-F-1727341145845",
               "type": "Delivery",
-              "@ondc/org/provider_name": "MP2",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
+              "@ondc/org/category": "Standard Delivery",
               "tracking": true,
-              "@ondc/org/category": "Immediate Delivery",
-              "@ondc/org/TAT": "PT55M",
+              "@ondc/org/TAT": "PT4H",
               "state": {
                 "descriptor": {
                   "code": "Serviceable"
@@ -1099,18 +1197,18 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
                 "item": {
                   "quantity": {
                     "available": {
@@ -1122,21 +1220,21 @@
                   },
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "33277.00"
                   }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
                 "item": {
                   "quantity": {
                     "available": {
@@ -1148,21 +1246,21 @@
                   },
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "19485.00"
                   }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "18f16aa5-d74c-4376-b140-ceb9c6d80f17",
+                "@ondc/org/item_id": "CU10I3",
                 "@ondc/org/item_quantity": {
                   "count": 0
                 },
-                "title": "Bookshelf",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "0"
-                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |8 inch Mattress, Single Bed |( Single Size- 84x30x8 inch, White , Navy Blue )",
                 "item": {
                   "quantity": {
                     "available": {
@@ -1174,69 +1272,80 @@
                   },
                   "price": {
                     "currency": "INR",
-                    "value": "480.0"
+                    "value": "13963.00"
                   }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "0.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341145845",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           }
         }
+      },
+      "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "[{\"item_id\":\"CU10I3\",\"error\":\"40002\"}]"
       }
     },
-    "select": {
+    "select_out_of_stock": {
       "context": {
         "domain": "ONDC:RET16",
         "country": "IND",
-        "city": "std:0124",
+        "city": "std:011",
         "action": "select",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "c9306153-445e-4e97-a9b3-c205b20d1375",
-        "timestamp": "2024-08-20T20:00:43.175Z",
-        "bpp_id": "bridge.sellersetu.in",
-        "ttl": "PT30S",
-        "req_path": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "00b57c55-5816-450f-b61d-493708c13129",
+        "timestamp": "2024-09-26T08:59:05.298Z",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "ttl": "PT30S"
       },
       "message": {
         "order": {
           "items": [
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
               },
-              "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+              "location_id": "L1"
             },
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
               },
-              "location_id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+              "location_id": "L1"
+            },
+            {
+              "id": "CU10I3",
+              "quantity": {
+                "count": 2
+              },
+              "location_id": "L1"
             }
           ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
@@ -1244,7 +1353,7 @@
             {
               "end": {
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
                     "area_code": "122413"
                   }
@@ -1257,47 +1366,47 @@
     },
     "on_select": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "country": "IND",
-        "city": "std:0124",
-        "action": "on_select",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "c9306153-445e-4e97-a9b3-c205b20d1375",
-        "timestamp": "2024-08-20T20:00:44.378Z",
-        "bpp_id": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "1324f936-3c26-47b7-aac6-ac689f71e66a",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T08:59:36.055Z",
+        "action": "on_select"
       },
       "message": {
         "order": {
+          "items": [
+            {
+              "id": "CU10I1",
+              "fulfillment_id": "L-F-1727341176360"
+            },
+            {
+              "id": "CU10I0",
+              "fulfillment_id": "L-F-1727341176360"
+            }
+          ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
-          "items": [
-            {
-              "fulfillment_id": "mp2_sdd_f1",
-              "id": "28696569-282b-467b-b438-8f50debfa7db"
-            },
-            {
-              "fulfillment_id": "mp2_sdd_f1",
-              "id": "b697adce-d184-4720-a79d-d1caa50171db"
-            }
-          ],
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
+              "id": "L-F-1727341176360",
               "type": "Delivery",
-              "@ondc/org/provider_name": "MP2",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
+              "@ondc/org/category": "Standard Delivery",
               "tracking": true,
-              "@ondc/org/category": "Immediate Delivery",
-              "@ondc/org/TAT": "PT55M",
+              "@ondc/org/TAT": "PT4H",
               "state": {
                 "descriptor": {
                   "code": "Serviceable"
@@ -1306,18 +1415,18 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
                 "item": {
                   "quantity": {
                     "available": {
@@ -1329,21 +1438,21 @@
                   },
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "33277.00"
                   }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
                 "item": {
                   "quantity": {
                     "available": {
@@ -1355,26 +1464,83 @@
                   },
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "19485.00"
                   }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           }
+        }
+      }
+    },
+    "select": {
+      "context": {
+        "domain": "ONDC:RET16",
+        "country": "IND",
+        "city": "std:011",
+        "action": "select",
+        "core_version": "1.2.0",
+        "bap_id": "preprod-ondc.letsboho.in",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "1324f936-3c26-47b7-aac6-ac689f71e66a",
+        "timestamp": "2024-09-26T08:59:36.021Z",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "ttl": "PT30S"
+      },
+      "message": {
+        "order": {
+          "items": [
+            {
+              "id": "CU10I1",
+              "quantity": {
+                "count": 2
+              },
+              "location_id": "L1"
+            },
+            {
+              "id": "CU10I0",
+              "quantity": {
+                "count": 2
+              },
+              "location_id": "L1"
+            }
+          ],
+          "provider": {
+            "id": "CU10",
+            "locations": [
+              {
+                "id": "L1"
+              }
+            ]
+          },
+          "fulfillments": [
+            {
+              "end": {
+                "location": {
+                  "gps": "28.311456,76.873889",
+                  "address": {
+                    "area_code": "122413"
+                  }
+                }
+              }
+            }
+          ]
         }
       }
     },
@@ -1382,18 +1548,17 @@
       "context": {
         "domain": "ONDC:RET16",
         "country": "IND",
-        "city": "std:0124",
+        "city": "std:011",
         "action": "init",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "e58e4b9e-ba12-49b7-96ee-a2f835b75064",
-        "timestamp": "2024-08-20T20:00:48.372Z",
-        "bpp_id": "bridge.sellersetu.in",
-        "ttl": "PT30S",
-        "req_path": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "058f4b93-e3e1-44a3-8b55-19b309ace763",
+        "timestamp": "2024-09-26T08:59:50.587Z",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "ttl": "PT30S"
       },
       "message": {
         "order": {
@@ -1407,8 +1572,8 @@
               "building": "Hostel M",
               "name": "C-416"
             },
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z",
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z",
             "email": "sarthak0jain@gmail.com",
             "name": "Sarthak",
             "phone": "9119065994"
@@ -1429,80 +1594,73 @@
                     "building": "Hostel M",
                     "name": "C-416"
                   },
-                  "gps": "28.3114,76.8738"
+                  "gps": "28.311456,76.873889"
                 }
               },
-              "id": "mp2_sdd_f1",
+              "id": "L-F-1727341176360",
               "type": "Delivery"
             }
           ],
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           }
         }
-      },
-      "id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212"
+      }
     },
     "on_init": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "country": "IND",
-        "city": "std:0124",
-        "action": "on_init",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "e58e4b9e-ba12-49b7-96ee-a2f835b75064",
-        "timestamp": "2024-08-20T20:00:48.603Z",
-        "bpp_id": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "058f4b93-e3e1-44a3-8b55-19b309ace763",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T08:59:50.657Z",
+        "action": "on_init"
       },
       "message": {
         "order": {
-          "billing": {
-            "address": {
-              "country": "IND",
-              "area_code": "122413",
-              "state": "PUNJAB",
-              "city": "FATEHGARH SAHIB",
-              "locality": "Thapar Institute of Engineering and Technology",
-              "building": "Hostel M",
-              "name": "C-416"
-            },
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z",
-            "email": "sarthak0jain@gmail.com",
-            "name": "Sarthak",
-            "phone": "9119065994"
+          "provider": {
+            "id": "CU10",
+            "locations": [
+              {
+                "id": "L1"
+              }
+            ]
           },
           "fulfillments": [
             {
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "tracking": true,
               "end": {
                 "contact": {
-                  "phone": "9119065994",
-                  "email": "sarthak0jain@gmail.com"
+                  "phone": "9119065994"
                 },
                 "location": {
                   "address": {
@@ -1514,128 +1672,132 @@
                     "building": "Hostel M",
                     "name": "C-416"
                   },
-                  "gps": "28.3114,76.8738"
+                  "gps": "28.311456,76.873889"
                 }
-              },
-              "id": "mp2_sdd_f1",
-              "type": "Delivery",
-              "tracking": true
+              }
             }
           ],
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
-          "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
-            "locations": [
-              {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
-              }
-            ]
-          },
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
-          },
-          "payment": {
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "seller-app",
-                "settlement_phase": "sale-amount",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "upi_address": "myupi@upi",
-                "settlement_bank_account_no": "123654789",
-                "settlement_ifsc_code": "123654789",
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank"
-              }
-            ]
+            "ttl": "P1D"
           },
           "tags": [
             {
               "code": "bpp_terms",
               "list": [
                 {
-                  "code": "tax_number",
-                  "value": "27ABLCS3119B1ZJ"
-                },
-                {
-                  "code": "provider_tax_number",
-                  "value": "GDRPB6059N"
-                },
-                {
                   "code": "np_type",
                   "value": "MSN"
+                },
+                {
+                  "code": "tax_number",
+                  "value": "27AAMCA8667N1ZQ"
                 }
               ]
             }
-          ]
+          ],
+          "billing": {
+            "address": {
+              "country": "IND",
+              "area_code": "122413",
+              "state": "PUNJAB",
+              "city": "FATEHGARH SAHIB",
+              "locality": "Thapar Institute of Engineering and Technology",
+              "building": "Hostel M",
+              "name": "C-416"
+            },
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z",
+            "email": "sarthak0jain@gmail.com",
+            "name": "Sarthak",
+            "phone": "9119065994"
+          },
+          "payment": {
+            "collected_by": "BAP",
+            "type": "ON-ORDER",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "status": "NOT-PAID",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC",
+                "settlement_phase": "sale-amount"
+              }
+            ]
+          }
         }
       }
     },
@@ -1643,22 +1805,21 @@
       "context": {
         "domain": "ONDC:RET16",
         "country": "IND",
-        "city": "std:0124",
+        "city": "std:011",
         "action": "confirm",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "79e62b97-dabc-40d0-9f7a-20e7d74a7ea1",
-        "timestamp": "2024-08-20T20:00:52.005Z",
-        "bpp_id": "bridge.sellersetu.in",
-        "ttl": "PT30S",
-        "req_path": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "5adcd971-413b-449d-80ac-703badcdc3f5",
+        "timestamp": "2024-09-26T09:00:03.444Z",
+        "bpp_id": "integrations-preprod.channelier.com",
+        "ttl": "PT30S"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
+          "id": "2024-09-26-458368",
           "state": "Created",
           "billing": {
             "address": {
@@ -1673,48 +1834,47 @@
             "phone": "9119065994",
             "name": "Sarthak",
             "email": "sarthak0jain@gmail.com",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
           },
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
               },
-              "fulfillment_id": "mp2_sdd_f1"
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "fulfillments": [
             {
-              "@ondc/org/TAT": "PT55M",
-              "id": "mp2_sdd_f1",
+              "@ondc/org/TAT": "PT4H",
+              "id": "L-F-1727341176360",
               "tracking": true,
               "end": {
                 "contact": {
-                  "email": "sarthak0jain@gmail.com",
                   "phone": "9119065994"
                 },
                 "person": {
                   "name": "Sarthak"
                 },
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
                     "name": "C-416",
                     "building": "Hostel M",
@@ -1733,82 +1893,82 @@
             "uri": "https://razorpay.com/",
             "tl_method": "http/get",
             "params": {
-              "amount": "2823.00",
+              "amount": "105724.00",
               "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
+              "transaction_id": "plink_P1Rx03JFCTXjkk"
             },
             "status": "PAID",
             "type": "ON-ORDER",
             "collected_by": "BAP",
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
             "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
             "@ondc/org/settlement_details": [
               {
                 "settlement_counterparty": "seller-app",
-                "settlement_phase": "sale-amount",
                 "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "upi_address": "myupi@upi",
-                "settlement_bank_account_no": "123654789",
-                "settlement_ifsc_code": "123654789",
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank"
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC",
+                "settlement_phase": "sale-amount"
               }
             ]
           },
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
           "tags": [
             {
@@ -1816,7 +1976,7 @@
               "list": [
                 {
                   "code": "tax_number",
-                  "value": "27ABLCS3119B1ZJ"
+                  "value": "27AAMCA8667N1ZQ"
                 }
               ]
             },
@@ -1825,83 +1985,56 @@
               "list": [
                 {
                   "code": "tax_number",
-                  "value": "GSTIN1234567890"
+                  "value": "27AAAAA1234A1Z5"
                 }
               ]
             }
           ],
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:00:52.005Z"
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:03.444Z"
         }
       }
     },
     "on_confirm": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "country": "IND",
-        "city": "std:0124",
-        "action": "on_confirm",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "79e62b97-dabc-40d0-9f7a-20e7d74a7ea1",
-        "timestamp": "2024-08-20T20:00:52.516Z",
-        "bpp_id": "bridge.sellersetu.in"
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "5adcd971-413b-449d-80ac-703badcdc3f5",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:03.596Z",
+        "action": "on_confirm"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
-          "state": "Accepted",
-          "billing": {
-            "address": {
-              "name": "C-416",
-              "building": "Hostel M",
-              "locality": "Thapar Institute of Engineering and Technology",
-              "city": "FATEHGARH SAHIB",
-              "state": "PUNJAB",
-              "country": "IND",
-              "area_code": "122413"
-            },
-            "phone": "9119065994",
-            "name": "Sarthak",
-            "email": "sarthak0jain@gmail.com",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
-          },
-          "items": [
-            {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "quantity": {
-                "count": 2
-              },
-              "fulfillment_id": "mp2_sdd_f1"
-            },
-            {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "quantity": {
-                "count": 2
-              },
-              "fulfillment_id": "mp2_sdd_f1"
-            }
-          ],
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "fulfillments": [
             {
-              "@ondc/org/TAT": "PT55M",
-              "id": "mp2_sdd_f1",
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
+              "state": {
+                "descriptor": {
+                  "code": "Pending"
+                }
+              },
               "tracking": true,
               "end": {
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
                     "name": "C-416",
                     "building": "Hostel M",
@@ -1912,150 +2045,132 @@
                     "area_code": "122413"
                   }
                 },
+                "contact": {
+                  "phone": "9119065994"
+                },
                 "person": {
                   "name": "Sarthak"
                 },
-                "contact": {
-                  "phone": "9119065994",
-                  "email": "sarthak0jain@gmail.com"
-                },
                 "time": {
                   "range": {
-                    "start": "2024-08-20T20:20:52.061Z",
-                    "end": "2024-08-20T20:55:52.061Z"
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
                   }
-                }
-              },
-              "type": "Delivery",
-              "@ondc/org/provider_name": "MP2",
-              "state": {
-                "descriptor": {
-                  "code": "Pending"
                 }
               },
               "start": {
                 "location": {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
                   "descriptor": {
-                    "name": "Kiraana Dukaan SellerSetu"
+                    "name": "My WakeUp Innovation  (Karnataka)"
                   },
-                  "gps": "28.4554726,77.0219019",
+                  "gps": "28.719744,77.106029",
                   "address": {
-                    "locality": "Locality ABC XYZ",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
                   }
                 },
                 "contact": {
-                  "phone": "8882160205",
-                  "email": "official@sellersetu.in"
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
                 },
                 "time": {
                   "range": {
-                    "start": "2024-08-20T20:00:52.061Z",
-                    "end": "2024-08-20T20:20:52.061Z"
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
                   }
                 }
               }
             }
           ],
-          "payment": {
-            "uri": "https://razorpay.com/",
-            "tl_method": "http/get",
-            "params": {
-              "amount": "2823.00",
-              "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
+          "items": [
+            {
+              "id": "CU10I1",
+              "quantity": {
+                "count": 2
+              },
+              "fulfillment_id": "L-F-1727341176360"
             },
-            "status": "PAID",
-            "type": "ON-ORDER",
-            "collected_by": "BAP",
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "seller-app",
-                "settlement_phase": "sale-amount",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "upi_address": "myupi@upi",
-                "settlement_bank_account_no": "123654789",
-                "settlement_ifsc_code": "123654789",
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank"
-              }
-            ]
-          },
+            {
+              "id": "CU10I0",
+              "quantity": {
+                "count": 2
+              },
+              "fulfillment_id": "L-F-1727341176360"
+            }
+          ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
+          "state": "Created",
           "tags": [
             {
               "code": "bpp_terms",
               "list": [
                 {
+                  "code": "np_type",
+                  "value": "MSN"
+                },
+                {
                   "code": "tax_number",
-                  "value": "27ABLCS3119B1ZJ"
+                  "value": "27AAMCA8667N1ZQ"
                 },
                 {
                   "code": "provider_tax_number",
-                  "value": "GDRPB6059N"
-                },
-                {
-                  "code": "np_type",
-                  "value": "MSN"
+                  "value": "AADCW1409P"
                 }
               ]
             },
@@ -2064,150 +2179,405 @@
               "list": [
                 {
                   "code": "tax_number",
-                  "value": "GSTIN1234567890"
+                  "value": "27AAAAA1234A1Z5"
                 }
               ]
             }
           ],
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:00:52.516Z"
+          "billing": {
+            "name": "Sarthak",
+            "address": {
+              "name": "C-416",
+              "building": "Hostel M",
+              "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
+              "area_code": "122413"
+            },
+            "email": "sarthak0jain@gmail.com",
+            "phone": "9119065994",
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
+          },
+          "payment": {
+            "uri": "https://razorpay.com/",
+            "tl_method": "http/get",
+            "params": {
+              "amount": "105724.00",
+              "currency": "INR",
+              "transaction_id": "plink_P1Rx03JFCTXjkk"
+            },
+            "status": "PAID",
+            "type": "ON-ORDER",
+            "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC",
+                "settlement_phase": "sale-amount"
+              }
+            ]
+          },
+          "id": "2024-09-26-458368",
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:03.596Z"
+        }
+      }
+    },
+    "on_status_pending": {
+      "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+        "domain": "ONDC:RET16",
+        "core_version": "1.2.0",
+        "bap_id": "preprod-ondc.letsboho.in",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "76580d54-359b-4872-a55e-92b6a3613cf9",
+        "country": "IND",
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:18.950Z",
+        "action": "on_status"
+      },
+      "message": {
+        "order": {
+          "id": "2024-09-26-458368",
+          "state": "Accepted",
+          "provider": {
+            "id": "CU10",
+            "locations": [
+              {
+                "id": "L1"
+              }
+            ]
+          },
+          "items": [
+            {
+              "id": "CU10I1",
+              "quantity": {
+                "count": 2
+              },
+              "fulfillment_id": "L-F-1727341176360"
+            },
+            {
+              "id": "CU10I0",
+              "quantity": {
+                "count": 2
+              },
+              "fulfillment_id": "L-F-1727341176360"
+            }
+          ],
+          "billing": {
+            "name": "Sarthak",
+            "address": {
+              "name": "C-416",
+              "building": "Hostel M",
+              "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
+              "area_code": "122413"
+            },
+            "email": "sarthak0jain@gmail.com",
+            "phone": "9119065994",
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
+          },
+          "fulfillments": [
+            {
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
+              "state": {
+                "descriptor": {
+                  "code": "Pending",
+                  "images": []
+                }
+              },
+              "tracking": true,
+              "start": {
+                "location": {
+                  "id": "L1",
+                  "descriptor": {
+                    "name": "My WakeUp Innovation  (Karnataka)",
+                    "images": []
+                  },
+                  "gps": "28.719744,77.106029",
+                  "address": {
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
+                  }
+                },
+                "time": {
+                  "range": {
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
+                  }
+                },
+                "contact": {
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
+                }
+              },
+              "end": {
+                "location": {
+                  "gps": "28.311456,76.873889",
+                  "address": {
+                    "name": "C-416",
+                    "building": "Hostel M",
+                    "locality": "Thapar Institute of Engineering and Technology",
+                    "city": "FATEHGARH SAHIB",
+                    "state": "PUNJAB",
+                    "country": "IND",
+                    "area_code": "122413"
+                  }
+                },
+                "time": {
+                  "range": {
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
+                  }
+                },
+                "contact": {
+                  "phone": "9119065994"
+                },
+                "person": {
+                  "name": "Sarthak"
+                }
+              },
+              "tags": [
+                {
+                  "code": "routing",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "P2H2P"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
+            "breakup": [
+              {
+                "@ondc/org/item_id": "CU10I1",
+                "@ondc/org/item_quantity": {
+                  "count": 2
+                },
+                "@ondc/org/title_type": "item",
+                "item": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "33277.00"
+                  }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
+                }
+              },
+              {
+                "@ondc/org/item_id": "CU10I0",
+                "@ondc/org/item_quantity": {
+                  "count": 2
+                },
+                "@ondc/org/title_type": "item",
+                "item": {
+                  "price": {
+                    "currency": "INR",
+                    "value": "19485.00"
+                  }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
+                }
+              },
+              {
+                "@ondc/org/item_id": "L-F-1727341176360",
+                "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
+                "price": {
+                  "currency": "INR",
+                  "value": "200.00"
+                }
+              }
+            ],
+            "ttl": "P1D"
+          },
+          "payment": {
+            "uri": "https://razorpay.com/",
+            "tl_method": "http/get",
+            "params": {
+              "transaction_id": "plink_P1Rx03JFCTXjkk",
+              "amount": "105724.00",
+              "currency": "INR"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
+            "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
+            "@ondc/org/settlement_details": [
+              {
+                "settlement_counterparty": "seller-app",
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
+              }
+            ]
+          },
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:18.933Z"
         }
       }
     },
     "on_status_packed": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_id": "bridge.sellersetu.in",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "ad1f0ed2-1270-4dbc-ad90-7d654fe88ea6",
-        "city": "std:0124",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "69544316-89b1-4d2a-9181-94412173ba16",
         "country": "IND",
-        "timestamp": "2024-08-20T20:03:46.074Z",
-        "ttl": "PT30S"
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:24.332Z",
+        "action": "on_status"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
+          "id": "2024-09-26-458368",
           "state": "In-progress",
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "billing": {
             "name": "Sarthak",
             "address": {
-              "city": "FATEHGARH SAHIB",
               "name": "C-416",
-              "state": "PUNJAB",
-              "country": "IND",
               "building": "Hostel M",
               "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
               "area_code": "122413"
             },
             "email": "sarthak0jain@gmail.com",
             "phone": "9119065994",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
           },
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
-              "@ondc/org/provider_name": "MP2",
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
               "state": {
                 "descriptor": {
-                  "code": "Packed"
+                  "code": "Packed",
+                  "images": []
                 }
               },
-              "type": "Delivery",
               "tracking": true,
-              "@ondc/org/TAT": "PT55M",
               "start": {
                 "location": {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
                   "descriptor": {
-                    "name": "Kiraana Dukaan SellerSetu"
+                    "name": "My WakeUp Innovation  (Karnataka)",
+                    "images": []
                   },
-                  "gps": "28.4554726,77.0219019",
+                  "gps": "28.719744,77.106029",
                   "address": {
-                    "locality": "Locality ABC XYZ",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
                   }
                 },
                 "time": {
                   "range": {
-                    "end": "2024-08-20T20:20:52.061Z",
-                    "start": "2024-08-20T20:00:52.061Z"
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
                   }
                 },
-                "instructions": {
-                  "code": "3",
-                  "name": "Pickup Code",
-                  "long_desc": "additional instructions for pickup",
-                  "short_desc": "5088"
-                },
                 "contact": {
-                  "phone": "8882160205",
-                  "email": "official@sellersetu.in"
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
                 }
               },
               "end": {
-                "time": {
-                  "range": {
-                    "end": "2024-08-20T20:55:52.061Z",
-                    "start": "2024-08-20T20:20:52.061Z"
-                  }
-                },
-                "person": {
-                  "name": "Sarthak"
-                },
-                "contact": {
-                  "email": "sarthak0jain@gmail.com",
-                  "phone": "9119065994"
-                },
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
-                    "city": "FATEHGARH SAHIB",
                     "name": "C-416",
-                    "state": "PUNJAB",
-                    "country": "IND",
                     "building": "Hostel M",
                     "locality": "Thapar Institute of Engineering and Technology",
+                    "city": "FATEHGARH SAHIB",
+                    "state": "PUNJAB",
+                    "country": "IND",
                     "area_code": "122413"
                   }
                 },
-                "instructions": {
-                  "code": "3",
-                  "name": "Delivery Code",
-                  "long_desc": "No additional delivery instructions",
-                  "short_desc": "No delivery code"
+                "time": {
+                  "range": {
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
+                  }
+                },
+                "contact": {
+                  "phone": "9119065994"
+                },
+                "person": {
+                  "name": "Sarthak"
                 }
               },
               "tags": [
@@ -2216,7 +2586,7 @@
                   "list": [
                     {
                       "code": "type",
-                      "value": "P2P"
+                      "value": "P2H2P"
                     }
                   ]
                 }
@@ -2224,227 +2594,214 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
           "payment": {
             "uri": "https://razorpay.com/",
-            "type": "ON-ORDER",
-            "params": {
-              "amount": "2823.00",
-              "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
-            },
-            "status": "PAID",
             "tl_method": "http/get",
+            "params": {
+              "transaction_id": "plink_P1Rx03JFCTXjkk",
+              "amount": "105724.00",
+              "currency": "INR"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
             "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
             "@ondc/org/settlement_details": [
               {
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank",
-                "upi_address": "myupi@upi",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "settlement_phase": "sale-amount",
-                "settlement_ifsc_code": "123654789",
                 "settlement_counterparty": "seller-app",
-                "settlement_bank_account_no": "123654789"
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
               }
-            ],
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+            ]
           },
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:03:46.074Z"
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:24.332Z"
         }
       }
     },
     "on_status_picked": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_id": "bridge.sellersetu.in",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "6b4811f8-94e9-431e-88a7-6248d2cc404e",
-        "city": "std:0124",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "8d5b871d-2439-4ab6-8bb8-82632a4cf4b6",
         "country": "IND",
-        "timestamp": "2024-08-20T20:04:03.444Z",
-        "ttl": "PT30S"
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:34.269Z",
+        "action": "on_status"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
+          "id": "2024-09-26-458368",
           "state": "In-progress",
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "billing": {
             "name": "Sarthak",
             "address": {
-              "city": "FATEHGARH SAHIB",
               "name": "C-416",
-              "state": "PUNJAB",
-              "country": "IND",
               "building": "Hostel M",
               "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
               "area_code": "122413"
             },
             "email": "sarthak0jain@gmail.com",
             "phone": "9119065994",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
           },
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
-              "@ondc/org/provider_name": "MP2",
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
               "state": {
                 "descriptor": {
-                  "code": "Order-picked-up"
+                  "code": "Order-picked-up",
+                  "images": []
                 }
               },
-              "type": "Delivery",
               "tracking": true,
-              "@ondc/org/TAT": "PT55M",
               "start": {
                 "location": {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
                   "descriptor": {
-                    "name": "Kiraana Dukaan SellerSetu"
+                    "name": "My WakeUp Innovation  (Karnataka)",
+                    "images": []
                   },
-                  "gps": "28.4554726,77.0219019",
+                  "gps": "28.719744,77.106029",
                   "address": {
-                    "locality": "Locality ABC XYZ",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
                   }
                 },
                 "time": {
                   "range": {
-                    "end": "2024-08-20T20:20:52.061Z",
-                    "start": "2024-08-20T20:00:52.061Z"
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
                   },
-                  "timestamp": "2024-08-20T20:04:03.317Z"
-                },
-                "instructions": {
-                  "code": "3",
-                  "name": "Pickup Code",
-                  "images": ["https://s3.amazonaws.com/mp2-lsp/image1.png"],
-                  "long_desc": "additional instructions for pickup",
-                  "short_desc": "5088"
+                  "timestamp": "2024-09-26T09:00:34.269Z"
                 },
                 "contact": {
-                  "phone": "8882160205",
-                  "email": "official@sellersetu.in"
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
                 }
               },
               "end": {
-                "time": {
-                  "range": {
-                    "end": "2024-08-20T20:55:52.061Z",
-                    "start": "2024-08-20T20:20:52.061Z"
-                  }
-                },
-                "person": {
-                  "name": "Sarthak"
-                },
-                "contact": {
-                  "email": "sarthak0jain@gmail.com",
-                  "phone": "9119065994"
-                },
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
-                    "city": "FATEHGARH SAHIB",
                     "name": "C-416",
-                    "state": "PUNJAB",
-                    "country": "IND",
                     "building": "Hostel M",
                     "locality": "Thapar Institute of Engineering and Technology",
+                    "city": "FATEHGARH SAHIB",
+                    "state": "PUNJAB",
+                    "country": "IND",
                     "area_code": "122413"
                   }
                 },
-                "instructions": {
-                  "code": "3",
-                  "name": "Delivery Code",
-                  "long_desc": "No additional delivery instructions",
-                  "short_desc": "No delivery code"
+                "time": {
+                  "range": {
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
+                  }
+                },
+                "contact": {
+                  "phone": "9119065994"
+                },
+                "person": {
+                  "name": "Sarthak"
                 }
               },
               "tags": [
@@ -2453,7 +2810,7 @@
                   "list": [
                     {
                       "code": "type",
-                      "value": "P2P"
+                      "value": "P2H2P"
                     }
                   ]
                 }
@@ -2461,233 +2818,220 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
           "payment": {
             "uri": "https://razorpay.com/",
-            "type": "ON-ORDER",
-            "params": {
-              "amount": "2823.00",
-              "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
-            },
-            "status": "PAID",
             "tl_method": "http/get",
+            "params": {
+              "transaction_id": "plink_P1Rx03JFCTXjkk",
+              "amount": "105724.00",
+              "currency": "INR"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
             "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
             "@ondc/org/settlement_details": [
               {
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank",
-                "upi_address": "myupi@upi",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "settlement_phase": "sale-amount",
-                "settlement_ifsc_code": "123654789",
                 "settlement_counterparty": "seller-app",
-                "settlement_bank_account_no": "123654789"
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
               }
-            ],
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+            ]
           },
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:34.269Z",
           "documents": [
             {
-              "url": "https://development-ironcore.s3.amazonaws.com/invoice_path/2024-08-20-431220-Kiraana_Dukaan_SellerSetu-2024-08-21_013403.577495.pdf",
+              "url": "https://integrations-test.channelier.com/images/invoice/2024-09-26-458368.pdf",
               "label": "Invoice"
             }
-          ],
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:04:03.444Z"
+          ]
         }
       }
     },
     "on_status_out_for_delivery": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_id": "bridge.sellersetu.in",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "7f77c825-48ee-40ef-b5b2-605e31199e85",
-        "city": "std:0124",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "61e91bb0-1ba6-4a78-ab5b-77185cf3d337",
         "country": "IND",
-        "timestamp": "2024-08-20T20:04:04.657Z",
-        "ttl": "PT30S"
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:39.798Z",
+        "action": "on_status"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
+          "id": "2024-09-26-458368",
           "state": "In-progress",
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "billing": {
             "name": "Sarthak",
             "address": {
-              "city": "FATEHGARH SAHIB",
               "name": "C-416",
-              "state": "PUNJAB",
-              "country": "IND",
               "building": "Hostel M",
               "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
               "area_code": "122413"
             },
             "email": "sarthak0jain@gmail.com",
             "phone": "9119065994",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
           },
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
-              "@ondc/org/provider_name": "MP2",
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
               "state": {
                 "descriptor": {
-                  "code": "Out-for-delivery"
+                  "code": "Out-for-delivery",
+                  "images": []
                 }
               },
-              "type": "Delivery",
               "tracking": true,
-              "@ondc/org/TAT": "PT55M",
               "start": {
                 "location": {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
                   "descriptor": {
-                    "name": "Kiraana Dukaan SellerSetu"
+                    "name": "My WakeUp Innovation  (Karnataka)",
+                    "images": []
                   },
-                  "gps": "28.4554726,77.0219019",
+                  "gps": "28.719744,77.106029",
                   "address": {
-                    "locality": "Locality ABC XYZ",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
                   }
                 },
                 "time": {
                   "range": {
-                    "end": "2024-08-20T20:20:52.061Z",
-                    "start": "2024-08-20T20:00:52.061Z"
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
                   },
-                  "timestamp": "2024-08-20T20:04:03.317Z"
-                },
-                "instructions": {
-                  "code": "3",
-                  "name": "Pickup Code",
-                  "images": ["https://s3.amazonaws.com/mp2-lsp/image1.png"],
-                  "long_desc": "additional instructions for pickup",
-                  "short_desc": "5088"
+                  "timestamp": "2024-09-26T09:00:34.269Z"
                 },
                 "contact": {
-                  "phone": "8882160205",
-                  "email": "official@sellersetu.in"
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
                 }
               },
               "end": {
-                "time": {
-                  "range": {
-                    "end": "2024-08-20T20:55:52.061Z",
-                    "start": "2024-08-20T20:20:52.061Z"
-                  }
-                },
-                "person": {
-                  "name": "Sarthak"
-                },
-                "contact": {
-                  "email": "sarthak0jain@gmail.com",
-                  "phone": "9119065994"
-                },
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
-                    "city": "FATEHGARH SAHIB",
                     "name": "C-416",
-                    "state": "PUNJAB",
-                    "country": "IND",
                     "building": "Hostel M",
                     "locality": "Thapar Institute of Engineering and Technology",
+                    "city": "FATEHGARH SAHIB",
+                    "state": "PUNJAB",
+                    "country": "IND",
                     "area_code": "122413"
                   }
                 },
-                "instructions": {
-                  "code": "3",
-                  "name": "Delivery Code",
-                  "long_desc": "No additional delivery instructions",
-                  "short_desc": "No delivery code"
+                "time": {
+                  "range": {
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
+                  }
+                },
+                "contact": {
+                  "phone": "9119065994"
+                },
+                "person": {
+                  "name": "Sarthak"
                 }
               },
               "tags": [
@@ -2696,7 +3040,7 @@
                   "list": [
                     {
                       "code": "type",
-                      "value": "P2P"
+                      "value": "P2H2P"
                     }
                   ]
                 }
@@ -2704,235 +3048,221 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
           "payment": {
             "uri": "https://razorpay.com/",
-            "type": "ON-ORDER",
-            "params": {
-              "amount": "2823.00",
-              "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
-            },
-            "status": "PAID",
             "tl_method": "http/get",
+            "params": {
+              "transaction_id": "plink_P1Rx03JFCTXjkk",
+              "amount": "105724.00",
+              "currency": "INR"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
             "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
             "@ondc/org/settlement_details": [
               {
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank",
-                "upi_address": "myupi@upi",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "settlement_phase": "sale-amount",
-                "settlement_ifsc_code": "123654789",
                 "settlement_counterparty": "seller-app",
-                "settlement_bank_account_no": "123654789"
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
               }
-            ],
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+            ]
           },
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:39.798Z",
           "documents": [
             {
-              "url": "https://development-ironcore.s3.amazonaws.com/invoice_path/2024-08-20-431220-Kiraana_Dukaan_SellerSetu-2024-08-21_013403.577495.pdf",
+              "url": "https://integrations-test.channelier.com/images/invoice/2024-09-26-458368.pdf",
               "label": "Invoice"
             }
-          ],
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:04:04.657Z"
+          ]
         }
       }
     },
     "on_status_delivered": {
       "context": {
+        "bpp_id": "integrations-preprod.channelier.com",
+        "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
         "domain": "ONDC:RET16",
-        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "preprod-ondc.letsboho.in",
-        "bap_uri": "https://preprod-ondc.letsboho.in/protocol/v1",
-        "bpp_id": "bridge.sellersetu.in",
-        "bpp_uri": "https://bridge.sellersetu.in/ondc",
-        "transaction_id": "b0d16dd3-ccb5-4df1-b8a3-356b6a0c4212",
-        "message_id": "d86f6767-c7c5-4e3a-85cb-360372413fe8",
-        "city": "std:0124",
+        "bap_uri": "https://preprod-ondc.letsboho.in/",
+        "transaction_id": "42a4aeca-95e8-4546-87f6-03e471d2d2a0",
+        "message_id": "8878b200-d75d-40f0-b8f5-f3104c7aa6cc",
         "country": "IND",
-        "timestamp": "2024-08-20T20:04:07.755Z",
-        "ttl": "PT30S"
+        "city": "std:011",
+        "timestamp": "2024-09-26T09:00:47.505Z",
+        "action": "on_status"
       },
       "message": {
         "order": {
-          "id": "2024-08-20-431220",
+          "id": "2024-09-26-458368",
           "state": "Completed",
           "provider": {
-            "id": "ff221647-8cca-444c-ba7a-ab71222615d5",
+            "id": "CU10",
             "locations": [
               {
-                "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0"
+                "id": "L1"
               }
             ]
           },
           "items": [
             {
-              "id": "28696569-282b-467b-b438-8f50debfa7db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I1",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             },
             {
-              "id": "b697adce-d184-4720-a79d-d1caa50171db",
-              "fulfillment_id": "mp2_sdd_f1",
+              "id": "CU10I0",
               "quantity": {
                 "count": 2
-              }
+              },
+              "fulfillment_id": "L-F-1727341176360"
             }
           ],
           "billing": {
             "name": "Sarthak",
             "address": {
-              "city": "FATEHGARH SAHIB",
               "name": "C-416",
-              "state": "PUNJAB",
-              "country": "IND",
               "building": "Hostel M",
               "locality": "Thapar Institute of Engineering and Technology",
+              "city": "FATEHGARH SAHIB",
+              "state": "PUNJAB",
+              "country": "IND",
               "area_code": "122413"
             },
             "email": "sarthak0jain@gmail.com",
             "phone": "9119065994",
-            "created_at": "2024-08-20T20:00:48.372Z",
-            "updated_at": "2024-08-20T20:00:48.372Z"
+            "created_at": "2024-09-26T08:59:50.588Z",
+            "updated_at": "2024-09-26T08:59:50.588Z"
           },
           "fulfillments": [
             {
-              "id": "mp2_sdd_f1",
-              "@ondc/org/provider_name": "MP2",
+              "id": "L-F-1727341176360",
+              "type": "Delivery",
+              "@ondc/org/TAT": "PT4H",
+              "@ondc/org/provider_name": "My WakeUp Innovation  (Karnataka)",
               "state": {
                 "descriptor": {
-                  "code": "Order-delivered"
+                  "code": "Order-delivered",
+                  "images": []
                 }
               },
-              "type": "Delivery",
               "tracking": true,
-              "@ondc/org/TAT": "PT55M",
               "start": {
                 "location": {
-                  "id": "7436a91b-deba-4df8-9f36-0d8e1a2434a0",
+                  "id": "L1",
                   "descriptor": {
-                    "name": "Kiraana Dukaan SellerSetu"
+                    "name": "My WakeUp Innovation  (Karnataka)",
+                    "images": []
                   },
-                  "gps": "28.4554726,77.0219019",
+                  "gps": "28.719744,77.106029",
                   "address": {
-                    "locality": "Locality ABC XYZ",
-                    "city": "Gurgaon",
-                    "area_code": "122001",
-                    "state": "Haryana"
+                    "locality": "New Delhi",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "area_code": "110088"
                   }
                 },
                 "time": {
                   "range": {
-                    "end": "2024-08-20T20:20:52.061Z",
-                    "start": "2024-08-20T20:00:52.061Z"
+                    "start": "2024-09-26T09:01:03.692Z",
+                    "end": "2024-09-29T09:01:03.692Z"
                   },
-                  "timestamp": "2024-08-20T20:04:03.317Z"
-                },
-                "instructions": {
-                  "code": "3",
-                  "name": "Pickup Code",
-                  "images": ["https://s3.amazonaws.com/mp2-lsp/image1.png"],
-                  "long_desc": "additional instructions for pickup",
-                  "short_desc": "5088"
+                  "timestamp": "2024-09-26T09:00:34.269Z"
                 },
                 "contact": {
-                  "phone": "8882160205",
-                  "email": "official@sellersetu.in"
+                  "phone": "8929991588",
+                  "email": "innovationwakeup@gmail.com"
                 }
               },
               "end": {
-                "time": {
-                  "range": {
-                    "end": "2024-08-20T20:55:52.061Z",
-                    "start": "2024-08-20T20:20:52.061Z"
-                  },
-                  "timestamp": "2024-08-20T20:04:07.409Z"
-                },
-                "person": {
-                  "name": "Sarthak"
-                },
-                "contact": {
-                  "email": "sarthak0jain@gmail.com",
-                  "phone": "9119065994"
-                },
                 "location": {
-                  "gps": "28.3114,76.8738",
+                  "gps": "28.311456,76.873889",
                   "address": {
-                    "city": "FATEHGARH SAHIB",
                     "name": "C-416",
-                    "state": "PUNJAB",
-                    "country": "IND",
                     "building": "Hostel M",
                     "locality": "Thapar Institute of Engineering and Technology",
+                    "city": "FATEHGARH SAHIB",
+                    "state": "PUNJAB",
+                    "country": "IND",
                     "area_code": "122413"
                   }
                 },
-                "instructions": {
-                  "code": "3",
-                  "name": "Delivery Code",
-                  "images": ["https://s3.amazonaws.com/mp2-lsp/image1.png"],
-                  "long_desc": "No additional delivery instructions",
-                  "short_desc": "No delivery code"
+                "time": {
+                  "range": {
+                    "start": "2024-09-29T09:01:03.692Z",
+                    "end": "2024-09-29T11:01:03.692Z"
+                  },
+                  "timestamp": "2024-09-26T09:00:47.505Z"
+                },
+                "contact": {
+                  "phone": "9119065994"
+                },
+                "person": {
+                  "name": "Sarthak"
                 }
               },
               "tags": [
@@ -2941,7 +3271,7 @@
                   "list": [
                     {
                       "code": "type",
-                      "value": "P2P"
+                      "value": "P2H2P"
                     }
                   ]
                 }
@@ -2949,94 +3279,94 @@
             }
           ],
           "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "105724.00"
+            },
             "breakup": [
               {
-                "@ondc/org/item_id": "28696569-282b-467b-b438-8f50debfa7db",
+                "@ondc/org/item_id": "CU10I1",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Sofa",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1198.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "599.0"
+                    "value": "33277.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |12 inch Mattress, Queen Bed | Bouncy Mattress ( Queen Size- 78x60x12 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "66554.00"
                 }
               },
               {
-                "@ondc/org/item_id": "b697adce-d184-4720-a79d-d1caa50171db",
+                "@ondc/org/item_id": "CU10I0",
                 "@ondc/org/item_quantity": {
                   "count": 2
                 },
-                "title": "Armchairs",
                 "@ondc/org/title_type": "item",
-                "price": {
-                  "currency": "INR",
-                  "value": "1600.0"
-                },
                 "item": {
                   "price": {
                     "currency": "INR",
-                    "value": "800.0"
+                    "value": "19485.00"
                   }
+                },
+                "title": "Wakeup India Spring Pillowtop Hybrid Mattress | Smarttech Pillowtop Hybrid Pocket Spring Mattress |10 inch Mattress, Double Bed  ( Double Size- 78x48x10 inch, White , Navy Blue )",
+                "price": {
+                  "currency": "INR",
+                  "value": "38970.00"
                 }
               },
               {
-                "@ondc/org/item_id": "mp2_sdd_f1",
-                "title": "Delivery charges",
+                "@ondc/org/item_id": "L-F-1727341176360",
                 "@ondc/org/title_type": "delivery",
+                "title": "Delivery Charges",
                 "price": {
                   "currency": "INR",
-                  "value": "25.0"
+                  "value": "200.00"
                 }
               }
             ],
-            "ttl": "P1D",
-            "price": {
-              "currency": "INR",
-              "value": "2823.0"
-            }
+            "ttl": "P1D"
           },
           "payment": {
             "uri": "https://razorpay.com/",
-            "type": "ON-ORDER",
-            "params": {
-              "amount": "2823.00",
-              "currency": "INR",
-              "transaction_id": "plink_OnHIKHxyZx41wF"
-            },
-            "status": "PAID",
             "tl_method": "http/get",
+            "params": {
+              "transaction_id": "plink_P1Rx03JFCTXjkk",
+              "amount": "105724.00",
+              "currency": "INR"
+            },
+            "type": "ON-ORDER",
+            "status": "PAID",
             "collected_by": "BAP",
+            "@ondc/org/buyer_app_finder_fee_type": "percent",
+            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+            "@ondc/org/settlement_basis": "delivery",
             "@ondc/org/settlement_details": [
               {
-                "bank_name": "Test Bank",
-                "branch_name": "Test Bank",
-                "upi_address": "myupi@upi",
-                "settlement_type": "neft",
-                "beneficiary_name": "Sellersetu",
-                "settlement_phase": "sale-amount",
-                "settlement_ifsc_code": "123654789",
                 "settlement_counterparty": "seller-app",
-                "settlement_bank_account_no": "123654789"
+                "settlement_phase": "sale-amount",
+                "settlement_type": "neft",
+                "settlement_bank_account_no": "10140183023",
+                "settlement_ifsc_code": "IDFB0040101",
+                "bank_name": "IDFC Bank Limited",
+                "branch_name": "Bkc Naman Chambers Branch",
+                "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
               }
-            ],
-            "@ondc/org/buyer_app_finder_fee_type": "Percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+            ]
           },
+          "created_at": "2024-09-26T09:00:03.444Z",
+          "updated_at": "2024-09-26T09:00:47.505Z",
           "documents": [
             {
-              "url": "https://development-ironcore.s3.amazonaws.com/invoice_path/2024-08-20-431220-Kiraana_Dukaan_SellerSetu-2024-08-21_013403.577495.pdf",
+              "url": "https://integrations-test.channelier.com/images/invoice/2024-09-26-458368.pdf",
               "label": "Invoice"
             }
-          ],
-          "created_at": "2024-08-20T20:00:52.005Z",
-          "updated_at": "2024-08-20T20:04:07.409Z"
+          ]
         }
       }
     }
