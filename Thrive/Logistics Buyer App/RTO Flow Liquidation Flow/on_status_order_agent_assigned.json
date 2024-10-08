@@ -3,85 +3,78 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:022",
+        "action": "on_status",
         "core_version": "1.2.0",
         "bap_id": "ondc-logistics-preprod.hashtagloyalty.net",
         "bap_uri": "https://ondc-logistics-preprod.hashtagloyalty.net/ondc/logistics",
-        "action": "on_status",
-        "transaction_id": "36168128-LYAS",
-        "message_id": "5d8e64c954593139fb9db72da5ec5679",
-        "timestamp": "2024-09-02T12:04:05.632Z",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "36168374-QYCL",
+        "message_id": "a56b2e84aba91e3d840f628e2b4de33e",
+        "timestamp": "2024-10-04T06:08:39.982Z"
     },
     "message": {
         "order": {
-            "id": "36168128-LYAS_36168128",
+            "id": "36168374-QYCL_36168374",
             "state": "In-progress",
             "provider": {
-                "id": "17e5d827-2870-4643-9aa3-ccb3fb8ea1d4"
+                "id": "MP2"
             },
             "items": [
                 {
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "category_id": "Immediate Delivery",
                     "descriptor": {
                         "code": "P2P"
                     },
                     "time": {
                         "label": "TAT",
-                        "duration": "PT60M",
-                        "timestamp": "2024-09-02"
-                    },
-                    "id": "Standard",
-                    "fulfillment_id": "1ee56bab-cea0-42c0-8b4a-8630b0cd152f",
-                    "category_id": "Immediate Delivery"
+                        "duration": "PT55M",
+                        "timestamp": "2024-10-04"
+                    }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "99.12"
+                    "value": "25.0"
                 },
                 "breakup": [
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "84.00"
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "delivery"
+                            "value": "21.19"
+                        }
                     },
                     {
+                        "@ondc/org/item_id": "mp2_immediate",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "15.12"
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "tax"
+                            "value": "3.81"
+                        }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "agent": {
-                        "name": "Shelia Osinski",
-                        "phone": "7353731708"
-                    },
-                    "vehicle": {
-                        "registration": "KA 54 XYZ 1234"
-                    },
+                    "id": "mp2_immediate_f1",
+                    "type": "Delivery",
                     "state": {
                         "descriptor": {
                             "code": "Agent-assigned"
                         }
                     },
-                    "id": "1ee56bab-cea0-42c0-8b4a-8630b0cd152f",
-                    "type": "Delivery",
                     "start": {
                         "time": {
                             "range": {
-                                "start": "2024-09-02T12:03:33.731Z",
-                                "end": "2024-09-02T12:18:33.731Z"
+                                "start": "2024-10-04T05:56:15.000Z",
+                                "end": "2024-10-04T06:16:15.000Z"
                             },
-                            "duration": "PT15M"
+                            "duration": "PT20M"
                         },
                         "person": {
                             "name": "Surat Chai"
@@ -104,18 +97,13 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "168128"
+                            "short_desc": "8374",
+                            "long_desc": "Thrive Order ID"
                         }
                     },
                     "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-09-02T12:18:33.731Z",
-                                "end": "2024-09-02T13:03:33.731Z"
-                            }
-                        },
                         "person": {
-                            "name": "Rokad"
+                            "name": "Chintan Rokad"
                         },
                         "location": {
                             "gps": "19.063574392482572,72.8404844",
@@ -132,8 +120,20 @@
                         "contact": {
                             "phone": "7203057589",
                             "email": "chintanr@hashtagloyalty.com"
+                        },
+                        "instructions": {
+                            "code": "2",
+                            "short_desc": "168374",
+                            "long_desc": "Thrive Order ID"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-04T06:16:15.000Z",
+                                "end": "2024-10-04T06:51:15.000Z"
+                            }
                         }
                     },
+                    "tracking": true,
                     "tags": [
                         {
                             "code": "tracking",
@@ -144,26 +144,24 @@
                                 },
                                 {
                                     "code": "url_enabled",
-                                    "value": "no"
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://track.mp2.in/r/36168374-QYCL_36168374"
                                 }
                             ]
                         }
                     ],
-                    "tracking": true
+                    "agent": {
+                        "name": "MP2Delivery",
+                        "phone": "9999999999"
+                    }
                 }
             ],
             "payment": {
                 "collected_by": "BAP",
-                "type": "ON-ORDER",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "buyer-app",
-                        "settlement_type": "neft",
-                        "beneficiary_name": "HASHTAG LOYALTY PRIVATE LIMITED",
-                        "settlement_bank_account_no": "922020064984749",
-                        "settlement_ifsc_code": "UTIB0004013"
-                    }
-                ],
+                "type": "POST-FULFILLMENT",
                 "status": "NOT-PAID"
             },
             "billing": {
@@ -180,10 +178,29 @@
                 "tax_number": "27AADCH9016M1Z9",
                 "phone": "9819441643",
                 "email": "krishif@hashtagloyalty.com",
-                "created_at": "2024-09-02T12:03:26.108Z",
-                "updated_at": "2024-09-02T12:03:26.108Z"
+                "created_at": "2024-10-04T06:07:54.913Z",
+                "updated_at": "2024-10-04T06:07:54.913Z"
             },
             "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "F\u0026B",
+                        "descriptor": {
+                            "name": "Flat White"
+                        },
+                        "quantity": {
+                            "count": 2,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "780.0"
+                        }
+                    }
+                ],
                 "provider": {
                     "descriptor": {
                         "name": "Surat Chai"
@@ -198,46 +215,29 @@
                     }
                 },
                 "order": {
+                    "id": "36168374",
                     "weight": {
                         "unit": "kilogram",
-                        "value": 1
+                        "value": 1.0
                     },
-                    "id": "36168128-LYAS_36168128",
                     "dimensions": {
                         "length": {
                             "unit": "centimeter",
-                            "value": 20
+                            "value": 20.0
                         },
                         "breadth": {
                             "unit": "centimeter",
-                            "value": 10
+                            "value": 10.0
                         },
                         "height": {
                             "unit": "centimeter",
-                            "value": 20
+                            "value": 20.0
                         }
                     }
-                },
-                "items": [
-                    {
-                        "descriptor": {
-                            "name": "Mc Saver Veg Maharaja Mac Meal"
-                        },
-                        "quantity": {
-                            "measure": {
-                                "value": 1,
-                                "unit": "kilogram"
-                            },
-                            "count": 1
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "361.0"
-                        },
-                        "category_id": "F\u0026B"
-                    }
-                ]
-            }
+                }
+            },
+            "updated_at": "2024-10-04T06:08:07.419Z",
+            "created_at": "2024-10-04T05:56:15.000Z"
         }
     }
 }

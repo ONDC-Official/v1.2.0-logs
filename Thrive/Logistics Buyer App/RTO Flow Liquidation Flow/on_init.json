@@ -3,34 +3,30 @@
         "domain": "nic2004:60232",
         "country": "IND",
         "city": "std:022",
+        "action": "on_init",
         "core_version": "1.2.0",
         "bap_id": "ondc-logistics-preprod.hashtagloyalty.net",
         "bap_uri": "https://ondc-logistics-preprod.hashtagloyalty.net/ondc/logistics",
-        "action": "on_init",
-        "transaction_id": "36168128-LYAS",
-        "message_id": "b94eea66e678d49007fd39751d3277c2",
-        "timestamp": "2024-09-02T12:03:26.360Z",
-        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org",
-        "bpp_id": "ref-logistics-app-preprod.ondc.org"
+        "bpp_id": "preprod.logistics-seller.mp2.in",
+        "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+        "transaction_id": "36168374-QYCL",
+        "message_id": "1c188253f99dbd91e0fc6d8dbefd9aa3",
+        "timestamp": "2024-10-04T06:07:55.183Z"
     },
     "message": {
         "order": {
             "provider": {
-                "id": "17e5d827-2870-4643-9aa3-ccb3fb8ea1d4"
+                "id": "MP2"
             },
             "items": [
                 {
-                    "id": "Standard",
-                    "fulfillment_id": "1ee56bab-cea0-42c0-8b4a-8630b0cd152f",
-                    "descriptor": {
-                        "code": "P2P"
-                    },
-                    "category_id": "Immediate Delivery"
+                    "id": "mp2_immediate",
+                    "fulfillment_id": "mp2_immediate_f1"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "1ee56bab-cea0-42c0-8b4a-8630b0cd152f",
+                    "id": "mp2_immediate_f1",
                     "type": "Delivery",
                     "start": {
                         "location": {
@@ -81,34 +77,34 @@
                     ]
                 }
             ],
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "99.12"
+                    "value": "25.0"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "84.00"
+                            "value": "21.19"
                         }
                     },
                     {
-                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/item_id": "mp2_immediate",
                         "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "15.12"
+                            "value": "3.81"
                         }
                     }
                 ],
                 "ttl": "PT15M"
-            },
-            "payment": {
-                "type": "ON-ORDER",
-                "collected_by": "BAP"
             }
         }
     }
