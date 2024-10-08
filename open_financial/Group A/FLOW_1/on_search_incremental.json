@@ -1,133 +1,612 @@
 {
-    "context": {
-        "domain": "ONDC:RET10",
-        "country": "IND",
-        "city": "*",
-        "action": "on_search",
-        "timestamp": "2024-10-03T19:33:23.366Z",
-        "core_version": "1.2.0",
-        "bap_id": "buyer-app-preprod-v2.ondc.org",
-        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
-        "bpp_id": "preprod-ondc-seller.bankopen.co",
-        "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
-        "transaction_id": "c4408f30-c821-4b3d-9f1b-14b9059daca8",
-        "message_id": "c186ccac-b387-40ad-8bd0-11fc8ce255c7"
-    },
-    "message": {
-        "catalog": {
-            "bpp/descriptor": {
-                "name": "Open Financial",
-                "code": "OPEN",
-                "symbol": "https://open-frontend-bucket.s3.amazonaws.com/logos/logo-type-purple.svg",
-                "short_desc": "Open Money test product",
-                "long_desc": "open money test",
-                "images": [
-                    "https://open-frontend-bucket.s3.amazonaws.com/logos/logo-type-purple.svg"
-                ]
+    "domain": "ONDC:RET10",
+    "version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bpp_id": "preprod-ondc-seller.bankopen.co",
+    "payload": {
+        "search_full_catalog_refresh": {
+            "context": {
+                "domain": "ONDC:RET10",
+                "country": "IND",
+                "city": "std:080",
+                "action": "search",
+                "timestamp": "2024-10-03T19:37:23.366Z",
+                "ttl": "PT30S",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "570824d1-e18f-4511-9892-2be280bfcacc",
+                "message_id": "4ea71900-4cc9-4421-ae30-4d91ab9d1fc5"
             },
-            "bpp/providers": [
-                {
-                    "id": "19746-ONDC-1",
-                    "categories": [],
-                    "items": [
+            "message": {
+                "intent": {
+                    "fulfillment": {
+                        "type": "Delivery"
+                    },
+                    "payment": {
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3"
+                    }
+                }
+            }
+        },
+        "on_search_full_catalog_refresh": {
+            "context": {
+                "domain": "ONDC:RET10",
+                "country": "IND",
+                "city": "std:080",
+                "action": "on_search",
+                "timestamp": "2024-10-03T19:20:23.366Z",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_id": "preprod-ondc-seller.bankopen.co",
+                "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+                "transaction_id": "570824d1-e18f-4511-9892-2be280bfcacc",
+                "message_id": "4ea71900-4cc9-4421-ae30-4d91ab9d1fc5"
+            },
+            "message": {
+                "catalog": {
+                    "bpp/descriptor": {
+                        "name": "Open Financial",
+                        "code": "OPEN",
+                        "symbol": "https://open-frontend-bucket.s3.amazonaws.com/logos/logo-type-purple.svg",
+                        "short_desc": "Open Money test product",
+                        "long_desc": "open money test",
+                        "images": [
+                            "https://open-frontend-bucket.s3.amazonaws.com/logos/logo-type-purple.svg"
+                        ],
+                        "tags": [
+                            {
+                                "code": "bpp_terms",
+                                "list": [
+                                    {
+                                        "code": "np_type",
+                                        "value": "MSN"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "bpp/fulfillments": [
                         {
-                            "id": "19746-ONDC-1-3551",
+                            "id": "1",
+                            "type": "Self-Pickup"
+                        }
+                    ],
+                    "bpp/providers": [
+                        {
+                            "id": "19746-ONDC-1",
                             "descriptor": {
-                                "name": "CHILLI POWDER 100G",
-                                "code": "1:8906002080021",
-                                "symbol": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_3551_1702538104770.jpeg",
-                                "short_desc": "CHILLI POWDER 100G",
-                                "long_desc": "CHILLI POWDER 100G",
+                                "name": "ZFONDC",
+                                "symbol": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-shop-img",
+                                "short_desc": "ZFONDC",
+                                "long_desc": "ZFONDC_",
                                 "images": [
-                                    "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_3551_1702538104770.jpeg"
+                                    "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-shop-img"
                                 ]
                             },
-                            "price": {
-                                "currency": "INR",
-                                "value": "15.00",
-                                "maximum_value": "20.00"
-                            },
-                            "location_id": "19746-ONDC-1-3547_location",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-02-16T12:00:00.587Z"
+                                "timestamp": "2024-10-03T19:20:23.366Z"
                             },
-                            "related": true,
-                            "recommended": true,
-                            "tags": [
+                            "categories": [
                                 {
-                                    "code": "origin",
-                                    "list": [
-                                        {
-                                            "code": "country",
-                                            "value": "IND"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "image",
-                                    "list": [
+                                    "id": "milk12345678",
+                                    "descriptor": {
+                                        "name": "Milk one litre"
+                                    },
+                                    "tags": [
                                         {
                                             "code": "type",
-                                            "value": "back_image"
-                                        },
-                                        {
-                                            "code": "url",
-                                            "value": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-3551-ondc-item-back-image-0.jpeg"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "type",
-                                    "list": [
-                                        {
-                                            "code": "type",
-                                            "value": "item"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "code": "veg_nonveg",
-                                    "list": [
-                                        {
-                                            "code": "veg",
-                                            "value": "yes"
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "variant_group"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
                             ],
-                            "quantity": {
-                                "unitized": {
-                                    "measure": {
-                                        "unit": "gram",
-                                        "value": "100"
+                            "fulfillments": [
+                                {
+                                    "id": "1",
+                                    "type": "Buyer Delivery",
+                                    "contact": {
+                                        "phone": "9876543210",
+                                        "email": "test@gmail.com"
                                     }
-                                },
-                                "available": {
-                                    "count": "99"
-                                },
-                                "maximum": {
-                                    "count": "9"
                                 }
-                            },
-                            "category_id": "Masala & Seasoning",
-                            "@ondc/org/returnable": true,
-                            "@ondc/org/cancellable": false,
-                            "@ondc/org/return_window": "P2D",
-                            "@ondc/org/seller_pickup_return": false,
-                            "@ondc/org/available_on_cod": false,
-                            "@ondc/org/time_to_ship": "PT17M",
-                            "@ondc/org/statutory_reqs_packaged_commodities": {
-                                "manufacturer_or_packer_name": "MFR",
-                                "manufacturer_or_packer_address": "Please refer back image",
-                                "common_or_generic_name_of_commodity": "SAKTHI TURMERIC POWDER 100G",
-                                "month_year_of_manufacture_packing_import": "Please refer back image"
-                            },
-                            "@ondc/org/contact_details_consumer_care": "Customer Support,zfondc@gmail.com,9834893274"
+                            ],
+                            "locations": [
+                                {
+                                    "id": "19746-ONDC-1-3547_location",
+                                    "gps": "12.9298689,77.6848366",
+                                    "address": {
+                                        "street": "street",
+                                        "locality": "krpuram",
+                                        "city": "Kolar",
+                                        "state": "karnataka",
+                                        "area_code": "560103"
+                                    },
+                                    "circle": {
+                                        "gps": "12.9298689,77.6848366",
+                                        "radius": {
+                                            "value": "30",
+                                            "unit": "km"
+                                        }
+                                    },
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-10-03T19:39:23.366Z",
+                                        "range": {
+                                            "start": "0001",
+                                            "end": "2300"
+                                        },
+                                        "days": "3,4,5,6,7,2,1",
+                                        "schedule": {
+                                            "holidays": []
+                                        }
+                                    }
+                                }
+                            ],
+                            "items": [
+                                {
+                                    "id": "19746-ONDC-1-101",
+                                    "descriptor": {
+                                        "name": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+                                        "code": "1:8901052020409",
+                                        "symbol": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_101_1703228169352.jpeg",
+                                        "short_desc": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+                                        "long_desc": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+                                        "images": [
+                                            "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_101_1703228169352.jpeg",
+                                            "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_101_1703228169771.jpeg",
+                                            "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_101_1703228170264.jpeg"
+                                        ]
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "209.00",
+                                        "maximum_value": "220.00"
+                                    },
+                                    "location_id": "19746-ONDC-1-3547_location",
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-10-03T19:20:23.366Z"
+                                    },
+                                    "related": true,
+                                    "recommended": true,
+                                    "tags": [
+                                        {
+                                            "code": "origin",
+                                            "list": [
+                                                {
+                                                    "code": "country",
+                                                    "value": "IND"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "image",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "back_image"
+                                                },
+                                                {
+                                                    "code": "url",
+                                                    "value": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-101-ondc-item-back-image-0.jpeg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "veg_nonveg",
+                                            "list": [
+                                                {
+                                                    "code": "veg",
+                                                    "value": "yes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "quantity": {
+                                        "unitized": {
+                                            "measure": {
+                                                "unit": "gram",
+                                                "value": "250"
+                                            }
+                                        },
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "1"
+                                        }
+                                    },
+                                    "category_id": "Tea and Coffee",
+                                    "category_ids": [],
+                                    "fulfillment_id": "1",
+                                    "@ondc/org/returnable": true,
+                                    "@ondc/org/cancellable": true,
+                                    "@ondc/org/return_window": "P2D",
+                                    "@ondc/org/seller_pickup_return": false,
+                                    "@ondc/org/available_on_cod": false,
+                                    "@ondc/org/time_to_ship": "PT17M",
+                                    "@ondc/org/statutory_reqs_packaged_commodities": {
+                                        "manufacturer_or_packer_name": "MFR",
+                                        "manufacturer_or_packer_address": "Please refer back image",
+                                        "common_or_generic_name_of_commodity": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+                                        "month_year_of_manufacture_packing_import": "Please refer back image"
+                                    },
+                                    "@ondc/org/contact_details_consumer_care": "Customer Support,zfondc@gmail.com,9834893274"
+                                },
+                                {
+                                    "id": "19746-ONDC-1-1000",
+                                    "descriptor": {
+                                        "name": "AMUL MILK 1 litre",
+                                        "code": "1:4987176177476",
+                                        "symbol": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_1000_1703227769663.jpeg",
+                                        "short_desc": "MUL MILK 1 litre",
+                                        "long_desc": "MUL MILK 1 litre",
+                                        "images": [
+                                            "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_1000_1703227769663.jpeg"
+                                        ]
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "152.00",
+                                        "maximum_value": "160.00"
+                                    },
+                                    "location_id": "19746-ONDC-1-3547_location",
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-10-03T19:20:23.366Z"
+                                    },
+                                    "related": true,
+                                    "recommended": true,
+                                    "tags": [
+                                        {
+                                            "code": "origin",
+                                            "list": [
+                                                {
+                                                    "code": "country",
+                                                    "value": "IND"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "image",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "back_image"
+                                                },
+                                                {
+                                                    "code": "url",
+                                                    "value": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-1000-ondc-item-back-image-0.jpeg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "veg_nonveg",
+                                            "list": [
+                                                {
+                                                    "code": "non_veg",
+                                                    "value": "yes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "quantity": {
+                                        "unitized": {
+                                            "measure": {
+                                                "unit": "unit",
+                                                "value": "1"
+                                            }
+                                        },
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "42"
+                                        }
+                                    },
+                                    "category_id": "Dairy and Cheese",
+                                    "category_ids": [],
+                                    "fulfillment_id": "1",
+                                    "@ondc/org/returnable": true,
+                                    "@ondc/org/cancellable": false,
+                                    "@ondc/org/return_window": "P2D",
+                                    "@ondc/org/seller_pickup_return": false,
+                                    "@ondc/org/available_on_cod": false,
+                                    "@ondc/org/time_to_ship": "PT17M",
+                                    "@ondc/org/statutory_reqs_prepackaged_food": {
+                                        "nutritional_info": "MFR",
+                                        "additives_info": "Please refer back image",
+                                        "other_FSSAI_license_no": "ARIEL MATIC PWR TOPLOAD 500GM",
+                                        "importer_FSSAI_license_no": "Please refer back image",
+                                        "brand_owner_FSSAI_license_no": "21233"
+                                    },
+                                    "@ondc/org/contact_details_consumer_care": "zfondc@gmail.com,9834893274"
+                                }
+                            ],
+                            "rateable": false,
+                            "tags": [
+                                {
+                                    "code": "timing",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "All"
+                                        },
+                                        {
+                                            "code": "location",
+                                            "value": "19746-ONDC-1-3547_location"
+                                        },
+                                        {
+                                            "code": "day_from",
+                                            "value": "1"
+                                        },
+                                        {
+                                            "code": "day_to",
+                                            "value": "7"
+                                        },
+                                        {
+                                            "code": "time_from",
+                                            "value": "0000"
+                                        },
+                                        {
+                                            "code": "time_to",
+                                            "value": "2359"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "serviceability",
+                                    "list": [
+                                        {
+                                            "code": "location",
+                                            "value": "19746-ONDC-1-3547_location"
+                                        },
+                                        {
+                                            "code": "category",
+                                            "value": "Tea and Coffee"
+                                        },
+                                        {
+                                            "code": "type",
+                                            "value": "10"
+                                        },
+                                        {
+                                            "code": "val",
+                                            "value": "30"
+                                        },
+                                        {
+                                            "code": "unit",
+                                            "value": "km"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "serviceability",
+                                    "list": [
+                                        {
+                                            "code": "location",
+                                            "value": "19746-ONDC-1-3547_location"
+                                        },
+                                        {
+                                            "code": "category",
+                                            "value": "Dairy and Cheese"
+                                        },
+                                        {
+                                            "code": "type",
+                                            "value": "10"
+                                        },
+                                        {
+                                            "code": "val",
+                                            "value": "30"
+                                        },
+                                        {
+                                            "code": "unit",
+                                            "value": "km"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "ttl": "PT12H",
+                            "@ondc/org/fssai_license_no": "12216017000287"
                         }
                     ]
                 }
-            ]
-        }
-    }
+            }
+        },
+        "search_inc_refresh": {
+            "context": {
+                "domain": "ONDC:RET10",
+                "country": "IND",
+                "city": "*",
+                "action": "search",
+                "timestamp": "2024-10-03T19:30:23.366Z",
+                "ttl": "PT30S",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "transaction_id": "c12308f30-c821-4b3d-9f1b-14b905122aca8",
+                "message_id": "8e2313bde4ed-51c1-40fc-b35d-8f3151e49fca2d"
+            },
+            "message": {
+                "intent": {
+                    "payment": {
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3"
+                    },
+                    "tags": [
+                        {
+                            "code": "catalog_inc",
+                            "list": [
+                                {
+                                    "code": "mode",
+                                    "value": "start"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "on_search_inc_refresh": {
+            "context": {
+                "domain": "ONDC:RET10",
+                "country": "IND",
+                "city": "*",
+                "action": "on_search",
+                "timestamp": "2024-10-03T19:33:23.366Z",
+                "core_version": "1.2.0",
+                "bap_id": "buyer-app-preprod-v2.ondc.org",
+                "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+                "bpp_id": "preprod-ondc-seller.bankopen.co",
+                "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
+                "transaction_id": "c12308f30-c821-4b3d-9f1b-14b905122aca8",
+                "message_id": "c186ccac-b387-40ad-8bd0-11fc8ce255c7"
+            },
+            "message": {
+                "catalog": {
+                    "bpp/providers": [
+                        {
+                            "id": "19746-ONDC-1",
+                            "categories": [],
+                            "items": [
+                                {
+                                    "id": "19746-ONDC-1-3551",
+                                    "descriptor": {
+                                        "name": "CHILLI POWDER 100G",
+                                        "code": "1:8906002080021",
+                                        "symbol": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_3551_1702538104770.jpeg",
+                                        "short_desc": "CHILLI POWDER 100G",
+                                        "long_desc": "CHILLI POWDER 100G",
+                                        "images": [
+                                            "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746_ONDC_3551_1702538104770.jpeg"
+                                        ]
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "15.00",
+                                        "maximum_value": "20.00"
+                                    },
+                                    "location_id": "19746-ONDC-1-3547_location",
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-02-16T12:00:00.587Z"
+                                    },
+                                    "related": true,
+                                    "recommended": true,
+                                    "tags": [
+                                        {
+                                            "code": "origin",
+                                            "list": [
+                                                {
+                                                    "code": "country",
+                                                    "value": "IND"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "image",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "back_image"
+                                                },
+                                                {
+                                                    "code": "url",
+                                                    "value": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/images/19746/19746-1-3551-ondc-item-back-image-0.jpeg"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "type",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "item"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "veg_nonveg",
+                                            "list": [
+                                                {
+                                                    "code": "veg",
+                                                    "value": "yes"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "quantity": {
+                                        "unitized": {
+                                            "measure": {
+                                                "unit": "gram",
+                                                "value": "100"
+                                            }
+                                        },
+                                        "available": {
+                                            "count": "99"
+                                        },
+                                        "maximum": {
+                                            "count": "9"
+                                        }
+                                    },
+                                    "category_id": "Masala & Seasoning",
+                                    "@ondc/org/returnable": true,
+                                    "@ondc/org/cancellable": false,
+                                    "@ondc/org/return_window": "P2D",
+                                    "@ondc/org/seller_pickup_return": false,
+                                    "@ondc/org/available_on_cod": false,
+                                    "@ondc/org/time_to_ship": "PT17M",
+                                    "@ondc/org/statutory_reqs_packaged_commodities": {
+                                        "manufacturer_or_packer_name": "MFR",
+                                        "manufacturer_or_packer_address": "Please refer back image",
+                                        "common_or_generic_name_of_commodity": "SAKTHI TURMERIC POWDER 100G",
+                                        "month_year_of_manufacture_packing_import": "Please refer back image"
+                                    },
+                                    "@ondc/org/contact_details_consumer_care": "Customer Support,zfondc@gmail.com,9834893274"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "select": {},
+        "on_select": {},
+        "init": {},
+        "on_init": {},
+        "confirm": {},
+        "on_confirm": {},
+        "update(initiated)": {},
+        "on_update(interim)": {},
+        "on_status_picked": {},
+        "on_status_out_for_delivery": {},
+        "on_status_delivered": {}
+    },
+    "flow": "1"
 }
