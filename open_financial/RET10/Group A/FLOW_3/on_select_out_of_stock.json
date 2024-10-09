@@ -3,8 +3,8 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:080",
-        "action": "init",
-        "timestamp": "2024-10-06T18:01:30.976Z",
+        "action": "on_select",
+        "timestamp": "2024-10-06T18:00:19.976Z",
         "ttl": "PT30S",
         "core_version": "1.2.0",
         "bap_id": "buyer-app-preprod-v2.ondc.org",
@@ -12,10 +12,18 @@
         "bpp_id": "preprod-ondc-seller.bankopen.co",
         "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
         "transaction_id": "f8c310b7a0-eace-4e10-892b-0a99b9f712d6",
-        "message_id": "f8c33210b7a0-eace-4e10-892b-0a99b9f712d6"
+        "message_id": "78c310b7a0-eace-4e10-892b-0a99b9f712d6"
     },
     "message": {
         "order": {
+            "provider": {
+                "id": "19746-ONDC-1",
+                "locations": [
+                    {
+                        "id": "19746-ONDC-1-3547_location"
+                    }
+                ]
+            },
             "items": [
                 {
                     "id": "19746-ONDC-1-101",
@@ -30,62 +38,123 @@
                             ]
                         }
                     ],
-                    "quantity": {
-                        "count": 2
-                    },
-                    "location_id": "19609-ONDC-1-3493_location",
+                    "fulfillment_id": "6C81AC5188B4A349A112DC947C0811B7"
+                },
+                {
+                    "id": "19746-ONDC-1-1000",
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ],
                     "fulfillment_id": "6C81AC5188B4A349A112DC947C0811B7"
                 }
             ],
-            "billing": {
-                "name": "Test",
-                "address": {
-                    "name": "Test",
-                    "building": "awer",
-                    "locality": "Sarjapura Main Road",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IND",
-                    "area_code": "560103"
-                },
-                "email": "test@gmail.com",
-                "phone": "0987654321",
-                "created_at": "2024-10-06T14:02:16.976Z",
-                "updated_at": "2024-10-06T14:02:16.976Z"
-            },
             "fulfillments": [
                 {
                     "id": "6C81AC5188B4A349A112DC947C0811B7",
-                    "type": "Delivery",
-                    "tracking": true,
-                    "end": {
-                        "location": {
-                            "gps": "12.918139884127225,77.67208197154106",
-                            "address": {
-                                "name": "test",
-                                "building": "awer",
-                                "locality": "Sarjapura Main Road",
-                                "city": "Bengaluru",
-                                "state": "Karnataka",
-                                "country": "IND",
-                                "area_code": "560103"
-                            }
-                        },
-                        "contact": {
-                            "phone": "0987654321",
-                            "email": "test@gmail.com"
+                    "type": "Buyer Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
                         }
-                    }
+                    },
+                    "tracking": true,
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT1H25M",
+                    "@ondc/org/provider_name": ""
                 }
             ],
-            "provider": {
-                "id": "19746-ONDC-1",
-                "locations": [
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "488.07"
+                },
+                "breakup": [
                     {
-                        "id": "19746-ONDC-1-3547_location"
+                        "title": "TATA CHAKRA GOLD PREMIUM TEA 250G",
+                        "price": {
+                            "currency": "INR",
+                            "value": "418.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "209.00"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "90"
+                                }
+                            }
+                        },
+                        "@ondc/org/item_id": "19746-ONDC-1-101",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "AMUL MILK 1 litre",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "152.00"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "0"
+                                },
+                                "maximum": {
+                                    "count": "0"
+                                }
+                            }
+                        },
+                        "@ondc/org/item_id": "19746-ONDC-1-1000",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item"
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "55.22"
+                        },
+                        "@ondc/org/item_id": "6C81AC5188B4A349A112DC947C0811B7",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "Convenience Fee",
+                        "price": {
+                            "currency": "INR",
+                            "value": "14.87"
+                        },
+                        "@ondc/org/item_id": "6C81AC5188B4A349A112DC947C0811B7",
+                        "@ondc/org/title_type": "misc"
                     }
-                ]
+                ],
+                "ttl": "PT30M"
             }
         }
+    },
+    "error": {
+        "type": "DOMAIN-ERROR",
+        "code": "40002",
+        "message": "[{\"item_id\":\"19746-ONDC-1-1000\",\"error\":\"40002\"}]"
     }
 }
