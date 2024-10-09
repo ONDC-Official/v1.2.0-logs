@@ -8,16 +8,16 @@
         "bpp_id": "api.lokal.in",
         "bpp_uri": "https://api.lokal.in/ondc/",
         "transaction_id": "46a09af4-2550-433a-adc8-3de9d0c892de",
-        "message_id": "alaf23d4-l64l-6vsj-7szj-9wtdo06ecpju",
+        "message_id": "ule5pbup-ykq8-i7od-xxbn-c6g0sjkzvbha",
         "city": "std:080",
         "country": "IND",
-        "timestamp": "2024-09-30T11:48:36.708Z",
+        "timestamp": "2024-09-30T11:49:53.514Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
             "id": "2024-09-30-569597",
-            "state": "In-progress",
+            "state": "Cancelled",
             "provider": {
                 "id": "6386154b42674fabf7bdabf4",
                 "locations": [
@@ -29,10 +29,17 @@
             "items": [
                 {
                     "quantity": {
-                        "count": 2
+                        "count": 0
                     },
                     "id": "66bc6665fb591805904ef74c",
                     "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4"
+                },
+                {
+                    "quantity": {
+                        "count": 2
+                    },
+                    "id": "66bc6665fb591805904ef74c",
+                    "fulfillment_id": "fulfillment-6386154b42674fabf7bdabf4-RTO"
                 }
             ],
             "billing": {
@@ -57,7 +64,7 @@
                     "@ondc/org/provider_name": "Gupta Kirana Store",
                     "state": {
                         "descriptor": {
-                            "code": "Order-picked-up"
+                            "code": "Cancelled"
                         }
                     },
                     "type": "Delivery",
@@ -118,11 +125,100 @@
                     "@ondc/org/TAT": "PT6H",
                     "tags": [
                         {
-                            "code": "routing",
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "retry_count",
+                                    "value": "3"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "fulfillment-6386154b42674fabf7bdabf4-RTO"
+                                },
+                                {
+                                    "code": "reason_id",
+                                    "value": "011"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "api.lokal.in"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-09-30T11:49:05.131Z"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "fulfillment-6386154b42674fabf7bdabf4-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Delivered"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "timestamp": "2024-09-30T11:49:29.032Z"
+                        },
+                        "location": {
+                            "gps": "12.982405,77.595690",
+                            "address": {
+                                "name": "Vijendra Patidar",
+                                "building": "It Park",
+                                "locality": "Vidhan Vidhi Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560001"
+                            }
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "id": "location-6386154b42674fabf7bdabf4",
+                            "gps": "12.982017,77.587606",
+                            "descriptor": {
+                                "name": "Gupta Kirana Store"
+                            },
+                            "address": {
+                                "locality": "H-123, Surya Shop",
+                                "city": "Bangalore",
+                                "area_code": "560001",
+                                "state": "Karnataka"
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "quote_trail",
                             "list": [
                                 {
                                     "code": "type",
-                                    "value": "P2P"
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "66bc6665fb591805904ef74c"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-110"
                                 }
                             ]
                         }
@@ -132,24 +228,24 @@
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "133.00"
+                    "value": "23"
                 },
                 "breakup": [
                     {
                         "@ondc/org/item_id": "66bc6665fb591805904ef74c",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 0
                         },
                         "title": "Haldiram Mini Bhakarwadi 200gm",
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "110.00"
+                            "value": "0"
                         },
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "55.00"
+                                "value": "55"
                             }
                         }
                     },
@@ -172,7 +268,7 @@
                         }
                     }
                 ],
-                "ttl": "PT6H"
+                "ttl": "P1D"
             },
             "payment": {
                 "uri": "https://razorpay.com/",
@@ -201,13 +297,7 @@
                 ]
             },
             "created_at": "2024-09-30T11:45:03.933Z",
-            "updated_at": "2024-09-30T11:48:36.708Z",
-            "documents": [
-                {
-                    "url": "https://kikonewapi.s3.ap-south-1.amazonaws.com/public/2024-09-30-569597.png",
-                    "label": "Invoice"
-                }
-            ]
+            "updated_at": "2024-09-30T11:49:53.514Z"
         }
     }
 }
