@@ -1,158 +1,195 @@
 {
-  "context": {
-      "domain": "ONDC:RET10",
-      "action": "on_init",
-      "core_version": "1.2.0",
-      "bap_id": "ondc-api.kiko.live/ondc-buyer-v2",
-      "bap_uri": "https://ondc-api.kiko.live/ondc-buyer-v2",
-      "bpp_id": "ondc-api.kiko.live/ondc-seller-v2",
-      "bpp_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-      "transaction_id": "fa6f66fb-cef2-4865-bbd6-869f7f6a2cdc",
-      "message_id": "ff382cb0-bcd5-41e8-8ea3-e39a58df0b3b",
-      "city": "std:080",
-      "country": "IND",
-      "timestamp": "2024-09-17T10:19:21.139Z",
-      "ttl": "PT30S"
-  },
-  "message": {
-      "order": {
-          "provider": {
-              "id": "66c58cf1f7305b72e2d40f3b",
-              "locations": [
-                  {
-                      "id": "location-66c58cf1f7305b72e2d40f3b"
-                  }
-              ]
-          },
-          "items": [
-              {
-                  "id": "66bc6665fb591805904ef74c",
-                  "fulfillment_id": "fulfillment-66c58cf1f7305b72e2d40f3b",
-                  "quantity": {
-                      "count": 1
-                  }
-              }
-          ],
-          "billing": {
-              "address": {
-                  "name": "Bengaluru Urban",
-                  "building": "Room Nos.302, 308 & 308A, 3rd Floor Vidhana Soudha, Ambedkar Veedhi, Bengaluru, Karnataka 560001, India",
-                  "locality": "aa",
-                  "city": "Bengaluru Urban",
-                  "state": "Karnataka",
-                  "country": "IND",
-                  "area_code": "560001"
-              },
-              "name": "Anubhav BLR new",
-              "email": "Newblr@gmail.com",
-              "phone": "7771821172",
-              "created_at": "2024-09-17T10:19:20.994Z",
-              "updated_at": "2024-09-17T10:19:20.994Z"
-          },
-          "fulfillments": [
-              {
-                  "id": "fulfillment-66c58cf1f7305b72e2d40f3b",
-                  "type": "Delivery",
-                  "end": {
-                      "location": {
-                          "gps": "12.979294106078587,77.59060869455926",
-                          "address": {
-                              "name": "Anubhav BLR new",
-                              "building": "Bengaluru Urban",
-                              "locality": "Room Nos.302, 308 & 308A, 3rd Floor Vidhana Soudha, Ambedkar Veedhi, Bengaluru, Karnataka 560001, India",
-                              "city": "Bengaluru Urban",
-                              "state": "Karnataka",
-                              "country": "IND",
-                              "area_code": "560001"
-                          }
-                      },
-                      "contact": {
-                          "phone": "7771821172"
-                      }
-                  },
-                  "tracking": false
-              }
-          ],
-          "quote": {
-              "price": {
-                  "currency": "INR",
-                  "value": "81.94"
-              },
-              "breakup": [
-                  {
-                      "@ondc/org/item_id": "66bc6665fb591805904ef74c",
-                      "@ondc/org/item_quantity": {
-                          "count": 1
-                      },
-                      "title": "Haldiram Mini Bhakarwadi 200gm",
-                      "@ondc/org/title_type": "item",
-                      "price": {
-                          "currency": "INR",
-                          "value": "55.00"
-                      },
-                      "item": {
-                          "price": {
-                              "currency": "INR",
-                              "value": "55.00"
-                          }
-                      }
-                  },
-                  {
-                      "@ondc/org/item_id": "fulfillment-66c58cf1f7305b72e2d40f3b",
-                      "title": "Delivery charges",
-                      "@ondc/org/title_type": "delivery",
-                      "price": {
-                          "currency": "INR",
-                          "value": "20.00"
-                      }
-                  },
-                  {
-                      "@ondc/org/item_id": "fulfillment-66c58cf1f7305b72e2d40f3b",
-                      "title": "Convenience Fee",
-                      "@ondc/org/title_type": "misc",
-                      "price": {
-                          "currency": "INR",
-                          "value": "6.94"
-                      }
-                  }
-              ],
-              "ttl": "PT6H"
-          },
-          "payment": {
-              "@ondc/org/buyer_app_finder_fee_type": "percent",
-              "@ondc/org/buyer_app_finder_fee_amount": "3",
-              "@ondc/org/settlement_details": [
-                  {
-                      "settlement_counterparty": "seller-app",
-                      "beneficiary_name": "SMOOTH TAG TECHNOLOGIES PRIVATE LIMITED",
-                      "settlement_type": "neft",
-                      "settlement_bank_account_no": "50200057222741",
-                      "settlement_ifsc_code": "HDFC0000015",
-                      "settlement_phase": "sale-amount",
-                      "bank_name": "HDFC BANK LTD ",
-                      "branch_name": "MUMBAI - MULUND WEST (WEST)"
-                  }
-              ]
-          },
-          "tags": [
-              {
-                  "code": "bpp_terms",
-                  "list": [
-                      {
-                          "code": "provider_tax_number",
-                          "value": "BCWPP0324R"
-                      },
-                      {
-                          "code": "tax_number",
-                          "value": "22AAAAA0000A1Z5"
-                      },
-                      {
-                          "code": "np_type",
-                          "value": "MSN"
-                      }
-                  ]
-              }
-          ]
-      }
-  }
+    "context": {
+        "action": "on_init",
+        "bap_id": "ondc-api.kiko.live/ondc-buyer-v2",
+        "bap_uri": "https://ondc-api.kiko.live/ondc-buyer-v2",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "country": "IND",
+        "domain": "ONDC:RET10",
+        "message_id": "a0848003-47a1-40e4-b59c-3806a24b1161",
+        "timestamp": "2024-10-08T14:29:26.871Z",
+        "transaction_id": "5e10f3e2-6894-4d2e-b718-0468f6170d13",
+        "bpp_id": "dev-api.shopeg.in",
+        "bpp_uri": "https://dev-api.shopeg.in/ondc/bpp"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "address": {
+                    "name": "Suryansh Kourav",
+                    "building": "Bengaluru Urban",
+                    "locality": "14, Shanthala Nagar, Urban, Bengaluru, Karnataka 560001, India",
+                    "city": "Bengaluru Urban",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560001"
+                },
+                "name": "Suryansh Kourav",
+                "email": "suryaKouraav@gmail.com",
+                "phone": "7689965008",
+                "created_at": "2024-10-08T14:29:26.609Z",
+                "updated_at": "2024-10-08T14:29:26.609Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "end": {
+                        "location": {
+                            "gps": "12.9765944,77.5992708",
+                            "address": {
+                                "name": "Suryansh Kourav",
+                                "building": "Bengaluru Urban",
+                                "locality": "14, Shanthala Nagar, Urban, Bengaluru, Karnataka 560001, India",
+                                "city": "Bengaluru Urban",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560001"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7689965008"
+                        }
+                    },
+                    "tracking": false,
+                    "@ondc/org/provider_name": "Surya Shop"
+                }
+            ],
+            "items": [
+                {
+                    "id": "a2d9a6eb-6434-43f4-ab1b-2b46ea0e6fb7",
+                    "fulfillment_id": "1",
+                    "quantity": {
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "697d33be-6484-41ae-8ada-d4f4b8580c44",
+                    "fulfillment_id": "1",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/settlement_details": [
+                    {
+                        "bank_name": "ICICI Bank",
+                        "beneficiary_name": "SPARKETERNAL TECHNOLOGIES PVT LTD",
+                        "branch_name": "JP Nagar 1st phase, Bangalore",
+                        "settlement_bank_account_no": "500600010001",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_ifsc_code": "ICICI0000001",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft"
+                    }
+                ]
+            },
+            "provider": {
+                "id": "7P1NiaAdW0TFLgEv2bgb",
+                "locations": [
+                    {
+                        "id": "8521"
+                    }
+                ]
+            },
+            "quote": {
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "a2d9a6eb-6434-43f4-ab1b-2b46ea0e6fb7",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Parle 20-20 Gold Cashew Almond - 600G",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "120.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "120.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "697d33be-6484-41ae-8ada-d4f4b8580c44",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Haldiram's Nagpur Bhel Puri, 200G",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "50.00"
+                            },
+                            "parent_item_id": "vg4",
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "21.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "1",
+                        "title": "Buyer App Fee (Incl. GST)",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "7.01"
+                        }
+                    }
+                ],
+                "price": {
+                    "value": "198.01",
+                    "currency": "INR"
+                },
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "29AAJCB5249A1ZR"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "ABCDE1234F"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
