@@ -3,8 +3,8 @@
         "domain": "ONDC:RET10",
         "country": "IND",
         "city": "std:080",
-        "action": "on_status",
-        "timestamp": "2024-10-07T14:35:24.976Z",
+        "action": "on_update",
+        "timestamp": "2024-10-08T14:27:24.976Z",
         "ttl": "PT30S",
         "core_version": "1.2.0",
         "bap_id": "buyer-app-preprod-v2.ondc.org",
@@ -12,11 +12,21 @@
         "bpp_id": "preprod-ondc-seller.bankopen.co",
         "bpp_uri": "https://preprod-ondc-seller.bankopen.co/incoming-webhooks",
         "transaction_id": "f8c310b7a0-eace-4e10-892b-0a99b9f712d6",
-        "message_id": "08729dcc-516d-493212f-947e-619e892f17d3"
+        "message_id": "f8c3223130b7a0-eace-4e10-892b-0a99b9f712d6"
     },
     "message": {
         "order": {
-            "state": "In-progress",
+            "id": "2024-01-25-428956",
+            "state": "Created",
+            "provider": {
+                "id": "19746-ONDC-1",
+                "locations": [
+                    {
+                        "id": "19746-ONDC-1-3547_location"
+                    }
+                ],
+                "rateable": true
+            },
             "items": [
                 {
                     "id": "19746-ONDC-1-101",
@@ -46,16 +56,17 @@
                 },
                 "email": "test@gmail.com",
                 "phone": "0987654321",
-                "created_at": "2024-10-06T14:02:16.976Z",
-                "updated_at": "2024-10-06T14:02:16.976Z"
+                "created_at": "2024-10-08T14:20:16.976Z",
+                "updated_at": "2024-10-08T14:20:16.976Z"
             },
             "fulfillments": [
                 {
                     "id": "6C81AC5188B4A349A112DC947C0811B7",
                     "type": "Delivery",
+                    "@ondc/org/provider_name": "Open ONDC Store",
                     "state": {
                         "descriptor": {
-                            "code": "Order-picked-up"
+                            "code": "Pending"
                         }
                     },
                     "tracking": true,
@@ -77,28 +88,21 @@
                             }
                         },
                         "time": {
-                            "timestamp": "2024-10-07T14:35:24.976Z",
                             "range": {
                                 "start": "2024-02-09T15:02:57.587Z",
                                 "end": "2024-02-09T15:07:57.587Z"
                             }
                         },
-                        "instructions": {
-                            "name": "Proof of pickup",
-                            "code": "3",
-                            "short_desc": "7721",
-                            "long_desc": "-"
-                        },
                         "contact": {
-                            "phone": "9898767675",
-                            "email": "abii@gmail.com"
+                            "phone": "1234567890",
+                            "email":"test@gmail.com"
                         }
                     },
                     "end": {
                         "location": {
                             "gps": "12.918139884127225,77.67208197154106",
                             "address": {
-                                "name": "Asif",
+                                "name": "Abinaya",
                                 "building": "awer",
                                 "locality": "Sarjapura Main Road",
                                 "city": "Bengaluru",
@@ -107,59 +111,69 @@
                                 "area_code": "560103"
                             }
                         },
-                        "time": {
-                            "range": {
-                                "start": "2024-01-25T11:15:48.729Z",
-                                "end": "2024-01-25T11:50:48.729Z"
-                            }
-                        },
-                        "instructions": {
-                            "name": "Proof of delivery",
-                            "code": "2",
-                            "short_desc": "1788",
-                            "long_desc": "-"
-                        },
                         "contact": {
                             "phone": "0987654321",
                             "email": "test@gmail.com"
+                        },
+                        "person": {
+                            "name": "test"
+                        }
+                    },
+                    "rateable": false,
+                    "@ondc/org/TAT": "PT1H25M"
+                },
+                {
+                    "id": "C1",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
                         }
                     },
                     "tags": [
                         {
-                            "code": "tracking",
+                            "code": "cancel_request",
                             "list": [
                                 {
-                                    "code": "gps_enabled",
-                                    "value": "yes"
+                                    "code": "reason_id",
+                                    "value": "002"
                                 },
                                 {
-                                    "code": "url_enabled",
-                                    "value": "no"
-                                },
-                                {
-                                    "code": "url",
-                                    "value": ""
+                                    "code": "initiated_by",
+                                    "value": "preprod-ondc-seller.bankopen.co"
                                 }
                             ]
                         },
                         {
-                            "code": "routing",
+                            "code": "quote_trail",
                             "list": [
                                 {
                                     "code": "type",
-                                    "value": "P2P"
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "19746-ONDC-1-1000"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-456"
                                 }
                             ]
                         }
                     ],
-                    "@ondc/org/TAT": "PT1H25M",
-                    "@ondc/org/provider_name": "Pidge"
+                    "rateable": false,
+                    "@ondc/org/TAT": "PT1H25M"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "944.07"
+                    "value": "488.07"
                 },
                 "breakup": [
                     {
@@ -184,7 +198,7 @@
                         "title": "AMUL MILK 1 litre",
                         "price": {
                             "currency": "INR",
-                            "value": "456.00"
+                            "value": "00.00"
                         },
                         "item": {
                             "price": {
@@ -194,7 +208,7 @@
                         },
                         "@ondc/org/item_id": "19746-ONDC-1-1000",
                         "@ondc/org/item_quantity": {
-                            "count": 3
+                            "count": 0
                         },
                         "@ondc/org/title_type": "item"
                     },
@@ -223,7 +237,7 @@
                 "uri": "https://open.money.in/",
                 "params": {
                     "transaction_id": "f4a967f0-1214-4308-802c-81e40f23e688",
-                    "amount": "944.07",
+                    "amount": "488.07",
                     "currency": "INR"
                 },
                 "type": "ON-ORDER",
@@ -245,23 +259,8 @@
                     }
                 ]
             },
-            "provider": {
-                "id": "19746-ONDC-1",
-                "locations": [
-                    {
-                        "id": "19746-ONDC-1-3547_location"
-                    }
-                ]
-            },
-            "documents": [
-                {
-                    "url": "https://gf-ig-integration-qa-c0nn3c7.s3.amazonaws.com/invoice/19609/2024-01-25-428956",
-                    "label": "Invoice"
-                }
-            ],
-            "id": "2024-01-25-428956",
-            "created_at": "2024-10-07T14:23:20.976Z",
-            "updated_at": "2024-10-07T14:35:24.976Z"
+            "created_at": "2024-10-08T14:23:20.976Z",
+            "updated_at": "2024-10-08T14:27:24.976Z"
         }
     }
 }
