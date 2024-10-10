@@ -1,0 +1,204 @@
+{
+    "context": {
+        "transaction_id": "txnondc_25lh64y4skcg_2mfxly",
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "ttl": "PT10M",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.logistics-buyer.mp2.in",
+        "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "message_id": "msgondc_7gunqe_dykdeh",
+        "timestamp": "2024-10-10T13:30:48.576Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+            },
+            "items": [
+                {
+                    "id": "std_del",
+                    "fulfillment_id": "a66ab4e7-77f3-4848-86b4-af07efd45fac"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "a66ab4e7-77f3-4848-86b4-af07efd45fac",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.9212,77.588",
+                            "address": {
+                                "name": "MP2 Office Manager",
+                                "building": "Kolab, 38th Cross Road",
+                                "locality": "4th T Block East, Pattabhirama Nagar, Jayanagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "1111111111",
+                            "email": "noreply@mp2.in"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.9308,77.5839",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "NA",
+                                "locality": "Jayanagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9058626929",
+                            "email": "noreply@mp2.in"
+                        }
+                    }
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": "008"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ],
+            "payment": {
+                "collected_by": "BPP",
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "123456789123456",
+                        "settlement_ifsc_code": "SBI00001234"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "23.47"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "23.47"
+                        },
+                        "@ondc/org/item_id": "std_del",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "std_del",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ],
+                "ttl": "P7D"
+            }
+        }
+    }
+}
