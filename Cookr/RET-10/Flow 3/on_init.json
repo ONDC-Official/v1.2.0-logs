@@ -1,0 +1,163 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_init",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "e94428eb-40a2-412a-94b4-d2a205d4eb01",
+        "message_id": "3c668165-5bcc-48dd-9cff-7adb1a1f5111",
+        "timestamp": "2024-10-09T15:48:42.778Z",
+        "bpp_id": "dev.cookr.in",
+        "bpp_uri": "https://dev.cookr.in/api/ondc-service/",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "dbIHOZN3gjo8eiXQT08Fs",
+                "locations": [
+                    {
+                        "id": "dbIHOZN3gjo8eiXQT08Fs"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "fulfillment_id": "F1",
+                    "id": "100$kilogram$MheeVYIONicDTXn2YL9Lq",
+                    "quantity": {
+                        "count": 2
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "tax_number": "29AAACU1901H1ZK",
+                "phone": "9886098860",
+                "email": "sharique.efgh@gmail.com",
+                "created_at": "2024-10-09T15:48:39.488Z",
+                "updated_at": "2024-10-09T15:48:39.488Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "type": "Delivery",
+                    "tracking": false,
+                    "end": {
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "nobody@nomail.com"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "560300",
+                                "building": "Siri Fort Institutional",
+                                "city": "Bengaluru",
+                                "country": "IND",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "name": "mayur",
+                                "state": "Karnataka"
+                            },
+                            "gps": "13.1989,77.7069"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "860"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "100$kilogram$MheeVYIONicDTXn2YL9Lq",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "title": "Diwali Special",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "800"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "400"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "100$kilogram$MheeVYIONicDTXn2YL9Lq",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "20"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Delivery Charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "0.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "upi_address": "ritheshroshan461@okhdfcbank",
+                        "beneficiary_name": "Roshan",
+                        "settlement_bank_account_no": "12123333333",
+                        "settlement_ifsc_code": "HDFC0000148",
+                        "bank_name": "HDFC Bank",
+                        "branch_name": "Hosur"
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "FUFPR6010H"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "FUFPR6010H"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
