@@ -1,181 +1,141 @@
 {
-    "context": {
-        "domain": "ONDC:RET14",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_status",
-        "core_version": "1.2.0",
-        "bap_id": "ondc-buyer.stagingshop.com",
-        "bap_uri": "https://ondc-buyer.stagingshop.com/protocol/v1",
-        "bpp_uri": "https://ref-app-seller-staging-v2.ondc.org",
-        "transaction_id": "a246b337-2b7a-44d1-bcd0-b4e74683ae56",
-        "message_id": "3b03cc8d-bcea-4ba0-9114-b56265da96df",
-        "timestamp": "2024-08-16T16:58:26.540Z",
-        "bpp_id": "ref-app-seller-staging-v2.ondc.org",
-        "ttl": "PT30S"
-    },
-    "message": {
-        "order": {
-            "provider": {
-                "id": "86f3177d-72fd-4f44-aac2-068fc0227127",
-                "locations": [
-                    {
-                        "id": "641599b84d433a4fbf8f40bb"
-                    }
-                ]
-            },
-            "state": "In-progress",
-            "items": [
-                {
-                    "id": "43123a7a-a816-461f-8ddf-90031f2ee11f",
-                    "quantity": {
-                        "count": 1
-                    },
-                    "fulfillment_id": "F1"
-                },
-                {
-                    "id": "15cbf1f0-715f-4257-87bf-68b1a1a4e072",
-                    "quantity": {
-                        "count": 1
-                    },
-                    "fulfillment_id": "F1"
-                }
-            ],
-            "billing": {
-                "address": {
-                    "name": "Sudarshan Hegde",
-                    "building": "#42",
-                    "locality": "#42, Olsen Sector 4, HSR Layout",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IN",
-                    "area_code": "560102"
-                },
-                "phone": "6362286773",
-                "name": "Sudarshan Hegde",
-                "email": "api@zrpl.co.in",
-                "created_at": "2024-08-16T16:32:20.000Z",
-                "updated_at": "2024-08-16T16:32:20.000Z"
-            },
-            "fulfillments": [
-                {
-                    "id": "F1",
-                    "@ondc/org/TAT": "PT120H",
-                    "tracking": true,
-                    "@ondc/org/withholding_amount": "0.00",
-                    "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-08-21T16:42:02.566Z",
-                                "end": "2024-08-21T20:42:02.566Z"
-                            }
-                        }
-                    },
-                    "type": "Delivery",
-                    "start": {
-                        "time": {
-                            "range": {
-                                "start": "2024-08-16T16:42:02.566Z",
-                                "end": "2024-08-16T20:42:02.566Z"
-                            }
-                        }
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "Packed"
-                        }
-                    }
-                }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "89999.0000"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "43123a7a-a816-461f-8ddf-90031f2ee11f",
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "title": "HP Laptop",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "50000.0000"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "50000.0000"
-                            }
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "15cbf1f0-715f-4257-87bf-68b1a1a4e072",
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "title": "Acer nitro",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "39999.0000"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "39999.0000"
-                            }
-                        }
-                    },
-                    {
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "@ondc/org/item_id": "F1",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "payment": {
-                "uri": "https://cashfree.com/",
-                "params": {
-                    "amount": "89999",
-                    "currency": "INR",
-                    "transaction_id": "a246b337-2b7a-44d1-bcd0-b4e74683ae56"
-                },
-                "status": "PAID",
-                "type": "ON-ORDER",
-                "collected_by": "BAP",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_type": "upi",
-                        "upi_address": "gft@oksbi",
-                        "settlement_bank_account_no": "732974327445",
-                        "settlement_ifsc_code": "SBIN003327",
-                        "beneficiary_name": "Seller_app_name",
-                        "bank_name": "SBI",
-                        "branch_name": "HSR"
-                    }
-                ]
-            },
-            "id": "ZRPL000004003",
-            "created_at": "2024-08-16T11:10:20.000Z",
-            "updated_at": "2024-08-16T16:57:29.050Z",
-            "documents": [
-                {
-                    "url": "https://invoice_url",
-                    "label": "Invoice"
-                }
-            ]
+  "context": {
+    "domain": "ONDC:RET14",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-buyer.stagingshop.com",
+    "bap_uri": "https://ondc-buyer.stagingshop.com/protocol/v1",
+    "bpp_uri": "https://ondcpreprod.sellerapp.in/bpp/u",
+    "transaction_id": "9f0f565d-4a29-4803-a627-376edd8aec4d",
+    "message_id": "22b3608b-4907-47e1-898a-618f656c502a",
+    "timestamp": "2024-10-09T12:29:29.154Z",
+    "bpp_id": "ondcpreprod.sellerapp.in"
+  },
+  "message": {
+    "order": {
+      "id": "ZRPL000004100",
+      "state": "In-progress",
+      "provider": {
+        "id": "slrp-1491484",
+        "locations": [{ "id": "SANG-1000" }]
+      },
+      "items": [
+        {
+          "id": "6a9a423b6ac6b564",
+          "fulfillment_id": "6c8c4d17-e00e-46ce-85a0-700688c44b22",
+          "quantity": { "count": 1 }
         }
+      ],
+      "billing": {
+        "name": "Nikunj Garg",
+        "phone": "8950377998",
+        "address": {
+          "name": "Nikunj Garg",
+          "building": "Colive whitestone, bannerghata",
+          "city": "bangalore",
+          "state": "Karnataka",
+          "country": "IN",
+          "area_code": "560083",
+          "locality": "Colive whitestone, bannerghata"
+        },
+        "created_at": "2024-10-09T12:22:24.000Z",
+        "updated_at": "2024-10-09T12:22:24.000Z"
+      },
+      "fulfillments": [
+        {
+          "id": "6c8c4d17-e00e-46ce-85a0-700688c44b22",
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "SANG-1000",
+              "gps": "12.9264417,77.5619417",
+              "address": {
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "area_code": "560070",
+                "locality": "Banashankari"
+              },
+              "descriptor": { "name": "Sangeetha Mobiles" }
+            },
+            "contact": {
+              "phone": "8197759422",
+              "email": "support@sangeethamobiles.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.8206081,77.6089779",
+              "address": {
+                "name": "Nikunj Garg",
+                "building": "Colive whitestone, bannerghata",
+                "city": "bangalore",
+                "state": "Karnataka",
+                "country": "IN",
+                "area_code": "560083",
+                "locality": "Colive whitestone, bannerghata"
+              }
+            },
+            "contact": {
+              "phone": "8950377998",
+              "email": "middleware@zrpl.co.in"
+            }
+          },
+          "state": { "descriptor": { "code": "Packed" } },
+          "@ondc/org/provider_name": "SellerApp-Logistics",
+          "@ondc/org/TAT": "P7D"
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "99909" },
+        "breakup": [
+          {
+            "title": "Samsung Galaxy S22 Ultra Green 12GB 256GB",
+            "price": { "currency": "INR", "value": "99909" },
+            "@ondc/org/item_id": "6a9a423b6ac6b564",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "quantity": { "available": { "count": "99" } },
+              "price": { "currency": "INR", "value": "99909" }
+            }
+          },
+          {
+            "title": "Delivery Fee",
+            "price": { "currency": "INR", "value": "0" },
+            "@ondc/org/item_id": "6c8c4d17-e00e-46ce-85a0-700688c44b22",
+            "@ondc/org/title_type": "delivery"
+          }
+        ],
+        "ttl": "PT5M"
+      },
+      "payment": {
+        "params": {
+          "amount": "99909",
+          "currency": "INR",
+          "transaction_id": "9f0f565d-4a29-4803-a627-376edd8aec4d"
+        },
+        "type": "ON-ORDER",
+        "uri": "https://cashfree.com/",
+        "status": "PAID",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "115022700000022",
+            "settlement_ifsc_code": "YESB0000001",
+            "beneficiary_name": "SELLMETRIC YPP COLLECTION ACCOUNT"
+          }
+        ]
+      },
+      "created_at": "2024-10-09T06:53:01.000Z",
+      "updated_at": "2024-10-09T12:29:29.148Z"
     }
+  }
 }

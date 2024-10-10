@@ -1,186 +1,158 @@
 {
-    "context": {
-        "domain": "ONDC:RET14",
-        "country": "IND",
-        "city": "std:080",
-        "action": "on_confirm",
-        "core_version": "1.2.0",
-        "bap_id": "ondc-buyer.stagingshop.com",
-        "bap_uri": "https://ondc-buyer.stagingshop.com/protocol/v1",
-        "bpp_uri": "https://ref-app-seller-staging-v2.ondc.org",
-        "transaction_id": "178625aa-58c0-44dc-8e9d-a89d2c48e675",
-        "message_id": "0a661e7f-09d0-459b-a556-d0f6722b089a",
-        "timestamp": "2024-08-16T12:05:25.526Z",
-        "bpp_id": "ref-app-seller-staging-v2.ondc.org",
-        "ttl": "PT30S"
-    },
-    "message": {
-        "order": {
-            "id": "ZRPL000004001",
-            "state": "Created",
-            "provider": {
-                "id": "86f3177d-72fd-4f44-aac2-068fc0227127",
-                "locations": [
-                    {
-                        "id": "86f3177d-72fd-4f44-aac2-068fc0227127"
-                    }
-                ]
-            },
-            "items": [
-                {
-                    "id": "15cbf1f0-715f-4257-87bf-68b1a1a4e072",
-                    "quantity": {
-                        "count": 1
-                    },
-                    "fulfillment_id": "F1"
-                }
-            ],
-            "billing": {
-                "address": {
-                    "name": "Sudarshan Hegde",
-                    "building": "#42",
-                    "locality": "#42, Olsen Sector 4, HSR Layout",
-                    "city": "Bengaluru",
-                    "state": "Karnataka",
-                    "country": "IN",
-                    "area_code": "560102"
-                },
-                "phone": "6362286773",
-                "name": "Sudarshan Hegde",
-                "email": "api@zrpl.co.in",
-                "created_at": "2024-08-16T12:00:32.000Z",
-                "updated_at": "2024-08-16T12:00:32.000Z"
-            },
-            "fulfillments": [
-                {
-                    "id": "F1",
-                    "@ondc/org/TAT": "PT120H",
-                    "tracking": true,
-                    "@ondc/org/withholding_amount": "0.00",
-                    "end": {
-                        "time": {
-                            "range": {
-                                "start": "2024-08-21T12:05:25.496Z",
-                                "end": "2024-08-21T16:05:25.496Z"
-                            }
-                        }
-                    },
-                    "type": "Delivery",
-                    "start": {
-                        "time": {
-                            "range": {
-                                "start": "2024-08-16T12:05:25.496Z",
-                                "end": "2024-08-16T16:05:25.496Z"
-                            }
-                        }
-                    },
-                    "state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    }
-                }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "39999.0000"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "15cbf1f0-715f-4257-87bf-68b1a1a4e072",
-                        "@ondc/org/item_quantity": {
-                            "count": 1
-                        },
-                        "title": "Acer nitro",
-                        "@ondc/org/title_type": "item",
-                        "price": {
-                            "currency": "INR",
-                            "value": "39999.0000"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "39999.0000"
-                            }
-                        }
-                    },
-                    {
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "@ondc/org/item_id": "F1",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "payment": {
-                "uri": "https://cashfree.com/",
-                "params": {
-                    "amount": "39999",
-                    "currency": "INR",
-                    "transaction_id": "178625aa-58c0-44dc-8e9d-a89d2c48e675"
-                },
-                "status": "PAID",
-                "type": "ON-ORDER",
-                "collected_by": "BAP",
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_type": "upi",
-                        "upi_address": "gft@oksbi",
-                        "settlement_bank_account_no": "732974327445",
-                        "settlement_ifsc_code": "SBIN003327",
-                        "beneficiary_name": "Seller_app_name",
-                        "bank_name": "SBI",
-                        "branch_name": "HSR"
-                    }
-                ]
-            },
-            "tags": [
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "accept_bpp_terms",
-                            "value": "Y"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/zrpl.pdf"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "29AAACZ6251B1ZE"
-                        }
-                    ]
-                },
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "tax_number",
-                            "value": "29AAACZ6251B1Ze"
-                        },
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "AAACZ6251B"
-                        }
-                    ]
-                }
-            ],
-            "created_at": "2024-08-16T06:34:56.000Z",
-            "updated_at": "2024-08-16T12:05:25.527Z"
+  "context": {
+    "domain": "ONDC:RET14",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-buyer.stagingshop.com",
+    "bap_uri": "https://ondc-buyer.stagingshop.com/protocol/v1",
+    "bpp_uri": "https://ondcpreprod.sellerapp.in/bpp/u",
+    "transaction_id": "88f34eac-a66e-4233-acdd-7e03e9b65dcd",
+    "message_id": "381655ff-f409-4318-b759-31cf2ddcce77",
+    "timestamp": "2024-10-09T17:11:03.549Z",
+    "bpp_id": "ondcpreprod.sellerapp.in"
+  },
+  "message": {
+    "order": {
+      "id": "ZRPL000004102",
+      "state": "Accepted",
+      "provider": {
+        "id": "slrp-1491484",
+        "locations": [{ "id": "SANG-1000" }]
+      },
+      "items": [
+        {
+          "id": "cd66d65211e9b706",
+          "fulfillment_id": "5794cff0-78a4-4171-bb51-51549d8e8575",
+          "quantity": { "count": 1 }
         }
+      ],
+      "billing": {
+        "name": "Nikunj Garg",
+        "phone": "8950377998",
+        "address": {
+          "name": "Nikunj Garg",
+          "building": "Colive whitestone, bannerghata",
+          "city": "bangalore",
+          "state": "Karnataka",
+          "country": "IN",
+          "area_code": "560083",
+          "locality": "Colive whitestone, bannerghata"
+        },
+        "created_at": "2024-10-09T17:09:48.000Z",
+        "updated_at": "2024-10-09T17:09:48.000Z"
+      },
+      "fulfillments": [
+        {
+          "id": "5794cff0-78a4-4171-bb51-51549d8e8575",
+          "type": "Delivery",
+          "start": {
+            "instructions": {
+              "code": "3",
+              "name": "ONDC Order",
+              "long_desc": "Status for pickup",
+              "short_desc": "0001"
+            },
+            "location": {
+              "id": "SANG-1000",
+              "gps": "12.9264417,77.5619417",
+              "descriptor": { "name": "Sangeetha Mobiles" },
+              "address": {
+                "name": "Sangeetha Mobiles",
+                "building": "below Sangeetha mobiles,",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560070",
+                "locality": "Banashankari"
+              }
+            },
+            "contact": {
+              "phone": "8197759422",
+              "email": "support@sangeethamobiles.com"
+            }
+          },
+          "end": {
+            "person": { "name": "Nikunj Garg" },
+            "location": {
+              "gps": "12.8206081,77.6089779",
+              "address": {
+                "name": "Nikunj Garg",
+                "building": "Colive whitestone, bannerghata",
+                "city": "bangalore",
+                "state": "Karnataka",
+                "country": "IN",
+                "area_code": "560083",
+                "locality": "Colive whitestone, bannerghata"
+              }
+            },
+            "contact": {
+              "phone": "8950377998",
+              "email": "middleware@zrpl.co.in"
+            }
+          },
+          "state": { "descriptor": { "code": "Pending" } },
+          "@ondc/org/provider_name": "SellerApp-Logistics",
+          "@ondc/org/TAT": "P7D"
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "32494" },
+        "breakup": [
+          {
+            "title": "Samsung Galaxy A54 5G Awesome Lime 8GB 128GB",
+            "price": { "currency": "INR", "value": "32494" },
+            "@ondc/org/item_id": "cd66d65211e9b706",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "@ondc/org/title_type": "item",
+            "item": { "price": { "currency": "INR", "value": "32494" } }
+          },
+          {
+            "title": "Delivery charges",
+            "price": { "currency": "INR", "value": "0" },
+            "@ondc/org/item_id": "5794cff0-78a4-4171-bb51-51549d8e8575",
+            "@ondc/org/title_type": "delivery"
+          }
+        ],
+        "ttl": "PT5M"
+      },
+      "payment": {
+        "params": {
+          "amount": "32494",
+          "currency": "INR",
+          "transaction_id": "88f34eac-a66e-4233-acdd-7e03e9b65dcd"
+        },
+        "type": "ON-ORDER",
+        "uri": "https://cashfree.com/",
+        "status": "PAID",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "115022700000022",
+            "settlement_ifsc_code": "YESB0000001",
+            "beneficiary_name": "SELLMETRIC YPP COLLECTION ACCOUNT"
+          }
+        ]
+      },
+      "created_at": "2024-10-09T11:40:35.000Z",
+      "updated_at": "2024-10-09T11:41:01.000Z",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "np_type", "value": "MSN" },
+            { "code": "tax_number", "value": "29ABDCS3411L1Z7" },
+            { "code": "provider_tax_number", "value": "AAMCS5916J" },
+            { "code": "accept_bap_terms", "value": "Y" }
+          ]
+        }
+      ]
     }
+  }
 }
