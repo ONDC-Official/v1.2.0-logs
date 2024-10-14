@@ -1,0 +1,207 @@
+{
+    "context": {
+      "bpp_id": "integrations-preprod.channelier.com",
+      "bpp_uri": "https://integrations-preprod.channelier.com/ondc",
+      "domain": "ONDC:RET12",
+      "core_version": "1.2.0",
+      "bap_id": "stage.myindiabazar.com",
+      "bap_uri": "https://stage.myindiabazar.com/ondc_buyer",
+      "transaction_id": "f67dd85f-ea6f-43aa-895a-79b73526a44a",
+      "message_id": "05dc5f7f-f08a-4642-aa72-5483415de4b3",
+      "country": "IND",
+      "city": "std:011",
+      "timestamp": "2024-10-04T05:23:33.820Z",
+      "action": "on_status",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "order": {
+        "id": "2024-10-03-717300",
+        "state": "In-progress",
+        "provider": {
+          "id": "CU254",
+          "locations": [
+            {
+              "id": "L1"
+            }
+          ]
+        },
+        "items": [
+          {
+            "id": "CU254I5",
+            "quantity": {
+              "count": 2
+            },
+            "fulfillment_id": "L-F-1727935410651"
+          }
+        ],
+        "billing": {
+          "name": "SOMNATH YADAV",
+          "address": {
+            "name": "SOMNATH YADAV",
+            "building": "B-16 secound floor",
+            "locality": "Unnamed Road",
+            "city": "Noida",
+            "state": "Uttar Pradesh",
+            "country": "IND",
+            "area_code": "201301"
+          },
+          "email": "somnath.yadav@ens.enterprises",
+          "phone": "09453658871",
+          "created_at": "2024-10-03T06:03:44.082Z",
+          "updated_at": "2024-10-03T06:03:44.082Z"
+        },
+        "fulfillments": [
+          {
+            "id": "L-F-1727935410651",
+            "type": "Delivery",
+            "@ondc/org/TAT": "PT26H",
+            "@ondc/org/provider_name": "Bodycare",
+            "state": {
+              "descriptor": {
+                "code": "Order-picked-up",
+                "images": []
+              }
+            },
+            "tracking": true,
+            "start": {
+              "location": {
+                "id": "L1",
+                "descriptor": {
+                  "name": "Bodycare",
+                  "images": []
+                },
+                "gps": "28.545449,77.026877",
+                "address": {
+                  "locality": "Bamnoli Village",
+                  "city": " South West Delhi",
+                  "state": "Delhi",
+                  "area_code": "110077"
+                }
+              },
+              "time": {
+                "range": {
+                  "start": "2024-10-03T06:05:18.140Z",
+                  "end": "2024-10-03T08:05:18.140Z"
+                },
+                "timestamp": "2024-10-04T05:23:33.820Z"
+              },
+              "contact": {
+                "phone": "9667796318",
+                "email": "ecommhead@bodycareapparels.com"
+              }
+            },
+            "end": {
+              "location": {
+                "gps": "28.618244,77.376652",
+                "address": {
+                  "name": "SOMNATH YADAV",
+                  "building": "B-16 secound floor",
+                  "locality": "Unnamed Road",
+                  "city": "Noida",
+                  "state": "Uttar Pradesh",
+                  "country": "IND",
+                  "area_code": "201301"
+                }
+              },
+              "time": {
+                "range": {
+                  "start": "2024-10-03T08:05:18.140Z",
+                  "end": "2024-10-04T08:05:18.140Z"
+                }
+              },
+              "contact": {
+                "phone": "09453658871",
+                "email": "somnath.yadav@ens.enterprises"
+              },
+              "person": {
+                "name": "SOMNATH YADAV"
+              }
+            },
+            "tags": [
+              {
+                "code": "routing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "P2H2P"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "808.00"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "CU254I5",
+              "@ondc/org/item_quantity": {
+                "count": 2
+              },
+              "@ondc/org/title_type": "item",
+              "item": {
+                "price": {
+                  "currency": "INR",
+                  "value": "379.00"
+                }
+              },
+              "title": "Bodycare Boys Tshirt & Shorts Set - Red & Navy 6-12M",
+              "price": {
+                "currency": "INR",
+                "value": "758.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "L-F-1727935410651",
+              "@ondc/org/title_type": "delivery",
+              "title": "Delivery Charges",
+              "price": {
+                "currency": "INR",
+                "value": "50.00"
+              }
+            }
+          ],
+          "ttl": "P1D"
+        },
+        "payment": {
+          "uri": "https://razorpay.com/",
+          "tl_method": "http/get",
+          "params": {
+            "transaction_id": "order_P4SXRoD0q0Ezs8",
+            "amount": "808.00",
+            "currency": "INR"
+          },
+          "type": "ON-ORDER",
+          "status": "PAID",
+          "collected_by": "BAP",
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "3",
+          "@ondc/org/settlement_basis": "delivery",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_phase": "sale-amount",
+              "settlement_type": "neft",
+              "settlement_bank_account_no": "10140183023",
+              "settlement_ifsc_code": "IDFB0040101",
+              "bank_name": "IDFC Bank Limited",
+              "branch_name": "Bkc Naman Chambers Branch",
+              "beneficiary_name": "ARACHNOMESH TECHNOLOGIES PRIVATE LIMITED ONDC"
+            }
+          ]
+        },
+        "created_at": "2024-10-03T06:04:17.059Z",
+        "updated_at": "2024-10-04T05:23:33.820Z",
+        "documents": [
+          {
+            "url": "https://integrations-test.channelier.com/images/invoice/2024-10-03-717300.pdf",
+            "label": "Invoice"
+          }
+        ]
+      }
+    }
+  }
