@@ -1,0 +1,4922 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>ONDC Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css">.vheader{background-color:#008ECC;} .search-box{display:none;} .badge.badge-primary{background-color:#249B3E;} .nav-logo{width:100% !important; position:absolute; top:24px; font-size:20px; color:#fff; font-weight:bold;}</style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">ondc.pirimidtech.com/v2/seller</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Oct 8, 2024 03:37:07 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Oct 8, 2024 03:37:07 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Oct 8, 2024 03:44:37 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='78%'><b>195</b> events passed</small></div>
+<div>
+<small data-tooltip='1%'><b>4</b> events failed,
+<b data-tooltip='%'>48</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"FLOW 4: MERCHANT SIDE FULL ORDER CANCELLATION (RTO FLOW)":445.011
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 195,
+failEvents: 4,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 48
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">FLOW 4: MERCHANT SIDE FULL ORDER CANCELLATION (RTO FLOW)</p>
+            <p class="text-sm">
+              <span>3:37:09 PM</span> / <span>00:07:25:011</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">FLOW 4: MERCHANT SIDE FULL ORDER CANCELLATION (RTO FLOW)</h5>
+<span class='badge badge-success'>10.08.2024 3:37:09 PM</span>
+<span class='badge badge-danger'>10.08.2024 3:44:35 PM</span>
+<span class='badge badge-default'>00:07:25:011</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          Started executing: FLOW 4: MERCHANT SIDE FULL ORDER CANCELLATION (RTO FLOW)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          /search: call payload
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "action": "search",
+        "country": "IND",
+        "city": "std:079",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "9c3d6a40-3701-43a0-9b54-61cba1541237",
+        "timestamp": "2024-10-08T10:07:10.260Z",
+        "ttl": "PT30S",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "intent": {
+            "fulfillment": {
+                "type": "Delivery"
+            },
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3"
+            },
+            "tags": [
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "static_terms",
+                            "value": ""
+                        },
+                        {
+                            "code": "static_terms_new",
+                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+                        },
+                        {
+                            "code": "effective_date",
+                            "value": "2024-10-10T23:59:00.000Z"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          search-by-city request to Gateway
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          Gateway response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "search",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "9c3d6a40-3701-43a0-9b54-61cba1541237",
+        "timestamp": "2024-10-08T10:07:10.723Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:10 PM</td>
+        <td>
+          Received ACK response from Gateway
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Received ON_SEARCH from seller: ondc.pirimidtech.com/v2/seller
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_search",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "9c3d6a40-3701-43a0-9b54-61cba1541237",
+        "timestamp": "2024-10-08T10:07:11.877Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "catalog": {
+            "bpp/descriptor": {
+                "name": "pirimid",
+                "symbol": "https://pirimidtech.com/wp-content/uploads/2018/07/pirimid-fintech-logo.svg",
+                "short_desc": "This is BPP",
+                "long_desc": "This is BPP which provides a platform using which multiple seller can sell their products on ONDC",
+                "images": [
+                    "https://pirimidtech.com/wp-content/uploads/2018/07/pirimid-fintech-logo.svg",
+                    "https://pirimidtech.com/wp-content/uploads/2018/07/pirimid-fintech-logo.svg"
+                ],
+                "tags": [
+                    {
+                        "code": "bpp_terms",
+                        "list": [
+                            {
+                                "code": "np_type",
+                                "value": "MSN"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bpp/fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery"
+                },
+                {
+                    "id": "2",
+                    "type": "Self-Pickup"
+                }
+            ],
+            "bpp/providers": [
+                {
+                    "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                    "descriptor": {
+                        "name": "EMart Store No 1",
+                        "symbol": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1JhemR0aMOvWY5ygPWgrjiBujaQDxikZFxw&s",
+                        "short_desc": "This is BPP",
+                        "long_desc": "This is BPP which provides a platform using which multiple seller can sell their products on ONDC",
+                        "images": [
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1JhemR0aMOvWY5ygPWgrjiBujaQDxikZFxw&s"
+                        ]
+                    },
+                    "@ondc/org/fssai_license_no": "1234567892",
+                    "time": {
+                        "label": "enable",
+                        "timestamp": "2024-10-08T10:07:11.877Z"
+                    },
+                    "categories": [
+                        {
+                            "id": "variant00001",
+                            "descriptor": {
+                                "name": "Qty Variants"
+                            },
+                            "tags": [
+                                {
+                                    "code": "type",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "variant_group"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "attr",
+                                    "list": [
+                                        {
+                                            "code": "name",
+                                            "value": "item.quantity.unitized.measure"
+                                        },
+                                        {
+                                            "code": "seq",
+                                            "value": "1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "1",
+                            "type": "Delivery",
+                            "contact": {
+                                "phone": "1234567890",
+                                "email": "example@store.com"
+                            }
+                        }
+                    ],
+                    "locations": [
+                        {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "street": "shaktinagar main road",
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            },
+                            "circle": {
+                                "gps": "23.022501,72.571401",
+                                "radius": {
+                                    "value": "101",
+                                    "unit": "km"
+                                }
+                            },
+                            "time": {
+                                "label": "enable",
+                                "timestamp": "2024-10-07T07:20:01.614Z",
+                                "range": {
+                                    "start": "0000",
+                                    "end": "2359"
+                                },
+                                "days": "1,2,3,4,5,6,7",
+                                "schedule": {
+                                    "holidays": [
+                                        "2025-08-15",
+                                        "2025-09-10"
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                            "descriptor": {
+                                "name": "Madhur Sugar",
+                                "code": "1:12345678",
+                                "symbol": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJxRIu7Y32QHkuzDAAQavvbNajCfJ06m1q1Q&s",
+                                "short_desc": "Sulphur free sugar",
+                                "long_desc": "Sulphur free sugar",
+                                "images": [
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEmlnJrV_s4LnjsnOgZ4XlgYrtPHqRJOvZOA&s"
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0",
+                                "maximum_value": "295.0"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                },
+                                "unitized": {
+                                    "measure": {
+                                        "value": "100",
+                                        "unit": "kilogram"
+                                    }
+                                }
+                            },
+                            "category_id": "Salt, Sugar and Jaggery",
+                            "fulfillment_id": "1",
+                            "location_id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "time": {
+                                "label": "enable",
+                                "timestamp": "2024-10-08T10:07:11.877Z"
+                            },
+                            "@ondc/org/returnable": true,
+                            "@ondc/org/seller_pickup_return": false,
+                            "@ondc/org/return_window": "P7D",
+                            "@ondc/org/cancellable": false,
+                            "@ondc/org/time_to_ship": "P1D",
+                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/contact_details_consumer_care": "copmanyName,temp@xyz.com,9988776655",
+                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                "manufacturer_or_packer_name": "name12",
+                                "manufacturer_or_packer_address": "addr12ess",
+                                "common_or_generic_name_of_commodity": "c22ommodity",
+                                "month_year_of_manufacture_packing_import": "02/1602"
+                            },
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "Country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c1e4071f-f235-464a-b2aa-824bbbbc6b31",
+                            "descriptor": {
+                                "name": "Rice Flour",
+                                "code": "1:47845125885",
+                                "symbol": "https://media.istockphoto.com/id/1304420349/photo/rice-flour-alternative-gluten-free-flour-and-rich-in-fiber.jpg?s=612x612&w=0&k=20&c=U12fLhH3G72ea8b7RofJimtwTn7fLmTyQ2-rrzFz16o=",
+                                "short_desc": "not added any preservatives",
+                                "long_desc": "not added any preservatives",
+                                "images": [
+                                    "https://media.istockphoto.com/id/1304420349/photo/rice-flour-alternative-gluten-free-flour-and-rich-in-fiber.jpg?s=612x612&w=0&k=20&c=U12fLhH3G72ea8b7RofJimtwTn7fLmTyQ2-rrzFz16o="
+                                ]
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "150.0",
+                                "maximum_value": "250.0"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                },
+                                "unitized": {
+                                    "measure": {
+                                        "value": "1",
+                                        "unit": "kilogram"
+                                    }
+                                }
+                            },
+                            "category_id": "Atta, Flours and Sooji",
+                            "fulfillment_id": "1",
+                            "location_id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "time": {
+                                "label": "enable",
+                                "timestamp": "2024-10-08T10:07:11.877Z"
+                            },
+                            "@ondc/org/returnable": true,
+                            "@ondc/org/seller_pickup_return": false,
+                            "@ondc/org/return_window": "P7D",
+                            "@ondc/org/cancellable": true,
+                            "@ondc/org/time_to_ship": "P1D",
+                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/contact_details_consumer_care": "pirimid,complaints@pirimidtech.com,9978645123",
+                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                "manufacturer_or_packer_name": "name12",
+                                "manufacturer_or_packer_address": "addr12ess",
+                                "common_or_generic_name_of_commodity": "c22ommodity",
+                                "month_year_of_manufacture_packing_import": "02/1602"
+                            },
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "Country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "ttl": "P1D",
+                    "tags": [
+                        {
+                            "code": "serviceability",
+                            "list": [
+                                {
+                                    "code": "location",
+                                    "value": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Salt, Sugar and Jaggery"
+                                },
+                                {
+                                    "code": "type",
+                                    "value": "12"
+                                },
+                                {
+                                    "code": "val",
+                                    "value": "IND"
+                                },
+                                {
+                                    "code": "unit",
+                                    "value": "country"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "serviceability",
+                            "list": [
+                                {
+                                    "code": "location",
+                                    "value": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Atta, Flours and Sooji"
+                                },
+                                {
+                                    "code": "type",
+                                    "value": "12"
+                                },
+                                {
+                                    "code": "val",
+                                    "value": "IND"
+                                },
+                                {
+                                    "code": "unit",
+                                    "value": "country"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "timing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "Order"
+                                },
+                                {
+                                    "code": "location",
+                                    "value": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                                },
+                                {
+                                    "code": "day_from",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "day_to",
+                                    "value": "7"
+                                },
+                                {
+                                    "code": "time_from",
+                                    "value": "0930"
+                                },
+                                {
+                                    "code": "time_to",
+                                    "value": "1930"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "timing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "Delivery"
+                                },
+                                {
+                                    "code": "location",
+                                    "value": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                                },
+                                {
+                                    "code": "day_from",
+                                    "value": "1"
+                                },
+                                {
+                                    "code": "day_to",
+                                    "value": "7"
+                                },
+                                {
+                                    "code": "time_from",
+                                    "value": "0930"
+                                },
+                                {
+                                    "code": "time_to",
+                                    "value": "1930"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Validating ON_SEARCH response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Schema validation successful: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated action for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated core version for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated message ID for action: on_search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated context.timestamp difference. total duration between: 1.617
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully Validated Mobile Number
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully Validated Email Id
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Successfully validated TTL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          All location.time.timestamp are valid and before context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Item Code matches the criteria: 1:12345678
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:21 PM</td>
+        <td>
+          Item Code matches the criteria: 1:47845125885
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Max Item Count
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Contact Info
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Country Code
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Item is Veg/NonVeg/Egg
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Item Delivery
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Selling Price [230.00] is Less or equal to MRP [295.00]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated Selling Price [150.00] is Less or equal to MRP [250.00]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated @ondc/org/statutory_reqs_packaged_commodities block for Category Id: Salt, Sugar and Jaggery
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully Validated @ondc/org/statutory_reqs_packaged_commodities block for Category Id: Atta, Flours and Sooji
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully validated all the list of codes in message.catalog['bpp/providers'].tags.code.list.code where message.catalog['bpp/providers'].tags.code is serviceability
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Custom Menu is not provided by the seller 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:22 PM</td>
+        <td>
+          Successfully validated GPS Coordinates length after decimal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:23 PM</td>
+        <td>
+          Successfully Validated np_type: MSN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:23 PM</td>
+        <td>
+          Successfully Validated Serviceability for Type [12] and unit [country]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:23 PM</td>
+        <td>
+          /select: call payload
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:23 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "action": "select",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "db6fae15-9314-43c7-b1ca-39c7d62b73e1",
+        "city": "std:079",
+        "country": "IND",
+        "timestamp": "2024-10-08T10:07:23.726Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "location_id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                    "quantity": {
+                        "count": 2
+                    }
+                }
+            ],
+            "fulfillments": [
+                {
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "area_code": "380001"
+                            }
+                        }
+                    }
+                }
+            ],
+            "payment": {
+                "type": "ON-ORDER"
+            }
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:23 PM</td>
+        <td>
+          Executing /SELECT call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:24 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:079",
+        "action": "select",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "db6fae15-9314-43c7-b1ca-39c7d62b73e1",
+        "timestamp": "2024-10-08T10:07:24.696Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:24 PM</td>
+        <td>
+          Received ACK response of: /select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:24 PM</td>
+        <td>
+          Schema validation successful: /select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Received ON_SELECT from seller: ondc.pirimidtech.com/v2/seller
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_select",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "db6fae15-9314-43c7-b1ca-39c7d62b73e1",
+        "timestamp": "2024-10-08T10:07:24.709Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/category": "Immediate Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    },
+                    "tracking": false
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            }
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Validating ON_SELECT response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Schema validation successful: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated action for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated core version for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated message ID for action: on_select
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated context.timestamp difference. total duration between: 0.983
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated immediate delivery. [OPTIONAL]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated serviceable enum
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated Item Ids
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated title type
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated price of item with itemId: {d8af5175-2974-4dee-96e6-4c055db49760} in /on_select is according to catalog
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated non zero packing charge
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated non zero tax charge
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated non zero discount charge
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated non zero misc charge
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated Quote.TTL
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully validated delivery charge applicable for Fulfillment Id: 593128c5-5ab0-42fe-b330-042940104b1b
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Skipping Validation of Tax as Tax Block is not present
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Successfully Validated Total Amount [565.00] with Total Breakup Amount [565.00]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          Cannot Validate Slotted delivery as message.order.fulfillments[0].end.time.range.start is null [OPTIONAL] 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          /init: call payload
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:35 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "action": "init",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "61c19d1b-764a-49a1-9b0b-f358d168d31a",
+        "city": "std:079",
+        "country": "IND",
+        "timestamp": "2024-10-08T10:07:35.964Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "tax_number": "29AAACU1901H1ZK",
+                "phone": "9886098860",
+                "email": "sharique.efgh@gmail.com",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "end": {
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "nobody@nomail.com"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "380001",
+                                "building": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "country": "IND",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "name": "mayur",
+                                "state": "Gujarat"
+                            },
+                            "gps": "23.0225,72.5714"
+                        }
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    }
+                }
+            ],
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            }
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:36 PM</td>
+        <td>
+          Executing /INIT call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:37 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:079",
+        "action": "init",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "61c19d1b-764a-49a1-9b0b-f358d168d31a",
+        "timestamp": "2024-10-08T10:07:36.899Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:37 PM</td>
+        <td>
+          Received ACK response of: /init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:37 PM</td>
+        <td>
+          Schema validation successful: /init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Received ON_INIT from seller: ondc.pirimidtech.com/v2/seller
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_init",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "61c19d1b-764a-49a1-9b0b-f358d168d31a",
+        "timestamp": "2024-10-08T10:07:36.931Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "unitized": {
+                            "count": "2"
+                        },
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "provider_id": "ondc.loadshare.com/ondc/18275",
+                    "state": {
+                        "descriptor": {
+                            "code": "INITIALIZING"
+                        }
+                    },
+                    "tracking": false,
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc-pirimid-payment.netlify.app/payment/d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BPP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "created_at": "2024-10-08T10:07:24.714Z",
+            "updated_at": "2024-10-08T10:07:36.951Z",
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "provider_tax_number",
+                            "value": "HLNPM7888H"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "33AAHCD9408R1Z2"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Validating ON_INIT response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Schema validation successful: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated action for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated core version for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated message ID for action: on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated context.timestamp difference. total duration between: 0.967
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated billing timestamps are equal in init and on_init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Settlement Basis is null in On-Init (optional)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated settlement details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated: message.order.payment['@ondc/org/settlement_details']
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated billing 'created at' and 'updated at'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated quote.breakup
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Cannot Validate Min Value as 'order_value' key is not present in bpp/providers.tags [OPTIONAL]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+           Successfully Validate Quote Price Value 565.0 is a valid double with 1 decimal place
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated message.order.tags 'provider_tax_number' format
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated message.order.tags 'provider_tax_number' format
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated for NP type as MSN: PAN number of the SNP and Provider doesn't matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated: message.order.payment.tags presence [OPTIONAL]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Successfully validated: message.order.payment['@ondc/org/settlement_details']
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          /confirm: call payload
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "action": "confirm",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "4f383781-61da-4f70-8739-293444c2ec3a",
+        "city": "std:079",
+        "country": "IND",
+        "timestamp": "2024-10-08T10:07:47.932Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "end": {
+                        "contact": {
+                            "email": "nobody@nomail.com",
+                            "phone": "9886098860"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "380001",
+                                "building": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "country": "IND",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "name": "mayur",
+                                "state": "Gujarat"
+                            },
+                            "gps": "23.0225,72.5714"
+                        },
+                        "person": {
+                            "name": "mayur"
+                        }
+                    },
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "@ondc/org/TAT": "PT50M",
+                    "tracking": false,
+                    "type": "Delivery"
+                }
+            ],
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "unitized": {
+                            "count": "2"
+                        },
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "type": "ON-ORDER",
+                "status": "PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ],
+                "params": {
+                    "currency": "INR",
+                    "amount": "565.00",
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645"
+                },
+                "tl_method": "http/get"
+            },
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "provider_tax_number",
+                            "value": "HLNPM7888H"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "33AAHCD9408R1Z2"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "33AAAAA0000A1Z5"
+                        }
+                    ]
+                }
+            ],
+            "state": "Created",
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:07:47.932Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:47 PM</td>
+        <td>
+          Executing /CONFIRM call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:48 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:079",
+        "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "4f383781-61da-4f70-8739-293444c2ec3a",
+        "timestamp": "2024-10-08T10:07:48.824Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:48 PM</td>
+        <td>
+          Received ACK response of: /confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:49 PM</td>
+        <td>
+          Schema validation successful: /confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Received ON_CONFIRM from seller: ondc.pirimidtech.com/v2/seller
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_confirm",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "4f383781-61da-4f70-8739-293444c2ec3a",
+        "timestamp": "2024-10-08T10:07:48.877Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "Accepted",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:07:48.877Z",
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "provider_tax_number",
+                            "value": "HLNPM7888H"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "33AAHCD9408R1Z2"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "33AAAAA0000A1Z5"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Validating ON_CONFIRM response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Schema validation successful: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated action for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated core version for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated message ID for action: on_confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated context.timestamp difference. total duration between: 0.945
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated billing 'created at' and 'updated at'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated fulfillment id [593128c5-5ab0-42fe-b330-042940104b1b] with quote.breakup.@ondc/org/item_id for @ondc/org/title_type { delivery & packing }
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Validation passed: For code '2', '3', or '4', short description is at most 6 characters.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          The fulfillment ID and fulfillment.end.locations are matching between on_confirm call and On-Init call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully Validated: Store Address in On-Confirm and On-Search
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully validated quote.breakup
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully Validated: BPP terms from on-init
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+          Successfully Validated: BAP terms with confirm
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:37:59 PM</td>
+        <td>
+           Successfully Validate Quote Price Value 565.0 is a valid double with 1 decimal place
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          On-Status Response - [2024-10-08T10:08:22.853Z]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_status",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "c01055cb-d0ad-4a93-9cde-bc762ca9f41e",
+        "timestamp": "2024-10-08T10:08:22.853Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "In-progress",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "provider_id": "ondc.loadshare.com/ondc/18275",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "tracking": false,
+                    "agent": {
+                        "phone": "9988776655",
+                        "name": "delviery boy"
+                    },
+                    "vehicle": {
+                        "category": "minitruck",
+                        "size": "small",
+                        "registration": "1234"
+                    },
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "rateable": true
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "unitized": {
+                                "count": "2"
+                            },
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:08:22.853Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Validating ON_STATUS response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Schema validation successful: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated action for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated core version for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated order state
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Cannot check routing tags as Fulfillment.tags is null [OPTIONAL] 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated fulfillment.Start timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated Fulfillment.End timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated : on_status 'created_at' 2024-10-08T10:07:47.932Z is equal to On-Confirm 'created_at' 2024-10-08T10:07:47.932Z
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          The fulfillment ID and fulfillment.end.locations are matching between on_status call and On-Init call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated Created At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated Updated At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          On-Status Response - [2024-10-08T10:08:27.621Z]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_status",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "3c0dd7ad-f985-4202-b8ec-5574405f3ce1",
+        "timestamp": "2024-10-08T10:08:27.621Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "In-progress",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "documents": [
+                {
+                    "url": "https://invoice_url",
+                    "label": "Invoice"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "provider_id": "ondc.loadshare.com/ondc/18275",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
+                    "tracking": false,
+                    "agent": {
+                        "phone": "9988776655",
+                        "name": "delviery boy"
+                    },
+                    "vehicle": {
+                        "category": "minitruck",
+                        "size": "small",
+                        "registration": "1234"
+                    },
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "timestamp": "2024-10-08T10:08:27.606Z",
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "rateable": true,
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "unitized": {
+                                "count": "2"
+                            },
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:08:27.621Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Validating ON_STATUS response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Schema validation successful: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated action for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated core version for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated order state
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated hyperlocal & intercity enums, found: P2P
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated enum for fulfillment state & mapping to order state for hyperlocal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated fulfillment.Start timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated Fulfillment.End timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated: Document payment
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated : on_status 'created_at' 2024-10-08T10:07:47.932Z is equal to On-Confirm 'created_at' 2024-10-08T10:07:47.932Z
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          The fulfillment ID and fulfillment.end.locations are matching between on_status call and On-Init call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated Created At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully Validated Updated At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          On-Status Response - [2024-10-08T10:08:42.108Z]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_status",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "da97522b-352a-449c-a016-b87cc8bad9b1",
+        "timestamp": "2024-10-08T10:08:42.108Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "In-progress",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                }
+            ],
+            "documents": [
+                {
+                    "url": "https://invoice_url",
+                    "label": "Invoice"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "provider_id": "ondc.loadshare.com/ondc/18275",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
+                    "tracking": false,
+                    "agent": {
+                        "phone": "9988776655",
+                        "name": "delviery boy"
+                    },
+                    "vehicle": {
+                        "category": "minitruck",
+                        "size": "small",
+                        "registration": "1234"
+                    },
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "timestamp": "2024-10-08T10:08:27.606Z",
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "rateable": true,
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "565.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "unitized": {
+                                "count": "2"
+                            },
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "460.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "5.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:08:42.108Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Validating ON_STATUS response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Schema validation successful: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated action for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated core version for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated order state
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated hyperlocal & intercity enums, found: P2P
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:00 PM</td>
+        <td>
+          Successfully validated enum for fulfillment state & mapping to order state for hyperlocal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully validated fulfillment.Start timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully validated Fulfillment.End timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully Validated: Document payment
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully validated : on_status 'created_at' 2024-10-08T10:07:47.932Z is equal to On-Confirm 'created_at' 2024-10-08T10:07:47.932Z
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          The fulfillment ID and fulfillment.end.locations are matching between on_status call and On-Init call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully Validated Created At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:40:01 PM</td>
+        <td>
+          Successfully Validated Updated At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Received ON_CANCEL from seller: ondc.pirimidtech.com/v2/seller
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_cancel",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "c67e7efc-d67a-4c71-ba13-fb80ddb6ae43",
+        "timestamp": "2024-10-08T10:10:11.870Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "Cancelled",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 0
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                },
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc.pirimidtech.com/v2/seller"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "593128c5-5ab0-42fe-b330-042940104b1b"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-10-08T10:08:42.108Z"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                    "type": "RTO",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                                "code": "2",
+                                "short_desc": "1234",
+                                "long_desc": "additional instructions such as register or counter no for self-pickup"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "rateable": true,
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "d8af5175-2974-4dee-96e6-4c055db49760"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-460.0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "packing"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-5.0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-100.0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "cancellation": {
+                "cancelled_by": "ondc.pirimidtech.com/v2/seller",
+                "reason": {
+                    "id": "002"
+                }
+            },
+            "created_at": "2024-10-08T10:07:24.714Z",
+            "updated_at": "2024-10-08T10:10:11.846Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Validating ON_CANCEL response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Schema validation successful: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated action for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated core version for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_cancel
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully Validated: Quote price value is equals to the sum of quote price breakup
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully Validated Descriptor code [Cancelled] for fulfillment type [Delivery]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Successfully Validated Descriptor code [RTO-Initiated] for fulfillment type [RTO]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:01 PM</td>
+        <td>
+          Cancellation Reason ID validated Successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated: State code enum for cancel item RTO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated Quantity as Zero in On-Cancel for Item Id [d8af5175-2974-4dee-96e6-4c055db49760] and Fulfillment Id [593128c5-5ab0-42fe-b330-042940104b1b]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated Fulfillment Id [4ba1a25c-36bf-4270-9675-86dfe5412f04] for Item Id [d8af5175-2974-4dee-96e6-4c055db49760] as type RTO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated On-Confirm and On-Cancel Item Price: 460.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated On-Confirm and On-Cancel Item Price: 5.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated On-Confirm and On-Cancel Item Price: 100.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated on cancel call id list is match with on select call item id
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Successfully Validated message.order.fulfillments.findAll{it ->it.type}.type contains Delivery and RTO
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          NO fulfillment RTO end time is found [Optional]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          /update: call payload
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "action": "update",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "ca2ae48c-aac8-460f-8e2e-d9038bbcec3c",
+        "city": "std:079",
+        "country": "IND",
+        "timestamp": "2024-10-08T10:12:02.700Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "update_target": "payment",
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "fulfillments": [
+                {
+                    "id": "6dad73f7-2e1d-46c2-b273-fe041faeadaf",
+                    "type": "Return"
+                }
+            ],
+            "payment": {
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer",
+                        "settlement_phase": "refund",
+                        "settlement_type": "upi",
+                        "settlement_amount": "565",
+                        "settlement_timestamp": "2024-10-08T10:12:02.697Z"
+                    }
+                ]
+            }
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:02 PM</td>
+        <td>
+          Executing /UPDATE call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:42:03 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:079",
+        "action": "update",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "ca2ae48c-aac8-460f-8e2e-d9038bbcec3c",
+        "timestamp": "2024-10-08T10:12:03.587Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "ack": {
+            "status": "ACK"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:03 PM</td>
+        <td>
+          Received ACK response of: /update
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:42:03 PM</td>
+        <td>
+          Schema validation successful: /update
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          On-Status Response - [2024-10-08T10:12:18.737Z]
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>{
+    "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_status",
+        "country": "IND",
+        "city": "std:079",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+        "message_id": "1a7f08a1-ac77-4c55-a60e-6b1ec158bfed",
+        "timestamp": "2024-10-08T10:12:18.737Z",
+        "bpp_id": "ondc.pirimidtech.com/v2/seller",
+        "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3GMn1ULN9LNaDPZa3cTrrAJ5ayIOmtfd",
+            "state": "Cancelled",
+            "provider": {
+                "id": "b724ca8a-21ae-4de7-886e-12056aaff555",
+                "locations": [
+                    {
+                        "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 0
+                    },
+                    "fulfillment_id": "593128c5-5ab0-42fe-b330-042940104b1b"
+                },
+                {
+                    "id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2024-10-08T10:07:35.962Z",
+                "updated_at": "2024-10-08T10:07:35.962Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "593128c5-5ab0-42fe-b330-042940104b1b",
+                    "type": "Delivery",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "EMart Store No 1"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "23.0225,72.5714",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "sharique.efgh@gmail.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "002"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "ondc.pirimidtech.com/v2/seller"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "593128c5-5ab0-42fe-b330-042940104b1b"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Out-for-delivery"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-10-08T10:08:42.108Z"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                    "type": "RTO",
+                    "@ondc/org/TAT": "PT50M",
+                    "@ondc/org/provider_name": "LoadShare",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Disposed"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "location": {
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "name": "Mayur",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional",
+                                "city": "Ahmedabad",
+                                "state": "Gujarat",
+                                "country": "IND",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-10-09T10:07:48.867Z",
+                                "end": "2024-10-10T10:07:48.867Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        },
+                        "person": {
+                            "name": "Mayur"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "id": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                            "descriptor": {
+                                "name": "b9090ddc-aa02-4eff-9a0f-a1be77382889",
+                                "code": "2",
+                                "short_desc": "1234",
+                                "long_desc": "additional instructions such as register or counter no for self-pickup"
+                            },
+                            "gps": "23.022501,72.571401",
+                            "address": {
+                                "locality": "Some Society",
+                                "city": "ahmedabad",
+                                "state": "Delhi",
+                                "area_code": "380001"
+                            }
+                        },
+                        "time": {
+                            "timestamp": "2024-10-08T10:12:18.751Z",
+                            "range": {
+                                "start": "2024-10-08T10:12:18.751Z",
+                                "end": "2024-10-08T10:12:18.751Z"
+                            }
+                        },
+                        "instructions": {
+                            "name": "Status for pickup",
+                            "code": "2",
+                            "short_desc": "1234",
+                            "long_desc": "additional instructions such as register or counter no for self-pickup"
+                        },
+                        "contact": {
+                            "phone": "1234567890",
+                            "email": "example@store.com"
+                        }
+                    },
+                    "rateable": true,
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "d8af5175-2974-4dee-96e6-4c055db49760"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-460.0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "packing"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-5.0"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "4ba1a25c-36bf-4270-9675-86dfe5412f04"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-100.0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "d8af5175-2974-4dee-96e6-4c055db49760",
+                        "@ondc/org/item_quantity": {
+                            "unitized": {
+                                "count": "2"
+                            },
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "230.0"
+                            }
+                        },
+                        "title": "Madhur Sugar",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                        "@ondc/org/title_type": "packing",
+                        "title": "Packing Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "4ba1a25c-36bf-4270-9675-86dfe5412f04",
+                        "@ondc/org/title_type": "delivery",
+                        "title": "Delivery Charges",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "uri": "https://ondc.transaction.com/payment",
+                "tl_method": "http/get",
+                "params": {
+                    "transaction_id": "d5ba0d6c-c747-4d68-8fbf-dbef07132645",
+                    "amount": "565.0",
+                    "currency": "INR"
+                },
+                "type": "ON-ORDER",
+                "status": "NOT-PAID",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "settlement_bank_account_no": "xxxxxxxxxxxx",
+                        "settlement_ifsc_code": "xxxxxxxx",
+                        "upi_address": "gft@oksbi",
+                        "bank_name": "xxxx",
+                        "branch_name": "xxxx",
+                        "beneficiary_name": "xxxx"
+                    }
+                ]
+            },
+            "cancellation": {
+                "cancelled_by": "ondc.pirimidtech.com/v2/seller",
+                "reason": {
+                    "id": "002"
+                }
+            },
+            "created_at": "2024-10-08T10:07:47.932Z",
+            "updated_at": "2024-10-08T10:12:18.737Z"
+        }
+    }
+}</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Validating ON_STATUS response
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Schema validation successful: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated action for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated core version for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated BAP id for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated BAP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated BPP URI for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated BPP ID for action: on_status
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated order state
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          No routing tags found in order fulfillment [OPTIONAL] 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated fulfillment.Start timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated Fulfillment.End timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully Validated billing.created_at date less than billing.updated_at
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully Validated billing.updated_at date less than Context.timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully validated : on_status 'created_at' 2024-10-08T10:07:47.932Z is equal to On-Confirm 'created_at' 2024-10-08T10:07:47.932Z
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          The fulfillment ID and fulfillment.end.locations are matching between on_status call and On-Init call
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully Validated Created At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:34 PM</td>
+        <td>
+          Successfully Validated Updated At Timestamp is Less than Context Timestamp
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:44:35 PM</td>
+        <td>
+          Successfully Validated Cancellation Block for Order Status: Cancelled
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript">const data = [["Flow 4: Merchant Side Full Order Cancellation (RTO Flow)", "195", "1", "3", "48", "Yes", "247"]];const table = document.createElement('table');                  table.style.borderCollapse = 'collapse';                  table.style.width = '100%';                  table.style.margin = '0 0 10px 0';                  const row = table.insertRow(0);                  const cell1 = row.insertCell(0);                  cell1.textContent = 'Flow Name';                  cell1.style.border = '1px solid #ddd';                  cell1.style.padding = '8px';                  cell1.style.fontWeight = 'bold';                 cell1.style.textAlign = 'left';                  const cell2 = row.insertCell(1);                  cell2.textContent = 'Pass';                  cell2.style.border = '1px solid #ddd';                  cell2.style.padding = '8px';                  cell2.style.textAlign = 'left';                  cell2.style.fontWeight = 'bold';                 cell2.style.color = 'green';                 const cell3 = row.insertCell(2);                  cell3.textContent = 'Failed_Mandatory';                  cell3.style.border = '1px solid #ddd';                  cell3.style.padding = '8px';                  cell3.style.textAlign = 'left';                  cell3.style.fontWeight = 'bold';                 cell3.style.color = '#dc3545';                 const cell4 = row.insertCell(3);                  cell4.textContent = 'Failed_Optional';                  cell4.style.border = '1px solid #ddd';                  cell4.style.padding = '8px';                  cell4.style.textAlign = 'left';                  cell4.style.fontWeight = 'bold';                 cell4.style.color = '#dc3545';                 const cell5 = row.insertCell(4);                  cell5.textContent = 'Info';                  cell5.style.border = '1px solid #ddd';                  cell5.style.padding = '8px';                  cell5.style.textAlign = 'left';                 cell5.style.fontWeight = 'bold';                 cell5.style.color = '#007bff';                 const cell6 = row.insertCell(5);                  cell6.textContent = 'Test Completed';                  cell6.style.border = '1px solid #ddd';                  cell6.style.padding = '8px';                  cell6.style.textAlign = 'left';                  cell6.style.fontWeight = 'bold';                 cell6.style.color = 'green';                 const cell7 = row.insertCell(6);                  cell7.textContent = 'Total';                  cell7.style.border = '1px solid #ddd';                  cell7.style.padding = '8px';                  cell7.style.textAlign = 'left';                  cell7.style.fontWeight = 'bold';                                  for (let i = 0; i < data.length; i++) {                  const rowData = table.insertRow(i+1);                  const flowName = rowData.insertCell(0);                  flowName.textContent = data[i][0];                  flowName.style.border = '1px solid #ddd';                  flowName.style.padding = '8px';                  flowName.style.textAlign = 'left';                  const passData = rowData.insertCell(1);                  passData.textContent = data[i][1];                  passData.style.border = '1px solid #ddd';                  passData.style.padding = '8px';                  passData.style.textAlign = 'left';                  const failDataM = rowData.insertCell(2);                  failDataM.textContent = data[i][2];                  failDataM.style.border = '1px solid #ddd';                  failDataM.style.padding = '8px';                  failDataM.style.textAlign = 'left';                  const failDataO = rowData.insertCell(3);                  failDataO.textContent = data[i][3];                  failDataO.style.border = '1px solid #ddd';                  failDataO.style.padding = '8px';                  failDataO.style.textAlign = 'left';                 const infoData = rowData.insertCell(4);                  infoData.textContent = data[i][4];                  infoData.style.border = '1px solid #ddd';                  infoData.style.padding = '8px';                  infoData.style.textAlign = 'left';                  const isLastcall = rowData.insertCell(5);                  isLastcall.textContent = data[i][5];                  isLastcall.style.border = '1px solid #ddd';                  isLastcall.style.padding = '8px';                  isLastcall.style.textAlign = 'left';                  const totalData = rowData.insertCell(6);                  totalData.textContent = data[i][6];                  totalData.style.border = '1px solid #ddd';                  totalData.style.padding = '8px';                  totalData.style.textAlign = 'left';                 };let greenCard = document.evaluate('//ul[@class="nav-right"]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;const liElement = document.createElement('li');liElement.className = "m-r-10";const spanElement = document.createElement('span');spanElement.textContent= 'Test Id: 13819';spanElement.className = 'badge badge-primary';liElement.appendChild(spanElement);greenCard.appendChild(liElement);        let cardBody = document.evaluate('//div[@class="card-body pt-0"]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;         cardBody.remove();         let card = document.evaluate('//div[@class="col-md-12"]/div[@class="card"]',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;         card.appendChild(table);                let summary = document.evaluate('//div[@class="col-md-12"]/div/div',document,null,XPathResult.FIRST_ORDERED_NODE_TYPE,null).singleNodeValue;  summary.style.fontWeight = 'bold';  summary.innerText = 'Test Summary';summary.style.fontSize = '24px';document.getElementsByClassName('nav-logo')[0].textContent = 'SELLER'; document.getElementsByClassName('logo')[0].style.display='none';</script></body>
+</html>
