@@ -5,80 +5,82 @@
     "city": "std:080",
     "action": "on_confirm",
     "core_version": "1.2.0",
-    "bap_id": "preprod.tipplr.in",
-    "bap_uri": "https://preprod.tipplr.in/ondc/logistics/v2",
-    "transaction_id": "7c9d987e-1012-4fd5-9ade-c06870f77006",
-    "message_id": "2297206d-7907-41c7-8b65-94dac9763134",
-    "timestamp": "2024-09-27T11:34:24.486Z",
-    "bpp_id": "ref-logistics-app-stage.ondc.org",
-    "bpp_uri": "https://ref-logistics-app-stage.ondc.org"
+    "bap_id": "preprod-logistics.tipplr.in",
+    "bap_uri": "https://preprod-logistics.tipplr.in/ondc/logistics/v2",
+    "bpp_id": "ondc-preprod-lsp.olacabs.com",
+    "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
+    "transaction_id": "cccf27e5-872e-492e-8305-faf6942db88a",
+    "message_id": "6f6c913b-b3c8-40f4-a4de-56e9b18e2f28",
+    "timestamp": "2024-10-14T12:51:31.248Z"
   },
   "message": {
     "order": {
-      "id": "TPR83917886",
+      "id": "TPR80577581",
       "state": "Accepted",
       "provider": {
-        "id": "36fd303e-3b4a-4ebe-8acb-63a30a663eda"
+        "id": "OLA"
       },
       "items": [
         {
+          "id": "ola_express",
+          "fulfillment_id": "ola_express_f1",
+          "category_id": "Immediate Delivery",
           "descriptor": {
-            "code": "P2P"
+            "name": "OLA",
+            "code": "P2P",
+            "short_desc": "OLA",
+            "long_desc": "OLA"
           },
           "time": {
+            "duration": "PT55M",
             "label": "TAT",
-            "duration": "PT60M",
-            "timestamp": "2024-09-27"
-          },
-          "id": "Standard",
-          "fulfillment_id": "5da87192-00b1-4ed7-8b14-4b426735d52c",
-          "category_id": "Immediate Delivery"
+            "timestamp": "2024-10-14"
+          }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "138.60"
+          "value": "25.0"
         },
         "breakup": [
           {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "132.00"
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "delivery"
+              "value": "21.18"
+            }
           },
           {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "6.60"
-            },
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "tax"
+              "value": "3.81"
+            }
           }
         ]
       },
       "fulfillments": [
         {
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
-          "id": "5da87192-00b1-4ed7-8b14-4b426735d52c",
+          "id": "ola_express_f1",
           "type": "Delivery",
           "start": {
             "time": {
-              "duration": "PT10M"
+              "range": {
+                "start": "2024-10-14T12:51:31.264Z",
+                "end": "2024-10-14T13:11:31.264Z"
+              },
+              "duration": "PT15M"
             },
             "person": {
-              "name": "Tipplr-samrudh veg testing"
+              "name": "Tipplr-swathi d"
             },
             "location": {
               "gps": "12.979612,77.590846",
               "address": {
-                "name": "Tipplr-samrudh veg testing",
+                "name": "Tipplr-swathi d",
                 "building": "Ambedkar Bheedhi  XHHR+R8X",
                 "locality": " Sampangi Rama Nagara  Bengaluru",
                 "city": "Bengaluru",
@@ -88,16 +90,21 @@
               }
             },
             "contact": {
-              "phone": "8310422896",
+              "phone": "9844444444",
               "email": "hello@tipplr.in"
             },
             "instructions": {
               "code": "2",
-              "short_desc": "752657",
-              "images": []
+              "short_desc": "752657"
             }
           },
           "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-14T13:11:31.264Z",
+                "end": "2024-10-14T13:26:31.264Z"
+              }
+            },
             "person": {
               "name": "punith home "
             },
@@ -118,8 +125,7 @@
               "email": "foodspacetechnology@gmail.com"
             },
             "instructions": {
-              "code": "3",
-              "images": []
+              "code": "3"
             }
           },
           "tags": [
@@ -142,7 +148,12 @@
               ]
             }
           ],
-          "tracking": true
+          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          }
         }
       ],
       "billing": {
@@ -159,22 +170,65 @@
         "tax_number": "29AAECF1747N1Z6",
         "phone": "9886098860",
         "email": "hello@tipplr.in",
-        "created_at": "2024-09-27T11:34:09.537Z",
-        "updated_at": "2024-09-27T11:34:09.537Z"
+        "created_at": "2024-10-14T12:51:09.366Z",
+        "updated_at": "2024-10-14T12:51:09.366Z"
       },
       "payment": {
-        "collected_by": "BAP",
         "type": "POST-FULFILLMENT",
-        "status": "NOT-PAID",
-        "@ondc/org/settlement_details": []
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft",
+            "beneficiary_name": "\"OLA FLEET TECHNOLOGIES PRIVATE LIMITED\"",
+            "settlement_bank_account_no": "\"915020065848680\"",
+            "settlement_ifsc_code": "\"UTIB0001506\""
+          }
+        ]
       },
       "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "F&B",
+            "descriptor": {
+              "name": "Chicken pizza"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "unit",
+                "value": 1
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          },
+          {
+            "category_id": "F&B",
+            "descriptor": {
+              "name": "Regular"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "unit": "unit",
+                "value": 1
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "400"
+            }
+          }
+        ],
         "provider": {
           "descriptor": {
-            "name": "Tipplr-samrudh veg testing"
+            "name": "Tipplr-swathi d"
           },
           "address": {
-            "name": "Tipplr-samrudh veg testing",
+            "name": "Tipplr-swathi d",
             "building": "Ambedkar Bheedhi  XHHR+R8X",
             "locality": " Sampangi Rama Nagara  Bengaluru",
             "city": "Bengaluru",
@@ -183,48 +237,32 @@
           }
         },
         "order": {
+          "id": "food_order-172891026806251475",
           "weight": {
             "unit": "kilogram",
             "value": 3
-          },
-          "id": "food_order-17274367273134700"
-        },
-        "items": [
-          {
-            "descriptor": {
-              "name": "palav"
-            },
-            "quantity": {
-              "measure": {
-                "value": 1,
-                "unit": "unit"
-              },
-              "count": 4
-            },
-            "price": {
-              "currency": "INR",
-              "value": "200"
-            },
-            "category_id": "F&B"
           }
-        ]
+        }
       },
+      "updated_at": "2024-10-14T12:51:31.248Z",
+      "created_at": "2024-10-14T12:51:31.111Z",
       "cancellation_terms": [
         {
           "fulfillment_state": {
             "descriptor": {
               "code": "Pending",
-              "short_desc": ""
+              "short_desc": "008"
             }
           },
+          "refund_eligible": true,
+          "reason_required": false,
           "cancellation_fee": {
+            "percentage": "0.00",
             "amount": {
               "currency": "INR",
               "value": "0.0"
             }
-          },
-          "refund_eligible": true,
-          "reason_required": false
+          }
         },
         {
           "fulfillment_state": {
@@ -233,14 +271,15 @@
               "short_desc": "001,003"
             }
           },
+          "refund_eligible": true,
+          "reason_required": true,
           "cancellation_fee": {
+            "percentage": "0.00",
             "amount": {
               "currency": "INR",
-              "value": "50"
+              "value": "10"
             }
-          },
-          "refund_eligible": true,
-          "reason_required": true
+          }
         },
         {
           "fulfillment_state": {
@@ -249,14 +288,15 @@
               "short_desc": "001,003"
             }
           },
+          "refund_eligible": true,
+          "reason_required": true,
           "cancellation_fee": {
+            "percentage": "0.00",
             "amount": {
               "currency": "INR",
-              "value": "100"
+              "value": "30"
             }
-          },
-          "refund_eligible": true,
-          "reason_required": true
+          }
         },
         {
           "fulfillment_state": {
@@ -265,29 +305,17 @@
               "short_desc": "011,012,013,014,015"
             }
           },
+          "refund_eligible": true,
+          "reason_required": true,
           "cancellation_fee": {
+            "percentage": "0.00",
             "amount": {
               "currency": "INR",
-              "value": "100.0"
+              "value": "40"
             }
-          },
-          "refund_eligible": true,
-          "reason_required": true
+          }
         }
-      ],
-      "tags": [
-        {
-          "code": "bap_terms",
-          "list": [
-            {
-              "code": "accept_bpp_terms",
-              "value": "Y"
-            }
-          ]
-        }
-      ],
-      "created_at": "2024-09-27T11:34:23.011Z",
-      "updated_at": "2024-09-27T11:34:24.486Z"
+      ]
     }
   }
 }
