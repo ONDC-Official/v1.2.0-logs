@@ -1,55 +1,83 @@
 {
-  "context": {
-    "domain": "nic2004:60232",
-    "action": "search",
-    "core_version": "1.2.0",
-    "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
-    "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
-    "transaction_id": "a2314ca0-dd25-4ed4-8bfe-673b1ed0ea5e",
-    "message_id": "7355e902-b6d3-4b8f-9a31-730f2c6f22f7",
-    "city": "std:080",
-    "country": "IND",
-    "timestamp": "2024-09-03T13:24:32.177Z",
-    "ttl": "PT30S"
-  },
-  "message": {
-    "intent": {
-      "category": { "id": "Standard Delivery" },
-      "provider": {
-        "time": {
-          "days": "1,2,3,4,5,6,7",
-          "schedule": { "holidays": [] },
-          "duration": "PT30M",
-          "range": { "start": "0000", "end": "2359" }
+    "context": {
+        "domain": "nic2004:60232",
+        "action": "search",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
+        "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
+        "transaction_id": "1bad635a-8450-4fb1-ba1d-ea221f0bcac8",
+        "message_id": "2b9363db-8556-4ace-9f42-96d9136df357",
+        "city": "std:080",
+        "country": "IND",
+        "timestamp": "2024-10-01T12:38:17.237Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "category": {
+                "id": "Standard Delivery"
+            },
+            "provider": {
+                "time": {
+                    "days": "1,2,3,4,5,6,7",
+                    "schedule": {
+                        "holidays": []
+                    },
+                    "duration": "PT0M",
+                    "range": {
+                        "start": "0000",
+                        "end": "2359"
+                    }
+                }
+            },
+            "fulfillment": {
+                "type": "Delivery",
+                "start": {
+                    "location": {
+                        "gps": "12.982017, 77.587606",
+                        "address": {
+                            "area_code": "560001"
+                        }
+                    }
+                },
+                "end": {
+                    "location": {
+                        "gps": "28.626725,77.205552",
+                        "address": {
+                            "area_code": "110001"
+                        }
+                    }
+                }
+            },
+            "payment": {
+                "type": "POST-FULFILLMENT"
+            },
+            "@ondc/org/payload_details": {
+                "weight": {
+                    "unit": "kilogram",
+                    "value": 1
+                },
+                "category": "Grocery",
+                "value": {
+                    "currency": "INR",
+                    "value": "275"
+                },
+                "dimensions": {
+                    "length": {
+                        "unit": "centimeter",
+                        "value": 23.5
+                    },
+                    "breadth": {
+                        "unit": "centimeter",
+                        "value": 17.5
+                    },
+                    "height": {
+                        "unit": "centimeter",
+                        "value": 6
+                    }
+                },
+                "dangerous_goods": false
+            }
         }
-      },
-      "fulfillment": {
-        "type": "Delivery",
-        "start": {
-          "location": {
-            "gps": "12.982017, 77.587606",
-            "address": { "area_code": "560001" }
-          }
-        },
-        "end": {
-          "location": {
-            "gps": "30.755151,76.654785",
-            "address": { "area_code": "140301" }
-          }
-        }
-      },
-      "payment": { "type": "POST-FULFILLMENT" },
-      "@ondc/org/payload_details": {
-        "weight": { "unit": "kilogram", "value": 0.2 },
-        "category": "Grocery",
-        "value": { "currency": "INR", "value": "580" },
-        "dimensions": {
-          "length": { "unit": "centimeter", "value": 23.5 },
-          "breadth": { "unit": "centimeter", "value": 17.5 },
-          "height": { "unit": "centimeter", "value": 6 }
-        },
-        "dangerous_goods": false
-      }
     }
-  }
 }
