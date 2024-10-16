@@ -11,13 +11,13 @@
         "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
         "bpp_id": "ondc.sequelstring.com/seller/protocol",
         "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
-        "message_id": "cff2a351-754f-4554-978f-fe0086cabe99",
-        "timestamp": "2024-10-13T07:03:05.598Z"
+        "message_id": "85cdc386-3f14-4d26-86ab-dbb537fd3857",
+        "timestamp": "2024-10-13T07:02:22.387Z"
     },
     "message": {
         "order": {
             "id": "ondc_cxt2vg",
-            "state": "Completed",
+            "state": "In-progress",
             "provider": {
                 "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
             },
@@ -62,7 +62,7 @@
                     "type": "Delivery",
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Agent-assigned"
                         }
                     },
                     "tracking": true,
@@ -87,18 +87,15 @@
                             "email": "noreply@mp2.in"
                         },
                         "time": {
-                            "duration": "PT15M",
+                            "duration": "PT20M",
                             "range": {
                                 "start": "2024-10-13T09:00:00.000Z",
                                 "end": "2024-10-13T23:00:00.000Z"
-                            },
-                            "timestamp": "2024-10-13T07:02:41.186Z"
+                            }
                         },
                         "instructions": {
-                            "name": "Proof Of Pickup",
-                            "images": [
-                                "http://sequelstring-lsp-ondc.com/proof"
-                            ]
+                            "code": "3",
+                            "short_desc": "2233"
                         }
                     },
                     "end": {
@@ -122,34 +119,26 @@
                             "email": "noreply@mp2.in"
                         },
                         "instructions": {
-                            "name": "Proof Of Delivery",
-                            "images": [
-                                "http://sequelstring-lsp-ondc.com/proof"
-                            ]
-                        },
-                        "time": {
-                            "range": {
-                                "start": "2024-10-14T09:30:00.000Z",
-                                "end": "2024-10-14T19:00:00.000Z"
-                            },
-                            "timestamp": "2024-10-13T07:03:05.598Z"
+                            "code": "1",
+                            "short_desc": "3295"
                         }
                     },
                     "tags": [
                         {
-                            "code": "tracking",
+                            "code": "state",
                             "list": [
                                 {
-                                    "code": "gps_enabled",
+                                    "code": "ready_to_ship",
                                     "value": "yes"
-                                },
+                                }
+                            ]
+                        },
+                        {
+                            "code": "rto_action",
+                            "list": [
                                 {
-                                    "code": "url_enabled",
-                                    "value": "yes"
-                                },
-                                {
-                                    "code": "url",
-                                    "value": "http://sequelstring-lsp-ondc.com/track"
+                                    "code": "return_to_origin",
+                                    "value": "no"
                                 }
                             ]
                         }
@@ -198,8 +187,7 @@
                         "settlement_bank_account_no": "123456789123456",
                         "settlement_ifsc_code": "SBI00001234"
                     }
-                ],
-                "status": "NOT-PAID"
+                ]
             },
             "@ondc/org/linked_order": {
                 "items": [
@@ -257,7 +245,7 @@
                 }
             },
             "created_at": "2024-10-13T07:01:48.881Z",
-            "updated_at": "2024-10-13T07:03:05.598Z"
+            "updated_at": "2024-10-13T07:02:22.387Z"
         }
     }
 }
