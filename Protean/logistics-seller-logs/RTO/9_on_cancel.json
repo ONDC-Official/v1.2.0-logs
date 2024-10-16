@@ -1,34 +1,52 @@
 {
   "context": {
     "domain": "nic2004:60232",
-    "action": "confirm",
+    "action": "on_cancel",
     "core_version": "1.2.0",
     "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
     "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
     "bpp_id": "logistics-admin-bpp-preprod.bharatvyapaar.com",
     "bpp_uri": "https://logistics-admin-bpp-preprod.bharatvyapaar.com",
-    "transaction_id": "64da76fa-ce4d-438f-accc-431814dd476a",
-    "message_id": "68ea1964-503d-4f7f-9a28-b4814dd689ec",
+    "transaction_id": "89eb95e2-161e-4fc9-92e1-9b066065c7a7",
+    "message_id": "d5e7cc6d-d627-4c8b-a053-23148e0c4670",
     "city": "std:080",
     "country": "IND",
-    "timestamp": "2024-10-11T14:57:18.898Z",
-    "ttl": "PT30S"
+    "timestamp": "2024-10-11T14:52:13.560Z"
   },
   "message": {
     "order": {
-      "id": "2024-10-11-88785741",
-      "state": "Created",
+      "id": "2024-10-11-69857789",
+      "state": "Cancelled",
+      "cancellation": {
+        "cancelled_by": "logistics-admin-bpp-preprod.bharatvyapaar.com",
+        "reason": {
+          "id": "013"
+        }
+      },
       "provider": {
         "id": "7a5aa674-ada5-4ad2-a656-3086bcf44483"
       },
       "items": [
         {
           "id": "Standard",
-          "category_id": "Immediate Delivery",
-          "fulfillment_id": "079d840a-3e4e-4006-a12d-2f76251a41ae",
+          "fulfillment_id": "53ce40d6-c04c-4b5a-893c-e0a81d321507",
           "descriptor": {
             "code": "P2P"
           },
+          "category_id": "Immediate Delivery",
+          "time": {
+            "label": "TAT",
+            "duration": "PT60M",
+            "timestamp": "2024-10-11"
+          }
+        },
+        {
+          "id": "rto",
+          "fulfillment_id": "b43ab055-fe1d-40e1-85b9-07d7d04870af",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "category_id": "Immediate Delivery",
           "time": {
             "label": "TAT",
             "duration": "PT60M",
@@ -39,7 +57,7 @@
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "99.12"
+          "value": "128.86"
         },
         "breakup": [
           {
@@ -57,16 +75,43 @@
               "currency": "INR",
               "value": "15.12"
             }
+          },
+          {
+            "@ondc/org/item_id": "rto",
+            "@ondc/org/title_type": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "26.77"
+            }
+          },
+          {
+            "@ondc/org/item_id": "rto",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "2.97"
+            }
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "079d840a-3e4e-4006-a12d-2f76251a41ae",
+          "id": "53ce40d6-c04c-4b5a-893c-e0a81d321507",
           "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tracking": false,
           "start": {
             "time": {
-              "duration": "PT15M"
+              "duration": "PT15M",
+              "range": {
+                "start": "2024-10-11T14:50:21.536Z",
+                "end": "2024-10-11T15:05:21.536Z"
+              },
+              "timestamp": "2024-10-11T14:51:52.924Z"
             },
             "person": {
               "name": "Vijendra Patidar"
@@ -89,11 +134,16 @@
             },
             "instructions": {
               "code": "3",
-              "short_desc": "2711",
-              "long_desc": "Order Pick Up Confirmation Code"
+              "short_desc": "4217"
             }
           },
           "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-11T15:05:21.536Z",
+                "end": "2024-10-11T15:50:21.536Z"
+              }
+            },
             "person": {
               "name": "Ranvijay"
             },
@@ -115,30 +165,107 @@
             },
             "instructions": {
               "code": "2",
-              "short_desc": "9443",
-              "long_desc": "Delivery Confirmation Code"
+              "short_desc": "8528"
             }
+          },
+          "agent": {
+            "name": "Lila Cormier",
+            "phone": "8751995480"
+          },
+          "vehicle": {
+            "registration": "KA 54 XYZ 1234"
           },
           "tags": [
             {
-              "code": "state",
+              "code": "rto_event",
               "list": [
                 {
-                  "code": "ready_to_ship",
-                  "value": "yes"
+                  "code": "retry_count",
+                  "value": "1"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "b43ab055-fe1d-40e1-85b9-07d7d04870af"
+                },
+                {
+                  "code": "cancellation_reason_id",
+                  "value": "013"
+                },
+                {
+                  "code": "sub_reason_id",
+                  "value": "004"
+                },
+                {
+                  "code": "cancelled_by",
+                  "value": "logistics-admin-bpp-preprod.bharatvyapaar.com"
                 }
               ]
             },
             {
-              "code": "rto_action",
+              "code": "precancel_state",
               "list": [
                 {
-                  "code": "return_to_origin",
-                  "value": "yes"
+                  "code": "fulfillment_state",
+                  "value": "Out-for-delivery"
+                },
+                {
+                  "code": "updated_at",
+                  "value": "2024-10-11T14:52:03.775Z"
                 }
               ]
             }
           ]
+        },
+        {
+          "id": "b43ab055-fe1d-40e1-85b9-07d7d04870af",
+          "type": "RTO",
+          "start": {
+            "time": {
+              "range": {
+                "start": "2024-10-11T15:02:13.549Z",
+                "end": "2024-10-11T15:17:13.549Z"
+              },
+              "timestamp": "2024-10-11T14:52:13.550Z"
+            },
+            "location": {
+              "gps": "12.981314,77.595093",
+              "address": {
+                "name": "Ranvijay",
+                "building": "protean",
+                "locality": "Raj Bhavan Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-11T15:37:13.549Z",
+                "end": "2024-10-11T15:52:13.549Z"
+              }
+            },
+            "location": {
+              "gps": "12.982017, 77.587606",
+              "address": {
+                "name": "Vijendra Grocery Store",
+                "building": "H-123, Surya Shop",
+                "locality": "Lal Bangalore Bazaar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560001"
+              }
+            }
+          },
+          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "RTO-Initiated"
+            }
+          }
         }
       ],
       "billing": {
@@ -155,12 +282,13 @@
         "tax_number": "22AAAAA0000A1Z5",
         "phone": "7617679010",
         "email": "ranvijay.singh@protean.com",
-        "created_at": "2024-10-11T14:57:16.107Z",
-        "updated_at": "2024-10-11T14:57:16.107Z"
+        "created_at": "2024-10-11T14:50:18.234Z",
+        "updated_at": "2024-10-11T14:50:18.234Z"
       },
       "payment": {
         "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
+        "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -172,8 +300,8 @@
             "quantity": {
               "count": 5,
               "measure": {
-                "unit": "gram",
-                "value": 1000
+                "value": 1000,
+                "unit": "gram"
               }
             },
             "price": {
@@ -197,7 +325,7 @@
           }
         },
         "order": {
-          "id": "2024-10-11-276201",
+          "id": "2024-10-11-595982",
           "weight": {
             "unit": "gram",
             "value": 5000
@@ -218,8 +346,8 @@
           }
         }
       },
-      "created_at": "2024-10-11T14:57:18.898Z",
-      "updated_at": "2024-10-11T14:57:18.898Z"
+      "updated_at": "2024-10-11T14:52:13.560Z",
+      "created_at": "2024-10-11T14:50:20.105Z"
     }
   }
 }
