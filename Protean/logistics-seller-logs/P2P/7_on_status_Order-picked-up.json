@@ -1,31 +1,27 @@
 {
   "context": {
     "domain": "nic2004:60232",
-    "action": "confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
     "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
     "bpp_id": "logistics-admin-bpp-preprod.bharatvyapaar.com",
     "bpp_uri": "https://logistics-admin-bpp-preprod.bharatvyapaar.com",
-    "transaction_id": "64da76fa-ce4d-438f-accc-431814dd476a",
-    "message_id": "68ea1964-503d-4f7f-9a28-b4814dd689ec",
+    "transaction_id": "26ce7c8e-4232-4d98-be3e-532f9fee94b0",
+    "message_id": "330c5cde-1f7b-4654-a1da-38a012218a9e",
     "city": "std:080",
     "country": "IND",
-    "timestamp": "2024-10-11T14:57:18.898Z",
-    "ttl": "PT30S"
+    "timestamp": "2024-10-11T14:39:02.490Z"
   },
   "message": {
     "order": {
-      "id": "2024-10-11-88785741",
-      "state": "Created",
+      "id": "2024-10-11-54738235",
+      "state": "In-progress",
       "provider": {
-        "id": "7a5aa674-ada5-4ad2-a656-3086bcf44483"
+        "id": "b1cdcf7b-32c9-46b3-85d7-308a3e99aa34"
       },
       "items": [
         {
-          "id": "Standard",
-          "category_id": "Immediate Delivery",
-          "fulfillment_id": "079d840a-3e4e-4006-a12d-2f76251a41ae",
           "descriptor": {
             "code": "P2P"
           },
@@ -33,7 +29,10 @@
             "label": "TAT",
             "duration": "PT60M",
             "timestamp": "2024-10-11"
-          }
+          },
+          "id": "Standard",
+          "fulfillment_id": "984134fd-6f60-43b0-8802-3e5f258b4ad3",
+          "category_id": "Immediate Delivery"
         }
       ],
       "quote": {
@@ -43,30 +42,47 @@
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
               "value": "84.00"
-            }
+            },
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "delivery"
           },
           {
-            "@ondc/org/item_id": "Standard",
-            "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
               "value": "15.12"
-            }
+            },
+            "@ondc/org/item_id": "Standard",
+            "@ondc/org/title_type": "tax"
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "079d840a-3e4e-4006-a12d-2f76251a41ae",
+          "agent": {
+            "name": "Brandi Braun",
+            "phone": "9729214153"
+          },
+          "vehicle": {
+            "registration": "KA 54 XYZ 1234"
+          },
+          "state": {
+            "descriptor": {
+              "code": "Order-picked-up"
+            }
+          },
+          "id": "984134fd-6f60-43b0-8802-3e5f258b4ad3",
           "type": "Delivery",
           "start": {
             "time": {
-              "duration": "PT15M"
+              "range": {
+                "start": "2024-10-11T14:37:44.163Z",
+                "end": "2024-10-11T14:52:44.163Z"
+              },
+              "duration": "PT15M",
+              "timestamp": "2024-10-11T14:39:02.307Z"
             },
             "person": {
               "name": "Vijendra Patidar"
@@ -89,11 +105,16 @@
             },
             "instructions": {
               "code": "3",
-              "short_desc": "2711",
-              "long_desc": "Order Pick Up Confirmation Code"
+              "short_desc": "5473"
             }
           },
           "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-11T14:52:44.163Z",
+                "end": "2024-10-11T15:37:44.163Z"
+              }
+            },
             "person": {
               "name": "Ranvijay"
             },
@@ -115,32 +136,32 @@
             },
             "instructions": {
               "code": "2",
-              "short_desc": "9443",
-              "long_desc": "Delivery Confirmation Code"
+              "short_desc": "8965"
             }
           },
           "tags": [
             {
-              "code": "state",
+              "code": "tracking",
               "list": [
                 {
-                  "code": "ready_to_ship",
+                  "code": "gps_enabled",
                   "value": "yes"
-                }
-              ]
-            },
-            {
-              "code": "rto_action",
-              "list": [
+                },
                 {
-                  "code": "return_to_origin",
-                  "value": "yes"
+                  "code": "url_enabled",
+                  "value": "no"
                 }
               ]
             }
-          ]
+          ],
+          "tracking": true
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID"
+      },
       "billing": {
         "name": "Ranvijay",
         "address": {
@@ -155,33 +176,10 @@
         "tax_number": "22AAAAA0000A1Z5",
         "phone": "7617679010",
         "email": "ranvijay.singh@protean.com",
-        "created_at": "2024-10-11T14:57:16.107Z",
-        "updated_at": "2024-10-11T14:57:16.107Z"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
+        "created_at": "2024-10-11T14:37:42.779Z",
+        "updated_at": "2024-10-11T14:37:42.779Z"
       },
       "@ondc/org/linked_order": {
-        "items": [
-          {
-            "category_id": "Grocery",
-            "descriptor": {
-              "name": "Haldiram Mini Bhakarwadi 200gm"
-            },
-            "quantity": {
-              "count": 5,
-              "measure": {
-                "unit": "gram",
-                "value": 1000
-              }
-            },
-            "price": {
-              "currency": "INR",
-              "value": "275"
-            }
-          }
-        ],
         "provider": {
           "descriptor": {
             "name": "Vijendra Grocery Store"
@@ -197,11 +195,11 @@
           }
         },
         "order": {
-          "id": "2024-10-11-276201",
           "weight": {
             "unit": "gram",
             "value": 5000
           },
+          "id": "2024-10-11-458667",
           "dimensions": {
             "length": {
               "unit": "centimeter",
@@ -216,10 +214,27 @@
               "value": 6
             }
           }
-        }
-      },
-      "created_at": "2024-10-11T14:57:18.898Z",
-      "updated_at": "2024-10-11T14:57:18.898Z"
+        },
+        "items": [
+          {
+            "descriptor": {
+              "name": "Haldiram Mini Bhakarwadi 200gm"
+            },
+            "quantity": {
+              "measure": {
+                "value": 1000,
+                "unit": "gram"
+              },
+              "count": 5
+            },
+            "price": {
+              "currency": "INR",
+              "value": "275"
+            },
+            "category_id": "Grocery"
+          }
+        ]
+      }
     }
   }
 }
