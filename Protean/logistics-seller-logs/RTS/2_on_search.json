@@ -1,0 +1,96 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "action": "on_search",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
+    "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
+    "transaction_id": "39516b17-a376-4244-8180-a8a70b28d477",
+    "message_id": "45c93661-be72-4aad-816d-2ef38a186363",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2024-10-01T13:44:40.515Z",
+    "bpp_id": "logistics-admin-bpp-preprod.bharatvyapaar.com",
+    "bpp_uri": "https://logistics-admin-bpp-preprod.bharatvyapaar.com"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": { "name": "WITS Logistics" },
+      "bpp/providers": [
+        {
+          "id": "b1cdcf7b-32c9-46b3-85d7-308a3e99aa34",
+          "descriptor": {
+            "name": "ONDC Logistics",
+            "long_desc": "ONDC Logistics to delivery your goods in one go",
+            "short_desc": "ONDC Logistics to delivery your goods in one go"
+          },
+          "categories": [
+            {
+              "id": "Immediate Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT60M",
+                "timestamp": "2024-10-01"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "234c8cfd-63d3-484a-b686-3d349849b95e",
+              "type": "Delivery",
+              "start": { "time": { "duration": "PT15M" } },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    { "code": "motorable_distance_type", "value": "kilometer" },
+                    { "code": "motorable_distance", "value": "45.00" }
+                  ]
+                }
+              ]
+            },
+            { "id": "8e1304d6-be9a-4eaa-9b13-e253a90f0ebb", "type": "RTO" }
+          ],
+          "items": [
+            {
+              "id": "Standard",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "234c8cfd-63d3-484a-b686-3d349849b95e",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Immediate Delivery",
+                "long_desc": "Upto 60 mins for Delivery",
+                "short_desc": "Upto 60 mins for Delivery"
+              },
+              "price": { "currency": "INR", "value": "99.12" },
+              "time": {
+                "label": "TAT",
+                "duration": "PT60M",
+                "timestamp": "2024-10-02T13:44:40.510Z"
+              }
+            },
+            {
+              "id": "rto",
+              "parent_item_id": "Standard",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "8e1304d6-be9a-4eaa-9b13-e253a90f0ebb",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": { "currency": "INR", "value": "29.74" },
+              "time": {
+                "label": "TAT",
+                "duration": "PT60M",
+                "timestamp": "2024-10-01"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
