@@ -3,20 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_confirm",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
     "bpp_id": "preprod.logistics-seller.mp2.in",
     "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-    "transaction_id": "e699e42a-b71f-40d5-ae52-a6a0be54eade",
-    "message_id": "d97056c8-4570-419e-a84e-ab11d87ac713",
-    "timestamp": "2024-10-24T16:08:39.913Z"
+    "transaction_id": "b4c2feb7-2302-4733-8483-574041b2bb05",
+    "message_id": "msg_uu2qbce773dumte6",
+    "timestamp": "2024-10-25T08:43:49.074Z"
   },
   "message": {
     "order": {
-      "id": "1b5e95e0a0ff445e91b516df9760baf3",
-      "state": "Accepted",
+      "id": "898aa41d1007434ab4993f18c73d6716",
+      "state": "Cancelled",
       "provider": {
         "id": "MP2"
       },
@@ -31,14 +31,27 @@
           "time": {
             "label": "TAT",
             "duration": "PT55M",
-            "timestamp": "2024-10-24"
+            "timestamp": "2024-10-25"
+          }
+        },
+        {
+          "id": "mp2_immediate-RTO",
+          "fulfillment_id": "mp2_immediate_f1-RTO",
+          "category_id": "Immediate Delivery",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "PT55M",
+            "timestamp": "2024-10-25"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "25.0"
+          "value": "50.0"
         },
         "breakup": [
           {
@@ -56,6 +69,22 @@
               "currency": "INR",
               "value": "3.81"
             }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate-RTO",
+            "@ondc/org/title_type": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "21.19"
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate-RTO",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "3.81"
+            }
           }
         ]
       },
@@ -65,16 +94,17 @@
           "type": "Delivery",
           "state": {
             "descriptor": {
-              "code": "Pending"
+              "code": "Cancelled"
             }
           },
           "start": {
             "time": {
               "range": {
-                "start": "2024-10-24T16:08:37.634Z",
-                "end": "2024-10-24T16:28:37.634Z"
+                "start": "2024-10-25T08:19:49.509Z",
+                "end": "2024-10-25T08:39:49.509Z"
               },
-              "duration": "PT20M"
+              "duration": "PT20M",
+              "timestamp": "2024-10-25T08:25:08.864Z"
             },
             "person": {
               "name": "Codezyng Test Store"
@@ -94,6 +124,11 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
+            },
+            "instructions": {
+              "images": [
+                "https://s3.amazonaws.com/mp2-lsp/image1.png"
+              ]
             }
           },
           "end": {
@@ -118,43 +153,108 @@
             },
             "time": {
               "range": {
-                "start": "2024-10-24T16:28:37.634Z",
-                "end": "2024-10-24T17:03:37.634Z"
+                "start": "2024-10-25T08:39:49.509Z",
+                "end": "2024-10-25T09:14:49.509Z"
               }
             }
           },
+          "tracking": false,
           "tags": [
             {
-              "code": "weather_check",
+              "code": "tracking",
               "list": [
                 {
-                  "code": "raining",
-                  "value": "no"
+                  "code": "gps_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url",
+                  "value": "https://track.mp2.in/r/898aa41d1007434ab4993f18c73d6716"
                 }
               ]
             },
             {
-              "code": "state",
+              "code": "precancel_state",
               "list": [
                 {
-                  "code": "ready_to_ship",
-                  "value": "yes"
+                  "code": "fulfillment_state",
+                  "value": "Out-for-delivery"
+                },
+                {
+                  "code": "updated_at",
+                  "value": "2024-10-25T08:25:08.864Z"
                 }
               ]
             },
             {
-              "code": "rto_action",
+              "code": "rto_event",
               "list": [
                 {
-                  "code": "return_to_origin",
-                  "value": "yes"
+                  "code": "retry_count",
+                  "value": "0"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "mp2_immediate_f1-RTO"
+                },
+                {
+                  "code": "cancellation_reason_id",
+                  "value": "017"
+                },
+                {
+                  "code": "cancelled_by",
+                  "value": "preprod.logistics-seller.mp2.in"
+                },
+                {
+                  "code": "sub_reason_id",
+                  "value": ""
                 }
               ]
             }
           ],
-          "tracking": true
+          "agent": {
+            "name": "MP2Delivery",
+            "phone": "9000012345"
+          }
+        },
+        {
+          "id": "mp2_immediate_f1-RTO",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Delivered"
+            }
+          },
+          "tracking": false,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2024-10-25T08:30:42.973Z",
+                "end": "2024-10-25T09:25:42.973Z"
+              },
+              "timestamp": "2024-10-25T08:30:42.973Z"
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-25T08:30:42.973Z",
+                "end": "2024-10-25T09:05:42.973Z"
+              },
+              "timestamp": "2024-10-25T08:43:49.044Z"
+            }
+          }
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID"
+      },
       "billing": {
         "name": "eSamudaay",
         "address": {
@@ -169,12 +269,8 @@
         "tax_number": "12ABCDE12343D4E",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-10-24T16:08:37.634Z",
-        "updated_at": "2024-10-24T16:08:37.634Z"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
+        "created_at": "2024-10-25T08:19:49.509Z",
+        "updated_at": "2024-10-25T08:19:49.509Z"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -210,7 +306,7 @@
           }
         },
         "order": {
-          "id": "d8c036",
+          "id": "013513",
           "weight": {
             "unit": "kilogram",
             "value": 1.0
@@ -231,8 +327,14 @@
           }
         }
       },
-      "created_at": "2024-10-24T16:08:37.634Z",
-      "updated_at": "2024-10-24T16:08:39.913Z"
+      "updated_at": "2024-10-25T08:43:49.044Z",
+      "created_at": "2024-10-25T08:19:49.509Z",
+      "cancellation": {
+        "cancelled_by": "preprod.logistics-seller.mp2.in",
+        "reason": {
+          "id": "017"
+        }
+      }
     }
   }
 }

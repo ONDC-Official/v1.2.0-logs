@@ -1,38 +1,47 @@
 {
   "context": {
+    "action": "confirm",
+    "transaction_id": "540154ec-57a3-4425-916f-74d12a90f207",
+    "message_id": "5393d6d5-e820-4c16-bb1a-048da6f743b0",
+    "city": "std:080",
     "domain": "nic2004:60232",
     "country": "IND",
-    "city": "std:080",
-    "action": "on_confirm",
     "core_version": "1.2.0",
+    "timestamp": "2024-10-25T08:55:54.646Z",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
     "bpp_id": "preprod.logistics-seller.mp2.in",
     "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
-    "transaction_id": "e699e42a-b71f-40d5-ae52-a6a0be54eade",
-    "message_id": "d97056c8-4570-419e-a84e-ab11d87ac713",
-    "timestamp": "2024-10-24T16:08:39.913Z"
+    "ttl": "PT30S"
   },
   "message": {
     "order": {
-      "id": "1b5e95e0a0ff445e91b516df9760baf3",
-      "state": "Accepted",
+      "id": "e067ce9fe6144d8d992f1306017dc192",
+      "state": "Created",
       "provider": {
         "id": "MP2"
       },
       "items": [
         {
           "id": "mp2_immediate",
-          "fulfillment_id": "mp2_immediate_f1",
-          "category_id": "Immediate Delivery",
-          "descriptor": {
-            "code": "P2P"
-          },
           "time": {
             "label": "TAT",
             "duration": "PT55M",
-            "timestamp": "2024-10-24"
-          }
+            "timestamp": "2024-10-25"
+          },
+          "price": {
+            "value": "25.0",
+            "currency": "INR"
+          },
+          "descriptor": {
+            "code": "P2P",
+            "name": "MP2 Immediate Delivery",
+            "long_desc": "Immediate Delivery by MP2",
+            "short_desc": "Immediate Delivery by MP2"
+          },
+          "category_id": "Immediate Delivery",
+          "fulfillment_id": "mp2_immediate_f1",
+          "parent_item_id": ""
         }
       ],
       "quote": {
@@ -63,22 +72,7 @@
         {
           "id": "mp2_immediate_f1",
           "type": "Delivery",
-          "state": {
-            "descriptor": {
-              "code": "Pending"
-            }
-          },
           "start": {
-            "time": {
-              "range": {
-                "start": "2024-10-24T16:08:37.634Z",
-                "end": "2024-10-24T16:28:37.634Z"
-              },
-              "duration": "PT20M"
-            },
-            "person": {
-              "name": "Codezyng Test Store"
-            },
             "location": {
               "gps": "12.949415732309127, 77.5846804305911",
               "address": {
@@ -94,12 +88,15 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
+            },
+            "time": {
+              "duration": "PT20M"
+            },
+            "person": {
+              "name": "Codezyng Test Store"
             }
           },
           "end": {
-            "person": {
-              "name": "Vignesh as Agent"
-            },
             "location": {
               "gps": "12.945602, 77.573401",
               "address": {
@@ -116,29 +113,17 @@
               "phone": "7846898204",
               "email": "vignesh@codezyng.com"
             },
-            "time": {
-              "range": {
-                "start": "2024-10-24T16:28:37.634Z",
-                "end": "2024-10-24T17:03:37.634Z"
-              }
+            "person": {
+              "name": "Vignesh as Agent"
             }
           },
           "tags": [
-            {
-              "code": "weather_check",
-              "list": [
-                {
-                  "code": "raining",
-                  "value": "no"
-                }
-              ]
-            },
             {
               "code": "state",
               "list": [
                 {
                   "code": "ready_to_ship",
-                  "value": "yes"
+                  "value": "no"
                 }
               ]
             },
@@ -151,26 +136,25 @@
                 }
               ]
             }
-          ],
-          "tracking": true
+          ]
         }
       ],
       "billing": {
         "name": "eSamudaay",
+        "email": "abcd.efgh@gmail.com",
+        "phone": "9886098860",
         "address": {
-          "name": "eSamudaay building",
-          "building": "My building",
-          "locality": "Jayanagar",
           "city": "Bengaluru",
+          "name": "eSamudaay building",
           "state": "Karnataka",
           "country": "India",
+          "building": "My building",
+          "locality": "Jayanagar",
           "area_code": "560076"
         },
+        "created_at": "2024-10-25T08:55:52.379Z",
         "tax_number": "12ABCDE12343D4E",
-        "phone": "9886098860",
-        "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-10-24T16:08:37.634Z",
-        "updated_at": "2024-10-24T16:08:37.634Z"
+        "updated_at": "2024-10-25T08:55:52.379Z"
       },
       "payment": {
         "collected_by": "BAP",
@@ -179,21 +163,21 @@
       "@ondc/org/linked_order": {
         "items": [
           {
-            "category_id": "Grocery",
-            "descriptor": {
-              "name": "headphone"
+            "price": {
+              "value": "450",
+              "currency": "INR"
             },
             "quantity": {
               "count": 1,
               "measure": {
                 "unit": "unit",
-                "value": 1.0
+                "value": 1
               }
             },
-            "price": {
-              "currency": "INR",
-              "value": "450"
-            }
+            "descriptor": {
+              "name": "headphone"
+            },
+            "category_id": "Grocery"
           }
         ],
         "provider": {
@@ -201,21 +185,27 @@
             "name": "Codezyng Test Store"
           },
           "address": {
+            "gps": "12.949415732309127, 77.5846804305911",
+            "city": "Bengaluru",
             "name": "Codezyng Test Store",
+            "state": "Karnataka",
+            "country": "India",
             "building": "E Samudaay Store",
             "locality": "Mavalli",
-            "city": "Bengaluru",
-            "state": "Karnataka",
             "area_code": "560004"
           }
         },
         "order": {
-          "id": "d8c036",
+          "id": "5f8259",
           "weight": {
             "unit": "kilogram",
-            "value": 1.0
+            "value": 1
           },
           "dimensions": {
+            "height": {
+              "unit": "centimeter",
+              "value": 1.0
+            },
             "length": {
               "unit": "centimeter",
               "value": 1.0
@@ -223,16 +213,12 @@
             "breadth": {
               "unit": "centimeter",
               "value": 1.0
-            },
-            "height": {
-              "unit": "centimeter",
-              "value": 1.0
             }
           }
         }
       },
-      "created_at": "2024-10-24T16:08:37.634Z",
-      "updated_at": "2024-10-24T16:08:39.913Z"
+      "created_at": "2024-10-25T08:55:52.379Z",
+      "updated_at": "2024-10-25T08:55:52.379Z"
     }
   }
 }
