@@ -7,16 +7,16 @@
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
-    "transaction_id": "29c16af0-e225-4a1c-8066-b6657b42c71b",
-    "message_id": "0b17be6f-244c-4f7d-909d-9446584fdca9",
-    "timestamp": "2024-08-26T06:49:12.364Z",
-    "bpp_id": "preprod.pidge-lsp.mp2.in",
-    "bpp_uri": "https://preprod.pidge-lsp.mp2.in/ondc"
+    "transaction_id": "e699e42a-b71f-40d5-ae52-a6a0be54eade",
+    "message_id": "eee27dcd-4f00-4347-b922-172e29d0bd83",
+    "timestamp": "2024-10-24T16:07:52.881Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
   },
   "message": {
     "catalog": {
       "bpp/descriptor": {
-        "name": "Pidge",
+        "name": "MP2",
         "tags": [
           {
             "code": "bpp_terms",
@@ -24,6 +24,10 @@
               {
                 "code": "static_terms",
                 "value": ""
+              },
+              {
+                "code": "np_tax_type",
+                "value": "Normal"
               }
             ]
           }
@@ -31,11 +35,11 @@
       },
       "bpp/providers": [
         {
-          "id": "Pidge",
+          "id": "MP2",
           "descriptor": {
-            "name": "Pidge",
-            "short_desc": "Pidge",
-            "long_desc": "Pidge Logistics"
+            "name": "MP2",
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider"
           },
           "categories": [
             {
@@ -43,13 +47,13 @@
               "time": {
                 "label": "TAT",
                 "duration": "PT55M",
-                "timestamp": "2024-08-26"
+                "timestamp": "2024-10-24"
               }
             }
           ],
           "fulfillments": [
             {
-              "id": "pidge_immediate_f1",
+              "id": "mp2_immediate_f1",
               "type": "Delivery",
               "start": {
                 "time": {
@@ -66,44 +70,44 @@
                     },
                     {
                       "code": "motorable_distance",
-                      "value": "1.36"
+                      "value": "2.07"
                     }
                   ]
                 }
               ]
             },
             {
-              "id": "pidge_immediate_f1-RTO",
+              "id": "mp2_immediate_f1-RTO",
               "type": "RTO"
             }
           ],
           "items": [
             {
-              "id": "pidge_immediate",
+              "id": "mp2_immediate",
               "parent_item_id": "",
               "category_id": "Immediate Delivery",
-              "fulfillment_id": "pidge_immediate_f1",
+              "fulfillment_id": "mp2_immediate_f1",
               "descriptor": {
                 "code": "P2P",
-                "name": "Pidge Logistics",
-                "short_desc": "Immediate Delivery powered by Pidge",
-                "long_desc": "Immediate Delivery powered by Pidge"
+                "name": "MP2 Immediate Delivery",
+                "short_desc": "Immediate Delivery by MP2",
+                "long_desc": "Immediate Delivery by MP2"
               },
               "price": {
                 "currency": "INR",
-                "value": "11.8"
+                "value": "25.0"
               },
               "time": {
                 "label": "TAT",
                 "duration": "PT55M",
-                "timestamp": "2024-08-26"
+                "timestamp": "2024-10-24"
               }
             },
             {
-              "id": "pidge_immediate-RTO",
-              "parent_item_id": "pidge_immediate",
+              "id": "mp2_immediate-RTO",
+              "parent_item_id": "mp2_immediate",
               "category_id": "Immediate Delivery",
-              "fulfillment_id": "pidge_immediate_f1-RTO",
+              "fulfillment_id": "mp2_immediate_f1-RTO",
               "descriptor": {
                 "code": "P2P",
                 "name": "RTO quote",
@@ -117,7 +121,7 @@
               "time": {
                 "label": "TAT",
                 "duration": "PT55M",
-                "timestamp": "2024-08-26"
+                "timestamp": "2024-10-24"
               }
             }
           ]

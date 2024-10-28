@@ -3,26 +3,27 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_update",
+    "action": "on_confirm",
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
-    "bpp_id": "preprod.pidge-lsp.mp2.in",
-    "bpp_uri": "https://preprod.pidge-lsp.mp2.in/ondc",
-    "transaction_id": "7dd925e8-59c3-40fa-b0e9-8b2a4b3de33c",
-    "message_id": "04f0b57b-73a0-4864-ba8d-58d5481432b6",
-    "timestamp": "2024-08-26T07:09:40.203Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "b4c2feb7-2302-4733-8483-574041b2bb05",
+    "message_id": "755eaa9a-fbaa-4194-a993-c32d9b7a2e0c",
+    "timestamp": "2024-10-25T08:19:52.172Z"
   },
   "message": {
     "order": {
-      "id": "87666472-e481-44f5-9a10-fe7153f4e272",
+      "id": "898aa41d1007434ab4993f18c73d6716",
+      "state": "Accepted",
       "provider": {
-        "id": "Pidge"
+        "id": "MP2"
       },
       "items": [
         {
-          "id": "pidge_immediate",
-          "fulfillment_id": "pidge_immediate_f1",
+          "id": "mp2_immediate",
+          "fulfillment_id": "mp2_immediate_f1",
           "category_id": "Immediate Delivery",
           "descriptor": {
             "code": "P2P"
@@ -30,46 +31,50 @@
           "time": {
             "label": "TAT",
             "duration": "PT55M",
-            "timestamp": "2024-08-26"
+            "timestamp": "2024-10-25"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "11.8"
+          "value": "25.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "10.0"
+              "value": "21.19"
             }
           },
           {
-            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "1.8"
+              "value": "3.81"
             }
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "pidge_immediate_f1",
+          "id": "mp2_immediate_f1",
           "type": "Delivery",
-          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
           "start": {
             "time": {
-              "duration": "PT20M",
               "range": {
-                "start": "2024-08-26T07:09:40.202Z",
-                "end": "2024-08-26T07:29:40.202Z"
-              }
+                "start": "2024-10-25T08:19:49.509Z",
+                "end": "2024-10-25T08:39:49.509Z"
+              },
+              "duration": "PT20M"
             },
             "person": {
               "name": "Codezyng Test Store"
@@ -89,10 +94,6 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
-            },
-            "instructions": {
-              "code": "2",
-              "short_desc": "a8ff"
             }
           },
           "end": {
@@ -117,16 +118,41 @@
             },
             "time": {
               "range": {
-                "start": "2024-08-26T07:29:40.202Z",
-                "end": "2024-08-26T07:44:40.202Z"
+                "start": "2024-10-25T08:39:49.509Z",
+                "end": "2024-10-25T09:14:49.509Z"
               }
             }
           },
-          "state": {
-            "descriptor": {
-              "code": "Searching-for-Agent"
+          "tags": [
+            {
+              "code": "weather_check",
+              "list": [
+                {
+                  "code": "raining",
+                  "value": "no"
+                }
+              ]
+            },
+            {
+              "code": "state",
+              "list": [
+                {
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
+                  "value": "yes"
+                }
+              ]
             }
-          }
+          ],
+          "tracking": true
         }
       ],
       "billing": {
@@ -143,21 +169,12 @@
         "tax_number": "12ABCDE12343D4E",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-08-26T07:03:49.767Z",
-        "updated_at": "2024-08-26T07:03:49.767Z"
+        "created_at": "2024-10-25T08:19:49.509Z",
+        "updated_at": "2024-10-25T08:19:49.509Z"
       },
       "payment": {
         "collected_by": "BAP",
-        "type": "POST-FULFILLMENT",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "eSamudaay",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "123456789012",
-            "settlement_ifsc_code": "SBIN0001234"
-          }
-        ]
+        "type": "POST-FULFILLMENT"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -167,7 +184,7 @@
               "name": "headphone"
             },
             "quantity": {
-              "count": 2,
+              "count": 1,
               "measure": {
                 "unit": "unit",
                 "value": 1.0
@@ -175,7 +192,7 @@
             },
             "price": {
               "currency": "INR",
-              "value": "100"
+              "value": "450"
             }
           }
         ],
@@ -193,7 +210,7 @@
           }
         },
         "order": {
-          "id": "3fa8ff",
+          "id": "013513",
           "weight": {
             "unit": "kilogram",
             "value": 1.0
@@ -214,8 +231,8 @@
           }
         }
       },
-      "state": "In-progress",
-      "updated_at": "2024-08-26T07:09:40.203Z"
+      "created_at": "2024-10-25T08:19:49.509Z",
+      "updated_at": "2024-10-25T08:19:52.172Z"
     }
   }
 }

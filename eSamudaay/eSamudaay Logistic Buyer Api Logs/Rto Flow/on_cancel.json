@@ -7,23 +7,23 @@
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
-    "bpp_id": "preprod.pidge-lsp.mp2.in",
-    "bpp_uri": "https://preprod.pidge-lsp.mp2.in/ondc",
-    "transaction_id": "29c16af0-e225-4a1c-8066-b6657b42c71b",
-    "message_id": "ba4c4a00-7b46-4562-bc95-324638f951db",
-    "timestamp": "2024-08-26T06:59:08.803Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "b4c2feb7-2302-4733-8483-574041b2bb05",
+    "message_id": "msg_uuxj7zlc3zpxntl5",
+    "timestamp": "2024-10-25T08:30:42.998Z"
   },
   "message": {
     "order": {
-      "id": "04a3d03b-a149-4329-bb57-b86c7c7243b4",
+      "id": "898aa41d1007434ab4993f18c73d6716",
       "state": "Cancelled",
       "provider": {
-        "id": "Pidge"
+        "id": "MP2"
       },
       "items": [
         {
-          "id": "pidge_immediate",
-          "fulfillment_id": "pidge_immediate_f1",
+          "id": "mp2_immediate",
+          "fulfillment_id": "mp2_immediate_f1",
           "category_id": "Immediate Delivery",
           "descriptor": {
             "code": "P2P"
@@ -31,37 +31,66 @@
           "time": {
             "label": "TAT",
             "duration": "PT55M",
-            "timestamp": "2024-08-26"
+            "timestamp": "2024-10-25"
+          }
+        },
+        {
+          "id": "mp2_immediate-RTO",
+          "fulfillment_id": "mp2_immediate_f1-RTO",
+          "category_id": "Immediate Delivery",
+          "descriptor": {
+            "code": "P2P"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "PT55M",
+            "timestamp": "2024-10-25"
           }
         }
       ],
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "0.0"
+          "value": "50.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "21.19"
             }
           },
           {
-            "@ondc/org/item_id": "pidge_immediate",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.0"
+              "value": "3.81"
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate-RTO",
+            "@ondc/org/title_type": "rto",
+            "price": {
+              "currency": "INR",
+              "value": "21.19"
+            }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate-RTO",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "3.81"
             }
           }
         ]
       },
       "fulfillments": [
         {
-          "id": "pidge_immediate_f1",
+          "id": "mp2_immediate_f1",
           "type": "Delivery",
           "state": {
             "descriptor": {
@@ -70,11 +99,12 @@
           },
           "start": {
             "time": {
-              "duration": "PT20M",
               "range": {
-                "start": "2024-08-26T06:50:55.160Z",
-                "end": "2024-08-26T07:10:55.160Z"
-              }
+                "start": "2024-10-25T08:19:49.509Z",
+                "end": "2024-10-25T08:39:49.509Z"
+              },
+              "duration": "PT20M",
+              "timestamp": "2024-10-25T08:25:08.864Z"
             },
             "person": {
               "name": "Codezyng Test Store"
@@ -94,6 +124,11 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
+            },
+            "instructions": {
+              "images": [
+                "https://s3.amazonaws.com/mp2-lsp/image1.png"
+              ]
             }
           },
           "end": {
@@ -118,8 +153,8 @@
             },
             "time": {
               "range": {
-                "start": "2024-08-26T07:10:55.160Z",
-                "end": "2024-08-26T07:25:55.160Z"
+                "start": "2024-10-25T08:39:49.509Z",
+                "end": "2024-10-25T09:14:49.509Z"
               }
             }
           },
@@ -130,33 +165,76 @@
               "list": [
                 {
                   "code": "fulfillment_state",
-                  "value": "At-pickup"
+                  "value": "Out-for-delivery"
                 },
                 {
                   "code": "updated_at",
-                  "value": "2024-08-26T06:54:39.906Z"
+                  "value": "2024-10-25T08:25:08.864Z"
+                }
+              ]
+            },
+            {
+              "code": "rto_event",
+              "list": [
+                {
+                  "code": "retry_count",
+                  "value": "0"
+                },
+                {
+                  "code": "rto_id",
+                  "value": "mp2_immediate_f1-RTO"
+                },
+                {
+                  "code": "cancellation_reason_id",
+                  "value": "017"
+                },
+                {
+                  "code": "cancelled_by",
+                  "value": "preprod.logistics-seller.mp2.in"
+                },
+                {
+                  "code": "sub_reason_id",
+                  "value": ""
                 }
               ]
             }
           ],
           "agent": {
-            "name": "Hemanth",
-            "phone": "9739955760"
+            "name": "MP2Delivery",
+            "phone": "9000012345"
+          }
+        },
+        {
+          "id": "mp2_immediate_f1-RTO",
+          "type": "RTO",
+          "state": {
+            "descriptor": {
+              "code": "RTO-Initiated"
+            }
+          },
+          "tracking": true,
+          "start": {
+            "time": {
+              "range": {
+                "start": "2024-10-25T08:30:42.973Z",
+                "end": "2024-10-25T09:25:42.973Z"
+              },
+              "timestamp": "2024-10-25T08:30:42.973Z"
+            }
+          },
+          "end": {
+            "time": {
+              "range": {
+                "start": "2024-10-25T08:30:42.973Z",
+                "end": "2024-10-25T09:05:42.973Z"
+              }
+            }
           }
         }
       ],
       "payment": {
         "collected_by": "BAP",
-        "type": "POST-FULFILLMENT",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "eSamudaay",
-            "settlement_type": "upi",
-            "upi_address": "gft@oksbi",
-            "settlement_bank_account_no": "123456789012",
-            "settlement_ifsc_code": "SBIN0001234"
-          }
-        ]
+        "type": "POST-FULFILLMENT"
       },
       "billing": {
         "name": "eSamudaay",
@@ -172,8 +250,8 @@
         "tax_number": "12ABCDE12343D4E",
         "phone": "9886098860",
         "email": "abcd.efgh@gmail.com",
-        "created_at": "2024-08-26T06:50:01.714Z",
-        "updated_at": "2024-08-26T06:50:01.714Z"
+        "created_at": "2024-10-25T08:19:49.509Z",
+        "updated_at": "2024-10-25T08:19:49.509Z"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -191,7 +269,7 @@
             },
             "price": {
               "currency": "INR",
-              "value": "100"
+              "value": "450"
             }
           }
         ],
@@ -209,7 +287,7 @@
           }
         },
         "order": {
-          "id": "a8f6b6",
+          "id": "013513",
           "weight": {
             "unit": "kilogram",
             "value": 1.0
@@ -230,12 +308,12 @@
           }
         }
       },
-      "updated_at": "2024-08-26T06:54:40.027Z",
-      "created_at": "2024-08-26T06:50:01.714Z",
+      "updated_at": "2024-10-25T08:30:42.973Z",
+      "created_at": "2024-10-25T08:19:49.509Z",
       "cancellation": {
-        "cancelled_by": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esam",
+        "cancelled_by": "preprod.logistics-seller.mp2.in",
         "reason": {
-          "id": "007"
+          "id": "017"
         }
       }
     }
