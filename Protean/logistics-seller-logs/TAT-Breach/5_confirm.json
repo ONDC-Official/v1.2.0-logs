@@ -1,76 +1,72 @@
 {
     "context": {
         "domain": "nic2004:60232",
-        "action": "on_confirm",
+        "action": "confirm",
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
         "bpp_id": "logistics-admin-bpp-preprod.bharatvyapaar.com",
         "bpp_uri": "https://logistics-admin-bpp-preprod.bharatvyapaar.com",
-        "transaction_id": "109b9238-1fdd-44c6-a762-619d8762564b",
-        "message_id": "9a1f59e3-3061-49a1-bfa0-4697cf787e0c",
+        "transaction_id": "8608b868-f484-4c44-b1ff-730d38b07d53",
+        "message_id": "1607b747-eaa3-4076-909c-6d9f40237a20",
         "city": "std:080",
         "country": "IND",
-        "timestamp": "2024-10-24T11:17:05.071Z"
+        "timestamp": "2024-10-21T13:16:33.190Z",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "2024-10-24-50084156",
-            "state": "Accepted",
+            "id": "2024-10-21-84296310",
+            "state": "Created",
             "provider": {
                 "id": "3e9f96eb-ba7f-4173-b6f8-1530ace47696"
             },
             "items": [
                 {
+                    "id": "Standard",
+                    "category_id": "Immediate Delivery",
+                    "fulfillment_id": "a6319ca9-1f8a-48c9-bfe7-23c3a872f82f",
                     "descriptor": {
-                        "code": "P2H2P"
+                        "code": "P2P"
                     },
                     "time": {
                         "label": "TAT",
-                        "duration": "P4D",
-                        "timestamp": "2024-10-28"
-                    },
-                    "id": "Standard",
-                    "fulfillment_id": "b6622e5e-0182-4682-ac29-539e1ec2a9cf",
-                    "category_id": "Standard Delivery"
+                        "duration": "PT60M",
+                        "timestamp": "2024-10-21"
+                    }
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "41.30"
+                    "value": "99.12"
                 },
                 "breakup": [
                     {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "35.00"
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "delivery"
+                            "value": "84.00"
+                        }
                     },
                     {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "tax",
                         "price": {
                             "currency": "INR",
-                            "value": "6.30"
-                        },
-                        "@ondc/org/item_id": "Standard",
-                        "@ondc/org/title_type": "tax"
+                            "value": "15.12"
+                        }
                     }
                 ]
             },
             "fulfillments": [
                 {
-                    "state": {
-                        "descriptor": {
-                            "code": "Pending"
-                        }
-                    },
-                    "id": "b6622e5e-0182-4682-ac29-539e1ec2a9cf",
+                    "id": "a6319ca9-1f8a-48c9-bfe7-23c3a872f82f",
                     "type": "Delivery",
                     "start": {
                         "time": {
-                            "duration": "P1D"
+                            "duration": "PT15M"
                         },
                         "person": {
                             "name": "Vijendra Patidar"
@@ -93,7 +89,8 @@
                         },
                         "instructions": {
                             "code": "3",
-                            "short_desc": "1848"
+                            "short_desc": "2247",
+                            "long_desc": "Order Pick Up Confirmation Code"
                         }
                     },
                     "end": {
@@ -101,15 +98,15 @@
                             "name": "Ranvijay"
                         },
                         "location": {
-                            "gps": "28.626725,77.205552",
+                            "gps": "12.981314,77.595093",
                             "address": {
                                 "name": "Ranvijay",
                                 "building": "wits",
-                                "locality": "Baba Kharak Singh Marg",
-                                "city": "New Delhi",
-                                "state": "Delhi",
+                                "locality": "Raj Bhavan Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
                                 "country": "IND",
-                                "area_code": "110001"
+                                "area_code": "560001"
                             }
                         },
                         "contact": {
@@ -118,7 +115,8 @@
                         },
                         "instructions": {
                             "code": "2",
-                            "short_desc": "2446"
+                            "short_desc": "2199",
+                            "long_desc": "Delivery Confirmation Code"
                         }
                     },
                     "tags": [
@@ -140,9 +138,7 @@
                                 }
                             ]
                         }
-                    ],
-                    "tracking": true,
-                    "@ondc/org/awb_no": "1227262193237777"
+                    ]
                 }
             ],
             "billing": {
@@ -150,24 +146,42 @@
                 "address": {
                     "name": "Ranvijay",
                     "building": "wits",
-                    "locality": "Baba Kharak Singh Marg",
-                    "city": "New Delhi",
-                    "state": "Delhi",
+                    "locality": "Raj Bhavan Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
                     "country": "IND",
-                    "area_code": "110001"
+                    "area_code": "560001"
                 },
                 "tax_number": "22AAAAA0000A1Z5",
                 "phone": "7617679010",
                 "email": "ranvijay.singh@thewitslab.com",
-                "created_at": "2024-10-24T11:17:04.076Z",
-                "updated_at": "2024-10-24T11:17:04.076Z"
+                "created_at": "2024-10-21T13:16:32.660Z",
+                "updated_at": "2024-10-21T13:16:32.660Z"
             },
             "payment": {
                 "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "status": "NOT-PAID"
+                "type": "POST-FULFILLMENT"
             },
             "@ondc/org/linked_order": {
+                "items": [
+                    {
+                        "category_id": "Grocery",
+                        "descriptor": {
+                            "name": "Soyabin Oil"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.455
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "200"
+                        }
+                    }
+                ],
                 "provider": {
                     "descriptor": {
                         "name": "Vijendra Grocery Store"
@@ -183,11 +197,11 @@
                     }
                 },
                 "order": {
+                    "id": "2024-10-21-474036",
                     "weight": {
                         "unit": "kilogram",
                         "value": 0.455
                     },
-                    "id": "2024-10-24-148780",
                     "dimensions": {
                         "length": {
                             "unit": "centimeter",
@@ -202,29 +216,10 @@
                             "value": 6
                         }
                     }
-                },
-                "items": [
-                    {
-                        "descriptor": {
-                            "name": "Soyabin Oil"
-                        },
-                        "quantity": {
-                            "measure": {
-                                "value": 0.455,
-                                "unit": "kilogram"
-                            },
-                            "count": 1
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "200"
-                        },
-                        "category_id": "Grocery"
-                    }
-                ]
+                }
             },
-            "created_at": "2024-10-24T11:17:04.657Z",
-            "updated_at": "2024-10-24T11:17:05.071Z"
+            "created_at": "2024-10-21T13:16:33.190Z",
+            "updated_at": "2024-10-21T13:16:33.190Z"
         }
     }
 }

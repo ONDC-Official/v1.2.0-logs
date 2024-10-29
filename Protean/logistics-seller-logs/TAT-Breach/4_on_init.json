@@ -1,18 +1,17 @@
 {
     "context": {
         "domain": "nic2004:60232",
-        "action": "init",
+        "action": "on_init",
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
         "bpp_id": "logistics-admin-bpp-preprod.bharatvyapaar.com",
         "bpp_uri": "https://logistics-admin-bpp-preprod.bharatvyapaar.com",
-        "transaction_id": "109b9238-1fdd-44c6-a762-619d8762564b",
-        "message_id": "17812e25-e37a-485a-9a72-0a45f7fa8ffd",
+        "transaction_id": "8608b868-f484-4c44-b1ff-730d38b07d53",
+        "message_id": "ce38b1c8-8b2b-4bc6-8231-6c931d75a61f",
         "city": "std:080",
         "country": "IND",
-        "timestamp": "2024-10-24T11:17:04.076Z",
-        "ttl": "PT30S"
+        "timestamp": "2024-10-21T13:16:33.043Z"
     },
     "message": {
         "order": {
@@ -22,16 +21,16 @@
             "items": [
                 {
                     "id": "Standard",
-                    "category_id": "Standard Delivery",
-                    "fulfillment_id": "b6622e5e-0182-4682-ac29-539e1ec2a9cf",
+                    "fulfillment_id": "a6319ca9-1f8a-48c9-bfe7-23c3a872f82f",
                     "descriptor": {
-                        "code": "P2H2P"
-                    }
+                        "code": "P2P"
+                    },
+                    "category_id": "Immediate Delivery"
                 }
             ],
             "fulfillments": [
                 {
-                    "id": "b6622e5e-0182-4682-ac29-539e1ec2a9cf",
+                    "id": "a6319ca9-1f8a-48c9-bfe7-23c3a872f82f",
                     "type": "Delivery",
                     "start": {
                         "location": {
@@ -53,43 +52,63 @@
                     },
                     "end": {
                         "location": {
-                            "gps": "28.626725,77.205552",
+                            "gps": "12.981314,77.595093",
                             "address": {
                                 "name": "Ranvijay",
                                 "building": "wits",
-                                "locality": "Baba Kharak Singh Marg",
-                                "city": "New Delhi",
-                                "state": "Delhi",
+                                "locality": "Raj Bhavan Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
                                 "country": "IND",
-                                "area_code": "110001"
+                                "area_code": "560001"
                             }
                         },
                         "contact": {
                             "phone": "7617679010",
                             "email": "ranvijay.singh@thewitslab.com"
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
-            "billing": {
-                "name": "Ranvijay",
-                "address": {
-                    "name": "Ranvijay",
-                    "building": "wits",
-                    "locality": "Baba Kharak Singh Marg",
-                    "city": "New Delhi",
-                    "state": "Delhi",
-                    "country": "IND",
-                    "area_code": "110001"
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "99.12"
                 },
-                "tax_number": "22AAAAA0000A1Z5",
-                "phone": "7617679010",
-                "email": "ranvijay.singh@thewitslab.com",
-                "created_at": "2024-10-24T11:17:04.076Z",
-                "updated_at": "2024-10-24T11:17:04.076Z"
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "84.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "15.12"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
             },
             "payment": {
-                "type": "POST-FULFILLMENT"
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
             }
         }
     }
