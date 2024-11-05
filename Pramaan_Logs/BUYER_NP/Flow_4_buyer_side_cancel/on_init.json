@@ -1,0 +1,266 @@
+{
+  "context": {
+    "domain": "ONDC:RET15",
+    "action": "on_init",
+    "country": "IND",
+    "city": "std:020",
+    "core_version": "1.2.0",
+    "bap_id": "stg-api.slurrp.com",
+    "bap_uri": "https://stg-api.slurrp.com/bapl",
+    "transaction_id": "1fe2a3de7c31e72978568e0e4c761a47",
+    "message_id": "jag1bygm2vqlxqd",
+    "timestamp": "2024-10-30T10:32:31.987Z",
+    "bpp_id": "pramaan.ondc.org/alpha/mock-server",
+    "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/seller",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "pramaan.ondc.org/alpha/mock-server",
+        "locations": [
+          {
+            "id": "f13873c1-810d-4f2b-ba54-5edcec9f0e4a"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "1637e7d0-1b19-4531-8f20-557eec161eb1",
+          "fulfillment_id": "c461a827-f43d-487e-871d-e13467acd866",
+          "quantity": {
+            "count": 2
+          }
+        }
+      ],
+      "billing": {
+        "name": "Ajay Nawgire",
+        "address": {
+          "name": "Nawgire Nivas",
+          "building": "Nawgire Building",
+          "locality": "Kharadi",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "country": "IND",
+          "area_code": "413014"
+        },
+        "email": "ajaynawgire@gmail.com",
+        "phone": "8446464072",
+        "created_at": "2024-09-04T09:00:00.000Z",
+        "updated_at": "2024-09-04T09:00:00.000Z"
+      },
+      "fulfillments": [
+        {
+          "id": "c461a827-f43d-487e-871d-e13467acd866",
+          "type": "Delivery",
+          "end": {
+            "location": {
+              "gps": "18.330021,73.560541",
+              "address": {
+                "name": "Nawgire Nivas",
+                "building": "Nawgire Building",
+                "locality": "Kharadi",
+                "city": "Pune",
+                "state": "Maharashtra",
+                "country": "IND",
+                "area_code": "413014"
+              }
+            },
+            "contact": {
+              "phone": "8446464072"
+            }
+          },
+          "tracking": true
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "6083"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1637e7d0-1b19-4531-8f20-557eec161eb1",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Fruit Bowl",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "5998"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "2999.00"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          {
+            "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+            "title": "Packing charges",
+            "@ondc/org/title_type": "packing",
+            "price": {
+              "currency": "INR",
+              "value": "25"
+            }
+          },
+          {
+            "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "10"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "type": "ON-FULFILLMENT",
+        "collected_by": "BPP",
+        "uri": "https://snp.com/pg",
+        "status": "NOT-PAID",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "tags": [
+          {
+            "code": "bpp_collect",
+            "list": [
+              {
+                "code": "success",
+                "value": "Y"
+              },
+              {
+                "code": "error",
+                "value": ".."
+              }
+            ]
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000.00"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000.00"
+            },
+            {
+              "code": "tax_number",
+              "value": "22AAAAA0000A1Z5"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": "002"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Packed",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "10.00",
+            "amount": {
+              "currency": "INR",
+              "value": "42.40"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "10.00",
+            "amount": {
+              "currency": "INR",
+              "value": "42.40"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "009"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "010,011,012,013,014,015"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "20.00",
+            "amount": {
+              "currency": "INR",
+              "value": "84.80"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
