@@ -3,19 +3,20 @@
     "domain": "nic2004:60232",
     "country": "IND",
     "city": "std:080",
-    "action": "on_update",
+    "action": "on_status",
     "core_version": "1.2.0",
     "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
     "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
     "bpp_id": "preprod.logistics-seller.mp2.in",
     "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
     "transaction_id": "62c9fa9c-6ab6-439f-9d60-a10b6303b533",
-    "message_id": "86974253-0d16-42cf-810c-018a83b7c8a3",
-    "timestamp": "2024-10-30T08:42:48.983Z"
+    "message_id": "msg_uuskzzvg2n74fnfa",
+    "timestamp": "2024-10-30T08:40:19.921Z"
   },
   "message": {
     "order": {
       "id": "af428b1598164204a2bbb8005875091f",
+      "state": "In-progress",
       "provider": {
         "id": "MP2"
       },
@@ -62,7 +63,11 @@
         {
           "id": "mp2_immediate_f1",
           "type": "Delivery",
-          "tracking": true,
+          "state": {
+            "descriptor": {
+              "code": "Agent-assigned"
+            }
+          },
           "start": {
             "time": {
               "range": {
@@ -89,10 +94,6 @@
             "contact": {
               "phone": "9000000000",
               "email": "vignesh@esamudaay.com"
-            },
-            "instructions": {
-              "code": "2",
-              "short_desc": "70ac"
             }
           },
           "end": {
@@ -122,17 +123,37 @@
               }
             }
           },
-          "state": {
-            "descriptor": {
-              "code": "Agent-assigned"
+          "tracking": true,
+          "tags": [
+            {
+              "code": "tracking",
+              "list": [
+                {
+                  "code": "gps_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url",
+                  "value": "https://track.mp2.in/r/af428b1598164204a2bbb8005875091f"
+                }
+              ]
             }
-          },
+          ],
           "agent": {
             "name": "MP2Delivery",
             "phone": "9999999999"
           }
         }
       ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "status": "NOT-PAID"
+      },
       "billing": {
         "name": "eSamudaay",
         "address": {
@@ -149,10 +170,6 @@
         "email": "abcd.efgh@gmail.com",
         "created_at": "2024-10-30T08:40:09.081Z",
         "updated_at": "2024-10-30T08:40:09.081Z"
-      },
-      "payment": {
-        "collected_by": "BAP",
-        "type": "POST-FULFILLMENT"
       },
       "@ondc/org/linked_order": {
         "items": [
@@ -209,8 +226,8 @@
           }
         }
       },
-      "state": "In-progress",
-      "updated_at": "2024-10-30T08:40:19.892Z"
+      "updated_at": "2024-10-30T08:40:19.892Z",
+      "created_at": "2024-10-30T08:40:09.081Z"
     }
   }
 }
