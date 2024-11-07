@@ -1,112 +1,67 @@
 {
   "context": {
-    "action": "on_select",
-    "bap_id": "ondc.taolabs.in",
-    "bap_uri": "https://ondc.taolabs.in/api/preprod",
-    "bpp_id": "ondc-connect.localzoho.com",
-    "bpp_uri": "https://ondc-connect.localzoho.com/api/v1/ondc/retail",
-    "city": "std:044",
-    "core_version": "1.2.0",
-    "country": "IND",
     "domain": "ONDC:RET14",
-    "message_id": "19fd726c-0086-476d-9aa0-7601b7dde1a6",
-    "timestamp": "2024-10-16T13:18:34.291Z",
-    "transaction_id": "9a9dd634-75ab-46c4-987a-b94df82ddcdc",
-    "ttl": "PT30S"
+    "country": "IND",
+    "city": "std:0124",
+    "action": "on_select",
+    "core_version": "1.2.0",
+    "bap_id": "ondc.taolabs.in",
+    "bap_uri": "https://ondc.taolabs.in/api/stage",
+    "bpp_id": "preprod-pebblecart-bpp.shopalyst.com",
+    "bpp_uri": "https://preprod-pebblecart-bpp.shopalyst.com/pebblecart",
+    "transaction_id": "038a497f-9dc6-4381-a863-17be8c5f44aa",
+    "message_id": "24f858bb-e298-4053-9ec7-62ba14da19b7",
+    "timestamp": "2024-10-24T09:25:28.593Z"
   },
   "message": {
     "order": {
-      "fulfillments": [
-        {
-          "id": "3000027094551",
-          "@ondc/org/category": "Immediate Delivery",
-          "@ondc/org/provider_name": "MP2",
-          "@ondc/org/TAT": "PT55M",
-          "state": {
-            "descriptor": {
-              "code": "Serviceable"
-            }
-          },
-          "type": "Delivery",
-          "tracking": true
-        }
-      ],
+      "provider": {
+        "id": "preprod-pebblecart-bpp.shopalyst.com",
+        "locations": [{ "id": "69b685813a63a8114c7c40e4b17dd08c" }]
+      },
       "items": [
         {
-          "fulfillment_id": "3000027094551",
-          "id": "3000020954701"
+          "id": "5041C0537916A32DBB468566368C246C_44241145561347_default",
+          "fulfillment_id": "69b685813a63a8114c7c40e4b17dd08c_1"
         }
       ],
-      "provider": {
-        "id": "3000020287401",
-        "locations": [
-          {
-            "id": "3000020287401"
-          }
-        ]
-      },
       "quote": {
+        "price": { "currency": "INR", "value": "4797.00" },
         "breakup": [
           {
-            "@ondc/org/item_id": "3000020954701",
-            "@ondc/org/title_type": "tax",
-            "price": {
-              "value": "0.00",
-              "currency": "INR"
-            },
-            "title": "TAX"
-          },
-          {
+            "title": "Pebble Frost Pro Jet black",
+            "price": { "currency": "INR", "value": "4797.00" },
+            "@ondc/org/item_id": "5041C0537916A32DBB468566368C246C_44241145561347_default",
             "item": {
-              "price": {
-                "value": "399.00",
-                "currency": "INR"
-              },
+              "price": { "currency": "INR", "value": "1599.00" },
               "quantity": {
-                "available": {
-                  "count": "99"
-                },
-                "maximum": {
-                  "count": "5"
-                }
+                "available": { "count": "99" },
+                "maximum": { "count": "99" }
               }
             },
-            "@ondc/org/item_id": "3000020954701",
-            "@ondc/org/item_quantity": {
-              "count": 1
-            },
-            "@ondc/org/title_type": "item",
-            "price": {
-              "value": "399.00",
-              "currency": "INR"
-            },
-            "title": "Orei Universal Travel Adapter with 2 USB Ports, 3 in 1 Universal Charger, International Travel Adapter for Cell Phones, Tablets, Camera, for Travelers to US, Europe, UK & More"
+            "@ondc/org/item_quantity": { "count": 3 },
+            "@ondc/org/title_type": "item"
           },
           {
-            "@ondc/org/item_id": "3000027094551",
-            "@ondc/org/title_type": "delivery",
-            "price": {
-              "value": "25.00",
-              "currency": "INR"
-            },
-            "title": "Delivery charges"
-          },
-          {
-            "@ondc/org/item_id": "3000027094551",
-            "@ondc/org/title_type": "misc",
-            "price": {
-              "value": "15.56",
-              "currency": "INR"
-            },
-            "title": "Convenience Fee"
+            "title": "Delivery Charges",
+            "price": { "currency": "INR", "value": "0.00" },
+            "@ondc/org/item_id": "69b685813a63a8114c7c40e4b17dd08c_1",
+            "@ondc/org/title_type": "delivery"
           }
         ],
-        "price": {
-          "value": "439.56",
-          "currency": "INR"
-        },
         "ttl": "PT15M"
-      }
+      },
+      "fulfillments": [
+        {
+          "id": "69b685813a63a8114c7c40e4b17dd08c_1",
+          "type": "Delivery",
+          "tracking": true,
+          "state": { "descriptor": { "code": "Serviceable" } },
+          "@ondc/org/category": "Standard Delivery",
+          "@ondc/org/TAT": "P7D",
+          "@ondc/org/provider_name": "pebblecart"
+        }
+      ]
     }
   }
 }
