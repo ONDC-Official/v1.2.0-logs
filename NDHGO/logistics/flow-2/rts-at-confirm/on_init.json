@@ -1,0 +1,101 @@
+{
+  "context" : {
+    "domain" : "nic2004:60232",
+    "country" : "IND",
+    "city" : "std:080",
+    "action" : "on_init",
+    "core_version" : "1.2.0",
+    "bap_id" : "preprod-ondc.ndh01.com/logistics",
+    "bap_uri" : "https://preprod-ondc.ndh01.com/logistics/buyer",
+    "bpp_id" : "preprod.logistics-seller.mp2.in",
+    "bpp_uri" : "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id" : "f6314d11-fa33-451e-9553-ccf166bc36ea",
+    "message_id" : "f41b0cd8-0b89-4edd-b967-d64c5cffd3ef",
+    "timestamp" : "2024-11-15T10:32:06.885Z"
+  },
+  "message" : {
+    "order" : {
+      "provider" : {
+        "id" : "MP2"
+      },
+      "items" : [ {
+        "id" : "mp2_immediate",
+        "fulfillment_id" : "mp2_immediate_f1"
+      } ],
+      "fulfillments" : [ {
+        "id" : "mp2_immediate_f1",
+        "type" : "Delivery",
+        "start" : {
+          "location" : {
+            "gps" : "12.91228542068361,77.64429730793458",
+            "address" : {
+              "name" : "Dailywear Fashion",
+              "building" : "HSR Layout, Flat No.121",
+              "locality" : "HSR Layout",
+              "city" : "Bengaluru",
+              "state" : "Karnataka",
+              "country" : "IN",
+              "area_code" : "560102"
+            }
+          },
+          "contact" : {
+            "phone" : "2343453434",
+            "email" : "support@gmail.com"
+          }
+        },
+        "end" : {
+          "location" : {
+            "gps" : "12.913291,77.640172",
+            "address" : {
+              "name" : "Monish B",
+              "building" : "NDHGO Urban",
+              "locality" : "15th B Cross Road",
+              "city" : "Bengaluru",
+              "state" : "Karnataka",
+              "country" : "IND",
+              "area_code" : "560102"
+            }
+          },
+          "contact" : {
+            "phone" : "09566291095",
+            "email" : "monish.b@unizap.ai"
+          }
+        },
+        "tags" : [ {
+          "list" : [ {
+            "code" : "inline_check_for_rider",
+            "value" : "yes"
+          } ],
+          "display" : true,
+          "code" : "rider_check"
+        } ]
+      } ],
+      "quote" : {
+        "price" : {
+          "currency" : "INR",
+          "value" : "25.0"
+        },
+        "breakup" : [ {
+          "@ondc/org/item_id" : "mp2_immediate",
+          "@ondc/org/title_type" : "delivery",
+          "price" : {
+            "currency" : "INR",
+            "value" : "21.19"
+          }
+        }, {
+          "@ondc/org/item_id" : "mp2_immediate",
+          "@ondc/org/title_type" : "tax",
+          "price" : {
+            "currency" : "INR",
+            "value" : "3.81"
+          }
+        } ],
+        "ttl" : "PT15M"
+      },
+      "payment" : {
+        "type" : "POST-FULFILLMENT",
+        "collected_by" : "BAP"
+      }
+    }
+  }
+}
