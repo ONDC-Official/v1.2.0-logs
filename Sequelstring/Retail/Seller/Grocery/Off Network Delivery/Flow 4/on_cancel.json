@@ -1,0 +1,276 @@
+{
+    "context": {
+        "action": "on_cancel",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "e613a400-951a-4a3d-9cce-46c5ff7ac6ad",
+        "message_id": "b01f7981-cb0d-4388-b63b-ab10f3180a5b",
+        "city": "std:null",
+        "country": "IND",
+        "timestamp": "2024-11-02T13:16:16.119Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "id": "vm5ub4UoDdBeq6ajsh8fL8qemxexBGA4",
+            "state": "Cancelled",
+            "provider": "vm5ub4UoDdBeq6ajsh8fL8qemxexBGA4",
+            "items": [
+                {
+                    "id": "SS1",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab"
+                },
+                {
+                    "quantity": {
+                        "count": 0
+                    },
+                    "id": "SS1",
+                    "fulfillment_id": "0c03bea9-f18d-4c97-8b22-b69aeca84dd6"
+                }
+            ],
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P7D",
+                "@ondc/org/withholding_amount": "0.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "upi_address": "",
+                        "beneficiary_name": "SEQUELSTRING AI",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "9876543210012",
+                        "settlement_ifsc_code": "AXIS123456",
+                        "settlement_phase": "sale-amount",
+                        "settlement_status": "NOT-PAID",
+                        "bank_name": "AXIS BANK LTD ",
+                        "branch_name": "NAVI MUMBAI"
+                    }
+                ],
+                "status": "PAID",
+                "params": {
+                    "currency": "INR",
+                    "amount": "210.00",
+                    "transaction_id": "e613a400-951a-4a3d-9cce-46c5ff7ac6ad"
+                },
+                "tl_method": "http/get",
+                "uri": "https://ondc.transaction.com/payment"
+            },
+            "fulfillments": [
+                {
+                    "id": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab",
+                    "@ondc/org/provider_name": "SS Store 1",
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "PT24H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "type": "Delivery",
+                    "tracking": true,
+                    "start": {
+                        "location": {
+                            "id": "SSL1",
+                            "gps": "28.527300, 77.182100",
+                            "descriptor": {
+                                "name": "SS Store 1",
+                                "images": [
+                                    "https://image-url.com"
+                                ]
+                            },
+                            "address": {
+                                "locality": "N. Caldwell",
+                                "city": "N. Caldwell",
+                                "area_code": "110030",
+                                "state": "New Delhi"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-11-02T13:16:14.942Z",
+                                "end": "2024-11-02T23:00:00.000Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "ss_seller_1@ss.com"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "email": "nobody@nomail.com",
+                            "phone": "9886098860"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "123456",
+                                "building": "Siri Fort Institutional",
+                                "city": "null",
+                                "country": "IND",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "name": "mayur",
+                                "state": "null"
+                            },
+                            "gps": "28.4554726,77.0219019"
+                        },
+                        "person": {
+                            "name": "mayur"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-11-03T09:30:00.000Z",
+                                "end": "2024-11-03T19:00:00.000Z"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "0c03bea9-f18d-4c97-8b22-b69aeca84dd6",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "SS1"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-130.00"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "delivery"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-40"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "misc"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-40"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "cancellation": {
+                "cancelled_by": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+                "reason": {
+                    "id": "006"
+                }
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "SS1",
+                        "title": "Plain Atta",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "8c5a7ba1-8542-41a4-bd08-3b1062bdacab",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        }
+                    }
+                ],
+                "ttl": "PT6H"
+            },
+            "created_at": "2024-11-02T13:16:14.791Z",
+            "updated_at": "2024-11-02T13:16:16.115Z"
+        }
+    }
+}
