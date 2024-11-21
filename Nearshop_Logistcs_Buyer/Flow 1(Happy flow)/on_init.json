@@ -1,0 +1,111 @@
+{
+    "context": {
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:080",
+      "action": "on_init",
+      "core_version": "1.2.0",
+      "bap_id": "apistaging.nearshop.in",
+      "bap_uri": "https://apistaging.nearshop.in/lbap/api/v1",
+      "bpp_id": "preprod.logistics-seller.mp2.in",
+      "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+      "transaction_id": "63b31f4a-79c8-479b-87aa-b7e46df7c60f",
+      "message_id": "11365e89-9a3e-4e01-b6a2-408dd639df37",
+      "timestamp": "2024-10-28T16:18:25.771Z"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "MP2"
+        },
+        "items": [
+          {
+            "id": "mp2_immediate",
+            "fulfillment_id": "mp2_immediate_f1"
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "mp2_immediate_f1",
+            "type": "Delivery",
+            "start": {
+              "location": {
+                "gps": "13.1355935,77.5692431",
+                "address": {
+                  "name": "My store name",
+                  "building": "My building name",
+                  "locality": "My street name",
+                  "city": "Bengaluru",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560064"
+                }
+              },
+              "contact": {
+                "phone": "9886098860",
+                "email": "abcd.efgh@gmail.com"
+              }
+            },
+            "end": {
+              "location": {
+                "gps": "13.078991,77.592147",
+                "address": {
+                  "name": "sunil patel",
+                  "building": "yashoda nagar",
+                  "locality": "Bellary Road",
+                  "city": "Bengaluru",
+                  "state": "Karnataka",
+                  "country": "IND",
+                  "area_code": "560065"
+                }
+              },
+              "contact": {
+                "phone": "9111490199",
+                "email": "sunil.patel@imss.co.in"
+              }
+            },
+            "tags": [
+              {
+                "code": "rider_check",
+                "list": [
+                  {
+                    "code": "inline_check_for_rider",
+                    "value": "yes"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BAP"
+        },
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "25.0"
+          },
+          "breakup": [
+            {
+              "@ondc/org/item_id": "mp2_immediate",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "21.19"
+              }
+            },
+            {
+              "@ondc/org/item_id": "mp2_immediate",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "3.81"
+              }
+            }
+          ],
+          "ttl": "PT15M"
+        }
+      }
+    }
+  }
