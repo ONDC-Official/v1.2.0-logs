@@ -1,0 +1,111 @@
+{
+    "context": {
+        "transaction_id": "txnondc_p7k3bayhnvxt_opbz55",
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "ttl": "PT10M",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.logistics-buyer.mp2.in",
+        "bap_uri": "https://preprod.logistics-buyer.mp2.in/ondc",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "message_id": "msgondc_w2edaq_zemtr3",
+        "timestamp": "2024-10-21T02:38:37.331Z"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+            },
+            "items": [
+                {
+                    "id": "std_del",
+                    "fulfillment_id": "b705aa4f-e9d7-45ab-9ebe-147e834dfef4"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "b705aa4f-e9d7-45ab-9ebe-147e834dfef4",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "12.9212,77.588",
+                            "address": {
+                                "name": "MP2 Office Manager",
+                                "building": "Kolab, 38th Cross Road",
+                                "locality": "4th T Block East, Pattabhirama Nagar, Jayanagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "1111111111",
+                            "email": "noreply@mp2.in"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.9308,77.5839",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "NA",
+                                "locality": "Jayanagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "area_code": "560041"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9058626929",
+                            "email": "noreply@mp2.in"
+                        }
+                    }
+                }
+            ],
+            "payment": {
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "123456789123456",
+                        "settlement_ifsc_code": "SBI00001234"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "23.47"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "23.47"
+                        },
+                        "@ondc/org/item_id": "std_del",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "std_del",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ],
+                "ttl": "P7D"
+            }
+        }
+    }
+}
