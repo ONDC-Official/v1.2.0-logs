@@ -1,22 +1,22 @@
 {
     "context": {
         "domain": "nic2004:60232",
-        "action": "on_status",
+        "action": "on_update",
         "core_version": "1.2.0",
         "bap_id": "ondc-api.kiko.live/ondc-seller-v2",
         "bap_uri": "https://ondc-api.kiko.live/ondc-seller-v2",
         "bpp_id": "wits-ref-logistics-app.thewitslab.com",
         "bpp_uri": "https://wits-ref-logistics-app.thewitslab.com",
         "transaction_id": "6667e3bf-279f-45b6-b12c-9c724bff1384",
-        "message_id": "3031c593-89a1-481c-a454-b1932979b76b",
+        "message_id": "dd76cdaf-bdaa-4340-b2f0-df73895a6284",
         "city": "std:080",
         "country": "IND",
-        "timestamp": "2024-11-19T13:17:58.147Z"
+        "timestamp": "2024-11-19T13:06:34.207Z"
     },
     "message": {
         "order": {
             "id": "2024-11-19-23473024",
-            "state": "Completed",
+            "state": "In-progress",
             "provider": {
                 "id": "3e9f96eb-ba7f-4173-b6f8-1530ace47696"
             },
@@ -70,7 +70,7 @@
                     },
                     "state": {
                         "descriptor": {
-                            "code": "Order-delivered"
+                            "code": "Agent-assigned"
                         }
                     },
                     "id": "f6b294f5-4f16-4f54-b9f3-2fca45cfe6cb",
@@ -81,8 +81,7 @@
                                 "start": "2024-11-19T13:06:34.207Z",
                                 "end": "2024-11-20T13:06:34.207Z"
                             },
-                            "duration": "P1D",
-                            "timestamp": "2024-11-19T13:17:30.094Z"
+                            "duration": "P1D"
                         },
                         "person": {
                             "name": "Vijendra Patidar"
@@ -104,10 +103,11 @@
                             "email": "vijendra@linkites.com"
                         },
                         "instructions": {
+                            "code": "3",
                             "short_desc": "Shipping label or proof of delivery details",
+                            "long_desc": "Shipping label info or proof of pickup",
                             "images": [
-                                "https://ref-logistics-app-staging-bucket.s3.ap-south-1.amazonaws.com/1696662276710.jpeg",
-                                "https://ref-logistics-app-staging-bucket.s3.ap-south-1.amazonaws.com/2446662276711.jpeg"
+                                "https://wits-ref-logistics-app.thewitslab.com/1696662276710.jpeg"
                             ]
                         }
                     },
@@ -117,8 +117,7 @@
                                 "start": "2024-11-20T13:06:34.207Z",
                                 "end": "2024-11-23T13:06:34.207Z"
                             },
-                            "duration": "P3D",
-                            "timestamp": "2024-11-19T13:17:57.961Z"
+                            "duration": "P3D"
                         },
                         "person": {
                             "name": "Ranvijay"
@@ -144,33 +143,9 @@
                             "short_desc": "7303"
                         }
                     },
-                    "tags": [
-                        {
-                            "code": "tracking",
-                            "list": [
-                                {
-                                    "code": "gps_enabled",
-                                    "value": "no"
-                                },
-                                {
-                                    "code": "url_enabled",
-                                    "value": "yes"
-                                }
-                            ]
-                        }
-                    ],
-                    "tracking": true,
-                    "@ondc/org/awb_no": "1227262193237777"
+                    "tracking": true
                 }
             ],
-            "payment": {
-                "time": {
-                    "timestamp": "2024-11-19T13:17:57.961Z"
-                },
-                "collected_by": "BAP",
-                "type": "POST-FULFILLMENT",
-                "status": "NOT-PAID"
-            },
             "billing": {
                 "name": "Ranvijay",
                 "address": {
@@ -187,6 +162,11 @@
                 "email": "ranvijay.singh@thewitslab.com",
                 "created_at": "2024-11-19T13:05:02.486Z",
                 "updated_at": "2024-11-19T13:05:02.486Z"
+            },
+            "payment": {
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT",
+                "status": "NOT-PAID"
             },
             "@ondc/org/linked_order": {
                 "provider": {
@@ -243,7 +223,8 @@
                         "category_id": "Grocery"
                     }
                 ]
-            }
+            },
+            "updated_at": "2024-11-19T13:06:34.207Z"
         }
     }
 }
