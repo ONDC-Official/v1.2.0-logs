@@ -1,0 +1,114 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ondc.bharatrath.app/bapl",
+    "transaction_id": "2cded616-f9f5-45ef-a984-91fb9a0ffba8",
+    "message_id": "5cacd271-8e48-460f-a8c0-66e40cde7cd4",
+    "timestamp": "2024-10-25T10:27:50.985Z",
+    "bpp_id": "ondc.bharatrath.app",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "67", "locations": [{ "id": "1" }] },
+      "items": [
+        {
+          "id": "1345",
+          "quantity": { "count": 1 },
+          "tags": [{ "code": "type", "list": [{ "code": "type", "value": "item" }] }],
+          "fulfillment_id": "e6d6eaa2-ac6f-49ea-8aee-eeaea669389c"
+        }
+      ],
+      "billing": {
+        "address": {
+          "building": "deep public scheool",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560095",
+          "locality": "19th Main Road",
+          "name": "rushikesh desai"
+        },
+        "phone": "7482984341",
+        "name": "rushikesh desai",
+        "email": "rushikesh.desai@bharatrath.com",
+        "created_at": "2024-10-25T10:27:46.499Z",
+        "updated_at": "2024-10-25T10:27:46.499Z"
+      },
+      "fulfillments": [
+        {
+          "id": "e6d6eaa2-ac6f-49ea-8aee-eeaea669389c",
+          "type": "Delivery",
+          "end": {
+            "contact": { "email": "rushikesh.desai@bharatrath.com", "phone": "7482984341" },
+            "location": {
+              "gps": "12.938241,77.619422",
+              "address": {
+                "building": "deep public scheool",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560095",
+                "locality": "19th Main Road",
+                "name": "rushikesh desai"
+              }
+            }
+          },
+          "tracking": true
+        }
+      ],
+      "quote": {
+        "price": { "value": "213.6", "currency": "INR" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1345",
+            "@ondc/org/item_quantity": { "count": 1 },
+            "title": "Garam Masala",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "75" },
+            "item": { "price": { "currency": "INR", "value": "75" } }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "e6d6eaa2-ac6f-49ea-8aee-eeaea669389c",
+            "price": { "currency": "INR", "value": "138.60" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "50200029300972",
+            "settlement_ifsc_code": "HDFC0009107",
+            "beneficiary_name": "21234567890",
+            "bank_name": "HDFC Bank",
+            "branch_name": "Kharadi"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "27ABCDE1234F1Z5" },
+            { "code": "provider_tax_number", "value": "ABCDE1234F" },
+            { "code": "np_type", "value": "MSN" }
+          ]
+        }
+      ]
+    }
+  }
+}

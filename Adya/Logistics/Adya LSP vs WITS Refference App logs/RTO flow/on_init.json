@@ -1,0 +1,219 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_init",
+        "core_version": "1.2.0",
+        "bap_id": "logistics-backend.zionmart.in",
+        "bap_uri": "https://logistics-backend.zionmart.in/api/v1/ondc/lsp_bap/adya_lsp_bap",
+        "transaction_id": "ddc4ca8d-37d1-4935-a9d9-2673c9609e6b",
+        "message_id": "78fa7489-adae-4862-92cd-310644c6d23c",
+        "timestamp": "2024-01-02T12:00:06.824Z",
+        "bpp_id": "ref-logistics-app-preprod.ondc.org",
+        "bpp_uri": "https://ref-logistics-app-preprod.ondc.org"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "6d02e8cd-9c46-4b79-acc4-0598ea48c627"
+            },
+            "items": [
+                {
+                    "id": "Standard",
+                    "fulfillment_id": "52a6bfdb-895a-4255-8ca9-64ee2e7c6988",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "category_id": "Standard Delivery"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "52a6bfdb-895a-4255-8ca9-64ee2e7c6988",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "13.0206268,77.64788519999999",
+                            "address": {
+                                "name": "ONDC Store",
+                                "building": "Sir poojambikadevi fish tawa",
+                                "locality": "HRBR Layout 1st Block",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "INDIA",
+                                "area_code": "560043"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9638527410",
+                            "email": "test@gmail.com"
+                        },
+                        "instructions": {
+                            "images": []
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "12.9694097,77.64160559999999",
+                            "address": {
+                                "name": "Saira",
+                                "building": "HAL 2nd Stage",
+                                "locality": "Indiranagar",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "INDIA",
+                                "area_code": "560038"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7569316675",
+                            "email": "saira@tmail.com"
+                        },
+                        "instructions": {
+                            "images": []
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "122.38"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "116.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "Standard",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "6.38"
+                        }
+                    }
+                ],
+                "ttl": "PT15M"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": []
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.0"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "amount": {
+                            "currency": "INR",
+                            "value": "100.0"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

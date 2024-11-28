@@ -1,0 +1,290 @@
+{
+    "context": {
+        "domain": "ONDC:RET11",
+        "action": "on_init",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-preprod.craver.in",
+        "bap_uri": "https://ondc-preprod.craver.in/bapl/",
+        "transaction_id": "0d90f98f-c85c-c50c-2949-4738be7f17e9",
+        "message_id": "dbf8f728-77d1-49d8-ab4d-673999aec9c2",
+        "timestamp": "2024-07-18T12:20:07.371Z",
+        "bpp_id": "pramaan.ondc.org/alpha/mock-server",
+        "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "pramaan.ondc.org/alpha/mock-server",
+                "locations": [
+                    {
+                        "id": "f13873c1-810d-4f2b-ba54-5edcec9f0e4a"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "c8314c6d-8365-4f72-92f8-d89ec23291f1",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillment_id": "c461a827-f43d-487e-871d-e13467acd866"
+                }
+            ],
+            "billing": {
+                "name": "RUDRA",
+                "address": {
+                    "name": "Blue Sea Society",
+                    "building": "building: Blue Sea Society",
+                    "locality": "Connaught Place",
+                    "city": "delhi",
+                    "state": "Delhi",
+                    "country": "IND",
+                    "area_code": "110001"
+                },
+                "email": "example@example.com",
+                "phone": "7000012490",
+                "created_at": "2024-07-18T12:20:07.297Z",
+                "updated_at": "2024-07-18T12:20:07.297Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "c461a827-f43d-487e-871d-e13467acd866",
+                    "type": "Delivery",
+                    "end": {
+                        "location": {
+                            "gps": "28.632794,77.219546",
+                            "address": {
+                                "name": "Blue Sea Society",
+                                "building": "building: Blue Sea Society",
+                                "locality": "Connaught Place",
+                                "city": "delhi",
+                                "state": "Delhi",
+                                "country": "IND",
+                                "area_code": "110001"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7000012490"
+                        }
+                    },
+                    "tracking": true
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "584"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "c8314c6d-8365-4f72-92f8-d89ec23291f1",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Burger",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "499"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "499.0"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "25"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "uri": "https://snp.com/pg",
+                "status": "NOT-PAID",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "10.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "Mayur",
+                        "upi_address": "mayur@gmail.com",
+                        "settlement_bank_account_no": "12345588548",
+                        "settlement_ifsc_code": "sdsd0005685",
+                        "bank_name": "ABC",
+                        "branch_name": "XYZ"
+                    }
+                ],
+                "tags": [
+                    {
+                        "code": "bpp_collect",
+                        "list": [
+                            {
+                                "code": "success",
+                                "value": "Y"
+                            },
+                            {
+                                "code": "error",
+                                "value": ".."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000.00"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000.00"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "22AAAAA0000A1Z5"
+                        }
+                    ]
+                }
+            ],
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": "002"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "10.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "42.40"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "10.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "42.40"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "009"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "010,011,012,013,014,015"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "20.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "84.80"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,132 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_search",
+    "core_version": "1.2.0",
+    "bap_id": "api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay",
+    "bap_uri": "https://api.test.esamudaay.com/ondc/sdk/bap/logistics/esamudaay/",
+    "transaction_id": "540154ec-57a3-4425-916f-74d12a90f207",
+    "message_id": "f1dbc9c8-b204-40f8-840c-6be44b9ec8c9",
+    "timestamp": "2024-10-25T08:55:03.357Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "MP2",
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "code": "np_tax_type",
+                "value": "Normal"
+              }
+            ]
+          }
+        ]
+      },
+      "bpp/providers": [
+        {
+          "id": "MP2",
+          "descriptor": {
+            "name": "MP2",
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider"
+          },
+          "categories": [
+            {
+              "id": "Immediate Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-10-25"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "mp2_immediate_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT20M"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "2.07"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "mp2_immediate_f1-RTO",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "id": "mp2_immediate",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "MP2 Immediate Delivery",
+                "short_desc": "Immediate Delivery by MP2",
+                "long_desc": "Immediate Delivery by MP2"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "25.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-10-25"
+              }
+            },
+            {
+              "id": "mp2_immediate-RTO",
+              "parent_item_id": "mp2_immediate",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-10-25"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

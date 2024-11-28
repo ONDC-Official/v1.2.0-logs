@@ -1,0 +1,320 @@
+{
+	"context": {
+		"domain": "nic2004:60232",
+		"country": "IND",
+		"city": "std:080",
+		"action": "on_status",
+		"core_version": "1.2.0",
+		"bap_id": "preprod-ondc.addble.com",
+		"bap_uri": "https://preprod-ondc.addble.com/",
+		"bpp_id": "preprod.logistics-seller.mp2.in",
+		"bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+		"transaction_id": "dc5d3370-8470-4476-9113-c42273d73ef7",
+		"message_id": "msg_uudq4diussjehb32",
+		"timestamp": "2024-05-22T11:14:41.088Z"
+	},
+	"message": {
+		"order": {
+			"id": "d2f3c1d4-47c6-4ec0-adcb-1e711b3fd889",
+			"state": "Cancelled",
+			"provider": {
+				"id": "MP2"
+			},
+			"items": [
+				{
+					"id": "mp2_sdd",
+					"fulfillment_id": "mp2_sdd_f1",
+					"category_id": "Same Day Delivery",
+					"descriptor": {
+						"code": "P2P"
+					},
+					"time": {
+						"label": "TAT",
+						"duration": "PT4H",
+						"timestamp": "2024-05-22"
+					}
+				},
+				{
+					"id": "mp2_sdd-RTO",
+					"fulfillment_id": "mp2_sdd_f1-RTO",
+					"category_id": "Same Day Delivery",
+					"descriptor": {
+						"code": "P2P"
+					},
+					"time": {
+						"label": "TAT",
+						"duration": "PT4H",
+						"timestamp": "2024-05-22"
+					}
+				}
+			],
+			"quote": {
+				"price": {
+					"currency": "INR",
+					"value": "2.0"
+				},
+				"breakup": [
+					{
+						"@ondc/org/item_id": "mp2_sdd",
+						"@ondc/org/title_type": "delivery",
+						"price": {
+							"currency": "INR",
+							"value": "1.69"
+						}
+					},
+					{
+						"@ondc/org/item_id": "mp2_sdd",
+						"@ondc/org/title_type": "tax",
+						"price": {
+							"currency": "INR",
+							"value": "0.31"
+						}
+					},
+					{
+						"@ondc/org/item_id": "mp2_sdd-RTO",
+						"@ondc/org/title_type": "rto",
+						"price": {
+							"currency": "INR",
+							"value": "0.0"
+						}
+					},
+					{
+						"@ondc/org/item_id": "mp2_sdd-RTO",
+						"@ondc/org/title_type": "tax",
+						"price": {
+							"currency": "INR",
+							"value": "0.0"
+						}
+					}
+				]
+			},
+			"fulfillments": [
+				{
+					"id": "mp2_sdd_f1",
+					"type": "Delivery",
+					"state": {
+						"descriptor": {
+							"code": "Cancelled"
+						}
+					},
+					"start": {
+						"time": {
+							"duration": "PT2H",
+							"range": {
+								"start": "2024-05-22T11:11:42.086Z",
+								"end": "2024-05-22T13:11:42.086Z"
+							},
+							"timestamp": "2024-05-22T11:13:33.097Z"
+						},
+						"person": {
+							"name": "Jane"
+						},
+						"location": {
+							"gps": "12.91348965368409,77.63762354850769",
+							"address": {
+								"name": "Home Store HSR",
+								"building": "BDA Complex",
+								"locality": "HSR Layout",
+								"city": "BENGALURU URBAN",
+								"state": "Karnataka",
+								"country": "India",
+								"area_code": "560102"
+							}
+						},
+						"contact": {
+							"phone": "9954780440",
+							"email": "jane@example.com"
+						},
+						"instructions": {
+							"code": "3",
+							"short_desc": "661826",
+							"long_desc": "Pick up code",
+							"images": [
+								"https://s3.amazonaws.com/mp2-lsp/image1.png"
+							]
+						}
+					},
+					"end": {
+						"person": {
+							"name": "Yaikhomba Blr"
+						},
+						"location": {
+							"gps": "12.92221418441403,77.67106735876064",
+							"address": {
+								"name": "Yaikhomba Blr",
+								"building": "AKME",
+								"locality": "Bellandur Road",
+								"city": "Bengaluru",
+								"state": "Karnataka",
+								"country": "IND",
+								"area_code": "560103"
+							}
+						},
+						"contact": {
+							"phone": "6362944815",
+							"email": "adden.company@gmail.com"
+						},
+						"time": {
+							"range": {
+								"start": "2024-05-22T13:11:42.086Z",
+								"end": "2024-05-22T13:11:42.086Z"
+							}
+						}
+					},
+					"tracking": false,
+					"tags": [
+						{
+							"code": "tracking",
+							"list": [
+								{
+									"code": "gps_enabled",
+									"value": "yes"
+								}
+							]
+						},
+						{
+							"code": "precancel_state",
+							"list": [
+								{
+									"code": "fulfillment_state",
+									"value": "Out-for-delivery"
+								},
+								{
+									"code": "updated_at",
+									"value": "2024-05-22T11:13:33.097Z"
+								}
+							]
+						},
+						{
+							"code": "rto_event",
+							"list": [
+								{
+									"code": "retry_count",
+									"value": "0"
+								},
+								{
+									"code": "rto_id",
+									"value": "mp2_sdd_f1-RTO"
+								},
+								{
+									"code": "cancellation_reason_id",
+									"value": "015"
+								},
+								{
+									"code": "cancelled_by",
+									"value": "preprod.logistics-seller.mp2.in"
+								},
+								{
+									"code": "sub_reason_id",
+									"value": ""
+								}
+							]
+						}
+					],
+					"agent": {
+						"name": "MP2Delivery",
+						"phone": "9000012345"
+					}
+				},
+				{
+					"id": "mp2_sdd_f1-RTO",
+					"type": "RTO",
+					"state": {
+						"descriptor": {
+							"code": "RTO-Delivered"
+						}
+					},
+					"start": {
+						"time": {
+							"range": {
+								"start": "2024-05-22T11:14:31.589Z",
+								"end": "2024-05-22T15:14:31.589Z"
+							},
+							"timestamp": "2024-05-22T11:14:31.589Z"
+						}
+					},
+					"end": {
+						"time": {
+							"range": {
+								"start": "2024-05-22T11:14:41.071Z",
+								"end": "2024-05-22T15:14:41.071Z"
+							},
+							"timestamp": "2024-05-22T11:14:41.071Z"
+						}
+					}
+				}
+			],
+			"payment": {
+				"collected_by": "BAP",
+				"type": "POST-FULFILLMENT",
+				"status": "NOT-PAID"
+			},
+			"billing": {
+				"name": "Addble",
+				"address": {
+					"name": "BTMC",
+					"building": "BTMC",
+					"locality": "Uripok Kangchup Road, Lamdeng Khunou, Lamsang",
+					"city": "Imphal",
+					"state": "Manipur",
+					"country": "India",
+					"area_code": "795146"
+				},
+				"tax_number": "14A00000001G1Z4",
+				"phone": "7085097856",
+				"email": "ondcsupport@addble.com",
+				"created_at": "2024-05-22T11:00:16.424Z",
+				"updated_at": "2024-05-22T11:00:16.424Z"
+			},
+			"@ondc/org/linked_order": {
+				"items": [
+					{
+						"category_id": "Grocery",
+						"descriptor": {
+							"name": "Heinz Tomato Ketchup 900 gm (Pack of 1)"
+						},
+						"quantity": {
+							"count": 1,
+							"measure": {
+								"unit": "kilogram",
+								"value": 0.9
+							}
+						},
+						"price": {
+							"currency": "INR",
+							"value": "192"
+						}
+					}
+				],
+				"provider": {
+					"descriptor": {
+						"name": "Home Store HSR"
+					},
+					"address": {
+						"name": "Home Store HSR",
+						"building": "BDA Complex",
+						"locality": "HSR Layout",
+						"city": "BENGALURU URBAN",
+						"state": "Karnataka",
+						"area_code": "560102"
+					}
+				},
+				"order": {
+					"id": "2024-05-22-197203",
+					"weight": {
+						"unit": "kilogram",
+						"value": 0.9
+					}
+				}
+			},
+			"updated_at": "2024-05-22T11:14:41.071Z",
+			"created_at": "2024-05-22T11:01:05.949Z",
+			"cancellation": {
+				"cancelled_by": "preprod.logistics-seller.mp2.in",
+				"reason": {
+					"id": "015"
+				}
+			}
+		}
+	}
+}

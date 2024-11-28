@@ -1,0 +1,1 @@
+Logs fpr ver 1.2
