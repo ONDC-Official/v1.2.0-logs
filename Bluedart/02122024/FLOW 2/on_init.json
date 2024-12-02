@@ -1,0 +1,199 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "action": "on_init",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.0",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/lspbuyer",
+        "transaction_id": "eaa0f70c-0eb0-4c12-be34-74e2c61a6395",
+        "message_id": "7b57dda1-0a49-499f-ba72-81a9ccab6243",
+        "timestamp": "2024-11-28T12:11:43.962Z",
+        "bpp_id": "ondc-dev.bluedart.com",
+        "bpp_uri": "https://ondc-dev.bluedart.com/"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "Bluedart Express",
+                "locations": [
+                    {
+                        "id": "NEW DELHI"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "BDEAP0",
+                    "fulfillment_id": "1"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "28.606284, 77.207982",
+                            "address": {
+                                "name": "7/6, August Kranti Marg",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "India",
+                                "area_code": "110011"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "28.647515, 77.136915",
+                            "address": {
+                                "name": "7/6, August Kranti Marg",
+                                "building": "Siri Fort Institutional",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "India",
+                                "area_code": "110015"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "abcd.efgh@gmail.com"
+                        }
+                    }
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "396.42"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "396.42"
+                        },
+                        "@ondc/org/item_id": "BDEAP0",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "BDEAP0",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ],
+                "ttl": "P7D"
+            },
+            "payment": {
+                "type": "POST-FULFILLMENT",
+                "collected_by": "BAP"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": "008"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Agent-assigned",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "011,012,013,014,015"
+                        }
+                    },
+                    "cancellation_fee": {
+                        "percentage": "100.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "50.00"
+                        }
+                    }
+                }
+            ],
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
