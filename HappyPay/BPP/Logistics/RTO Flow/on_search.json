@@ -1,0 +1,210 @@
+{
+  "message": {
+    "catalog": {
+      "bpp/providers": [
+        {
+          "id": "MP2",
+          "descriptor": {
+            "long_desc": "MP2 Logistics Provider",
+            "name": "MP2",
+            "short_desc": "MP2"
+          },
+          "categories": [
+            {
+              "time": {
+                "duration": "PT55M",
+                "timestamp": "2024-12-09",
+                "label": "TAT"
+              },
+              "id": "Immediate Delivery"
+            },
+            {
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-12-09"
+              },
+              "id": "Same Day Delivery"
+            }
+          ],
+          "fulfillments": [
+            {
+              "start": {
+                "time": {
+                  "duration": "PT20M"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "value": "6.81",
+                      "code": "motorable_distance"
+                    }
+                  ]
+                }
+              ],
+              "id": "mp2_immediate_f1",
+              "type": "Delivery"
+            },
+            {
+              "id": "mp2_immediate_f1-RTO",
+              "type": "RTO"
+            },
+            {
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "value": "6.81",
+                      "code": "motorable_distance"
+                    }
+                  ]
+                }
+              ],
+              "id": "mp2_sdd_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT2H"
+                }
+              }
+            },
+            {
+              "id": "mp2_sdd_f1-RTO",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "descriptor": {
+                "name": "MP2 Immediate Delivery",
+                "short_desc": "Immediate Delivery by MP2",
+                "long_desc": "Immediate Delivery by MP2",
+                "code": "P2P"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "25.0"
+              },
+              "time": {
+                "duration": "PT55M",
+                "timestamp": "2024-12-09",
+                "label": "TAT"
+              },
+              "id": "mp2_immediate",
+              "parent_item_id": "",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1"
+            },
+            {
+              "id": "mp2_immediate-RTO",
+              "parent_item_id": "mp2_immediate",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-12-09"
+              }
+            },
+            {
+              "descriptor": {
+                "long_desc": "Same Day Delivery",
+                "code": "P2P",
+                "name": "MP2 SDD Delivery",
+                "short_desc": "Same Day Delivery"
+              },
+              "price": {
+                "value": "25.0",
+                "currency": "INR"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-12-09"
+              },
+              "id": "mp2_sdd",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1"
+            },
+            {
+              "id": "mp2_sdd-RTO",
+              "parent_item_id": "mp2_sdd",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-12-09"
+              }
+            }
+          ]
+        }
+      ],
+      "bpp/descriptor": {
+        "tags": [
+          {
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "code": "np_tax_type",
+                "value": "Normal"
+              }
+            ],
+            "code": "bpp_terms"
+          }
+        ],
+        "name": "MP2"
+      }
+    }
+  },
+  "context": {
+    "action": "on_search",
+    "message_id": "7ac679ce-3fb2-4d27-bad5-4b18d81742dc",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "city": "std:080",
+    "transaction_id": "51c829d8-a71e-4601-aa22-36ba4062c583",
+    "core_version": "1.2.0",
+    "timestamp": "2024-12-09T08:19:34.738Z",
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "bap_uri": "https://bridge.sellersetu.in/ondc/happypay/",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "bap_id": "bridge.sellersetu.in/ondc/happypay"
+  }
+}
