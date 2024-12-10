@@ -1,0 +1,210 @@
+{
+  "context": {
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2024-12-09T08:10:01.654Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "core_version": "1.2.0",
+    "bap_id": "bridge.sellersetu.in/ondc/happypay",
+    "transaction_id": "ecc8b0bf-f5a0-4072-a8e0-9c2fec860b59",
+    "domain": "nic2004:60232",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "action": "on_search",
+    "bap_uri": "https://bridge.sellersetu.in/ondc/happypay/",
+    "message_id": "acbab75b-c8e3-43cd-bc29-e0916ece01a3"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "tags": [
+          {
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "value": "Normal",
+                "code": "np_tax_type"
+              }
+            ],
+            "code": "bpp_terms"
+          }
+        ],
+        "name": "MP2"
+      },
+      "bpp/providers": [
+        {
+          "categories": [
+            {
+              "id": "Immediate Delivery",
+              "time": {
+                "timestamp": "2024-12-09",
+                "label": "TAT",
+                "duration": "PT55M"
+              }
+            },
+            {
+              "time": {
+                "timestamp": "2024-12-09",
+                "label": "TAT",
+                "duration": "PT4H"
+              },
+              "id": "Same Day Delivery"
+            }
+          ],
+          "fulfillments": [
+            {
+              "start": {
+                "time": {
+                  "duration": "PT20M"
+                }
+              },
+              "tags": [
+                {
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "6.81"
+                    }
+                  ],
+                  "code": "distance"
+                }
+              ],
+              "id": "mp2_immediate_f1",
+              "type": "Delivery"
+            },
+            {
+              "type": "RTO",
+              "id": "mp2_immediate_f1-RTO"
+            },
+            {
+              "id": "mp2_sdd_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT2H"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "value": "kilometer",
+                      "code": "motorable_distance_type"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "6.81"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "RTO",
+              "id": "mp2_sdd_f1-RTO"
+            }
+          ],
+          "items": [
+            {
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1",
+              "descriptor": {
+                "name": "MP2 Immediate Delivery",
+                "short_desc": "Immediate Delivery by MP2",
+                "long_desc": "Immediate Delivery by MP2",
+                "code": "P2P"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "25.0"
+              },
+              "time": {
+                "timestamp": "2024-12-09",
+                "label": "TAT",
+                "duration": "PT55M"
+              },
+              "id": "mp2_immediate",
+              "parent_item_id": ""
+            },
+            {
+              "parent_item_id": "mp2_immediate",
+              "category_id": "Immediate Delivery",
+              "fulfillment_id": "mp2_immediate_f1-RTO",
+              "descriptor": {
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote",
+                "code": "P2P",
+                "name": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT55M",
+                "timestamp": "2024-12-09"
+              },
+              "id": "mp2_immediate-RTO"
+            },
+            {
+              "id": "mp2_sdd",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1",
+              "descriptor": {
+                "name": "MP2 SDD Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery",
+                "code": "P2P"
+              },
+              "price": {
+                "value": "25.0",
+                "currency": "INR"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-12-09"
+              }
+            },
+            {
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1-RTO",
+              "descriptor": {
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote",
+                "code": "P2P"
+              },
+              "price": {
+                "value": "0",
+                "currency": "INR"
+              },
+              "time": {
+                "timestamp": "2024-12-09",
+                "label": "TAT",
+                "duration": "PT4H"
+              },
+              "id": "mp2_sdd-RTO",
+              "parent_item_id": "mp2_sdd"
+            }
+          ],
+          "id": "MP2",
+          "descriptor": {
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider",
+            "name": "MP2"
+          }
+        }
+      ]
+    }
+  }
+}
