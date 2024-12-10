@@ -1,23 +1,22 @@
 {
     "context": {
-        "action": "confirm",
+        "domain": "nic2004:60232",
+        "action": "on_status",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.0",
         "bap_id": "pramaan.ondc.org/alpha/mock-server",
         "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/lspbuyer",
-        "transaction_id": "778df443-2c20-4446-baae-941fa7b92bfc",
-        "message_id": "d66193a7-f922-4852-a453-ba4ded0bd288",
-        "city": "std:011",
-        "country": "IND",
-        "timestamp": "2024-12-06T08:07:00.744Z",
-        "ttl": "PT30S",
+        "transaction_id": "cffbf6a3-2ad4-48d6-9726-5a302870fc94",
+        "message_id": "bb4708b3-b05b-43dd-897a-0e110f414bce",
+        "timestamp": "2024-12-09T07:21:40.395Z",
         "bpp_id": "ondc-dev.bluedart.com",
-        "bpp_uri": "https://ondc-dev.bluedart.com/",
-        "core_version": "1.2.0",
-        "domain": "nic2004:60232"
+        "bpp_uri": "https://ondc-dev.bluedart.com/"
     },
     "message": {
         "order": {
-            "id": "hrMY6wObi0J2YG1fN67t9njgxJo32di8",
-            "state": "Created",
+            "id": "QGvsFGzdysRzWpA9fbL8TJUfpVRtijBi",
+            "state": "In-progress",
             "provider": {
                 "id": "Bluedart Express",
                 "locations": [
@@ -28,59 +27,53 @@
             },
             "items": [
                 {
+                    "id": "BDEAP0",
+                    "category_id": "Express Delivery",
+                    "fulfillment_id": "1",
                     "descriptor": {
                         "name": "Air Etail",
                         "code": "P2H2P",
                         "short_desc": "Express Delivery",
                         "long_desc": "Express Delivery"
                     },
-                    "id": "BDEAP0",
-                    "parent_item_id": "",
-                    "price": {
-                        "currency": "INR",
-                        "value": "391.78"
-                    },
-                    "category_id": "Express Delivery",
-                    "fulfillment_id": "1",
                     "time": {
                         "label": "TAT",
-                        "timestamp": "2024-12-07",
+                        "timestamp": "2024-12-10",
                         "duration": "P1D"
                     }
                 }
             ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "391.78"
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "140301"
                 },
-                "breakup": [
-                    {
-                        "price": {
-                            "currency": "INR",
-                            "value": "391.78"
-                        },
-                        "@ondc/org/item_id": "BDEAP0",
-                        "@ondc/org/title_type": "delivery"
-                    },
-                    {
-                        "title": "tax",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        },
-                        "@ondc/org/item_id": "BDEAP0",
-                        "@ondc/org/title_type": "tax"
-                    }
-                ]
+                "email": "sharique.efgh@gmail.com",
+                "phone": "9886098860",
+                "tax_number": "29AAACU1901H1ZK",
+                "created_at": "2024-12-09T07:19:39.353Z",
+                "updated_at": "2024-12-09T07:19:39.353Z"
             },
             "fulfillments": [
                 {
                     "id": "1",
                     "type": "Delivery",
+                    "@ondc/org/awb_no": "81202229570",
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-picked-up"
+                        }
+                    },
+                    "tracking": true,
                     "start": {
                         "location": {
-                            "gps": "28.606284, 77.207982",
+                            "gps": "28.604100, 77.210171",
                             "address": {
                                 "name": "7/6, August Kranti Marg",
                                 "building": "Siri Fort Institutional",
@@ -91,12 +84,29 @@
                                 "area_code": "110011"
                             }
                         },
+                        "time": {
+                            "timestamp": "2024-12-09T07:21:40.378Z",
+                            "duration": "PT6H",
+                            "range": {
+                                "start": "2024-12-10T09:00:00.000Z",
+                                "end": "2024-12-10T18:00:00.000Z"
+                            }
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "short_desc": "341290",
+                            "long_desc": "additional instructions for pickup",
+                            "additional_desc": {
+                                "url": "https://reverse_qc_sop_form.htm",
+                                "content_type": "text/html"
+                            },
+                            "images": [
+                                "https://galaxy.bluedart.in/ONDCPOD/56bb865f97f8b28fe28b071c984ac38b.pdf"
+                            ]
+                        },
                         "contact": {
                             "phone": "9886098860",
                             "email": "abcd.efgh@gmail.com"
-                        },
-                        "time": {
-                            "duration": "PT6H"
                         },
                         "person": {
                             "name": "Mayur"
@@ -104,7 +114,7 @@
                     },
                     "end": {
                         "location": {
-                            "gps": "28.647515, 77.136915",
+                            "gps": "28.652486, 77.139662",
                             "address": {
                                 "name": "7/6, August Kranti Marg",
                                 "building": "Siri Fort Institutional",
@@ -113,6 +123,12 @@
                                 "state": "Delhi",
                                 "country": "India",
                                 "area_code": "110015"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-12-10T09:00:00.000Z",
+                                "end": "2024-12-10T18:00:00.000Z"
                             }
                         },
                         "contact": {
@@ -141,49 +157,74 @@
                                     "value": "yes"
                                 }
                             ]
+                        },
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "url_enabled",
+                                    "value": "Yes"
+                                },
+                                {
+                                    "code": "url",
+                                    "value": "https://www.bluedart.com/web/guest/trackdartresult?trackFor=0&trackNo=81202229570"
+                                }
+                            ]
                         }
                     ]
                 }
             ],
-            "billing": {
-                "name": "Mayur",
-                "address": {
-                    "name": "7/6, August Kranti Marg",
-                    "building": "Siri Fort Institutional",
-                    "locality": "Siri Fort Institutional Area, Siri Fort",
-                    "city": "New Delhi",
-                    "state": "Delhi",
-                    "country": "India",
-                    "area_code": "140301"
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "391.78"
                 },
-                "tax_number": "29AAACU1901H1ZK",
-                "phone": "9886098860",
-                "email": "sharique.efgh@gmail.com",
-                "created_at": "2024-12-06T08:06:58.322Z",
-                "updated_at": "2024-12-06T08:06:58.322Z"
+                "breakup": [
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "391.78"
+                        },
+                        "@ondc/org/item_id": "BDEAP0",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "BDEAP0",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ]
             },
             "payment": {
                 "type": "POST-FULFILLMENT",
+                "status": "NOT-PAID",
                 "collected_by": "BAP"
             },
+            "created_at": "2024-12-09T07:19:43.611Z",
+            "updated_at": "2024-12-09T07:21:40.378Z",
             "@ondc/org/linked_order": {
                 "items": [
                     {
-                        "category_id": "Grocery",
                         "descriptor": {
                             "name": "Atta"
                         },
                         "quantity": {
                             "count": 2,
                             "measure": {
-                                "unit": "kilogram",
-                                "value": 0.5
+                                "value": 0.5,
+                                "unit": "kilogram"
                             }
                         },
+                        "parent_item_id": "",
                         "price": {
                             "currency": "INR",
                             "value": "150.00"
-                        }
+                        },
+                        "category_id": "Grocery"
                     }
                 ],
                 "provider": {
@@ -208,62 +249,7 @@
                     },
                     "dimensions": {
                         "length": {
-                            "unit": "centimeter",
-                            "value": 1
+                            "value": 1,
+                            "unit": "centimeter"
                         },
-                        "breadth": {
-                            "unit": "centimeter",
-                            "value": 1
-                        },
-                        "height": {
-                            "unit": "centimeter",
-                            "value": 1
-                        }
-                    }
-                }
-            },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "max_liability",
-                            "value": "2"
-                        },
-                        {
-                            "code": "max_liability_cap",
-                            "value": "10000"
-                        },
-                        {
-                            "code": "mandatory_arbitration",
-                            "value": "false"
-                        },
-                        {
-                            "code": "court_jurisdiction",
-                            "value": "Bengaluru"
-                        },
-                        {
-                            "code": "delay_interest",
-                            "value": "1000"
-                        },
-                        {
-                            "code": "static_terms",
-                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
-                        }
-                    ]
-                },
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "accept_bpp_terms",
-                            "value": "Y"
-                        }
-                    ]
-                }
-            ],
-            "created_at": "2024-12-06T08:07:00.744Z",
-            "updated_at": "2024-12-06T08:07:00.744Z"
-        }
-    }
-}
+                   
