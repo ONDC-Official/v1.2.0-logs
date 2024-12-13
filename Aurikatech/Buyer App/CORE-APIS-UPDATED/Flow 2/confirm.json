@@ -1,0 +1,207 @@
+{
+    "context": {
+        "domain": "ONDC:RET12",
+        "action": "confirm",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.0",
+        "bap_id": "buyer-preprod.aurikatech.com",
+        "bap_uri": "https://buyer-preprod.aurikatech.com/protocol/v1",
+        "transaction_id": "f8840f20-b994-47ce-88c5-f71425e0d9d3",
+        "message_id": "5ebf809c-4e69-4049-a9d3-f047130ab7b9",
+        "timestamp": "2024-11-19T06:06:34.396Z",
+        "bpp_id": "pramaan.ondc.org/alpha/mock-server",
+        "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/seller",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2024-11-19-266716",
+            "state": "Created",
+            "billing": {
+                "address": {
+                    "name": "Vansh",
+                    "building": "ABC",
+                    "locality": "Rohtak Road",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "IND",
+                    "area_code": "110041"
+                },
+                "phone": "7017366984",
+                "name": "Vansh",
+                "email": "vansh@gmail.com",
+                "created_at": "2024-11-19T06:06:28.271Z",
+                "updated_at": "2024-11-19T06:06:28.271Z"
+            },
+            "items": [
+                {
+                    "id": "4a6aca77-bf00-432c-8844-e0068eaa3e65",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "c461a827-f43d-487e-871d-e13467acd866"
+                }
+            ],
+            "provider": {
+                "id": "pramaan.ondc.org/alpha/mock-server",
+                "locations": [
+                    {
+                        "id": "f13873c1-810d-4f2b-ba54-5edcec9f0e4a"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "@ondc/org/TAT": "PT60M",
+                    "id": "c461a827-f43d-487e-871d-e13467acd866",
+                    "tracking": true,
+                    "end": {
+                        "contact": {
+                            "phone": "7017366984"
+                        },
+                        "person": {
+                            "name": "Vansh"
+                        },
+                        "location": {
+                            "gps": "28.681910,77.069038",
+                            "address": {
+                                "name": "Vansh",
+                                "building": "ABC",
+                                "locality": "Rohtak Road",
+                                "city": "New Delhi",
+                                "state": "Delhi",
+                                "country": "IND",
+                                "area_code": "110041"
+                            }
+                        }
+                    },
+                    "type": "Delivery"
+                }
+            ],
+            "payment": {
+                "params": {
+                    "amount": "3084.00",
+                    "currency": "INR"
+                },
+                "status": "NOT-PAID",
+                "type": "ON-FULFILLMENT",
+                "collected_by": "BPP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "10.00",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "buyer-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "beneficiary_name": "Mayur",
+                        "upi_address": "mayur@gmail.com",
+                        "settlement_bank_account_no": "12345588548",
+                        "settlement_ifsc_code": "sdsd0005685",
+                        "bank_name": "ABC",
+                        "branch_name": "XYZ"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "3084"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "4a6aca77-bf00-432c-8844-e0068eaa3e65",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Fusion Shoes",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2999"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "2999.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "50"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Packing charges",
+                        "@ondc/org/title_type": "packing",
+                        "price": {
+                            "currency": "INR",
+                            "value": "25"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "c461a827-f43d-487e-871d-e13467acd866",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability",
+                            "value": "2"
+                        },
+                        {
+                            "code": "max_liability_cap",
+                            "value": "10000.00"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest",
+                            "value": "1000.00"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "22AAAAA0000A1Z5"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "21ABCDE1234F1Z1"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2024-11-19T06:06:34.396Z",
+            "updated_at": "2024-11-19T06:06:34.396Z"
+        }
+    }
+}
