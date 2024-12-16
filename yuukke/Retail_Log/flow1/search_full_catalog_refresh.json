@@ -1,45 +1,63 @@
-{
-    "context": {
-        "action": "search",
-        "country": "IND",
-        "city": "std:044",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "6dfe279c-a349-43fb-899e-214e20b1232e",
-        "message_id": "1e544df1-40e7-4db4-8e90-213bf5c29669",
-        "timestamp": "2024-12-07T06:35:33.395Z",
-        "ttl": "PT30S",
-        "core_version": "1.2.0",
-        "domain": "ONDC:RET10"
-    },
-    "message": {
-        "intent": {
-            "fulfillment": {
-                "type": "Delivery"
-            },
-            "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3"
-            },
-            "tags": [
-                {
-                    "code": "bap_terms",
-                    "list": [
-                        {
-                            "code": "static_terms",
-                            "value": ""
-                        },
-                        {
-                            "code": "static_terms_new",
-                            "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
-                        },
-                        {
-                            "code": "effective_date",
-                            "value": "2024-12-09T23:59:00.000Z"
-                        }
-                    ]
-                }
-            ]
-        }
-    }
-}
+FarheenNazz <notifications@github.com>
+  
+Mon, Dec 9, 7:57 PM (18 hours ago)
+  
+to ONDC-Official/v1.2.0-logs, me, Mention
+
+Yuukke SA:10
+Flow-1
+On_search-
+
+    bpp/providers/items.tags.order_value.min_value=300.00 the why in item_id- 216,
+    Value is=200.00 which is less than the provided min_value?
+    categories_id-Yuk123kke456 , variants should be linked with at least any two items.
+
+On_search_inc-
+
+    message.”_v”=0 invalid key and value?
+    “_id”= “6740c2a9d117909b55d5b25d” , which id is provided?
+
+Flow-2
+init-
+
+    How is the payment key is provided in this call?
+
+On_init-
+
+    Order.tags- np_type, tax_number and provider_tax_number - only these objects should be provided for now.
+
+confirm-
+
+    payment.params.transaction_id should not be equal to the transaction_id in context but the transaction_id of payment.
+
+On_confirm-
+
+    Fulffillment.start.time.range - start and end should not be the same and must be a range.
+
+On_status_picked-
+
+    Invoice link is not accessible.
+
+Flow-3
+select-
+
+    How the item which got out of stock is provided here with the count-2?
+
+On_select-
+
+    Why the item which got out of stock is provided with the count-2?
+
+Flow-6
+On_update_part_cancel-
+
+    Item object should be updated and new fulfillment_id should be added.
+
+On_status_picked-
+
+    Invoice link is not accessible.
+
+On_update_liquidated-
+
+    Item object should be updated with new fulfillment_id.
+    fulfillments.liquidated- Why start.time.range is provided when the item is liquidated?
+    fulfillments.liquidated.Tags - Trail should be provided.
