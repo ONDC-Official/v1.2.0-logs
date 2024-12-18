@@ -1,6 +1,6 @@
 {
     "context": {
-        "action": "on_cancel",
+        "action": "on_status",
         "bap_id": "ondc.sequelstring.com/buyer/protocol",
         "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
         "bpp_id": "bridge.sellersetu.in",
@@ -9,9 +9,9 @@
         "core_version": "1.2.0",
         "country": "IND",
         "domain": "ONDC:RET10",
-        "message_id": "18f5ae24-a33d-4ec1-b559-69e011ee437e",
-        "timestamp": "2024-12-18T11:41:26.985Z",
-        "transaction_id": "254b3b80-80ca-45f2-adbc-ea953c965c6d",
+        "message_id": "aea82c8e-37a7-46ac-aec5-dfad565c9a1a",
+        "timestamp": "2024-12-18T14:32:05.122Z",
+        "transaction_id": "d17ab057-3f4c-4cb5-aca2-80523bedd001",
         "ttl": "PT30S"
     },
     "message": {
@@ -26,19 +26,13 @@
                     "name": "Nirdosh Chauhan",
                     "state": "Haryana"
                 },
-                "created_at": "2024-12-18T11:40:51.481Z",
+                "created_at": "2024-12-18T14:31:04.543Z",
                 "email": "nirdosh.chauhan@sequelstring.com",
                 "name": "Nirdosh Chauhan",
                 "phone": "9876543210",
-                "updated_at": "2024-12-18T11:40:51.481Z"
+                "updated_at": "2024-12-18T14:31:04.543Z"
             },
-            "cancellation": {
-                "cancelled_by": "ondc.sequelstring.com/buyer/protocol",
-                "reason": {
-                    "id": "001"
-                }
-            },
-            "created_at": "2024-12-18T11:41:06.328Z",
+            "created_at": "2024-12-18T14:31:09.800Z",
             "fulfillments": [
                 {
                     "@ondc/org/TAT": "PT55M",
@@ -47,6 +41,12 @@
                         "contact": {
                             "email": "nirdosh.chauhan@sequelstring.com",
                             "phone": "9876543210"
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "long_desc": "No additional delivery instructions",
+                            "name": "",
+                            "short_desc": "Code"
                         },
                         "location": {
                             "address": {
@@ -62,6 +62,12 @@
                         },
                         "person": {
                             "name": "Nirdosh Chauhan"
+                        },
+                        "time": {
+                            "range": {
+                                "end": "2024-12-18T15:06:28.518Z",
+                                "start": "2024-12-18T14:51:28.518Z"
+                            }
                         }
                     },
                     "id": "mp2_immediate_f1",
@@ -69,6 +75,12 @@
                         "contact": {
                             "email": "sellersetu-test@gmail.com",
                             "phone": "7412589630"
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "long_desc": "Please provide the pickup code to the delivery agent",
+                            "name": "",
+                            "short_desc": "7833"
                         },
                         "location": {
                             "address": {
@@ -80,10 +92,37 @@
                             "descriptor": {
                                 "name": "BAP Test Grocery Store"
                             },
-                            "gps": "28.4554726,77.0219019",
-                            "id": "3bffe214-874f-4ac7-bb33-3b2e274311f3"
+                            "gps": "28.4554726,77.0219019"
+                        },
+                        "time": {
+                            "range": {
+                                "end": "2024-12-18T14:51:28.518Z",
+                                "start": "2024-12-18T14:31:28.518Z"
+                            }
                         }
                     },
+                    "state": {
+                        "descriptor": {
+                            "code": "Packed"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        }
+                    ],
+                    "tracking": true,
+                    "type": "Delivery"
+                },
+                {
+                    "@ondc/org/provider_name": "MP2",
+                    "id": "ec0c55bb-24a0-409f-818c-80ad95219d29",
                     "state": {
                         "descriptor": {
                             "code": "Cancelled"
@@ -95,58 +134,11 @@
                             "list": [
                                 {
                                     "code": "reason_id",
-                                    "value": "001"
+                                    "value": "002"
                                 },
                                 {
                                     "code": "initiated_by",
-                                    "value": "ondc.sequelstring.com/buyer/protocol"
-                                }
-                            ]
-                        },
-                        {
-                            "code": "precancel_state",
-                            "list": [
-                                {
-                                    "code": "fulfillment_state",
-                                    "value": "Pending"
-                                },
-                                {
-                                    "code": "updated_at",
-                                    "value": "2024-12-18T11:41:06.889Z"
-                                }
-                            ]
-                        }
-                    ],
-                    "tracking": true,
-                    "type": "Delivery"
-                },
-                {
-                    "@ondc/org/provider_name": "MP2",
-                    "id": "mp2_immediate_f1-C1",
-                    "state": {
-                        "descriptor": {
-                            "code": "Cancelled"
-                        }
-                    },
-                    "tags": [
-                        {
-                            "code": "quote_trail",
-                            "list": [
-                                {
-                                    "code": "type",
-                                    "value": "delivery"
-                                },
-                                {
-                                    "code": "id",
-                                    "value": "mp2_immediate_f1"
-                                },
-                                {
-                                    "code": "currency",
-                                    "value": "INR"
-                                },
-                                {
-                                    "code": "value",
-                                    "value": "-25.0"
+                                    "value": "bridge.sellersetu.in"
                                 }
                             ]
                         },
@@ -159,7 +151,7 @@
                                 },
                                 {
                                     "code": "id",
-                                    "value": "435bc800-7c0e-4332-b562-3d369347d12e"
+                                    "value": "890e1d93-019a-4c8a-8f5f-640e42615873"
                                 },
                                 {
                                     "code": "currency",
@@ -167,7 +159,7 @@
                                 },
                                 {
                                     "code": "value",
-                                    "value": "-250.0"
+                                    "value": "-450.0"
                                 },
                                 {
                                     "code": "subtype",
@@ -184,7 +176,7 @@
                                 },
                                 {
                                     "code": "id",
-                                    "value": "435bc800-7c0e-4332-b562-3d369347d12e"
+                                    "value": "890e1d93-019a-4c8a-8f5f-640e42615873"
                                 },
                                 {
                                     "code": "currency",
@@ -192,7 +184,7 @@
                                 },
                                 {
                                     "code": "value",
-                                    "value": "-30.0"
+                                    "value": "-126.0"
                                 },
                                 {
                                     "code": "subtype",
@@ -204,20 +196,27 @@
                     "type": "Cancel"
                 }
             ],
-            "id": "SS1734522066328",
+            "id": "SS1734532269800",
             "items": [
                 {
-                    "fulfillment_id": "mp2_immediate_f1-C1",
-                    "id": "435bc800-7c0e-4332-b562-3d369347d12e",
+                    "fulfillment_id": "ec0c55bb-24a0-409f-818c-80ad95219d29",
+                    "id": "890e1d93-019a-4c8a-8f5f-640e42615873",
                     "quantity": {
                         "count": 1
                     }
                 },
                 {
                     "fulfillment_id": "mp2_immediate_f1",
-                    "id": "435bc800-7c0e-4332-b562-3d369347d12e",
+                    "id": "890e1d93-019a-4c8a-8f5f-640e42615873",
                     "quantity": {
                         "count": 0
+                    }
+                },
+                {
+                    "fulfillment_id": "mp2_immediate_f1",
+                    "id": "27e792be-7756-4a5a-99e4-0a9375fc7616",
+                    "quantity": {
+                        "count": 1
                     }
                 }
             ],
@@ -235,13 +234,20 @@
                         "settlement_phase": "sale-amount",
                         "settlement_type": "neft",
                         "upi_address": "myupi@upi"
+                    },
+                    {
+                        "settlement_amount": "576.00",
+                        "settlement_counterparty": "buyer",
+                        "settlement_phase": "refund",
+                        "settlement_timestamp": "2024-12-18T14:31:42.486Z",
+                        "settlement_type": "wallet"
                     }
                 ],
                 "collected_by": "BAP",
                 "params": {
-                    "amount": "305.0",
+                    "amount": "1283.5",
                     "currency": "INR",
-                    "transaction_id": "9afacf01-ed2f-4ed2-9bd9-5db51cba10c0"
+                    "transaction_id": "21fd009f-2494-4657-aca7-75ef7277441d"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER"
@@ -257,7 +263,7 @@
             "quote": {
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "435bc800-7c0e-4332-b562-3d369347d12e",
+                        "@ondc/org/item_id": "890e1d93-019a-4c8a-8f5f-640e42615873",
                         "@ondc/org/item_quantity": {
                             "count": 0
                         },
@@ -265,33 +271,73 @@
                         "item": {
                             "price": {
                                 "currency": "INR",
-                                "value": "250.0"
+                                "value": "450.0"
                             }
                         },
                         "price": {
                             "currency": "INR",
                             "value": "0.0"
                         },
-                        "title": "Bikaji Namkeen - Bikaneri Bhujia, 1 kg Pouch"
+                        "title": "Extra Virgin Olive Oil"
+                    },
+                    {
+                        "@ondc/org/item_id": "27e792be-7756-4a5a-99e4-0a9375fc7616",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "650.0"
+                            }
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "650.0"
+                        },
+                        "title": "MYFITNESS Chocolate Peanut Butter 1250g"
+                    },
+                    {
+                        "@ondc/org/item_id": "27e792be-7756-4a5a-99e4-0a9375fc7616",
+                        "@ondc/org/title_type": "tax",
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "quote",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "price": {
+                            "currency": "INR",
+                            "value": "32.5"
+                        },
+                        "title": "Tax"
                     },
                     {
                         "@ondc/org/item_id": "mp2_immediate_f1",
                         "@ondc/org/title_type": "delivery",
                         "price": {
                             "currency": "INR",
-                            "value": "0.0"
+                            "value": "25.0"
                         },
                         "title": "Delivery charges"
                     }
                 ],
                 "price": {
                     "currency": "INR",
-                    "value": "0.0"
+                    "value": "707.5"
                 },
                 "ttl": "P1D"
             },
-            "state": "Cancelled",
-            "updated_at": "2024-12-18T11:41:26.985Z"
+            "state": "In-progress",
+            "updated_at": "2024-12-18T14:32:05.122Z"
         }
     }
 }
