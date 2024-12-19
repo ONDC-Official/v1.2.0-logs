@@ -1,0 +1,119 @@
+{
+    "context": {
+        "action": "on_select",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d",
+        "message_id": "e47c3c4b-8f1d-438f-9186-8ed6ee46debf",
+        "city": "std:011",
+        "country": "IND",
+        "timestamp": "2024-12-19T09:13:45.173Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                    "type": "Delivery",
+                    "@ondc/org/provider_name": "Pramaan Store 1",
+                    "tracking": true,
+                    "@ondc/org/category": "Standard Delivery",
+                    "@ondc/org/TAT": "PT24H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    }
+                },
+                {
+                    "id": "e63cc8dd-4e39-4666-9365-82e12c1a7ff6",
+                    "type": "Self-Pickup",
+                    "@ondc/org/provider_name": "",
+                    "tracking": false,
+                    "@ondc/org/category": "Takeaway",
+                    "@ondc/org/TAT": "PT24H",
+                    "state": {
+                        "descriptor": {
+                            "code": "Serviceable"
+                        }
+                    }
+                }
+            ],
+            "items": [
+                {
+                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "210.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                        "title": "Plain Atta",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "130.00"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40"
+                        }
+                    }
+                ],
+                "ttl": "PT6H"
+            },
+            "provider": {
+                "id": "ss_provider_1",
+                "locations": [
+                    {
+                        "id": "SSL1"
+                    }
+                ]
+            }
+        }
+    }
+}
