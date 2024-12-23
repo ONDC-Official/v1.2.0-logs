@@ -16,7 +16,7 @@
 					"id": "6750047867c65ca538c11640",
 					"fulfillment_id": "1-esd",
 					"quantity": {
-						"count": 1
+						"count": 0
 					}
 				},
 				{
@@ -29,6 +29,13 @@
 				{
 					"id": "6735fc0f10c60b0a306a8cae",
 					"fulfillment_id": "1-esd",
+					"quantity": {
+						"count": 1
+					}
+				},
+				{
+					"id": "6750047867c65ca538c11640",
+					"fulfillment_id": "1-esd-C",
 					"quantity": {
 						"count": 1
 					}
@@ -50,7 +57,7 @@
 					"@ondc/org/provider_name": "flash-api.staging.shadowfax.in",
 					"state": {
 						"descriptor": {
-							"code": "Pending"
+							"code": "Packed"
 						}
 					},
 					"tracking": true,
@@ -98,6 +105,13 @@
 								"end": "2024-12-20T07:37:02.958Z"
 							}
 						},
+						"instructions": {
+							"name": "ONDC Order",
+							"code": "3",
+							"short_desc": "",
+							"long_desc": "",
+							"images": []
+						},
 						"contact": {
 							"phone": "9849692156",
 							"email": "enjoyingmywork142@gmail.com"
@@ -106,6 +120,72 @@
 							"name": "Syed"
 						}
 					}
+				},
+				{
+					"id": "1-esd-C",
+					"type": "Cancel",
+					"state": {
+						"descriptor": {
+							"code": "Cancelled"
+						}
+					},
+					"tags": [
+						{
+							"code": "cancel_request",
+							"list": [
+								{
+									"code": "reason_id",
+									"value": "002"
+								},
+								{
+									"code": "initiated_by",
+									"value": "api3.eksecond.in"
+								}
+							]
+						},
+						{
+							"code": "quote_trail",
+							"list": [
+								{
+									"code": "type",
+									"value": "item"
+								},
+								{
+									"code": "id",
+									"value": "6750047867c65ca538c11640"
+								},
+								{
+									"code": "currency",
+									"value": "INR"
+								},
+								{
+									"code": "value",
+									"value": "-138.00"
+								}
+							]
+						},
+						{
+							"code": "quote_trail",
+							"list": [
+								{
+									"code": "type",
+									"value": "tax"
+								},
+								{
+									"code": "id",
+									"value": "6750047867c65ca538c11640"
+								},
+								{
+									"code": "currency",
+									"value": "INR"
+								},
+								{
+									"code": "value",
+									"value": "-16.56"
+								}
+							]
+						}
+					]
 				}
 			],
 			"quote": {
@@ -240,8 +320,6 @@
 					"amount": "918.32",
 					"currency": "INR"
 				},
-				"uri": "https://razorpay.com/",
-				"tl_method": "http/get",
 				"type": "ON-ORDER",
 				"status": "PAID",
 				"collected_by": "BAP",
@@ -257,6 +335,13 @@
 						"beneficiary_name": "EKSECOND TECHNOLOGIES INDIA PRIVATE LIMITED",
 						"bank_name": "ICICI BANK LTD",
 						"branch_name": "SECUNDERABAD - DIAMOND POINT"
+					},
+					{
+						"settlement_counterparty": "buyer",
+						"settlement_phase": "refund",
+						"settlement_type": "netbanking",
+						"settlement_amount": "154.56",
+						"settlement_timestamp": "2024-12-20T07:01:07.390Z"
 					}
 				]
 			},
@@ -276,49 +361,22 @@
 					"area_code": "560035"
 				}
 			},
-			"state": "Accepted",
-			"tags": [
-				{
-					"code": "bpp_terms",
-					"list": [
-						{
-							"code": "tax_number",
-							"value": "36AAHCE3132H1ZV"
-						},
-						{
-							"code": "provider_tax_number",
-							"value": "CFHDA1489A"
-						},
-						{
-							"code": "np_type",
-							"value": "MSN"
-						}
-					]
-				},
-				{
-					"code": "bap_terms",
-					"list": [
-						{
-							"code": "tax_number",
-							"value": "GSTIN1234567890"
-						}
-					]
-				}
-			]
+			"state": "In-progress"
 		}
 	},
 	"context": {
 		"domain": "ONDC:RET10",
 		"country": "IND",
 		"city": "std:080",
-		"action": "on_confirm",
+		"action": "on_status",
 		"core_version": "1.2.0",
 		"bap_id": "buyer-app-preprod-v2.ondc.org",
 		"bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
 		"bpp_id": "api3.eksecond.in",
 		"bpp_uri": "https://api3.eksecond.in/ondc",
 		"transaction_id": "a8180be9-e788-4a2a-860c-cf819b87b1d5",
-		"message_id": "eb583030-737e-4f39-a7a8-55fc9c5aabcc",
-		"timestamp": "2024-12-20T06:57:02.956Z"
+		"message_id": "ef2db688-b0be-4b98-909e-bd12c647c5cd",
+		"timestamp": "2024-12-20T07:03:57.052Z",
+		"ttl": "PT30S"
 	}
 }
