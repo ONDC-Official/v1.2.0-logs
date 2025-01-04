@@ -1,0 +1,46 @@
+{
+  "context": {
+    "ttl": "PT30S",
+    "city": "*",
+    "action": "on_issue",
+    "bap_id": "stage.agrikheti.com",
+    "bpp_id": "pramaan.ondc.org/alpha/mock-server",
+    "domain": "ONDC:RET10",
+    "bap_uri": "https://stage.agrikheti.com/api/ondc",
+    "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/seller",
+    "country": "IND",
+    "timestamp": "2024-12-22T04:50:27.285Z",
+    "message_id": "37cc2494-cf08-4c05-b94e-b0b1bbe3e470",
+    "core_version": "1.2.0",
+    "transaction_id": "84f9b14d-ae87-41b0-871f-cb0edb7e7715"
+  },
+  "message": {
+    "issue": {
+      "id": "19360232-89dc-4876-998e-318602597010",
+      "created_at": "2024-12-22T04:51:12.948Z",
+      "updated_at": "2024-12-22T04:50:27.285Z",
+      "issue_actions": {
+        "respondent_actions": [
+          {
+            "short_desc": "Complaint is being processed",
+            "updated_at": "2024-12-22T04:50:27.285Z",
+            "updated_by": {
+              "org": {
+                "name": "pramaan.ondc.org/alpha/mock-server::ONDC:RET10"
+              },
+              "person": {
+                "name": "Mayur"
+              },
+              "contact": {
+                "email": "mayur@gmail.com",
+                "phone": "9450394140"
+              }
+            },
+            "cascaded_level": 1,
+            "respondent_action": "PROCESSING"
+          }
+        ]
+      }
+    }
+  }
+}
