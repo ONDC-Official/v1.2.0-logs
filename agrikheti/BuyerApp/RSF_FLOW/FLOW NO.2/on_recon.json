@@ -1,0 +1,69 @@
+{
+  "context": {
+    "ttl": "P1D",
+    "action": "on_recon",
+    "bap_id": "stage.agrikheti.com",
+    "bpp_id": "pramaan.ondc.org/alpha/mock-server",
+    "domain": "ONDC:NTS10",
+    "bap_uri": "https://stage.agrikheti.com/api/ondc",
+    "bpp_uri": "https://pramaan.ondc.org/alpha/mock-server/seller",
+    "version": "2.0.0",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "timestamp": "2024-12-22T05:43:42.141Z",
+    "message_id": "ba9a1c7d-1684-4d07-ac1a-8ad1ff4db706",
+    "transaction_id": "1ed85231-9138-47d9-928e-768fe1510d72"
+  },
+  "message": {
+    "orders": [
+      {
+        "id": "ondcEeis30CW8dAGTG3SnFzs5zYkhV7s",
+        "amount": {
+          "value": "398.0",
+          "currency": "INR"
+        },
+        "settlements": [
+          {
+            "id": "0386dc11-a36d-4e34-99e9-14349fc3cd06",
+            "tcs": {
+              "value": "0.0",
+              "currency": "INR",
+              "diff_value": "0"
+            },
+            "tds": {
+              "value": "0",
+              "currency": "INR",
+              "diff_value": "0"
+            },
+            "amount": {
+              "value": "398.0",
+              "currency": "INR",
+              "diff_value": "482.0"
+            },
+            "status": "NOT_SETTLED",
+            "commission": {
+              "value": "3.0",
+              "currency": "INR",
+              "diff_value": "3.0"
+            },
+            "payment_id": "7d14a70c-5b97-4623-8a64-27284b5fd6bb",
+            "updated_at": "2024-12-22T05:43:42.141Z",
+            "settlement_ref_no": "1238683618634",
+            "withholding_amount": {
+              "value": "10.0",
+              "currency": "INR",
+              "diff_value": "0.0"
+            }
+          }
+        ],
+        "recon_accord": true
+      }
+    ]
+  }
+}
