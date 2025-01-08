@@ -1,0 +1,136 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.0",
+        "bpp_id": "apistaging.nearshop.in",
+        "bpp_uri": "https://apistaging.nearshop.in/lbpp/api/v1/",
+        "bap_id": "apistaging.nearshop.in",
+        "bap_uri": "https://apistaging.nearshop.in/lbap/api/v1",
+        "transaction_id": "3e96a519-437b-48cc-a015-bd59084923d9",
+        "message_id": "dbd65762-6131-4f09-b1af-dd8209da3f1e",
+        "timestamp": "2025-01-07T11:54:15.969Z"
+    },
+    "message": {
+        "catalog": {
+            "bpp/descriptor": {
+                "name": "NS_LSP",
+                "tags": [
+                    {
+                        "code": "bpp_terms",
+                        "list": [
+                            {
+                                "code": "static_terms",
+                                "value": ""
+                            },
+                            {
+                                "code": "static_terms_new",
+                                "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                            },
+                            {
+                                "code": "effective_date",
+                                "value": "2025-01-07T11:54:15.969Z"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bpp/providers": [
+                {
+                    "id": "NS_LSP",
+                    "descriptor": {
+                        "name": "NS_LSP",
+                        "short_desc": "NS_LSP",
+                        "long_desc": "NS Logistics Provider"
+                    },
+                    "categories": [
+                        {
+                            "id": "Immediate Delivery",
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2025-01-07"
+                            }
+                        }
+                    ],
+                    "fulfillments": [
+                        {
+                            "id": "ns_immediate_f1",
+                            "type": "Delivery",
+                            "start": {
+                                "time": {
+                                    "duration": "PT20M"
+                                }
+                            },
+                            "tags": [
+                                {
+                                    "code": "distance",
+                                    "list": [
+                                        {
+                                            "code": "motorable_distance_type",
+                                            "value": "kilometer"
+                                        },
+                                        {
+                                            "code": "motorable_distance",
+                                            "value": "1.2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ns_immediate_f1-RTO",
+                            "type": "RTO"
+                        }
+                    ],
+                    "items": [
+                        {
+                            "id": "ns_immediate",
+                            "parent_item_id": "",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "ns_immediate_f1",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "NS LSP Immediate Delivery",
+                                "short_desc": "Immediate Delivery by NS LSP",
+                                "long_desc": "Immediate Delivery by NS LSP"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "2.0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2025-01-07"
+                            }
+                        },
+                        {
+                            "id": "ns_immediate-RTO",
+                            "parent_item_id": "ns_immediate",
+                            "category_id": "Immediate Delivery",
+                            "fulfillment_id": "ns_immediate_f1-RTO",
+                            "descriptor": {
+                                "code": "P2P",
+                                "name": "RTO quote",
+                                "short_desc": "RTO quote",
+                                "long_desc": "RTO quote"
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "0"
+                            },
+                            "time": {
+                                "label": "TAT",
+                                "duration": "PT55M",
+                                "timestamp": "2025-01-07"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
