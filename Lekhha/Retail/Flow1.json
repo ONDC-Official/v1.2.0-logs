@@ -1,17 +1,78 @@
-{
-  {
+curl --location 'http://localhost:3008/api/validate' \
+--header 'Content-Type: application/json' \
+--data '{
+    "domain": "ONDC:RET10",
+    "version": "1.2.0",
+    "bap_id": "stageapi.lekhha.com",
+    "bpp_id": "stageapi.lekhha.com",
+    "payload": {
+        "search_full_catalog_refresh": 
+        {
     "context": {
       "domain": "ONDC:RET10",
-      "action": "on_search",
+      "action": "search",
       "country": "IND",
       "city": "*",
       "core_version": "1.2.0",
       "bap_id": "stageapi.lekhha.com",
       "bap_uri": "https://stageapi.lekhha.com/buyerApp1",
       "ttl": "PT30S",
-      "transaction_id": "108f18b9-2d40-47d4-a72d-374ef50bf923",
-      "message_id": "306cf2ef-c1e1-4c76-9c30-b88e3b0d88d7",
-      "timestamp": "2024-12-19T19:51:19.396+05:30",
+      "transaction_id": "b38882cf-a8b8-474e-ae77-4b9e61446aa6",
+      "message_id": "1ae69ace-cede-496b-a364-0478c22ef4e3",
+      "timestamp": "2025-01-07T03:02:38.156Z"
+    },
+    "message": {
+      "intent": {
+        "fulfillment": {
+          "end": {
+            "location": {
+              "gps": "12.9726484,77.7058066",
+              "address": {
+                "area_code": "560037"
+              }
+            }
+          }
+        },
+        "payment": {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "2"
+        },
+        "tags": [
+          {
+            "code": "bap_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "code": "static_terms_new",
+                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+              },
+              {
+                "code": "effective_date",
+                "value": "2023-10-01T00:00:00.000"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+        "on_search_full_catalog_refresh":
+        {
+    "context": {
+      "domain": "ONDC:RET10",
+      "action": "on_search",
+      "country": "IND",
+      "city": "std:080",
+      "core_version": "1.2.0",
+      "bap_id": "stageapi.lekhha.com",
+      "bap_uri": "https://stageapi.lekhha.com/buyerApp1",
+      "ttl": "PT30S",
+      "transaction_id": "b38882cf-a8b8-474e-ae77-4b9e61446aa6",
+      "message_id": "1ae69ace-cede-496b-a364-0478c22ef4e3",
+      "timestamp": "2025-01-07T03:02:39.997Z",
       "bpp_id": "stageapi.lekhha.com",
       "bpp_uri": "https://stageapi.lekhha.com/sellerApp1"
     },
@@ -33,18 +94,11 @@
               "phone": "9900025784",
               "email": "sgupta.scm@gmail.com"
             }
-          },
-          {
-            "id": "3",
-            "type": "Delivery and Self-Pickup",
-            "contact": {
-              "phone": "9900025784",
-              "email": "sgupta.scm@gmail.com"
-            }
           }
         ],
         "bpp/descriptor": {
-          "name": "",
+          "name": "Lekhha",
+          "symbol": "https://lekhha.com/wp-content/uploads/2023/07/logo-light-1.png",
           "short_desc": "App-based platform for order and inventory management.",
           "long_desc": "LEKHHA is a simple solution to help you comprehensively run your business operations. Discover it to also track & manage your personal needs & resources. Reach out to us to serve you as your solution partner.",
           "images": [
@@ -60,14 +114,6 @@
                 {
                   "code": "np_type",
                   "value": "MSN"
-                },
-                {
-                  "code": "accept_bap_terms",
-                  "value": "Y"
-                },
-                {
-                  "code": "collect_payment",
-                  "value": "Y"
                 }
               ]
             }
@@ -75,13 +121,13 @@
         },
         "bpp/providers": [
           {
-            "id": "57eb646c-bfa8-46b3-9f55-f2c58e434dd4",
+            "id": "674ecb33d7b9e10f4210d972",
             "time": {
               "label": "enable",
-              "timestamp": "2024-12-19T16:32:10.180+05:30"
+              "timestamp": "2025-01-07T03:02:38.750Z"
             },
             "descriptor": {
-              "name": "Lekhha A",
+              "name": "Lekhha Provider A",
               "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecb33d7b9e10f4210d972_S",
               "short_desc": "Lekhha_Seller_1 kyc short",
               "long_desc": "Lekhha_Seller_1 kyc long",
@@ -90,42 +136,6 @@
               ]
             },
             "ttl": "P1D",
-            "locations": [
-              {
-                "id": "674ecbc6d7b9e10f4210d973",
-                "time": {
-                  "label": "unknown",
-                  "timestamp": "2024-12-19T16:32:10.184+05:30",
-                  "days": "1,2,3,4,5,6,7",
-                  "schedule": {
-                    "holidays": [
-                      "2024-12-25",
-                      "2025-01-01"
-                    ]
-                  },
-                  "range": {
-                    "start": "0200",
-                    "end": "2355"
-                  }
-                },
-                "gps": "12.9263841,77.6654374",
-                "address": {
-                  "locality": "",
-                  "street": "WMG8+H5, SUNCITY APARTMENT-1",
-                  "city": "Bengaluru",
-                  "area_code": "560103",
-                  "state": "KA",
-                  "country": "IND"
-                },
-                "circle": {
-                  "gps": "12.9263841,77.6654374",
-                  "radius": {
-                    "unit": "km",
-                    "value": "999"
-                  }
-                }
-              }
-            ],
             "creds": [
               {
                 "descriptor": {
@@ -160,15 +170,19 @@
             "fulfillments": [
               {
                 "id": "1",
-                "type": "Delivery"
+                "type": "Delivery",
+                "contact": {
+                  "phone": "9900025784",
+                  "email": "sgupta.scm@gmail.com"
+                }
               },
               {
                 "id": "2",
-                "type": "Self-Pickup"
-              },
-              {
-                "id": "3",
-                "type": "Delivery and Self-Pickup"
+                "type": "Self-Pickup",
+                "contact": {
+                  "phone": "9900025784",
+                  "email": "sgupta.scm@gmail.com"
+                }
               }
             ],
             "tags": [
@@ -202,7 +216,36 @@
                   },
                   {
                     "code": "time_from",
-                    "value": "0200"
+                    "value": "0000"
+                  },
+                  {
+                    "code": "time_to",
+                    "value": "2359"
+                  }
+                ]
+              },
+              {
+                "code": "timing",
+                "list": [
+                  {
+                    "code": "type",
+                    "value": "Delivery"
+                  },
+                  {
+                    "code": "location",
+                    "value": "674ecbc6d7b9e10f4210d973"
+                  },
+                  {
+                    "code": "day_from",
+                    "value": "1"
+                  },
+                  {
+                    "code": "day_to",
+                    "value": "7"
+                  },
+                  {
+                    "code": "time_from",
+                    "value": "0130"
                   },
                   {
                     "code": "time_to",
@@ -215,7 +258,7 @@
                 "list": [
                   {
                     "code": "type",
-                    "value": "Delivery"
+                    "value": "Self-Pickup"
                   },
                   {
                     "code": "location",
@@ -227,131 +270,15 @@
                   },
                   {
                     "code": "day_to",
-                    "value": "1"
-                  },
-                  {
-                    "code": "time_from",
-                    "value": "1000"
-                  },
-                  {
-                    "code": "time_to",
-                    "value": "1830"
-                  }
-                ]
-              },
-              {
-                "code": "timing",
-                "list": [
-                  {
-                    "code": "type",
-                    "value": "Delivery"
-                  },
-                  {
-                    "code": "location",
-                    "value": "674ecbc6d7b9e10f4210d973"
-                  },
-                  {
-                    "code": "day_from",
-                    "value": "3"
-                  },
-                  {
-                    "code": "day_to",
-                    "value": "4"
-                  },
-                  {
-                    "code": "time_from",
-                    "value": "1000"
-                  },
-                  {
-                    "code": "time_to",
-                    "value": "1830"
-                  }
-                ]
-              },
-              {
-                "code": "timing",
-                "list": [
-                  {
-                    "code": "type",
-                    "value": "Delivery"
-                  },
-                  {
-                    "code": "location",
-                    "value": "674ecbc6d7b9e10f4210d973"
-                  },
-                  {
-                    "code": "day_from",
-                    "value": "6"
-                  },
-                  {
-                    "code": "day_to",
                     "value": "7"
                   },
                   {
                     "code": "time_from",
-                    "value": "1000"
+                    "value": "0130"
                   },
                   {
                     "code": "time_to",
-                    "value": "1830"
-                  }
-                ]
-              },
-              {
-                "code": "timing",
-                "list": [
-                  {
-                    "code": "type",
-                    "value": "Self-Pickup"
-                  },
-                  {
-                    "code": "location",
-                    "value": "674ecbc6d7b9e10f4210d973"
-                  },
-                  {
-                    "code": "day_from",
-                    "value": "2"
-                  },
-                  {
-                    "code": "day_to",
-                    "value": "3"
-                  },
-                  {
-                    "code": "time_from",
-                    "value": "1500"
-                  },
-                  {
-                    "code": "time_to",
-                    "value": "2145"
-                  }
-                ]
-              },
-              {
-                "code": "timing",
-                "list": [
-                  {
-                    "code": "type",
-                    "value": "Self-Pickup"
-                  },
-                  {
-                    "code": "location",
-                    "value": "674ecbc6d7b9e10f4210d973"
-                  },
-                  {
-                    "code": "day_from",
-                    "value": "5"
-                  },
-                  {
-                    "code": "day_to",
-                    "value": "7"
-                  },
-                  {
-                    "code": "time_from",
-                    "value": "1500"
-                  },
-                  {
-                    "code": "time_to",
-                    "value": "2145"
+                    "value": "2355"
                   }
                 ]
               },
@@ -372,36 +299,11 @@
                   },
                   {
                     "code": "val",
-                    "value": "560000-570000"
+                    "value": "100000-999999"
                   },
                   {
                     "code": "unit",
-                    "value": "pincodes"
-                  }
-                ]
-              },
-              {
-                "code": "serviceability",
-                "list": [
-                  {
-                    "code": "location",
-                    "value": "674ecbc6d7b9e10f4210d973"
-                  },
-                  {
-                    "code": "category",
-                    "value": "Beverages"
-                  },
-                  {
-                    "code": "type",
-                    "value": "11"
-                  },
-                  {
-                    "code": "val",
-                    "value": "560000-570000"
-                  },
-                  {
-                    "code": "unit",
-                    "value": "pincodes"
+                    "value": "pincode"
                   }
                 ]
               },
@@ -422,20 +324,20 @@
                   },
                   {
                     "code": "val",
-                    "value": "560000-570000"
+                    "value": "100000-999999"
                   },
                   {
                     "code": "unit",
-                    "value": "pincodes"
+                    "value": "pincode"
                   }
                 ]
               }
             ],
             "categories": [
               {
-                "id": "V1",
+                "id": "V10000000001",
                 "descriptor": {
-                  "name": "Variant Group 1"
+                  "name": "Variant Group 10000000001"
                 },
                 "tags": [
                   {
@@ -463,9 +365,9 @@
                 ]
               },
               {
-                "id": "V2",
+                "id": "V10000000002",
                 "descriptor": {
-                  "name": "Variant Group 2"
+                  "name": "Variant Group 10000000002"
                 },
                 "tags": [
                   {
@@ -495,12 +397,12 @@
             ],
             "items": [
               {
-                "id": "6757d5990a44cf4e02cdd765",
+                "id": "676a6126cac4860876a8e309",
                 "time": {
-                  "label": "unknown",
-                  "timestamp": ""
+                  "label": "enable",
+                  "timestamp": "2025-01-07T03:02:38.835Z"
                 },
-                "parent_item_id": "V1",
+                "parent_item_id": "V10000000001",
                 "descriptor": {
                   "name": "Milk blue",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
@@ -509,16 +411,17 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6756fced0a44cf4e02cdd6e1_0"
                   ],
-                  "code": "1:1231"
+                  "code": "1:1000000000231"
                 },
                 "quantity": {
                   "unitized": {
                     "measure": {
+                      "unit": "unit",
                       "value": "1"
                     }
                   },
                   "available": {
-                    "count": "22"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "11"
@@ -526,14 +429,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "40.000",
-                  "maximum_value": "40.000"
+                  "value": "40.00",
+                  "maximum_value": "40.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -550,17 +451,33 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 8",
+                  "additives_info": "additives info 8",
+                  "brand_owner_FSSAI_license_no": "fssai license 8",
+                  "other_FSSAI_license_no": "other license 8",
+                  "importer_FSSAI_license_no": "importer license 8"
+                }
               },
               {
-                "id": "6760787856a4fb50e18aac41",
+                "id": "676a61f6cac4860876a8e30f",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.291+05:30"
+                  "timestamp": "2025-01-07T03:02:38.895Z"
                 },
-                "parent_item_id": "V2",
+                "parent_item_id": "V10000000002",
                 "descriptor": {
                   "name": "Milk orange",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
@@ -569,7 +486,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6756fced0a44cf4e02cdd6e3_0"
                   ],
-                  "code": "1:1232"
+                  "code": "1:1000000000232"
                 },
                 "quantity": {
                   "unitized": {
@@ -579,7 +496,7 @@
                     }
                   },
                   "available": {
-                    "count": "24"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "13"
@@ -587,14 +504,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "49.820",
-                  "maximum_value": "53.000"
+                  "value": "49.82",
+                  "maximum_value": "53.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -611,17 +526,33 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 11",
+                  "additives_info": "additives info 11",
+                  "brand_owner_FSSAI_license_no": "fssai license 11",
+                  "other_FSSAI_license_no": "other license 11",
+                  "importer_FSSAI_license_no": "importer license 11"
+                }
               },
               {
-                "id": "675fbc66c5a1e14c7188fea5",
+                "id": "676a6179cac4860876a8e30b",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.310+05:30"
+                  "timestamp": "2025-01-07T03:02:38.915Z"
                 },
-                "parent_item_id": "V1",
+                "parent_item_id": "V10000000001",
                 "descriptor": {
                   "name": "Milk blue",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
@@ -630,7 +561,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6756fced0a44cf4e02cdd6e5_0"
                   ],
-                  "code": "1:1233"
+                  "code": "1:1000000000233"
                 },
                 "quantity": {
                   "unitized": {
@@ -640,7 +571,7 @@
                     }
                   },
                   "available": {
-                    "count": "26"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "12"
@@ -648,14 +579,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "380.000",
-                  "maximum_value": "400.000"
+                  "value": "380.00",
+                  "maximum_value": "400.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -672,17 +601,33 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 9",
+                  "additives_info": "additives info 9",
+                  "brand_owner_FSSAI_license_no": "fssai license 9",
+                  "other_FSSAI_license_no": "other license 9",
+                  "importer_FSSAI_license_no": "importer license 9"
+                }
               },
               {
-                "id": "6760789b56a4fb50e18aac42",
+                "id": "676a6260cac4860876a8e311",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.334+05:30"
+                  "timestamp": "2025-01-07T03:02:38.931Z"
                 },
-                "parent_item_id": "V2",
+                "parent_item_id": "V10000000002",
                 "descriptor": {
                   "name": "Milk orange",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
@@ -691,7 +636,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6756fced0a44cf4e02cdd6e7_0"
                   ],
-                  "code": "1:1234"
+                  "code": "1:1000000000234"
                 },
                 "quantity": {
                   "unitized": {
@@ -701,7 +646,7 @@
                     }
                   },
                   "available": {
-                    "count": "28"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "14"
@@ -709,14 +654,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "500.000",
-                  "maximum_value": "500.000"
+                  "value": "500.00",
+                  "maximum_value": "500.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -733,15 +676,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 12",
+                  "additives_info": "additives info 12",
+                  "brand_owner_FSSAI_license_no": "fssai license 12",
+                  "other_FSSAI_license_no": "other license 12",
+                  "importer_FSSAI_license_no": "importer license 12"
+                }
               },
               {
-                "id": "676070b056a4fb50e18aac2a",
+                "id": "676a61aecac4860876a8e30d",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.453+05:30"
+                  "timestamp": "2025-01-07T03:02:39.036Z"
                 },
                 "descriptor": {
                   "name": "Milk light blue",
@@ -751,17 +710,17 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd722_0"
                   ],
-                  "code": "1:1235"
+                  "code": "1:1000000000235"
                 },
                 "quantity": {
                   "unitized": {
                     "measure": {
-                      "unit": "liter",
+                      "unit": "litre",
                       "value": "1"
                     }
                   },
                   "available": {
-                    "count": "15"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "15"
@@ -769,14 +728,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "41.040",
-                  "maximum_value": "41.040"
+                  "value": "41.04",
+                  "maximum_value": "41.04"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -793,15 +750,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 10",
+                  "additives_info": "additives info 10",
+                  "brand_owner_FSSAI_license_no": "fssai license 10",
+                  "other_FSSAI_license_no": "other license 10",
+                  "importer_FSSAI_license_no": "importer license 10"
+                }
               },
               {
-                "id": "676070e156a4fb50e18aac2b",
+                "id": "676a62b4cac4860876a8e315",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.472+05:30"
+                  "timestamp": "2025-01-07T03:02:39.052Z"
                 },
                 "descriptor": {
                   "name": "Milk yellow",
@@ -811,17 +784,17 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd724_0"
                   ],
-                  "code": "1:1236"
+                  "code": "1:1000000000236"
                 },
                 "quantity": {
                   "unitized": {
                     "measure": {
-                      "unit": "liter",
+                      "unit": "litre",
                       "value": "1"
                     }
                   },
                   "available": {
-                    "count": "16"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "16"
@@ -829,14 +802,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "41.850",
-                  "maximum_value": "45.000"
+                  "value": "41.85",
+                  "maximum_value": "45.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -853,15 +824,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 14",
+                  "additives_info": "additives info 14",
+                  "brand_owner_FSSAI_license_no": "fssai license 14",
+                  "other_FSSAI_license_no": "other license 14",
+                  "importer_FSSAI_license_no": "importer license 14"
+                }
               },
               {
-                "id": "6760710c56a4fb50e18aac2c",
+                "id": "676a628ccac4860876a8e313",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.490+05:30"
+                  "timestamp": "2025-01-07T03:02:39.067Z"
                 },
                 "descriptor": {
                   "name": "Milk purple",
@@ -871,17 +858,17 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd726_0"
                   ],
-                  "code": "1:1237"
+                  "code": "1:1000000000237"
                 },
                 "quantity": {
                   "unitized": {
                     "measure": {
-                      "unit": "liter",
+                      "unit": "litre",
                       "value": "1"
                     }
                   },
                   "available": {
-                    "count": "17"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "17"
@@ -889,14 +876,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "44.160",
-                  "maximum_value": "48.000"
+                  "value": "44.16",
+                  "maximum_value": "48.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -913,15 +898,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 13",
+                  "additives_info": "additives info 13",
+                  "brand_owner_FSSAI_license_no": "fssai license 13",
+                  "other_FSSAI_license_no": "other license 13",
+                  "importer_FSSAI_license_no": "importer license 13"
+                }
               },
               {
-                "id": "6760713956a4fb50e18aac2d",
+                "id": "676a5feecac4860876a8e303",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.508+05:30"
+                  "timestamp": "2025-01-07T03:02:39.415Z"
                 },
                 "descriptor": {
                   "name": "Curd",
@@ -931,7 +932,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd728_0"
                   ],
-                  "code": "1:1238"
+                  "code": "1:1000000000238"
                 },
                 "quantity": {
                   "unitized": {
@@ -941,7 +942,7 @@
                     }
                   },
                   "available": {
-                    "count": "18"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "18"
@@ -949,14 +950,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "22.750",
-                  "maximum_value": "25.000"
+                  "value": "22.75",
+                  "maximum_value": "25.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -973,255 +972,31 @@
                         "value": "IND"
                       }
                     ]
-                  }
-                ],
-                "@ondc/org/return_window": "P3DT4H5M"
-              },
-              {
-                "id": "6760773e56a4fb50e18aac3a",
-                "time": {
-                  "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.531+05:30"
-                },
-                "descriptor": {
-                  "name": "Badam milk",
-                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "Badam milk short",
-                  "long_desc": "Badam milk long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd72a_0"
-                  ],
-                  "code": "1:1239"
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "unit",
-                      "value": "1"
-                    }
                   },
-                  "available": {
-                    "count": "19"
-                  },
-                  "maximum": {
-                    "count": "31"
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "20.160",
-                  "maximum_value": "21.800"
-                },
-                "category_id": "Beverages",
-                "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
-                "recommended": false,
-                "@ondc/org/returnable": true,
-                "@ondc/org/cancellable": true,
-                "@ondc/org/seller_pickup_return": true,
-                "@ondc/org/time_to_ship": "P0DT3H4M",
-                "@ondc/org/available_on_cod": true,
-                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
-                "tags": [
                   {
-                    "code": "origin",
+                    "code": "veg_nonveg",
                     "list": [
                       {
-                        "code": "country",
-                        "value": "IND"
+                        "code": "non_veg",
+                        "value": "yes"
                       }
                     ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 5",
+                  "additives_info": "additives info 5",
+                  "brand_owner_FSSAI_license_no": "fssai license 5",
+                  "other_FSSAI_license_no": "other license 5",
+                  "importer_FSSAI_license_no": "importer license 5"
+                }
               },
               {
-                "id": "6760792c56a4fb50e18aac45",
+                "id": "676cf755e5eb3c28a8742017",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.572+05:30"
-                },
-                "descriptor": {
-                  "name": "Pista milk",
-                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "Pista milk short",
-                  "long_desc": "Pista milk long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd72c_0"
-                  ],
-                  "code": "1:1240"
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "unit",
-                      "value": "1"
-                    }
-                  },
-                  "available": {
-                    "count": "20"
-                  },
-                  "maximum": {
-                    "count": "32"
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "18.500",
-                  "maximum_value": "20.000"
-                },
-                "category_id": "Beverages",
-                "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
-                "recommended": false,
-                "@ondc/org/returnable": true,
-                "@ondc/org/cancellable": true,
-                "@ondc/org/seller_pickup_return": true,
-                "@ondc/org/time_to_ship": "P0DT3H4M",
-                "@ondc/org/available_on_cod": true,
-                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
-                "tags": [
-                  {
-                    "code": "origin",
-                    "list": [
-                      {
-                        "code": "country",
-                        "value": "IND"
-                      }
-                    ]
-                  }
-                ],
-                "@ondc/org/return_window": "P3DT4H5M"
-              },
-              {
-                "id": "676077c256a4fb50e18aac3c",
-                "time": {
-                  "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.596+05:30"
-                },
-                "descriptor": {
-                  "name": "Mango milk",
-                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "Mango milk short",
-                  "long_desc": "Mango milk long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd72e_0"
-                  ],
-                  "code": "1:1241"
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "unit",
-                      "value": "1"
-                    }
-                  },
-                  "available": {
-                    "count": "21"
-                  },
-                  "maximum": {
-                    "count": "33"
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "20.160",
-                  "maximum_value": "21.800"
-                },
-                "category_id": "Beverages",
-                "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
-                "recommended": false,
-                "@ondc/org/returnable": true,
-                "@ondc/org/cancellable": true,
-                "@ondc/org/seller_pickup_return": true,
-                "@ondc/org/time_to_ship": "P0DT3H4M",
-                "@ondc/org/available_on_cod": true,
-                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
-                "tags": [
-                  {
-                    "code": "origin",
-                    "list": [
-                      {
-                        "code": "country",
-                        "value": "IND"
-                      }
-                    ]
-                  }
-                ],
-                "@ondc/org/return_window": "P3DT4H5M"
-              },
-              {
-                "id": "6760760956a4fb50e18aac35",
-                "time": {
-                  "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.625+05:30"
-                },
-                "descriptor": {
-                  "name": "Vanilla milk",
-                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "Vanilla milk short",
-                  "long_desc": "Vanilla milk long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd730_0"
-                  ],
-                  "code": "1:1242"
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "unit",
-                      "value": "1"
-                    }
-                  },
-                  "available": {
-                    "count": "22"
-                  },
-                  "maximum": {
-                    "count": "34"
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "18.500",
-                  "maximum_value": "20.000"
-                },
-                "category_id": "Beverages",
-                "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
-                "recommended": false,
-                "@ondc/org/returnable": true,
-                "@ondc/org/cancellable": true,
-                "@ondc/org/seller_pickup_return": true,
-                "@ondc/org/time_to_ship": "P0DT3H4M",
-                "@ondc/org/available_on_cod": true,
-                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
-                "tags": [
-                  {
-                    "code": "origin",
-                    "list": [
-                      {
-                        "code": "country",
-                        "value": "IND"
-                      }
-                    ]
-                  }
-                ],
-                "@ondc/org/return_window": "P3DT4H5M"
-              },
-              {
-                "id": "676071af56a4fb50e18aac2e",
-                "time": {
-                  "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.642+05:30"
+                  "timestamp": "2025-01-07T03:02:39.452Z"
                 },
                 "descriptor": {
                   "name": "Peda",
@@ -1231,7 +1006,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd732_0"
                   ],
-                  "code": "4:1243"
+                  "code": "1:1000000000243"
                 },
                 "quantity": {
                   "unitized": {
@@ -1241,7 +1016,7 @@
                     }
                   },
                   "available": {
-                    "count": "23"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "25"
@@ -1249,14 +1024,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "84.060",
-                  "maximum_value": "97.750"
+                  "value": "84.06",
+                  "maximum_value": "97.75"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1273,15 +1046,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 17",
+                  "additives_info": "additives info 17",
+                  "brand_owner_FSSAI_license_no": "fssai license 17",
+                  "other_FSSAI_license_no": "other license 17",
+                  "importer_FSSAI_license_no": "importer license 17"
+                }
               },
               {
-                "id": "676071de56a4fb50e18aac2f",
+                "id": "676a5fb7cac4860876a8e301",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.659+05:30"
+                  "timestamp": "2025-01-07T03:02:39.601Z"
                 },
                 "descriptor": {
                   "name": "Cheddar cheese",
@@ -1291,7 +1080,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd734_0"
                   ],
-                  "code": "4:1244"
+                  "code": "1:1000000000244"
                 },
                 "quantity": {
                   "unitized": {
@@ -1301,7 +1090,7 @@
                     }
                   },
                   "available": {
-                    "count": "24"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "20"
@@ -1309,14 +1098,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "120.000",
-                  "maximum_value": "120.000"
+                  "value": "120.00",
+                  "maximum_value": "120.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1333,15 +1120,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri 4",
+                  "additives_info": "additives info 4",
+                  "brand_owner_FSSAI_license_no": "fssai license 4",
+                  "other_FSSAI_license_no": "other license 4",
+                  "importer_FSSAI_license_no": "importer license 4"
+                }
               },
               {
-                "id": "676073f256a4fb50e18aac30",
+                "id": "676a5f87cac4860876a8e2ff",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.675+05:30"
+                  "timestamp": "2025-01-07T03:02:39.662Z"
                 },
                 "descriptor": {
                   "name": "Butter",
@@ -1351,7 +1154,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd736_0"
                   ],
-                  "code": "4:1245"
+                  "code": "1:1000000000245"
                 },
                 "quantity": {
                   "unitized": {
@@ -1361,7 +1164,7 @@
                     }
                   },
                   "available": {
-                    "count": "25"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "23"
@@ -1369,14 +1172,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "109.380",
-                  "maximum_value": "124.300"
+                  "value": "109.38",
+                  "maximum_value": "124.30"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1393,15 +1194,105 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 3",
+                  "additives_info": "additives info 3",
+                  "brand_owner_FSSAI_license_no": "fssai license 3",
+                  "other_FSSAI_license_no": "other license 3",
+                  "importer_FSSAI_license_no": "importer license 3"
+                }
               },
               {
-                "id": "676074a856a4fb50e18aac32",
+                "id": "676cf6e0e5eb3c28a8741fbc",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.692+05:30"
+                  "timestamp": "2025-01-07T03:02:39.687Z"
+                },
+                "descriptor": {
+                  "name": "Mysore pak",
+                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
+                  "short_desc": "Mysore pak short",
+                  "long_desc": "Mysore pak long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd738_0"
+                  ],
+                  "code": "1:1000000000246"
+                },
+                "quantity": {
+                  "unitized": {
+                    "measure": {
+                      "unit": "gram",
+                      "value": "200"
+                    }
+                  },
+                  "available": {
+                    "count": "99"
+                  },
+                  "maximum": {
+                    "count": "24"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "65.25",
+                  "maximum_value": "75.00"
+                },
+                "category_id": "Bakery, Cakes & Dairy",
+                "fulfillment_id": "1",
+                "location_id": "674ecbc6d7b9e10f4210d973",
+                "recommended": false,
+                "@ondc/org/returnable": true,
+                "@ondc/org/cancellable": true,
+                "@ondc/org/seller_pickup_return": true,
+                "@ondc/org/time_to_ship": "P0DT3H4M",
+                "@ondc/org/available_on_cod": true,
+                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
+                "tags": [
+                  {
+                    "code": "origin",
+                    "list": [
+                      {
+                        "code": "country",
+                        "value": "IND"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 15",
+                  "additives_info": "additives info 15",
+                  "brand_owner_FSSAI_license_no": "fssai license 15",
+                  "other_FSSAI_license_no": "other license 15",
+                  "importer_FSSAI_license_no": "importer license 15"
+                }
+              },
+              {
+                "id": "676a5f11cac4860876a8e2fb",
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-01-07T03:02:39.764Z"
                 },
                 "descriptor": {
                   "name": "Burfi",
@@ -1411,7 +1302,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd73a_0"
                   ],
-                  "code": "4:1247"
+                  "code": "1:1000000000247"
                 },
                 "quantity": {
                   "unitized": {
@@ -1421,7 +1312,7 @@
                     }
                   },
                   "available": {
-                    "count": "27"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "22"
@@ -1429,14 +1320,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "71.200",
-                  "maximum_value": "80.000"
+                  "value": "71.20",
+                  "maximum_value": "80.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1453,15 +1342,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 2",
+                  "additives_info": "additives info 2",
+                  "brand_owner_FSSAI_license_no": "fssai license 2",
+                  "other_FSSAI_license_no": "other license 2",
+                  "importer_FSSAI_license_no": "importer license 2"
+                }
               },
               {
-                "id": "6760779c56a4fb50e18aac3b",
+                "id": "676a6027cac4860876a8e305",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.713+05:30"
+                  "timestamp": "2025-01-07T03:02:39.784Z"
                 },
                 "descriptor": {
                   "name": "Ghee",
@@ -1471,17 +1376,17 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd73c_0"
                   ],
-                  "code": "1:1248"
+                  "code": "1:1000000000248"
                 },
                 "quantity": {
                   "unitized": {
                     "measure": {
-                      "unit": "liter",
+                      "unit": "litre",
                       "value": "1"
                     }
                   },
                   "available": {
-                    "count": "28"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "21"
@@ -1489,14 +1394,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "510.000",
-                  "maximum_value": "600.000"
+                  "value": "510.00",
+                  "maximum_value": "600.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1513,15 +1416,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 6 123",
+                  "additives_info": "additives info 6",
+                  "brand_owner_FSSAI_license_no": "fssai license 6",
+                  "other_FSSAI_license_no": "other license 6",
+                  "importer_FSSAI_license_no": "importer license 6"
+                }
               },
               {
-                "id": "676078ba56a4fb50e18aac43",
+                "id": "676a64e3cac4860876a8e32c",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.729+05:30"
+                  "timestamp": "2025-01-07T03:02:39.796Z"
                 },
                 "descriptor": {
                   "name": "Paneer",
@@ -1531,7 +1450,7 @@
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd73e_0"
                   ],
-                  "code": "1:1249"
+                  "code": "1:1000000000249"
                 },
                 "quantity": {
                   "unitized": {
@@ -1541,7 +1460,7 @@
                     }
                   },
                   "available": {
-                    "count": "29"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "19"
@@ -1549,14 +1468,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "81.000",
-                  "maximum_value": "90.000"
+                  "value": "81.00",
+                  "maximum_value": "90.00"
                 },
                 "category_id": "Bakery, Cakes & Dairy",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1573,15 +1490,31 @@
                         "value": "IND"
                       }
                     ]
+                  },
+                  {
+                    "code": "veg_nonveg",
+                    "list": [
+                      {
+                        "code": "non_veg",
+                        "value": "yes"
+                      }
+                    ]
                   }
                 ],
-                "@ondc/org/return_window": "P3DT4H5M"
+                "@ondc/org/return_window": "P3DT4H5M",
+                "@ondc/org/statutory_reqs_prepackaged_food": {
+                  "nutritional_info": "nutri info 16",
+                  "additives_info": "additives info 16",
+                  "brand_owner_FSSAI_license_no": "fssai license 16",
+                  "other_FSSAI_license_no": "other license 16",
+                  "importer_FSSAI_license_no": "importer license 16"
+                }
               },
               {
-                "id": "6760766656a4fb50e18aac36",
+                "id": "676aab3800d7d9212e3ba074",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.746+05:30"
+                  "timestamp": "2025-01-07T03:02:39.808Z"
                 },
                 "descriptor": {
                   "name": "Watermelon",
@@ -1590,7 +1523,8 @@
                   "long_desc": "Watermelon long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd740_0"
-                  ]
+                  ],
+                  "code": "1:2000000000349"
                 },
                 "quantity": {
                   "unitized": {
@@ -1600,7 +1534,7 @@
                     }
                   },
                   "available": {
-                    "count": "30"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "26"
@@ -1608,14 +1542,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "38.000",
-                  "maximum_value": "40.000"
+                  "value": "38.00",
+                  "maximum_value": "40.00"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1637,10 +1569,10 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6760771756a4fb50e18aac39",
+                "id": "676a9e1d00d7d9212e3b8f7f",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.762+05:30"
+                  "timestamp": "2025-01-07T03:02:39.820Z"
                 },
                 "descriptor": {
                   "name": "Apple",
@@ -1649,7 +1581,8 @@
                   "long_desc": "Apple long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd742_0"
-                  ]
+                  ],
+                  "code": "1:2000000000341"
                 },
                 "quantity": {
                   "unitized": {
@@ -1659,7 +1592,7 @@
                     }
                   },
                   "available": {
-                    "count": "31"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "27"
@@ -1667,14 +1600,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "183.820",
-                  "maximum_value": "193.500"
+                  "value": "183.82",
+                  "maximum_value": "193.50"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1696,69 +1627,10 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6757d6280a44cf4e02cdd76a",
+                "id": "676aaa5700d7d9212e3ba019",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.784+05:30"
-                },
-                "descriptor": {
-                  "name": "Orange",
-                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "Orange short",
-                  "long_desc": "Orange long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd744_0"
-                  ]
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "kilogram",
-                      "value": "1"
-                    }
-                  },
-                  "available": {
-                    "count": "32"
-                  },
-                  "maximum": {
-                    "count": "28"
-                  }
-                },
-                "price": {
-                  "currency": "INR",
-                  "value": "66.500",
-                  "maximum_value": "70.000"
-                },
-                "category_id": "Fruits and Vegetables",
-                "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
-                "recommended": false,
-                "@ondc/org/returnable": true,
-                "@ondc/org/cancellable": true,
-                "@ondc/org/seller_pickup_return": true,
-                "@ondc/org/time_to_ship": "P0DT3H4M",
-                "@ondc/org/available_on_cod": true,
-                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
-                "tags": [
-                  {
-                    "code": "origin",
-                    "list": [
-                      {
-                        "code": "country",
-                        "value": "IND"
-                      }
-                    ]
-                  }
-                ],
-                "@ondc/org/return_window": "P3DT4H5M"
-              },
-              {
-                "id": "676076b256a4fb50e18aac38",
-                "time": {
-                  "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.801+05:30"
+                  "timestamp": "2025-01-07T03:02:39.834Z"
                 },
                 "descriptor": {
                   "name": "Papaya",
@@ -1767,7 +1639,8 @@
                   "long_desc": "Papaya long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd746_0"
-                  ]
+                  ],
+                  "code": "1:2000000000346"
                 },
                 "quantity": {
                   "unitized": {
@@ -1777,7 +1650,7 @@
                     }
                   },
                   "available": {
-                    "count": "33"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "29"
@@ -1785,14 +1658,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "61.280",
-                  "maximum_value": "64.500"
+                  "value": "61.28",
+                  "maximum_value": "64.50"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1814,10 +1685,10 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6760768756a4fb50e18aac37",
+                "id": "676aaa8900d7d9212e3ba070",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.817+05:30"
+                  "timestamp": "2025-01-07T03:02:39.849Z"
                 },
                 "descriptor": {
                   "name": "Pineapple",
@@ -1826,7 +1697,8 @@
                   "long_desc": "Pineapple long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd748_0"
-                  ]
+                  ],
+                  "code": "1:2000000000347"
                 },
                 "quantity": {
                   "unitized": {
@@ -1836,7 +1708,7 @@
                     }
                   },
                   "available": {
-                    "count": "34"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "30"
@@ -1844,14 +1716,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "47.500",
-                  "maximum_value": "50.000"
+                  "value": "47.50",
+                  "maximum_value": "50.00"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1873,19 +1743,20 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6762dbe341c7aa7c86d1d1c8",
+                "id": "676a9fa200d7d9212e3b8fbd",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.840+05:30"
+                  "timestamp": "2025-01-07T03:02:39.862Z"
                 },
                 "descriptor": {
                   "name": "Beetroot",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "",
+                  "short_desc": "Beetroot short",
                   "long_desc": "Beetroot long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6762dbb841c7aa7c86d1d1c2_0"
-                  ]
+                  ],
+                  "code": "1:2000000000343"
                 },
                 "quantity": {
                   "unitized": {
@@ -1903,14 +1774,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "30.000",
-                  "maximum_value": "30.000"
+                  "value": "30.00",
+                  "maximum_value": "30.00"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1932,19 +1801,20 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6762dbd741c7aa7c86d1d1c7",
+                "id": "676a9f7800d7d9212e3b8fbb",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.856+05:30"
+                  "timestamp": "2025-01-07T03:02:39.875Z"
                 },
                 "descriptor": {
                   "name": "Beans haricot",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
                   "short_desc": "Beans haricot short",
-                  "long_desc": "",
+                  "long_desc": "Beans haricot long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6762dbb841c7aa7c86d1d1c4_0"
-                  ]
+                  ],
+                  "code": "1:2000000000342"
                 },
                 "quantity": {
                   "unitized": {
@@ -1962,14 +1832,12 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "76.420",
-                  "maximum_value": "78.380"
+                  "value": "76.42",
+                  "maximum_value": "78.38"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
-                },
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -1991,19 +1859,20 @@
                 "@ondc/org/return_window": "P3DT4H5M"
               },
               {
-                "id": "6763bb9e1707ed0d3b3789b0",
+                "id": "676aa99800d7d9212e3b9da2",
                 "time": {
                   "label": "enable",
-                  "timestamp": "2024-12-19T16:32:10.875+05:30"
+                  "timestamp": "2025-01-07T03:02:39.886Z"
                 },
                 "descriptor": {
                   "name": "French beans",
                   "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
-                  "short_desc": "",
-                  "long_desc": "",
+                  "short_desc": "French beans short",
+                  "long_desc": "French beans long",
                   "images": [
                     "https://stageapi.lekhha.com/Misc/Images/productImages/6763bb661707ed0d3b3789ad_0"
-                  ]
+                  ],
+                  "code": "1:2000000000344"
                 },
                 "quantity": {
                   "unitized": {
@@ -2013,7 +1882,7 @@
                     }
                   },
                   "available": {
-                    "count": "15"
+                    "count": "99"
                   },
                   "maximum": {
                     "count": "9"
@@ -2021,14 +1890,70 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "54.340",
-                  "maximum_value": "57.200"
+                  "value": "54.34",
+                  "maximum_value": "57.20"
                 },
                 "category_id": "Fruits and Vegetables",
                 "fulfillment_id": "1",
-                "location_id": {
-                  "id": "674ecbc6d7b9e10f4210d973"
+                "location_id": "674ecbc6d7b9e10f4210d973",
+                "recommended": false,
+                "@ondc/org/returnable": true,
+                "@ondc/org/cancellable": true,
+                "@ondc/org/seller_pickup_return": true,
+                "@ondc/org/time_to_ship": "P0DT3H4M",
+                "@ondc/org/available_on_cod": true,
+                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
+                "tags": [
+                  {
+                    "code": "origin",
+                    "list": [
+                      {
+                        "code": "country",
+                        "value": "IND"
+                      }
+                    ]
+                  }
+                ],
+                "@ondc/org/return_window": "P3DT4H5M"
+              },
+              {
+                "id": "676d155272179645a3dbeb97",
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-01-07T03:02:39.899Z"
                 },
+                "descriptor": {
+                  "name": "Sapota",
+                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
+                  "short_desc": "Sapota short",
+                  "long_desc": "Sapota long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/6764085e333b0617cf951ecd_0"
+                  ],
+                  "code": "1:2000000000348"
+                },
+                "quantity": {
+                  "unitized": {
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": "1"
+                    }
+                  },
+                  "available": {
+                    "count": "99"
+                  },
+                  "maximum": {
+                    "count": "11"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "42.14",
+                  "maximum_value": "43.67"
+                },
+                "category_id": "Fruits and Vegetables",
+                "fulfillment_id": "1",
+                "location_id": "674ecbc6d7b9e10f4210d973",
                 "recommended": false,
                 "@ondc/org/returnable": true,
                 "@ondc/org/cancellable": true,
@@ -2066,14 +1991,14 @@
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6760787856a4fb50e18aac41",
-                  "6757d5990a44cf4e02cdd765"
+                  "676a61f6cac4860876a8e30f",
+                  "676a6126cac4860876a8e309"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-04T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-04T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2091,11 +2016,11 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6760787856a4fb50e18aac41"
+                        "value": "676a61f6cac4860876a8e30f"
                       },
                       {
                         "code": "item_id",
-                        "value": "6757d5990a44cf4e02cdd765"
+                        "value": "676a6126cac4860876a8e309"
                       },
                       {
                         "code": "item_count",
@@ -2133,16 +2058,16 @@
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6760789b56a4fb50e18aac42",
-                  "675fbc66c5a1e14c7188fea5",
-                  "6760787856a4fb50e18aac41",
-                  "6757d5990a44cf4e02cdd765"
+                  "676a6260cac4860876a8e311",
+                  "676a6179cac4860876a8e30b",
+                  "676a61f6cac4860876a8e30f",
+                  "676a6126cac4860876a8e309"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-05T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-05T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2160,19 +2085,19 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6760789b56a4fb50e18aac42"
+                        "value": "676a6260cac4860876a8e311"
                       },
                       {
                         "code": "item_id",
-                        "value": "675fbc66c5a1e14c7188fea5"
+                        "value": "676a6179cac4860876a8e30b"
                       },
                       {
                         "code": "item_id",
-                        "value": "6760787856a4fb50e18aac41"
+                        "value": "676a61f6cac4860876a8e30f"
                       },
                       {
                         "code": "item_id",
-                        "value": "6757d5990a44cf4e02cdd765"
+                        "value": "676a6126cac4860876a8e309"
                       },
                       {
                         "code": "item_count",
@@ -2196,25 +2121,28 @@
                 ]
               },
               {
-                "id": "bg3",
+                "id": "bg4",
                 "descriptor": {
                   "code": "buyXgetY",
-                  "name": "bg3",
-                  "short_desc": "bg3 short",
-                  "long_desc": "bg3 long",
-                  "images": []
+                  "name": "bg4",
+                  "short_desc": "bg4 short",
+                  "long_desc": "bg4 long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/676409d9333b0617cf951ed3_0"
+                  ]
                 },
                 "location_ids": [
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6757d6280a44cf4e02cdd76a"
+                  "676aaa8900d7d9212e3ba070",
+                  "676a9e1d00d7d9212e3b8f7f"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-06T23:59:59.999+05:30"
+                    "start": "2024-12-18T00:00:00.000Z",
+                    "end": "2025-03-02T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2232,7 +2160,11 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6757d6280a44cf4e02cdd76a"
+                        "value": "676aaa8900d7d9212e3ba070"
+                      },
+                      {
+                        "code": "item_id",
+                        "value": "676a9e1d00d7d9212e3b8f7f"
                       },
                       {
                         "code": "item_count",
@@ -2273,8 +2205,8 @@
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-01-31T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-01-31T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2337,8 +2269,8 @@
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-01T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-01T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2384,70 +2316,6 @@
                 ]
               },
               {
-                "id": "dp3",
-                "descriptor": {
-                  "code": "discount",
-                  "name": "dp3",
-                  "short_desc": "dp3 short",
-                  "long_desc": "dp3 long",
-                  "images": [
-                    "https://stageapi.lekhha.com/Misc/Images/productImages/675fc133c5a1e14c7188ff31_0"
-                  ]
-                },
-                "location_ids": [
-                  "674ecbc6d7b9e10f4210d973"
-                ],
-                "item_ids": [],
-                "time": {
-                  "label": "enable",
-                  "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-04T23:59:59.999+05:30"
-                  }
-                },
-                "tags": [
-                  {
-                    "code": "qualifier",
-                    "list": [
-                      {
-                        "code": "min_value",
-                        "value": "750"
-                      }
-                    ]
-                  },
-                  {
-                    "code": "benefit",
-                    "list": [
-                      {
-                        "code": "value_type",
-                        "value": "percent"
-                      },
-                      {
-                        "code": "value",
-                        "value": "-15"
-                      },
-                      {
-                        "code": "value_cap",
-                        "value": "-75"
-                      }
-                    ]
-                  },
-                  {
-                    "code": "meta",
-                    "list": [
-                      {
-                        "code": "additive",
-                        "value": "no"
-                      },
-                      {
-                        "code": "auto",
-                        "value": "no"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
                 "id": "da1",
                 "descriptor": {
                   "code": "discount",
@@ -2465,8 +2333,8 @@
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-03T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-03T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2525,8 +2393,8 @@
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-04T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-04T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2568,6 +2436,66 @@
                 ]
               },
               {
+                "id": "da3",
+                "descriptor": {
+                  "code": "discount",
+                  "name": "da3",
+                  "short_desc": "da3 short",
+                  "long_desc": "da3 long chg",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/675fc133c5a1e14c7188ff34_0"
+                  ]
+                },
+                "location_ids": [
+                  "674ecbc6d7b9e10f4210d973"
+                ],
+                "item_ids": [],
+                "time": {
+                  "label": "enable",
+                  "range": {
+                    "start": "2024-12-21T00:00:00.000Z",
+                    "end": "2025-02-05T23:59:59.999Z"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "qualifier",
+                    "list": [
+                      {
+                        "code": "min_value",
+                        "value": "700"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "benefit",
+                    "list": [
+                      {
+                        "code": "value_type",
+                        "value": "amount"
+                      },
+                      {
+                        "code": "value",
+                        "value": "-80"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "meta",
+                    "list": [
+                      {
+                        "code": "additive",
+                        "value": "no"
+                      },
+                      {
+                        "code": "auto",
+                        "value": "no"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 "id": "fb1",
                 "descriptor": {
                   "code": "freebie",
@@ -2582,14 +2510,14 @@
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6760787856a4fb50e18aac41",
-                  "6757d5990a44cf4e02cdd765"
+                  "676a61f6cac4860876a8e30f",
+                  "676a6126cac4860876a8e309"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-07T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-07T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2607,7 +2535,7 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6760787856a4fb50e18aac41"
+                        "value": "676a61f6cac4860876a8e30f"
                       },
                       {
                         "code": "item_count",
@@ -2619,7 +2547,7 @@
                       },
                       {
                         "code": "item_id",
-                        "value": "6757d5990a44cf4e02cdd765"
+                        "value": "676a6126cac4860876a8e309"
                       },
                       {
                         "code": "item_count",
@@ -2659,13 +2587,13 @@
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6757d60e0a44cf4e02cdd769"
+                  "676aaa5700d7d9212e3ba019"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-08T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-08T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2683,7 +2611,7 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6757d60e0a44cf4e02cdd769"
+                        "value": "676aaa5700d7d9212e3ba019"
                       },
                       {
                         "code": "item_count",
@@ -2691,7 +2619,7 @@
                       },
                       {
                         "code": "item_value",
-                        "value": "72.38"
+                        "value": "61.28"
                       }
                     ]
                   },
@@ -2725,16 +2653,16 @@
                   "674ecbc6d7b9e10f4210d973"
                 ],
                 "item_ids": [
-                  "6760787856a4fb50e18aac41",
-                  "6760789b56a4fb50e18aac42",
-                  "6757d5990a44cf4e02cdd765",
-                  "675fbc66c5a1e14c7188fea5"
+                  "676a61f6cac4860876a8e30f",
+                  "676a6260cac4860876a8e311",
+                  "676a6126cac4860876a8e309",
+                  "676a6179cac4860876a8e30b"
                 ],
                 "time": {
                   "label": "enable",
                   "range": {
-                    "start": "2024-12-16T00:00:00.000+05:30",
-                    "end": "2025-02-09T23:59:59.999+05:30"
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-02-09T23:59:59.999Z"
                   }
                 },
                 "tags": [
@@ -2752,7 +2680,7 @@
                     "list": [
                       {
                         "code": "item_id",
-                        "value": "6760787856a4fb50e18aac41"
+                        "value": "676a61f6cac4860876a8e30f"
                       },
                       {
                         "code": "item_count",
@@ -2764,7 +2692,7 @@
                       },
                       {
                         "code": "item_id",
-                        "value": "6760789b56a4fb50e18aac42"
+                        "value": "676a6260cac4860876a8e311"
                       },
                       {
                         "code": "item_count",
@@ -2776,7 +2704,7 @@
                       },
                       {
                         "code": "item_id",
-                        "value": "6757d5990a44cf4e02cdd765"
+                        "value": "676a6126cac4860876a8e309"
                       },
                       {
                         "code": "item_count",
@@ -2788,7 +2716,7 @@
                       },
                       {
                         "code": "item_id",
-                        "value": "675fbc66c5a1e14c7188fea5"
+                        "value": "676a6179cac4860876a8e30b"
                       },
                       {
                         "code": "item_count",
@@ -2814,16 +2742,188 @@
                     ]
                   }
                 ]
+              },
+              {
+                "id": "fb4",
+                "descriptor": {
+                  "code": "freebie",
+                  "name": "fb4",
+                  "short_desc": "fb4 short",
+                  "long_desc": "fb4 long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/676409d9333b0617cf951ed2_0"
+                  ]
+                },
+                "location_ids": [
+                  "674ecbc6d7b9e10f4210d973"
+                ],
+                "item_ids": [
+                  "676aa9cf00d7d9212e3b9e6a",
+                  "676aaa5700d7d9212e3ba019"
+                ],
+                "time": {
+                  "label": "enable",
+                  "range": {
+                    "start": "2024-12-20T00:00:00.000Z",
+                    "end": "2025-03-01T23:59:59.999Z"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "qualifier",
+                    "list": [
+                      {
+                        "code": "min_value",
+                        "value": "201"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "benefit",
+                    "list": [
+                      {
+                        "code": "item_id",
+                        "value": "676aa9cf00d7d9212e3b9e6a"
+                      },
+                      {
+                        "code": "item_count",
+                        "value": "1"
+                      },
+                      {
+                        "code": "item_value",
+                        "value": "0.00"
+                      },
+                      {
+                        "code": "item_id",
+                        "value": "676aaa5700d7d9212e3ba019"
+                      },
+                      {
+                        "code": "item_count",
+                        "value": "1"
+                      },
+                      {
+                        "code": "item_value",
+                        "value": "61.28"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "meta",
+                    "list": [
+                      {
+                        "code": "additive",
+                        "value": "no"
+                      },
+                      {
+                        "code": "auto",
+                        "value": "no"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "locations": [
+              {
+                "id": "674ecbc6d7b9e10f4210d973",
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-01-07T03:02:38.752Z",
+                  "days": "1,2,3,4,5,6,7",
+                  "schedule": {
+                    "holidays": []
+                  },
+                  "range": {
+                    "start": "0000",
+                    "end": "2359"
+                  }
+                },
+                "gps": "12.9263841,77.6654374",
+                "address": {
+                  "locality": "Bengaluru",
+                  "street": "WMG8+H5, SUNCITY APARTMENT-1",
+                  "city": "Bengaluru",
+                  "area_code": "560103",
+                  "state": "KA"
+                },
+                "circle": {
+                  "gps": "12.9263841,77.6654374",
+                  "radius": {
+                    "unit": "km",
+                    "value": "999"
+                  }
+                }
               }
             ]
           }
         ]
       }
     }
-  }
-},
-{
-  {
+  },
+        "search_inc_refresh": 
+        {
+    "context": {
+      "domain": "ONDC:RET10",
+      "action": "search",
+      "country": "IND",
+      "city": "*",
+      "core_version": "1.2.0",
+      "bap_id": "stageapi.lekhha.com",
+      "bap_uri": "https://stageapi.lekhha.com/buyerApp1",
+      "ttl": "PT30S",
+      "transaction_id": "26704df7-96bd-4cef-b237-3267c226cf57",
+      "message_id": "08caff42-459a-4a02-a3a4-7ff12ea776aa",
+      "timestamp": "2025-01-07T03:14:48.923Z"
+    },
+    "message": {
+      "intent": {
+        "fulfillment": {
+          "end": {
+            "location": {
+              "gps": "12.9726484,77.7058066",
+              "address": {
+                "area_code": "560037"
+              }
+            }
+          }
+        },
+        "payment": {
+          "@ondc/org/buyer_app_finder_fee_type": "percent",
+          "@ondc/org/buyer_app_finder_fee_amount": "2"
+        },
+        "tags": [
+          {
+            "code": "catalog_inc",
+            "list": [
+              {
+                "code": "mode",
+                "value": "start"
+              }
+            ]
+          },
+          {
+            "code": "bap_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "code": "static_terms_new",
+                "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+              },
+              {
+                "code": "effective_date",
+                "value": "2023-10-01T00:00:00.000"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+        "on_search_inc_refresh": 
+        {
     "context": {
       "domain": "ONDC:RET10",
       "action": "on_search",
@@ -2833,16 +2933,272 @@
       "bap_id": "stageapi.lekhha.com",
       "bap_uri": "https://stageapi.lekhha.com/buyerApp1",
       "ttl": "PT30S",
-      "transaction_id": "108f18b9-2d40-47d4-a72d-374ef50bf923",
-      "message_id": "306cf2ef-c1e1-4c76-9c30-b88e3b0d88d7",
-      "timestamp": "2024-12-19T19:51:19.524+05:30",
+      "transaction_id": "26704df7-96bd-4cef-b237-3267c226cf57",
+      "message_id": "f0b8fca6-54a7-48e5-a3ad-06327630ea0b",
+      "timestamp": "2025-01-07T03:45:01.788Z",
       "bpp_id": "stageapi.lekhha.com",
       "bpp_uri": "https://stageapi.lekhha.com/sellerApp1"
     },
     "message": {
-      "ack": {
-        "status": "ACK"
+      "catalog": {
+        "bpp/providers": [
+          {
+            "id": "674ecb33d7b9e10f4210d972",
+            "items": [
+              {
+                "id": "676cf465e5eb3c28a8741e9b",
+                "time": {
+                  "label": "disable",
+                  "timestamp": "2025-01-07T03:45:01.429Z"
+                },
+                "parent_item_id": "V10000000010",
+                "descriptor": {
+                  "name": "Vanilla milk",
+                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
+                  "short_desc": "Vanilla milk short",
+                  "long_desc": "Vanilla milk long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd730_0"
+                  ],
+                  "code": "1:1000000000242"
+                },
+                "quantity": {
+                  "unitized": {
+                    "measure": {
+                      "unit": "unit",
+                      "value": "1"
+                    }
+                  },
+                  "available": {
+                    "count": "0"
+                  },
+                  "maximum": {
+                    "count": "0"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "18.50",
+                  "maximum_value": "20.00"
+                },
+                "category_id": "Energy and Soft Drinks",
+                "fulfillment_id": "1",
+                "location_id": "674ecbc6d7b9e10f4210d973",
+                "recommended": false,
+                "@ondc/org/returnable": true,
+                "@ondc/org/cancellable": true,
+                "@ondc/org/seller_pickup_return": true,
+                "@ondc/org/time_to_ship": "P0DT3H4M",
+                "@ondc/org/available_on_cod": true,
+                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
+                "tags": [
+                  {
+                    "code": "origin",
+                    "list": [
+                      {
+                        "code": "country",
+                        "value": "IND"
+                      }
+                    ]
+                  }
+                ],
+                "@ondc/org/return_window": "P3DT4H5M"
+              },
+              {
+                "id": "676aab3800d7d9212e3ba074",
+                "time": {
+                  "label": "enable",
+                  "timestamp": "2025-01-07T03:45:01.563Z"
+                },
+                "parent_item_id": "V10000000018",
+                "descriptor": {
+                  "name": "Watermelon",
+                  "symbol": "https://stageapi.lekhha.com/Misc/Images/consumerPhotos/674ecbc6d7b9e10f4210d973",
+                  "short_desc": "Watermelon short",
+                  "long_desc": "Watermelon long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/67572f250a44cf4e02cdd740_0"
+                  ],
+                  "code": "1:2000000000349"
+                },
+                "quantity": {
+                  "unitized": {
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": "1"
+                    }
+                  },
+                  "available": {
+                    "count": "99"
+                  },
+                  "maximum": {
+                    "count": "26"
+                  }
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "38.00",
+                  "maximum_value": "40.00"
+                },
+                "category_id": "Fruits and Vegetables",
+                "fulfillment_id": "1",
+                "location_id": "674ecbc6d7b9e10f4210d973",
+                "recommended": false,
+                "@ondc/org/returnable": true,
+                "@ondc/org/cancellable": true,
+                "@ondc/org/seller_pickup_return": true,
+                "@ondc/org/time_to_ship": "P0DT3H4M",
+                "@ondc/org/available_on_cod": true,
+                "@ondc/org/contact_details_consumer_care": "Lekhha_Seller_1 contact person,Lekhha_Seller_1@email1.com1,9900025784",
+                "tags": [
+                  {
+                    "code": "origin",
+                    "list": [
+                      {
+                        "code": "country",
+                        "value": "IND"
+                      }
+                    ]
+                  }
+                ],
+                "@ondc/org/return_window": "P3DT4H5M"
+              }
+            ],
+            "offers": [
+              {
+                "id": "dp3",
+                "descriptor": {
+                  "code": "discount",
+                  "name": "dp3",
+                  "short_desc": "dp3 short",
+                  "long_desc": "dp3 long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/675fc133c5a1e14c7188ff31_0"
+                  ]
+                },
+                "location_ids": [
+                  "674ecbc6d7b9e10f4210d973"
+                ],
+                "item_ids": [],
+                "time": {
+                  "label": "enable",
+                  "range": {
+                    "start": "2024-12-16T00:00:00.000Z",
+                    "end": "2025-01-07T23:59:59.999Z"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "qualifier",
+                    "list": [
+                      {
+                        "code": "min_value",
+                        "value": "750"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "benefit",
+                    "list": [
+                      {
+                        "code": "value_type",
+                        "value": "percent"
+                      },
+                      {
+                        "code": "value",
+                        "value": "-15"
+                      },
+                      {
+                        "code": "value_cap",
+                        "value": "-75"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "meta",
+                    "list": [
+                      {
+                        "code": "additive",
+                        "value": "no"
+                      },
+                      {
+                        "code": "auto",
+                        "value": "no"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "dp4",
+                "descriptor": {
+                  "code": "discount",
+                  "name": "dp4",
+                  "short_desc": "dp4 short",
+                  "long_desc": "dp4 long",
+                  "images": [
+                    "https://stageapi.lekhha.com/Misc/Images/productImages/677ca04ff911aa4d2be3ff7b_0"
+                  ]
+                },
+                "location_ids": [
+                  "674ecbc6d7b9e10f4210d973"
+                ],
+                "item_ids": [],
+                "time": {
+                  "label": "enable",
+                  "range": {
+                    "start": "2025-01-01T00:00:00.000Z",
+                    "end": "2025-01-31T23:59:59.999Z"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "qualifier",
+                    "list": [
+                      {
+                        "code": "min_value",
+                        "value": "240"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "benefit",
+                    "list": [
+                      {
+                        "code": "value_type",
+                        "value": "percent"
+                      },
+                      {
+                        "code": "value",
+                        "value": "-12"
+                      },
+                      {
+                        "code": "value_cap",
+                        "value": "-100"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "meta",
+                    "list": [
+                      {
+                        "code": "additive",
+                        "value": "no"
+                      },
+                      {
+                        "code": "auto",
+                        "value": "no"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     }
   }
-}
+    },
+    "flow": "1"
+}'
