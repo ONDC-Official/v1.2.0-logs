@@ -1,0 +1,124 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:011",
+        "core_version": "1.2.5",
+        "action": "on_init",
+        "transaction_id": "5da8a79d-df8b-4437-a1d2-eda9edeee650",
+        "message_id": "310456f1-2ef1-4f30-8bcd-fcd7c5b009af",
+        "timestamp": "2025-01-19T20:26:56.525Z",
+        "bap_uri": "https://ondc.sequelstring.com/buyer/protocol",
+        "bap_id": "ondc.sequelstring.com/buyer/protocol",
+        "ttl": "PT10M",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+            },
+            "items": [
+                {
+                    "id": "std_del_fbe53cb7ca4d_0",
+                    "fulfillment_id": "f1320c45-795b-4b81-bedb-fbe53cb7ca4d"
+                }
+            ],
+            "fulfillments": [
+                {
+                    "id": "f1320c45-795b-4b81-bedb-fbe53cb7ca4d",
+                    "type": "Delivery",
+                    "start": {
+                        "location": {
+                            "gps": "28.524500,77.185500",
+                            "address": {
+                                "name": "Sherlock Holmes",
+                                "building": "221 B",
+                                "locality": "Baker Street",
+                                "city": "Baker Street",
+                                "state": "New Delhi",
+                                "country": "India",
+                                "area_code": "110030"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "sherlock@detective.com"
+                        }
+                    },
+                    "end": {
+                        "location": {
+                            "gps": "28.527500,77.210700",
+                            "address": {
+                                "name": "Tony Soprano",
+                                "building": "633 Stagtrail Rd",
+                                "locality": "N. Caldwell",
+                                "city": "N. Caldwell",
+                                "state": "New Delhi",
+                                "country": "India",
+                                "area_code": "110017"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "tony@soprano.com"
+                        }
+                    }
+                }
+            ],
+            "payment": {
+                "collected_by": "BAP",
+                "type": "ON-ORDER",
+                "@ondc/org/settlement_basis": "invoicing",
+                "@ondc/org/settlement_window": "P15D",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "123456789123456",
+                        "settlement_ifsc_code": "SBI00001234"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "23.00"
+                },
+                "breakup": [
+                    {
+                        "price": {
+                            "currency": "INR",
+                            "value": "23.00"
+                        },
+                        "@ondc/org/item_id": "std_del_fbe53cb7ca4d_0",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "title": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "@ondc/org/item_id": "std_del_fbe53cb7ca4d_0",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ],
+                "ttl": "P7D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
