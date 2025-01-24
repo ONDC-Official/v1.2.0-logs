@@ -1,0 +1,175 @@
+{
+  "context" : {
+    "core_version" : "1.2.0",
+    "domain" : "nic2004:60232",
+    "country" : "IND",
+    "city" : "std:011",
+    "action" : "on_init",
+    "bap_id" : "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri" : "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id" : "ondc-dev.bluedart.com",
+    "bpp_uri" : "https://ondc-dev.bluedart.com/",
+    "transaction_id" : "9901ae58-7543-4d3e-8e6e-687b625b0437",
+    "message_id" : "277ac8c0-ea3c-4ea3-88b8-76a9eb3bb6a8",
+    "timestamp" : "2025-01-23T10:45:00.754Z"
+  },
+  "message" : {
+    "order" : {
+      "provider" : {
+        "id" : "Bluedart Express",
+        "locations" : [ {
+          "id" : "NEW DELHI"
+        } ]
+      },
+      "items" : [ {
+        "id" : "BDEEP0",
+        "fulfillment_id" : "1"
+      } ],
+      "fulfillments" : [ {
+        "id" : "1",
+        "type" : "Delivery",
+        "start" : {
+          "location" : {
+            "gps" : "28.550203, 77.217188",
+            "address" : {
+              "name" : "221",
+              "building" : "Bharat",
+              "locality" : "Baker Street",
+              "city" : "Baker Street",
+              "state" : "Delhi",
+              "country" : "India",
+              "area_code" : "110049"
+            }
+          },
+          "contact" : {
+            "phone" : "9876543210",
+            "email" : "sherlock@detective.com"
+          }
+        },
+        "end" : {
+          "location" : {
+            "gps" : "28.561360, 77.225943",
+            "address" : {
+              "name" : "633",
+              "building" : "Stagtrail Rd",
+              "locality" : "N. Caldwell",
+              "city" : "N. Caldwell",
+              "state" : "Delhi",
+              "country" : "India",
+              "area_code" : "110049"
+            }
+          },
+          "contact" : {
+            "phone" : "9876543210",
+            "email" : "tony@soprano.com"
+          }
+        }
+      } ],
+      "quote" : {
+        "price" : {
+          "currency" : "INR",
+          "value" : "1245.76"
+        },
+        "breakup" : [ {
+          "price" : {
+            "currency" : "INR",
+            "value" : "1245.76"
+          },
+          "@ondc/org/item_id" : "BDEEP0",
+          "@ondc/org/title_type" : "delivery"
+        }, {
+          "price" : {
+            "currency" : "INR",
+            "value" : "0.00"
+          },
+          "@ondc/org/item_id" : "BDEEP0",
+          "@ondc/org/title_type" : "tax"
+        } ],
+        "ttl" : "P7D"
+      },
+      "payment" : {
+        "type" : "POST-FULFILLMENT",
+        "collected_by" : "BAP"
+      },
+      "cancellation_terms" : [ {
+        "fulfillment_state" : {
+          "descriptor" : {
+            "code" : "Pending",
+            "short_desc" : "008"
+          }
+        },
+        "cancellation_fee" : {
+          "percentage" : "0.00",
+          "amount" : {
+            "currency" : "INR",
+            "value" : "0.00"
+          }
+        }
+      }, {
+        "fulfillment_state" : {
+          "descriptor" : {
+            "code" : "Agent-assigned",
+            "short_desc" : "001,003"
+          }
+        },
+        "cancellation_fee" : {
+          "percentage" : "100.00",
+          "amount" : {
+            "currency" : "INR",
+            "value" : "50.00"
+          }
+        }
+      }, {
+        "fulfillment_state" : {
+          "descriptor" : {
+            "code" : "Order-picked-up",
+            "short_desc" : "001,003"
+          }
+        },
+        "cancellation_fee" : {
+          "percentage" : "100.00",
+          "amount" : {
+            "currency" : "INR",
+            "value" : "50.00"
+          }
+        }
+      }, {
+        "fulfillment_state" : {
+          "descriptor" : {
+            "code" : "Out-for-delivery",
+            "short_desc" : "011,012,013,014,015"
+          }
+        },
+        "cancellation_fee" : {
+          "percentage" : "100.00",
+          "amount" : {
+            "currency" : "INR",
+            "value" : "50.00"
+          }
+        }
+      } ],
+      "tags" : [ {
+        "code" : "bpp_terms",
+        "list" : [ {
+          "code" : "max_liability",
+          "value" : "2"
+        }, {
+          "code" : "max_liability_cap",
+          "value" : "10000"
+        }, {
+          "code" : "mandatory_arbitration",
+          "value" : "false"
+        }, {
+          "code" : "court_jurisdiction",
+          "value" : "Bengaluru"
+        }, {
+          "code" : "delay_interest",
+          "value" : "1000"
+        }, {
+          "code" : "static_terms",
+          "value" : "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+        } ]
+      } ]
+    }
+  }
+}
