@@ -1,0 +1,111 @@
+ {
+      "context": {
+        "domain": "ONDC:RET12",
+        "country": "IND",
+        "city": "std:IND",
+        "core_version": "1.2.0",
+        "action": "on_select",
+        "transaction_id": "704f6378-df5c-4827-8c7f-fb925d07ba39",
+        "message_id": "8f0a77be-bffe-4cb2-a069-7d238365ef5c",
+        "timestamp": "2025-01-24T11:17:24.745Z",
+        "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+        "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.preprod.pashmina.com",
+        "bpp_uri": "https://ondc.preprod.pashmina.com/api/v1/ondc/bpp/ecom_bpp"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "ISNPROVIDER",
+            "locations": [
+              {
+                "id": "ISNLOCATION4"
+              },
+              {
+                "id": "ISNLOCATION2"
+              }
+            ]
+          },
+          "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "100.00"
+            },
+            "breakup": [
+              {
+                "@ondc/org/item_id": "G8D2ECLW",
+                "@ondc/org/item_quantity": {
+                  "count": 0
+                },
+                "title": "Brown Pashmina Shawl",
+                "@ondc/org/title_type": "item",
+                "price": {
+                  "currency": "INR",
+                  "value": "0.00"
+                },
+                "item": {
+                  "quantity": {
+                    "available": {
+                      "count": "0"
+                    },
+                    "maximum": {
+                      "count": "0"
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "12500.00"
+                  }
+                }
+              },
+              {
+                "@ondc/org/item_id": "FJM0L6FMV",
+                "title": "Delivery charges",
+                "@ondc/org/title_type": "delivery",
+                "price": {
+                  "currency": "INR",
+                  "value": "100.00"
+                }
+              },
+              {
+                "@ondc/org/item_id": "FJM0L6FMV",
+                "title": "Packing charges",
+                "@ondc/org/title_type": "packing",
+                "price": {
+                  "currency": "INR",
+                  "value": "0.00"
+                }
+              }
+            ],
+            "ttl": "P1D"
+          },
+          "items": [
+            {
+              "id": "G8D2ECLW",
+              "fulfillment_id": "FJM0L6FMV"
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "FJM0L6FMV",
+              "type": "Delivery",
+              "@ondc/org/provider_name": "ISNPROVIDER",
+              "tracking": false,
+              "@ondc/org/category": "Standard Delivery",
+              "@ondc/org/TAT": "P5DT24H",
+              "state": {
+                "descriptor": {
+                  "code": "Serviceable"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "error": {
+        "type": "Item quantity unavailable",
+        "code": "40002",
+        "message": "[{item_id:{dynamic_item_id:undefined,item_id:G8D2ECLW},error:40002}]"
+      }
+    }
