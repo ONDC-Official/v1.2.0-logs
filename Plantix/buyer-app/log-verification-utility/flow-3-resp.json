@@ -7,99 +7,37 @@
                 "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]",
                 "prvdr0consCare": "@ondc/org/contact_details_consumer_care contactno should consist of  10 or  11 digits without any spaces or special characters in /bpp/providers[0]/items"
             },
-            "init": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\""
-            },
             "on_init": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
                 "taxNumberValue": "Invalid format for tax_number in on_init",
                 "provider_tax_number": "Invalid format for provider_tax_number in on_init",
-                "buyerFF": "Buyer app finder fee can't change in /on_init",
                 "tags": "'provider_tax_number' should have a valid PAN number format"
             },
             "confirm": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/fulfillments/0/end/contact/email must be string",
-                "schemaErr3": "/message/order/quote must have required property 'ttl'",
-                "schemaErr4": "/message/order/quote/breakup/0 must have required property '@ondc/org/item_id'",
-                "schemaErr5": "/message/order/quote/breakup/0 must have required property '@ondc/org/title_type'",
-                "schemaErr6": "/message/order/quote/breakup/1 must have required property '@ondc/org/item_id'",
-                "schemaErr7": "/message/order/quote/breakup/1 must have required property '@ondc/org/title_type'",
-                "schemaErr8": "/message/order/payment must have required property '@ondc/org/buyer_app_finder_fee_type'",
-                "schemaErr9": "/message/order/payment must have required property '@ondc/org/buyer_app_finder_fee_amount'",
-                "schemaErr10": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr11": "/message/order/updated_at must match format \"rfc3339-date-time\"",
-                "billingErr0": "Key length mismatch for root when compared with init billing object",
-                "quoteErr0": "Root level properties mismatch",
-                "bapFinderFee": "Buyer App Finder fee can't change",
-                "bapGstTags": "Tags/bap_terms should have valid gst number and fields in /confirm",
-                "message/order/transaction_id": "Transaction_id missing in message/order/payment"
+                "message/order/tags/bap_terms/static_terms": "static_terms is not required for now! in confirm"
             },
             "on_confirm": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/fulfillments/0/end must have required property 'person'",
-                "schemaErr3": "/message/order/fulfillments/0/end/contact/email must be string",
-                "schemaErr4": "/message/order/quote must have required property 'ttl'",
-                "schemaErr5": "/message/order/quote/breakup/0 must have required property '@ondc/org/item_id'",
-                "schemaErr6": "/message/order/quote/breakup/0 must have required property '@ondc/org/title_type'",
-                "schemaErr7": "/message/order/quote/breakup/1 must have required property '@ondc/org/item_id'",
-                "schemaErr8": "/message/order/quote/breakup/1 must have required property '@ondc/org/title_type'",
-                "schemaErr9": "/message/order/payment must have required property '@ondc/org/buyer_app_finder_fee_type'",
-                "schemaErr10": "/message/order/payment must have required property '@ondc/org/buyer_app_finder_fee_amount'",
-                "schemaErr11": "/message/order/tags/0/list/0/value Value for tax_number must be a valid tax number i.e alphanumeric with 15 characters ",
-                "schemaErr12": "/message/order/tags/0/list/1/value Value for provider_tax_number must be alphanumeric characters only",
-                "schemaErr13": "/message/order/created_at must match format \"rfc3339-date-time\"",
+                "schemaErr0": "/message/order/fulfillments/0/end must have required property 'person'",
+                "schemaErr1": "/message/order/tags/0/list/0/value Value for tax_number must be a valid tax number i.e alphanumeric with 15 characters ",
+                "schemaErr2": "/message/order/tags/0/list/1/value Value for provider_tax_number must be alphanumeric characters only",
                 "tax_number": "Invalid format for tax_number in on_confirm",
                 "provider_tax_number": "Invalid format for provider_tax_number in on_confirm",
-                "billingErr0": "Key length mismatch for root when compared with init billing object",
-                "quoteErr0": "Root level properties mismatch",
-                "tags_bap_terms": "Tags should have same and valid gst_number as passed in /confirm",
-                "message/order/transaction_id": "Transaction_id missing in message/order/payment"
-            },
-            "on_status_pending": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "tmpstmp": "Created At timestamp for /on_status_pending should be equal to context timestamp at confirm",
-                "message/order/transaction_id": "Transaction_id missing in message/order/payment"
-            },
-            "on_status_packed": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "tmpstmp": "Created At timestamp for /on_status_packed.message.order should be equal to context timestamp at confirm"
+                "message/order/tags/bap_terms/static_terms": "static_terms is not required for now! in on_confirm"
             },
             "on_status_picked": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_picked",
-                "tmpstmp": "Created At timestamp for /on_status_picked should be equal to context timestamp at confirm"
+                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_picked"
             },
             "on_status_out_for_delivery": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_out_for_delivery",
-                "tmpstmp": "Created At timestamp for /on_status_out-for-delivery should be equal to context timestamp at confirm"
+                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_out_for_delivery"
             },
             "on_status_delivered": {
-                "schemaErr0": "/message/order/billing/created_at must match format \"rfc3339-date-time\"",
-                "schemaErr1": "/message/order/billing/updated_at must match format \"rfc3339-date-time\"",
-                "schemaErr2": "/message/order/created_at must match format \"rfc3339-date-time\"",
-                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_delivered",
-                "tmpstmp": "Created At timestamp for /on_status_delivered should be equal to context timestamp at confirm"
+                "missingRouting/Tag": "RoutingTag object is mandatory in Tags of Delivery Object for on_status_delivered"
             }
         },
         "bpp_id": "preprod-ondc.addble.com",
         "bap_id": "onca.dev.peat-cloud.com",
         "domain": "ONDC:AGR10",
-        "reportTimestamp": "2024-11-22T11:53:27.186Z"
+        "reportTimestamp": "2025-01-27T10:03:37.633Z"
     },
-    "signature": "aKzcCqAwJYFR2A84J7ZYciHQ0Ea1IPMocZkWHTwvxNYZjFhutLUroaiCeX4cfdEVRBL9KLHTxKaveJPJXgqIDQ==",
-    "signTimestamp": "2024-11-22T11:53:27.186Z"
+    "signature": "WaXcztYVnOcYUMb42fYsRKqHVNdjIItbPWd3KrqrPxPI5lToZtWplklB4MUFgWJ4L/9lXr6mnB/tMl6XHxAzCw==",
+    "signTimestamp": "2025-01-27T10:03:37.633Z"
 }

@@ -9,14 +9,14 @@
         "bap_uri": "https://onca.dev.peat-cloud.com/ondc/v1",
         "bpp_id": "preprod-ondc.addble.com",
         "bpp_uri": "https://preprod-ondc.addble.com/",
-        "transaction_id": "ac7ef453-4747-4696-8419-318d78be0573",
-        "message_id": "71b458ab-77bd-4716-b933-192a149817f3",
-        "timestamp": "2024-11-22T11:39:28.506Z",
+        "transaction_id": "a1a12cd6-5c93-4b34-8108-95939eb63481",
+        "message_id": "8a26b7ac-2320-4d7d-b495-85bbd15c386c",
+        "timestamp": "2025-01-27T08:04:25.583Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "813b110a-ce79-4490-9d85-6d930792943e",
+            "id": "5cdc21cf-b03d-4e4f-8897-334cfa55414b",
             "state": "Created",
             "provider": {
                 "id": "otJQetBqULjdFiys1IKa",
@@ -32,10 +32,11 @@
                     "quantity": {
                         "count": 1
                     },
-                    "fulfillment_id": "50077108-c27b-4dda-a74c-a036850238bb"
+                    "fulfillment_id": "dfd1cdb8-1c35-4100-87cd-1d83d0db8c14"
                 }
             ],
             "billing": {
+                "name": "John Doe",
                 "address": {
                     "name": "John's Home",
                     "building": "Apt 101",
@@ -45,15 +46,15 @@
                     "country": "IND",
                     "area_code": "123456"
                 },
-                "phone": "7702863154",
-                "name": "John Doe",
                 "email": "john.doe@example.com",
-                "created_at": "2024-11-22T11:38:02.826646+00:00",
-                "updated_at": "2024-11-22T11:38:02.826761+00:00"
+                "phone": "7702863154",
+                "tax_number": "27AAACI0000L1ZI",
+                "created_at": "2025-01-27T08:02:33.164Z",
+                "updated_at": "2025-01-27T08:02:33.164Z"
             },
             "fulfillments": [
                 {
-                    "id": "50077108-c27b-4dda-a74c-a036850238bb",
+                    "id": "dfd1cdb8-1c35-4100-87cd-1d83d0db8c14",
                     "type": "Delivery",
                     "@ondc/org/provider_name": "PLANTIX TEST",
                     "tracking": false,
@@ -82,14 +83,14 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-11-22T15:39:27.168Z",
-                                "end": "2024-11-22T16:24:27.168Z"
+                                "start": "2025-01-27T12:04:23.985Z",
+                                "end": "2025-01-27T12:49:23.985Z"
                             }
                         }
                     },
                     "end": {
                         "location": {
-                            "gps": "24.8146672,93.8784754",
+                            "gps": "24.814667,93.878475",
                             "address": {
                                 "name": "John's Office",
                                 "building": "Office Block 2",
@@ -101,13 +102,12 @@
                             }
                         },
                         "contact": {
-                            "phone": "7702863154",
-                            "email": null
+                            "phone": "7702863154"
                         },
                         "time": {
                             "range": {
-                                "start": "2024-11-22T19:39:27.168Z",
-                                "end": "2024-11-22T20:24:27.168Z"
+                                "start": "2025-01-27T16:04:23.985Z",
+                                "end": "2025-01-27T16:49:23.985Z"
                             }
                         }
                     }
@@ -120,34 +120,34 @@
                 },
                 "breakup": [
                     {
-                        "item_id": null,
-                        "item_quantity": null,
-                        "title_type": null,
+                        "@ondc/org/item_id": "Ys3dWuXU3W8sUVAvxIei",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
                         "title": "My Test machine",
                         "price": {
                             "currency": "INR",
                             "value": "1030"
                         },
                         "item": {
-                            "currency": "INR",
-                            "value": "1030"
+                            "price": {
+                                "currency": "INR",
+                                "value": "1030"
+                            }
                         }
                     },
                     {
-                        "item_id": null,
-                        "item_quantity": null,
-                        "title_type": null,
+                        "@ondc/org/item_id": "dfd1cdb8-1c35-4100-87cd-1d83d0db8c14",
+                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery charges",
                         "price": {
                             "currency": "INR",
                             "value": "20"
-                        },
-                        "item": {
-                            "currency": "INR",
-                            "value": "20"
                         }
                     }
-                ]
+                ],
+                "ttl": "P1D"
             },
             "payment": {
                 "uri": "",
@@ -155,14 +155,14 @@
                 "params": {
                     "amount": "1050.00",
                     "currency": "INR",
-                    "transaction_id": ""
+                    "transaction_id": "test-payment-id"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER",
                 "collected_by": "BAP",
-                "buyer_app_finder_fee_type": "percent",
-                "buyer_app_finder_fee_amount": 3,
-                "settlement_details": [
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "seller-app",
                         "settlement_phase": "sale-amount",
@@ -192,10 +192,27 @@
                             "value": "MSN"
                         }
                     ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "accept_bpp_terms",
+                            "value": "Y"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://onca.dev.peat-cloud.com/v1/terms"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "27AAACI0000L1ZI"
+                        }
+                    ]
                 }
             ],
-            "created_at": "2024-11-22T11:39:27.167926+00:00",
-            "updated_at": "2024-11-22T11:39:28.506Z"
+            "created_at": "2025-01-27T08:04:23.985Z",
+            "updated_at": "2025-01-27T08:04:25.583Z"
         }
     }
 }
