@@ -2,112 +2,119 @@
   "context": {
     "domain": "nic2004:60232",
     "country": "IND",
-    "city": "std:022",
+    "city": "std:080",
     "action": "on_init",
     "core_version": "1.2.0",
     "bap_id": "preprod.xpressbaazaar.com",
     "bap_uri": "https://preprod.xpressbaazaar.com/logistics/v1/",
-    "bpp_id": "my.ithinklogistics.com/ondc/preprod",
-    "bpp_uri": "https://my.ithinklogistics.com/ondc/preprod",
-    "transaction_id": "0751d7ca-d397-48aa-9104-d0b881c1dde8",
-    "message_id": "781f5cb9-ce5f-4d5e-94d7-ca6edeb04449",
-    "timestamp": "2024-05-20T19:36:26.885Z"
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "136a4b11-bd9e-480c-92a4-08ed05f00d21",
+    "message_id": "94d1532d-067f-4e76-b93c-cebc98d568c3",
+    "timestamp": "2024-06-21T09:07:27.942Z"
   },
   "message": {
     "order": {
       "provider": {
-        "id": "29"
+        "id": "MP2"
       },
       "items": [
         {
-          "id": "29I1",
-          "fulfillment_id": "1"
+          "id": "mp2_immediate",
+          "fulfillment_id": "mp2_immediate_f1"
         }
       ],
       "fulfillments": [
         {
-          "id": "1",
+          "id": "mp2_immediate_f1",
           "type": "Delivery",
-          "tracking": false,
           "start": {
             "location": {
-              "gps": "18.910370, 72.819756",
+              "gps": "12.933050,77.589828",
               "address": {
-                "name": "lakme",
-                "building": "H1 T2 main building",
-                "locality": "B block sector 63",
-                "city": "Mumbai",
-                "state": "Maharashtra",
+                "name": "Sundry Grocery",
+                "building": "B-16 2nd floor Shop No H224D,560041, Putlanpalya, Jayanagara 9th Block, Jayanagar, Bengaluru",
+                "locality": "gautam buddha",
+                "city": "Karnataka",
+                "state": "Karnataka",
                 "country": "India",
-                "area_code": "400005"
+                "area_code": "560029"
               }
             },
             "contact": {
-              "phone": "9876543210",
+              "phone": "09034562789",
               "email": "abcd.efgh@gmail.com"
             }
           },
           "end": {
             "location": {
-              "gps": "18.998173, 72.827469",
+              "gps": "12.923601,77.586925",
               "address": {
-                "name": "Pawan Maurya",
-                "building": "H1 T3 Main building",
-                "locality": "Late Dattaji Nalavade Flyover",
-                "city": "Mumbai",
-                "state": "Maharashtra",
+                "name": "Divya  Prabhakar",
+               "building": "B-16 secound floor",
+                "locality": "36th A Cross Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
                 "country": "India",
-                "area_code": "400013"
+                "area_code": "560041"
               }
             },
             "contact": {
-              "phone": "9876543213",
-              "email": "pawan.maurya@ens.enterprises"
+              "phone": "09034562789",
+              "email": "divya.prabhakar@ens.enterprises"
             }
-          }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
         }
       ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "buyer-app",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      },
       "quote": {
         "price": {
           "currency": "INR",
-          "value": "37.76"
+          "value": "25.0"
         },
         "breakup": [
           {
-            "@ondc/org/item_id": "29I1",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "delivery",
             "price": {
               "currency": "INR",
-              "value": "37.76"
+              "value": "21.19"
             }
           },
           {
-            "@ondc/org/item_id": "29I1",
+            "@ondc/org/item_id": "mp2_immediate",
             "@ondc/org/title_type": "tax",
             "price": {
               "currency": "INR",
-              "value": "0.00"
+              "value": "3.81"
             }
           }
         ],
-        "ttl": "P2D"
-      },
-      "payment": {
-        "type": "ON-FULFILLMENT",
-        "collected_by": "BPP",
-        "@ondc/org/settlement_details": [
-          {
-            "settlement_counterparty": "Logistics",
-            "settlement_type": "neft",
-            "settlement_bank_account_no": "6464424002",
-            "settlement_ifsc_code": "HSBC0400002",
-            "bank_name": "HSBC Bank",
-            "branch_name": "Mahatma Gandhi Road,Mumbai",
-            "beneficiary_name": "Ithink LGS QC",
-            "beneficiary_address": "HSBC Bank,Mahatma Gandhi Road,Mumbai",
-            "settlement_status": "NOT-PAID"
-          }
-        ]
+        "ttl": "PT15M"
       }
     }
   }
