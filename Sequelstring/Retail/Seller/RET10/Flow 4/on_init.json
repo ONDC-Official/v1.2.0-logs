@@ -1,0 +1,230 @@
+{
+    "context": {
+        "action": "on_init",
+        "bap_id": "pramaan.ondc.org/alpha/mock-server",
+        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+        "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d",
+        "message_id": "f6320952-8874-435a-8d5b-e583533b3a94",
+        "city": "std:011",
+        "country": "IND",
+        "timestamp": "2024-12-19T09:13:49.847Z",
+        "ttl": "PT30S",
+        "bpp_id": "ondc.sequelstring.com/seller/protocol",
+        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "core_version": "1.2.0",
+        "domain": "ONDC:RET10"
+    },
+    "message": {
+        "order": {
+            "provider": {
+                "id": "ss_provider_1",
+                "locations": [
+                    {
+                        "id": "SSL1"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "210.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                        "title": "Plain Atta",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "130.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40"
+                        }
+                    }
+                ],
+                "ttl": "PT6H"
+            },
+            "cancellation_terms": [
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Pending",
+                            "short_desc": ""
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": false,
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Packed",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": true,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "0.00",
+                        "amount": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        }
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Order-picked-up",
+                            "short_desc": "001,003"
+                        }
+                    },
+                    "refund_eligible": false,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "100.00"
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "009"
+                        }
+                    },
+                    "refund_eligible": false,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "100.00"
+                    }
+                },
+                {
+                    "fulfillment_state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery",
+                            "short_desc": "010,011,012,013,014,015"
+                        }
+                    },
+                    "refund_eligible": false,
+                    "reason_required": true,
+                    "cancellation_fee": {
+                        "percentage": "100.00"
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Mayur",
+                "address": {
+                    "name": "7/6, August Kranti Marg",
+                    "building": "Siri Fort Institutional",
+                    "locality": "Siri Fort Institutional Area, Siri Fort",
+                    "city": "New Delhi",
+                    "state": "Delhi",
+                    "country": "India",
+                    "area_code": "110049"
+                },
+                "tax_number": "29AAACU1901H1ZK",
+                "phone": "9886098860",
+                "email": "sharique.efgh@gmail.com",
+                "created_at": "2024-12-19T09:13:49.541Z",
+                "updated_at": "2024-12-19T09:13:49.541Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                    "type": "Delivery",
+                    "end": {
+                        "contact": {
+                            "phone": "9886098860",
+                            "email": "nobody@nomail.com"
+                        },
+                        "location": {
+                            "address": {
+                                "area_code": "110030",
+                                "building": "Siri Fort Institutional",
+                                "city": "Delhi",
+                                "country": "IND",
+                                "locality": "Siri Fort Institutional Area, Siri Fort",
+                                "name": "mayur",
+                                "state": "Delhi"
+                            },
+                            "gps": "28.506200, 77.199700"
+                        }
+                    },
+                    "tracking": true
+                }
+            ],
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "upi_address": "",
+                        "beneficiary_name": "SEQUELSTRING AI",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "9876543210012",
+                        "settlement_ifsc_code": "AXIS123456",
+                        "settlement_phase": "sale-amount",
+                        "settlement_status": "NOT-PAID",
+                        "bank_name": "AXIS BANK LTD ",
+                        "branch_name": "NAVI MUMBAI"
+                    }
+                ],
+                "status": "NOT-PAID"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "tax_number",
+                            "value": "123213456654"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
