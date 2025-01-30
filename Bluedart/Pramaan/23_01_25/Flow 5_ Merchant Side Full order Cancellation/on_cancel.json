@@ -4,19 +4,19 @@
     "domain" : "nic2004:60232",
     "country" : "IND",
     "city" : "std:011",
-    "action" : "on_status",
+    "action" : "on_cancel",
     "bap_id" : "pramaan.ondc.org/beta/preprod/mock/buyer",
     "bap_uri" : "https://pramaan.ondc.org/beta/preprod/mock/buyer",
     "bpp_id" : "ondc-dev.bluedart.com",
     "bpp_uri" : "https://ondc-dev.bluedart.com/",
-    "transaction_id" : "6693ef8d-6aea-4769-8ba1-61433c72f73a",
-    "message_id" : "933c066d-2d18-4ab9-bcf3-226ad3832bc2",
-    "timestamp" : "2025-01-23T13:02:45.305Z"
+    "transaction_id" : "20ef74fe-9b20-4c2b-b95b-5a42e2724472",
+    "message_id" : "a9686b62-c98f-24c9-ba59-305a2ae02a53",
+    "timestamp" : "2025-01-29T04:57:17.134Z"
   },
   "message" : {
     "order" : {
-      "id" : "SS-1737637291640",
-      "state" : "In-progress",
+      "id" : "SS-1737977138968",
+      "state" : "Cancelled",
       "provider" : {
         "id" : "Bluedart Express",
         "locations" : [ {
@@ -24,17 +24,30 @@
         } ]
       },
       "items" : [ {
-        "id" : "BDEAP0",
-        "category_id" : "Express Delivery",
+        "id" : "BDEEP0",
+        "category_id" : "Standard Delivery",
         "fulfillment_id" : "1",
         "descriptor" : {
           "code" : "P2H2P"
         },
         "time" : {
           "label" : "TAT",
-          "timestamp" : "2025-01-24",
+          "timestamp" : "2025-01-28",
           "duration" : "P1D"
         }
+      }, {
+        "id" : "rto-item-BDEEP0",
+        "category_id" : "Standard Delivery",
+        "fulfillment_id" : "3",
+        "descriptor" : {
+          "code" : "P2H2P"
+        },
+        "time" : {
+          "label" : "TAT",
+          "timestamp" : "2025-01-28",
+          "duration" : "P1D"
+        },
+        "parent_item_id" : "BDEEP0"
       } ],
       "billing" : {
         "name" : "ONDC Pramaan Logistics Buyer NP",
@@ -50,16 +63,16 @@
         "email" : "sherlock@detective.com",
         "phone" : "9876543210",
         "tax_number" : "00ABCDE1234F1Z5",
-        "created_at" : "2025-01-23T13:00:45.267Z",
-        "updated_at" : "2025-01-23T13:00:45.267Z"
+        "created_at" : "2025-01-27T11:24:39.249Z",
+        "updated_at" : "2025-01-27T11:24:39.249Z"
       },
       "fulfillments" : [ {
         "id" : "1",
         "type" : "Delivery",
-        "@ondc/org/awb_no" : "81202381094",
+        "@ondc/org/awb_no" : "50910405184",
         "state" : {
           "descriptor" : {
-            "code" : "Order-picked-up"
+            "code" : "Cancelled"
           }
         },
         "tracking" : true,
@@ -77,17 +90,17 @@
             }
           },
           "time" : {
-            "timestamp" : "2025-01-23T13:02:45.283Z",
+            "timestamp" : "2025-01-27T11:26:20.976Z",
             "duration" : "PT6H",
             "range" : {
-              "start" : "2025-01-24T09:00:00.000Z",
-              "end" : "2025-01-24T18:00:00.000Z"
+              "start" : "2025-01-28T09:00:00.000Z",
+              "end" : "2025-01-28T18:00:00.000Z"
             }
           },
           "instructions" : {
             "code" : "3",
-            "short_desc" : "R276",
-            "images" : [ "https://galaxy.bluedart.in/ONDCPOD/7fe14414a5639fb1ce6f949062d234c4.pdf" ]
+            "short_desc" : "E620",
+            "images" : [ "https://galaxy.bluedart.in/ONDCPOD/33f6f19cb7f91414eaee1894102911af.pdf" ]
           },
           "contact" : {
             "phone" : "9876543210",
@@ -112,8 +125,8 @@
           },
           "time" : {
             "range" : {
-              "start" : "2025-01-24T09:00:00.000Z",
-              "end" : "2025-01-24T18:00:00.000Z"
+              "start" : "2025-01-28T09:00:00.000Z",
+              "end" : "2025-01-28T18:00:00.000Z"
             }
           },
           "contact" : {
@@ -125,46 +138,136 @@
           }
         },
         "tags" : [ {
-          "code" : "state",
+          "code" : "precancel_state",
           "list" : [ {
-            "code" : "ready_to_ship",
-            "value" : "yes"
-          } ]
-        }, {
-          "code" : "rto_action",
-          "list" : [ {
-            "code" : "return_to_origin",
-            "value" : "yes"
-          } ]
-        }, {
-          "code" : "tracking",
-          "list" : [ {
-            "code" : "url_enabled",
-            "value" : "Yes"
+            "code" : "fulfillment_state",
+            "value" : "Order-picked-up"
           }, {
-            "code" : "url",
-            "value" : "https://www.bluedart.com/web/guest/trackdartresult?trackFor=0&trackNo=81202381094"
+            "code" : "updated_at",
+            "value" : "2025-01-27T11:26:20.977Z"
+          } ]
+        }, {
+          "code" : "rto_event",
+          "list" : [ {
+            "code" : "fulfillment_state",
+            "value" : "Order-picked-up"
+          }, {
+            "code" : "updated_at",
+            "value" : "2025-01-27T11:26:20.977Z"
+          }, {
+            "code" : "rto_id",
+            "value" : "3"
+          }, {
+            "code" : "cancellation_reason_id",
+            "value" : "007"
+          }, {
+            "code" : "cancelled_by",
+            "value" : "pramaan.ondc.org/beta/preprod/mock/buyer"
+          }, {
+            "code" : "retry_count",
+            "value" : "0"
+          }, {
+            "code" : "sub_reason_id",
+            "value" : "005"
           } ]
         } ]
+      }, {
+        "id" : "3",
+        "type" : "RTO",
+        "state" : {
+          "descriptor" : {
+            "code" : "RTO-Initiated"
+          }
+        },
+        "tracking" : true,
+        "start" : {
+          "location" : {
+            "gps" : "28.561360, 77.225943",
+            "address" : {
+              "name" : "633",
+              "building" : "Stagtrail Rd",
+              "locality" : "N. Caldwell",
+              "city" : "N. Caldwell",
+              "state" : "Delhi",
+              "country" : "India",
+              "area_code" : "110049"
+            }
+          },
+          "time" : {
+            "timestamp" : "2025-01-29T04:57:17.134Z",
+            "range" : {
+              "start" : "2025-01-29T09:00:00.000Z",
+              "end" : "2025-01-29T18:00:00.000Z"
+            }
+          },
+          "contact" : {
+            "phone" : "9876543210",
+            "email" : "tony@soprano.com"
+          },
+          "person" : {
+            "name" : "633"
+          }
+        },
+        "end" : {
+          "location" : {
+            "gps" : "28.550203, 77.217188",
+            "address" : {
+              "name" : "221",
+              "building" : "Bharat",
+              "locality" : "Baker Street",
+              "city" : "Baker Street",
+              "state" : "Delhi",
+              "country" : "India",
+              "area_code" : "110049"
+            }
+          },
+          "time" : {
+            "range" : {
+              "start" : "2025-01-30T09:00:00.000Z",
+              "end" : "2025-01-30T18:00:00.000Z"
+            }
+          },
+          "contact" : {
+            "phone" : "9876543210",
+            "email" : "sherlock@detective.com"
+          },
+          "person" : {
+            "name" : "221"
+          }
+        }
       } ],
       "quote" : {
         "price" : {
           "currency" : "INR",
-          "value" : "780.65"
+          "value" : "1245.76"
         },
         "breakup" : [ {
           "price" : {
             "currency" : "INR",
-            "value" : "780.65"
+            "value" : "1245.76"
           },
-          "@ondc/org/item_id" : "BDEAP0",
+          "@ondc/org/item_id" : "BDEEP0",
           "@ondc/org/title_type" : "delivery"
         }, {
           "price" : {
             "currency" : "INR",
             "value" : "0.00"
           },
-          "@ondc/org/item_id" : "BDEAP0",
+          "@ondc/org/item_id" : "BDEEP0",
+          "@ondc/org/title_type" : "tax"
+        }, {
+          "price" : {
+            "currency" : "INR",
+            "value" : "0.00"
+          },
+          "@ondc/org/item_id" : "BDEEP0",
+          "@ondc/org/title_type" : "rto"
+        }, {
+          "price" : {
+            "currency" : "INR",
+            "value" : "0.00"
+          },
+          "@ondc/org/item_id" : "BDEEP0",
           "@ondc/org/title_type" : "tax"
         } ]
       },
@@ -173,8 +276,8 @@
         "status" : "NOT-PAID",
         "collected_by" : "BAP"
       },
-      "created_at" : "2025-01-23T13:01:31.640Z",
-      "updated_at" : "2025-01-23T13:02:45.283Z",
+      "created_at" : "2025-01-27T11:25:38.968Z",
+      "updated_at" : "2025-01-29T04:57:17.134Z",
       "@ondc/org/linked_order" : {
         "items" : [ {
           "descriptor" : {
@@ -208,7 +311,7 @@
           }
         },
         "order" : {
-          "id" : "67a2507d-cbdc-45dc-86a4-adb17751ab74",
+          "id" : "1029d13b-5166-4daa-b8fb-bf1191f37db4",
           "weight" : {
             "unit" : "kilogram",
             "value" : 2.0
@@ -227,6 +330,12 @@
               "unit" : "centimeter"
             }
           }
+        }
+      },
+      "cancellation" : {
+        "cancelled_by" : "pramaan.ondc.org/beta/preprod/mock/buyer",
+        "reason" : {
+          "id" : "007"
         }
       }
     }
