@@ -1,0 +1,121 @@
+{
+    "context": {
+        "transaction_id": "1d83c742-79f5-46e9-a9fd-73e59eb335bd",
+        "country": "IND",
+        "bpp_id": "preprod-ondc.whizzard.in",
+        "city": "std:080",
+        "domain": "nic2004:60232",
+        "bpp_uri": "https://preprod-ondc.whizzard.in/api/integration",
+        "action": "on_init",
+        "message_id": "b87c22b3-b98c-44ca-9fc8-8fd24c9b7d01",
+        "core_version": "1.2.0",
+        "bap_uri": "https://dev-preprod-ondc.ndh01.com/logistics/buyer",
+        "bap_id": "dev-preprod-ondc.ndh01.com",
+        "timestamp": "2024-02-22T17:01:12.716Z"
+    },
+    "message": {
+        "order": {
+            "fulfillments": [
+                {
+                    "start": {
+                        "contact": {
+                            "phone": "9176090955",
+                            "email": "abcd1122334@hotmail.com"
+                        },
+                        "location": {
+                            "address": {
+                                "country": "IND",
+                                "city": "Bangalore Division",
+                                "area_code": "560041",
+                                "name": "Monish Store 2",
+                                "locality": "Shop no 8",
+                                "state": "Karnataka",
+                                "building": "Shop no 8, Flat No.121"
+                            },
+                            "gps": "12.9218199,77.5874601"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "phone": "8499954583",
+                            "email": "jeevan.mudhigolam@whizzard.in"
+                        },
+                        "location": {
+                            "address": {
+                                "country": "IND",
+                                "city": "Bengaluru",
+                                "area_code": "560041",
+                                "name": "Jeevan",
+                                "locality": "38th Cross Road",
+                                "state": "Karnataka",
+                                "building": "baburakamma"
+                            },
+                            "gps": "12.921888183240949,77.58263556109719"
+                        }
+                    },
+                    "id": "1",
+                    "type": "Delivery",
+                    "tags": [
+                        {
+                            "code": "rider_check",
+                            "list": [
+                                {
+                                    "code": "inline_check_for_rider",
+                                    "value": "yes"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "price": {
+                            "currency": "INR",
+                            "value": "30"
+                        },
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "@ondc/org/item_id": "I1",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "@ondc/org/title_type": "tax"
+                    }
+                ],
+                "price": {
+                    "currency": "INR",
+                    "value": "30"
+                },
+                "ttl": "PT15M"
+            },
+            "provider": {
+                "id": "MLL"
+            },
+            "payment": {
+                "@ondc/org/collection_amount": "0.0",
+                "collected_by": "BAP",
+                "type": "POST-FULFILLMENT",
+                "@ondc/org/settlement_details": [
+                    {
+                        "beneficiary_name": "Jeevan",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_ifsc_code": "ICICI1000234",
+                        "settlement_bank_account_no": "12231232",
+                        "settlement_type": "neft"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "I1",
+                    "fulfillment_id": "1"
+                }
+            ]
+        }
+    }
+}

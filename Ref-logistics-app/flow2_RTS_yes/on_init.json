@@ -1,0 +1,214 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:0172",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "logistics_buyer.com",
+    "bap_uri": "https://1d70-115-240-127-98.ngrok-free.app/",
+    "transaction_id": "4f9be73d-b538-40d2-ae19-aa3cb67393ae",
+    "message_id": "e69a2337-f382-4996-9b17-74e1f0c2b8d8",
+    "bpp_id": "ref-logistics-app-stage.ondc.org",
+    "bpp_uri": "https://ref-logistics-app-stage.ondc.org",
+    "timestamp": "2023-09-13T14:10:30.693Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "6240d89c-1755-4de1-b425-64910f4585b0"
+      },
+      "items": [
+        {
+          "descriptor": {
+            "code": "P2P"
+          },
+          "id": "express",
+          "fulfillment_id": "4dc2982b-2594-47e2-9a68-2b860efa236a",
+          "category_id": "Immediate Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "4dc2982b-2594-47e2-9a68-2b860efa236a",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "30.7467833, 76.642853",
+              "address": {
+                "name": "Kumar chauhan",
+                "building": "f-164",
+                "locality": "chandigarh",
+                "city": "kharar",
+                "state": "punjab",
+                "country": "India",
+                "area_code": "140301"
+              }
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "abcd.efgh@gmail.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "30.744600, 76.652496",
+              "address": {
+                "name": "Rohan Kumar",
+                "building": "f-163",
+                "locality": "chandigarh",
+                "city": "kharar",
+                "state": "punjab",
+                "country": "India",
+                "area_code": "140301"
+              }
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "abcd.efgh@gmail.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "57.75"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "express",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "52.50"
+            }
+          },
+          {
+            "@ondc/org/item_id": "express",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "5.25"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "ON-FULFILLMENT",
+        "@ondc/org/collection_amount": "300",
+        "@ondc/org/settlement_details": [],
+        "collected_by": "BPP"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": ""
+            }
+          },
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "0.0"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": false
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "50"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "cancellation_fee": {
+            "amount": {
+              "currency": "INR",
+              "value": "100.0"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Chandigarh"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
