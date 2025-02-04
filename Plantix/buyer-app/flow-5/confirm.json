@@ -6,19 +6,20 @@
         "action": "confirm",
         "core_version": "1.2.0",
         "bap_id": "onca.dev.peat-cloud.com",
-        "bap_uri": "https://actions-appreciate-somalia-raid.trycloudflare.com/ondc/v1",
+        "bap_uri": "https://onca.dev.peat-cloud.com/ondc/v1",
         "bpp_id": "preprod-ondc.addble.com",
         "bpp_uri": "https://preprod-ondc.addble.com",
-        "transaction_id": "819ae27f-e94c-406b-89a1-6b1b9b721081",
-        "message_id": "eab84bce-3984-4e5a-bcb4-13da3b775d3b",
-        "timestamp": "2024-11-22T12:55:09.543Z",
+        "transaction_id": "eff7d451-b251-476c-976c-0a7db1cdfa41",
+        "message_id": "2decc767-4216-403d-be11-04a6c5e2ea1e",
+        "timestamp": "2025-01-27T08:33:16.213Z",
         "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "6b31164d-e557-48c1-90ba-f0d3cce17fbf",
+            "id": "2b278b8b-6ce9-4897-bd33-f72a529c07ff",
             "state": "Created",
             "billing": {
+                "name": "John Doe",
                 "address": {
                     "name": "John's Home",
                     "building": "Apt 101",
@@ -28,11 +29,11 @@
                     "country": "IND",
                     "area_code": "123456"
                 },
-                "phone": "7702863154",
-                "name": "John Doe",
                 "email": "john.doe@example.com",
-                "created_at": "2024-11-22T12:53:40.841001+00:00",
-                "updated_at": "2024-11-22T12:53:40.841112+00:00"
+                "phone": "7702863154",
+                "tax_number": "27AAACI0000L1ZI",
+                "created_at": "2025-01-27T08:28:52.199Z",
+                "updated_at": "2025-01-27T08:28:52.199Z"
             },
             "items": [
                 {
@@ -40,7 +41,7 @@
                     "quantity": {
                         "count": 1
                     },
-                    "fulfillment_id": "429ef98b-69e8-408d-bf03-3e9f54faca07"
+                    "fulfillment_id": "ba3f48df-1ab7-4096-9a97-fb6cdc6eeda4"
                 }
             ],
             "provider": {
@@ -53,19 +54,17 @@
             },
             "fulfillments": [
                 {
-                    "tat": null,
-                    "id": "429ef98b-69e8-408d-bf03-3e9f54faca07",
+                    "id": "ba3f48df-1ab7-4096-9a97-fb6cdc6eeda4",
                     "tracking": false,
                     "end": {
                         "contact": {
-                            "phone": "7702863154",
-                            "email": null
+                            "phone": "7702863154"
                         },
                         "person": {
                             "name": ""
                         },
                         "location": {
-                            "gps": "24.8146672,93.8784754",
+                            "gps": "24.814667,93.878475",
                             "address": {
                                 "name": "John's Office",
                                 "building": "Office Block 2",
@@ -86,14 +85,14 @@
                 "params": {
                     "amount": "1050.00",
                     "currency": "INR",
-                    "transaction_id": ""
+                    "transaction_id": "test-payment-id"
                 },
                 "status": "PAID",
                 "type": "ON-ORDER",
                 "collected_by": "BAP",
-                "buyer_app_finder_fee_type": "percent",
-                "buyer_app_finder_fee_amount": 3,
-                "settlement_details": [
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "seller-app",
                         "settlement_phase": "sale-amount",
@@ -113,34 +112,34 @@
                 },
                 "breakup": [
                     {
-                        "item_id": null,
-                        "item_quantity": null,
-                        "title_type": null,
+                        "@ondc/org/item_id": "Ys3dWuXU3W8sUVAvxIei",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
                         "title": "My Test machine",
                         "price": {
                             "currency": "INR",
                             "value": "1030"
                         },
                         "item": {
-                            "currency": "INR",
-                            "value": "1030"
+                            "price": {
+                                "currency": "INR",
+                                "value": "1030"
+                            }
                         }
                     },
                     {
-                        "item_id": null,
-                        "item_quantity": null,
-                        "title_type": null,
+                        "@ondc/org/item_id": "ba3f48df-1ab7-4096-9a97-fb6cdc6eeda4",
+                        "@ondc/org/title_type": "delivery",
                         "title": "Delivery charges",
                         "price": {
                             "currency": "INR",
                             "value": "20"
-                        },
-                        "item": {
-                            "currency": "INR",
-                            "value": "20"
                         }
                     }
-                ]
+                ],
+                "ttl": "P1D"
             },
             "tags": [
                 {
@@ -155,10 +154,27 @@
                             "value": "QWERTYUIOP"
                         }
                     ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "accept_bpp_terms",
+                            "value": "Y"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://onca.dev.peat-cloud.com/v1/terms"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "27AAACI0000L1ZI"
+                        }
+                    ]
                 }
             ],
-            "created_at": "2024-11-22T12:55:09.542812+00:00",
-            "updated_at": "2024-11-22T12:55:09.542812+00:00"
+            "created_at": "2025-01-27T08:33:16.213Z",
+            "updated_at": "2025-01-27T08:33:16.213Z"
         }
     }
 }
