@@ -1,62 +1,72 @@
 {
-  "context": {
-    "domain": "ONDC:RET11",
-    "location": {
-      "country": {
-        "code": "IND"
-      },
-      "city": {
-        "code": "*"
-      }
-    },
-    "version": "2.0.0",
-    "action": "on_settle",
-    "bap_id": "collectorapp.com",
-    "bap_uri": "https://collectorapp.in/ondc/1.0/",
-    "bpp_id": "preprod.cart.box8.co.in",
-    "bpp_uri": "https://preprod.cart.box8.co.in/third_party/ondc",
-    "transaction_id": "dc34a366-aebb-4144-9314-808dda82c7e6",
-    "message_id": "941ed9a4-d74d-4411-ac06-469c0f9ac",
-    "timestamp": "2024-05-09T13:36:51.000Z",
-    "ttl": "P1D"
-  },
-  "message": {
-    "collector_app_id": "collectorapp.com",
-    "receiver_app_id": "preprod.cart.box8.co.in",
-    "settlement": {
-      "type": "NP-NP",
-      "id": "baa48603-f286-4f46-8ae1-be8b636dc2c6",
-      "orders": [
-        {
-          "id": "7EZK66C",
-          "inter_participant": {
-            "settled_amount": {
-              "currency": "INR",
-              "value": "570.00"
+    "context": {
+        "bap_id": "preprod.cart.box8.co.in",
+        "bap_uri": "https://preprod.cart.box8.co.in/third_party/ondc",
+        "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server",
+        "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server",
+        "location": {
+            "country": {
+                "code": "IND"
             },
-            "amount": {
-              "currency": "INR",
-              "value": "600.00"
-            },
-            "status": "SETTLED",
-            "reference_no": "3245683618631"
-          },
-          "collector": {
-            "amount": {
-              "currency": "INR",
-              "value": "30.00"
+            "city": {
+                "code": "*"
             }
-          },
-          "self": {
-            "amount": {
-              "currency": "INR",
-              "value": "570.00"
-            },
-            "status": "SETTLED",
-            "reference_no": "1238683618634"
-          }
+        },
+        "transaction_id": "3d9d7f4d-2985-4bd6-8d69-2ca1b46da120",
+        "message_id": "c7f48f7e-59f2-47a5-bca2-35da61d03fad",
+        "timestamp": "2025-01-24T09:16:46.200Z",
+        "domain": "ONDC:NTS10",
+        "version": "2.0.0",
+        "ttl": "PT10M",
+        "action": "on_settle"
+    },
+    "message": {
+        "collector_app_id": "collectorapp.com",
+        "receiver_app_id": "preprod.cart.box8.co.in",
+        "settlement": {
+            "type": "NP-NP",
+            "id": "882ad71e-ab80-43a9-9013-88fd80d8b915",
+            "orders": [
+                {
+                    "id": "7EZK66C",
+                    "inter_participant": {
+                        "amount": {
+                            "value": "600.00",
+                            "currency": "INR"
+                        },
+                        "settled_amount": {
+                            "value": "600.00",
+                            "currency": "INR"
+                        },
+                        "status": "NOT_SETTLED",
+                        "reference_no": "1238683618634"
+                    },
+                    "collector": {
+                        "amount": {
+                            "value": "30.00",
+                            "currency": "INR"
+                        }
+                    },
+                    "self": {
+                        "amount": {
+                            "value": "570.00",
+                            "currency": "INR"
+                        },
+                        "status": "NOT_SETTLED",
+                        "reference_no": "1238683618634"
+                    },
+                    "provider": {
+                        "amount": {
+                            "value": "0.00",
+                            "currency": "INR"
+                        }
+                    },
+                    "error": {
+                        "code": "70024",
+                        "message": "Interparticipant value mismatch"
+                    }
+                }
+            ]
         }
-      ]
     }
-  }
 }
