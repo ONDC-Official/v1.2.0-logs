@@ -1,25 +1,25 @@
 {
     "context": {
-        "action": "on_cancel",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d",
-        "message_id": "8e11194c-81ff-439b-b248-cb3251e384d0",
-        "city": "std:011",
+        "domain": "ONDC:RET10",
         "country": "IND",
-        "timestamp": "2024-12-19T09:13:55.781Z",
-        "ttl": "PT30S",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "city": "std:0124",
+        "action": "on_cancel",
         "core_version": "1.2.0",
-        "domain": "ONDC:RET10"
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "transaction_id": "5f30988a-ff53-4649-9519-dd7b4ca074dc",
+        "message_id": "827edd37-7b0b-402f-b461-4169412a5fa6",
+        "timestamp": "2025-02-10T10:36:21.162Z",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
-            "id": "1cIxnTU1AEIETwTlQN2hqGPJ1frbhKMg",
+            "id": "2025-02-10-592466",
             "state": "Cancelled",
             "provider": {
-                "id": "ss_provider_1",
+                "id": "pramaan_provider_1",
                 "locations": [
                     {
                         "id": "SSL1"
@@ -28,23 +28,65 @@
             },
             "items": [
                 {
-                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
-                    "quantity": {
-                        "count": 2
-                    },
-                    "fulfillment_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
-                },
-                {
+                    "id": "id_ancc5_1_0",
                     "quantity": {
                         "count": 0
                     },
-                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
-                    "fulfillment_id": "0597ad00-d533-42ba-a336-0f589a930200"
+                    "location_id": "SSL1",
+                    "fulfillment_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
+                },
+                {
+                    "id": "id_5yzai_3_0",
+                    "quantity": {
+                        "count": 0
+                    },
+                    "location_id": "SSL1",
+                    "fulfillment_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
+                },
+                {
+                    "quantity": {
+                        "count": 1
+                    },
+                    "id": "id_ancc5_1_0",
+                    "fulfillment_id": "9b838646-4ff9-4df5-9699-0ee0d5268903"
+                },
+                {
+                    "quantity": {
+                        "count": 1
+                    },
+                    "id": "id_5yzai_3_0",
+                    "fulfillment_id": "9b838646-4ff9-4df5-9699-0ee0d5268903"
                 }
             ],
+            "billing": {
+                "address": {
+                    "building": "221 B",
+                    "city": "Gurugram",
+                    "state": "Haryana",
+                    "country": "IND",
+                    "area_code": "122009",
+                    "locality": "August Kranti Marg",
+                    "name": "Nirdosh Chauhan"
+                },
+                "phone": "9058626929",
+                "name": "Nirdosh Chauhan",
+                "email": "nirdosh.chauhan@sequelstring.com",
+                "created_at": "2025-02-10T10:18:52.699Z",
+                "updated_at": "2025-02-10T10:18:52.699Z"
+            },
             "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "359.00",
+                    "currency": "INR",
+                    "transaction_id": "order_PtyKdgbEhtNF9V"
+                },
+                "status": "PAID",
                 "type": "ON-ORDER",
                 "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3.0",
                 "@ondc/org/settlement_details": [
                     {
                         "settlement_counterparty": "seller-app",
@@ -58,25 +100,17 @@
                         "bank_name": "AXIS BANK LTD ",
                         "branch_name": "NAVI MUMBAI"
                     }
-                ],
-                "status": "PAID",
-                "params": {
-                    "currency": "INR",
-                    "amount": "210.00",
-                    "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d"
-                },
-                "tl_method": "http/get",
-                "uri": "https://ondc.transaction.com/payment"
+                ]
             },
             "fulfillments": [
                 {
-                    "id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                    "id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                     "@ondc/org/provider_name": "Pramaan Store 1",
                     "@ondc/org/category": "Standard Delivery",
                     "@ondc/org/TAT": "PT24H",
                     "state": {
                         "descriptor": {
-                            "code": "Pending"
+                            "code": "Cancelled"
                         }
                     },
                     "type": "Delivery",
@@ -100,8 +134,8 @@
                         },
                         "time": {
                             "range": {
-                                "start": "2024-12-19T09:13:53.002Z",
-                                "end": "2024-12-19T23:00:00.000Z"
+                                "start": "2025-02-10T10:20:03.598Z",
+                                "end": "2025-02-10T23:00:00.000Z"
                             }
                         },
                         "contact": {
@@ -111,34 +145,62 @@
                     },
                     "end": {
                         "contact": {
-                            "email": "nobody@nomail.com",
-                            "phone": "9886098860"
-                        },
-                        "location": {
-                            "address": {
-                                "area_code": "110030",
-                                "building": "Siri Fort Institutional",
-                                "city": "Delhi",
-                                "country": "IND",
-                                "locality": "Siri Fort Institutional Area, Siri Fort",
-                                "name": "mayur",
-                                "state": "Delhi"
-                            },
-                            "gps": "28.506200, 77.199700"
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9058626929"
                         },
                         "person": {
-                            "name": "mayur"
+                            "name": "Nirdosh Chauhan"
+                        },
+                        "location": {
+                            "gps": "28.459033,77.073040",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "August Kranti Marg",
+                                "city": "Gurugram",
+                                "state": "Haryana",
+                                "country": "IND",
+                                "area_code": "122009"
+                            }
                         },
                         "time": {
                             "range": {
-                                "start": "2024-12-20T09:30:00.000Z",
-                                "end": "2024-12-20T19:00:00.000Z"
+                                "start": "2025-02-11T09:30:00.000Z",
+                                "end": "2025-02-11T19:00:00.000Z"
                             }
                         }
-                    }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "003"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "https://buyer-app-preprod-v2.ondc.org/protocol/v1"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [
+                                {
+                                    "code": "fulfillment_state",
+                                    "value": "Pending"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2025-02-10T10:36:20.388Z"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "id": "0597ad00-d533-42ba-a336-0f589a930200",
+                    "id": "9b838646-4ff9-4df5-9699-0ee0d5268903",
                     "type": "Cancel",
                     "state": {
                         "descriptor": {
@@ -155,7 +217,7 @@
                                 },
                                 {
                                     "code": "id",
-                                    "value": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5"
+                                    "value": "id_ancc5_1_0"
                                 },
                                 {
                                     "code": "currency",
@@ -172,11 +234,32 @@
                             "list": [
                                 {
                                     "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "id_5yzai_3_0"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-149.00"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
                                     "value": "delivery"
                                 },
                                 {
                                     "code": "id",
-                                    "value": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
+                                    "value": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
                                 },
                                 {
                                     "code": "currency",
@@ -197,7 +280,7 @@
                                 },
                                 {
                                     "code": "id",
-                                    "value": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
+                                    "value": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
                                 },
                                 {
                                     "code": "currency",
@@ -213,9 +296,9 @@
                 }
             ],
             "cancellation": {
-                "cancelled_by": "https://pramaan.ondc.org/alpha/mock-server/buyer",
+                "cancelled_by": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
                 "reason": {
-                    "id": "006"
+                    "id": "003"
                 }
             },
             "quote": {
@@ -225,10 +308,10 @@
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                        "@ondc/org/item_id": "id_ancc5_1_0",
                         "title": "Plain Atta",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 0
                         },
                         "@ondc/org/title_type": "item",
                         "price": {
@@ -236,14 +319,48 @@
                             "value": "0"
                         },
                         "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
                             "price": {
                                 "currency": "INR",
-                                "value": "65.00"
+                                "value": "130.00"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "@ondc/org/item_id": "id_5yzai_3_0",
+                        "title": "Arhar Dal",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "149.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
                         "price": {
@@ -252,22 +369,19 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "@ondc/org/item_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                         "title": "Convenience Fee",
                         "@ondc/org/title_type": "misc",
                         "price": {
                             "currency": "INR",
                             "value": "0"
-                        },
-                        "@ondc/org/item_quantity": {
-                            "count": 0
                         }
                     }
                 ],
                 "ttl": "PT6H"
             },
-            "created_at": "2024-12-19T09:13:52.802Z",
-            "updated_at": "2024-12-19T09:13:55.781Z"
+            "created_at": "2025-02-10T10:20:03.469Z",
+            "updated_at": "2025-02-10T10:36:20.388Z"
         }
     }
 }
