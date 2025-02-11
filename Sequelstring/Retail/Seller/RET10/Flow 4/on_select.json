@@ -1,24 +1,24 @@
 {
     "context": {
-        "action": "on_select",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d",
-        "message_id": "e47c3c4b-8f1d-438f-9186-8ed6ee46debf",
-        "city": "std:011",
+        "domain": "ONDC:RET10",
         "country": "IND",
-        "timestamp": "2024-12-19T09:13:45.173Z",
-        "ttl": "PT30S",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "city": "std:0124",
+        "action": "on_select",
         "core_version": "1.2.0",
-        "domain": "ONDC:RET10"
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "transaction_id": "5f30988a-ff53-4649-9519-dd7b4ca074dc",
+        "message_id": "ed49deda-6937-4af1-bb0d-48c15885cf1a",
+        "timestamp": "2025-02-10T10:18:35.683Z",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
             "fulfillments": [
                 {
-                    "id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                    "id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Pramaan Store 1",
                     "tracking": true,
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "id": "e63cc8dd-4e39-4666-9365-82e12c1a7ff6",
+                    "id": "30a9c114-021a-498e-b863-15c51c623ddf",
                     "type": "Self-Pickup",
                     "@ondc/org/provider_name": "",
                     "tracking": false,
@@ -46,24 +46,33 @@
             ],
             "items": [
                 {
-                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                    "id": "id_ancc5_1_0",
                     "quantity": {
-                        "count": 2
+                        "count": 1
                     },
-                    "fulfillment_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c"
+                    "location_id": "SSL1",
+                    "fulfillment_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
+                },
+                {
+                    "id": "id_5yzai_3_0",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "location_id": "SSL1",
+                    "fulfillment_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "210.00"
+                    "value": "359.00"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                        "@ondc/org/item_id": "id_ancc5_1_0",
                         "title": "Plain Atta",
                         "@ondc/org/item_quantity": {
-                            "count": 2
+                            "count": 1
                         },
                         "@ondc/org/title_type": "item",
                         "price": {
@@ -81,12 +90,38 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "65.00"
+                                "value": "130.00"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "@ondc/org/item_id": "id_5yzai_3_0",
+                        "title": "Arhar Dal",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "149.00"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "149.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
                         "price": {
@@ -95,7 +130,7 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "3883a08d-89b0-4b7a-8f3e-b1ce1f92627c",
+                        "@ondc/org/item_id": "71fc1203-2eb7-44c2-b990-2fabbe20a54a",
                         "title": "Convenience Fee",
                         "@ondc/org/title_type": "misc",
                         "price": {
@@ -107,7 +142,7 @@
                 "ttl": "PT6H"
             },
             "provider": {
-                "id": "ss_provider_1",
+                "id": "pramaan_provider_1",
                 "locations": [
                     {
                         "id": "SSL1"
