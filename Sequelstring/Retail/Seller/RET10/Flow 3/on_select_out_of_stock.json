@@ -1,24 +1,24 @@
 {
     "context": {
-        "action": "on_select",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "dfd7cd23-c436-49ee-81fe-38639f524ccc",
-        "message_id": "1dbabe41-be41-4d25-aa1f-62b84b4bbab9",
-        "city": "std:011",
+        "domain": "ONDC:RET10",
         "country": "IND",
-        "timestamp": "2024-12-19T09:10:43.344Z",
-        "ttl": "PT30S",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol",
+        "city": "std:0124",
+        "action": "on_select",
         "core_version": "1.2.0",
-        "domain": "ONDC:RET10"
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+        "transaction_id": "39598907-e86b-434c-8a36-d3c143a241a5",
+        "message_id": "ff3e3fc5-c701-4771-bdb9-13d1527c5e89",
+        "timestamp": "2025-02-11T11:10:35.462Z",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "ttl": "PT30S"
     },
     "message": {
         "order": {
             "fulfillments": [
                 {
-                    "id": "343e0248-30fc-4923-a41f-63692e146f55",
+                    "id": "b160c132-1f0b-41ef-b1b0-a891de2cd132",
                     "type": "Delivery",
                     "@ondc/org/provider_name": "Pramaan Store 1",
                     "tracking": true,
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "id": "7722f33a-d44a-477f-877e-f1d9deb7dd00",
+                    "id": "d7235210-4ba2-4839-a84c-467d55333875",
                     "type": "Self-Pickup",
                     "@ondc/org/provider_name": "",
                     "tracking": false,
@@ -46,29 +46,38 @@
             ],
             "items": [
                 {
-                    "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                    "id": "id_1bai73_2_0",
                     "quantity": {
-                        "count": 1000099
+                        "count": 1
                     },
-                    "fulfillment_id": "343e0248-30fc-4923-a41f-63692e146f55"
+                    "location_id": "SSL1",
+                    "fulfillment_id": "b160c132-1f0b-41ef-b1b0-a891de2cd132"
+                },
+                {
+                    "id": "id_5yzai_3_0",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "location_id": "SSL1",
+                    "fulfillment_id": "b160c132-1f0b-41ef-b1b0-a891de2cd132"
                 }
             ],
             "quote": {
                 "price": {
                     "currency": "INR",
-                    "value": "80.00"
+                    "value": "405.00"
                 },
                 "breakup": [
                     {
-                        "@ondc/org/item_id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                        "@ondc/org/item_id": "id_1bai73_2_0",
                         "title": "Plain Atta",
                         "@ondc/org/item_quantity": {
-                            "count": 0
+                            "count": 1
                         },
                         "@ondc/org/title_type": "item",
                         "price": {
                             "currency": "INR",
-                            "value": "0.00"
+                            "value": "325.00"
                         },
                         "item": {
                             "quantity": {
@@ -81,12 +90,38 @@
                             },
                             "price": {
                                 "currency": "INR",
-                                "value": "65.00"
+                                "value": "325.00"
                             }
                         }
                     },
                     {
-                        "@ondc/org/item_id": "343e0248-30fc-4923-a41f-63692e146f55",
+                        "@ondc/org/item_id": "id_5yzai_3_0",
+                        "title": "Arhar Dal",
+                        "@ondc/org/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "item": {
+                            "quantity": {
+                                "available": {
+                                    "count": "0"
+                                },
+                                "maximum": {
+                                    "count": "0"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "149.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "b160c132-1f0b-41ef-b1b0-a891de2cd132",
                         "title": "Delivery charges",
                         "@ondc/org/title_type": "delivery",
                         "price": {
@@ -95,7 +130,7 @@
                         }
                     },
                     {
-                        "@ondc/org/item_id": "343e0248-30fc-4923-a41f-63692e146f55",
+                        "@ondc/org/item_id": "b160c132-1f0b-41ef-b1b0-a891de2cd132",
                         "title": "Convenience Fee",
                         "@ondc/org/title_type": "misc",
                         "price": {
@@ -107,7 +142,7 @@
                 "ttl": "PT6H"
             },
             "provider": {
-                "id": "ss_provider_1",
+                "id": "pramaan_provider_1",
                 "locations": [
                     {
                         "id": "SSL1"
@@ -119,6 +154,6 @@
     "error": {
         "type": "DOMAIN-ERROR",
         "code": "40002",
-        "message": "[{\"item_id\":\"f2dc44fd-814b-46ff-8ea7-7d811240a0b5\",\"error\":\"40002\"}]"
+        "message": "[{\"item_id\":\"id_5yzai_3_0\",\"error\":\"40002\"}]"
     }
 }
