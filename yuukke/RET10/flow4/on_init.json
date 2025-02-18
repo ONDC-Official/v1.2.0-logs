@@ -1,185 +1,164 @@
 {
-    "context": {
-        "domain": "ONDC:RET10",
-        "action": "on_init",
-        "country": "IND",
-        "city": "std:044",
-        "core_version": "1.2.0",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "8794e501-5fea-4bbc-b441-c7ac09f21f7e",
-        "message_id": "1d430a01-0c87-4c0b-9520-c00b48c0fe35",
-        "timestamp": "2024-12-27T06:01:38.143Z",
-        "bpp_id": "ondc.marketplace.betalearnings.com",
-        "bpp_uri": "https://ondc.marketplace.betalearnings.com"
-    },
-    "message": {
-        "order": {
-            "provider": {
-                "id": "P148",
-                "locations": [
-                    {
-                        "id": "L148"
-                    }
-                ]
+            "context": {
+                "domain": "ONDC:RET10",
+                "action": "on_init",
+                "core_version": "1.2.0",
+                "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+                "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+                "bpp_id": "ondc.marketplace.betalearnings.com",
+                "bpp_uri": "https://ondc.marketplace.betalearnings.com",
+                "transaction_id": "ceb75adb-57f0-4194-9e16-6e75487f05f5",
+                "message_id": "cf31539d-02f0-4410-af8b-e6c446644cdc",
+                "city": "std:0422",
+                "country": "IND",
+                "timestamp": "2025-02-12T06:56:54.564Z"
             },
-            "items": [
-                {
-                    "id": "220",
-                    "fulfillment_id": "F1",
-                    "tags": [
+            "message": {
+                "order": {
+                    "items": [
                         {
-                            "code": "type",
-                            "list": [
+                            "id": "640",
+                            "fulfillment_id": "F1",
+                            "tags": [
                                 {
                                     "code": "type",
-                                    "value": "item"
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "quantity": {
+                                "count": 1
+                            }
+                        }
+                    ],
+                    "provider": {
+                        "id": "P1108",
+                        "locations": [
+                            {
+                                "id": "L1108"
+                            }
+                        ]
+                    },
+                    "billing": {
+                        "name": "Santhosh",
+                        "address": {
+                            "name": "Santhosh",
+                            "building": "Sakthi Sivam Towers",
+                            "locality": "Narasipuram Road",
+                            "city": "Thondamuthur",
+                            "state": "Tamil Nadu",
+                            "country": "IND",
+                            "area_code": "641109"
+                        },
+                        "email": "santhoshvijay2231@gmail.com",
+                        "phone": "08825974344",
+                        "created_at": "2025-02-12T06:56:52.844Z",
+                        "updated_at": "2025-02-12T06:56:52.844Z"
+                    },
+                    "fulfillments": [
+                        {
+                            "id": "F1",
+                            "type": "Delivery",
+                            "tracking": false,
+                            "end": {
+                                "location": {
+                                    "gps": "10.9915465,76.8428673",
+                                    "address": {
+                                        "name": "Santhosh",
+                                        "building": "Sakthi Sivam Towers",
+                                        "locality": "Narasipuram Road",
+                                        "city": "Thondamuthur",
+                                        "state": "Tamil Nadu",
+                                        "country": "IND",
+                                        "area_code": "641109"
+                                    }
+                                },
+                                "contact": {
+                                    "phone": "08825974344"
+                                }
+                            }
+                        }
+                    ],
+                    "quote": {
+                        "price": {
+                            "currency": "INR",
+                            "value": "134.10"
+                        },
+                        "breakup": [
+                            {
+                                "@ondc/org/item_id": "640",
+                                "title": "Murungai keerai rice/Idli mix powder",
+                                "@ondc/org/title_type": "item",
+                                "@ondc/org/item_quantity": {
+                                    "count": 1
+                                },
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "85.00"
+                                },
+                                "item": {
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "85.00"
+                                    }
+                                }
+                            },
+                            {
+                                "@ondc/org/item_id": "F1",
+                                "title": "Delivery charges",
+                                "@ondc/org/title_type": "delivery",
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "49.10"
+                                }
+                            }
+                        ],
+                        "ttl": "P1D"
+                    },
+                    "payment": {
+                        "@ondc/org/buyer_app_finder_fee_type": "percent",
+                        "@ondc/org/buyer_app_finder_fee_amount": "3",
+                        "@ondc/org/settlement_basis": "delivery",
+                        "@ondc/org/settlement_window": "P1D",
+                        "collected_by": "BAP",
+                        "status": "NOT-PAID",
+                        "type": "ON-ORDER",
+                        "@ondc/org/settlement_details": [
+                            {
+                                "settlement_counterparty": "seller-app",
+                                "settlement_phase": "sale-amount",
+                                "settlement_type": "neft",
+                                "beneficiary_name": "YUUKKE GLOBAL VENTURES LIMITED ONDC",
+                                "settlement_bank_account_no": "10214365976",
+                                "settlement_ifsc_code": "IDFB0080101",
+                                "bank_name": "IDFC BANK LIMITED",
+                                "branch_name": "CHENNAI R.K.SALAI"
+                            }
+                        ]
+                    },
+                    "tags": [
+                        {
+                            "code": "bpp_terms",
+                            "list": [
+                                {
+                                    "code": "np_type",
+                                    "value": "MSN"
+                                },
+                                {
+                                    "code": "tax_number",
+                                    "value": "33AABCY5622J1ZB"
+                                },
+                                {
+                                    "code": "provider_tax_number",
+                                    "value": "EEKPK9766R"
                                 }
                             ]
                         }
-                    ],
-                    "quantity": {
-                        "count": 2
-                    }
-                }
-            ],
-            "billing": {
-                "name": "Mayur",
-                "tax_number": "29AAACU1901H1ZK",
-                "address": {
-                    "name": "7/6, August Kranti Marg",
-                    "building": "Siri Fort Institutional",
-                    "locality": "Siri Fort Institutional Area, Siri Fort",
-                    "city": "New Delhi",
-                    "state": "Delhi",
-                    "country": "India",
-                    "area_code": "110049"
-                },
-                "email": "sharique.efgh@gmail.com",
-                "phone": "9886098860",
-                "created_at": "2024-12-27T06:01:36.412Z",
-                "updated_at": "2024-12-27T06:01:36.412Z"
-            },
-            "fulfillments": [
-                {
-                    "id": "F1",
-                    "type": "Delivery",
-                    "tracking": false,
-                    "end": {
-                        "location": {
-                            "gps": "13.0853102,80.2084663",
-                            "address": {
-                                "name": "mayur",
-                                "building": "Siri Fort Institutional",
-                                "locality": "Siri Fort Institutional Area, Siri Fort",
-                                "city": "Chennai",
-                                "state": "Tamil Nadu",
-                                "country": "IND",
-                                "area_code": "600040"
-                            }
-                        },
-                        "contact": {
-                            "phone": "9886098860"
-                        }
-                    }
-                }
-            ],
-            "quote": {
-                "price": {
-                    "currency": "INR",
-                    "value": "435.00"
-                },
-                "breakup": [
-                    {
-                        "@ondc/org/item_id": "220",
-                        "title": "ANNIME DRESS",
-                        "@ondc/org/title_type": "item",
-                        "@ondc/org/item_quantity": {
-                            "count": 2
-                        },
-                        "price": {
-                            "currency": "INR",
-                            "value": "400.00"
-                        },
-                        "item": {
-                            "price": {
-                                "currency": "INR",
-                                "value": "200.00"
-                            }
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Delivery charges",
-                        "@ondc/org/title_type": "delivery",
-                        "price": {
-                            "currency": "INR",
-                            "value": "0.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Packing charges",
-                        "@ondc/org/title_type": "packing",
-                        "price": {
-                            "currency": "INR",
-                            "value": "25.00"
-                        }
-                    },
-                    {
-                        "@ondc/org/item_id": "F1",
-                        "title": "Convenience Fee",
-                        "@ondc/org/title_type": "misc",
-                        "price": {
-                            "currency": "INR",
-                            "value": "10.00"
-                        }
-                    }
-                ],
-                "ttl": "P1D"
-            },
-            "payment": {
-                "@ondc/org/buyer_app_finder_fee_type": "percent",
-                "@ondc/org/buyer_app_finder_fee_amount": "3",
-                "@ondc/org/settlement_basis": "delivery",
-                "@ondc/org/settlement_window": "P1D",
-                "@ondc/org/withholding_amount": "10.00",
-                "collected_by": "BAP",
-                "status": "NOT-PAID",
-                "type": "ON-ORDER",
-                "uri": "https://snp.com/pg",
-                "@ondc/org/settlement_details": [
-                    {
-                        "settlement_counterparty": "seller-app",
-                        "settlement_phase": "sale-amount",
-                        "settlement_type": "neft",
-                        "beneficiary_name": "kanagavalli",
-                        "settlement_bank_account_no": "352102010050299",
-                        "settlement_ifsc_code": "IDIB000T062",
-                        "bank_name": "INDIAN BANK",
-                        "branch_name": "Thenipatti Pudupatti"
-                    }
-                ]
-            },
-            "tags": [
-                {
-                    "code": "bpp_terms",
-                    "list": [
-                        {
-                            "code": "np_type",
-                            "value": "MSN"
-                        },
-                        {
-                            "code": "tax_number",
-                            "value": "33AABCY5622J1ZB"
-                        },
-                        {
-                            "code": "provider_tax_number",
-                            "value": "AABCY5622J"
-                        }
                     ]
                 }
-            ]
+            }
         }
-    }
-}

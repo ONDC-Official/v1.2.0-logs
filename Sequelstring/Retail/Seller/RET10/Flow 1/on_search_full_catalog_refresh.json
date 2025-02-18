@@ -1,29 +1,32 @@
 {
     "context": {
+        "domain": "ONDC:RET10",
         "action": "on_search",
         "country": "IND",
-        "city": "std:011",
-        "bap_id": "pramaan.ondc.org/alpha/mock-server",
-        "bap_uri": "https://pramaan.ondc.org/alpha/mock-server/buyer",
-        "transaction_id": "718990bc-a8a6-4d6c-88ff-0cb96515a35d",
-        "message_id": "e57a6b24-bb6b-4c7c-ba12-16c620049430",
-        "timestamp": "2024-12-19T09:13:30.981Z",
-        "ttl": "PT30S",
+        "city": "std:0124",
         "core_version": "1.2.0",
-        "domain": "ONDC:RET10",
-        "bpp_id": "ondc.sequelstring.com/seller/protocol",
-        "bpp_uri": "https://ondc.sequelstring.com/seller/protocol"
+        "bap_id": "buyer-app-preprod-v2.ondc.org",
+        "bap_uri": "https://buyer-app.ondc.org/protocol/v1",
+        "transaction_id": "cec8e2a0-cc1c-4d89-9df3-fad59f53c11e",
+        "message_id": "af6cdb61-3c25-47cf-8a87-9d93aec26198",
+        "timestamp": "2025-02-15T06:32:34.221Z",
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
     },
     "message": {
         "catalog": {
             "bpp/fulfillments": [
                 {
-                    "id": "0",
+                    "id": "F0",
                     "type": "Delivery"
                 },
                 {
-                    "id": "1",
+                    "id": "F1",
                     "type": "Self-Pickup"
+                },
+                {
+                    "id": "F2",
+                    "type": "Buyer-Delivery"
                 }
             ],
             "bpp/descriptor": {
@@ -52,7 +55,7 @@
             },
             "bpp/providers": [
                 {
-                    "id": "ss_provider_1",
+                    "id": "pramaan_provider_1",
                     "time": {
                         "label": "enable",
                         "timestamp": "2024-10-11T00:00:00.000Z"
@@ -97,7 +100,7 @@
                         {
                             "id": "V11",
                             "descriptor": {
-                                "name": "Plain Atta Variant Group"
+                                "name": "Atta, Flours and Sooji Variant Group"
                             },
                             "tags": [
                                 {
@@ -132,26 +135,32 @@
                                 "label": "enable",
                                 "timestamp": "2024-10-11T00:00:00.000Z",
                                 "days": "1,2,3,4,5,6,7",
+                                "schedule": {
+                                    "holidays": [
+                                        "2025-02-24",
+                                        "2025-03-17"
+                                    ]
+                                },
                                 "range": {
                                     "start": "1000",
                                     "end": "2100"
                                 }
                             },
-                            "gps": "28.527300, 77.182100",
+                            "gps": "28.527300,77.182100",
                             "address": {
                                 "building": "13 B",
                                 "locality": "N. Caldwell",
                                 "street": "633 Stagtrail Rd",
-                                "city": "N. Caldwell",
+                                "city": "New Delhi",
                                 "state": "New Delhi",
                                 "country": "India",
                                 "area_code": "110030"
                             },
                             "circle": {
-                                "gps": "28.527300, 77.182100",
+                                "gps": "28.527300,77.182100",
                                 "radius": {
                                     "unit": "km",
-                                    "value": "1000"
+                                    "value": "500"
                                 }
                             }
                         }
@@ -175,6 +184,35 @@
                                 {
                                     "code": "unit",
                                     "value": "country"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Atta, Flours and Sooji"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "serviceability",
+                            "list": [
+                                {
+                                    "code": "location",
+                                    "value": "SSL1"
+                                },
+                                {
+                                    "code": "type",
+                                    "value": "12"
+                                },
+                                {
+                                    "code": "val",
+                                    "value": "IND"
+                                },
+                                {
+                                    "code": "unit",
+                                    "value": "country"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Dals and Pulses"
                                 }
                             ]
                         },
@@ -210,18 +248,18 @@
                     ],
                     "items": [
                         {
-                            "id": "f2dc44fd-814b-46ff-8ea7-7d811240a0b5",
+                            "id": "id_13owvn_0_0",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V11",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8901603680311",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -245,7 +283,7 @@
                                 "value": "65.00",
                                 "maximum_value": "65.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL1",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -286,9 +324,9 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
-                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/available_on_cod": true,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
@@ -297,18 +335,18 @@
                             }
                         },
                         {
-                            "id": "01647074-988f-401b-b7c6-b99dab723204",
+                            "id": "id_ancc5_1_0",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V11",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8902485595199",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -332,7 +370,7 @@
                                 "value": "130.00",
                                 "maximum_value": "130.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL1",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -373,9 +411,9 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
-                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/available_on_cod": true,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
@@ -384,18 +422,18 @@
                             }
                         },
                         {
-                            "id": "734cc6ea-429d-4d21-8a79-96a344d3ad12",
+                            "id": "id_1bai73_2_0",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V11",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8902267591074",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -419,7 +457,7 @@
                                 "value": "325.00",
                                 "maximum_value": "325.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL1",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -460,9 +498,95 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
+                            "@ondc/org/available_on_cod": true,
+                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                            "@ondc/org/statutory_reqs_packaged_food": {
+                                "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
+                                "additives_info": "Preservatives,Artificial Colours",
+                                "brand_owner_FSSAI_license_no": "11223344556677",
+                                "other_FSSAI_license_no": "10012021000001",
+                                "importer_FSSAI_license_no": "22223344556677"
+                            }
+                        },
+                        {
+                            "id": "id_5yzai_3_0",
+                            "time": {
+                                "label": "enable",
+                                "timestamp": "2025-02-15T07:30:00.000Z"
+                            },
+                            "descriptor": {
+                                "name": "Arhar Dal",
+                                "code": "1:8903149406950",
+                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                "short_desc": "The Dal Knight",
+                                "long_desc": "The Dal Knight rises with a rich, earthy flavor that will elevate any meal.",
+                                "images": [
+                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                ]
+                            },
+                            "quantity": {
+                                "unitized": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "1"
+                                    }
+                                },
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "149.00",
+                                "maximum_value": "155.00"
+                            },
+                            "category_id": "Dals and Pulses",
+                            "location_id": "SSL1",
+                            "fulfillment_id": "F0",
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "image",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "back_image"
+                                        },
+                                        {
+                                            "code": "url",
+                                            "value": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "@ondc/org/returnable": false,
+                            "@ondc/org/cancellable": false,
+                            "@ondc/org/return_window": "PT1H",
+                            "@ondc/org/seller_pickup_return": false,
+                            "@ondc/org/time_to_ship": "PT45M",
                             "@ondc/org/available_on_cod": false,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
@@ -473,7 +597,7 @@
                     ]
                 },
                 {
-                    "id": "ss_provider_2",
+                    "id": "pramaan_provider_2",
                     "time": {
                         "label": "enable",
                         "timestamp": "2024-10-11T00:00:00.000Z"
@@ -518,7 +642,7 @@
                         {
                             "id": "V12",
                             "descriptor": {
-                                "name": "Plain Atta Variant Group"
+                                "name": "Atta, Flours and Sooji Variant Group"
                             },
                             "tags": [
                                 {
@@ -553,25 +677,31 @@
                                 "label": "enable",
                                 "timestamp": "2024-10-11T00:00:00.000Z",
                                 "days": "1,2,3,4,5,6,7",
+                                "schedule": {
+                                    "holidays": [
+                                        "2025-02-23",
+                                        "2025-03-13"
+                                    ]
+                                },
                                 "range": {
                                     "start": "1000",
                                     "end": "2100"
                                 }
                             },
-                            "gps": "28.527300, 77.182100",
+                            "gps": "28.527300,77.182100",
                             "address": {
                                 "locality": "221B",
                                 "street": "Baker Steet",
-                                "city": "London",
+                                "city": "New Delhi",
                                 "state": "New Delhi",
                                 "country": "India",
                                 "area_code": "110030"
                             },
                             "circle": {
-                                "gps": "28.527300, 77.182100",
+                                "gps": "28.527300,77.182100",
                                 "radius": {
                                     "unit": "km",
-                                    "value": "1000"
+                                    "value": "500"
                                 }
                             }
                         }
@@ -595,6 +725,35 @@
                                 {
                                     "code": "unit",
                                     "value": "country"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Atta, Flours and Sooji"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "serviceability",
+                            "list": [
+                                {
+                                    "code": "location",
+                                    "value": "SSL2"
+                                },
+                                {
+                                    "code": "type",
+                                    "value": "12"
+                                },
+                                {
+                                    "code": "val",
+                                    "value": "IND"
+                                },
+                                {
+                                    "code": "unit",
+                                    "value": "country"
+                                },
+                                {
+                                    "code": "category",
+                                    "value": "Dals and Pulses"
                                 }
                             ]
                         },
@@ -630,18 +789,18 @@
                     ],
                     "items": [
                         {
-                            "id": "8f2e17ac-f4c7-41be-b599-64e73b5113b9",
+                            "id": "id_13owvn_0_1",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V12",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8908691079645",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -665,7 +824,7 @@
                                 "value": "65.00",
                                 "maximum_value": "65.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL2",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -706,9 +865,9 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
-                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/available_on_cod": true,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
@@ -717,18 +876,18 @@
                             }
                         },
                         {
-                            "id": "6bc1245e-d5c8-461d-bbdd-6dd5830920a3",
+                            "id": "id_ancc5_1_1",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V12",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8908573984524",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -752,7 +911,7 @@
                                 "value": "130.00",
                                 "maximum_value": "130.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL2",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -793,9 +952,9 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
-                            "@ondc/org/available_on_cod": false,
+                            "@ondc/org/available_on_cod": true,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
@@ -804,18 +963,18 @@
                             }
                         },
                         {
-                            "id": "c339918b-2510-4b3f-9026-5483b9b5bd55",
+                            "id": "id_1bai73_2_1",
                             "time": {
                                 "label": "enable",
-                                "timestamp": "2024-12-19T07:30:00.000Z"
+                                "timestamp": "2025-02-15T07:30:00.000Z"
                             },
                             "parent_item_id": "V12",
                             "descriptor": {
                                 "name": "Plain Atta",
-                                "code": "SSPLNAT12345",
+                                "code": "1:8909355999309",
                                 "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
-                                "short_desc": "Plain Atta",
-                                "long_desc": "Plain Atta",
+                                "short_desc": "The Flour Awakens",
+                                "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
                                 "images": [
                                     "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
                                 ]
@@ -839,7 +998,7 @@
                                 "value": "325.00",
                                 "maximum_value": "325.00"
                             },
-                            "category_id": "Foodgrains",
+                            "category_id": "Atta, Flours and Sooji",
                             "location_id": "SSL2",
                             "fulfillment_id": "F0",
                             "tags": [
@@ -880,9 +1039,95 @@
                             "@ondc/org/return_window": "PT1H",
                             "@ondc/org/seller_pickup_return": true,
                             "@ondc/org/time_to_ship": "PT45M",
+                            "@ondc/org/available_on_cod": true,
+                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                            "@ondc/org/statutory_reqs_packaged_food": {
+                                "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
+                                "additives_info": "Preservatives,Artificial Colours",
+                                "brand_owner_FSSAI_license_no": "11223344556677",
+                                "other_FSSAI_license_no": "10012021000001",
+                                "importer_FSSAI_license_no": "22223344556677"
+                            }
+                        },
+                        {
+                            "id": "id_5yzai_3_1",
+                            "time": {
+                                "label": "enable",
+                                "timestamp": "2025-02-15T07:30:00.000Z"
+                            },
+                            "descriptor": {
+                                "name": "Arhar Dal",
+                                "code": "1:8909137894280",
+                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                "short_desc": "The Dal Knight",
+                                "long_desc": "The Dal Knight rises with a rich, earthy flavor that will elevate any meal.",
+                                "images": [
+                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                ]
+                            },
+                            "quantity": {
+                                "unitized": {
+                                    "measure": {
+                                        "unit": "kilogram",
+                                        "value": "1"
+                                    }
+                                },
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "99"
+                                }
+                            },
+                            "price": {
+                                "currency": "INR",
+                                "value": "149.00",
+                                "maximum_value": "155.00"
+                            },
+                            "category_id": "Dals and Pulses",
+                            "location_id": "SSL2",
+                            "fulfillment_id": "F0",
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "image",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "back_image"
+                                        },
+                                        {
+                                            "code": "url",
+                                            "value": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "@ondc/org/returnable": false,
+                            "@ondc/org/cancellable": false,
+                            "@ondc/org/return_window": "PT1H",
+                            "@ondc/org/seller_pickup_return": false,
+                            "@ondc/org/time_to_ship": "PT45M",
                             "@ondc/org/available_on_cod": false,
                             "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
-                            "@ondc/org/statutory_reqs_prepackaged_food": {
+                            "@ondc/org/statutory_reqs_packaged_food": {
                                 "nutritional_info": "Energy(KCal)-(per 100kg) 420,(per serving 50g)250;Protein(g)-(per 100kg) 12,(per serving 50g) 6",
                                 "additives_info": "Preservatives,Artificial Colours",
                                 "brand_owner_FSSAI_license_no": "11223344556677",
