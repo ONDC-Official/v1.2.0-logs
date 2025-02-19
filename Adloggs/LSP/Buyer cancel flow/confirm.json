@@ -1,0 +1,214 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "biz.test.bitsila.com",
+        "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+        "bpp_id": "preprod.ondc.adloggs.com",
+        "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+        "transaction_id": "LOG-3849-1001-1176-cdSP",
+        "message_id": "c02bfa06-cbd7-4f64-ba3d-f6a9418e3f42",
+        "timestamp": "2024-04-08T12:00:19.948Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "3849-1001-1176",
+            "state": "Created",
+            "provider": {
+                "id": "P1"
+            },
+            "items": [{
+                "id": "I1",
+                "descriptor": {
+                    "code": "P2P"
+                },
+                "category_id": "Immediate Delivery",
+                "fulfillment_id": "1",
+                "time": {
+                    "label": "TAT",
+                    "duration": "PT55M",
+                    "timestamp": "2024-04-08"
+                }
+            }],
+            "billing": {
+                "name": "Bitsila",
+                "address": {
+                    "name": "221, INNOBITS SOLUTIONS PVT LTD",
+                    "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
+                    "building": "221",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "area_code": "560085"
+                },
+                "tax_number": "29AAFCI9011D1ZQ",
+                "phone": "8951898275",
+                "email": "finance@bitsila.com",
+                "created_at": "2024-04-08T12:00:18.831Z",
+                "updated_at": "2024-04-08T12:00:18.831Z"
+            },
+            "quote": {
+                "price": {
+                    "value": "1.18",
+                    "currency": "INR"
+                },
+                "breakup": [{
+                        "price": {
+                            "value": "1.00",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "0.18",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax"
+                    }
+                ]
+            },
+            "fulfillments": [{
+                "id": "1",
+                "type": "Delivery",
+                "tags": [{
+                        "code": "state",
+                        "list": [{
+                            "code": "ready_to_ship",
+                            "value": "no"
+                        }]
+                    },
+                    {
+                        "code": "rto_action",
+                        "list": [{
+                            "code": "return_to_origin",
+                            "value": "yes"
+                        }]
+                    }
+                ],
+                "start": {
+                    "person": {
+                        "name": "FandB Shop"
+                    },
+                    "location": {
+                        "id": "3849:4120",
+                        "gps": "12.916691283211073, 77.64782934951943",
+                        "address": {
+                            "city": "Bengaluru",
+                            "name": "FandB Shop",
+                            "state": " Karnataka",
+                            "country": "India",
+                            "building": "Bengaluru",
+                            "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "email": "test1@test.com",
+                        "phone": "9999999998"
+                    },
+                    "instructions": {
+                        "code": "1",
+                        "name": "ONDC order",
+                        "short_desc": "7569316675",
+                        "long_desc": "please contact respective person and confirm before taking the parcel"
+                    },
+                    "time": {
+                        "duration": "PT15M"
+                    }
+                },
+                "end": {
+                    "person": {
+                        "name": "Anupam Testingw"
+                    },
+                    "location": {
+                        "gps": "12.9180305, 77.6372603",
+                        "address": {
+                            "city": "Bengaluru Urban",
+                            "door": "Anupam Testingw,Testing,Testing 4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                            "name": "Anupam Testingw",
+                            "state": "Karnataka",
+                            "country": "India",
+                            "building": "Anupam Testingw,Testing,Testing 4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                            "locality": "Bengaluru Urban",
+                            "area_code": "560102"
+                        }
+                    },
+                    "contact": {
+                        "email": "smruti.ranjan@bitsila.com",
+                        "phone": "8077045298"
+                    },
+                    "instructions": {
+                        "code": "3",
+                        "long_desc": "Bengaluru Urban"
+                    }
+                }
+            }],
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+                "items": [{
+                    "category_id": "F&B",
+                    "descriptor": {
+                        "name": "Parota 1"
+                    },
+                    "quantity": {
+                        "count": 2,
+                        "measure": {
+                            "unit": "kilogram",
+                            "value": 0.5
+                        }
+                    },
+                    "price": {
+                        "currency": "INR",
+                        "value": "70.0"
+                    }
+                }],
+                "provider": {
+                    "descriptor": {
+                        "name": "FandB Shop - FandB Shop"
+                    },
+                    "address": {
+                        "name": "FandB Shop",
+                        "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "building": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "city": "Bengaluru",
+                        "state": "Karnataka",
+                        "area_code": "560102"
+                    }
+                },
+                "order": {
+                    "id": "3849-1001-1176",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 1.0
+                    },
+                    "dimensions": {
+                        "height": {
+                            "unit": "meter",
+                            "value": 0.1
+                        },
+                        "length": {
+                            "unit": "meter",
+                            "value": 0.1
+                        },
+                        "breadth": {
+                            "unit": "meter",
+                            "value": 0.1
+                        }
+                    }
+                }
+            },
+            "created_at": "2024-04-08T12:00:19.948Z",
+            "updated_at": "2024-04-08T12:00:19.948Z"
+        }
+    }
+}

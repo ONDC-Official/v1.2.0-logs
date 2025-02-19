@@ -1,0 +1,425 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_update",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "ondc-pp-v2.dlyb.in",
+    "bpp_uri": "https://ondc-pp-v2.dlyb.in/v2/retailSeller",
+    "transaction_id": "b50d16f7-df00-4f8c-a0af-db4e408db091",
+    "message_id": "491bbcf1-16c0-4b46-8e07-bb52ec765de5",
+    "timestamp": "2024-03-29T19:00:39.482Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2024-03-29-202358",
+      "state": "Completed",
+      "provider": {
+        "id": "65b7a8a9ee15576c92ed0725",
+        "locations": [
+          {
+            "id": "PL_65b7a8a9ee15576c92ed0725"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "656ee4d200e217305d24b733",
+          "quantity": {
+            "count": 0
+          },
+          "fulfillment_id": "SD_PL_65b7a8a9ee15576c92ed0725"
+        },
+        {
+          "id": "656ee4d200e217305d24b733",
+          "quantity": {
+            "count": 1
+          },
+          "fulfillment_id": "SCP_1"
+        },
+        {
+          "id": "656ee4d200e217305d24b73f",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "SD_PL_65b7a8a9ee15576c92ed0725"
+        },
+        {
+          "id": "656ee4d200e217305d24b733",
+          "quantity": {
+            "count": 1
+          },
+          "fulfillment_id": "66070f5e3a75076d2946aa8d"
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Santosh Novotel",
+          "building": "Novotel Room no 101",
+          "locality": "Outer Ring Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560103"
+        },
+        "phone": "9999999999",
+        "name": "Santosh Novotel",
+        "email": "santosh@gmail.com",
+        "created_at": "2024-03-29T18:51:35.679Z",
+        "updated_at": "2024-03-29T18:51:35.679Z"
+      },
+      "fulfillments": [
+        {
+          "id": "SD_PL_65b7a8a9ee15576c92ed0725",
+          "@ondc/org/provider_name": "Dailybee - Grocery Test",
+          "state": {
+            "descriptor": {
+              "code": "Order-delivered",
+              "name": "Order-delivered"
+            }
+          },
+          "type": "Delivery",
+          "tracking": false,
+          "@ondc/org/TAT": "PT2H",
+          "start": {
+            "location": {
+              "id": "PL_65b7a8a9ee15576c92ed0725",
+              "descriptor": {
+                "name": "Dailybee - Grocery Test"
+              },
+              "gps": "12.932463,77.685220",
+              "address": {
+                "locality": "Bellandur",
+                "city": "Bengaluru",
+                "area_code": "560103",
+                "state": "Karnataka"
+              }
+            },
+            "time": {
+              "range": {
+                "end": "2024-03-29T19:51:50.586Z",
+                "start": "2024-03-29T19:21:50.586Z"
+              },
+              "timestamp": "2024-03-29T18:57:11.359Z"
+            },
+            "contact": {
+              "phone": "9394706872",
+              "email": "help@dailybee.in"
+            }
+          },
+          "end": {
+            "contact": {
+              "phone": "9999999999"
+            },
+            "person": {
+              "name": "Santosh Novotel"
+            },
+            "location": {
+              "gps": "12.929673645000271,77.68327276421023",
+              "address": {
+                "name": "Santosh Novotel",
+                "building": "Novotel Room no 101",
+                "locality": "Outer Ring Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560103"
+              }
+            },
+            "time": {
+              "range": {
+                "end": "2024-03-29T20:51:50.586Z",
+                "start": "2024-03-29T20:21:50.586Z"
+              },
+              "timestamp": "2024-03-29T18:57:11.979Z"
+            }
+          }
+        },
+        {
+          "id": "SCP_1",
+          "type": "Cancel",
+          "state": {
+            "descriptor": {
+              "code": "Cancelled"
+            }
+          },
+          "tags": [
+            {
+              "code": "cancel_request",
+              "list": [
+                {
+                  "code": "reason_id",
+                  "value": "002"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "ondc-pp-v2.dlyb.in"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "656ee4d200e217305d24b733"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-70.00"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "66070f5e3a75076d2946aa8d",
+          "type": "Return",
+          "state": {
+            "descriptor": {
+              "code": "Liquidated"
+            }
+          },
+          "tags": [
+            {
+              "code": "return_request",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "66070f5e3a75076d2946aa8d"
+                },
+                {
+                  "code": "item_id",
+                  "value": "656ee4d200e217305d24b733"
+                },
+                {
+                  "code": "parent_item_id",
+                  "value": ""
+                },
+                {
+                  "code": "item_quantity",
+                  "value": "1"
+                },
+                {
+                  "code": "reason_id",
+                  "value": "005"
+                },
+                {
+                  "code": "reason_desc",
+                  "value": "detailed description for return"
+                },
+                {
+                  "code": "images",
+                  "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-03-29-202358/4a6c12f9-18cb-47c6-b118-902875511baa.png"
+                },
+                {
+                  "code": "ttl_approval",
+                  "value": "PT24H"
+                },
+                {
+                  "code": "ttl_reverseqc",
+                  "value": "P3D"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "buyer-app-preprod-v2.ondc.org"
+                }
+              ]
+            },
+            {
+              "code": "quote_trail",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                },
+                {
+                  "code": "id",
+                  "value": "656ee4d200e217305d24b733"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "value",
+                  "value": "-70.00"
+                }
+              ]
+            }
+          ],
+          "@ondc/org/provider_name": "Liquidation Provider"
+        },
+        {
+          "id": "66070f913a75076d2946aad1",
+          "type": "Return",
+          "state": {
+            "descriptor": {
+              "code": "Return_Approved"
+            }
+          },
+          "tags": [
+            {
+              "code": "return_request",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "66070f913a75076d2946aad1"
+                },
+                {
+                  "code": "item_id",
+                  "value": "656ee4d200e217305d24b73f"
+                },
+                {
+                  "code": "parent_item_id",
+                  "value": ""
+                },
+                {
+                  "code": "item_quantity",
+                  "value": "1"
+                },
+                {
+                  "code": "reason_id",
+                  "value": "003"
+                },
+                {
+                  "code": "reason_desc",
+                  "value": "detailed description for return"
+                },
+                {
+                  "code": "images",
+                  "value": "https://reference-buyer-app-assets.s3-ap-south-1.amazonaws.com/public-assets/2024-03-29-202358/febb8ceb-3448-4ee4-9d3e-9a8774564b70.png"
+                },
+                {
+                  "code": "ttl_approval",
+                  "value": "PT24H"
+                },
+                {
+                  "code": "ttl_reverseqc",
+                  "value": "P3D"
+                },
+                {
+                  "code": "initiated_by",
+                  "value": "buyer-app-preprod-v2.ondc.org"
+                }
+              ]
+            }
+          ],
+          "@ondc/org/provider_name": "Store Return Provider",
+          "start": {
+            "location": {
+              "gps": "12.929673645000271,77.68327276421023",
+              "address": {
+                "locality": "Outer Ring Road",
+                "city": "Bengaluru",
+                "area_code": "560103",
+                "state": "Karnataka"
+              }
+            },
+            "time": {
+              "range": {
+                "end": "2024-03-29T20:00:39.482Z",
+                "start": "2024-03-29T19:30:39.482Z"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "170.00"
+        },
+        "breakup": [
+          {
+            "title": "JSR No 1 Rice",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "70.00"
+              }
+            },
+            "@ondc/org/item_id": "656ee4d200e217305d24b733",
+            "@ondc/org/item_quantity": {
+              "count": 0
+            },
+            "@ondc/org/title_type": "item"
+          },
+          {
+            "title": "JSR No 1 Rice",
+            "price": {
+              "currency": "INR",
+              "value": "70.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "35.00"
+              }
+            },
+            "@ondc/org/item_id": "656ee4d200e217305d24b73f",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item"
+          },
+          {
+            "@ondc/org/item_id": "SD_PL_65b7a8a9ee15576c92ed0725",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "100"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "310.00",
+          "currency": "INR",
+          "transaction_id": "order_NsHBqO8BNC9WkO"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "Kushero Innovations Private Ltd",
+            "upi_address": "dailybee@upi",
+            "settlement_bank_account_no": "9348743488",
+            "settlement_ifsc_code": "KKBK0007466",
+            "bank_name": "Kotak Mahindra Bank Ltd",
+            "branch_name": "Madhapur, Hyderabad"
+          }
+        ]
+      },
+      "created_at": "2024-03-29T18:51:50.515Z",
+      "updated_at": "2024-03-29T19:00:39.482Z"
+    }
+  }
+}

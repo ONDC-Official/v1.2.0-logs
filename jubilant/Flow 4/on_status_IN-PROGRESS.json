@@ -1,0 +1,229 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "agg-stage.dominosindia.in",
+    "bpp_uri": "https://agg-stage.dominosindia.in/ondc/agg-adapter/ve1/ondc",
+    "transaction_id": "f851f216-a98a-4e57-8122-1aa849bd6996",
+    "message_id": "8d1a6287-ba24-4981-80b6-dd410a205d64",
+    "timestamp": "2023-12-14T10:20:16.988Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2023-12-14-492918",
+      "state": "In-progress",
+      "provider": {
+        "id": "6585R",
+        "locations": [
+          {
+            "id": "6585R"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "4716",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "1"
+        }
+      ],
+      "billing": {
+        "name": "Ishan",
+        "address": {
+          "name": "Ishan",
+          "building": "bhalswa lake",
+          "locality": "Unnamed Road",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "IND",
+          "area_code": "110042"
+        },
+        "email": "ishan.parasher@jublfood.com",
+        "phone": "9810275123",
+        "created_at": "2023-12-14T10:15:10.082Z",
+        "updated_at": "2023-12-14T10:15:10.082Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT45M",
+          "@ondc/org/provider_name": "6585R",
+          "state": {
+            "descriptor": {
+              "code": "Packed"
+            }
+          },
+          "tracking": false,
+          "start": {
+            "location": {
+              "descriptor": {
+                "name": "POKHRA",
+                "images": [
+                  "https://pizzaonline.dominos.co.in/static/assets/logo_white.svg"
+                ]
+              },
+              "gps": "28.743418518817066,77.17130710446465",
+              "address": {
+                "name": "POKHRA",
+                "locality": "POKHRA1",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "area_code": "110032"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-14T10:15:15.779Z",
+                "end": "2023-12-14T10:45:15.779Z"
+              }
+            },
+            "contact": {
+              "phone": "0000000000"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.74104991283804, 77.1687412261963",
+              "address": {
+                "name": "Ishan",
+                "building": "bhalswa lake",
+                "locality": "Unnamed Road",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "IND",
+                "area_code": "110042"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-12-14T10:15:15.779Z",
+                "end": "2023-12-14T10:35:15.779Z"
+              }
+            },
+            "contact": {
+              "phone": "9810275123",
+              "email": "ishan.parasher@jublfood.com"
+            },
+            "person": {
+              "name": "Ishan"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "326.9"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "4716",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "139.0"
+              },
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              }
+            },
+            "title": "Red Velvet Lava Cake",
+            "price": {
+              "currency": "INR",
+              "value": "278.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "4716",
+            "@ondc/org/title_type": "tax",
+            "title": "Red Velvet Lava Cake",
+            "price": {
+              "currency": "INR",
+              "value": "13.9"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "35.0"
+            }
+          }
+        ],
+        "ttl": "PT1H"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "transaction_id": "f3dd1fa8-a00a-4f2e-bc5d-9e50068a34e0",
+          "amount": "326.9",
+          "currency": "INR"
+        },
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/settlement_basis": "Delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "12345678901234",
+            "settlement_ifsc_code": "TEST123",
+            "bank_name": "BOB",
+            "branch_name": "NOIDA",
+            "beneficiary_name": "Test Buyer",
+            "beneficiary_address": "123, street"
+          }
+        ]
+      },
+      "created_at": "2023-12-14T10:15:15.719Z",
+      "updated_at": "2023-12-14T10:20:16.982Z",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "07AABCD1821C1ZD"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,360 @@
+{
+    "context": {
+        "domain": "nic2004:60232",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_cancel",
+        "core_version": "1.2.0",
+        "bap_id": "biz.test.bitsila.com",
+        "bap_uri": "https://biz.test.bitsila.com/ecc/ondc/logistics-bap",
+        "bpp_id": "preprod.ondc.adloggs.com",
+        "bpp_uri": "https://preprod.ondc.adloggs.com/ondcapi",
+        "transaction_id": "LOG-3849-1001-1177-3rqV",
+        "message_id": "a1214fa5-19d1-445d-bd28-0cb292a48e43",
+        "timestamp": "2024-04-08T12:13:00.746Z"
+    },
+    "message": {
+        "order": {
+            "id": "3849-1001-1177",
+            "state": "Cancelled",
+            "cancellation": {
+                "cancelled_by": "preprod.ondc.adloggs.com",
+                "reason": {
+                    "id": "013"
+                }
+            },
+            "provider": {
+                "id": "P1"
+            },
+            "items": [{
+                    "id": "I1",
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT55M",
+                        "timestamp": "2024-04-08"
+                    },
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "category_id": "Immediate Delivery",
+                    "fulfillment_id": "1"
+                },
+                {
+                    "id": "I2",
+                    "fulfillment_id": "1-RTO",
+                    "category_id": "Immediate Delivery",
+                    "descriptor": {
+                        "code": "P2P"
+                    },
+                    "time": {
+                        "label": "TAT",
+                        "duration": "PT55M",
+                        "timestamp": "2024-04-08"
+                    }
+                }
+            ],
+            "quote": {
+                "ttl": "PT15M",
+                "price": {
+                    "value": "2.36",
+                    "currency": "INR"
+                },
+                "breakup": [{
+                        "price": {
+                            "value": "1.00",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "delivery"
+                    },
+                    {
+                        "price": {
+                            "value": "0.18",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/item_id": "I1",
+                        "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "@ondc/org/item_id": "I2",
+                        "@ondc/org/title_type": "rto",
+                        "price": {
+                            "currency": "INR",
+                            "value": "1.00"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "I2",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.18"
+                        }
+                    }
+                ]
+            },
+            "fulfillments": [{
+                    "id": "1",
+                    "type": "Delivery",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tracking": false,
+                    "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-04-08T12:19:18.000Z",
+                                "start": "2024-04-08T12:04:18.000Z"
+                            },
+                            "duration": "PT15M",
+                            "timestamp": "2024-04-08T12:12:33.069Z"
+                        },
+                        "person": {
+                            "name": "FandB Shop"
+                        },
+                        "contact": {
+                            "email": "test1@test.com",
+                            "phone": "9999999998"
+                        },
+                        "location": {
+                            "id": "3849:4120",
+                            "gps": "12.916691283211073, 77.64782934951943",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "FandB Shop",
+                                "state": " Karnataka",
+                                "country": "India",
+                                "building": "Bengaluru",
+                                "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                                "area_code": "560102"
+                            }
+                        },
+                        "instructions": {
+                            "code": "1",
+                            "name": "ONDC order",
+                            "short_desc": "7569316675",
+                            "long_desc": "please contact respective person and confirm before taking the parcel"
+                        }
+                    },
+                    "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-04-08T12:34:18.000Z",
+                                "start": "2024-04-08T12:19:18.000Z"
+                            }
+                        },
+                        "person": {
+                            "name": "Rangaraju"
+                        },
+                        "contact": {
+                            "email": "smruti.ranjan@bitsila.com",
+                            "phone": "6363066164"
+                        },
+                        "location": {
+                            "gps": "12.9180773, 77.6369311",
+                            "address": {
+                                "city": "Bengaluru Urban",
+                                "door": "Rangaraju,Kormangla,23,4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                                "name": "Rangaraju",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "building": "Rangaraju,Kormangla,23,4th Cross Rd, Sector 5, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka, India",
+                                "locality": "Bengaluru Urban",
+                                "area_code": "560034"
+                            }
+                        },
+                        "instructions": {
+                            "code": "3",
+                            "long_desc": "Bengaluru Urban"
+                        }
+                    },
+                    "tags": [{
+                            "code": "rto_event",
+                            "list": [{
+                                    "code": "retry_count",
+                                    "value": "2"
+                                },
+                                {
+                                    "code": "rto_id",
+                                    "value": "1-RTO"
+                                },
+                                {
+                                    "code": "cancellation_reason_id",
+                                    "value": "013"
+                                },
+                                {
+                                    "code": "cancelled_by",
+                                    "value": "preprod.ondc.adloggs.com"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "precancel_state",
+                            "list": [{
+                                    "code": "fulfillment_state",
+                                    "value": "Order-picked-up"
+                                },
+                                {
+                                    "code": "updated_at",
+                                    "value": "2024-04-08T12:12:33.000Z"
+                                }
+                            ]
+                        }
+                    ],
+                    "agent": {
+                        "name": "ranjith k",
+                        "phone": "9655714482"
+                    }
+                },
+                {
+                    "id": "1-RTO",
+                    "type": "RTO",
+                    "state": {
+                        "descriptor": {
+                            "code": "RTO-Initiated"
+                        }
+                    },
+                    "start": {
+                        "time": {
+                            "range": {
+                                "start": "2024-04-08T12:13:00.746Z"
+                            },
+                            "timestamp": "2024-04-08T12:13:00.746Z"
+                        }
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Bitsila",
+                "email": "finance@bitsila.com",
+                "phone": "8951898275",
+                "address": {
+                    "city": "Bengaluru",
+                    "name": "221, INNOBITS SOLUTIONS PVT LTD",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "building": "221",
+                    "locality": "Level 3, Kempa Plaza, Dr.Puneet Rajkumar Road",
+                    "area_code": "560085"
+                },
+                "created_at": "2024-04-08T11:54:48.407Z",
+                "tax_number": "29AAFCI9011D1ZQ",
+                "updated_at": "2024-04-08T11:54:48.407Z"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "status": "PAID"
+            },
+            "@ondc/org/linked_order": {
+                "items": [{
+                        "price": {
+                            "value": "35.0",
+                            "currency": "INR"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "descriptor": {
+                            "name": "Parota 1"
+                        },
+                        "category_id": "F&B"
+                    },
+                    {
+                        "price": {
+                            "value": "300.0",
+                            "currency": "INR"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "descriptor": {
+                            "name": "Butter chicken"
+                        },
+                        "category_id": "F&B"
+                    },
+                    {
+                        "price": {
+                            "value": "200.0",
+                            "currency": "INR"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "descriptor": {
+                            "name": "Butter chicken"
+                        },
+                        "category_id": "F&B"
+                    },
+                    {
+                        "price": {
+                            "value": "100.0",
+                            "currency": "INR"
+                        },
+                        "quantity": {
+                            "count": 1,
+                            "measure": {
+                                "unit": "kilogram",
+                                "value": 0.5
+                            }
+                        },
+                        "descriptor": {
+                            "name": "Butter chicken"
+                        },
+                        "category_id": "F&B"
+                    }
+                ],
+                "order": {
+                    "id": "3849-1001-1177",
+                    "weight": {
+                        "unit": "kilogram",
+                        "value": 2.0
+                    },
+                    "dimensions": {
+                        "height": {
+                            "unit": "meter",
+                            "value": 0.1
+                        },
+                        "length": {
+                            "unit": "meter",
+                            "value": 0.1
+                        },
+                        "breadth": {
+                            "unit": "meter",
+                            "value": 0.1
+                        }
+                    }
+                },
+                "provider": {
+                    "address": {
+                        "city": "Bengaluru",
+                        "name": "FandB Shop",
+                        "state": "Karnataka",
+                        "building": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "locality": " Karnataka 560102 4th Cross Rd, Sector 5, HSR Layout, Bengaluru, Karnataka 560102, India",
+                        "area_code": "560102"
+                    },
+                    "descriptor": {
+                        "name": "FandB Shop - FandB Shop"
+                    }
+                }
+            },
+            "updated_at": "2024-04-08T12:13:00.746Z",
+            "created_at": "2024-04-08T11:54:49.538Z"
+        }
+    }
+}
