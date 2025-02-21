@@ -10,23 +10,29 @@
 			}
 		},
 		"version": "2.0.0",
-		"action": "issue",
+		"action": "on_issue",
 		"bap_id": "pre-prod.seller.cerve.in",
 		"bap_uri": "https://pre-prod.seller.cerve.in/api/v1/ondc",
 		"bpp_id": "pre-prod.buyerapp.com",
 		"bpp_uri": "https://pre-prod.buyerapp.com/ondc",
-		"transaction_id": "10dff2f8-1654-4407-bba8-69b9854a7a79",
-		"message_id": "fa48c3ea-dcf2-45c6-b9f2-e01b59e5b012",
-		"timestamp": "2025-02-15T08:46:59.253Z",
+		"transaction_id": "72561452-2b6d-4307-a39c-b0a8ff15a7f5",
+		"message_id": "107d8212-0a8a-4bf7-b60f-6fddb4cc4670",
+		"timestamp": "2025-02-20T19:25:12.006Z",
 		"ttl": "PT10M"
 	},
 	"message": {
+		"updated_target": [
+			{
+				"path": "issue.actions",
+				"action": "APPENDED"
+			}
+		],
 		"issue": {
 			"id": "ISSUE-1",
-			"status": "OPEN",
+			"status": "PROCESSING",
 			"level": "ISSUE",
-			"created_at": "2025-02-15T08:46:59.253Z",
-			"updated_at": "2025-02-15T08:46:59.253Z",
+			"created_at": "2025-02-20T19:24:46.421Z",
+			"updated_at": "2025-02-20T19:25:12.006Z",
 			"expected_response_time": {
 				"duration": "PT2H"
 			},
@@ -64,10 +70,6 @@
 				{
 					"ref_id": "f1",
 					"ref_type": "FULFILLMENT"
-				},
-				{
-					"ref_id": "2d1275b0-cc7d-4b83-829e-4ec37492c49f",
-					"ref_type": "TRANSACTION"
 				}
 			],
 			"actors": [
@@ -102,10 +104,27 @@
 							"email": "buyerapp@interface.com"
 						}
 					}
+				},
+				{
+					"id": "dd59d958-bdf4-4b39-b6bd-960c9b21f118",
+					"type": "TRANSACTION_COUNTERPARTY_NP",
+					"info": {
+						"org": {
+							"name": "pre-prod.seller.cerve.in::ONDC:RET10"
+						},
+						"person": {
+							"name": "Rini Store"
+						},
+						"contact": {
+							"phone": "7760535656",
+							"email": "susrisaswati+rinistore@gmail.com"
+						}
+					}
 				}
 			],
-			"source_id": "CUST1",
-			"complainant_id": "NP1",
+			"respondent_ids": [
+				"dd59d958-bdf4-4b39-b6bd-960c9b21f118"
+			],
 			"description": {
 				"code": "ITM01",
 				"short_desc": "Issue with product quality",
@@ -119,18 +138,55 @@
 					"content_type": "text/plain"
 				}
 			},
-			"last_action_id": "Action1",
+			"last_action_id": "3370f20d-a99f-4262-a257-e40e7867b28c",
+			"resolutions": [],
 			"actions": [
 				{
 					"id": "Action1",
 					"description": {
 						"code": "OPEN",
-						"short_desc": "having issue with an item"
+						"short_desc": "OPEN"
 					},
-					"updated_at": "2025-02-15T08:46:59.253Z",
+					"updated_at": "2025-02-20T19:24:46.421Z",
 					"action_by": "NP2",
 					"actor_details": {
 						"name": "Rina Mathur"
+					}
+				},
+				{
+					"id": "bb5839e9-169b-4e11-af62-8719e80e8cdb",
+					"description": {
+						"code": "PROCESSING",
+						"short_desc": "We are investigating your concern. We will get back to you soon."
+					},
+					"updated_at": "2025-02-20T19:24:46.475Z",
+					"action_by": "dd59d958-bdf4-4b39-b6bd-960c9b21f118",
+					"actor_details": {
+						"name": "Rini Store"
+					}
+				},
+				{
+					"id": "cd30b3a0-4faa-43f1-ae2e-3dc9807e274f",
+					"description": {
+						"name": "Info1",
+						"code": "INFO_REQUESTED",
+						"short_desc": "Please attach some more images"
+					},
+					"action_by": "NP2",
+					"actor_details": {
+						"name": "Rini Store"
+					}
+				},
+				{
+					"id": "3370f20d-a99f-4262-a257-e40e7867b28c",
+					"description": {
+						"name": "info2",
+						"code": "INFO_REQUESTED",
+						"short_desc": "Mention more details about the issue"
+					},
+					"action_by": "NP2",
+					"actor_details": {
+						"name": "Rini Store"
 					}
 				}
 			]
