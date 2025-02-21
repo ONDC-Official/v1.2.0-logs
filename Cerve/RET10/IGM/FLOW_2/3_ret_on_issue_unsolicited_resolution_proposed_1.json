@@ -10,23 +10,29 @@
 			}
 		},
 		"version": "2.0.0",
-		"action": "issue",
+		"action": "on_issue",
 		"bap_id": "pre-prod.seller.cerve.in",
 		"bap_uri": "https://pre-prod.seller.cerve.in/api/v1/ondc",
 		"bpp_id": "pre-prod.buyerapp.com",
 		"bpp_uri": "https://pre-prod.buyerapp.com/ondc",
-		"transaction_id": "10dff2f8-1654-4407-bba8-69b9854a7a79",
-		"message_id": "af21c1e5-d7a9-411f-b43b-62491909c21d",
-		"timestamp": "2025-02-15T08:52:56.406Z",
+		"transaction_id": "3e12563d-bda7-471d-a920-7812db8fe098",
+		"message_id": "35765732-d819-4a6b-9cdf-90dca772652f",
+		"timestamp": "2025-02-20T18:47:30.584Z",
 		"ttl": "PT10M"
 	},
 	"message": {
+		"updated_target": [
+			{
+				"path": "issue.actions",
+				"action": "APPENDED"
+			}
+		],
 		"issue": {
 			"id": "ISSUE-1",
 			"status": "PROCESSING",
 			"level": "ISSUE",
-			"created_at": "2025-02-15T08:52:56.406Z",
-			"updated_at": "2025-02-15T08:52:56.406Z",
+			"created_at": "2025-02-20T18:43:54.965Z",
+			"updated_at": "2025-02-20T18:47:30.584Z",
 			"expected_response_time": {
 				"duration": "PT2H"
 			},
@@ -39,8 +45,8 @@
 					"ref_type": "ORDER"
 				},
 				{
-					"ref_id": "dd10b34c-a91e-4de6-81c1-3fbb039ce0af",
-					"ref_type": "ITEM",
+					"ref_id": "8e23df63-601b-4688-a7e1-42fd128eb30b",
+					"ref_type": "PROVIDER",
 					"tags": [
 						{
 							"descriptor": {
@@ -58,16 +64,8 @@
 					]
 				},
 				{
-					"ref_id": "8e23df63-601b-4688-a7e1-42fd128eb30b",
-					"ref_type": "PROVIDER"
-				},
-				{
 					"ref_id": "f1",
 					"ref_type": "FULFILLMENt"
-				},
-				{
-					"ref_id": "2d1275b0-cc7d-4b83-829e-4ec37492c49f",
-					"ref_type": "TRANSACTION"
 				}
 			],
 			"actors": [
@@ -104,7 +102,7 @@
 					}
 				},
 				{
-					"id": "54c1b207-b532-441b-b0fd-8038c5ba17d2",
+					"id": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
 					"type": "TRANSACTION_COUNTERPARTY_NP",
 					"info": {
 						"org": {
@@ -120,8 +118,11 @@
 					}
 				}
 			],
+			"respondent_ids": [
+				"6617aade-8b91-4657-b9b5-5d7946cd5fcf"
+			],
 			"description": {
-				"code": "ITM01",
+				"code": "FLM001",
 				"short_desc": "Issue with product quality",
 				"images": [
 					"http://buyerapp.com/addtional-details/img1.png",
@@ -133,67 +134,72 @@
 					"content_type": "text/plain"
 				}
 			},
-			"last_action_id": "Action2",
+			"last_action_id": "60050ec2-7aed-48ba-8c1f-a3f8d422c404",
+			"resolutions": [
+				{
+					"id": "tR20rQQf0rhe",
+					"descriptor": {
+						"code": "PARENT",
+						"short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+					},
+					"updated_at": "2025-02-20T18:47:30.584Z",
+					"proposed_by": "NP2"
+				},
+				{
+					"id": "3013bf3e-e3b9-40e0-930d-6abbffe0f9a7",
+					"ref_id": "tR20rQQf0rhe",
+					"ref_type": "PARENT",
+					"descriptor": {
+						"code": "NO-ACTION",
+						"short_desc": "No action required"
+					},
+					"updated_at": "2025-02-20T18:47:30.584Z",
+					"proposed_by": "NP2",
+					"tags": [
+						{
+							"descriptor": {
+								"code": "RESOLUTION_DETAILS"
+							},
+							"list": []
+						}
+					]
+				}
+			],
 			"actions": [
 				{
-					"id": "Action1",
+					"id": "A1",
 					"description": {
 						"code": "OPEN",
-						"short_desc": "having issue with an item"
+						"short_desc": "OPEN"
 					},
-					"updated_at": "2025-02-15T08:46:59.253Z",
+					"updated_at": "2025-02-20T18:43:54.964Z",
 					"action_by": "NP2",
 					"actor_details": {
 						"name": "Rina Mathur"
 					}
 				},
 				{
-					"id": "7dc52a7d-56f9-400f-9c6d-4f0ea357eaf1",
+					"id": "2de1162f-4830-4798-aa8a-71670d06c578",
 					"description": {
 						"code": "PROCESSING",
 						"short_desc": "We are investigating your concern. We will get back to you soon."
 					},
-					"updated_at": "2025-02-15T08:46:59.324Z",
-					"action_by": "54c1b207-b532-441b-b0fd-8038c5ba17d2",
+					"updated_at": "2025-02-20T18:43:55.113Z",
+					"action_by": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
 					"actor_details": {
 						"name": "Rini Store"
 					}
 				},
 				{
-					"id": "1cab0292-9147-4eb7-aa7b-98d402a1785d",
+					"id": "60050ec2-7aed-48ba-8c1f-a3f8d422c404",
 					"description": {
-						"name": "Info1",
-						"code": "INFO_REQUESTED",
-						"short_desc": "Please attach some more images"
+						"code": "RESOLUTION_PROPOSED"
 					},
+					"ref_id": "tR20rQQf0rhe",
+					"ref_type": "RESOLUTIONS",
 					"action_by": "NP2",
 					"actor_details": {
-						"name": "Rini Store"
-					}
-				},
-				{
-					"id": "f4eaa526-2b54-403c-a4b4-98c115125f01",
-					"description": {
-						"name": "info2",
-						"code": "INFO_REQUESTED",
-						"short_desc": "Mention more details about the issue"
-					},
-					"action_by": "NP2",
-					"actor_details": {
-						"name": "Rini Store"
-					}
-				},
-				{
-					"id": "Action2",
-					"description": {
-						"code": "INFO_PROVIDED",
-						"short_desc": "provided additional info with detail desc",
-						"images": "https://abc.images.com"
-					},
-					"updated_at": "2025-02-15T08:52:56.405Z",
-					"action_by": "NP2",
-					"actor_details": {
-						"name": "Rina Mathur"
+						"name": "Susri Madhu"
 					}
 				}
 			]
