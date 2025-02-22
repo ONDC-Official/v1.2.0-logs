@@ -1,0 +1,38 @@
+{
+    "logReport": {
+        "Message": {
+            "search_0": {
+                "RGC-start-Err": "Reverse Geocoding for `start` failed. Area Code 560001 not matching with 12.984550, 77.586754 Lat-Long pair.",
+                "RGC-end-Err": "Reverse Geocoding for `end` failed. Area Code 110001 not matching with 28.6225833,77.2127222 Lat-Long pair."
+            },
+            "confirm_0": {
+                "weightErr": "Total order weight '1100' does not match the total unit weight of items '1000'"
+            },
+            "on_confirm_0": {
+                "weightErr": "Total order weight '1100' does not match the total unit weight of items '1000'"
+            },
+            "on_update_0": {
+                "shipLblErr": "Shipping label (/start/instructions/images) is required for P2H2P shipments"
+            }
+        }
+    }
+}
+
+
+1. Reverse Geocoding Issues (search_0)
+
+We are not sure why the area codes are not matching with the provided latitude-longitude pairs.
+We have checked on our end, and both the start and end locations appear correct us.
+
+2. Weight Mismatch (confirm_0 & on_confirm_0)
+
+The utility assumes that the total order weight is the sum of the individual item weights.
+However, our rule logic also factors in packaging and handling weight, which accounts for the difference. 
+In this case, the system-calculated weight (2.1 kg) includes packaging materials such as the cardboard box. 
+Changing this logic would introduce handling weight differential cases, which may not be ideal for our process.
+
+3. Missing Shipping Label (on_update_0)
+
+The shipping label requirement is managed by the LSP. 
+In our workflow, labels are typically provided during the on_status event. 
+Since this is under the LSP’s control, there is not much we can do here.
