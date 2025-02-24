@@ -1,2 +1,3 @@
-# Grouponova ONDC Logs  
-This folder contains ONDC core workflow logs for Grouponova.
+# Grouponova - ONDC Core Workflow Logs
+
+This folder contains core workflow logs for Grouponova (NOVA E-COMMERCE VENTURES LLP).
