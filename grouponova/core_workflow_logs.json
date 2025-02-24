@@ -13,13 +13,187 @@
   "workflow_logs": [
     {
       "api": "search",
-      "request": { "example": "search request payload" },
-      "response": { "example": "search response payload" }
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "search",
+          "version": "1.2.0"
+        },
+        "message": {
+          "intent": {
+            "category": { "id": "FMCG" }
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_search",
+          "version": "1.2.0"
+        },
+        "message": {
+          "catalog": {
+            "products": [
+              { "id": "101", "name": "Product 1" },
+              { "id": "102", "name": "Product 2" }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "api": "select",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "select",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "items": [
+              { "id": "101", "quantity": { "count": 1 } }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_select",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "items": [
+              { "id": "101", "quantity": { "count": 1 } }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "api": "init",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "init",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "billing": { "name": "John Doe" },
+            "items": [
+              { "id": "101", "quantity": { "count": 1 } }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_init",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "billing": { "name": "John Doe" },
+            "items": [
+              { "id": "101", "quantity": { "count": 1 } }
+            ]
+          }
+        }
+      }
     },
     {
       "api": "confirm",
-      "request": { "example": "confirm request payload" },
-      "response": { "example": "confirm response payload" }
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "confirm",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "id": "ORD123",
+            "items": [
+              { "id": "101", "quantity": { "count": 1 } }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_confirm",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "id": "ORD123",
+            "status": "Confirmed"
+          }
+        }
+      }
+    },
+    {
+      "api": "update",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "update",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "id": "ORD123",
+            "items": [
+              { "id": "101", "quantity": { "count": 2 } }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_update",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "id": "ORD123",
+            "items": [
+              { "id": "101", "quantity": { "count": 2 } }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "api": "status",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "status",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order_id": "ORD123"
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_status",
+          "version": "1.2.0"
+        },
+        "message": {
+          "order": {
+            "id": "ORD123",
+            "status": "Confirmed"
+          }
+        }
+      }
     }
   ]
 }
