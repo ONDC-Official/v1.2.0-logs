@@ -1,0 +1,170 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "witslab-bap-preprod.thewitslab.com",
+    "bap_uri": "https://witslab-bap-preprod.thewitslab.com/api/v2",
+    "bpp_id": "extweb.oyeti.com/ecommerce/ondc",
+    "bpp_uri": "https://extweb.oyeti.com/ecommerce/ondc/ecommerce/ondc",
+    "transaction_id": "e9d7709d-90c4-4ec0-86ae-177f50ff4def",
+    "message_id": "3db7671a-6ba8-470c-8de5-c3d0a39a9c2b",
+    "timestamp": "2024-08-24T05:57:59.722Z"
+  },
+  "message": {
+    "order": {
+      "id": "2ba56def-658a-469d-9cb9-e56519cbe0e2",
+      "state": "Created",
+      "provider": { "id": "1039535", "locations": [{ "id": "378278" }] },
+      "items": [
+        {
+          "id": "13691127",
+          "quantity": { "count": 2 },
+          "fulfillment_id": "733edc8d-607c-43de-8059-04b49404cb61"
+        }
+      ],
+      "billing": {
+        "name": "Testing",
+        "address": {
+          "name": "Testing",
+          "building": "BSNL RAJBHAVAN",
+          "locality": "Dr Ambedkar Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560001"
+        },
+        "email": "test@witslab.com",
+        "phone": "9009009009",
+        "created_at": "2024-08-24T05:57:35.913Z",
+        "updated_at": "2024-08-24T05:57:35.913Z"
+      },
+      "fulfillments": [
+        {
+          "id": "733edc8d-607c-43de-8059-04b49404cb61",
+          "end": {
+            "contact": { "email": "test@witslab.com", "phone": "9009009009" },
+            "person": { "name": "Testing" },
+            "location": {
+              "gps": "12.980869,77.594826",
+              "address": {
+                "name": "Testing",
+                "building": "BSNL RAJBHAVAN",
+                "locality": "Dr Ambedkar Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-08-24T06:12:59.599Z",
+                "end": "2024-08-24T06:57:59.599Z"
+              }
+            }
+          },
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "378278",
+              "descriptor": { "name": "Nandyal Chefs" },
+              "address": {
+                "locality": "Bengaluru, Bangalore Division, Karnataka, India",
+                "city": "Bengaluru",
+                "area_code": "560001",
+                "state": "Karnataka"
+              },
+              "gps": "12.9713073,77.5920295"
+            },
+            "contact": {
+              "phone": "7893847511",
+              "email": "venkateshmurapureddy@gmail.com"
+            },
+            "time": {
+              "range": {
+                "start": "2024-08-24T05:57:59.599Z",
+                "end": "2024-08-24T06:12:59.599Z"
+              }
+            }
+          },
+          "tracking": true,
+          "@ondc/org/TAT": "PT60M",
+          "state": { "descriptor": { "code": "Pending" } },
+          "@ondc/org/provider_name": "ONDC Logistics"
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "823.09" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "13691127",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Nandyal Chicken Dum Biryani",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "700.0" },
+            "item": { "price": { "currency": "INR", "value": "350.0" } }
+          },
+          {
+            "@ondc/org/item_id": "733edc8d-607c-43de-8059-04b49404cb61",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "99.12" }
+          },
+          {
+            "@ondc/org/item_id": "733edc8d-607c-43de-8059-04b49404cb61",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "23.97" }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "type": "ON-ORDER",
+        "params": {
+          "amount": "823.09",
+          "currency": "INR",
+          "transaction_id": "order_Ood456tYqnC8WQ"
+        },
+        "status": "PAID",
+        "tl_method": "http/get",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "ICICI",
+            "branch_name": "BANGALORE - INDIRA NAGAR",
+            "upi_address": "",
+            "settlement_type": "neft",
+            "beneficiary_name": " NAFFA INNOVATIONS PRIVATE LIMITED NODAL ACCOUNT",
+            "settlement_phase": "sale-amount",
+            "settlement_ifsc_code": "ICIC0000169",
+            "settlement_counterparty": "seller-app",
+            "settlement_bank_account_no": "016905011158"
+          }
+        ],
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            { "code": "tax_number", "value": "29AAECN5025F1ZK" },
+            { "code": "provider_tax_number", "value": "VQCPZ9992M" },
+            { "code": "np_type", "value": "MSN" }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "GSTIN1234567890" }]
+        }
+      ],
+      "created_at": "2024-08-24T05:57:59.401Z",
+      "updated_at": "2024-08-24T05:57:59.722Z"
+    }
+  }
+}

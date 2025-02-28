@@ -1,0 +1,193 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "schemaErr0": "/message/catalog/bpp~1fulfillments/2/type must be equal to one of the allowed values (Delivery,Self-Pickup)",
+                "schemaErr1": "/message/catalog/bpp~1providers/0/fulfillments/0 must NOT have additional properties (storeTimings)",
+                "schemaErr2": "/message/catalog/bpp~1providers/0/items/0/quantity/available/count available count must be either 99 or 0 only",
+                "schemaErr3": "/message/catalog/bpp~1providers/0/items/1/quantity/available/count available count must be either 99 or 0 only",
+                "schemaErr4": "/message/catalog/bpp~1providers/0/items/2/quantity/available/count available count must be either 99 or 0 only",
+                "schemaErr5": "/message/catalog/bpp~1providers/0/tags/0/list/4/code Serviceability must have these values 'location', 'category', 'type', 'val', 'unit'",
+                "/message/catalog/bpp/providers/loc0/time/schedule/holidays": "Holidays cannot be past 2025-01-07",
+                "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]",
+                "items[86fc490f-7df5-4be4-bd4e-eb79ceebb6cd]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+                "items[f2f22782-778a-490a-add9-c3a958853312]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+                "items[67be7d67-f5f2-49c4-a9c8-f0f0b1d398a0]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+                "prvdr0tags0ctgry": "category in serviceability construct should be one of the category ids bpp/providers[0]/items/category_id"
+            },
+            "on_select": {
+                "tmpstmp": "Timestamp for /select api cannot be greater than or equal to /on_select api"
+            },
+            "on_init": {
+                "schemaErr0": "/message/order/tags/0/list/0/value Value for tax_number must be a valid tax number i.e alphanumeric with 15 characters ",
+                "tmpstmp": "Timestamp for init api cannot be greater than or equal to on_init api",
+                "taxNumberValue": "Invalid format for tax_number in on_init",
+                "providertaxNumber": "provider_tax_number must be present for on_init",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+            },
+            "confirm": {
+                "bapGstTags": "Tags/bap_terms should have valid gst number and fields in /confirm"
+            },
+            "on_confirm": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'person'",
+                "schemaErr5": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr6": "/message/order/tags/0 must be object",
+                "schemaErr7": "/message/order/tags/1/list/0/value Value for tax_number must be a valid tax number i.e alphanumeric with 15 characters ",
+                "tmpstmp": "Timestamp for /confirm api cannot be greater than or equal to /on_confirm api",
+                "updtdtmstmp": "order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)",
+                "tax_number": "Invalid format for tax_number in on_confirm",
+                "tags_bap_terms": "Tags should have same and valid gst_number as passed in /confirm",
+                "tags_bpp_terms": "Tags should have same and valid gst_number as passed in /confirm"
+            },
+            "on_update_part_cancel": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_part_cancel",
+                "invalid_initiated_by": "initiated_by should be seller-app-preprod-v2.ondc.org"
+            },
+            "on_status_pending": {
+                "schemaErr0": "/message/order Invoice url must be present as part of documents objects (only in Order-picked-up state and thereafter)",
+                "schemaErr1": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr3": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr5": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr6": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr7": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr8": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr9": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr10": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "order_state": "Order state should be accepted whenever Status is being sent 'Accepted'. Current state: Created",
+                "tmpstmp2": "order.updated_at timestamp should be less than or eqaul to  context timestamp for /on_status_pending api"
+            },
+            "on_status_packed": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr5": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr6": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr7": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr8": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr9": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "ffTracking": "Fulfillment Tracking mismatch with the on_select call"
+            },
+            "on_status_picked": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr5": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr6": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr7": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr8": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr9": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_picked",
+                "pickUpTime": "picked timestamp is missing",
+                "fulfilmntRngErr0": "/start/range/start_time \"2025-01-09T09:50:09.261Z\" of on_confirm mismatched with /start/range/start_time \"2025-01-09T09:55:59.537Z\" of on_status_picked",
+                "fulfilmntRngErr1": "/start/range/end_time \"2025-01-09T13:50:09.261Z\" of on_confirm mismatched with /start/range/end_time \"2025-01-09T13:55:59.537Z\" of on_status_picked",
+                "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+                "message/order.fulfillments/1/start/timestamp": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/timestamp'"
+            },
+            "on_status_out_for_delivery": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr5": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr6": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr7": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr8": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr9": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_out_for_delivery",
+                "fulfilmntRngErr0": "/start/range/start_time \"2025-01-09T09:50:09.261Z\" of on_confirm mismatched with /start/range/start_time \"2025-01-09T09:55:59.537Z\" of on_status_out_for_delivery",
+                "fulfilmntRngErr1": "/start/range/end_time \"2025-01-09T13:50:09.261Z\" of on_confirm mismatched with /start/range/end_time \"2025-01-09T13:55:59.537Z\" of on_status_out_for_delivery",
+                "out_for_delivery_time": "Out_for_delivery timestamp is missing",
+                "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+                "message/order.fulfillments/1/start/timestamp": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/timestamp'"
+            },
+            "on_status_delivered": {
+                "schemaErr0": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr1": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr2": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr3": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr4": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "schemaErr5": "/message/order/fulfillments/0 must have required property '@ondc/org/provider_name'",
+                "schemaErr6": "/message/order/fulfillments/0/start must have required property 'location'",
+                "schemaErr7": "/message/order/fulfillments/0/start must have required property 'contact'",
+                "schemaErr8": "/message/order/fulfillments/0/end must have required property 'location'",
+                "schemaErr9": "/message/order/fulfillments/0/end must have required property 'contact'",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_delivered",
+                "fulfilmntRngErr0": "/start/range/start_time \"2025-01-09T09:50:09.261Z\" of on_confirm mismatched with /start/range/start_time \"2025-01-09T09:55:59.537Z\" of on_status_delivered",
+                "fulfilmntRngErr1": "/start/range/end_time \"2025-01-09T13:50:09.261Z\" of on_confirm mismatched with /start/range/end_time \"2025-01-09T13:55:59.537Z\" of on_status_delivered",
+                "fulfilmntRngErr2": "/end/range/start_time \"2025-01-09T15:50:09.261Z\" of on_confirm mismatched with /end/range/start_time \"2025-01-09T09:56:23.944Z\" of on_status_delivered",
+                "fulfilmntRngErr3": "/end/range/end_time \"2025-01-09T19:50:09.261Z\" of on_confirm mismatched with /end/range/end_time \"2025-01-09T13:56:23.944Z\" of on_status_delivered",
+                "message/order.fulfillments/1/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'",
+                "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+                "message/order.fulfillments/1/start/timestamp": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/timestamp'"
+            },
+            "on_update_interim_reverse_qc": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_interim_reverse_qc",
+                "context/timestamp/": "context/timestamp of /on_update_interim_reverse_qc should be greater than context/timestamp of /update_reverse_qc",
+                "returnFulfillment/id": "Mismatch occur between the fulfillment Id of on_update_interim_reverse_qc ret_ondc_coMj7yXvLEvB and fulfillment Id of update_reverse_qc ret_ondc_wQrEWCFJswv3"
+            },
+            "on_update_approval": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_approval",
+                "returnFulfillment/id": "Mismatch occur between the fulfillment Id of on_update_approval ret_ondc_coMj7yXvLEvB and fulfillment Id of update_reverse_qc ret_ondc_wQrEWCFJswv3",
+                "ReturnFulfillment.end": "Return fulfillment end object is missing in on_update_approval",
+                "ReturnFulfillment.start": "Return fulfillment start object is missing in on_update_approval"
+            },
+            "on_update_picked": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "schemaErr1": "/message/order/fulfillments/3/start/location must have required property 'gps'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_picked",
+                "returnFulfillment/id": "Mismatch occur between the fulfillment Id of on_update_picked ret_ondc_coMj7yXvLEvB and fulfillment Id of update_reverse_qc ret_ondc_wQrEWCFJswv3",
+                "ReturnFulfillment.end": "Return fulfillment end object is missing in on_update_picked",
+                "ReturnFulfillment.start": "Return fulfillment start object is missing in on_update_picked"
+            },
+            "on_update_delivered": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "schemaErr1": "/message/order/fulfillments/3/start/location must have required property 'gps'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"150.0\",\"settlement_timestamp\":\"2025-01-09T10:03:21.756Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_delivered",
+                "context/timestamp/": "context/timestamp of /on_update_delivered should be greater than context/timestamp of /update_settlement_reverse_qc",
+                "returnFulfillment/id": "Mismatch occur between the fulfillment Id of on_update_delivered ret_ondc_coMj7yXvLEvB and fulfillment Id of update_reverse_qc ret_ondc_wQrEWCFJswv3",
+                "ReturnFulfillment.end": "Return fulfillment end object is missing in on_update_delivered",
+                "ReturnFulfillment.start": "Return fulfillment start object is missing in on_update_delivered"
+            },
+            "on_update_interim_liquidated": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"150.0\",\"settlement_timestamp\":\"2025-01-09T10:03:21.756Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_interim_liquidated",
+                "context/timestamp/": "context/timestamp of /on_update_interim_liquidated should be greater than context/timestamp of /update_liquidated"
+            },
+            "on_update_liquidated": {
+                "schemaErr0": "/message/order/provider must have required property 'locations'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"449.0\",\"settlement_timestamp\":\"2025-01-09T09:54:50.252Z\",\"settlement_counterparty\":\"buyer\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_type\":\"upi\",\"settlement_phase\":\"refund\",\"settlement_amount\":\"150.0\",\"settlement_timestamp\":\"2025-01-09T10:03:21.756Z\",\"settlement_counterparty\":\"buyer\"}",
+                "Delivery.start.location": "Delivery fulfillment start location object is missing in on_update_liquidated"
+            }
+        },
+        "bpp_id": "seller-app-preprod-v2.ondc.org",
+        "bap_id": "stage.agrikheti.com",
+        "domain": "ONDC:RET11",
+        "reportTimestamp": "2025-01-09T10:20:21.545Z"
+    },
+    "signature": "LgPaclN13mFFnDZ8vfn/omcUmQX1EXrKvPMQSkPXpUgc/04X6MjDv46RRZALOGLuJmA2iTFsQ94RbYBHHGwjBg==",
+    "signTimestamp": "2025-01-09T10:20:21.545Z"
+}
