@@ -1,0 +1,331 @@
+{
+  "context": {
+    "bap_id": "ogoshop-stagging",
+    "bap_uri": "https://3c38-122-170-103-28.ngrok-free.app/api/ondc",
+    "bpp_id": "ondc.ogoshop.in",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "transaction_id": "T1",
+    "core_version": "2.0.0",
+    "message_id": "M4",
+    "timestamp": "2025-02-16T07:54:33.131Z",
+    "domain": "ONDC:RET10",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "updated_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-1",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "created_at": "2025-02-16T06:30:47.473Z",
+      "updated_at": "2025-02-16T07:54:32.114Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "TRAN1",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "RAM SHARMA"
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "ram@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "BUYER",
+          "type": "INTERFACING-NP",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "SELLER",
+          "type": "COUNTER_NP",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "RAMA"
+            },
+            "contact": {
+              "phone": "1234567890",
+              "email": "support@boranaindustries.in"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "BUYER",
+      "respondent_ids": [
+        "SELLER"
+      ],
+      "description": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ]
+      },
+      "last_action_id": "A8",
+      "actions": [
+        {
+          "id": "A1",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Item Issue"
+          },
+          "updated_at": "2025-02-16T06:33:45.443Z",
+          "action_by": "BUYER",
+          "actor_detail": {
+            "name": "RAM SHARMA"
+          }
+        },
+        {
+          "id": "A2",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-02-16T06:37:45.423Z",
+          "action_by": "SELLER",
+          "actor_details": {
+            "name": "RAMA"
+          }
+        },
+        {
+          "id": "A3",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "Please provide product images"
+          },
+          "updated_at": "2025-02-16T06:40:47.413Z",
+          "action_by": "SELLER",
+          "actor_details": {
+            "name": "RAMA"
+          }
+        },
+        {
+          "id": "A4",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO003",
+            "short_desc": "Please provide invoice"
+          },
+          "updated_at": "2025-02-16T06:41:42.211Z",
+          "action_by": "SELLER",
+          "actor_details": {
+            "name": "RAMA"
+          }
+        },
+        {
+          "id": "A5",
+          "ref_id": "A3",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Info provided from buyer app",
+            "images": [
+              "http://buyerapp.com/addtional-details/img3.png",
+              "http://buyerapp.com/addtional-details/img4.png"
+            ]
+          },
+          "updated_at": "2025-02-16T07:41:42.211Z",
+          "action_by": "BUYER",
+          "actor_details": {
+            "name": "RAM SHARMA"
+          }
+        },
+        {
+          "id": "A6",
+          "ref_id": "A4",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Provided invoice",
+            "media": [
+              {
+                "url": "https://buyerapp.com/resources/invoiceord1.pdf"
+              }
+            ]
+          },
+          "updated_at": "2025-02-16T07:45:42.211Z",
+          "action_by": "BUYER",
+          "actor_details": {
+            "name": "RAM SHARMA"
+          }
+        },
+        {
+          "id": "A7",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Working On Your Issue"
+          },
+          "updated_at": "2025-02-16T07:50:32.131Z",
+          "action_by": "SELLER",
+          "actor_details": {
+            "name": "RAMA"
+          }
+        },
+        {
+          "id": "A8",
+          "ref_id": "R_PARENT",
+          "ref_type": "RESOLUTIONS",
+          "description": {
+            "code": "RESOLUTION_PROPOSED"
+          },
+          "updated_at": "2025-02-16T07:54:30.111Z",
+          "action_by": "SELLER",
+          "actor_details": {
+            "name": "RAMA"
+          }
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2025-02-16T07:53:40.221Z",
+          "proposed_by": "SELLER"
+        },
+        {
+          "id": "R1",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2025-02-16T07:53:45.121Z",
+          "proposed_by": "SELLER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "350"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2025-02-16T07:54:12.151Z",
+          "proposed_by": "SELLER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
