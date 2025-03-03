@@ -1,0 +1,128 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_search",
+    "core_version": "1.2.0",
+    "bap_id": "ondc-pp-v2.dlyb.in",
+    "bap_uri": "https://ondc-pp-v2.dlyb.in/v2/logisticsBuyer",
+    "transaction_id": "b9db0528-6c9b-40e0-aec7-c4b2318c009b_661544cc707ebec1462153ee",
+    "message_id": "a60de7ad-b407-41ec-a7dc-800baa8f816c",
+    "timestamp": "2024-05-13T12:30:39.825Z",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "MP2",
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "bpp/providers": [
+        {
+          "id": "MP2",
+          "descriptor": {
+            "name": "MP2",
+            "short_desc": "MP2",
+            "long_desc": "MP2 Logistics Provider"
+          },
+          "categories": [
+            {
+              "id": "Same Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "mp2_sdd_f1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT2H"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "0.27"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "mp2_sdd_f1-RTO",
+              "type": "RTO"
+            }
+          ],
+          "items": [
+            {
+              "id": "mp2_sdd",
+              "parent_item_id": "",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "MP2 SDD Delivery",
+                "short_desc": "Same Day Delivery",
+                "long_desc": "Same Day Delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "2.0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
+              }
+            },
+            {
+              "id": "mp2_sdd-RTO",
+              "parent_item_id": "mp2_sdd",
+              "category_id": "Same Day Delivery",
+              "fulfillment_id": "mp2_sdd_f1-RTO",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "0"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "PT4H",
+                "timestamp": "2024-05-13"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

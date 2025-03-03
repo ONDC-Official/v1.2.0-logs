@@ -1,0 +1,424 @@
+{
+    "context": {
+        "ttl": "PT30S",
+        "city": "std:080",
+        "action": "on_update",
+        "bap_id": "dev-preprod-buyer-ondc.ndh01.com/retail",
+        "bpp_id": "staging.tmbill.com/tp/v1/ondc",
+        "domain": "ONDC:RET11",
+        "bap_uri": "https://dev-preprod-buyer-ondc.ndh01.com/retail/buyer",
+        "bpp_uri": "https://staging.tmbill.com/tp/v1/ondc",
+        "country": "IND",
+        "timestamp": "2024-03-29T07:54:28.723Z",
+        "message_id": "7a04ca94-6bf9-49f0-8850-33d810dfb369",
+        "core_version": "1.2.0",
+        "transaction_id": "4ba925cb-e94b-4fce-ae94-ba0c7376089c"
+    },
+    "message": {
+        "order": {
+            "id": "28f93d57d01b4bcd922ed8d9a6fe191c",
+            "items": [
+                {
+                    "id": "2775204::1155943::EP11",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "22446688739675_fulfillment_1"
+                },
+                {
+                    "id": "2775205::1155944::EP12",
+                    "quantity": {
+                        "count": 2
+                    },
+                    "fulfillment_id": "7c8a2cd2-0623-427f-a11b-5e608286aa5b"
+                }
+            ],
+            "quote": {
+                "ttl": "PT1H",
+                "price": {
+                    "value": "476",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "item": {
+                            "price": {
+                                "value": "100",
+                                "currency": "INR"
+                            }
+                        },
+                        "price": {
+                            "value": "200",
+                            "currency": "INR"
+                        },
+                        "title": "Mutton Masala",
+                        "@ondc/org/item_id": "2775204::1155943::EP11",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        }
+                    },
+                    {
+                        "price": {
+                            "value": "10",
+                            "currency": "INR"
+                        },
+                        "title": "Tax",
+                        "@ondc/org/item_id": "2775204::1155943::EP11",
+                        "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "item": {
+                            "price": {
+                                "value": "100",
+                                "currency": "INR"
+                            }
+                        },
+                        "price": {
+                            "value": "200",
+                            "currency": "INR"
+                        },
+                        "title": "Mutton Handi",
+                        "@ondc/org/item_id": "2775205::1155944::EP12",
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_quantity": {
+                            "count": 2
+                        }
+                    },
+                    {
+                        "price": {
+                            "value": "7",
+                            "currency": "INR"
+                        },
+                        "title": "Tax",
+                        "@ondc/org/item_id": "2775205::1155944::EP12",
+                        "@ondc/org/title_type": "tax"
+                    },
+                    {
+                        "price": {
+                            "value": "59",
+                            "currency": "INR"
+                        },
+                        "title": "Delivery Charges",
+                        "@ondc/org/item_id": "22446688739675_fulfillment_1",
+                        "@ondc/org/title_type": "delivery"
+                    }
+                ]
+            },
+            "state": "Completed",
+            "billing": {
+                "name": "Eren Yeager",
+                "phone": "9097805960",
+                "address": {
+                    "city": "Bengaluru",
+                    "name": "Eren Yeager",
+                    "state": "Karnataka",
+                    "country": "India",
+                    "building": "55, Eatsy",
+                    "locality": "Eatsy",
+                    "area_code": "560066"
+                },
+                "created_at": "2024-03-29T07:50:05.945Z",
+                "updated_at": "2024-03-29T07:50:05.945Z"
+            },
+            "payment": {
+                "type": "ON-ORDER",
+                "params": {
+                    "amount": "476",
+                    "currency": "INR",
+                    "transaction_id": "ordeh_0d91d10865694b81ab3901b45382df12"
+                },
+                "status": "PAID",
+                "tl_method": "http/get",
+                "collected_by": "BAP",
+                "@ondc/org/settlement_details": [
+                    {
+                        "bank_name": "HDFC BANK",
+                        "branch_name": "SHRIRAMPUR BRANCH",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "TechMainstay Software Private Limited",
+                        "settlement_phase": "sale-amount",
+                        "settlement_ifsc_code": "HDFC0000966",
+                        "settlement_counterparty": "seller-app",
+                        "settlement_bank_account_no": "50200085305869"
+                    }
+                ],
+                "@ondc/org/buyer_app_finder_fee_type": "Percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "0"
+            },
+            "provider": {
+                "id": "22446688739675",
+                "rateable": true,
+                "locations": [
+                    {
+                        "id": "22446688739675"
+                    }
+                ]
+            },
+            "documents": [
+                {
+                    "url": "https://backoffice.tmbill.com/ebill/28f93d57d01b4bcd922ed8d9a6fe191c",
+                    "label": "Invoice"
+                }
+            ],
+            "created_at": "2024-03-29T07:50:46.637Z",
+            "updated_at": "2024-03-29T07:54:28.723Z",
+            "fulfillments": [
+                {
+                    "id": "22446688739675_fulfillment_1",
+                    "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-03-29T08:15:00.000Z",
+                                "start": "2024-03-29T07:55:00.000Z"
+                            },
+                            "timestamp": "2024-03-29T07:52:21.947Z"
+                        },
+                        "person": {
+                            "name": "Eren Yeager",
+                            "image": "https://hubpe.s3.amazonaws.com/profile_img%2F1705926556280.png"
+                        },
+                        "contact": {
+                            "phone": "9097805960"
+                        },
+                        "location": {
+                            "gps": "12.96980423507413,77.74996133521199",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "Eren Yeager",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "building": "55, Eatsy",
+                                "locality": "Eatsy",
+                                "area_code": "560066"
+                            },
+                            "descriptor": {
+                                "name": "Eren Yeager",
+                                "images": []
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "no"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "Delivery",
+                    "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-03-29T08:55:00.000Z",
+                                "start": "2024-03-29T08:15:00.000Z"
+                            },
+                            "timestamp": "2024-03-29T07:51:44.000Z"
+                        },
+                        "person": {
+                            "name": "Eatsy"
+                        },
+                        "contact": {
+                            "email": "sid@tmbill.com",
+                            "phone": "7798548540"
+                        },
+                        "location": {
+                            "id": "22446688739675",
+                            "gps": "12.970699,77.747161",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "building": "",
+                                "locality": "Whitefield",
+                                "area_code": "560066"
+                            },
+                            "descriptor": {
+                                "name": "Eatsy",
+                                "images": [
+                                    "https://cdn.tmbill.com/backoffice/store-logo/1685511854499.png"
+                                ]
+                            }
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "Order-delivered",
+                            "name": "Order-delivered"
+                        }
+                    },
+                    "rateable": true,
+                    "tracking": true,
+                    "@ondc/org/TAT": "PT60M",
+                    "@ondc/org/provider_name": "TMBill",
+                    "agent": {
+                        "name": "Manmohan Singh",
+                        "phone": "9898989898"
+                    }
+                },
+                {
+                    "id": "7c8a2cd2-0623-427f-a11b-5e608286aa5b",
+                    "end": {
+                        "time": {
+                            "range": {
+                                "end": "2024-03-29T08:55:00.000Z",
+                                "start": "2024-03-29T08:15:00.000Z"
+                            }
+                        },
+                        "contact": {
+                            "email": "sid@tmbill.com",
+                            "phone": "7798548540"
+                        },
+                        "location": {
+                            "id": "22446688739675",
+                            "gps": "12.970699,77.747161",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "building": "",
+                                "locality": "Whitefield",
+                                "area_code": "560066"
+                            },
+                            "descriptor": {
+                                "name": "Eatsy",
+                                "images": [
+                                    "https://cdn.tmbill.com/backoffice/store-logo/1685511854499.png"
+                                ]
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "return_request",
+                            "list": [
+                                {
+                                    "code": "id",
+                                    "value": "7c8a2cd2-0623-427f-a11b-5e608286aa5b"
+                                },
+                                {
+                                    "code": "item_id",
+                                    "value": "2775205::1155944::EP12"
+                                },
+                                {
+                                    "code": "parent_item_id",
+                                    "value": ""
+                                },
+                                {
+                                    "code": "item_quantity",
+                                    "value": "2"
+                                },
+                                {
+                                    "code": "reason_id",
+                                    "value": "001"
+                                },
+                                {
+                                    "code": "reason_desc",
+                                    "value": "Buyer does not want product any more"
+                                },
+                                {
+                                    "code": "ttl_approval",
+                                    "value": "PT24H"
+                                },
+                                {
+                                    "code": "ttl_reverseqc",
+                                    "value": "P3D"
+                                },
+                                {
+                                    "code": "images",
+                                    "value": "https://hubpe.s3.amazonaws.com/profile_img%2F1711698826397.jpg"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "dev-preprod-buyer-ondc.ndh01.com/retail"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "2775205::1155944::EP12"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-200"
+                                },
+                                {
+                                    "code": "subtype",
+                                    "value": "item"
+                                }
+                            ]
+                        }
+                    ],
+                    "type": "Return",
+                    "start": {
+                        "time": {
+                            "range": {
+                                "end": "2024-03-29T08:15:00.000Z",
+                                "start": "2024-03-29T07:55:00.000Z"
+                            }
+                        },
+                        "person": {
+                            "name": "Eren Yeager",
+                            "image": "https://hubpe.s3.amazonaws.com/profile_img%2F1705926556280.png"
+                        },
+                        "contact": {
+                            "phone": "9097805960"
+                        },
+                        "location": {
+                            "gps": "12.96980423507413,77.74996133521199",
+                            "address": {
+                                "city": "Bengaluru",
+                                "name": "Eren Yeager",
+                                "state": "Karnataka",
+                                "country": "India",
+                                "building": "55, Eatsy",
+                                "locality": "Eatsy",
+                                "area_code": "560066"
+                            },
+                            "descriptor": {
+                                "name": "Eren Yeager",
+                                "images": []
+                            }
+                        }
+                    },
+                    "state": {
+                        "descriptor": {
+                            "code": "Return_Approved",
+                            "name": "Return_Approved"
+                        }
+                    },
+                    "tracking": false
+                }
+            ]
+        }
+    }
+}
