@@ -1,0 +1,191 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "core_version": "1.2.0",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "transaction_id": "90464fc0-a6a7-4cd6-86bc-54ca6108dd01",
+    "message_id": "e8df10d5-55ff-4d82-b694-dc9231cdaf51",
+    "timestamp": "2024-01-29T14:31:34.572Z",
+    "ttl": "PT30S",
+    "bpp_id": "stagingapi.cscestore.in/ondc",
+    "bpp_uri": "https://stagingapi.cscestore.in/ondc/seller/v2"
+  },
+  "message": {
+    "order": {
+      "state": "In-progress",
+      "provider": {
+        "id": "35",
+        "locations": [{ "id": "Storeking-store-location-id-35" }]
+      },
+      "items": [
+        {
+          "id": "1495",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 2 }
+        },
+        {
+          "id": "561",
+          "fulfillment_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "quantity": { "count": 2 }
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Ashish Rawat",
+          "building": "28/AB",
+          "locality": "Raj Bhavan Road",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560001"
+        },
+        "phone": "8787081401",
+        "name": "Ashish Rawat",
+        "email": "insphere.ashish@gmail.com",
+        "created_at": "2024-01-29T14:26:15.988Z",
+        "updated_at": "2024-01-29T14:26:15.988Z"
+      },
+      "fulfillments": [
+        {
+          "id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+          "@ondc/org/provider_name": "Storeking",
+          "type": "Delivery",
+          "@ondc/org/TAT": "P3D",
+          "end": {
+            "contact": {
+              "email": "insphere.ashish@gmail.com",
+              "phone": "8787081401"
+            },
+            "location": {
+              "gps": "12.981736346365281,77.59577572345735",
+              "address": {
+                "name": "Ashish Rawat",
+                "building": "28/AB",
+                "locality": "Raj Bhavan Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-29T14:31:26.000Z",
+                "end": "2024-02-01T14:31:26.000Z"
+              }
+            }
+          },
+          "tracking": false,
+          "state": { "descriptor": { "code": "Out-for-delivery" } },
+          "start": {
+            "location": {
+              "id": "Storeking-store-location-id-35",
+              "descriptor": { "name": "Storeking" },
+              "gps": "12.97616900,77.58758700",
+              "address": {
+                "locality": "Ambedkar Road",
+                "city": "BENGALURU URBAN",
+                "area_code": "560001",
+                "state": "Karnataka"
+              }
+            },
+            "contact": {
+              "phone": "8325802581",
+              "email": "Storeking_distributor@gmail.com"
+            },
+            "time": {
+              "range": {
+                "start": "2024-01-29T14:27:57.000Z",
+                "end": "2024-01-30T14:27:57.000Z"
+              },
+              "timestamp": "2024-01-29T14:31:22.186Z"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": { "currency": "INR", "value": "1293.20" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1495",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 1",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "620.00" },
+            "item": { "price": { "currency": "INR", "value": "310.00" } }
+          },
+          {
+            "@ondc/org/item_id": "561",
+            "@ondc/org/item_quantity": { "count": 2 },
+            "title": "Pahadi honey 500gm (organic)",
+            "@ondc/org/title_type": "item",
+            "price": { "currency": "INR", "value": "550.00" },
+            "item": { "price": { "currency": "INR", "value": "275.00" } }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "50.00" }
+          },
+          {
+            "@ondc/org/item_id": "db7c5bef-bfd8-410a-a68e-8b153b75173b",
+            "title": "Convenience Fee",
+            "@ondc/org/title_type": "misc",
+            "price": { "currency": "INR", "value": "73.20" }
+          }
+        ],
+        "ttl": "PT30S"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "1293.20",
+          "currency": "INR",
+          "transaction_id": "8aba585b-f794-44ef-8219-a5e74ce0b9fe"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "2917980081992",
+            "settlement_ifsc_code": "SBIN11903",
+            "beneficiary_name": "CSC",
+            "bank_name": "State Bank Of India",
+            "branch_name": "Delhi"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [{ "code": "tax_number", "value": "22GXPPF3765E1Z6" }]
+        },
+        {
+          "code": "bap_terms",
+          "list": [{ "code": "tax_number", "value": "BUYER-APP-GSTN-ONDC" }]
+        }
+      ],
+      "id": "2024-01-29-314133",
+      "created_at": "2024-01-29T14:26:28.064Z",
+      "updated_at": "2024-01-29T14:31:33.773Z",
+      "documents": [
+        {
+          "url": "https://frontend.grameen.com/uploads/Grameen-staging/user/1706538657_incvoice_sample.jpeg",
+          "label": "Invoice"
+        }
+      ]
+    }
+  }
+}

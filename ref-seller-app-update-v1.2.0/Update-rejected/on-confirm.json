@@ -1,0 +1,221 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "ref-app-buyer-staging-v2.ondc.org",
+    "bap_uri": "https://ref-app-buyer-staging-v2.ondc.org/protocol/v1",
+    "bpp_uri": "https://ref-app-seller-staging-v2.ondc.org",
+    "transaction_id": "dd3f4363-7d28-4289-95a9-ea4d1fd75d7d",
+    "message_id": "b29bd817-511b-4339-8673-827b933cbcec",
+    "timestamp": "2023-11-29T12:09:49.028Z",
+    "bpp_id": "ref-app-seller-staging-v2.ondc.org",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2023-11-29-651479",
+      "state": "Accepted",
+      "provider": {
+        "id": "2428a90b-763c-474a-9d91-6462b158f8c8",
+        "locations": [
+          {
+            "id": "65493749263062b9b5ef1904"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "d6caf5a7-7050-43dc-a229-4b9167c321d0",
+          "quantity": {
+            "count": 4
+          },
+          "fulfillment_id": "eab53b70-443e-45bf-9e4c-88f41633b3de",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Diploma in Nutrition",
+          "building": "12345",
+          "locality": "Park View Street",
+          "city": "Kharar",
+          "state": "Punjab",
+          "country": "IND",
+          "area_code": "140301"
+        },
+        "phone": "8983796135",
+        "name": "Diploma in Nutrition",
+        "email": "vr-admin@mailinator.com",
+        "created_at": "2023-11-29T12:09:22.473Z",
+        "updated_at": "2023-11-29T12:09:22.473Z"
+      },
+      "fulfillments": [
+        {
+          "id": "eab53b70-443e-45bf-9e4c-88f41633b3de",
+          "end": {
+            "contact": {
+              "email": "vr-admin@mailinator.com",
+              "phone": "8983796135"
+            },
+            "person": {
+              "name": "Diploma in Nutrition"
+            },
+            "location": {
+              "gps": "30.749346822676603, 76.64110624697061",
+              "address": {
+                "name": "Diploma in Nutrition",
+                "building": "12345",
+                "locality": "Park View Street",
+                "city": "Kharar",
+                "state": "Punjab",
+                "country": "IND",
+                "area_code": "140301"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2023-11-29T12:09:48.915Z",
+                "end": "2023-11-30T12:09:48.915Z"
+              }
+            }
+          },
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "65493749263062b9b5ef1904",
+              "descriptor": {
+                "name": "Grocery store"
+              },
+              "gps": "30.749727635489492,76.64045815821737"
+            },
+            "contact": {
+              "phone": "8149255989",
+              "email": "shalu214patil@gmail.com"
+            },
+            "time": {
+              "range": {
+                "start": "2023-11-29T12:09:48.915Z",
+                "end": "2023-11-30T12:09:48.915Z"
+              }
+            }
+          },
+          "tracking": false,
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "@ondc/org/provider_name": "WITS Project Ref Logistic"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "4115"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "d6caf5a7-7050-43dc-a229-4b9167c321d0",
+            "@ondc/org/item_quantity": {
+              "count": 4
+            },
+            "title": "Suffola Oil",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "4000"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "1000"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "@ondc/org/item_id": "eab53b70-443e-45bf-9e4c-88f41633b3de",
+            "price": {
+              "currency": "INR",
+              "value": "115.50"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "4115",
+          "currency": "INR",
+          "transaction_id": "acb4f82b-d0c6-4eec-922b-c86a2953e0b8"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "Percentage",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "45454545454545454",
+            "settlement_ifsc_code": "SBIN0005943",
+            "beneficiary_name": "Grocery",
+            "bank_name": "SBI",
+            "branch_name": "pune"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "123433654526565"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ],
+      "created_at": "2023-11-29T12:09:38.660Z",
+      "updated_at": "2023-11-29T12:09:49.028Z"
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_confirm",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "agg-stage.dominosindia.in",
+    "bpp_uri": "https://agg-stage.dominosindia.in/ondc/agg-adapter/ve1/ondc",
+    "transaction_id": "e9ebf539-963e-4bb1-9225-1f137fc0f38f",
+    "message_id": "c5017ab4-86a7-480d-9a9a-793a2cefe8d7",
+    "timestamp": "2023-12-14T10:36:34.875Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "2023-12-14-589351",
+      "state": "Created",
+      "provider": {
+        "id": "6585R",
+        "locations": [
+          {
+            "id": "6585R"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "4715",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "1"
+        }
+      ],
+      "billing": {
+        "name": "Ishan",
+        "address": {
+          "name": "Ishan",
+          "building": "bhalswa lake",
+          "locality": "Unnamed Road",
+          "city": "New Delhi",
+          "state": "Delhi",
+          "country": "IND",
+          "area_code": "110042"
+        },
+        "email": "ishan.parasher@jublfood.com",
+        "phone": "9810275123",
+        "created_at": "2023-12-14T10:36:30.442Z",
+        "updated_at": "2023-12-14T10:36:30.442Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "@ondc/org/provider_name": "6585R",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "6585R",
+              "descriptor": {
+                "name": "POKHRA"
+              },
+              "gps": "28.743418518817066,77.17130710446465",
+              "address": {
+                "locality": "POKHRA1",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "area_code": "110032"
+              }
+            },
+            "contact": {
+              "phone": "0000000000"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.74104991283804, 77.1687412261963",
+              "address": {
+                "name": "Ishan",
+                "building": "bhalswa lake",
+                "locality": "Unnamed Road",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "IND",
+                "area_code": "110042"
+              }
+            },
+            "contact": {
+              "phone": "9810275123",
+              "email": "ishan.parasher@jublfood.com"
+            },
+            "person": {
+              "name": "Ishan"
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "263.9"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "4715",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "109.0"
+              },
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              }
+            },
+            "title": "Chocolate Lava Cake Choco Lava Cake",
+            "price": {
+              "currency": "INR",
+              "value": "218.0"
+            }
+          },
+          {
+            "@ondc/org/item_id": "4715",
+            "@ondc/org/title_type": "tax",
+            "title": "Chocolate Lava Cake Choco Lava Cake",
+            "price": {
+              "currency": "INR",
+              "value": "10.9"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery Charges",
+            "price": {
+              "currency": "INR",
+              "value": "35.0"
+            }
+          }
+        ],
+        "ttl": "PT1H"
+      },
+      "payment": {
+        "uri": "https://juspay.in/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "263.9",
+          "currency": "INR",
+          "transaction_id": "b3c3bb35-15fc-49d7-a107-2c4f6425ffba"
+        },
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BPP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/withholding_amount": "0.00",
+        "@ondc/org/settlement_basis": "Delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "12345678901234",
+            "settlement_ifsc_code": "TEST123",
+            "bank_name": "BOB",
+            "branch_name": "NOIDA",
+            "beneficiary_name": "Test Buyer",
+            "beneficiary_address": "123, street"
+          }
+        ]
+      },
+      "created_at": "2023-12-14T10:36:34.452Z",
+      "updated_at": "2023-12-14T10:36:34.875Z",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "07AABCD1821C1ZD"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "BUYER-APP-GSTN-ONDC"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
