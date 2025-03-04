@@ -1,168 +1,268 @@
 {
-    "context":{
-       "domain":"ONDC:RET12",
-       "country":"IND",
-       "city":"std:011",
-       "action":"on_init",
-       "core_version":"1.2.0",
-       "bpp_id":"ondc-seller.extensions.uat.fyndx1.de",
-       "bpp_uri":"https://ondc-seller.extensions.uat.fyndx1.de/protocol/v1",
-       "transaction_id":"ced10499-d532-4749-8aa5-cec1611a3313",
-       "message_id":"0c630645-82c0-4f7a-a232-b32373b9a961",
-       "timestamp":"2024-12-12T07:52:59.929Z",
-       "bap_id":"preprod.xircular.io/preprod",
-       "bap_uri":"https://preprod.xircular.io/protocol/v1"
-    },
-    "message":{
-       "order":{
-          "provider":{
-             "id":"38962",
-             "locations":[
-                {
-                   "id":"116049"
-                }
-             ]
-          },
-          "items":[
-             {
-                "id":"10411478_M_116049",
-                "quantity":{
-                   "count":3
-                },
-                "fulfillment_id":"58b7ea17-6eee-455c-babd-b98e4a79c100"
-             },
-             {
-                "id":"10411487_M_116049",
-                "quantity":{
-                   "count":3
-                },
-                "fulfillment_id":"58b7ea17-6eee-455c-babd-b98e4a79c100"
-             }
-          ],
-          "quote":{
-             "price":{
-                "currency":"INR",
-                "value":"66000"
-             },
-             "breakup":[
-                {
-                   "title":"3D Alien",
-                   "price":{
-                      "currency":"INR",
-                      "value":"33000.00"
-                   },
-                   "@ondc/org/item_id":"10411478_M_116049",
-                   "item":{
-                      "price":{
-                         "currency":"INR",
-                         "value":"11000.00"
-                      }
-                   },
-                   "@ondc/org/item_quantity":{
-                      "count":3
-                   },
-                   "@ondc/org/title_type":"item"
-                },
-                {
-                   "title":"Red white Clear",
-                   "price":{
-                      "currency":"INR",
-                      "value":"33000.00"
-                   },
-                   "@ondc/org/item_id":"10411487_M_116049",
-                   "item":{
-                      "price":{
-                         "currency":"INR",
-                         "value":"11000.00"
-                      }
-                   },
-                   "@ondc/org/item_quantity":{
-                      "count":3
-                   },
-                   "@ondc/org/title_type":"item"
-                },
-                {
-                   "title":"Delivery Charges",
-                   "price":{
-                      "currency":"INR",
-                      "value":"0"
-                   },
-                   "@ondc/org/item_id":"58b7ea17-6eee-455c-babd-b98e4a79c100",
-                   "@ondc/org/title_type":"delivery"
-                }
-             ],
-             "ttl":"PT30M"
-          },
-          "billing":{
-             "address":{
-                "building":"Apprikart",
-                "city":"New Delhi",
-                "state":"Delhi",
-                "country":"IND",
-                "area_code":"110041",
-                "locality":"Gali Number 4",
-                "name":"Gautam Dhakate"
-             },
-             "phone":"9011607658",
-             "name":"Gautam Dhakate",
-             "email":"gautamdhakate1234@gmail.com",
-             "created_at":"2024-12-12T07:52:59.321Z",
-             "updated_at":"2024-12-12T07:52:59.321Z"
-          },
-          "fulfillments":[
-             {
-                "id":"58b7ea17-6eee-455c-babd-b98e4a79c100",
-                "type":"Delivery",
-                "tracking":false,
-                "end":{
-                   "contact":{
-                      "phone":"9011607658"
-                   },
-                   "location":{
-                      "gps":"28.679077,77.069714",
-                      "address":{
-                         "building":"Apprikart",
-                         "city":"New Delhi",
-                         "state":"Delhi",
-                         "country":"IND",
-                         "area_code":"110041",
-                         "locality":"Gali Number 4",
-                         "name":"Gautam Dhakate"
-                      }
-                   }
-                }
-             }
-          ],
-          "payment":{
-             "@ondc/org/settlement_basis":"return_window_expiry",
-             "@ondc/org/settlement_window":"P1D",
-             "@ondc/org/withholding_amount":"0.00",
-             "@ondc/org/buyer_app_finder_fee_type":"percent",
-             "@ondc/org/buyer_app_finder_fee_amount":"3",
-             "@ondc/org/settlement_details":[
-                {
-                   "settlement_counterparty":"seller-app",
-                   "settlement_phase":"sale-amount",
-                   "settlement_type":"neft",
-                   "settlement_bank_account_no":"0595279003",
-                   "settlement_ifsc_code":"CITI0100000",
-                   "beneficiary_name":"SHOPSENSE RETAIL TECHNOLOGIES LTD",
-                   "bank_name":"Citibank N.A",
-                   "branch_name":"Mumbai"
-                }
-             ]
-          },
-          "tags":[
-             {
-                "code":"bpp_terms",
-                "list":[
+   "context": {
+       "domain": "ONDC:RET12",
+       "country": "IND",
+       "city": "std:011",
+       "action": "on_init",
+       "core_version": "1.2.0",
+       "bap_id": "preprod.xircular.io/preprod",
+       "bap_uri": "https://b379-106-51-90-72.ngrok-free.app/protocol/v1",
+       "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+       "transaction_id": "137a9b05-d6d2-4c49-9209-07e4d9939855",
+       "message_id": "0f1409f1-ee20-4970-a22b-9de7ab5264af",
+       "timestamp": "2025-03-04T06:37:12.707Z",
+       "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller"
+   },
+   "message": {
+       "order": {
+           "provider": {
+               "id": "pramaan_provider_1",
+               "locations": [
                    {
-                      "code":"tax_number",
-                      "value":"27AALCA0442L1ZM"
+                       "id": "SSL1"
                    }
-                ]
-             }
-          ]
+               ]
+           },
+           "items": [
+               {
+                   "id": "id_1bai73_0_0",
+                   "quantity": {
+                       "count": 2
+                   },
+                   "location_id": "SSL1",
+                   "fulfillment_id": "d3d6956f-4319-435f-be44-8073a8eaab2a"
+               }
+           ],
+           "quote": {
+               "price": {
+                   "currency": "INR",
+                   "value": "2480.00"
+               },
+               "breakup": [
+                   {
+                       "@ondc/org/item_id": "id_1bai73_0_0",
+                       "title": "Adidas Track Suit",
+                       "@ondc/org/item_quantity": {
+                           "count": 2
+                       },
+                       "@ondc/org/title_type": "item",
+                       "price": {
+                           "currency": "INR",
+                           "value": "2400.00"
+                       },
+                       "item": {
+                           "quantity": {
+                               "available": {
+                                   "count": "99"
+                               },
+                               "maximum": {
+                                   "count": "99"
+                               }
+                           },
+                           "price": {
+                               "currency": "INR",
+                               "value": "1200.00"
+                           }
+                       }
+                   },
+                   {
+                       "@ondc/org/item_id": "d3d6956f-4319-435f-be44-8073a8eaab2a",
+                       "title": "Delivery charges",
+                       "@ondc/org/title_type": "delivery",
+                       "price": {
+                           "currency": "INR",
+                           "value": "40"
+                       }
+                   },
+                   {
+                       "@ondc/org/item_id": "d3d6956f-4319-435f-be44-8073a8eaab2a",
+                       "title": "Convenience Fee",
+                       "@ondc/org/title_type": "misc",
+                       "price": {
+                           "currency": "INR",
+                           "value": "40"
+                       }
+                   }
+               ],
+               "ttl": "PT6H"
+           },
+           "cancellation_terms": [
+               {
+                   "fulfillment_state": {
+                       "descriptor": {
+                           "code": "Pending",
+                           "short_desc": "002"
+                       }
+                   },
+                   "cancellation_fee": {
+                       "percentage": "0.00",
+                       "amount": {
+                           "currency": "INR",
+                           "value": "0.00"
+                       }
+                   }
+               },
+               {
+                   "fulfillment_state": {
+                       "descriptor": {
+                           "code": "Packed",
+                           "short_desc": "001,003"
+                       }
+                   },
+                   "cancellation_fee": {
+                       "percentage": "0.00",
+                       "amount": {
+                           "currency": "INR",
+                           "value": "0.00"
+                       }
+                   }
+               },
+               {
+                   "fulfillment_state": {
+                       "descriptor": {
+                           "code": "Order-picked-up",
+                           "short_desc": "001,003"
+                       }
+                   },
+                   "cancellation_fee": {
+                       "percentage": "10.00",
+                       "amount": {
+                           "currency": "INR",
+                           "value": "248.00"
+                       }
+                   }
+               },
+               {
+                   "fulfillment_state": {
+                       "descriptor": {
+                           "code": "Out-for-delivery",
+                           "short_desc": "009"
+                       }
+                   },
+                   "cancellation_fee": {
+                       "percentage": "30.00",
+                       "amount": {
+                           "currency": "INR",
+                           "value": "744.00"
+                       }
+                   }
+               },
+               {
+                   "fulfillment_state": {
+                       "descriptor": {
+                           "code": "Out-for-delivery",
+                           "short_desc": "010,011,012,013,014,015"
+                       }
+                   },
+                   "cancellation_fee": {
+                       "percentage": "35.00",
+                       "amount": {
+                           "currency": "INR",
+                           "value": "868.00"
+                       }
+                   }
+               }
+           ],
+           "billing": {
+               "address": {
+                   "building": "Apprikart",
+                   "city": "New Delhi",
+                   "state": "Delhi",
+                   "country": "IND",
+                   "area_code": "110041",
+                   "locality": "Gali Number 5",
+                   "name": "Sandhya"
+               },
+               "phone": "9011455667",
+               "name": "Sandhya",
+               "email": "sandhyadhakate@gmail.com",
+               "created_at": "2025-03-04T06:37:09.526Z",
+               "updated_at": "2025-03-04T06:37:09.526Z"
+           },
+           "fulfillments": [
+               {
+                   "id": "d3d6956f-4319-435f-be44-8073a8eaab2a",
+                   "type": "Delivery",
+                   "end": {
+                       "contact": {
+                           "email": "sandhyadhakate@gmail.com",
+                           "phone": "9011455667"
+                       },
+                       "location": {
+                           "gps": "28.678540,77.069630",
+                           "address": {
+                               "building": "Apprikart",
+                               "city": "New Delhi",
+                               "state": "Delhi",
+                               "country": "IND",
+                               "area_code": "110041",
+                               "locality": "Gali Number 5",
+                               "name": "Sandhya"
+                           }
+                       }
+                   },
+                   "tracking": true
+               }
+           ],
+           "payment": {
+               "status": "NOT-PAID",
+               "@ondc/org/buyer_app_finder_fee_type": "percent",
+               "@ondc/org/buyer_app_finder_fee_amount": "3",
+               "@ondc/org/settlement_details": [
+                   {
+                       "settlement_counterparty": "seller-app",
+                       "upi_address": "",
+                       "beneficiary_name": "SEQUELSTRING AI",
+                       "settlement_type": "neft",
+                       "settlement_bank_account_no": "9876543210012",
+                       "settlement_ifsc_code": "AXIS123456",
+                       "settlement_phase": "sale-amount",
+                       "settlement_status": "NOT-PAID",
+                       "bank_name": "AXIS BANK LTD ",
+                       "branch_name": "NAVI MUMBAI"
+                   }
+               ],
+               "collected_by": "BAP"
+           },
+           "tags": [
+               {
+                   "code": "bpp_terms",
+                   "list": [
+                       {
+                           "code": "np_type",
+                           "value": "MSN"
+                       },
+                       {
+                           "code": "tax_number",
+                           "value": "00ABCDE1234F1Z5"
+                       },
+                       {
+                           "code": "max_liability",
+                           "value": "2"
+                       },
+                       {
+                           "code": "max_liability_cap",
+                           "value": "10000.00"
+                       },
+                       {
+                           "code": "mandatory_arbitration",
+                           "value": "false"
+                       },
+                       {
+                           "code": "court_jurisdiction",
+                           "value": "New Delhi"
+                       },
+                       {
+                           "code": "delay_interest",
+                           "value": "7.50"
+                       },
+                       {
+                           "code": "provider_tax_number",
+                           "value": "ABCDE1234F"
+                       }
+                   ]
+               }
+           ]
        }
-    }
- }
+   }
+}
