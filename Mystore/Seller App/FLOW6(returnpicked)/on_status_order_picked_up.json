@@ -1,0 +1,245 @@
+{
+  "context": {
+    "domain": "ONDC:RET12",
+    "country": "IND",
+    "city": "std:0171",
+    "core_version": "1.2.0",
+    "action": "on_status",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "beta.mystore.in",
+    "bpp_uri": "https://beta.mystore.in/ondc/1.0/",
+    "transaction_id": "5dd6f8b7-6b4f-48f2-a45c-8e56ffece678",
+    "message_id": "26e4cab2-7de5-4fba-afb5-2a950601d24b",
+    "timestamp": "2024-05-01T11:21:54.268Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "659e7cea5da96cff0167bed2",
+        "locations": [
+          {
+            "id": "659e7cea5da96cff0167bed2-l"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "sku-SKU-FYOMEL2K08UR",
+          "quantity": {
+            "count": 4
+          },
+          "fulfillment_id": "6ms659e7cea5da96cff0167bed21e2"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "4001.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "sku-SKU-FYOMEL2K08UR",
+            "@ondc/org/item_quantity": {
+              "count": 4
+            },
+            "title": "Jeans",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "4000.00"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "1000.00"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "6ms659e7cea5da96cff0167bed21e2",
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "1.00"
+            }
+          }
+        ],
+        "ttl": "P10D"
+      },
+      "billing": {
+        "address": {
+          "name": "Dharmender",
+          "building": "47B",
+          "locality": "Babyal Road",
+          "city": "Ambala",
+          "state": "Haryana",
+          "country": "IND",
+          "area_code": "133001"
+        },
+        "phone": "9813668112",
+        "name": "Dharmender",
+        "email": "dharmender.kumar@thewitslab.com",
+        "created_at": "2024-05-01T11:20:52.747Z",
+        "updated_at": "2024-05-01T11:20:52.747Z"
+      },
+      "fulfillments": [
+        {
+          "id": "6ms659e7cea5da96cff0167bed21e2",
+          "state": {
+            "descriptor": {
+              "name": "Order picked up",
+              "code": "Order-picked-up"
+            }
+          },
+          "type": "Delivery",
+          "tracking": true,
+          "start": {
+            "location": {
+              "id": "659e7cea5da96cff0167bed2-l",
+              "descriptor": {
+                "name": "Witslab Test Seller"
+              },
+              "gps": "28.404125,77.045256",
+              "address": {
+                "locality": "1254 tower",
+                "city": "gurgaon",
+                "area_code": "122018",
+                "state": "Haryana"
+              }
+            },
+            "contact": {
+              "phone": "8010117117",
+              "email": "seller@mystore.in"
+            },
+            "time": {
+              "range": {
+                "start": "2024-05-01T11:21:52.641Z",
+                "end": "2024-05-11T11:21:54.110Z"
+              },
+              "timestamp": "2024-05-01T11:21:54.268Z"
+            }
+          },
+          "end": {
+            "contact": {
+              "email": "dharmender.kumar@thewitslab.com",
+              "phone": "9813668112"
+            },
+            "person": {
+              "name": "Dharmender"
+            },
+            "location": {
+              "gps": "30.349569,76.8731262",
+              "address": {
+                "name": "Dharmender",
+                "building": "47B",
+                "locality": "Babyal Road",
+                "city": "Ambala",
+                "state": "Haryana",
+                "country": "IND",
+                "area_code": "133001"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2024-05-01T11:21:54.110Z",
+                "end": "2024-05-11T11:21:54.110Z"
+              }
+            }
+          },
+          "@ondc/org/TAT": "P10D",
+          "@ondc/org/provider_name": "mystore",
+          "tags": [
+            {
+              "code": "tracking",
+              "list": [
+                {
+                  "code": "gps_enabled",
+                  "value": "no"
+                },
+                {
+                  "code": "url_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url",
+                  "value": "https://preprod.mystore.in/en/account/orders?order_id=663225acea1ec900258ae48a&action=track&shipment_id=67679"
+                }
+              ]
+            }
+          ],
+          "agent": {
+            "name": "Mystore",
+            "phone": "9898129898"
+          }
+        }
+      ],
+      "payment": {
+        "uri": "https://razorpay.com/",
+        "tl_method": "http/get",
+        "params": {
+          "amount": "4001.00",
+          "currency": "INR",
+          "transaction_id": "order_O5D8j2Ajyj7nr5"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft",
+            "settlement_bank_account_no": "5896478995",
+            "settlement_ifsc_code": "IDB000929",
+            "bank_name": "IDBI",
+            "branch_name": "Cyber City",
+            "beneficiary_name": "WITS",
+            "settlement_phase": "sale-amount"
+          }
+        ]
+      },
+      "id": "2024-05-01-581566",
+      "state": "In-progress",
+      "created_at": "2024-05-01T11:21:13.093Z",
+      "updated_at": "2024-05-01T11:21:54.268Z",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "np_type",
+              "value": "MSN"
+            },
+            {
+              "code": "tax_number",
+              "value": "06AADCH5529B1ZY"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "ABCTY1234D"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "GSTIN1234567890"
+            }
+          ]
+        }
+      ],
+      "documents": [
+        {
+          "url": "https://beta.mystore.in/s/632dcf060c84820019e5c3eb/ms.invoices/663225aeea1ec900258ae506/invoice-INV-306.pdf",
+          "label": "Invoice"
+        }
+      ]
+    }
+  }
+}

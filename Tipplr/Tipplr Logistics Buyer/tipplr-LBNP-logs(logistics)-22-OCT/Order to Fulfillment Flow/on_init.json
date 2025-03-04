@@ -1,0 +1,151 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "preprod-logistics.tipplr.in",
+    "bap_uri": "https://preprod-logistics.tipplr.in/ondc/logistics/v2",
+    "bpp_id": "ondc-preprod-lsp.olacabs.com",
+    "bpp_uri": "https://ondc-preprod-lsp.olacabs.com/ondc",
+    "transaction_id": "6f9aa2db-8b56-4800-93f7-a8d91ebd08da",
+    "message_id": "fb1ea58c-098d-4325-8eaf-b556451d60ca",
+    "timestamp": "2024-10-21T13:33:35.388Z"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "OLA"
+      },
+      "items": [
+        {
+          "id": "ola_express",
+          "fulfillment_id": "ola_express_f1"
+        }
+      ],
+      "quote": {
+        "ttl": "PT15M",
+        "price": {
+          "currency": "INR",
+          "value": "24.99"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "21.18"
+            }
+          },
+          {
+            "@ondc/org/item_id": "ola_express",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "3.81"
+            }
+          }
+        ]
+      },
+      "fulfillments": [
+        {
+          "id": "ola_express_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.979612,77.590846",
+              "address": {
+                "name": "Tipplr-swathi d",
+                "building": "Ambedkar Bheedhi  XHHR+R8X",
+                "locality": " Sampangi Rama Nagara  Bengaluru",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "",
+              "email": "hello@tipplr.in"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.987301,77.595352",
+              "address": {
+                "name": "Punithraj N",
+                "building": "Tipplr HQ",
+                "locality": "Cunningham Crescent Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560052"
+              }
+            },
+            "contact": {
+              "phone": "8553957123",
+              "email": "tech@tipplr.in"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "neft",
+            "beneficiary_name": "\"OLA FLEET TECHNOLOGIES PRIVATE LIMITED\"",
+            "settlement_bank_account_no": "\"915020065848680\"",
+            "settlement_ifsc_code": "\"UTIB0001506\""
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "2000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://www.olacabs.com/tnc?doc=india-tnc-website"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+Previous issues persist here.
+
+following were the issues we received  after the first log submission
+
+On Update Part Cancel:
+---------------------
+JSON cannot be empty ---> already fixed in last logs
+
+Update Settlement Part Cancel:
+------------------------------
+JSON cannot be empty --->already fixed in last logs
+
+On Update Interim Liquidated:
+-----------------------------
+Start and End Object is not required for the interim call in the ‘Return’ Fulfillment ---> Fixed (This was not fixed in last logs)
+Are you not charging any fees, as the order is already delivered ? ---> No
+if the quote_trail price is 0 for any item, shouldn’t be added in the quote_trail ---> already fixed in last logs
+subtype should be use in the quote_trail if the customization is associated either with ‘tax’ or ‘item’ or ‘customization’ ---> Removed since validation API was giving error. Added back
+
+On Update Liquidated:
+--------------------
+Start and End Object is not required for the interim call in the ‘Return’ Fulfillment ---> Fixed (This was not fixed in last logs)
+quantity.count is not reduced in the forward fulfillment for liquidated items ---> Fixed
+
+
+"on_status_packed": {
+                "message/order.fulfillments/0/tags/1": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/1'",
+                "message/order.fulfillments/0/tags/2": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/2'",
+                "message/order.fulfillments/0/tags/3": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/3'",
+                "message/order.fulfillments/0/tags/4": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/4'",
+                "message/order.fulfillments/0/tags/5": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/5'",
+                "message/order.fulfillments/0/tags/6": "Mismatch occurred while comparing 'Cancel' fulfillment object with on_update_part_cancel on key 'tags/6'"
+            },
+
+In on_status, validation API was giving error on passing sub_type in quote trail of cancel fulfillments. So we removed it
+But on_udpdate needs subtype. and hence the mismatch pls let us know which one is correct
+
+
