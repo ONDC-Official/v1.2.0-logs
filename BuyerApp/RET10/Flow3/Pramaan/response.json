@@ -1,0 +1,114 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "bpp/providers[0]/items[0]/descriptor/code": "code should have 1:EAN as a value in /message/catalog/bpp/providers[0]/items[0]/descriptor/code",
+                "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]"
+            },
+            "select_out_of_stock": {
+                "on_search_full_catalog_refresh_city": "City code mismatch in /on_search_full_catalog_refresh and /select",
+                "invalidItemId[id_13owvn_0_0]": "Invalid item found in /select id: id_13owvn_0_0",
+                "providerId": "provider with provider.id: pramaan_provider_1 does not exist in on_search",
+                "providerChecks": "Warning: Missed checks for provider as provider with  ID: pramaan_provider_1 does not exist on on_search API"
+            },
+            "on_select_out_of_stock": {
+                "schemaErr0": "/message/order/quote/breakup/0 must have required property 'breakup'",
+                "schemaErr1": "/message/order/quote/breakup/0 must have required property 'ttl'",
+                "schemaErr2": "/message/order/quote/breakup/0/item must have required property '@ondc/org/item_id'",
+                "schemaErr3": "/message/order/quote/breakup/0/item must have required property 'title'",
+                "schemaErr4": "/message/order/quote/breakup/0/item must have required property '@ondc/org/title_type'",
+                "schemaErr5": "/message/order/quote/breakup/0/item must have required property 'item'",
+                "schemaErr6": "/message/order/quote/breakup/0/item/quantity/available must be object",
+                "schemaErr7": "/message/order/quote/breakup/0/item/quantity/maximum must be object",
+                "schemaErr8": "/message/order/quote/breakup/1 must have required property 'breakup'",
+                "schemaErr9": "/message/order/quote/breakup/1 must have required property 'ttl'",
+                "schemaErr10": "/message/order/quote/breakup/2 must have required property 'breakup'",
+                "schemaErr11": "/message/order/quote/breakup/2 must have required property 'ttl'",
+                "city": "City code mismatch in /search and /on_select",
+                "tmpstmp": "Timestamp for /select api cannot be greater than or equal to /on_select api",
+                "on_select_out_of_stock_msgId": "Message Ids for /select_out_of_stock and /on_select_out_of_stock api should be same"
+            },
+            "select": {
+                "search_full_catalog_refresh_city": "City code mismatch in /search_full_catalog_refresh and /select_out_of_stock",
+                "invalidItemId[id_13owvn_0_0]": "Invalid item found in /select id: id_13owvn_0_0",
+                "providerId": "provider with provider.id: pramaan_provider_1 does not exist in on_search",
+                "providerChecks": "Warning: Missed checks for provider as provider with  ID: pramaan_provider_1 does not exist on on_search API"
+            },
+            "on_select": {
+                "schemaErr0": "/message/order/quote/breakup/0 must have required property 'breakup'",
+                "schemaErr1": "/message/order/quote/breakup/0 must have required property 'ttl'",
+                "schemaErr2": "/message/order/quote/breakup/0/item must have required property '@ondc/org/item_id'",
+                "schemaErr3": "/message/order/quote/breakup/0/item must have required property 'title'",
+                "schemaErr4": "/message/order/quote/breakup/0/item must have required property '@ondc/org/title_type'",
+                "schemaErr5": "/message/order/quote/breakup/0/item must have required property 'item'",
+                "schemaErr6": "/message/order/quote/breakup/1 must have required property 'breakup'",
+                "schemaErr7": "/message/order/quote/breakup/1 must have required property 'ttl'",
+                "schemaErr8": "/message/order/quote/breakup/2 must have required property 'breakup'",
+                "schemaErr9": "/message/order/quote/breakup/2 must have required property 'ttl'",
+                "city": "City code mismatch in /search and /on_select",
+                "priceErr": "Warning: Quoted Price in /on_select INR 65 does not match with the total price of items in /select INR 0 i.e price for the item mismatch in on_search and on_select"
+            },
+            "init": {
+                "city": "City code mismatch in /search and /init"
+            },
+            "on_init": {
+                "city": "City code mismatch in search & on_init",
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+                "settlementBasis": "Invalid settlement basis in /on_init. Expected one of: delivery, shipment",
+                "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M)."
+            },
+            "confirm": {
+                "schemaErr0": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "city": "City code mismatch in /search and /confirm",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+            },
+            "on_confirm": {
+                "schemaErr0": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "city": "City code mismatch in /search and /on_confirm",
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+                "message.order.tags[0].list": "Pan_id shouldn't be same in tax_number and provider_tax_number in message.order.tags[0].list",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+            },
+            "on_status_pending": {
+                "errmsg": "When the onConfirm Order State is 'Accepted', the on_status_pending is not required!"
+            },
+            "on_status_packed": {
+                "schemaErr0": "/context must have required property 'ttl'",
+                "schemaErr1": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "city": "City code mismatch in /search and /on_status",
+                "ordrState": "order/state should be \"In-progress\" for /on_status_packed"
+            },
+            "on_status_picked": {
+                "schemaErr0": "/context must have required property 'ttl'",
+                "schemaErr1": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "on_status_picked_msgId": "Message id should not be same with previous calls",
+                "city": "City code mismatch in /search and /on_status",
+                "inVldTmstmp": "Timestamp in previous /on_status api cannot be greater than or equal to /on_status_picked api",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_picked",
+                "ordrState": "order/state should be \"In-progress\" for /on_status_picked",
+                "noOrdrPicked": "fulfillments/state should be Order-picked-up for /on_status_Order-picked-up"
+            },
+            "on_status_out_for_delivery": {
+                "schemaErr0": "/context must have required property 'ttl'",
+                "schemaErr1": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "city": "City code mismatch in /search and /on_status",
+                "message/order.fulfillments/0": "Mismatch occur while comparing Delivery fulfillment start timestamp with the on_status_picked"
+            },
+            "on_status_delivered": {
+                "schemaErr0": "/context must have required property 'ttl'",
+                "schemaErr1": "/message/order/payment/@ondc~1org~1settlement_basis must be equal to one of the allowed values (shipment,delivery,return_window_expiry)",
+                "city": "City code mismatch in /search and /on_status",
+                "message/order.fulfillments/0": "Mismatch occur while comparing Delivery fulfillment start timestamp with the on_status_picked"
+            }
+        },
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bap_id": "preprod.orderbazaar.in",
+        "domain": "ONDC:RET10",
+        "reportTimestamp": "2025-03-13T10:07:30.812Z"
+    },
+    "signature": "B/DQDM2sKFA9xtTN2oklzCKNrPVsUEOAkk+OWUUTmqWECNAm1WVm+Oo6iEST2amPKwx4z1pInxKaXoTsekA7BA==",
+    "signTimestamp": "2025-03-13T10:07:30.812Z"
+}
