@@ -1,0 +1,102 @@
+{
+  "success": false,
+  "response": {
+    "message": "Logs were not verified successfully",
+    "report": {
+      "on_search_full_catalog_refresh": {
+        "bpp/providers[0]/items[0]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[0]/descriptor/code(308785811849) should be number and with either length 8 or 13",
+        "bpp/providers[0]/items[1]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[1]/descriptor/code(409664821945) should be number and with either length 8 or 13",
+        "bpp/providers[0]/items[2]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[2]/descriptor/code(821663769236) should be number and with either length 8 or 13",
+        "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]"
+      },
+      "on_select": {
+        "pymntttl": "Quote breakup Payment title \"ONDC_FA\" is not as per the API Contract"
+      },
+      "on_init": {
+        "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+        "provider_tax_number": "Invalid format for provider_tax_number in on_init",
+        "billingErr0": "Key 'address.country' mismatch: India !== IND  when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+        "settlementBasis": "Invalid settlement basis in /on_init. Expected one of: delivery, shipment",
+        "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M).",
+        "tags": "'provider_tax_number' should have a valid PAN number format"
+      },
+      "confirm": {
+        "billingErr0": "Key 'address.country' mismatch: India !== IND when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+      },
+      "on_confirm": {
+        "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+        "updtdtmstmp": "order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)",
+        "message.order.tags[0].list": "Number of digits in provider tax number in  message.order.tags[0].list should be 10",
+        "provider_tax_number": "provider_tax_number must be present for on_confirm",
+        "invldUpdtdTmstp": "updated_at timestamp should be equal to  context timestamp for /on_confirm",
+        "billingErr0": "Key length mismatch for root when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+      },
+      "on_status_pending": {
+        "schemaErr0": "/message/order/quote/breakup/1/price/value Price value should be a number in string with upto 2 decimal places",
+        "ttl_err": "ttl = PT30S as per the API Contract",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/start_time \"2025-03-17T09:36:45.580Z\" of on_status_pending",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/end_time \"2025-03-17T09:36:45.580Z\" of on_status_pending",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/start_time \"2025-03-17T09:36:45.580Z\" of on_status_pending",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/end_time \"2025-03-17T09:36:45.580Z\" of on_status_pending"
+      },
+      "on_status_packed": {
+        "schemaErr0": "/message/order/quote/breakup/1/price/value Price value should be a number in string with upto 2 decimal places",
+        "ttl_err": "ttl = PT30S as per the API Contract",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/start_time \"2025-03-17T09:37:13.111Z\" of on_status_packed",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/end_time \"2025-03-17T09:37:13.111Z\" of on_status_packed",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/start_time \"2025-03-17T09:37:13.111Z\" of on_status_packed",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/end_time \"2025-03-17T09:37:13.111Z\" of on_status_packed",
+        "message/order.fulfillments/0/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/0/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'"
+      },
+      "on_status_picked": {
+        "schemaErr0": "/message/order/quote/breakup/1/price/value Price value should be a number in string with upto 2 decimal places",
+        "ttl_err": "ttl = PT30S as per the API Contract",
+        "pickupTime": "pickup timestamp should match context/timestamp and can't be future dated",
+        "updatedAt": "order/updated_at timestamp can't be less than the pickup time",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/start_time \"2025-03-17T09:37:31.234Z\" of on_status_picked",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/end_time \"2025-03-17T09:37:31.234Z\" of on_status_picked",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/start_time \"2025-03-17T09:37:31.234Z\" of on_status_picked",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/end_time \"2025-03-17T09:37:31.234Z\" of on_status_picked",
+        "message/order.fulfillments/0/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/0/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'"
+      },
+      "on_status_out_for_delivery": {
+        "schemaErr0": "/message/order/quote/breakup/1/price/value Price value should be a number in string with upto 2 decimal places",
+        "ttl_err": "ttl = PT30S as per the API Contract",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/start_time \"2025-03-17T09:37:37.140Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/end_time \"2025-03-17T09:37:37.140Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/start_time \"2025-03-17T09:37:37.140Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/end_time \"2025-03-17T09:37:37.140Z\" of on_status_out_for_delivery",
+        "out_for_delivery_time": "Fulfillments start timestamp should match context/timestamp and can't be future dated",
+        "updatedAt": "order/updated_at timestamp can't be less than the Out_for_delivery time",
+        "message/order.fulfillments/0": "Mismatch occur while comparing Delivery fulfillment start timestamp with the on_status_picked",
+        "message/order.fulfillments/0/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/0/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'"
+      },
+      "on_status_delivered": {
+        "schemaErr0": "/message/order/quote/breakup/1/price/value Price value should be a number in string with upto 2 decimal places",
+        "ttl_err": "ttl = PT30S as per the API Contract",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/start_time \"2025-03-17T09:37:42.515Z\" of on_status_delivered",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /start/range/end_time \"2025-03-17T09:37:42.515Z\" of on_status_delivered",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/start_time \"2025-03-17T09:37:42.515Z\" of on_status_delivered",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-03-17T09:36:22.204Z\" of on_confirm mismatched with /end/range/end_time \"2025-03-17T09:37:42.515Z\" of on_status_delivered",
+        "deliveryTime": "delivery timestamp should be less than or equal to context/timestamp and can't be future dated as this on_status is sent after the the product is delivered; as delivery timestamp is 2025-03-17T09:37:42.515Z and context timestamp is 2025-03-17T09:37:42.312Z",
+        "delPickTime": "delivery timestamp (/end/time/timestamp) can't be less than or equal to the pickup timestamp (start/time/timestamp)",
+        "updatedAt": "order/updated_at timestamp can't be less than the delivery time",
+        "message/order.fulfillments/0": "Mismatch occur while comparing Delivery fulfillment start timestamp with the on_status_picked",
+        "message/order.fulfillments/0/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/0/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'"
+      }
+    },
+    "bpp_id": "preprod.ondc.dpicorp.io",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "domain": "ONDC:RET13",
+    "reportTimestamp": "2025-03-18T11:04:48.977Z"
+  },
+  "signature": "oX+mLAqot3yKFE6I7IjKkIrEYLr/EYt5zEwWGw5oLCnCawtzXMzFmXaZfdMZ7gCoej2ZHdVMYVK8QfzH/ERkDQ==",
+  "signTimestamp": "2025-03-18T11:04:48.977Z"
+}

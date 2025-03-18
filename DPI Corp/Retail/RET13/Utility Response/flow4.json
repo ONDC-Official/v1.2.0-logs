@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "response": {
+    "message": "Logs were not verified successfully",
+    "report": {
+      "on_search_full_catalog_refresh": {
+        "bpp/providers[0]/items[0]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[0]/descriptor/code(308785811849) should be number and with either length 8 or 13",
+        "bpp/providers[0]/items[1]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[1]/descriptor/code(409664821945) should be number and with either length 8 or 13",
+        "bpp/providers[0]/items[2]/descriptor/code": "code should provided in /message/catalog/bpp/providers[0]/items[2]/descriptor/code(821663769236) should be number and with either length 8 or 13",
+        "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]"
+      },
+      "on_select": {
+        "pymntttl": "Quote breakup Payment title \"ONDC_FA\" is not as per the API Contract"
+      },
+      "on_init": {
+        "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+        "provider_tax_number": "Invalid format for provider_tax_number in on_init",
+        "billingErr0": "Key 'address.country' mismatch: India !== IND  when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+        "settlementBasis": "Invalid settlement basis in /on_init. Expected one of: delivery, shipment",
+        "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M).",
+        "tags": "'provider_tax_number' should have a valid PAN number format"
+      },
+      "confirm": {
+        "billingErr0": "Key 'address.country' mismatch: India !== IND when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+      },
+      "on_confirm": {
+        "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+        "updtdtmstmp": "order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)",
+        "message.order.tags[0].list": "Number of digits in provider tax number in  message.order.tags[0].list should be 10",
+        "provider_tax_number": "provider_tax_number must be present for on_confirm",
+        "invldUpdtdTmstp": "updated_at timestamp should be equal to  context timestamp for /on_confirm",
+        "billingErr0": "Key length mismatch for root when compared with init billing object",
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+      },
+      "on_cancel": {
+        "schemaErr0": "/message/order/fulfillments/1/tags/2/code must be equal to one of the allowed values (cancel_request,igm_request,precancel_state,quote_trail)",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_cancel should be equal to the price as in on_confirm",
+        "billingErr0": "Key length mismatch for root when compared with init billing object"
+      }
+    },
+    "bpp_id": "preprod.ondc.dpicorp.io",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "domain": "ONDC:RET13",
+    "reportTimestamp": "2025-03-18T11:05:32.067Z"
+  },
+  "signature": "xSILDCfypg+4t2xvUhc9gZmmPAfinTClIoAfIrd8PefspavLd0U9OXYL0eGog7Xj05Jn2eAn+Ttpyp0TdwD/BA==",
+  "signTimestamp": "2025-03-18T11:05:32.067Z"
+}
