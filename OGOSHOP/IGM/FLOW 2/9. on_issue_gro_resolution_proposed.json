@@ -1,6 +1,9 @@
 {
   "context": {
-    "domain": "ONDC:RET10",
+    "bpp_id": "ondc.ogoshop.in",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
     "location": {
       "country": {
         "code": "IND"
@@ -9,16 +12,13 @@
         "code": "*"
       }
     },
-    "action": "issue",
-    "core_version": "2.0.0",
-    "bpp_id": "ondc.ogoshop.in",
-    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
-    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
     "transaction_id": "26e94d05-b64f-4312-97e8-7b3a14f81460",
     "message_id": "43a211da-1c7a-41c5-b5e0-ae1256accd23",
-    "timestamp": "2025-03-11T07:46:39.754Z",
-    "ttl": "PT30S"
+    "timestamp": "2025-03-11T07:50:12.583Z",
+    "domain": "ONDC:RET10",
+    "core_version": "2.0.0",
+    "ttl": "PT30S",
+    "action": "on_issue"
   },
   "message": {
     "updated_target": [
@@ -29,10 +29,8 @@
     ],
     "issue": {
       "id": "30f66c9e-125d-40a0-a700-513ffc4927c5",
+      "level": "GRIEVANCE",
       "status": "PROCESSING",
-      "level": "ISSUE",
-      "created_at": "2025-03-11T07:31:15.321Z",
-      "updated_at": "2025-03-11T07:46:39.754Z",
       "expected_response_time": {
         "duration": "PT30M"
       },
@@ -51,6 +49,10 @@
         {
           "ref_id": "F1",
           "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "T1",
+          "ref_type": "TRANSACTION"
         },
         {
           "ref_id": "v2_64_64_2273009_product",
@@ -82,7 +84,7 @@
           "type": "INTERFACING_NP",
           "info": {
             "org": {
-              "name": "ondc.ogoshop.in:ONDC:RET10"
+              "name": "ondc.ogoshop.in::ONDC:RET10"
             },
             "person": {
               "name": "OGGY"
@@ -98,7 +100,7 @@
           "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
-              "name": "sellerapp.com::ONDC:RET10"
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
             },
             "contact": {
               "phone": "9450394140",
@@ -108,29 +110,46 @@
               "name": "Jane Doe"
             }
           }
+        },
+        {
+          "id": "NP2GRO",
+          "type": "COUNTERPARTY_NP_GRO",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450368140",
+              "email": "gro@respond.com"
+            },
+            "person": {
+              "name": "John Wick"
+            }
+          }
         }
       ],
       "source_id": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
       "complainant_id": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
       "respondent_ids": [
-        "NP2"
+        "NP2",
+        "NP2GRO"
       ],
       "description": {
-        "code": "FLM003",
-        "short_desc": "Buyer unavailable",
-        "long_desc": "Unable to deliver order because of buyer unavailability, Delivery agent tried thrice.",
+        "code": "ORD002",
+        "short_desc": "Quality Issue",
+        "long_desc": "Product is of bad quality",
         "additional_desc": {
           "url": "https://ogoshop.com/#/terms",
           "content_type": "text/html"
         }
       },
-      "last_action_id": "3f636bee-664e-4885-9162-631eb1aa24be",
+      "last_action_id": "0331755e-f1f0-4e75-a280-3287b615e2e2c1",
       "actions": [
         {
           "id": "aaabc70d-bfbf-437a-b48c-c31ca8d02276",
           "description": {
             "code": "OPEN",
-            "short_desc": "Buyer unavailable"
+            "short_desc": "Quality Issue"
           },
           "updated_at": "2025-03-11T07:31:15.321Z",
           "action_by": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
@@ -194,44 +213,59 @@
         {
           "id": "0331755e-f1f0-4e75-a280-3287b615e2c1",
           "description": {
-            "code": "RESOLUTION_PROPOSED"
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Resolution Proposed"
           },
           "updated_at": "2025-03-11T07:44:22.583Z",
           "action_by": "NP2",
           "actor_details": {
             "name": "RAJA RAM"
           },
-          "ref_id": "R_PARENT",
+          "ref_id": "R1",
           "ref_type": "RESOLUTIONS"
         },
         {
           "id": "3f636bee-664e-4885-9162-631eb1aa24be",
-          "ref_id": "R1",
-          "ref_type": "RESOLUTIONS",
           "description": {
-            "code": "RESOLUTION_ACCEPTED"
+            "code": "OPEN",
+            "short_desc": "not happy with the resolution get me your GRO"
           },
           "updated_at": "2025-03-11T07:46:39.754Z",
           "action_by": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
           "actor_details": {
             "name": "OGGY"
           }
+        },
+        {
+          "id": "9d28b251-e8ee-4d0e-8b58-d3d74e0dab92",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "we are processing the request"
+          },
+          "updated_at": "2025-03-11T07:49:06.198Z",
+          "action_by": "NP2GRO",
+          "actor_details": {
+            "name": "John Wick"
+          }
+        },
+        {
+          "id": "0331755e-f1f0-4e75-a280-3287b615e2e2c1",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc":"Resolution Proposed by gro"
+          },
+          "updated_at": "2025-03-11T07:50:12.583Z",
+          "action_by": "NP2GRO",
+          "actor_details": {
+            "name": "John Wick"
+          },
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS"
         }
       ],
       "resolutions": [
         {
-          "id": "R_PARENT",
-          "descriptor": {
-            "code": "PARENT",
-            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
-          },
-          "updated_at": "2025-03-11T07:45:13.824Z",
-          "proposed_by": "NP2"
-        },
-        {
           "id": "R1",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
           "descriptor": {
             "code": "REFUND",
             "short_desc": "Providing refund for the item"
@@ -262,14 +296,12 @@
         },
         {
           "id": "R2",
-          "ref_id": "R_PARENT",
-          "ref_type": "PARENT",
           "descriptor": {
             "code": "REPLACEMENT",
             "short_desc": "Providing replacement of the item"
           },
-          "updated_at": "2025-03-11T07:46:05.927Z",
-          "proposed_by": "NP2",
+          "updated_at": "2025-03-11T07:50:14.183Z",
+          "proposed_by": "NP2GRO",
           "tags": [
             {
               "descriptor": {
@@ -286,7 +318,9 @@
             }
           ]
         }
-      ]
+      ],
+      "created_at": "2025-03-11T07:31:15.321Z",
+      "updated_at": "2025-03-11T07:50:12.583Z"
     }
   }
 }
