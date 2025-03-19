@@ -1,9 +1,6 @@
 {
     "context": {
-        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "bpp_id": "ondc.ogoshop.in",
-        "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+        "domain": "ONDC:RET10",
         "location": {
             "country": {
                 "code": "IND"
@@ -12,13 +9,16 @@
                 "code": "*"
             }
         },
-        "transaction_id": "e17a3c57-f2be-4a2b-ac09",
-        "message_id": "yg789rh-38ad-48e6-b75b-a8bb7b38692e",
-        "timestamp": "2025-03-11T14:01:54.918Z",
-        "domain": "ONDC:RET10",
+        "action": "on_issue_status",
         "core_version": "2.0.0",
-        "ttl": "PT30S",
-        "action": "issue"
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "ondc.ogoshop.in",
+        "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+        "transaction_id": "e17a3c57-f2be-4a2b-ac09",
+        "message_id": "59252ab9-fe38-4019-a7ik",
+        "timestamp": "2025-03-11T13:46:45.226Z",
+        "ttl": "PT30S"
     },
     "message": {
         "updated_target": [
@@ -29,8 +29,10 @@
         ],
         "issue": {
             "id": "ISSUE-1",
-            "level": "ISSUE",
             "status": "PROCESSING",
+            "level": "ISSUE",
+            "created_at": "2025-03-11T13:45:21.385Z",
+            "updated_at": "2025-03-11T13:45:21.637Z",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -71,7 +73,7 @@
                 },
                 {
                     "ref_id": "deed3fdb-5891-4bef-a48c-b95ea59564f0",
-                    "ref_type": "TRANSACTION_ID"
+                    "ref_type": "TRANSACTION"
                 }
             ],
             "actors": [
@@ -80,7 +82,7 @@
                     "type": "CONSUMER",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
                         },
                         "person": {
                             "name": "Sam Manuel"
@@ -96,7 +98,7 @@
                     "type": "INTERFACING_NP",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
                         },
                         "person": {
                             "name": "John Doe"
@@ -126,6 +128,9 @@
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
+            "respondent_ids": [
+                "ondc.ogoshop.in"
+            ],
             "description": {
                 "code": "ITM04",
                 "short_desc": "Issue with product quality",
@@ -139,7 +144,7 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "7e632e25-1e24-47cc-a09e-446a6e67bad1",
+            "last_action_id": "7c5945ec-468f-4879-8985-11cf3ad1d181",
             "actions": [
                 {
                     "id": "816e6b14-a7aa-45c3-9d20-42a4732b2bb9",
@@ -164,52 +169,8 @@
                     "actor_details": {
                         "name": "ondc.ogoshop.in"
                     }
-                },
-                {
-                    "id": "54b19d2b-8df5-427d-9db4-74043bc74fdd",
-                    "description": {
-                        "code": "INFO_REQUESTED",
-                        "name": "INFO001",
-                        "short_desc": "Please provide product images"
-                    },
-                    "updated_at": "2025-03-11T13:47:19.854Z",
-                    "action_by": "ondc.ogoshop.in",
-                    "actor_details": {
-                        "name": "ondc.ogoshop.in"
-                    }
-                },
-                {
-                    "id": "80a97682-62aa-40d2-800c-5a359d317d53",
-                    "description": {
-                        "code": "INFO_REQUESTED",
-                        "name": "INFO003",
-                        "short_desc": "Please provide invoice"
-                    },
-                    "updated_at": "2025-03-11T13:48:35.276Z",
-                    "action_by": "ondc.ogoshop.in",
-                    "actor_details": {
-                        "name": "ondc.ogoshop.in"
-                    }
-                },
-                {
-                    "id": "7e632e25-1e24-47cc-a09e-446a6e67bad1",
-                    "description": {
-                        "code": "INFO_PROVIDED",
-                        "short_desc": "Issue with product quality",
-                        "images": [
-                            "https://pixabay.com/images/search/plants/"
-                        ]
-                    },
-                    "updated_at": "2025-03-11T14:01:54.918Z",
-                    "action_by": "NP1",
-                    "actor_details": {
-                        "name": "Ram kumar"
-                    },
-                    "ref_id": "54b19d2b-8df5-427d-9db4-74043bc74fdd"
                 }
-            ],
-            "created_at": "2025-03-11T13:45:21.385Z",
-            "updated_at": "2025-03-11T14:01:54.918Z"
+            ]
         }
     }
 }

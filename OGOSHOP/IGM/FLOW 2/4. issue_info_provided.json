@@ -1,9 +1,6 @@
 {
   "context": {
-    "bpp_id": "ondc.ogoshop.in",
-    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
-    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "domain": "ONDC:RET10",
     "location": {
       "country": {
         "code": "IND"
@@ -12,13 +9,16 @@
         "code": "*"
       }
     },
-    "transaction_id": "26e94d05-b64f-4312-97e8-7b3a14f81460",
-    "message_id": "2s2g4jg24-b9e7-4533-9459-7fcc33bfec7a",
-    "timestamp": "2025-03-11T07:37:32.415Z",
-    "domain": "ONDC:RET10",
+    "action": "issue",
     "core_version": "2.0.0",
-    "ttl": "PT30S",
-    "action": "on_issue"
+    "bpp_id": "ondc.ogoshop.in",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "transaction_id": "26e94d05-b64f-4312-97e8-7b3a14f81460",
+    "message_id": "00496c9e-9f3c-462b-9b29-06c9d5a4c97d",
+    "timestamp": "2025-03-11T07:39:47.632Z",
+    "ttl": "PT30S"
   },
   "message": {
     "updated_target": [
@@ -29,8 +29,10 @@
     ],
     "issue": {
       "id": "30f66c9e-125d-40a0-a700-513ffc4927c5",
-      "level": "ISSUE",
       "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2025-03-11T07:31:15.321Z",
+      "updated_at": "2025-03-11T07:39:47.632Z",
       "expected_response_time": {
         "duration": "PT30M"
       },
@@ -49,6 +51,10 @@
         {
           "ref_id": "F1",
           "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "T1",
+          "ref_type": "TRANSACTION"
         },
         {
           "ref_id": "v2_64_64_2273009_product",
@@ -80,7 +86,7 @@
           "type": "INTERFACING_NP",
           "info": {
             "org": {
-              "name": "ondc.ogoshop.in:ONDC:RET10"
+              "name": "ondc.ogoshop.in::ONDC:RET10"
             },
             "person": {
               "name": "OGGY"
@@ -96,7 +102,7 @@
           "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
-              "name": "sellerapp.com::ONDC:RET10"
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
             },
             "contact": {
               "phone": "9450394140",
@@ -114,21 +120,21 @@
         "NP2"
       ],
       "description": {
-        "code": "FLM003",
-        "short_desc": "Buyer unavailable",
-        "long_desc": "Unable to deliver order because of buyer unavailability, Delivery agent tried thrice.",
+        "code": "ORD002",
+        "short_desc": "Quality Issue",
+        "long_desc": "Product is of bad quality",
         "additional_desc": {
           "url": "https://ogoshop.com/#/terms",
           "content_type": "text/html"
         }
       },
-      "last_action_id": "435b7e2b-bc0d-455d-bf22-4cfd944f880d",
+      "last_action_id": "be75ac54-eb1a-44cd-859e-e9a69314a1da",
       "actions": [
         {
           "id": "aaabc70d-bfbf-437a-b48c-c31ca8d02276",
           "description": {
             "code": "OPEN",
-            "short_desc": "Buyer unavailable"
+            "short_desc": "Quality Issue"
           },
           "updated_at": "2025-03-11T07:31:15.321Z",
           "action_by": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
@@ -160,10 +166,24 @@
           "actor_details": {
             "name": "RAJA RAM"
           }
+        },
+        {
+          "id": "be75ac54-eb1a-44cd-859e-e9a69314a1da",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Providing images for reference",
+            "images": [
+              "https://shorturl.at/nSqpD",
+              "https://shorturl.at/MbbFn"
+            ]
+          },
+          "updated_at": "2025-03-11T07:39:47.632Z",
+          "action_by": "a0b6812d-012d-45c3-bdbb-990dd14e75e0",
+          "actor_details": {
+            "name": "OGGY"
+          }
         }
-      ],
-      "created_at": "2025-03-11T07:31:15.321Z",
-      "updated_at": "2025-03-11T07:37:32.415Z"
+      ]
     }
   }
 }

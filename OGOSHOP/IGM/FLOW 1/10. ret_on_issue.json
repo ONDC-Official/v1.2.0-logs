@@ -1,9 +1,6 @@
 {
     "context": {
-        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "bpp_id": "ondc.ogoshop.in",
-        "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+        "domain": "ONDC:RET10",
         "location": {
             "country": {
                 "code": "IND"
@@ -12,25 +9,30 @@
                 "code": "*"
             }
         },
-        "transaction_id": "e17a3c57-f2be-4a2b-ac09",
-        "message_id": "a1285a93-cd42-405c-960c-a74a54464d28",
-        "timestamp": "2025-03-11T14:32:18.427Z",
-        "domain": "ONDC:RET10",
+        "action": "on_issue",
         "core_version": "2.0.0",
-        "ttl": "PT30S",
-        "action": "on_issue"
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "ondc.ogoshop.in",
+        "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+        "transaction_id": "e17a3c57-f2be-4a2b-ac09",
+        "message_id": "s4354fefe6-e88d-454e-9cbe-c205232f511d",
+        "timestamp": "2025-03-11T14:22:51.295Z",
+        "ttl": "PT30S"
     },
     "message": {
         "updated_target": [
             {
-                "path": "issue.actions[?(@.id=='87c96745-0bed-4c93-be51-fe74c64b48bd')]",
+                "path": "issue.actions",
                 "action": "APPENDED"
             }
         ],
         "issue": {
             "id": "ISSUE-1",
+            "status": "RESOLVED",
             "level": "ISSUE",
-            "status": "CLOSED",
+            "created_at": "2025-03-11T13:45:21.385Z",
+            "updated_at": "2025-03-11T14:22:51.295Z",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -71,7 +73,7 @@
                 },
                 {
                     "ref_id": "deed3fdb-5891-4bef-a48c-b95ea59564f0",
-                    "ref_type": "TRANSACTION_ID"
+                    "ref_type": "TRANSACTION"
                 }
             ],
             "actors": [
@@ -80,7 +82,7 @@
                     "type": "CONSUMER",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
                         },
                         "person": {
                             "name": "Sam Manuel"
@@ -96,7 +98,7 @@
                     "type": "INTERFACING_NP",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
                         },
                         "person": {
                             "name": "John Doe"
@@ -126,6 +128,9 @@
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
+            "respondent_ids": [
+                "ondc.ogoshop.in"
+            ],
             "description": {
                 "code": "ITM04",
                 "short_desc": "Issue with product quality",
@@ -139,7 +144,7 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "87c96745-0bed-4c93-be51-fe74c64b48bd",
+            "last_action_id": "ae1ef0c2-83bc-4b02-b4d4-cc0d6b359747",
             "actions": [
                 {
                     "id": "816e6b14-a7aa-45c3-9d20-42a4732b2bb9",
@@ -235,6 +240,8 @@
                 },
                 {
                     "id": "1cd02cea-78db-4e0c-a93e-c75fe78862eb",
+                    "ref_id": "17d25e5a-e163-4ce2-b426-1fb20c2c92a1",
+                    "ref_type": "RESOLUTIONS",
                     "description": {
                         "code": "RESOLUTION_ACCEPTED",
                         "short_desc": "Resolution Accepted"
@@ -243,9 +250,7 @@
                     "action_by": "NP1",
                     "actor_details": {
                         "name": "Ram kumar"
-                    },
-                    "ref_id": "17d25e5a-e163-4ce2-b426-1fb20c2c92a1",
-                    "ref_type": "RESOLUTIONS"
+                    }
                 },
                 {
                     "id": "ae1ef0c2-83bc-4b02-b4d4-cc0d6b359747",
@@ -261,37 +266,8 @@
                     "actor_details": {
                         "name": "ondc.ogoshop.in"
                     }
-                },
-                {
-                    "id": "87c96745-0bed-4c93-be51-fe74c64b48bd",
-                    "description": {
-                        "code": "CLOSED",
-                        "short_desc": "Closing the complaint"
-                    },
-                    "updated_at": "2025-03-11T14:32:18.427Z",
-                    "action_by": "NP1",
-                    "actor_details": {
-                        "name": "Ram kumar"
-                    },
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "CLOSURE_DETAILS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "RATING"
-                                    },
-                                    "value": "THUMBS_UP"
-                                }
-                            ]
-                        }
-                    ]
                 }
             ],
-            "created_at": "2025-03-11T13:45:21.385Z",
-            "updated_at": "2025-03-11T14:32:18.427Z",
             "resolutions": [
                 {
                     "id": "1728209b-6679-491f-9a85-8b3c547678d4",
