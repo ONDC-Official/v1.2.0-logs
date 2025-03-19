@@ -1,0 +1,310 @@
+{
+  "context": {
+    "action": "on_confirm",
+    "domain": "ONDC:RET13",
+    "country": "IND",
+    "city": "std:080",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "preprod.ondc.dpicorp.io",
+    "bpp_uri": "https://preprod.ondc.dpicorp.io/retail/sellers/hook",
+    "transaction_id": "c28fc8cc-5fe6-4a59-99c5-bbdd9cd64d1f",
+    "message_id": "84e16d1c-098b-4af4-ac6a-2e09aac77fa3",
+    "core_version": "1.2.0",
+    "timestamp": "2025-03-17T09:36:22.204Z"
+  },
+  "message": {
+    "order": {
+      "id": "SS1742204179459",
+      "state": "Created",
+      "provider": {
+        "id": "67caaf0f8067fda1ea3ca8cd",
+        "locations": [
+          {
+            "id": "67cab14917e7c1115a7d103c"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "67cb016a8da203158c11f283",
+          "fulfillment_id": "1",
+          "quantity": {
+            "count": 2
+          }
+        }
+      ],
+      "billing": {
+        "name": "Nirdosh Chauhan",
+        "phone": "9876543210",
+        "email": "nirdosh.chauhan@sequelstring.com",
+        "address": {
+          "name": "Nirdosh Chauhan",
+          "building": "221 B",
+          "locality": "Baker Steeet",
+          "city": "Gurgaon",
+          "state": "Haryana",
+          "area_code": "560001",
+          "country": "IND"
+        },
+        "created_at": "2025-03-17T09:36:04.041Z",
+        "updated_at": "2025-03-17T09:36:04.041Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "tracking": false,
+          "@ondc/org/provider_name": "DPI Corp Delivery Network",
+          "@ondc/org/TAT": "PT10H",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "start": {
+            "contact": {
+              "phone": "08047097676",
+              "email": "contact@dpicorp.io"
+            },
+            "location": {
+              "id": "67cab14917e7c1115a7d103c",
+              "descriptor": {
+                "name": "Seller test"
+              },
+              "gps": "12.9756295,77.6066227",
+              "address": {
+                "street": "Church Street",
+                "area_code": "560001",
+                "city": "Bengaluru",
+                "locality": "Ashoka Nagara",
+                "state": "KARNATAKA"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2025-03-17T09:36:22.204Z",
+                "end": "2025-03-17T09:36:22.204Z"
+              }
+            }
+          },
+          "end": {
+            "contact": {
+              "phone": "9876543210",
+              "email": "nirdosh.chauhan@sequelstring.com"
+            },
+            "location": {
+              "gps": "12.9756295,77.6066227",
+              "address": {
+                "area_code": "560001",
+                "city": "Gurgaon",
+                "locality": "Baker Steeet",
+                "state": "Haryana",
+                "country": "IND",
+                "building": "221 B",
+                "name": "Nirdosh Chauhan"
+              }
+            },
+            "person": {
+              "name": "Nirdosh Chauhan"
+            },
+            "time": {
+              "range": {
+                "start": "2025-03-17T09:36:22.204Z",
+                "end": "2025-03-17T09:36:22.204Z"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "140.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_id": "67cb016a8da203158c11f283",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Deo",
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "100.00"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "67cb016a8da203158c11f283",
+            "@ondc/org/title_type": "discount",
+            "title": "ONDC_FA",
+            "price": {
+              "currency": "INR",
+              "value": "-60.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "params": {
+          "transaction_id": "47077d67-a3d7-4305-ada5-cb5927994cda",
+          "amount": "140.00",
+          "currency": "INR"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "beneficiary_name": "DPI Corporation Private Limited",
+            "settlement_type": "neft",
+            "upi_address": "dpicorp@hdfcbank",
+            "settlement_bank_account_no": "50200093791682",
+            "settlement_ifsc_code": "HDFC0000354",
+            "bank_name": "HDFC Bank Limited",
+            "branch_name": "Sarjapur Road"
+          }
+        ]
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": "002"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Packed",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "009"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "010,011,012,013,014,015"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "29AAKCD3527E1ZN"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "29BYDPP2323M1Z4"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "00XYZAB1234C1Z8"
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-03-17T09:36:19.459Z",
+      "updated_at": "2025-03-17T09:36:19.697Z"
+    }
+  }
+}

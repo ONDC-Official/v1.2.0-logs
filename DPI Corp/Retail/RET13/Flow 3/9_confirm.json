@@ -1,0 +1,220 @@
+{
+  "context": {
+    "action": "confirm",
+    "domain": "ONDC:RET13",
+    "country": "IND",
+    "city": "std:080",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bpp_id": "preprod.ondc.dpicorp.io",
+    "bpp_uri": "https://preprod.ondc.dpicorp.io/retail/sellers/hook",
+    "transaction_id": "797f341b-7c14-4675-998d-9eb5bffc4fe6",
+    "message_id": "1e37a93a-dba5-4a22-885d-9f9a495cae93",
+    "core_version": "1.2.0",
+    "timestamp": "2025-03-17T11:12:19.091Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "SS1742209939091",
+      "state": "Created",
+      "provider": {
+        "id": "67caaf0f8067fda1ea3ca8cd",
+        "locations": [
+          {
+            "id": "67cab14917e7c1115a7d103c"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "67cab04e7ccce5493a90dccd",
+          "fulfillment_id": "1",
+          "quantity": {
+            "count": 2
+          }
+        }
+      ],
+      "billing": {
+        "name": "Nirdosh Chauhan",
+        "phone": "9876543210",
+        "email": "nirdosh.chauhan@sequelstring.com",
+        "tax_number": "00ABCDE1234F1Z5",
+        "address": {
+          "name": "Nirdosh Chauhan",
+          "building": "221 B",
+          "locality": "Baker Steeet",
+          "city": "Gurgaon",
+          "state": "Haryana",
+          "country": "IND",
+          "area_code": "560001"
+        },
+        "created_at": "2025-03-17T11:12:01.156Z",
+        "updated_at": "2025-03-17T11:12:01.156Z"
+      },
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "gps": "12.9756295,77.6066227",
+              "address": {
+                "street": "Church Street",
+                "locality": "Ashoka Nagara",
+                "city": "Bengaluru",
+                "state": "KARNATAKA",
+                "area_code": "560001"
+              }
+            },
+            "person": {
+              "name": "Seller test"
+            },
+            "contact": {
+              "phone": "08046808282",
+              "email": "support@dpicorp.io"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.9756295,77.6066227",
+              "address": {
+                "name": "Nirdosh Chauhan",
+                "building": "221 B",
+                "locality": "Baker Steeet",
+                "city": "Gurgaon",
+                "state": "Haryana",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            },
+            "person": {
+              "name": "Nirdosh Chauhan"
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "nirdosh.chauhan@sequelstring.com"
+            }
+          },
+          "@ondc/org/TAT": "PT10H"
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "140.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/title_type": "item",
+            "@ondc/org/item_id": "67cab04e7ccce5493a90dccd",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Bag",
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "99"
+                },
+                "maximum": {
+                  "count": "99"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "100.00"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "67cab04e7ccce5493a90dccd",
+            "@ondc/org/title_type": "discount",
+            "title": "ONDC_FA",
+            "price": {
+              "currency": "INR",
+              "value": "-60.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "1",
+            "@ondc/org/title_type": "delivery",
+            "title": "Delivery charges",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "29AAKCD3527E1ZN"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "29BYDPP2323M1Z4"
+            },
+            {
+              "code": "np_type",
+              "value": "MSN"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "00XYZAB1234C1Z8"
+            },
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "type": "ON-ORDER",
+        "status": "PAID",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "DPI Corporation Private Limited",
+            "settlement_bank_account_no": "50200093791682",
+            "settlement_ifsc_code": "HDFC0000354",
+            "bank_name": "HDFC Bank Limited",
+            "branch_name": "Sarjapur Road",
+            "upi_address": "dpicorp@hdfcbank"
+          }
+        ],
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "params": {
+          "amount": "140.00",
+          "currency": "INR",
+          "transaction_id": "1e865e78-4b00-4999-b0a1-bffac438df87"
+        }
+      },
+      "created_at": "2025-03-17T11:12:19.091Z",
+      "updated_at": "2025-03-17T11:12:19.091Z"
+    }
+  }
+}
