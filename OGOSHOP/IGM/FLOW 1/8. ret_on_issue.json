@@ -1,0 +1,313 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "action": "on_issue",
+        "core_version": "2.0.0",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "ondc.ogoshop.in",
+        "bpp_uri": "https://ondc.ogoshop.in/api/ondc",
+        "transaction_id": "e17a3c57-f2be-4a2b-ac09",
+        "message_id": "5ba1a3d6-e88d-454e-9cbe-c205232f511d",
+        "timestamp": "2025-03-11T14:03:20.762Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
+        "issue": {
+            "id": "ISSUE-1",
+            "status": "PROCESSING",
+            "level": "ISSUE",
+            "created_at": "2025-03-11T13:45:21.385Z",
+            "updated_at": "2025-03-11T14:03:20.762Z",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "af550867-93c1-4a37-b041-f4fa3572258a",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "v2_64_64_2273009_product",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ref_id": "v2_64_64_company",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "4376e47b-53c9-4f00-8f7c-621b4fb5ed4f",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "deed3fdb-5891-4bef-a48c-b95ea59564f0",
+                    "ref_type": "TRANSACTION"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        }
+                    }
+                },
+                {
+                    "id": "ondc.ogoshop.in",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "ondc.ogoshop.in::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "OGOSHOP"
+                        },
+                        "contact": {
+                            "phone": "9876589032",
+                            "email": "support@ogoshop.com"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "ondc.ogoshop.in"
+            ],
+            "description": {
+                "code": "ITM04",
+                "short_desc": "Issue with product quality",
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png",
+                    "http://buyerapp.com/addtional-details/img2.png"
+                ]
+            },
+            "last_action_id": "5d79d210-d1ac-4339-a9a7-e15f1798022b",
+            "actions": [
+                {
+                    "id": "816e6b14-a7aa-45c3-9d20-42a4732b2bb9",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "Issue with product quality"
+                    },
+                    "updated_at": "2025-03-11T13:45:21.385Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Ram kumar"
+                    }
+                },
+                {
+                    "id": "7c5945ec-468f-4879-8985-11cf3ad1d181",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "We Got Your Complaint & Started Working On It"
+                    },
+                    "updated_at": "2025-03-11T13:45:21.637Z",
+                    "action_by": "ondc.ogoshop.in",
+                    "actor_details": {
+                        "name": "ondc.ogoshop.in"
+                    }
+                },
+                {
+                    "id": "54b19d2b-8df5-427d-9db4-74043bc74fdd",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO001",
+                        "short_desc": "Please provide product images"
+                    },
+                    "updated_at": "2025-03-11T13:47:19.854Z",
+                    "action_by": "ondc.ogoshop.in",
+                    "actor_details": {
+                        "name": "ondc.ogoshop.in"
+                    }
+                },
+                {
+                    "id": "80a97682-62aa-40d2-800c-5a359d317d53",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO003",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "updated_at": "2025-03-11T13:48:35.276Z",
+                    "action_by": "ondc.ogoshop.in",
+                    "actor_details": {
+                        "name": "ondc.ogoshop.in"
+                    }
+                },
+                {
+                    "id": "7e632e25-1e24-47cc-a09e-446a6e67bad1",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Issue with product quality",
+                        "images": [
+                            "https://pixabay.com/images/search/plants/"
+                        ]
+                    },
+                    "updated_at": "2025-03-11T14:01:54.918Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Ram kumar"
+                    },
+                    "ref_id": "54b19d2b-8df5-427d-9db4-74043bc74fdd"
+                },
+                {
+                    "id": "ff5688ba-2829-4402-86bd-3eceb43b3488",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Working on Your Issue"
+                    },
+                    "updated_at": "2025-03-11T14:01:55.124Z",
+                    "action_by": "ondc.ogoshop.in",
+                    "actor_details": {
+                        "name": "ondc.ogoshop.in"
+                    }
+                },
+                {
+                    "id": "5d79d210-d1ac-4339-a9a7-e15f1798022b",
+                    "ref_id": "1728209b-6679-491f-9a85-8b3c547678d4",
+                    "ref_type": "RESOLUTIONS",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "Resolution Provided"
+                    },
+                    "updated_at": "2025-03-11T14:03:20.762Z",
+                    "action_by": "ondc.ogoshop.in",
+                    "actor_details": {
+                        "name": "ondc.ogoshop.in"
+                    }
+                }
+            ],
+            "resolutions": [
+                {
+                    "id": "1728209b-6679-491f-9a85-8b3c547678d4",
+                    "descriptor": {
+                        "code": "PARENT",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+                    "updated_at": "2025-03-11T14:05:24.463Z",
+                    "proposed_by": "ondc.ogoshop.in"
+                },
+                {
+                    "id": "17d25e5a-e163-4ce2-b426-1fb20c2c92a1",
+                    "ref_id": "1728209b-6679-491f-9a85-8b3c547678d4",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "Providing refund for the item"
+                    },
+                    "updated_at": "2025-03-11T14:05:57.529Z",
+                    "proposed_by": "ondc.ogoshop.in",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM"
+                                    },
+                                    "value": "v2_64_64_2273009_product"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND_AMOUNT"
+                                    },
+                                    "value": "350"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "abd6265b-aaa9-4765-8c87-9a8b717ad780",
+                    "ref_id": "1728209b-6679-491f-9a85-8b3c547678d4",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REPLACEMENT",
+                        "short_desc": "Providing replacement of the item"
+                    },
+                    "updated_at": "2025-03-11T14:06:08.378Z",
+                    "proposed_by": "ondc.ogoshop.in",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM"
+                                    },
+                                    "value": "v2_64_64_2273009_product"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
