@@ -1,0 +1,265 @@
+{
+    "domain": "nic2004:60232",
+    "payload": {
+      "init_1": {
+        "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1742386142\",expires=\"1742389742\",headers=\"(created) (expires) digest\",signature=\"jWWgnCuhkjgqnS513snq5kn9a9DTs/oNwnaLvr26GhzbA2HCg82Mqd6EO5v93HkpskxYh97t0Rd2CepmnYK8AQ==\"",
+        "request": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "init",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "e89e15a2-28ba-47d0-bc10-a0ab8fa6093f",
+            "timestamp": "2025-03-19T12:09:02.774Z",
+            "ttl": "PT30S"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "P1"
+              },
+              "items": [
+                {
+                  "id": "I1",
+                  "fulfillment_id": "1",
+                  "category_id": "Standard Delivery",
+                  "descriptor": {
+                    "code": "P2P"
+                  }
+                }
+              ],
+              "fulfillments": [],
+              "billing": {
+                "name": "ONDC Pramaan Logistics Buyer NP",
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                },
+                "tax_number": "00ABCDE1234F1Z5",
+                "phone": "9876543210",
+                "email": "sherlock@detective.com",
+                "created_at": "2025-03-19T12:08:44.026790Z",
+                "updated_at": "2025-03-19T12:08:44.026790Z"
+              },
+              "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+              }
+            }
+          }
+        },
+        "response": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "on_init",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "e89e15a2-28ba-47d0-bc10-a0ab8fa6093f",
+            "timestamp": "2025-03-19T12:09:03.972603Z"
+          },
+          "message": {
+            "ack": {
+              "status": "ACK"
+            }
+          }
+        }
+      },
+      "on_init_1": {
+        "request": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "on_init",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "e89e15a2-28ba-47d0-bc10-a0ab8fa6093f",
+            "timestamp": "2025-03-19T12:09:03.972603Z"
+          },
+          "message": {
+            "order": {
+              "provider": {
+                "id": "P1",
+                "locations": [
+                  {
+                    "id": "L1"
+                  }
+                ]
+              },
+              "items": [
+                {
+                  "id": "I1",
+                  "fulfillment_id": "1"
+                }
+              ],
+              "fulfillments": [],
+              "quote": {
+                "price": {
+                  "currency": "INR",
+                  "value": "354"
+                },
+                "breakup": [
+                  {
+                    "@ondc/org/item_id": "I1",
+                    "@ondc/org/title_type": "delivery",
+                    "price": {
+                      "currency": "INR",
+                      "value": "300"
+                    }
+                  },
+                  {
+                    "@ondc/org/item_id": "I1",
+                    "@ondc/org/title_type": "tax",
+                    "price": {
+                      "currency": "INR",
+                      "value": "54"
+                    }
+                  }
+                ],
+                "ttl": "PT15M"
+              },
+              "payment": {
+                "type": "ON-ORDER",
+                "collected_by": "BAP"
+              },
+              "cancellation_terms": [
+                {
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "Pending",
+                      "short_desc": "008"
+                    }
+                  },
+                  "cancellation_fee": {
+                    "percentage": "0.00",
+                    "amount": {
+                      "currency": "INR",
+                      "value": "0.00"
+                    }
+                  }
+                },
+                {
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "Agent-assigned",
+                      "short_desc": "001,003"
+                    }
+                  },
+                  "cancellation_fee": {
+                    "percentage": "100.00",
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50.00"
+                    }
+                  }
+                },
+                {
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "Order-picked-up",
+                      "short_desc": "001,003"
+                    }
+                  },
+                  "cancellation_fee": {
+                    "percentage": "100.00",
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50.00"
+                    }
+                  }
+                },
+                {
+                  "fulfillment_state": {
+                    "descriptor": {
+                      "code": "Out-for-delivery",
+                      "short_desc": "011,012,013,014,015"
+                    }
+                  },
+                  "cancellation_fee": {
+                    "percentage": "100.00",
+                    "amount": {
+                      "currency": "INR",
+                      "value": "50.00"
+                    }
+                  }
+                }
+              ],
+              "tags": [
+                {
+                  "code": "bpp_terms",
+                  "list": [
+                    {
+                      "code": "max_liability",
+                      "value": "2"
+                    },
+                    {
+                      "code": "max_liability_cap",
+                      "value": "0"
+                    },
+                    {
+                      "code": "mandatory_arbitration",
+                      "value": "false"
+                    },
+                    {
+                      "code": "court_jurisdiction",
+                      "value": "Bengaluru"
+                    },
+                    {
+                      "code": "delay_interest",
+                      "value": "1000"
+                    },
+                    {
+                      "code": "static_terms",
+                      "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "response": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "on_init",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "e89e15a2-28ba-47d0-bc10-a0ab8fa6093f",
+            "timestamp": "2025-03-19T12:09:03.972603Z"
+          },
+          "message": {
+            "ack": {
+              "status": "ACK"
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,257 @@
+{
+    "domain": "nic2004:60232",
+    "payload": {
+      "search_1": {
+        "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1742386123\",expires=\"1742389723\",headers=\"(created) (expires) digest\",signature=\"8Q5wG2V25YVQPknUww64lzse7zOX92piJUbdSdKxr+Gfys+EflG3fr3zM9jt+953LI1CJ7hKOuGUvZ77t0fbAg==\"",
+        "request": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "core_version": "1.2.0",
+            "action": "search",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "01e58a43-c32b-43a1-998b-8fef27168544",
+            "timestamp": "2025-03-19T12:08:43.127Z",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "ttl": "PT30S"
+          },
+          "message": {
+            "intent": {
+              "category": {
+                "id": "Standard Delivery"
+              },
+              "provider": {
+                "time": {
+                  "days": "1,2,3,4,5,6,7",
+                  "duration": "PT30M",
+                  "range": {
+                    "start": "1100",
+                    "end": "2100"
+                  },
+                  "schedule": {
+                    "holidays": [
+                      "2025-04-18",
+                      "2025-04-08"
+                    ]
+                  }
+                }
+              },
+              "fulfillment": {
+                "type": "Delivery",
+                "start": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "area_code": "560041"
+                    }
+                  }
+                },
+                "end": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "area_code": "560001"
+                    }
+                  }
+                }
+              },
+              "payment": {
+                "type": "ON-ORDER"
+              },
+              "@ondc/org/payload_details": {
+                "category": "Home & Kitchen",
+                "value": {
+                  "currency": "INR",
+                  "value": "1000.00"
+                },
+                "dangerous_goods": false,
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                },
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                }
+              }
+            }
+          }
+        },
+        "response": {
+          "context": {
+            "domain": "nic2004:60232",
+            "action": "search",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "01e58a43-c32b-43a1-998b-8fef27168544",
+            "timestamp": "2025-03-19T12:08:43.232Z",
+            "ttl": "PT30S"
+          },
+          "message": {
+            "ack": {
+              "status": "ACK"
+            }
+          }
+        }
+      },
+      "on_search_1": {
+        "request": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "on_search",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "01e58a43-c32b-43a1-998b-8fef27168544",
+            "timestamp": "2025-03-19T12:08:44.026790Z"
+          },
+          "message": {
+            "catalog": {
+              "bpp/descriptor": {
+                "name": "Exeed Logistics",
+                "tags": [
+                  {
+                    "code": "bpp_terms",
+                    "list": [
+                      {
+                        "code": "static_terms",
+                        "value": ""
+                      },
+                      {
+                        "code": "static_terms_new",
+                        "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                      },
+                      {
+                        "code": "effective_date",
+                        "value": "2023-10-01T00:00:00.000Z"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "bpp/providers": [
+                {
+                  "id": "P1",
+                  "descriptor": {
+                    "name": "Exeed Logistics",
+                    "short_desc": "Fast Delivery Services",
+                    "long_desc": "Reliable same-day delivery"
+                  },
+                  "categories": [
+                    {
+                      "id": "Standard Delivery",
+                      "time": {
+                        "label": "TAT",
+                        "duration": "P2D",
+                        "timestamp": "2025-03-19T12:08:44.048474Z"
+                      }
+                    }
+                  ],
+                  "fulfillments": [
+                    {
+                      "id": "2",
+                      "type": "Pickup",
+                      "start": {
+                        "time": {
+                          "duration": "PT3H"
+                        }
+                      },
+                      "tags": [
+                        {
+                          "code": "distance",
+                          "list": [
+                            {
+                              "code": "motorable_distance_type",
+                              "value": "meters"
+                            },
+                            {
+                              "code": "motorable_distance",
+                              "value": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "locations": [
+                    {
+                      "id": "L1",
+                      "gps": "12.967555,77.749666",
+                      "address": {
+                        "street": "Jayanagar 4th Block",
+                        "city": "Bengaluru",
+                        "area_code": "560076",
+                        "state": "KA"
+                      }
+                    }
+                  ],
+                  "items": [
+                    {
+                      "id": "I1",
+                      "parent_item_id": "",
+                      "category_id": "Standard Delivery",
+                      "fulfillment_id": "1",
+                      "descriptor": {
+                        "code": "P2P",
+                        "name": "Standard",
+                        "short_desc": "Standard",
+                        "long_desc": "Standard"
+                      },
+                      "price": {
+                        "currency": "INR",
+                        "value": "560.00"
+                      },
+                      "time": {
+                        "label": "TAT",
+                        "duration": "P2D",
+                        "timestamp": "2025-03-19T12:08:44.048474Z"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        "response": {
+          "context": {
+            "domain": "nic2004:60232",
+            "country": "IND",
+            "city": "std:080",
+            "action": "on_search",
+            "core_version": "1.2.0",
+            "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+            "bpp_id": "exeedlog.com/exeed-ondc",
+            "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+            "transaction_id": "1f82f807-513a-4ec1-ab02-0826be87aa07",
+            "message_id": "01e58a43-c32b-43a1-998b-8fef27168544",
+            "timestamp": "2025-03-19T12:08:44.026790Z"
+          },
+          "message": {
+            "ack": {
+              "status": "ACK"
+            }
+          }
+        }
+      }
+    }
+  }
