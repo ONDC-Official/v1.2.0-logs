@@ -6,7 +6,7 @@ curl --location 'https://log-validation.ondc.org/api/validate' \
     "bap_id": "e2esell.com",
     "bpp_id": "ondc.pirimidtech.com/v2/seller",
      "payload": {
-        "search_inc_refresh":  {
+       "search_inc_refresh":{
      "context": {
           "domain": "ONDC:RET10",
           "action": "search",
@@ -44,7 +44,7 @@ curl --location 'https://log-validation.ondc.org/api/validate' \
           }
      }
 },
-        "on_search_inc_refresh":  {
+ "on_search_inc_refresh":{
      "context": {
           "domain": "ONDC:RET10",
           "country": "IND",
@@ -144,7 +144,33 @@ curl --location 'https://log-validation.ondc.org/api/validate' \
                ]
           }
      }
-}
+},
+"catalog_rejection":{
+     "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "*",
+          "action": "catalog_rejection",
+          "core_version": "1.2.0",
+          "bap_id": "preprod.e2esell.com",
+          "bap_uri": "https://preprod.e2esell.com/buyer/api",
+          "bpp_id": "ondc.pirimidtech.com/v2/seller",
+          "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+          "transaction_id": "eb2c09ca-f4ea-434c-8921-c63ae7d1298a",
+          "message_id": "9143d293-a115-469c-a7bc-142e9fef2c71",
+          "timestamp": "2025-03-22T02:19:08.724Z",
+          "ttl": "PT30S"
+     },
+     "errors": [
+       {
+         "type": "ITEM-ERROR",
+         "code": "91001",
+         "path": "message.catalog.bpp/providers[?(@.id==e2008459-7e90-493e-b02e-cae52ca53214)].items[?(@.id==0984d1dd-b5ea-417f-9104-68a2ec40dbd4)]",
+         "message": "Item price > MRP"
+       }
+     ]
+   }
+
     },
-    "flow": "1"
+    "flow": "9"
 }'
