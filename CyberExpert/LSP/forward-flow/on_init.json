@@ -1,0 +1,111 @@
+{
+    "context": {
+      "domain": "nic2004:60232",
+      "country": "IND",
+      "city": "std:0124",
+      "action": "on_init",
+      "core_version": "1.2.0",
+      "bap_id": "preprod.lsp.ecom.ind.in",
+      "bap_uri": "https://preprod.lsp.ecom.ind.in/api/v1/ondc/lsp_bap/ecom_lsp_bap",
+      "transaction_id": "39dfe3b6-6bf5-42e8-b598-0eda61cae66d",
+      "message_id": "561cf046-8843-45ca-9d7e-a5d79aeb4168",
+      "timestamp": "2025-03-26T10:15:57.565Z",
+      "ttl": "PT10M",
+      "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+      "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+    },
+    "message": {
+      "order": {
+        "provider": {
+          "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+        },
+        "items": [
+          {
+            "id": "same_del",
+            "fulfillment_id": "8b33234c-34ea-49f3-824d-96d142e62880"
+          }
+        ],
+        "fulfillments": [
+          {
+            "id": "8b33234c-34ea-49f3-824d-96d142e62880",
+            "type": "Delivery",
+            "start": {
+              "location": {
+                "address": {
+                  "name": "Pashmina Store",
+                  "building": "Tower",
+                  "locality": "new colony more",
+                  "city": "Gurugram",
+                  "state": "Haryana",
+                  "country": "INDIA",
+                  "area_code": "122001"
+                },
+                "gps": "28.4738044,77.01067610000001"
+              },
+              "contact": {
+                "phone": "8800669286",
+                "email": "praveen1@gmail.com"
+              }
+            },
+            "end": {
+              "location": {
+                "gps": "3.1353208,101.6138551",
+                "address": {
+                  "name": "Praveen Kumar",
+                  "building": "tower",
+                  "locality": "121",
+                  "city": "Petaling Jaya",
+                  "state": "Selangor",
+                  "area_code": "47400",
+                  "country": "INDIA"
+                }
+              },
+              "contact": {
+                "phone": "9988112233",
+                "email": "praveen@pashmina.com"
+              }
+            }
+          }
+        ],
+        "payment": {
+          "collected_by": "BAP",
+          "type": "POST-FULFILLMENT",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "seller-app",
+              "settlement_type": "upi",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "123456789123456",
+              "settlement_ifsc_code": "SBI00001234"
+            }
+          ]
+        },
+        "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "11529.23"
+          },
+          "breakup": [
+            {
+              "price": {
+                "currency": "INR",
+                "value": "11529.23"
+              },
+              "@ondc/org/item_id": "same_del",
+              "@ondc/org/title_type": "delivery"
+            },
+            {
+              "title": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "0.00"
+              },
+              "@ondc/org/item_id": "same_del",
+              "@ondc/org/title_type": "tax"
+            }
+          ],
+          "ttl": "P7D"
+        }
+      }
+    }
+  }
