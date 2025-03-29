@@ -1,0 +1,196 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "action": "on_issue",
+        "core_version": "2.0.0",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "smartsell.samhita.org",
+        "bpp_uri": "https://smartsell.samhita.org/ondc/api/v1",
+        "transaction_id": "sambag-tnx-1",
+        "message_id": "sambag-msg-2",
+        "timestamp": "2025-03-29T13:06:56.267Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
+        "issue": {
+            "id": "ISSUE-1",
+            "refs": [
+                {
+                    "ref_id": "2025-03-11-674835",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "28",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "790854",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "1",
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "message.order.items"
+                            }
+                        }
+                    ],
+                    "ref_id": "ondc116",
+                    "ref_type": "ITEM"
+                }
+            ],
+            "level": "ISSUE",
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "email": "sam@yahoo.com",
+                            "phone": "9879879870"
+                        }
+                    },
+                    "type": "CONSUMER"
+                },
+                {
+                    "id": "NP1",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "contact": {
+                            "email": "buyerapp@interface.com",
+                            "phone": "9450394039"
+                        }
+                    },
+                    "type": "INTERFACING_NP"
+                },
+                {
+                    "id": "22",
+                    "info": {
+                        "org": {
+                            "name": "smartsell.samhita.org::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Priya Sudhir Naik"
+                        },
+                        "contact": {
+                            "email": "priya@samhita.org",
+                            "phone": "9004694716"
+                        }
+                    },
+                    "type": "COUNTERPARTY_NP"
+                }
+            ],
+            "status": "PROCESSING",
+            "actions": [
+                {
+                    "id": "A1",
+                    "action_by": "NP1",
+                    "updated_at": "2025-03-29T10:00:00.469Z",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "251",
+                    "action_by": "NP1",
+                    "updated_at": "2025-03-29T13:03:49.432Z",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint received and being processed"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "252",
+                    "action_by": "NP1",
+                    "updated_at": "2025-03-29T13:05:22.735Z",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Need Product images"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "253",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Seller app processing the info"
+                    },
+                    "updated_at": "2025-03-29T13:06:56.267Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "created_at": "2025-03-29T10:00:00.469Z",
+            "updated_at": "2025-03-29T13:06:56.267Z",
+            "description": {
+                "code": "ITM004",
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png",
+                    "http://buyerapp.com/addtional-details/img2.png"
+                ],
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "short_desc": "Issue with product quality",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                }
+            },
+            "complainant_id": "NP1",
+            "last_action_id": "253",
+            "respondent_ids": [
+                "22"
+            ],
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            }
+        }
+    }
+}
