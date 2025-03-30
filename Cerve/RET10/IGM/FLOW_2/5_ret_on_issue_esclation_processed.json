@@ -1,0 +1,232 @@
+{
+	"context": {
+		"domain": "ONDC:RET10",
+		"location": {
+			"country": {
+				"code": "IND"
+			},
+			"city": {
+				"code": "*"
+			}
+		},
+		"version": "2.0.0",
+		"action": "on_issue",
+		"bap_id": "pre-prod.seller.cerve.in",
+		"bap_uri": "https://pre-prod.seller.cerve.in/api/v1/ondc",
+		"bpp_id": "pre-prod.buyerapp.com",
+		"bpp_uri": "https://pre-prod.buyerapp.com/ondc",
+		"transaction_id": "3e12563d-bda7-471d-a920-7812db8fe098",
+		"message_id": "35765732-d819-4a6b-9cdf-90dca772652f",
+		"timestamp": "2025-02-20T18:48:24.206Z",
+		"ttl": "PT10M"
+	},
+	"message": {
+		"updated_target": [
+			{
+				"path": "issue.actions",
+				"action": "APPENDED"
+			}
+		],
+		"issue": {
+			"id": "ISSUE-1",
+			"status": "PROCESSING",
+			"level": "ISSUE",
+			"created_at": "2025-02-20T18:43:54.965Z",
+			"updated_at": "2025-02-20T18:48:24.206Z",
+			"expected_response_time": {
+				"duration": "PT2H"
+			},
+			"expected_resolution_time": {
+				"duration": "P1D"
+			},
+			"refs": [
+				{
+					"ref_id": "2024-11-25-105627",
+					"ref_type": "ORDER"
+				},
+				{
+					"ref_id": "8e23df63-601b-4688-a7e1-42fd128eb30b",
+					"ref_type": "PROVIDER",
+					"tags": [
+						{
+							"descriptor": {
+								"code": "message.order.items"
+							},
+							"list": [
+								{
+									"descriptor": {
+										"code": "quantity.selected.count"
+									},
+									"value": "2"
+								}
+							]
+						}
+					]
+				},
+				{
+					"ref_id": "f1",
+					"ref_type": "FULFILLMENT"
+				}
+			],
+			"actors": [
+				{
+					"id": "CUST1",
+					"type": "CONSUMER",
+					"info": {
+						"org": {
+							"name": "buyerapp.com::ONDC:RET10"
+						},
+						"person": {
+							"name": "Sam Manuel"
+						},
+						"contact": {
+							"phone": "9879879870",
+							"email": "sam@yahoo.com"
+						}
+					}
+				},
+				{
+					"id": "NP1",
+					"type": "INTERFACING_NP",
+					"info": {
+						"org": {
+							"name": "buyerapp.com::ONDC:RET10"
+						},
+						"person": {
+							"name": "John Doe"
+						},
+						"contact": {
+							"phone": "9450394039",
+							"email": "buyerapp@interface.com"
+						}
+					}
+				},
+				{
+					"id": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
+					"type": "TRANSACTION_COUNTERPARTY_NP",
+					"info": {
+						"org": {
+							"name": "pre-prod.seller.cerve.in::ONDC:RET10"
+						},
+						"person": {
+							"name": "Rini Store"
+						},
+						"contact": {
+							"phone": "7760535656",
+							"email": "susrisaswati+rinistore@gmail.com"
+						}
+					}
+				}
+			],
+			"respondent_ids": [
+				"6617aade-8b91-4657-b9b5-5d7946cd5fcf"
+			],
+			"description": {
+				"code": "FLM001",
+				"short_desc": "Issue with product quality",
+				"images": [
+					"http://buyerapp.com/addtional-details/img1.png",
+					"http://buyerapp.com/addtional-details/img2.png"
+				],
+				"long_desc": "Product quality is not correct. facing issues while using the product",
+				"additional_desc": {
+					"url": "https://buyerapp.com/additonal-details/desc.txt",
+					"content_type": "text/plain"
+				}
+			},
+			"last_action_id": "2b5a89bc-6dc2-4da1-9169-e7bdf4d2a9d7",
+			"resolutions": [
+				{
+					"id": "tR20rQQf0rhe",
+					"descriptor": {
+						"code": "PARENT",
+						"short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+					},
+					"updated_at": "2025-02-20T18:47:30.584Z",
+					"proposed_by": "NP2"
+				},
+				{
+					"id": "3013bf3e-e3b9-40e0-930d-6abbffe0f9a7",
+					"ref_id": "tR20rQQf0rhe",
+					"ref_type": "PARENT",
+					"descriptor": {
+						"code": "NO-ACTION",
+						"short_desc": "No action required"
+					},
+					"updated_at": "2025-02-20T18:47:30.584Z",
+					"proposed_by": "NP2",
+					"tags": [
+						{
+							"descriptor": {
+								"code": "RESOLUTION_DETAILS"
+							},
+							"list": []
+						}
+					]
+				}
+			],
+			"actions": [
+				{
+					"id": "A1",
+					"description": {
+						"code": "OPEN",
+						"short_desc": "OPEN"
+					},
+					"updated_at": "2025-02-20T18:43:54.964Z",
+					"action_by": "NP2",
+					"actor_details": {
+						"name": "Rina Mathur"
+					}
+				},
+				{
+					"id": "2de1162f-4830-4798-aa8a-71670d06c578",
+					"description": {
+						"code": "PROCESSING",
+						"short_desc": "We are investigating your concern. We will get back to you soon."
+					},
+					"updated_at": "2025-02-20T18:43:55.113Z",
+					"action_by": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
+					"actor_details": {
+						"name": "Rini Store"
+					}
+				},
+				{
+					"id": "60050ec2-7aed-48ba-8c1f-a3f8d422c404",
+					"description": {
+						"code": "RESOLUTION_PROPOSED"
+					},
+					"ref_id": "tR20rQQf0rhe",
+					"ref_type": "RESOLUTIONS",
+					"action_by": "NP2",
+					"actor_details": {
+						"name": "Susri Madhu"
+					}
+				},
+				{
+					"id": "A2",
+					"description": {
+						"code": "ESCALATED",
+						"short_desc": "not satisfied the proposal from seller"
+					},
+					"updated_at": "2025-02-20T18:48:24.146Z",
+					"action_by": "NP2",
+					"actor_details": {
+						"name": "Rina Mathur"
+					}
+				},
+				{
+					"id": "2b5a89bc-6dc2-4da1-9169-e7bdf4d2a9d7",
+					"description": {
+						"code": "PROCESSING",
+						"short_desc": "The issue has been escalated to the appropriate team for resolution. Updates will follow soon."
+					},
+					"updated_at": "2025-02-20T18:48:24.206Z",
+					"action_by": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
+					"actor_details": {
+						"name": "Rini Store"
+					}
+				}
+			]
+		}
+	}
+}

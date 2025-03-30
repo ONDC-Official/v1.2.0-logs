@@ -1,0 +1,91 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "schemaErr0": "/message/catalog/bpp~1fulfillments/2/type must be equal to one of the allowed values (Delivery,Self-Pickup)",
+                "schemaErr1": "/message/catalog/bpp~1providers/0/locations/0/address must NOT have additional properties (building)",
+                "schemaErr2": "/message/catalog/bpp~1providers/0/locations/0/address must NOT have additional properties (country)",
+                "schemaErr3": "/message/catalog/bpp~1providers/0/categories/0/id must match pattern \"^[a-zA-Z0-9-]{12}$\"",
+                "schemaErr4": "/message/catalog/bpp~1providers/1/locations/0/address must NOT have additional properties (country)",
+                "schemaErr5": "/message/catalog/bpp~1providers/1/categories/0/id must match pattern \"^[a-zA-Z0-9-]{12}$\"",
+                "prvdr0item0statutoryReq": "The following item/category_id is not having item0/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr0item1statutoryReq": "The following item/category_id is not having item1/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr0item2statutoryReq": "The following item/category_id is not having item2/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr0item3statutoryReq": "The following item/category_id is not having item3/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr1item0statutoryReq": "The following item/category_id is not having item0/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr1item1statutoryReq": "The following item/category_id is not having item1/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr1item2statutoryReq": "The following item/category_id is not having item2/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "prvdr1item3statutoryReq": "The following item/category_id is not having item3/'@ondc/org/statutory_reqs_packaged_commodities' in bpp/providers for /on_search",
+                "bpp/descriptor/collect_payment": "collect_payment is not required in bpp/descriptor/tags for now "
+            },
+            "on_init": {
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+            },
+            "confirm": {
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+                "bapGstTags": "Tags/bap_terms should have valid gst number and fields in /confirm"
+            },
+            "on_confirm": {
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet",
+                "message.order.tags[0].list": "Pan_id shouldn't be same in tax_number and provider_tax_number in message.order.tags[0].list",
+                "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+                "tags_bap_terms": "Tags should have same and valid gst_number as passed in /confirm"
+            },
+            "on_status_pending": {
+                "errmsg": "When the onConfirm Order State is 'Accepted', the on_status_pending is not required!"
+            },
+            "on_status_packed": {
+                "ttl_err": "ttl = PT30S as per the API Contract"
+            },
+            "on_status_picked": {
+                "ttl_err": "ttl = PT30S as per the API Contract"
+            },
+            "on_status_out_for_delivery": {
+                "on_status_out_for_delivery_msgId": "Message id should not be same with previous calls",
+                "ttl_err": "ttl = PT30S as per the API Contract",
+                "noOrdrOut_for_delivery": "fulfillments/state Should be out-for-delivery for /on_status_Out-for-delivery"
+            },
+            "on_cancel": {
+                "schemaErr0": "/message/order must NOT have additional properties (tags)",
+                "schemaErr1": "/message/order must NOT have additional properties (documents)",
+                "schemaErr2": "/message/order/state must be equal to one of the allowed values (Cancelled)",
+                "schemaErr3": "/message/order/fulfillments/0/state/descriptor/code must be equal to one of the allowed values (Cancelled,RTO-Initiated,RTO-Delivered,RTO-Disposed)",
+                "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_cancel should be equal to the price as in on_confirm",
+                "missingRTO": "RTO object is mandatory for on_cancel",
+                "RTO.start.location/DeliveryFulfillment.end.location": "RTO fulfillment start or Delivery fulfillment end location is missing in on_cancel",
+                "RTO.end.location/DeliveryFulfillment.start.location": "RTO fulfillment end or Delivery fulfillment start location is missing in on_cancel",
+                "invalidState": "Delivery state should be Cancelled for on_cancel",
+                "missingCancelRequest": "Cancel Request is mandatory for on_cancel in fulfillment type delivery",
+                "missingPreCancel": "Pre Cancel is mandatory for on_cancel",
+                "missingReasonID": "Reason ID is mandatory field for on_cancel",
+                "missingRTOvalues": "RTO Id is mandatory field for on_cancel",
+                "missingInitiatedBy": "Initiated_by is mandatory field for on_cancel"
+            },
+            "on_status_rto_delivered/disposed": {
+                "schemaErr0": "/message/order must NOT have additional properties (tags)",
+                "schemaErr1": "/message/order must NOT have additional properties (documents)",
+                "schemaErr2": "/message/order/state must be equal to one of the allowed values (Cancelled)",
+                "schemaErr3": "/message/order/fulfillments/0/state/descriptor/code must be equal to one of the allowed values (Cancelled,RTO-Initiated,RTO-Delivered,RTO-Disposed)",
+                "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_cancel should be equal to the price as in on_confirm",
+                "missingRTO": "RTO object is mandatory for on_status_rto_delivered/disposed",
+                "RTO.start.location/DeliveryFulfillment.end.location": "RTO fulfillment start or Delivery fulfillment end location is missing in on_status_rto_delivered/disposed",
+                "RTO.end.location/DeliveryFulfillment.start.location": "RTO fulfillment end or Delivery fulfillment start location is missing in on_status_rto_delivered/disposed",
+                "invalidState": "Delivery state should be Cancelled for on_status_rto_delivered/disposed",
+                "missingCancelRequest": "Cancel Request is mandatory for on_status_rto_delivered/disposed in fulfillment type delivery",
+                "missingPreCancel": "Pre Cancel is mandatory for on_status_rto_delivered/disposed",
+                "missingReasonID": "Reason ID is mandatory field for on_status_rto_delivered/disposed",
+                "missingRTOvalues": "RTO Id is mandatory field for on_status_rto_delivered/disposed",
+                "missingInitiatedBy": "Initiated_by is mandatory field for on_status_rto_delivered/disposed"
+            }
+        },
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bap_id": "preprod.eazehub.com",
+        "domain": "ONDC:RET10",
+        "reportTimestamp": "2025-02-20T19:08:59.846Z"
+    },
+    "signature": "QDcL6xdloNKZOOMR9VsOfUcyP1u/pR1MhtVpFfcTxyWZMjGIFV2amX1k3IN0jwFbAJQZnbKvbfwbDF/623caBQ==",
+    "signTimestamp": "2025-02-20T19:08:59.846Z"
+}

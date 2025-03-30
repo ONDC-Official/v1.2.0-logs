@@ -1,0 +1,203 @@
+{
+    "context": {
+        "domain": "ONDC:RET13",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-mock-server-dev.thewitslab.com",
+        "bap_uri": "https://ondc-mock-server-dev.thewitslab.com/buyer",
+        "transaction_id": "f01724e8-cac2-4def-b3dc-c4f51cfb4f40",
+        "message_id": "c3e76389-853d-49a4-8269-538cb9e492e1",
+        "timestamp": "2024-09-27T14:51:59.656Z",
+        "ttl": "PT30S",
+        "bpp_id": "prelive.buyume.io",
+        "bpp_uri": "https://prelive.buyume.io/ondc"
+    },
+    "message": {
+        "order": {
+            "id": "BM1000",
+            "state": "In-progress",
+            "provider": {
+                "id": "62a03165ced1fb651ad9230c",
+                "locations": [
+                    {
+                        "id": "SALON_ADDRESS"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "66ea637d805c438709fccdf6",
+                    "fulfillment_id": "1",
+                    "quantity": {
+                        "count": 1
+                    }
+                }
+            ],
+            "billing": {
+                "name": "Paytm",
+                "address": {
+                    "name": "Ravinder",
+                    "building": "10/53 raju partment",
+                    "locality": "AK colony Dombur",
+                    "city": "Banglore",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560001"
+                },
+                "phone": "7304569870",
+                "created_at": "2024-09-27T13:36:57.656Z",
+                "updated_at": "2024-09-27T13:36:57.656Z"
+            },
+            "fulfillments": [
+                {
+                    "id": "1",
+                    "@ondc/org/provider_name": "shree ji the family salon",
+                    "state": {
+                        "descriptor": {
+                            "code": "Out-for-delivery"
+                        }
+                    },
+                    "type": "Delivery",
+                    "tracking": false,
+                    "@ondc/org/TAT": "P2D",
+                    "start": {
+                        "location": {
+                            "id": "SALON_ADDRESS",
+                            "descriptor": {
+                                "name": "shree ji the family salon"
+                            },
+                            "gps": "12.9747306,77.6069128",
+                            "address": {
+                                "locality": "canera bank",
+                                "city": "Banglore GPO",
+                                "area_code": "560001",
+                                "state": "Karnataka"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7304569870"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-09-27T14:40:59.656Z",
+                                "end": "2024-09-27T14:41:58.656Z"
+                            },
+                            "timestamp": "2024-09-27T14:50:59.656Z"
+                        }
+                    },
+                    "end": {
+                        "person": {
+                            "name": "Paytm"
+                        },
+                        "location": {
+                            "gps": "12.95680530,77.63706540",
+                            "address": {
+                                "name": "Ravinder",
+                                "building": "10/53 raju partment",
+                                "locality": "AK colony Dombur",
+                                "city": "Banglore",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560001"
+                            }
+                        },
+                        "contact": {
+                            "phone": "7304569870"
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2024-09-27T14:40:59.656Z",
+                                "end": "2024-09-27T14:41:58.656Z"
+                            }
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "quote": {
+                "price": {
+                    "value": "325",
+                    "currency": "INR"
+                },
+                "breakup": [
+                    {
+                        "title": "KELYN NATURALS GOLD FACIAL KIT",
+                        "price": {
+                            "value": "325",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/title_type": "item",
+                        "@ondc/org/item_id": "66ea637d805c438709fccdf6",
+                        "item": {
+                            "quantity": {
+                                "maximum": {
+                                    "count": "1"
+                                },
+                                "available": {
+                                    "count": "1"
+                                }
+                            },
+                            "price": {
+                                "value": "325",
+                                "currency": "INR"
+                            }
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        }
+                    },
+                    {
+                        "title": "Delivery charges",
+                        "price": {
+                            "value": "0",
+                            "currency": "INR"
+                        },
+                        "@ondc/org/title_type": "delivery",
+                        "@ondc/org/item_id": "1"
+                    }
+                ],
+                "ttl": "PT30S"
+            },
+            "payment": {
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "params": {
+                    "amount": "325",
+                    "currency": "INR",
+                    "transaction_id": "try_iusjwu3j2h3"
+                },
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "5",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "upi_address": "7304569870@ybl"
+                    }
+                ]
+            },
+            "documents": [
+                {
+                    "url": "https://buyume-app.s3.ap-south-1.amazonaws.com/fcOrderLabels/Label-2876713.pdf",
+                    "label": "Invoice"
+                }
+            ],
+            "created_at": "2024-09-27T13:40:59.656Z",
+            "updated_at": "2024-09-27T14:51:59.656Z"
+        }
+    }
+}

@@ -1,438 +1,455 @@
 {
-  "context": {
-    "domain": "ONDC:NTS10",
-    "country": "IND",
-    "city": "*",
-    "action": "receiver_recon",
-    "core_version": "1.0.0",
-    "bpp_id": "rsf-mock-service.ondc.org",
-    "bpp_uri": "https://rsf-mock-service.ondc.org/",
-    "bap_id": "pre.production.artisanswizard.com",
-    "bap_uri": "https://pre.production.artisanswizard.com/ondc",
-    "transaction_id": "0615e914-2f0c-4bf7-ba36-a782b94313a1",
-    "message_id": "c5ffdacd-bb63-486f-bb9b-42c540d584ae",
-    "timestamp": "2024-06-04T08:44:28.000Z",
-    "ttl": "P3D"
-  },
-  "message": {
-    "orderbook": {
-      "orders": [
-        {
-          "id": "2024-03-12-263583",
-          "invoice_no": "SRTPL/2024-03/00004",
-          "collector_app_id": "abc.collectorapp.com",
-          "receiver_app_id": "pre.production.artisanswizard.com",
-          "state": "Completed",
-          "provider": {
-            "name": {
-              "name": "Sabhyasha Retail Tech Pvt. Ltd.",
-              "code": "3"
+  "body": {
+    "context": {
+      "ttl": "P2D",
+      "city": "*",
+      "action": "receiver_recon",
+      "bap_id": "rsf-mock-service.ondc.org",
+      "bpp_id": "pre.production.artisanswizard.com",
+      "domain": "ONDC:NTS10",
+      "bap_uri": "https://rsf-mock-service.ondc.org/",
+      "bpp_uri": "https://pre.production.artisanswizard.com/ondc",
+      "country": "IND",
+      "timestamp": "2024-07-01T13:02:52.089Z",
+      "message_id": "7392dc9e-2a50-42ac-a178-c68c643985be",
+      "core_version": "1.0.0",
+      "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965"
+    },
+    "message": {
+      "orderbook": {
+        "orders": [
+          {
+            "id": "17d1b97b-276a-4321-144e-b1021539ba6d",
+            "state": "Completed",
+            "payment": {
+              "uri": "https://api.razorpay.com/rsp",
+              "type": "ON-ORDER",
+              "params": {
+                "amount": "400",
+                "currency": "INR",
+                "transaction_id": "3df395a9",
+                "transaction_status": "PAID"
+              },
+              "status": "PAID",
+              "tl_method": "http/get",
+              "collected_by": "BAP",
+              "@ondc/org/return_window": "P6D",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P10D",
+              "@ondc/org/settlement_details": [
+                {
+                  "bank_name": "ICICI",
+                  "branch_name": "Chennai",
+                  "upi_address": "success@upi",
+                  "settlement_type": "neft",
+                  "beneficiary_name": "Itemcraze Solutions Pvt. Ltd",
+                  "settlement_phase": "sale-amount",
+                  "settlement_amount": "790",
+                  "settlement_status": "PAID",
+                  "beneficiary_address": "Chennai",
+                  "settlement_ifsc_code": "ICIC0006609",
+                  "settlement_reference": "LcQnCo6vNoHJMF",
+                  "settlement_timestamp": "2023-04-12T09:35:56.383Z",
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_bank_account_no": "99679007677676"
+                }
+              ],
+              "@ondc/org/withholding_amount": "0",
+              "@ondc/org/collected_by_status": "Assert",
+              "@ondc/org/return_window_status": "Assert",
+              "@ondc/org/settlement_basis_status": "Assert",
+              "@ondc/org/settlement_window_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_type": "Amount",
+              "@ondc/org/withholding_amount_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_amount": "0"
             },
-            "address": "KHORDHA"
-          },
-          "payment": {
-            "uri": "https://juspay.in/",
-            "tl_method": "http/get",
-            "params": {
-              "transaction_id": "8e6f8b44-f97a-40c7-8536-a6fd0118b2ae",
-              "transaction_status": "PAID",
-              "amount": "500",
+            "provider": {
+              "name": {
+                "code": "18275-ONDC-1",
+                "name": "Fast forward frieght"
+              },
+              "address": "kormangala"
+            },
+            "created_at": "2023-04-11T12:44:56.399Z",
+            "invoice_no": "2023/XYZ/12346-3",
+            "updated_at": "2023-04-12T09:35:56.383Z",
+            "payerdetails": {
+              "payer_name": "Itemzoo company Pvt. Ltd",
+              "payer_address": "Bengaluru",
+              "payer_bank_code": "HDFC0000000",
+              "payer_account_no": "509424924294248",
+              "payer_virtual_payment_address": "80abc@abctMh2h"
+            },
+            "recon_status": "01",
+            "settlement_id": "LcQnCmN9HUJl9J",
+            "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965",
+            "receiver_app_id": "abc.receiverapp.com",
+            "collector_app_id": "abc.collectorapp.com",
+            "receiver_app_uri": "https://abc.receiverapp.com",
+            "withholding_tax_gst": {
+              "value": "0",
               "currency": "INR"
             },
-            "type": "ON-ORDER",
-            "status": "PAID",
-            "collected_by": "BAP",
-            "@ondc/org/collected_by_status": "Assert",
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/withholding_amount": "0",
-            "@ondc/org/withholding_amount_status": "Assert",
-            "@ondc/org/return_window": "",
-            "@ondc/org/return_window_status": "Assert",
-            "@ondc/org/settlement_basis": "",
-            "@ondc/org/settlement_basis_status": "Assert",
-            "@ondc/org/settlement_window": "",
-            "@ondc/org/settlement_window_status": "Assert",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "buyer-app",
-                "settlement_phase": "sale-amount",
-                "settlement_amount": 500,
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "99679007677676",
-                "settlement_ifsc_code": "HDFC900008",
-                "upi_address": "sellerapp@upi",
-                "bank_name": "HDFC",
-                "branch_name": "Bomikhal",
-                "beneficiary_name": "Sabhyasha Retail Tech Pvt. Ltd.",
-                "beneficiary_address": "Bhubaneswar",
-                "settlement_status": "PAID",
-                "settlement_reference": "2dcadd78-5036-4eb3-8b07-f445c3fa4c67",
-                "settlement_timestamp": "2024-06-04T08:44:28.000Z"
-              }
-            ]
-          },
-          "withholding_tax_gst": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "withholding_tax_tds": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "deduction_by_collector": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "order_recon_status": "01",
-          "payerdetails": {
-            "payer_name": "Example1 company Pvt. Ltd",
-            "payer_address": "New Delhi",
-            "payer_account_no": "509424924294248",
-            "payer_bank_code": "HDFC0000000",
-            "payer_virtual_payment_address": "80abc@abctMh2h"
-          },
-          "settlement_reason_code": "01",
-          "transaction_id": "3ca79cc4-626c-4ba0-8d76-3c99cbb979f4",
-          "settlement_id": "1ed4e2a2-7a07-40df-af6f-a50a380d0dbe",
-          "settlement_reference_no": "SAB3718683618631",
-          "recon_status": "01",
-          "created_at": "2024-03-12T10:11:09.000Z",
-          "updated_at": "2024-03-12T10:24:43.000Z"
-        },
-        {
-          "id": "2024-03-12-614020",
-          "invoice_no": "SRTPL/2024-03/00005",
-          "collector_app_id": "abc.collectorapp.com",
-          "receiver_app_id": "pre.production.artisanswizard.com",
-          "state": "Completed",
-          "provider": {
-            "name": {
-              "name": "Sabhyasha Retail Tech Pvt. Ltd.",
-              "code": "3"
-            },
-            "address": "KHORDHA"
-          },
-          "payment": {
-            "uri": "https://juspay.in/",
-            "tl_method": "http/get",
-            "params": {
-              "transaction_id": "60ae46f4-3b71-4c55-9f8e-d2818b151221",
-              "transaction_status": "PAID",
-              "amount": "500",
+            "withholding_tax_tds": {
+              "value": "0",
               "currency": "INR"
             },
-            "type": "ON-ORDER",
-            "status": "PAID",
-            "collected_by": "BAP",
-            "@ondc/org/collected_by_status": "Assert",
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/withholding_amount": "0",
-            "@ondc/org/withholding_amount_status": "Assert",
-            "@ondc/org/return_window": "",
-            "@ondc/org/return_window_status": "Assert",
-            "@ondc/org/settlement_basis": "",
-            "@ondc/org/settlement_basis_status": "Assert",
-            "@ondc/org/settlement_window": "",
-            "@ondc/org/settlement_window_status": "Assert",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "buyer-app",
-                "settlement_phase": "sale-amount",
-                "settlement_amount": 500,
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "99679007677676",
-                "settlement_ifsc_code": "HDFC900008",
-                "upi_address": "sellerapp@upi",
-                "bank_name": "HDFC",
-                "branch_name": "Bomikhal",
-                "beneficiary_name": "Sabhyasha Retail Tech Pvt. Ltd.",
-                "beneficiary_address": "Bhubaneswar",
-                "settlement_status": "PAID",
-                "settlement_reference": "aa4656bd-8888-4720-a50b-eb9d5bde5b05",
-                "settlement_timestamp": "2024-06-04T08:44:28.000Z"
-              }
-            ]
-          },
-          "withholding_tax_gst": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "withholding_tax_tds": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "deduction_by_collector": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "order_recon_status": "01",
-          "payerdetails": {
-            "payer_name": "Example1 company Pvt. Ltd",
-            "payer_address": "New Delhi",
-            "payer_account_no": "509424924294248",
-            "payer_bank_code": "HDFC0000000",
-            "payer_virtual_payment_address": "80abc@abctMh2h"
-          },
-          "settlement_reason_code": "01",
-          "transaction_id": "8a3c7db9-7d9d-4306-9f9c-9296659a84ae",
-          "settlement_id": "8f3722f1-7692-4632-a5b3-a8cacac6fe84",
-          "settlement_reference_no": "SAB3718683618631",
-          "recon_status": "01",
-          "created_at": "2024-03-12T10:44:06.000Z",
-          "updated_at": "2024-03-12T11:03:09.000Z"
-        },
-        {
-          "id": "2024-03-21-387171",
-          "invoice_no": "SRTPL/2024-03/000014",
-          "collector_app_id": "abc.collectorapp.com",
-          "receiver_app_id": "pre.production.artisanswizard.com",
-          "state": "Completed",
-          "provider": {
-            "name": {
-              "name": "Sabhyasha Retail Tech Pvt. Ltd.",
-              "code": "3"
-            },
-            "address": "KHORDHA"
-          },
-          "payment": {
-            "uri": "https://juspay.in/",
-            "tl_method": "http/get",
-            "params": {
-              "transaction_id": "770c3405-9bf9-431a-b808-1dfea10ea2d6",
-              "transaction_status": "PAID",
-              "amount": "500",
+            "deduction_by_collector": {
+              "value": "0",
               "currency": "INR"
             },
-            "type": "ON-ORDER",
-            "status": "PAID",
-            "collected_by": "BAP",
-            "@ondc/org/collected_by_status": "Assert",
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/withholding_amount": "0",
-            "@ondc/org/withholding_amount_status": "Assert",
-            "@ondc/org/return_window": "",
-            "@ondc/org/return_window_status": "Assert",
-            "@ondc/org/settlement_basis": "",
-            "@ondc/org/settlement_basis_status": "Assert",
-            "@ondc/org/settlement_window": "",
-            "@ondc/org/settlement_window_status": "Assert",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "buyer-app",
-                "settlement_phase": "sale-amount",
-                "settlement_amount": 500,
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "99679007677676",
-                "settlement_ifsc_code": "HDFC900008",
-                "upi_address": "sellerapp@upi",
-                "bank_name": "HDFC",
-                "branch_name": "Bomikhal",
-                "beneficiary_name": "Sabhyasha Retail Tech Pvt. Ltd.",
-                "beneficiary_address": "Bhubaneswar",
-                "settlement_status": "PAID",
-                "settlement_reference": "b48af65a-e9bb-4514-a15f-aefa997d9323",
-                "settlement_timestamp": "2024-06-04T08:44:28.000Z"
-              }
-            ]
+            "settlement_reason_code": "01",
+            "settlement_reference_no": "LcQnCo6vNoHJMF",
+            "order_recon_status": "01"
           },
-          "withholding_tax_gst": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "withholding_tax_tds": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "deduction_by_collector": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "order_recon_status": "01",
-          "payerdetails": {
-            "payer_name": "Example1 company Pvt. Ltd",
-            "payer_address": "New Delhi",
-            "payer_account_no": "509424924294248",
-            "payer_bank_code": "HDFC0000000",
-            "payer_virtual_payment_address": "80abc@abctMh2h"
-          },
-          "settlement_reason_code": "01",
-          "transaction_id": "6c6418b6-de84-49f1-9fee-6b2b6957b52c",
-          "settlement_id": "cf2944cd-ced3-4737-a400-20b367506d15",
-          "settlement_reference_no": "SAB3718683618631",
-          "recon_status": "01",
-          "created_at": "2024-03-21T14:47:34.000Z",
-          "updated_at": "2024-03-21T14:54:30.000Z"
-        },
-        {
-          "id": "2024-03-21-541704",
-          "invoice_no": "SRTPL/2024-03/000015",
-          "collector_app_id": "abc.collectorapp.com",
-          "receiver_app_id": "pre.production.artisanswizard.com",
-          "state": "Completed",
-          "provider": {
-            "name": {
-              "name": "Sabhyasha Retail Tech Pvt. Ltd.",
-              "code": "3"
+          {
+            "id": "5b6d6b3b-5c9b-44a6-a6d1-0a3f2f50b6c5",
+            "state": "Completed",
+            "payment": {
+              "uri": "https://api.razorpay.com/rsp",
+              "type": "ON-ORDER",
+              "params": {
+                "amount": "500",
+                "currency": "INR",
+                "transaction_id": "3df395a9",
+                "transaction_status": "PAID"
+              },
+              "status": "PAID",
+              "tl_method": "http/get",
+              "collected_by": "BAP",
+              "@ondc/org/return_window": "P6D",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P10D",
+              "@ondc/org/settlement_details": [
+                {
+                  "bank_name": "ICICI",
+                  "branch_name": "Chennai",
+                  "upi_address": "success@upi",
+                  "settlement_type": "neft",
+                  "beneficiary_name": "Itemcraze Solutions Pvt. Ltd",
+                  "settlement_phase": "sale-amount",
+                  "settlement_amount": "750",
+                  "settlement_status": "PAID",
+                  "beneficiary_address": "Chennai",
+                  "settlement_ifsc_code": "ICIC0006609",
+                  "settlement_reference": "LcQnCo72PIAPFp",
+                  "settlement_timestamp": "2023-04-12T09:35:56.383Z",
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_bank_account_no": "99679007677676"
+                }
+              ],
+              "@ondc/org/withholding_amount": "0",
+              "@ondc/org/collected_by_status": "Assert",
+              "@ondc/org/return_window_status": "Assert",
+              "@ondc/org/settlement_basis_status": "Assert",
+              "@ondc/org/settlement_window_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_type": "Amount",
+              "@ondc/org/withholding_amount_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_amount": "0"
             },
-            "address": "KHORDHA"
-          },
-          "payment": {
-            "uri": "https://juspay.in/",
-            "tl_method": "http/get",
-            "params": {
-              "transaction_id": "8bdec4da-fc3b-406d-9484-148854c233e0",
-              "transaction_status": "PAID",
-              "amount": "500",
+            "provider": {
+              "name": {
+                "code": "18275-ONDC-1",
+                "name": "Fast forward frieght"
+              },
+              "address": "kormangala"
+            },
+            "created_at": "2023-04-11T12:44:56.399Z",
+            "invoice_no": "2023/XYZ/12345-21",
+            "updated_at": "2023-04-12T09:35:56.383Z",
+            "payerdetails": {
+              "payer_name": "Itemzoo company Pvt. Ltd",
+              "payer_address": "Bengaluru",
+              "payer_bank_code": "HDFC0000000",
+              "payer_account_no": "509424924294248",
+              "payer_virtual_payment_address": "80abc@abctMh2h"
+            },
+            "recon_status": "01",
+            "settlement_id": "LcQnCmOvqKTOea",
+            "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965",
+            "receiver_app_id": "abc.receiverapp.com",
+            "collector_app_id": "abc.collectorapp.com",
+            "receiver_app_uri": "https://abc.receiverapp.com",
+            "withholding_tax_gst": {
+              "value": "0",
               "currency": "INR"
             },
-            "type": "ON-ORDER",
-            "status": "PAID",
-            "collected_by": "BAP",
-            "@ondc/org/collected_by_status": "Assert",
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/withholding_amount": "0",
-            "@ondc/org/withholding_amount_status": "Assert",
-            "@ondc/org/return_window": "",
-            "@ondc/org/return_window_status": "Assert",
-            "@ondc/org/settlement_basis": "",
-            "@ondc/org/settlement_basis_status": "Assert",
-            "@ondc/org/settlement_window": "",
-            "@ondc/org/settlement_window_status": "Assert",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "buyer-app",
-                "settlement_phase": "sale-amount",
-                "settlement_amount": 500,
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "99679007677676",
-                "settlement_ifsc_code": "HDFC900008",
-                "upi_address": "sellerapp@upi",
-                "bank_name": "HDFC",
-                "branch_name": "Bomikhal",
-                "beneficiary_name": "Sabhyasha Retail Tech Pvt. Ltd.",
-                "beneficiary_address": "Bhubaneswar",
-                "settlement_status": "PAID",
-                "settlement_reference": "c395cb00-1e87-40d9-8eac-7cd88ecdafae",
-                "settlement_timestamp": "2024-06-04T08:44:28.000Z"
-              }
-            ]
-          },
-          "withholding_tax_gst": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "withholding_tax_tds": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "deduction_by_collector": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "order_recon_status": "01",
-          "payerdetails": {
-            "payer_name": "Example1 company Pvt. Ltd",
-            "payer_address": "New Delhi",
-            "payer_account_no": "509424924294248",
-            "payer_bank_code": "HDFC0000000",
-            "payer_virtual_payment_address": "80abc@abctMh2h"
-          },
-          "settlement_reason_code": "01",
-          "transaction_id": "ff7fde7a-6b12-40e1-83f4-415e85b211cb",
-          "settlement_id": "13191a03-fcdf-4fde-810f-f5a6c308b606",
-          "settlement_reference_no": "SAB3718683618631",
-          "recon_status": "01",
-          "created_at": "2024-03-21T15:15:02.000Z",
-          "updated_at": "2024-03-21T15:16:59.000Z"
-        },
-        {
-          "id": "2024-03-26-196643",
-          "invoice_no": "SRTPL/2024-03/000016",
-          "collector_app_id": "abc.collectorapp.com",
-          "receiver_app_id": "pre.production.artisanswizard.com",
-          "state": "Completed",
-          "provider": {
-            "name": {
-              "name": "Sabhyasha Retail Tech Pvt. Ltd.",
-              "code": "3"
-            },
-            "address": "KHORDHA"
-          },
-          "payment": {
-            "uri": "https://juspay.in/",
-            "tl_method": "http/get",
-            "params": {
-              "transaction_id": "bc3a6ed5-c86c-476a-a4a7-0bdba384584c",
-              "transaction_status": "PAID",
-              "amount": "500",
+            "withholding_tax_tds": {
+              "value": "0",
               "currency": "INR"
             },
-            "type": "ON-ORDER",
-            "status": "PAID",
-            "collected_by": "BAP",
-            "@ondc/org/collected_by_status": "Assert",
-            "@ondc/org/buyer_app_finder_fee_type": "percent",
-            "@ondc/org/buyer_app_finder_fee_amount": "3.0",
-            "@ondc/org/withholding_amount": "0",
-            "@ondc/org/withholding_amount_status": "Assert",
-            "@ondc/org/return_window": "",
-            "@ondc/org/return_window_status": "Assert",
-            "@ondc/org/settlement_basis": "",
-            "@ondc/org/settlement_basis_status": "Assert",
-            "@ondc/org/settlement_window": "",
-            "@ondc/org/settlement_window_status": "Assert",
-            "@ondc/org/settlement_details": [
-              {
-                "settlement_counterparty": "buyer-app",
-                "settlement_phase": "sale-amount",
-                "settlement_amount": 500,
-                "settlement_type": "neft",
-                "settlement_bank_account_no": "99679007677676",
-                "settlement_ifsc_code": "HDFC900008",
-                "upi_address": "sellerapp@upi",
-                "bank_name": "HDFC",
-                "branch_name": "Bomikhal",
-                "beneficiary_name": "Sabhyasha Retail Tech Pvt. Ltd.",
-                "beneficiary_address": "Bhubaneswar",
-                "settlement_status": "PAID",
-                "settlement_reference": "820ddfc5-ed91-484d-a294-73e1ffc086d6",
-                "settlement_timestamp": "2024-06-04T08:44:28.000Z"
-              }
-            ]
+            "deduction_by_collector": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "settlement_reason_code": "01",
+            "settlement_reference_no": "LcQnCo72PIAPFp",
+            "order_recon_status": "01"
           },
-          "withholding_tax_gst": {
-            "currency": "INR",
-            "value": "0.00"
+          {
+            "id": "e3c8f4a4-2b6e-4b79-8a16-512d8c66b3ff",
+            "state": "Completed",
+            "payment": {
+              "uri": "https://api.razorpay.com/rsp",
+              "type": "ON-ORDER",
+              "params": {
+                "amount": "950",
+                "currency": "INR",
+                "transaction_id": "3df395a9",
+                "transaction_status": "PAID"
+              },
+              "status": "PAID",
+              "tl_method": "http/get",
+              "collected_by": "BAP",
+              "@ondc/org/return_window": "P6D",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P10D",
+              "@ondc/org/settlement_details": [
+                {
+                  "bank_name": "ICICI",
+                  "branch_name": "Chennai",
+                  "upi_address": "success@upi",
+                  "settlement_type": "neft",
+                  "beneficiary_name": "Itemcraze Solutions Pvt. Ltd",
+                  "settlement_phase": "sale-amount",
+                  "settlement_amount": "950",
+                  "settlement_status": "PAID",
+                  "beneficiary_address": "Chennai",
+                  "settlement_ifsc_code": "ICIC0006609",
+                  "settlement_reference": "LcQnCo73hwPmr2",
+                  "settlement_timestamp": "2023-04-12T09:35:56.383Z",
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_bank_account_no": "99679007677676"
+                }
+              ],
+              "@ondc/org/withholding_amount": "0",
+              "@ondc/org/collected_by_status": "Assert",
+              "@ondc/org/return_window_status": "Assert",
+              "@ondc/org/settlement_basis_status": "Assert",
+              "@ondc/org/settlement_window_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_type": "Amount",
+              "@ondc/org/withholding_amount_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_amount": "0"
+            },
+            "provider": {
+              "name": {
+                "code": "18275-ONDC-1",
+                "name": "Fast forward frieght"
+              },
+              "address": "kormanagala"
+            },
+            "created_at": "2023-04-11T12:44:56.399Z",
+            "invoice_no": "2023/XYZ/12345-2",
+            "updated_at": "2023-04-12T09:35:56.383Z",
+            "payerdetails": {
+              "payer_name": "Itemzoo company Pvt. Ltd",
+              "payer_address": "Bengaluru",
+              "payer_bank_code": "HDFC0000000",
+              "payer_account_no": "509424924294248",
+              "payer_virtual_payment_address": "80abc@abctMh2h"
+            },
+            "recon_status": "01",
+            "settlement_id": "LcQnCmQabISUjv",
+            "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965",
+            "receiver_app_id": "abc.receiverapp.com",
+            "collector_app_id": "abc.collectorapp.com",
+            "receiver_app_uri": "https://abc.receiverapp.com",
+            "withholding_tax_gst": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "withholding_tax_tds": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "deduction_by_collector": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "settlement_reason_code": "01",
+            "settlement_reference_no": "LcQnCo73hwPmr2",
+            "order_recon_status": "01"
           },
-          "withholding_tax_tds": {
-            "currency": "INR",
-            "value": "0.00"
+          {
+            "id": "a2a8431e-412e-44d4-b7b0-0dc39c5f95df",
+            "state": "Completed",
+            "payment": {
+              "uri": "https://api.razorpay.com/rsp",
+              "type": "ON-ORDER",
+              "params": {
+                "amount": "750",
+                "currency": "INR",
+                "transaction_id": "4df395a9",
+                "transaction_status": "PAID"
+              },
+              "status": "PAID",
+              "tl_method": "http/get",
+              "collected_by": "BAP",
+              "@ondc/org/return_window": "P6D",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P10D",
+              "@ondc/org/settlement_details": [
+                {
+                  "bank_name": "ICICI",
+                  "branch_name": "Chennai",
+                  "upi_address": "success@upi",
+                  "settlement_type": "neft",
+                  "beneficiary_name": "Itemcraze Solutions Pvt. Ltd",
+                  "settlement_phase": "sale-amount",
+                  "settlement_amount": "750",
+                  "settlement_status": "PAID",
+                  "beneficiary_address": "Chennai",
+                  "settlement_ifsc_code": "ICIC0006609",
+                  "settlement_reference": "LcQnCo74ECYABS",
+                  "settlement_timestamp": "2023-04-12T09:35:56.383Z",
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_bank_account_no": "99679007677676"
+                }
+              ],
+              "@ondc/org/withholding_amount": "0",
+              "@ondc/org/collected_by_status": "Assert",
+              "@ondc/org/return_window_status": "Assert",
+              "@ondc/org/settlement_basis_status": "Assert",
+              "@ondc/org/settlement_window_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_type": "Amount",
+              "@ondc/org/withholding_amount_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_amount": "0"
+            },
+            "provider": {
+              "name": {
+                "code": "18375-ONDC-1",
+                "name": "Convenicore"
+              },
+              "address": "Kormangala"
+            },
+            "created_at": "2023-04-11T12:44:56.399Z",
+            "invoice_no": "2023/XYZ/12346-20",
+            "updated_at": "2023-04-12T09:35:56.383Z",
+            "payerdetails": {
+              "payer_name": "Itemzoo Pvt. Ltd",
+              "payer_address": "Bengaluru",
+              "payer_bank_code": "HDFC0000000",
+              "payer_account_no": "509424924294248",
+              "payer_virtual_payment_address": "80abc@abctMh2h"
+            },
+            "recon_status": "01",
+            "settlement_id": "QwErTyUiOpAsDf",
+            "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965",
+            "receiver_app_id": "abc.receiverapp.com",
+            "collector_app_id": "abc.collectorapp.com",
+            "receiver_app_uri": "https://abc.receiverapp.com",
+            "withholding_tax_gst": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "withholding_tax_tds": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "deduction_by_collector": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "settlement_reason_code": "01",
+            "settlement_reference_no": "LcQnCo74ECYABS",
+            "order_recon_status": "01"
           },
-          "deduction_by_collector": {
-            "currency": "INR",
-            "value": "0.00"
-          },
-          "order_recon_status": "01",
-          "payerdetails": {
-            "payer_name": "Example1 company Pvt. Ltd",
-            "payer_address": "New Delhi",
-            "payer_account_no": "509424924294248",
-            "payer_bank_code": "HDFC0000000",
-            "payer_virtual_payment_address": "80abc@abctMh2h"
-          },
-          "settlement_reason_code": "01",
-          "transaction_id": "33a89c2a-d5b0-4475-a2d1-29aceefda5f3",
-          "settlement_id": "1d3ffc62-19fc-4c52-bc81-1c1d7ed0d83c",
-          "settlement_reference_no": "SAB3718683618631",
-          "recon_status": "01",
-          "created_at": "2024-03-26T04:57:30.000Z",
-          "updated_at": "2024-03-26T05:01:11.000Z"
-        }
-      ]
+          {
+            "id": "6e641c61-69c3-419c-9c65-2f8b892063a2",
+            "state": "Completed",
+            "payment": {
+              "uri": "https://api.razorpay.com/rsp",
+              "type": "ON-ORDER",
+              "params": {
+                "amount": "750",
+                "currency": "INR",
+                "transaction_id": "4df395a9",
+                "transaction_status": "PAID"
+              },
+              "status": "PAID",
+              "tl_method": "http/get",
+              "collected_by": "BAP",
+              "@ondc/org/return_window": "P6D",
+              "@ondc/org/settlement_basis": "Collection",
+              "@ondc/org/settlement_window": "P10D",
+              "@ondc/org/settlement_details": [
+                {
+                  "bank_name": "ICICI",
+                  "branch_name": "Chennai",
+                  "upi_address": "success@upi",
+                  "settlement_type": "neft",
+                  "beneficiary_name": "Itemcraze Solutions Pvt. Ltd",
+                  "settlement_phase": "sale-amount",
+                  "settlement_amount": "750",
+                  "settlement_status": "PAID",
+                  "beneficiary_address": "Chennai",
+                  "settlement_ifsc_code": "ICIC0006609",
+                  "settlement_reference": "LcQnCo74ECYABS",
+                  "settlement_timestamp": "2023-04-12T09:35:56.383Z",
+                  "settlement_counterparty": "buyer-app",
+                  "settlement_bank_account_no": "99679007677676"
+                }
+              ],
+              "@ondc/org/withholding_amount": "0",
+              "@ondc/org/collected_by_status": "Assert",
+              "@ondc/org/return_window_status": "Assert",
+              "@ondc/org/settlement_basis_status": "Assert",
+              "@ondc/org/settlement_window_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_type": "Amount",
+              "@ondc/org/withholding_amount_status": "Assert",
+              "@ondc/org/buyer_app_finder_fee_amount": "0"
+            },
+            "provider": {
+              "name": {
+                "code": "18375-ONDC-1",
+                "name": "Convenicore"
+              },
+              "address": "Kormangala"
+            },
+            "created_at": "2023-04-11T12:44:56.399Z",
+            "invoice_no": "2023/XYZ/12346-20",
+            "updated_at": "2023-04-12T09:35:56.383Z",
+            "payerdetails": {
+              "payer_name": "Itemzoo Pvt. Ltd",
+              "payer_address": "Bengaluru",
+              "payer_bank_code": "HDFC0000000",
+              "payer_account_no": "509424924294248",
+              "payer_virtual_payment_address": "80abc@abctMh2h"
+            },
+            "recon_status": "01",
+            "settlement_id": "LcQnCmRuHoPSxZ",
+            "transaction_id": "5aeaed28-aa98-401c-aff5-5c65c9c24965",
+            "receiver_app_id": "abc.receiverapp.com",
+            "collector_app_id": "abc.collectorapp.com",
+            "receiver_app_uri": "https://abc.receiverapp.com",
+            "withholding_tax_gst": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "withholding_tax_tds": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "deduction_by_collector": {
+              "value": "0",
+              "currency": "INR"
+            },
+            "settlement_reason_code": "01",
+            "settlement_reference_no": "LcQnCo74ECYABS",
+            "order_recon_status": "01"
+          }
+        ]
+      }
     }
-  }
+  },
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Content-Type": "application/json",
+    "User-Agent": "axios/1.5.0",
+    "Content-Length": "11335",
+    "Accept-Encoding": "gzip, compress, deflate, br",
+    "Host": "pre.production.artisanswizard.com",
+    "Connection": "close"
+  },
+  "type": "receiver_recon"
 }
