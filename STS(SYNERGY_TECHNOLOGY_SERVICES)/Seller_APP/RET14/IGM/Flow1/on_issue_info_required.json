@@ -1,9 +1,6 @@
 {
     "context": {
-        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
-        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "bpp_id": "ondc.taolabs.in",
-        "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
+        "domain": "ONDC:RET14",
         "location": {
             "country": {
                 "code": "IND"
@@ -12,24 +9,36 @@
                 "code": "*"
             }
         },
-        "transaction_id": "34633330-0e20-4439-b792-cb66bb46ef8b",
-        "message_id": "65643407-33d2-4c76-93b6-2d63e095fa11",
-        "timestamp": "2025-03-18T09:24:26.791Z",
-        "domain": "ONDC:RET14",
+        "action": "on_issue",
         "core_version": "2.0.0",
-        "ttl": "PT10M",
-        "action": "issue"
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "ondc.taolabs.in",
+        "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
+        "transaction_id": "34633330-0e20-4439-b792-cb66bb46ef8b",
+        "message_id": "c345ecd1-edce-4277-966c-147bd60f585f",
+        "timestamp": "2025-03-18T09:26:29.561Z"
     },
     "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
         "issue": {
             "id": "ISSUE-1",
+            "status": "PROCESSING",
             "level": "ISSUE",
-            "status": "OPEN",
+            "created_at": "2025-03-16T09:23:06.292Z",
+            "updated_at": "2025-03-18T09:26:29.561Z",
             "expected_response_time": {
-                "duration": "PT2H"
+                "duration": "PT2H",
+                "_id": "67d93bca9a0d94ebeac0007c"
             },
             "expected_resolution_time": {
-                "duration": "P1D"
+                "duration": "P1D",
+                "_id": "67d93bca9a0d94ebeac0007d"
             },
             "refs": [
                 {
@@ -96,10 +105,30 @@
                             "name": "John Doe"
                         }
                     }
+                },
+                {
+                    "id": "4c233017-3ecb-445f-9438-7e113fff6523",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "ondc.taolabs.in::ONDC:RET14"
+                        },
+                        "contact": {
+                            "phone": "3343434444",
+                            "email": "moana@gmail.com"
+                        },
+                        "person": {
+                            "name": "Namjoon"
+                        }
+                    }
                 }
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
+            "respondent_ids": [
+                "4c233017-3ecb-445f-9438-7e113fff6523"
+            ],
+            "resolver_ids": [],
             "description": {
                 "code": "ITM02",
                 "short_desc": "Issue with product quality",
@@ -113,7 +142,7 @@
                     "http://buyerapp.com/addtional-details/img2.png"
                 ]
             },
-            "last_action_id": "B1",
+            "last_action_id": "f5c814ea-d21e-4cd8-aa87-eb89808ff922",
             "actions": [
                 {
                     "id": "B1",
@@ -126,10 +155,34 @@
                     "actor_details": {
                         "name": "Sam Manuel"
                     }
+                },
+                {
+                    "id": "3942fb30-0bc3-4821-a590-a0cc16779bc2",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-03-18T09:24:26.821Z",
+                    "action_by": "4c233017-3ecb-445f-9438-7e113fff6523",
+                    "actor_details": {
+                        "name": "Namjoon"
+                    }
+                },
+                {
+                    "id": "f5c814ea-d21e-4cd8-aa87-eb89808ff922",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO001",
+                        "short_desc": "info requested"
+                    },
+                    "updated_at": "2025-03-18T09:26:29.561Z",
+                    "action_by": "4c233017-3ecb-445f-9438-7e113fff6523",
+                    "actor_details": {
+                        "name": "Namjoon"
+                    }
                 }
             ],
-            "created_at": "2025-03-16T09:23:06.292Z",
-            "updated_at": "2025-03-18T04:24:26.648Z"
+            "resolutions": []
         }
     }
 }
