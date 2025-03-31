@@ -1,17 +1,17 @@
 {
   "context": {
-    "domain": "ONDC:NTS10",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
-    "action": "settle",
-    "version": "2.0.0",
     "bap_id": "ondc.taolabs.in",
     "bap_uri": "https://ondc.taolabs.in/api/seller/preprod",
     "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server_preprod",
     "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server_preprod",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
     "transaction_id": "6198c05e-4146-4d42-9695-0a048c655e08",
     "message_id": "02a913c6-93fe-48b7-b0ec-cd26614fa129",
-    "timestamp": "2025-03-26T10:36:07.579Z",
-    "ttl": "PT30S"
+    "timestamp": "2025-03-26T10:42:25.756Z",
+    "domain": "ONDC:NTS10",
+    "version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_settle"
   },
   "message": {
     "collector_app_id": "ondc.taolabs.in",
@@ -23,10 +23,17 @@
         {
           "id": "7439c9e0c42",
           "inter_participant": {
-            "amount": { "currency": "INR", "value": "49518.39" }
+            "amount": { "value": "49518.39", "currency": "INR" },
+            "settled_amount": { "value": "49518.39", "currency": "INR" },
+            "status": "SETTLED",
+            "reference_no": "1238683618634"
           },
-          "collector": { "amount": { "currency": "INR", "value": "1531.50" } },
-          "self": { "amount": { "currency": "INR", "value": "49518.39" } }
+          "collector": { "amount": { "value": "1531.50", "currency": "INR" } },
+          "self": {
+            "amount": { "value": "49518.39", "currency": "INR" },
+            "status": "SETTLED",
+            "reference_no": "1238683618634"
+          }
         }
       ]
     }
