@@ -1,25 +1,24 @@
 {
   "context": {
-    "domain": "ONDC:RET14",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
-    "action": "issue",
-    "core_version": "2.0.0",
     "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
     "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
     "bpp_id": "ondc.taolabs.in",
     "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
     "transaction_id": "c1c88b8e-06f4-415f-bae0-e68fcdef4ab7",
     "message_id": "408f648a-0af8-47a0-9879-a338f05eba07",
-    "timestamp": "2025-03-21T09:40:02.651Z",
-    "ttl": "PT30S"
+    "timestamp": "2025-03-21T09:42:28.316Z",
+    "domain": "ONDC:RET14",
+    "core_version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
   },
   "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
     "issue": {
       "id": "2122f9f6-18fb-4305-905a-7bb1739624f1",
-      "status": "OPEN",
       "level": "ISSUE",
-      "created_at": "2025-03-21T09:40:02.665Z",
-      "updated_at": "2025-03-21T09:40:02.665Z",
+      "status": "OPEN",
       "expected_response_time": { "duration": "PT2H" },
       "expected_resolution_time": { "duration": "P1D" },
       "refs": [
@@ -38,17 +37,30 @@
             "person": { "name": "STS Seller" },
             "contact": { "phone": "8477376457", "email": "kim@gmail.com" }
           }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": { "name": "Jane Doe" }
+          }
         }
       ],
       "source_id": "410fe505-5b4d-45df-ba22-3fa96d3c902e",
       "complainant_id": "410fe505-5b4d-45df-ba22-3fa96d3c902e",
+      "respondent_ids": ["NP2"],
       "description": {
         "code": "PMT002",
         "short_desc": "testing the create issue",
         "long_desc": "more info for the issue",
         "ilss": "more info for the issue"
       },
-      "last_action_id": "dd6bf28f-ec97-49bc-9f0d-2ffad3956b02",
+      "last_action_id": "a1",
       "actions": [
         {
           "id": "dd6bf28f-ec97-49bc-9f0d-2ffad3956b02",
@@ -56,8 +68,17 @@
           "updated_at": "2025-03-21T09:40:02.665Z",
           "action_by": "410fe505-5b4d-45df-ba22-3fa96d3c902e",
           "actor_details": { "name": "Praful Sakpal" }
+        },
+        {
+          "id": "a1",
+          "description": { "code": "PROCESSING", "short_desc": "processing" },
+          "updated_at": "2025-03-21T09:42:28.215Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
         }
-      ]
+      ],
+      "created_at": "2025-03-21T09:40:02.665Z",
+      "updated_at": "2025-03-21T09:40:02.665Z"
     }
   }
 }
