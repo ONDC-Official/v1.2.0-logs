@@ -1,4 +1,35 @@
-{
+curl --location 'https://log-validation.ondc.org/api/validate' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "domain": "ONDC:RET11",
+    "version": "1.2.0",
+    "bap_id": "ondc-api.kiko.live/ondc-buyer-v2",
+    "bpp_id": "ondc-api.kiko.live/ondc-seller-v2",
+    "payload": {
+ "search_full_catalog_refresh": {
+    "context": {
+        "domain": "ONDC:RET11",
+        "action": "search",
+        "country": "IND",
+        "city": "std:080",
+        "core_version": "1.2.0",
+        "bap_id": "ondc-api.kiko.live/ondc-buyer-v2",
+        "bap_uri": "https://ondc-api.kiko.live/ondc-buyer-v2",
+        "transaction_id": "c969a19b-6806-4610-9599-c11c1ea6f098",
+        "message_id": "63f556b2-3b5f-442f-9124-4f1fd8a84c03",
+        "timestamp": "2025-03-24T07:36:00.444Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "intent": {
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3"
+            }
+        }
+    }
+},
+        "on_search_full_catalog_refresh": {
     "context": {
         "domain": "ONDC:RET11",
         "action": "on_search",
@@ -117,8 +148,8 @@
                     "descriptor": {
                         "name": "Balram Restaurant",
                         "symbol": "https://kikonewapi.s3.ap-south-1.amazonaws.com/uploads/user_images/fXtLE8ddA.png",
-                        "short_desc": "Balram Restaurant is more than just a place to buy groceries—it's a community hub where loc",
-                        "long_desc": "Balram Restaurant is more than just a place to buy groceries—it's a community hub where locals come together to connect, share stories, and celebrate food in all its glorious forms.",
+                        "short_desc": "Balram Restaurant is more than just a place to buy groceries—it'\''s a community hub where loc",
+                        "long_desc": "Balram Restaurant is more than just a place to buy groceries—it'\''s a community hub where locals come together to connect, share stories, and celebrate food in all its glorious forms.",
                         "images": [
                             "https://kikonewapi.s3.ap-south-1.amazonaws.com/uploads/user_images/fXtLE8ddA.png"
                         ]
@@ -1329,8 +1360,8 @@
                             "descriptor": {
                                 "name": "Fired Rice",
                                 "symbol": "https://kikonewapi.s3.ap-south-1.amazonaws.com/uploads/user_images/UQT83rL0D.png",
-                                "short_desc": "Fried rice is a dish of stir-fried rice that's often made with eggs, vegetables, meat, and ",
-                                "long_desc": "Fried rice is a dish of stir-fried rice that's often made with eggs, vegetables, meat, and soy sauce",
+                                "short_desc": "Fried rice is a dish of stir-fried rice that'\''s often made with eggs, vegetables, meat, and ",
+                                "long_desc": "Fried rice is a dish of stir-fried rice that'\''s often made with eggs, vegetables, meat, and soy sauce",
                                 "images": [
                                     "https://kikonewapi.s3.ap-south-1.amazonaws.com/uploads/user_images/UQT83rL0D.png",
                                     "https://kikonewapi.s3.ap-south-1.amazonaws.com/uploads/user_images/4WqPOTO2G.png"
@@ -2310,3 +2341,7 @@
         }
     }
 }
+  
+    },
+    "flow": "8"
+}'
