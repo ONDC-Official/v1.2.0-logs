@@ -1,0 +1,98 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "schemaErr0": "/message/catalog/bpp~1descriptor/symbol descriptor/symbol should be URLs or can be empty strings as well",
+                "schemaErr1": "/message/catalog/bpp~1providers/0/categories/0/id must match pattern \"^[a-zA-Z0-9-]{12}$\"",
+                "InvldValueforItem[0][0] : size_chart": "Invalid item value: [xl]. It must be one of the allowed values or match the regex pattern [^https?://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]$].",
+                "InvldValueforItem[0][1] : size_chart": "Invalid item value: [880d986f-67a9-4a4f-a816-cac88c81b570/product_image/download.jpeg]. It must be one of the allowed values or match the regex pattern [^https?://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]$].",
+                "InvldValueforItem[0][2] : size_chart": "Invalid item value: [42434d4a-f8d9-46e2-9f34-1d95f8237e5c/product_image/download (5).jpeg]. It must be one of the allowed values or match the regex pattern [^https?://[-A-Za-z0-9+&@#/%?=~_|!:,.;]*[-A-Za-z0-9+&@#/%=~_|]$].",
+                "prvdr0item0Price": "selling price of item /price/value with id: (f75e8fd3-9fd3-4568-b145-ce49fac030ae) can't be greater than the maximum price /price/maximum_value in /bpp/providers[0]/items[0]/",
+                "prvdr0item1Price": "selling price of item /price/value with id: (e5e34dfe-0c71-48ca-9f4a-3bf87329da8f) can't be greater than the maximum price /price/maximum_value in /bpp/providers[0]/items[1]/"
+            },
+            "init": {
+                "addressComponents": "value of address.name, address.building and address.locality should be unique"
+            },
+            "confirm": {
+                "bapGstTags": "Tags/bap_terms should have valid gst number and fields in /confirm"
+            },
+            "on_confirm": {
+                "message.order.tags[0].list": "np_type not found in on_confirm",
+                "sellerGpsErr": "store gps location /fulfillments[0]/start/location/gps can't change",
+                "message/order/tags/bpp_terms/np_type": "np_type is missing in message/order/tags/bpp_terms for ON_CONFIRM",
+                "tags_bap_terms": "Tags should have same and valid gst_number as passed in /confirm"
+            },
+            "on_update_part_cancel": {
+                "invalid_partcancel_return_request_reason": "reason code allowed are 002,012"
+            },
+            "on_status_pending": {
+                "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places"
+            },
+            "on_status_packed": {
+                "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+                "on_status_packed_msgId": "Message id should not be same with previous calls"
+            },
+            "on_status_picked": {
+                "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+                "on_status_picked_msgId": "Message id should not be same with previous calls",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_picked",
+                "pickUpTime": "picked timestamp is missing"
+            },
+            "on_status_out_for_delivery": {
+                "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+                "on_status_out_for_delivery_msgId": "Message id should not be same with previous calls",
+                "invalid_message_id": "Message_id cannot be same for on_status.packed and on_status.out_for_delivery",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_out_for_delivery",
+                "out_for_delivery_time": "Out_for_delivery timestamp is missing"
+            },
+            "on_status_delivered": {
+                "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+                "on_status_delivered_msgId": "Message id should not be same with previous calls",
+                "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_delivered",
+                "deliverytime": "delivery timestamp is missing"
+            },
+            "on_update_interim_reverse_qc": {
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}"
+            },
+            "on_update_approval": {
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}",
+                "Return.start.location.id": "Return fulfillment start location id is not required in on_update_approval"
+            },
+            "on_update_picked": {
+                "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}",
+                "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+            },
+            "on_update_delivered": {
+                "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+                "schemaErr1": "/message/order/fulfillments/2/start/time/timestamp must match format \"rfc3339-date-time\"",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:51:28.084Z\"}",
+                "returnFF/end/time/timestamp": "end/time/timestamp of return fulfillment should be less than or equal to context/timestamp of on_update_delivered",
+                "returnFF/start/time/timestamp": "start/time/timestamp of return fulfillment is missing",
+                "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+            },
+            "on_update_interim_liquidated": {
+                "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+                "schemaErr1": "/message/order/fulfillments/2/start/time/timestamp must match format \"rfc3339-date-time\"",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:51:28.084Z\"}"
+            },
+            "on_update_liquidated": {
+                "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+                "schemaErr1": "/message/order/fulfillments/2/start/time/timestamp must match format \"rfc3339-date-time\"",
+                "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:30:26.485Z\"}",
+                "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"100\",\"settlement_timestamp\":\"2025-02-18T17:51:28.084Z\"}",
+                "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+            }
+        },
+        "bpp_id": "witslab-bpp-preprod.thewitslab.com",
+        "bap_id": "preprod.eazehub.com",
+        "domain": "ONDC:RET12",
+        "reportTimestamp": "2025-02-21T07:25:31.147Z"
+    },
+    "signature": "GQQBTtb1SDAtq7DN0GjTPuCWMutVJrnK5kOsWfGMBcdS3MSYFD6fa2Uai6NaN3LM9IO/JGi0f1BLzMj+1j+PAQ==",
+    "signTimestamp": "2025-02-21T07:25:31.147Z"
+}
