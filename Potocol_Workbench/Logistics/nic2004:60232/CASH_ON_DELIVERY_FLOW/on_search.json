@@ -1,0 +1,217 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:011",
+    "action": "on_search",
+    "core_version": "1.2.5",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/nic2004:60232/1.2.5/buyer",
+    "message_id": "0667574a-c825-4791-be86-18a476654be8",
+    "timestamp": "2025-03-30T16:47:55.296Z",
+    "transaction_id": "6f83c923-bfd1-41d8-b07c-fb8a208b6aba",
+    "ttl": "PT30S",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/nic2004:60232/1.2.5/seller"
+  },
+  "message": {
+    "catalog": {
+      "bpp/descriptor": {
+        "name": "LSP Aggregator Inc",
+        "tags": [
+          {
+            "code": "bpp_terms",
+            "list": [
+              {
+                "code": "static_terms",
+                "value": ""
+              },
+              {
+                "code": "static_terms_new",
+                "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+              },
+              {
+                "code": "effective_date",
+                "value": "2024-11-20T00:00:00.000Z"
+              }
+            ]
+          }
+        ]
+      },
+      "bpp/providers": [
+        {
+          "id": "P1",
+          "descriptor": {
+            "name": "LSP Courier Inc",
+            "short_desc": "LSP Courier Inc",
+            "long_desc": "LSP Courier Inc"
+          },
+          "categories": [
+            {
+              "id": "Next Day Delivery",
+              "time": {
+                "label": "TAT",
+                "duration": "P1D",
+                "timestamp": "2025-03-31"
+              }
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "1",
+              "type": "Delivery",
+              "start": {
+                "time": {
+                  "duration": "PT15M"
+                }
+              },
+              "tags": [
+                {
+                  "code": "distance",
+                  "list": [
+                    {
+                      "code": "motorable_distance_type",
+                      "value": "kilometer"
+                    },
+                    {
+                      "code": "motorable_distance",
+                      "value": "1.8"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2",
+              "type": "RTO"
+            }
+          ],
+          "locations": [
+            {
+              "id": "L1",
+              "gps": "12.9675,77.7496",
+              "address": {
+                "street": "Jayanagar 4th Block",
+                "city": "Bengaluru",
+                "area_code": "560076",
+                "state": "KA"
+              }
+            }
+          ],
+          "items": [
+            {
+              "id": "I1",
+              "parent_item_id": "P1",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "Fast delivery",
+                "short_desc": "Fast delivery services",
+                "long_desc": "Fast delivery services"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "59.00"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "P1D",
+                "timestamp": "2025-03-31"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "base"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "I2",
+              "parent_item_id": "I1",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "2",
+              "descriptor": {
+                "code": "P2P",
+                "name": "RTO quote",
+                "short_desc": "RTO quote",
+                "long_desc": "RTO quote"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "88.50"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "P1D",
+                "timestamp": "2025-03-31"
+              }
+            },
+            {
+              "id": "C1",
+              "parent_item_id": "..",
+              "category_id": "Next Day Delivery",
+              "fulfillment_id": "1",
+              "descriptor": {
+                "code": "P2P",
+                "name": "COD Fee",
+                "short_desc": "COD Fee",
+                "long_desc": "Cash on delivery fee"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "19.18"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "cod"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "code": "special_req",
+              "list": [
+                {
+                  "code": "cod_order",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tags": [
+        {
+          "code": "lsp_features",
+          "list": [
+            {
+              "code": "005",
+              "value": "yes"
+            },
+            {
+              "code": "009",
+              "value": "yes"
+            },
+            {
+              "code": "00C",
+              "value": "yes"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

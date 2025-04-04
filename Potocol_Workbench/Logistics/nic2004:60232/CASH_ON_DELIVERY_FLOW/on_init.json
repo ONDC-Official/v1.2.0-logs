@@ -1,0 +1,174 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:011",
+    "action": "on_init",
+    "core_version": "1.2.5",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/nic2004:60232/1.2.5/buyer",
+    "message_id": "1bc40cbe-d3d0-4f23-8736-d7504f013f3f",
+    "timestamp": "2025-03-30T16:48:01.316Z",
+    "transaction_id": "6f83c923-bfd1-41d8-b07c-fb8a208b6aba",
+    "ttl": "PT30S",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/nic2004:60232/1.2.5/seller"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "1"
+        },
+        {
+          "id": "C1",
+          "fulfillment_id": "1"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "S1",
+              "gps": "12.4535,77.9283",
+              "address": {
+                "name": "My store name 1",
+                "building": "My building name 1",
+                "locality": "My street name 1",
+                "city": "my city 1",
+                "state": "my state 1",
+                "country": "India",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "abcd.efgh@gmail.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.4535,78.9287",
+              "address": {
+                "name": "My store name 2",
+                "building": "My building name 2",
+                "locality": "My street name 2",
+                "city": "my city name 2",
+                "state": "my state 2",
+                "country": "India",
+                "area_code": "560002"
+              }
+            },
+            "contact": {
+              "phone": "9123426789",
+              "email": "xyz.qweq@gmail.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "linked_provider",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "P1"
+                },
+                {
+                  "code": "name",
+                  "value": "Seller"
+                }
+              ]
+            },
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "70:00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "9.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "C1",
+            "@ondc/org/title_type": "cod",
+            "price": {
+              "currency": "INR",
+              "value": "9.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "C1",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "2.00"
+            }
+          }
+        ],
+        "ttl": "PT15M"
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_basis": "invoicing",
+        "@ondc/org/settlement_window": "P15D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "lbnp",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
