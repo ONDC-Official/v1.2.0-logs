@@ -1,0 +1,143 @@
+{
+  "context": {
+    "domain": "ONDC:LOG10",
+    "country": "IND",
+    "city": "std:080",
+    "action": "search",
+    "core_version": "1.2.5",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+    "message_id": "066de311-dcea-4df8-a182-4efbbf577895",
+    "timestamp": "2025-04-08T15:55:31.045Z",
+    "transaction_id": "b1b5ed48-57d0-4c4c-9d03-71dacc13125e",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "id": "Immediate Delivery"
+      },
+      "provider": {
+        "time": {
+          "days": "1,2,3,4,5,6,7",
+          "schedule": {
+            "holidays": [
+              "2025-04-18",
+              "2025-04-23"
+            ]
+          },
+          "duration": "PT10M",
+          "range": {
+            "start": "1100",
+            "end": "2100"
+          }
+        }
+      },
+      "fulfillment": {
+        "type": "Delivery",
+        "start": {
+          "location": {
+            "id": "S1",
+            "gps": "12.4535,77.9283",
+            "address": {
+              "area_code": "560001"
+            }
+          }
+        },
+        "end": {
+          "location": {
+            "gps": "12.4535,77.9283",
+            "address": {
+              "area_code": "560001"
+            }
+          }
+        },
+        "tags": [
+          {
+            "code": "linked_provider",
+            "list": [
+              {
+                "code": "id",
+                "value": "P1"
+              },
+              {
+                "code": "name",
+                "value": "Seller1"
+              }
+            ]
+          },
+          {
+            "code": "linked_order",
+            "list": [
+              {
+                "code": "currency",
+                "value": "INR"
+              },
+              {
+                "code": "declared_value",
+                "value": "300.0"
+              },
+              {
+                "code": "category",
+                "value": "Grocery"
+              },
+              {
+                "code": "weight_unit",
+                "value": "kilogram"
+              },
+              {
+                "code": "weight_value",
+                "value": "3.0"
+              },
+              {
+                "code": "dim_unit",
+                "value": "centimeter"
+              },
+              {
+                "code": "length",
+                "value": "1.0"
+              },
+              {
+                "code": "breadth",
+                "value": "1.0"
+              },
+              {
+                "code": "height",
+                "value": "1.0"
+              }
+            ]
+          }
+        ]
+      },
+      "payment": {
+        "type": "ON-ORDER"
+      },
+      "@ondc/org/payload_details": {
+        "weight": {
+          "unit": "kilogram",
+          "value": 1
+        },
+        "dimensions": {
+          "length": {
+            "unit": "centimeter",
+            "value": 1
+          },
+          "breadth": {
+            "unit": "centimeter",
+            "value": 1
+          },
+          "height": {
+            "unit": "centimeter",
+            "value": 1
+          }
+        },
+        "category": "Grocery",
+        "value": {
+          "currency": "INR",
+          "value": "300.00"
+        },
+        "dangerous_goods": false
+      }
+    }
+  }
+}

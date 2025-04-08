@@ -1,0 +1,128 @@
+{
+  "context": {
+    "domain": "ONDC:LOG11",
+    "country": "IND",
+    "city": "std:080",
+    "action": "init",
+    "core_version": "1.2.5",
+    "bap_id": "dev-automation.ondc.org",
+    "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
+    "message_id": "d9250c92-83dd-4a10-bb2d-3b1198b30b98",
+    "timestamp": "2025-04-08T19:00:54.053Z",
+    "transaction_id": "87205353-0b22-40aa-9f36-d7ededa732c3",
+    "ttl": "PT30S",
+    "bpp_id": "dev-automation.ondc.org",
+    "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "1",
+          "category_id": "Express Delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "S1",
+              "gps": "12.4535,77.9283",
+              "address": {
+                "name": "My store name 1",
+                "building": "My building name 1",
+                "locality": "My street name 1",
+                "city": "my city 1",
+                "state": "my state 1",
+                "country": "India",
+                "area_code": "147001"
+              }
+            },
+            "contact": {
+              "phone": "9886098860",
+              "email": "abcd.efgh@gmail.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.4535,77.9283",
+              "address": {
+                "name": "My store name 2",
+                "building": "My building name 2",
+                "locality": "My street name 2",
+                "city": "my city name 2",
+                "state": "my state 2",
+                "country": "India",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "9123426789",
+              "email": "xyz.qweq@gmail.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "linked_provider",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "P1"
+                },
+                {
+                  "code": "name",
+                  "value": "Seller"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "billing": {
+        "name": "ONDC Logistics Buyer NP",
+        "address": {
+          "name": "My house or building no",
+          "building": "My house or building name",
+          "locality": "Jayanagar",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "India",
+          "area_code": "560076"
+        },
+        "tax_number": "AS34234HKJ342KHJK",
+        "phone": "9886098860",
+        "email": "abcd.efgh@gmail.com",
+        "created_at": "2025-04-08T19:00:54.053Z",
+        "updated_at": "2025-04-08T19:00:54.053Z"
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP",
+        "@ondc/org/settlement_basis": "invoicing",
+        "@ondc/org/settlement_window": "P15D"
+      },
+      "tags": [
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "yes"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
