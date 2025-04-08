@@ -11,13 +11,13 @@
 		},
 		"version": "2.0.0",
 		"action": "on_issue",
-		"bap_id": "pre-prod.seller.cerve.in",
-		"bap_uri": "https://pre-prod.seller.cerve.in/api/v1/ondc",
-		"bpp_id": "pre-prod.buyerapp.com",
-		"bpp_uri": "https://pre-prod.buyerapp.com/ondc",
-		"transaction_id": "3e12563d-bda7-471d-a920-7812db8fe098",
-		"message_id": "35765732-d819-4a6b-9cdf-90dca772652f",
-		"timestamp": "2025-02-20T18:47:30.584Z",
+		"bap_id": "igm-mock-service.ondc.org",
+		"bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+		"bpp_id": "pre-prod.seller.cerve.in",
+		"bpp_uri": "https://pre-prod.seller.cerve.in/api/v1/ondc",
+		"transaction_id": "bf01996d-888c-4e7c-b319-233340b99722",
+		"message_id": "99d3f9e2-04cc-487d-871f-1ce09474818c",
+		"timestamp": "2025-04-04T14:12:03.739Z",
 		"ttl": "PT10M"
 	},
 	"message": {
@@ -31,8 +31,8 @@
 			"id": "ISSUE-1",
 			"status": "PROCESSING",
 			"level": "ISSUE",
-			"created_at": "2025-02-20T18:43:54.965Z",
-			"updated_at": "2025-02-20T18:47:30.584Z",
+			"created_at": "2025-04-04T14:10:27.136Z",
+			"updated_at": "2025-04-04T14:12:03.739Z",
 			"expected_response_time": {
 				"duration": "PT2H"
 			},
@@ -41,7 +41,7 @@
 			},
 			"refs": [
 				{
-					"ref_id": "2024-11-25-105627",
+					"ref_id": "2025-04-04-105629",
 					"ref_type": "ORDER"
 				},
 				{
@@ -65,7 +65,7 @@
 				},
 				{
 					"ref_id": "f1",
-					"ref_type": "FULFILLMENt"
+					"ref_type": "FULFILMENT"
 				}
 			],
 			"actors": [
@@ -102,11 +102,11 @@
 					}
 				},
 				{
-					"id": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
+					"id": "d091e52b-684c-49b0-86af-4e68e0caefcf",
 					"type": "TRANSACTION_COUNTERPARTY_NP",
 					"info": {
 						"org": {
-							"name": "pre-prod.seller.cerve.in::ONDC:RET10"
+							"name": "igm-mock-service.ondc.org::ONDC:RET10"
 						},
 						"person": {
 							"name": "Rini Store"
@@ -119,7 +119,7 @@
 				}
 			],
 			"respondent_ids": [
-				"6617aade-8b91-4657-b9b5-5d7946cd5fcf"
+				"d091e52b-684c-49b0-86af-4e68e0caefcf"
 			],
 			"description": {
 				"code": "FLM001",
@@ -134,72 +134,110 @@
 					"content_type": "text/plain"
 				}
 			},
-			"last_action_id": "60050ec2-7aed-48ba-8c1f-a3f8d422c404",
+			"last_action_id": "f8b23654-39ea-4945-84a6-420824d47483",
 			"resolutions": [
 				{
-					"id": "tR20rQQf0rhe",
+					"id": "Mh6eLn1720Q1",
 					"descriptor": {
 						"code": "PARENT",
 						"short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
 					},
-					"updated_at": "2025-02-20T18:47:30.584Z",
+					"updated_at": "2025-04-04T14:12:03.739Z",
 					"proposed_by": "NP2"
 				},
 				{
-					"id": "3013bf3e-e3b9-40e0-930d-6abbffe0f9a7",
-					"ref_id": "tR20rQQf0rhe",
+					"id": "e0c91447-97ae-4a6a-8a68-699fcacbd329",
+					"ref_id": "Mh6eLn1720Q1",
 					"ref_type": "PARENT",
 					"descriptor": {
-						"code": "NO-ACTION",
-						"short_desc": "No action required"
+						"code": "REFUND",
+						"short_desc": "Please select if you need refund"
 					},
-					"updated_at": "2025-02-20T18:47:30.584Z",
+					"updated_at": "2025-04-04T14:12:03.739Z",
 					"proposed_by": "NP2",
 					"tags": [
 						{
 							"descriptor": {
 								"code": "RESOLUTION_DETAILS"
 							},
-							"list": []
+							"list": [
+								{
+									"descriptor": {
+										"code": "ITEM"
+									}
+								},
+								{
+									"descriptor": {
+										"code": "REFUND_AMOUNT"
+									},
+									"value": "150.00"
+								}
+							]
+						}
+					]
+				},
+				{
+					"id": "1e627df5-37be-44e3-af90-bb95acf2bc9d",
+					"ref_id": "Mh6eLn1720Q1",
+					"ref_type": "PARENT",
+					"descriptor": {
+						"code": "REPLACEMENT",
+						"short_desc": "Please select for the replacement"
+					},
+					"updated_at": "2025-04-04T14:12:03.739Z",
+					"proposed_by": "NP2",
+					"tags": [
+						{
+							"descriptor": {
+								"code": "RESOLUTION_DETAILS"
+							},
+							"list": [
+								{
+									"descriptor": {
+										"code": "ITEM"
+									}
+								}
+							]
 						}
 					]
 				}
 			],
 			"actions": [
 				{
-					"id": "A1",
+					"id": "Action1",
 					"description": {
 						"code": "OPEN",
 						"short_desc": "OPEN"
 					},
-					"updated_at": "2025-02-20T18:43:54.964Z",
-					"action_by": "NP2",
+					"updated_at": "2025-04-04T14:10:27.136Z",
+					"action_by": "NP1",
 					"actor_details": {
 						"name": "Rina Mathur"
 					}
 				},
 				{
-					"id": "2de1162f-4830-4798-aa8a-71670d06c578",
+					"id": "ccce1f9f-5d4c-4bb6-9a19-08b6fdbf7369",
 					"description": {
 						"code": "PROCESSING",
 						"short_desc": "We are investigating your concern. We will get back to you soon."
 					},
-					"updated_at": "2025-02-20T18:43:55.113Z",
-					"action_by": "6617aade-8b91-4657-b9b5-5d7946cd5fcf",
+					"updated_at": "2025-04-04T14:10:27.198Z",
+					"action_by": "d091e52b-684c-49b0-86af-4e68e0caefcf",
 					"actor_details": {
 						"name": "Rini Store"
 					}
 				},
 				{
-					"id": "60050ec2-7aed-48ba-8c1f-a3f8d422c404",
+					"id": "f8b23654-39ea-4945-84a6-420824d47483",
 					"description": {
 						"code": "RESOLUTION_PROPOSED"
 					},
-					"ref_id": "tR20rQQf0rhe",
+					"ref_id": "Mh6eLn1720Q1",
 					"ref_type": "RESOLUTIONS",
+					"updated_at": "2025-04-04T14:12:03.739Z",
 					"action_by": "NP2",
 					"actor_details": {
-						"name": "Susri Madhu"
+						"name": "Rini Store"
 					}
 				}
 			]
