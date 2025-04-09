@@ -7,9 +7,9 @@
     "core_version": "1.2.5",
     "bap_id": "dev-automation.ondc.org",
     "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
-    "message_id": "ba2d5817-5f0e-45c2-ab7d-0a6c6f44aae5",
-    "timestamp": "2025-04-09T09:05:59.469Z",
-    "transaction_id": "73ce506f-54ae-4df2-890a-9a25d39211c9",
+    "message_id": "422071f8-3bff-4980-8990-77492a60d980",
+    "timestamp": "2025-04-09T07:48:39.464Z",
+    "transaction_id": "3c7c393b-103d-42a2-ad1d-c48cb904161b",
     "bpp_id": "dev-automation.ondc.org",
     "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/seller"
   },
@@ -31,7 +31,7 @@
               },
               {
                 "code": "effective_date",
-                "value": "2025-04-09T09:05:59.469Z"
+                "value": "2025-04-09T07:48:39.464Z"
               }
             ]
           }
@@ -47,11 +47,11 @@
           },
           "categories": [
             {
-              "id": "Immediate Delivery",
+              "id": "Next Day Delivery",
               "time": {
                 "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2025-04-09"
+                "duration": "P1D",
+                "timestamp": "2025-04-10"
               }
             }
           ],
@@ -61,7 +61,7 @@
               "type": "Delivery",
               "start": {
                 "time": {
-                  "duration": "PT15M"
+                  "duration": "PT4H"
                 }
               },
               "tags": [
@@ -75,65 +75,6 @@
                     {
                       "code": "motorable_distance",
                       "value": "1.8"
-                    }
-                  ]
-                },
-                {
-                  "code": "fulfill_response",
-                  "list": [
-                    {
-                      "code": "rider_count",
-                      "value": "2"
-                    },
-                    {
-                      "code": "rate_basis",
-                      "value": "rider"
-                    }
-                  ]
-                },
-                {
-                  "code": "linked_provider",
-                  "list": [
-                    {
-                      "code": "id",
-                      "value": "P1"
-                    },
-                    {
-                      "code": "name",
-                      "value": "Seller1"
-                    }
-                  ]
-                },
-                {
-                  "code": "fulfill_request",
-                  "list": [
-                    {
-                      "code": "rider_count",
-                      "value": "2"
-                    },
-                    {
-                      "code": "rate_basis",
-                      "value": "rider"
-                    },
-                    {
-                      "code": "motorable_distance",
-                      "value": "3.0"
-                    },
-                    {
-                      "code": "pickup_slot_start",
-                      "value": "2025-04-09T09:15:53.404Z"
-                    },
-                    {
-                      "code": "pickup_slot_end",
-                      "value": "2025-04-09T09:17:53.404Z"
-                    },
-                    {
-                      "code": "delivery_slot_start",
-                      "value": "2025-04-09T09:25:53.404Z"
-                    },
-                    {
-                      "code": "delivery_slot_end",
-                      "value": "2025-04-09T09:35:53.404Z"
                     }
                   ]
                 }
@@ -160,7 +101,7 @@
             {
               "id": "I1",
               "parent_item_id": "",
-              "category_id": "Immediate Delivery",
+              "category_id": "Next Day Delivery",
               "fulfillment_id": "1",
               "descriptor": {
                 "name": "Fast delivery",
@@ -173,8 +114,8 @@
               },
               "time": {
                 "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2025-04-09"
+                "duration": "P1D",
+                "timestamp": "2025-04-10"
               },
               "tags": [
                 {
@@ -191,7 +132,7 @@
             {
               "id": "I2",
               "parent_item_id": "I1",
-              "category_id": "Immediate Delivery",
+              "category_id": "Next Day Delivery",
               "fulfillment_id": "2",
               "descriptor": {
                 "name": "RTO quote",
@@ -204,28 +145,23 @@
               },
               "time": {
                 "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2025-04-09"
+                "duration": "P1D",
+                "timestamp": "2025-04-10"
               }
             },
             {
-              "id": "I3",
-              "parent_item_id": "",
-              "category_id": "Immediate Delivery",
+              "id": "C1",
+              "parent_item_id": "..",
+              "category_id": "Next Day Delivery",
               "fulfillment_id": "1",
               "descriptor": {
-                "name": "Fast delivery",
-                "short_desc": "Fast delivery services",
-                "long_desc": "Fast delivery services"
+                "name": "COD Fee",
+                "short_desc": "COD Fee",
+                "long_desc": "Cash on delivery fee"
               },
               "price": {
                 "currency": "INR",
-                "value": "88.50"
-              },
-              "time": {
-                "label": "TAT",
-                "duration": "PT60M",
-                "timestamp": "2025-04-09"
+                "value": "19.18"
               },
               "tags": [
                 {
@@ -233,13 +169,20 @@
                   "list": [
                     {
                       "code": "type",
-                      "value": "rider"
-                    },
-                    {
-                      "code": "unit",
-                      "value": "hour"
+                      "value": "cod"
                     }
                   ]
+                }
+              ]
+            }
+          ],
+          "tags": [
+            {
+              "code": "special_req",
+              "list": [
+                {
+                  "code": "cod_order",
+                  "value": "yes"
                 }
               ]
             }
@@ -251,7 +194,7 @@
           "code": "lsp_features",
           "list": [
             {
-              "code": "005",
+              "code": "008",
               "value": "yes"
             }
           ]
