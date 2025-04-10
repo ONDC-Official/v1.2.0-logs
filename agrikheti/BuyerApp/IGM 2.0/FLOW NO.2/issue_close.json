@@ -1,0 +1,342 @@
+{
+  "context": {
+    "ttl": "PT10M",
+    "action": "issue",
+    "bap_id": "stage.agrikheti.com",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "domain": "ONDC:RET10",
+    "bap_uri": "https://stage.agrikheti.com/api/ondc",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "timestamp": "2025-04-04T07:56:03.892Z",
+    "message_id": "15c44a63-7c91-49dd-ad8b-0934cccc597c",
+    "core_version": "2.0.0",
+    "transaction_id": "255ff398-f449-4809-9823-1fb6c15ec507"
+  },
+  "message": {
+    "issue": {
+      "id": "ISSUE-1",
+      "refs": [
+        {
+          "ref_id": "O23",
+          "ref_type": "ORDER"
+        },
+        {
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "2",
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "message.order.items"
+              }
+            }
+          ],
+          "ref_id": "I23",
+          "ref_type": "ITEM"
+        },
+        {
+          "ref_id": "P23",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F23",
+          "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "T23",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "level": "GRIEVANCE",
+      "actors": [
+        {
+          "id": "CUST1",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "email": "sam@yahoo.com",
+              "phone": "9879879870"
+            }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "email": "buyerapp@interface.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "OA_NP2",
+          "info": {
+            "org": {
+              "name": "stage.agrikheti.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "email": "buyerapp@interface.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "COUNTERPARTY_NP"
+        },
+        {
+          "id": "OA_NP2-GRO",
+          "info": {
+            "org": {
+              "name": "stage.agrikheti.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Grievance Officer BNP"
+            },
+            "contact": {
+              "email": "info@agrikheti.com",
+              "phone": "9056561008"
+            }
+          },
+          "type": "COUNTERPARTY_NP_GRO"
+        }
+      ],
+      "status": "RESOLVED",
+      "actions": [
+        {
+          "id": "A1",
+          "action_by": "NP1",
+          "updated_at": "2025-04-04T07:52:33.557Z",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Product not showing."
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A1_1",
+          "action_by": "OA_NP2",
+          "updated_at": "2025-04-04T07:52:33.606Z",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Checking the issue raised"
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A1_1_1",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "OA_NP2",
+          "updated_at": "2025-04-04T07:53:56.820Z",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Resolution provided"
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A2",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP1",
+          "updated_at": "2025-04-04T07:54:19.597Z",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "Will check once enabled"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A2_1",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "OA_NP2",
+          "updated_at": "2025-04-04T07:54:34.865Z",
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "Issue Resolved."
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A3",
+          "ref_id": "R1",
+          "ref_type": "escalated",
+          "action_by": "NP1",
+          "updated_at": "2025-04-04T07:55:00.782Z",
+          "description": {
+            "code": "ESCALATED",
+            "short_desc": "Product not showing."
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_1",
+          "action_by": "OA_NP2-GRO",
+          "updated_at": "2025-04-04T07:55:00.422Z",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint"
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A3_1_1",
+          "ref_id": "R1_1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "OA_NP2-GRO",
+          "updated_at": "2025-04-04T07:55:09.251Z",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Resolution provided"
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A4",
+          "ref_id": "R1_1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "NP1",
+          "updated_at": "2025-04-04T07:55:27.089Z",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "Will check once enabled"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A4_1",
+          "ref_id": "R1_1",
+          "ref_type": "RESOLUTIONS",
+          "action_by": "OA_NP2",
+          "updated_at": "2025-04-04T07:55:47.134Z",
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "Product is visible now"
+          },
+          "actor_details": {
+            "name": "John Doe"
+          }
+        },
+        {
+          "id": "A5",
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "THUMBS_UP",
+                  "descriptor": {
+                    "code": "RATING"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "CLOSURE_DETAILS"
+              }
+            }
+          ],
+          "ref_id": "R1_1",
+          "ref_type": "Closed",
+          "action_by": "NP1",
+          "updated_at": "2025-04-04T07:56:03.892Z",
+          "description": {
+            "code": "CLOSED",
+            "short_desc": "product visible now"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "created_at": "2025-04-02T07:51:51.282Z",
+      "updated_at": "2025-04-04T02:56:03.893Z",
+      "description": {
+        "code": "VIS001",
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ],
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "short_desc": "Issue with product quality",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        }
+      },
+      "resolutions": [
+        {
+          "id": "R1",
+          "descriptor": {
+            "code": "NOW-VISIBLE",
+            "short_desc": "Your complaint will be resolved shortly."
+          },
+          "updated_at": "2025-04-04T07:53:56.820Z",
+          "proposed_by": "OA_NP2-GRO"
+        },
+        {
+          "id": "R1_1",
+          "descriptor": {
+            "code": "NOW-VISIBLE",
+            "short_desc": "Your complaint will be resolved shortly."
+          },
+          "updated_at": "2025-04-04T07:55:09.251Z",
+          "proposed_by": "OA_NP2"
+        }
+      ],
+      "complainant_id": "NP1",
+      "last_action_id": "A5",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      }
+    }
+  }
+}
