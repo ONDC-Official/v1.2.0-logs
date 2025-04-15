@@ -4,14 +4,13 @@
       "domain": "ONDC:LOG11",
       "country": "IND",
       "city": "std:080",
-      "action": "init",
+      "action": "on_init",
       "core_version": "1.2.5",
       "bap_id": "dev-automation.ondc.org",
       "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
       "message_id": "eaa3f08b-88b6-4688-8926-f8f3c0f6c3b9",
-      "timestamp": "2025-04-15T06:50:42.392Z",
+      "timestamp": "2025-04-15T06:50:44.760Z",
       "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
-      "ttl": "PT30S",
       "bpp_id": "dev-automation.ondc.org",
       "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
     },
@@ -23,8 +22,7 @@
         "items": [
           {
             "id": "I1",
-            "fulfillment_id": "1",
-            "category_id": "Express Delivery"
+            "fulfillment_id": "1"
           }
         ],
         "fulfillments": [
@@ -81,40 +79,67 @@
                     "value": "Seller"
                   }
                 ]
+              },
+              {
+                "code": "rider_check",
+                "list": [
+                  {
+                    "code": "inline_check_for_rider",
+                    "value": "yes"
+                  }
+                ]
               }
             ]
           }
         ],
-        "billing": {
-          "name": "ONDC Logistics Buyer NP",
-          "address": {
-            "name": "My house or building no",
-            "building": "My house or building name",
-            "locality": "Jayanagar",
-            "city": "Bengaluru",
-            "state": "Karnataka",
-            "country": "India",
-            "area_code": "560076"
-          },
-          "tax_number": "AS34234HKJ342KH",
-          "phone": "9886098860",
-          "email": "abcd.efgh@gmail.com",
-          "created_at": "2025-04-15T06:50:42.392Z",
-          "updated_at": "2025-04-15T06:50:42.392Z"
+        "quote": {
+          "breakup": [
+            {
+              "@ondc/org/item_id": "I1",
+              "@ondc/org/title_type": "delivery",
+              "price": {
+                "currency": "INR",
+                "value": "50.00"
+              }
+            },
+            {
+              "@ondc/org/item_id": "I1",
+              "@ondc/org/title_type": "tax",
+              "price": {
+                "currency": "INR",
+                "value": "9.00"
+              }
+            }
+          ],
+          "ttl": "PT15M",
+          "price": {
+            "currency": "INR",
+            "value": "59.00"
+          }
         },
         "payment": {
           "type": "POST-FULFILLMENT",
           "collected_by": "BAP",
           "@ondc/org/settlement_basis": "invoicing",
-          "@ondc/org/settlement_window": "P15D"
+          "@ondc/org/settlement_window": "P15D",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "lsp",
+              "settlement_type": "upi",
+              "beneficiary_name": "xxxxx",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX"
+            }
+          ]
         },
         "tags": [
           {
-            "code": "bap_terms",
+            "code": "bpp_terms",
             "list": [
               {
-                "code": "accept_bpp_terms",
-                "value": "yes"
+                "code": "static_terms",
+                "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
               }
             ]
           }
@@ -133,18 +158,17 @@
         "domain": "ONDC:LOG11",
         "country": "IND",
         "city": "std:080",
-        "action": "init",
+        "action": "on_init",
         "core_version": "1.2.5",
         "bap_id": "dev-automation.ondc.org",
         "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
         "message_id": "eaa3f08b-88b6-4688-8926-f8f3c0f6c3b9",
-        "timestamp": "2025-04-15T06:50:42.392Z",
+        "timestamp": "2025-04-15T06:50:44.760Z",
         "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
-        "ttl": "PT30S",
         "bpp_id": "dev-automation.ondc.org",
         "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
       }
     }
   },
-  "signature": "Signature keyId=\"dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5|ONDC:LOG11-1.2.5-protocol-workbench|ed25519\",algorithm=\"ed25519\",created=\"1744699842\",expires=\"1744703442\",headers=\"(created) (expires) digest\",signature=\"z4fyrrepaKyLSG6UPVWbs0W6B6SXSF8v/RqOgMQplFRx14NZFzNiq3zhSxG+zXLzdbsHYwC/jW0tSQXI08jkAg==\""
+  "signature": "Signature keyId=\"dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5|ONDC:LOG11-1.2.5-protocol-workbench|ed25519\",algorithm=\"ed25519\",created=\"1744699845\",expires=\"1744703445\",headers=\"(created) (expires) digest\",signature=\"cgqjGdg90M7nLEqsgdcVGOFYcpXXHQku+/qBnHnsi3OXQSIjl2fhlh2EvP0VWcIVCU12dxEGl+2elY3lBd1LDA==\""
 }

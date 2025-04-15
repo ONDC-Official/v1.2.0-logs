@@ -4,12 +4,12 @@
       "domain": "ONDC:LOG11",
       "country": "IND",
       "city": "std:080",
-      "action": "on_update",
+      "action": "on_status",
       "core_version": "1.2.5",
       "bap_id": "dev-automation.ondc.org",
       "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
-      "message_id": "645d03cb-42ee-4f4a-8d7e-d222b3c19eb0",
-      "timestamp": "2025-04-15T06:50:56.783Z",
+      "message_id": "2e5fafc7-a8a0-42d6-9848-d38eed295315",
+      "timestamp": "2025-04-15T06:51:08.834Z",
       "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
       "bpp_id": "dev-automation.ondc.org",
       "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
@@ -84,7 +84,8 @@
                 "range": {
                   "start": "2025-04-15T06:50:56.783Z",
                   "end": "2025-04-16T06:50:56.783Z"
-                }
+                },
+                "timestamp": "2025-04-15T06:51:02.798Z"
               },
               "person": {
                 "name": "person_name_1"
@@ -275,12 +276,29 @@
                     "value": "2025-04-17T06:50:56.783Z"
                   }
                 ]
+              },
+              {
+                "code": "tracking",
+                "list": [
+                  {
+                    "code": "gps_enabled",
+                    "value": "no"
+                  },
+                  {
+                    "code": "url_enabled",
+                    "value": "yes"
+                  },
+                  {
+                    "code": "url",
+                    "value": "https://tracking_url.com"
+                  }
+                ]
               }
             ],
             "tracking": true,
             "state": {
               "descriptor": {
-                "code": "Agent-assigned"
+                "code": "At-destination-hub"
               }
             },
             "agent": {
@@ -295,6 +313,23 @@
             "@ondc/org/ebnexpirydate": "2025-04-17T06:50:56.783Z"
           }
         ],
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "collected_by": "BAP",
+          "@ondc/org/settlement_basis": "invoicing",
+          "@ondc/org/settlement_window": "P15D",
+          "@ondc/org/settlement_details": [
+            {
+              "settlement_counterparty": "lsp",
+              "settlement_type": "upi",
+              "beneficiary_name": "xxxxx",
+              "upi_address": "gft@oksbi",
+              "settlement_bank_account_no": "XXXXXXXXXX",
+              "settlement_ifsc_code": "XXXXXXXXX"
+            }
+          ],
+          "status": "NOT-PAID"
+        },
         "billing": {
           "name": "ONDC Logistics Buyer NP",
           "address": {
@@ -311,22 +346,6 @@
           "email": "abcd.efgh@gmail.com",
           "created_at": "2025-04-15T06:50:42.392Z",
           "updated_at": "2025-04-15T06:50:42.392Z"
-        },
-        "payment": {
-          "type": "POST-FULFILLMENT",
-          "collected_by": "BAP",
-          "@ondc/org/settlement_basis": "invoicing",
-          "@ondc/org/settlement_window": "P15D",
-          "@ondc/org/settlement_details": [
-            {
-              "settlement_counterparty": "lsp",
-              "settlement_type": "upi",
-              "beneficiary_name": "xxxxx",
-              "upi_address": "gft@oksbi",
-              "settlement_bank_account_no": "XXXXXXXXXX",
-              "settlement_ifsc_code": "XXXXXXXXX"
-            }
-          ]
         },
         "@ondc/org/linked_order": {
           "items": [
@@ -384,7 +403,7 @@
             }
           }
         },
-        "updated_at": "2025-04-15T06:50:56.783Z"
+        "updated_at": "2025-04-15T06:51:08.834Z"
       }
     }
   },
@@ -399,17 +418,17 @@
         "domain": "ONDC:LOG11",
         "country": "IND",
         "city": "std:080",
-        "action": "on_update",
+        "action": "on_status",
         "core_version": "1.2.5",
         "bap_id": "dev-automation.ondc.org",
         "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
-        "message_id": "645d03cb-42ee-4f4a-8d7e-d222b3c19eb0",
-        "timestamp": "2025-04-15T06:50:56.783Z",
+        "message_id": "2e5fafc7-a8a0-42d6-9848-d38eed295315",
+        "timestamp": "2025-04-15T06:51:08.834Z",
         "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
         "bpp_id": "dev-automation.ondc.org",
         "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
       }
     }
   },
-  "signature": "no-auth"
+  "signature": "Signature keyId=\"dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5|ONDC:LOG11-1.2.5-protocol-workbench|ed25519\",algorithm=\"ed25519\",created=\"1744699869\",expires=\"1744703469\",headers=\"(created) (expires) digest\",signature=\"nZ78GZr0XbTr0AR0eE4csBfm8rw83T5AXTFNX3D8SFpgQWRPV73X5HKGkX8C2xjxCA62vbluw0MhQC0xTrGUCw==\""
 }

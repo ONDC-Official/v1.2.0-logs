@@ -1,23 +1,23 @@
 {
   "req": {
     "context": {
-      "domain": "ONDC:LOG11",
+      "domain": "ONDC:LOG10",
       "country": "IND",
       "city": "std:080",
       "action": "on_status",
       "core_version": "1.2.5",
       "bap_id": "dev-automation.ondc.org",
-      "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
-      "message_id": "ef950845-1560-4783-aceb-1f76a215111e",
-      "timestamp": "2025-04-15T06:51:14.866Z",
-      "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
+      "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+      "message_id": "8561b113-18de-4368-bac1-b09214b7b8fc",
+      "timestamp": "2025-04-14T09:33:23.512Z",
+      "transaction_id": "d8f85db0-01d8-4978-b662-e15e4c6fbd53",
       "bpp_id": "dev-automation.ondc.org",
-      "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
+      "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/seller"
     },
     "message": {
       "order": {
-        "id": "e3a1fd7d-61bd-4723-bfd2-6dad0559d4c0",
-        "state": "In-progress",
+        "id": "dd933a41-e6a4-4e7f-939c-1a9acd7e3b71",
+        "state": "Completed",
         "provider": {
           "id": "P1"
         },
@@ -25,15 +25,34 @@
           {
             "id": "I1",
             "fulfillment_id": "1",
-            "category_id": "Express Delivery",
+            "category_id": "Standard Delivery",
             "time": {
               "label": "TAT",
-              "duration": "P3D",
-              "timestamp": "2025-04-17"
+              "duration": "P2D",
+              "timestamp": "2025-04-16"
+            }
+          },
+          {
+            "id": "I2",
+            "category_id": "Standard Delivery",
+            "fulfillment_id": "2",
+            "descriptor": {
+              "name": "RTO quote",
+              "short_desc": "RTO quote",
+              "long_desc": "RTO quote"
+            },
+            "time": {
+              "label": "TAT",
+              "duration": "P2D",
+              "timestamp": "2025-04-16"
             }
           }
         ],
         "quote": {
+          "price": {
+            "currency": "INR",
+            "value": "59.00"
+          },
           "breakup": [
             {
               "@ondc/org/item_id": "I1",
@@ -52,26 +71,22 @@
               }
             },
             {
-              "@ondc/org/item_id": "I1",
-              "@ondc/org/title_type": "diff",
+              "@ondc/org/item_id": "I2",
+              "@ondc/org/title_type": "rto",
               "price": {
                 "currency": "INR",
-                "value": "9.00"
+                "value": "0.00"
               }
             },
             {
-              "@ondc/org/item_id": "I1",
-              "@ondc/org/title_type": "tax_diff",
+              "@ondc/org/item_id": "I2",
+              "@ondc/org/title_type": "tax",
               "price": {
                 "currency": "INR",
-                "value": "2.00"
+                "value": "0.00"
               }
             }
-          ],
-          "price": {
-            "currency": "INR",
-            "value": "70.00"
-          }
+          ]
         },
         "fulfillments": [
           {
@@ -96,12 +111,12 @@
                 "email": "abcd.efgh@gmail.com"
               },
               "time": {
-                "duration": "P1D",
+                "duration": "PT12H",
                 "range": {
-                  "start": "2025-04-15T06:50:56.783Z",
-                  "end": "2025-04-16T06:50:56.783Z"
+                  "start": "2025-04-14T09:33:12.122Z",
+                  "end": "2025-04-14T21:33:12.122Z"
                 },
-                "timestamp": "2025-04-15T06:51:02.798Z"
+                "timestamp": "2025-04-14T09:33:15.170Z"
               },
               "person": {
                 "name": "person_name_1"
@@ -129,8 +144,8 @@
               },
               "time": {
                 "range": {
-                  "start": "2025-04-16T06:50:56.783Z",
-                  "end": "2025-04-19T06:50:56.783Z"
+                  "start": "2025-04-14T21:33:12.122Z",
+                  "end": "2025-04-16T21:33:12.122Z"
                 }
               }
             },
@@ -149,10 +164,6 @@
                   {
                     "code": "address",
                     "value": "13, Main building, Siri Fort, New Delhi, Delhi, 110049"
-                  },
-                  {
-                    "code": "tax_id",
-                    "value": "29GSTIN1234K2Z2"
                   }
                 ]
               },
@@ -194,10 +205,6 @@
                   {
                     "code": "height",
                     "value": "1.0"
-                  },
-                  {
-                    "code": "shipment_type",
-                    "value": "box"
                   }
                 ]
               },
@@ -206,7 +213,7 @@
                 "list": [
                   {
                     "code": "category",
-                    "value": "Fashion"
+                    "value": "F&B"
                   },
                   {
                     "code": "name",
@@ -239,7 +246,7 @@
                 "list": [
                   {
                     "code": "category",
-                    "value": "Fashion"
+                    "value": "F&B"
                   },
                   {
                     "code": "name",
@@ -268,91 +275,36 @@
                 ]
               },
               {
-                "code": "shipping_label",
+                "code": "precancel_state",
                 "list": [
                   {
-                    "code": "type",
-                    "value": "pdf"
+                    "code": "fulfillment_state",
+                    "value": "At-delivery"
                   },
                   {
-                    "code": "url",
-                    "value": "https://shipping_label.com/pdf/url"
+                    "code": "updated_at",
+                    "value": "2025-04-14T09:33:18.257Z"
                   }
                 ]
               },
               {
-                "code": "ebn",
+                "code": "rto_event",
                 "list": [
                   {
-                    "code": "id",
-                    "value": "EBN1"
+                    "code": "retry_count",
+                    "value": "1"
                   },
                   {
-                    "code": "expiry_date",
-                    "value": "2025-04-17T06:50:56.783Z"
-                  }
-                ]
-              },
-              {
-                "code": "tracking",
-                "list": [
-                  {
-                    "code": "gps_enabled",
-                    "value": "no"
+                    "code": "rto_id",
+                    "value": "2"
                   },
                   {
-                    "code": "url_enabled",
-                    "value": "yes"
+                    "code": "cancellation_reason_id",
+                    "value": "127"
                   },
                   {
-                    "code": "url",
-                    "value": "https://tracking_url.com"
-                  }
-                ]
-              },
-              {
-                "code": "linked_order_diff",
-                "list": [
-                  {
-                    "code": "id",
-                    "value": "RO1"
-                  },
-                  {
-                    "code": "weight_unit",
-                    "value": "kilogram"
-                  },
-                  {
-                    "code": "weight_value",
-                    "value": "3.0"
-                  },
-                  {
-                    "code": "dim_unit",
-                    "value": "centimeter"
-                  },
-                  {
-                    "code": "length",
-                    "value": "1.0"
-                  },
-                  {
-                    "code": "breadth",
-                    "value": "1.0"
-                  },
-                  {
-                    "code": "height",
-                    "value": "1.0"
-                  }
-                ]
-              },
-              {
-                "code": "linked_order_diff_proof",
-                "list": [
-                  {
-                    "code": "type",
-                    "value": "image"
-                  },
-                  {
-                    "code": "url",
-                    "value": "https://lsp.com/sorter/images1.png"
+                    "code": "cancelled_by",
+                    "value": "dev-automation.ondc.org"
                   }
                 ]
               }
@@ -360,7 +312,7 @@
             "tracking": true,
             "state": {
               "descriptor": {
-                "code": "Out-for-delivery"
+                "code": "RTO"
               }
             },
             "agent": {
@@ -369,10 +321,26 @@
             },
             "vehicle": {
               "registration": "3LVJ945"
+            }
+          },
+          {
+            "id": "2",
+            "type": "RTO",
+            "state": {
+              "descriptor": {
+                "code": "RTO-Disposed"
+              }
             },
-            "@ondc/org/awb_no": "1227262193237777",
-            "@ondc/org/ewaybillno": "EBN1",
-            "@ondc/org/ebnexpirydate": "2025-04-17T06:50:56.783Z"
+            "start": {
+              "time": {
+                "timestamp": "2025-04-14T09:33:21.191Z"
+              }
+            },
+            "end": {
+              "time": {
+                "timestamp": "2025-04-14T09:33:23.512Z"
+              }
+            }
           }
         ],
         "payment": {
@@ -406,8 +374,8 @@
           "tax_number": "AS34234HKJ342KH",
           "phone": "9886098860",
           "email": "abcd.efgh@gmail.com",
-          "created_at": "2025-04-15T06:50:42.392Z",
-          "updated_at": "2025-04-15T06:50:42.392Z"
+          "created_at": "2025-04-14T09:32:50.080Z",
+          "updated_at": "2025-04-14T09:32:50.080Z"
         },
         "@ondc/org/linked_order": {
           "items": [
@@ -463,58 +431,15 @@
                 "value": 1
               }
             }
-          },
-          "tags": [
-            {
-              "code": "diff_dim",
-              "list": [
-                {
-                  "code": "unit",
-                  "value": "centimeter"
-                },
-                {
-                  "code": "length",
-                  "value": "1.5"
-                },
-                {
-                  "code": "breadth",
-                  "value": "1.5"
-                },
-                {
-                  "code": "height",
-                  "value": "1.5"
-                }
-              ]
-            },
-            {
-              "code": "diff_weight",
-              "list": [
-                {
-                  "code": "unit",
-                  "value": "kilogram"
-                },
-                {
-                  "code": "weight",
-                  "value": "1.5"
-                }
-              ]
-            },
-            {
-              "code": "diff_proof",
-              "list": [
-                {
-                  "code": "type",
-                  "value": "image"
-                },
-                {
-                  "code": "url",
-                  "value": "https://lsp.com/sorter/images1.png"
-                }
-              ]
-            }
-          ]
+          }
         },
-        "updated_at": "2025-04-15T06:51:14.866Z"
+        "updated_at": "2025-04-14T09:33:23.512Z",
+        "cancellation": {
+          "cancelled_by": "dev-automation.ondc.org",
+          "reason": {
+            "id": "127"
+          }
+        }
       }
     }
   },
@@ -526,20 +451,20 @@
         }
       },
       "context": {
-        "domain": "ONDC:LOG11",
+        "domain": "ONDC:LOG10",
         "country": "IND",
         "city": "std:080",
         "action": "on_status",
         "core_version": "1.2.5",
         "bap_id": "dev-automation.ondc.org",
-        "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/buyer",
-        "message_id": "ef950845-1560-4783-aceb-1f76a215111e",
-        "timestamp": "2025-04-15T06:51:14.866Z",
-        "transaction_id": "d9a8d317-edb5-4ce4-b200-787caae13932",
+        "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+        "message_id": "8561b113-18de-4368-bac1-b09214b7b8fc",
+        "timestamp": "2025-04-14T09:33:23.512Z",
+        "transaction_id": "d8f85db0-01d8-4978-b662-e15e4c6fbd53",
         "bpp_id": "dev-automation.ondc.org",
-        "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG11/1.2.5/seller"
+        "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/seller"
       }
     }
   },
-  "signature": "no-auth"
+  "signature": "Signature keyId=\"dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5|ONDC:LOG10-1.2.5-protocol-workbench|ed25519\",algorithm=\"ed25519\",created=\"1744623204\",expires=\"1744626804\",headers=\"(created) (expires) digest\",signature=\"iiimT9s9ipM3OYJBHTpdniHY5S83C7v/pHt08caRGDSPNSGR4s9reJofr+GogePk9YCfSHIgqdrXS1hoGt2kAQ==\""
 }
