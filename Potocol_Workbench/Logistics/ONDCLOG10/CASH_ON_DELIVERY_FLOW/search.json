@@ -1,0 +1,174 @@
+{
+  "req": {
+    "context": {
+      "domain": "ONDC:LOG10",
+      "country": "IND",
+      "city": "std:080",
+      "action": "search",
+      "core_version": "1.2.5",
+      "bap_id": "dev-automation.ondc.org",
+      "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+      "message_id": "c8a98ce2-850b-4720-927e-10df88ecc92d",
+      "timestamp": "2025-04-14T09:34:29.378Z",
+      "transaction_id": "e789ed3d-4c67-4d4b-b07c-349033f29eda",
+      "ttl": "PT30S"
+    },
+    "message": {
+      "intent": {
+        "category": {
+          "id": "Standard Delivery"
+        },
+        "provider": {
+          "time": {
+            "days": "1,2,3,4,5,6,7",
+            "schedule": {
+              "holidays": [
+                "2025-04-24",
+                "2025-04-29"
+              ]
+            },
+            "duration": "PT30M",
+            "range": {
+              "start": "1100",
+              "end": "2100"
+            }
+          }
+        },
+        "fulfillment": {
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "id": "S1",
+              "gps": "12.4535,77.9283",
+              "address": {
+                "area_code": "654321"
+              }
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.4535,77.9283",
+              "address": {
+                "area_code": "123456"
+              }
+            }
+          },
+          "tags": [
+            {
+              "code": "linked_provider",
+              "list": [
+                {
+                  "code": "id",
+                  "value": "P1"
+                },
+                {
+                  "code": "name",
+                  "value": "Seller1"
+                }
+              ]
+            },
+            {
+              "code": "linked_order",
+              "list": [
+                {
+                  "code": "cod_order",
+                  "value": "yes"
+                },
+                {
+                  "code": "collection_amount",
+                  "value": "300.00"
+                },
+                {
+                  "code": "currency",
+                  "value": "INR"
+                },
+                {
+                  "code": "declared_value",
+                  "value": "300.0"
+                },
+                {
+                  "code": "category",
+                  "value": "Grocery"
+                },
+                {
+                  "code": "weight_unit",
+                  "value": "kilogram"
+                },
+                {
+                  "code": "weight_value",
+                  "value": "3.0"
+                },
+                {
+                  "code": "dim_unit",
+                  "value": "centimeter"
+                },
+                {
+                  "code": "length",
+                  "value": "1.0"
+                },
+                {
+                  "code": "breadth",
+                  "value": "1.0"
+                },
+                {
+                  "code": "height",
+                  "value": "1.0"
+                }
+              ]
+            }
+          ]
+        },
+        "payment": {
+          "type": "POST-FULFILLMENT",
+          "@ondc/org/collection_amount": "300.00"
+        },
+        "@ondc/org/payload_details": {
+          "weight": {
+            "unit": "kilogram",
+            "value": 1
+          },
+          "dimensions": {
+            "length": {
+              "unit": "centimeter",
+              "value": 1
+            },
+            "breadth": {
+              "unit": "centimeter",
+              "value": 1
+            },
+            "height": {
+              "unit": "centimeter",
+              "value": 1
+            }
+          },
+          "category": "Grocery",
+          "value": {
+            "currency": "INR",
+            "value": "300.00"
+          },
+          "dangerous_goods": false
+        }
+      }
+    }
+  },
+  "res": {
+    "response": {
+      "context": {
+        "domain": "ONDC:LOG10",
+        "action": "search",
+        "bap_id": "dev-automation.ondc.org",
+        "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+        "transaction_id": "e789ed3d-4c67-4d4b-b07c-349033f29eda",
+        "message_id": "c8a98ce2-850b-4720-927e-10df88ecc92d",
+        "timestamp": "2025-04-14T09:34:30.553Z",
+        "ttl": "PT30S"
+      },
+      "message": {
+        "ack": {
+          "status": "ACK"
+        }
+      }
+    }
+  },
+  "signature": "no-auth"
+}
