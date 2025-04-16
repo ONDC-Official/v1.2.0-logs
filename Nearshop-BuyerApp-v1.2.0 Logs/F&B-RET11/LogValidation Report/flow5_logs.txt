@@ -1,0 +1,54 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_search_full_catalog_refresh": {
+                "providers[0][id_ancc5_0_0]": "Provided default_selection calculated incorrectly,\n    Calculated: min=415, max=1149. \n    Given: min=415, max=999.",
+                "invldAreaCode": "STD code does not match with correct area_code on /on_search",
+                "message/catalog/bpp/providers0/categories/items": "No items are mapped with the given category_id CM11 in providers0/items",
+                "providers[1][id_ancc5_0_1]": "Provided default_selection calculated incorrectly,\n    Calculated: min=415, max=1149. \n    Given: min=415, max=999.",
+                "message/catalog/bpp/providers1/categories/items": "No items are mapped with the given category_id CM12 in providers1/items"
+            },
+            
+            "on_init": {
+               
+                "settlementBasis": "Invalid settlement basis in /on_init. Expected one of: delivery, shipment",
+                "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M)."
+            },
+            "on_status_packed": {
+                "ttl_err": "ttl = PT30S as per the API Contract",
+              
+                "txnId": "Transaction Id should be same from /select onwards",
+                "onStatusOdrId": "Order id in /confirm and /on_status_packed do not match",
+                "tmpstmp": "Created At timestamp for /on_status_packed.message.order should be equal to context timestamp at confirm",
+                "tmpstmp1": "Timestamp for /on_confirm api cannot be greater than or equal to /on_status_packed api",
+                "fulfilmntRngErr0": "/start/range/start_time \"2025-04-10T13:23:32.487Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-08T07:18:17.674Z\" of on_status_packed",
+                "fulfilmntRngErr1": "/start/range/end_time \"2025-04-10T23:00:00.000Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-08T23:00:00.000Z\" of on_status_packed",
+                "fulfilmntRngErr2": "/end/range/start_time \"2025-04-11T09:30:00.000Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-09T09:30:00.000Z\" of on_status_packed",
+                "fulfilmntRngErr3": "/end/range/end_time \"2025-04-11T19:00:00.000Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-09T19:00:00.000Z\" of on_status_packed",
+                "ffTracking": "Fulfillment Tracking mismatch with the on_select call",
+                "message/order.fulfillments/0/id": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_confirm on key 'id'",
+                "message/order.fulfillments/0/@ondc/org/category": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_confirm on key '@ondc/org/category'",
+                "message/order.fulfillments/0/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_confirm on key 'start/time'",
+                "message/order.fulfillments/0/end/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_confirm on key 'end/contact'",
+                "message/order.fulfillments/0/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_confirm on key 'end/time'"
+            },
+            
+            "on_cancel": {
+                "schemaErr0": "/message/order must NOT have additional properties (tags)"
+                
+            },
+            "on_status_rto_delivered/disposed": {
+                "schemaErr0": "/message/order must NOT have additional properties (tags)"
+                
+            }
+        },
+        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+        "bap_id": "apistaging.nearshop.in",
+        "domain": "ONDC:RET11",
+        "reportTimestamp": "2025-04-10T14:56:59.617Z"
+    },
+    "signature": "0om6tEw7g/flC79al2jP8ZSPSfdoR0LIOQgHzmNeigvsghq4LqUxWnArh6WgI1OJgqkNyc9jn2i94pgUYbVPBQ==",
+    "signTimestamp": "2025-04-10T14:56:59.617Z"
+}
