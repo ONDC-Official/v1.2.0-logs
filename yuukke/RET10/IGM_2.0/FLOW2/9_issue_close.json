@@ -1,16 +1,9 @@
 {
     "context": {
-        "domain": "ONDC:RET10",
-        "action": "on_issue",
-        "core_version": "2.0.0",
         "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
         "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
         "bpp_id": "ondc.preprod.yuukke.com",
         "bpp_uri": "https://ondc.preprod.yuukke.com",
-        "transaction_id": "8eb21210-07cf-45f6-8bbf-b4fd49ba0021",
-        "message_id": "df731e42-8b2c-4381-9a72-440b79cbc24f",
-        "timestamp": "2025-04-17T05:10:03.965Z",
-        "ttl": "PT30S",
         "location": {
             "country": {
                 "code": "IND"
@@ -18,21 +11,20 @@
             "city": {
                 "code": "*"
             }
-        }
+        },
+        "transaction_id": "8eb21210-07cf-45f6-8bbf-b4fd49ba0021",
+        "message_id": "048223d6-1802-4fc7-bae6-761a1680139f",
+        "timestamp": "2025-04-17T10:34:38.148Z",
+        "domain": "ONDC:RET10",
+        "core_version": "2.0.0",
+        "ttl": "PT10M",
+        "action": "issue"
     },
     "message": {
-        "updated_target": [
-            {
-                "path": "issue.actions",
-                "action": "APPENDED"
-            }
-        ],
         "issue": {
             "id": "a6efbf8f-a923-4cbe-a417-8ac3588fa8d1",
-            "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-04-15T10:07:52.250Z",
-            "updated_at": "2025-04-17T05:10:03.965Z",
+            "status": "CLOSED",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -43,14 +35,6 @@
                 {
                     "ref_id": "ZYFybaK7Vx0WbmjKE8n976Gcych5Sj23",
                     "ref_type": "ORDER"
-                },
-                {
-                    "ref_id": "P1",
-                    "ref_type": "PROVIDER"
-                },
-                {
-                    "ref_id": "F1",
-                    "ref_type": "FULFILMENT"
                 },
                 {
                     "ref_id": "640",
@@ -70,6 +54,14 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
                 },
                 {
                     "ref_id": "T001",
@@ -114,7 +106,23 @@
                     "type": "TRANSACTION_COUNTERPARTY_NP",
                     "info": {
                         "org": {
-                            "name": "ondc.preprod.yuukke.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "7305888114",
+                            "email": "support@yuukke.com"
+                        },
+                        "person": {
+                            "name": "esha"
+                        }
+                    }
+                },
+                {
+                    "id": "NP3",
+                    "type": "COUNTERPARTY_NP_GRO",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
                         },
                         "contact": {
                             "phone": "7305888114",
@@ -126,9 +134,6 @@
                     }
                 }
             ],
-            "respondent_ids": [
-                "NP2"
-            ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
             "description": {
@@ -138,9 +143,9 @@
                 "additional_desc": {
                     "url": "https://buyerapp.com/additonal-details/desc.txt",
                     "content_type": "text/plain"
-                },
-                "images": []
+                }
             },
+            "last_action_id": "8a8beb4d-f609-4a20-abfe-0158613c0e49",
             "actions": [
                 {
                     "id": "68039658-72ee-465f-9e1c-824844508735",
@@ -172,15 +177,110 @@
                         "code": "RESOLUTION_PROPOSED",
                         "short_desc": "we will offer you half refund"
                     },
-                    "ref_type": "RESOLUTIONS",
                     "ref_id": "R_PARENT",
+                    "ref_type": "RESOLUTIONS",
                     "updated_at": "2025-04-17T10:26:06.608Z",
                     "action_by": "NP2",
                     "actor_details": {
                         "name": "esha"
                     }
+                },
+                {
+                    "id": "1077743b-fa8a-4f5c-9dcf-9f885072e8fc",
+                    "description": {
+                        "code": "ESCALATED",
+                        "short_desc": "not happy with your resolution"
+                    },
+                    "updated_at": "2025-04-17T10:27:20.003Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Gokulakirshnan"
+                    }
+                },
+                {
+                    "id": "4e87fe63-847b-46fe-89c9-da6bf8b72ce6",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "We will Proceesing Your Order let U known Shortly"
+                    },
+                    "updated_at": "2025-04-17T10:28:04.249Z",
+                    "action_by": "NP3",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "eec2f603-abab-44ae-9c20-5d34c069ec60",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "we willl give full refund 90 pecentafe"
+                    },
+                    "ref_id": "R_PARENT",
+                    "ref_type": "RESOLUTIONS",
+                    "updated_at": "2025-04-17T10:30:25.023Z",
+                    "action_by": "NP3",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "8a8beb4d-f609-4a20-abfe-0158613c0e49",
+                    "description": {
+                        "code": "RESOLUTION_ACCEPTED"
+                    },
+                    "ref_id": "f9e1b808-e24e-458a-bc52-dd956a967567",
+                    "ref_type": "RESOLUTIONS",
+                    "updated_at": "2025-04-17T10:32:33.949Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Gokulakirshnan"
+                    }
+                },
+                {
+                    "id": "059ab847-b56e-4ab1-82b2-fa308f8822ca",
+                    "description": {
+                        "code": "RESOLVED",
+                        "short_desc": "We will Proceesing Your Order let U known Shortly",
+                        "name": "REFUND"
+                    },
+                    "ref_type": "RESOLUTIONS",
+                    "ref_id": "f9e1b808-e24e-458a-bc52-dd956a967567",
+                    "updated_at": "2025-04-17T10:33:25.034Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "8a8beb4d-f609-4a20-abfe-0158613c0e49",
+                    "description": {
+                        "code": "CLOSED",
+                        "short_desc": "not happy with your resolution"
+                    },
+                    "updated_at": "2025-04-17T10:34:38.147Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Gokulakirshnan"
+                    },
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "CLOSURE_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "RATING"
+                                    },
+                                    "value": "THUMBS_UP"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
+            "created_at": "2025-04-15T10:07:52.250Z",
+            "updated_at": "2025-04-17T05:34:38.148Z",
             "resolutions": [
                 {
                     "id": "R_PARENT",
@@ -188,7 +288,7 @@
                         "code": "PARENT",
                         "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
                     },
-                    "updated_at": "2025-04-17T10:26:06.608Z",
+                    "updated_at": "2025-04-17T10:33:25.034Z",
                     "proposed_by": "NP2"
                 },
                 {
@@ -216,9 +316,34 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "f9e1b808-e24e-458a-bc52-dd956a967567",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "refund initilaized"
+                    },
+                    "updated_at": "2025-04-17 10:30:25.057",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND_AMOUNT"
+                                    },
+                                    "value": "200"
+                                }
+                            ]
+                        }
+                    ]
                 }
-            ],
-            "last_action_id": "67ce6e6e-578b-4354-b3c7-a8bd82779761"
+            ]
         }
     }
 }

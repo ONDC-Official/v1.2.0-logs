@@ -13,8 +13,8 @@
             }
         },
         "transaction_id": "8eb21210-07cf-45f6-8bbf-b4fd49ba0021",
-        "message_id": "b0ea8872-d7b8-4161-9d6c-a50ec08c8364",
-        "timestamp": "2025-04-17T10:10:03.964Z",
+        "message_id": "df731e42-8b2c-4381-9a72-440b79cbc24f",
+        "timestamp": "2025-04-17T10:27:20.003Z",
         "domain": "ONDC:RET10",
         "core_version": "2.0.0",
         "ttl": "PT10M",
@@ -24,7 +24,7 @@
         "issue": {
             "id": "a6efbf8f-a923-4cbe-a417-8ac3588fa8d1",
             "level": "ISSUE",
-            "status": "OPEN",
+            "status": "PROCESSING",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -74,7 +74,7 @@
                     "type": "CONSUMER",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
                         },
                         "person": {
                             "name": "Sam Manuel"
@@ -90,7 +90,7 @@
                     "type": "INTERFACING_NP",
                     "info": {
                         "org": {
-                            "name": "buyerapp.com::ONDC:RET10"
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
                         },
                         "contact": {
                             "phone": "9450394039",
@@ -98,6 +98,22 @@
                         },
                         "person": {
                             "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "TRANSACTION_COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "ondc.preprod.yuukke.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "7305888114",
+                            "email": "support@yuukke.com"
+                        },
+                        "person": {
+                            "name": "esha"
                         }
                     }
                 }
@@ -111,14 +127,9 @@
                 "additional_desc": {
                     "url": "https://buyerapp.com/additonal-details/desc.txt",
                     "content_type": "text/plain"
-                },
-                "images": [
-                    {
-                        "url": "http://buyerapp.com/addtional-details/img1.png"
-                    }
-                ]
+                }
             },
-            "last_action_id": "68039658-72ee-465f-9e1c-824844508735",
+            "last_action_id": "1077743b-fa8a-4f5c-9dcf-9f885072e8fc",
             "actions": [
                 {
                     "id": "68039658-72ee-465f-9e1c-824844508735",
@@ -131,10 +142,85 @@
                     "actor_details": {
                         "name": "Gokulakirshnan"
                     }
+                },
+                {
+                    "id": "07830c09-87ff-46f2-b2a5-9d1472faae33",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "We will Proceesing Your Order let U known Shortly"
+                    },
+                    "updated_at": "2025-04-17T10:10:28.517Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "67ce6e6e-578b-4354-b3c7-a8bd82779761",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "we will offer you half refund"
+                    },
+                    "ref_type": "RESOLUTIONS",
+                    "ref_id": "R_PARENT",
+                    "updated_at": "2025-04-17T10:26:06.608Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "1077743b-fa8a-4f5c-9dcf-9f885072e8fc",
+                    "description": {
+                        "code": "ESCALATED",
+                        "short_desc": "not happy with your resolution"
+                    },
+                    "updated_at": "2025-04-17T10:27:20.003Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Gokulakirshnan"
+                    }
                 }
             ],
             "created_at": "2025-04-15T10:07:52.250Z",
-            "updated_at": "2025-04-17T05:10:03.965Z"
+            "updated_at": "2025-04-17T05:27:20.004Z",
+            "resolutions": [
+                {
+                    "id": "R_PARENT",
+                    "descriptor": {
+                        "code": "PARENT",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+                    "updated_at": "2025-04-17T10:26:06.608Z",
+                    "proposed_by": "NP2"
+                },
+                {
+                    "id": "cd616ee0-ba8f-433c-aee1-42232b06e425",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "Half refund"
+                    },
+                    "updated_at": "2025-04-17 10:26:06.654",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND_AMOUNT"
+                                    },
+                                    "value": "120"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     }
 }

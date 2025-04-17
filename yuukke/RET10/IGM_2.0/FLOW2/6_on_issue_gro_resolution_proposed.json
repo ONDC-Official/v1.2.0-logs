@@ -8,8 +8,8 @@
         "bpp_id": "ondc.preprod.yuukke.com",
         "bpp_uri": "https://ondc.preprod.yuukke.com",
         "transaction_id": "8eb21210-07cf-45f6-8bbf-b4fd49ba0021",
-        "message_id": "df731e42-8b2c-4381-9a72-440b79cbc24f",
-        "timestamp": "2025-04-17T05:10:03.965Z",
+        "message_id": "048223d6-1802-4fc7-bae6-761a1680139f",
+        "timestamp": "2025-04-17T05:27:20.004Z",
         "ttl": "PT30S",
         "location": {
             "country": {
@@ -32,7 +32,7 @@
             "status": "PROCESSING",
             "level": "ISSUE",
             "created_at": "2025-04-15T10:07:52.250Z",
-            "updated_at": "2025-04-17T05:10:03.965Z",
+            "updated_at": "2025-04-17T05:27:20.004Z",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -114,6 +114,22 @@
                     "type": "TRANSACTION_COUNTERPARTY_NP",
                     "info": {
                         "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "7305888114",
+                            "email": "support@yuukke.com"
+                        },
+                        "person": {
+                            "name": "esha"
+                        }
+                    }
+                },
+                {
+                    "id": "NP3",
+                    "type": "COUNTERPARTY_NP_GRO",
+                    "info": {
+                        "org": {
                             "name": "ondc.preprod.yuukke.com::ONDC:RET10"
                         },
                         "contact": {
@@ -127,7 +143,8 @@
                 }
             ],
             "respondent_ids": [
-                "NP2"
+                "NP2",
+                "NP3"
             ],
             "source_id": "CUST1",
             "complainant_id": "NP1",
@@ -172,10 +189,48 @@
                         "code": "RESOLUTION_PROPOSED",
                         "short_desc": "we will offer you half refund"
                     },
-                    "ref_type": "RESOLUTIONS",
                     "ref_id": "R_PARENT",
+                    "ref_type": "RESOLUTIONS",
                     "updated_at": "2025-04-17T10:26:06.608Z",
                     "action_by": "NP2",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "1077743b-fa8a-4f5c-9dcf-9f885072e8fc",
+                    "description": {
+                        "code": "ESCALATED",
+                        "short_desc": "not happy with your resolution"
+                    },
+                    "updated_at": "2025-04-17T10:27:20.003Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Gokulakirshnan"
+                    }
+                },
+                {
+                    "id": "4e87fe63-847b-46fe-89c9-da6bf8b72ce6",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "We will Proceesing Your Order let U known Shortly"
+                    },
+                    "updated_at": "2025-04-17T10:28:04.249Z",
+                    "action_by": "NP3",
+                    "actor_details": {
+                        "name": "esha"
+                    }
+                },
+                {
+                    "id": "eec2f603-abab-44ae-9c20-5d34c069ec60",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "we willl give full refund 90 pecentafe"
+                    },
+                    "ref_type": "RESOLUTIONS",
+                    "ref_id": "R_PARENT",
+                    "updated_at": "2025-04-17T10:30:25.023Z",
+                    "action_by": "NP3",
                     "actor_details": {
                         "name": "esha"
                     }
@@ -188,8 +243,8 @@
                         "code": "PARENT",
                         "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
                     },
-                    "updated_at": "2025-04-17T10:26:06.608Z",
-                    "proposed_by": "NP2"
+                    "updated_at": "2025-04-17T10:30:25.023Z",
+                    "proposed_by": "NP3"
                 },
                 {
                     "id": "cd616ee0-ba8f-433c-aee1-42232b06e425",
@@ -216,9 +271,35 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "f9e1b808-e24e-458a-bc52-dd956a967567",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "refund initilaized"
+                    },
+                    "updated_at": "2025-04-17 10:30:25.057",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND_AMOUNT"
+                                    },
+                                    "value": "200"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
-            "last_action_id": "67ce6e6e-578b-4354-b3c7-a8bd82779761"
+            "last_action_id": "eec2f603-abab-44ae-9c20-5d34c069ec60"
         }
     }
 }
