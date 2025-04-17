@@ -1,0 +1,186 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "on_settle": {
+                "schemaErr0": "/message/settlement/orders/0/inter_participant must have required property 'settled_amount'",
+                "schemaErr1": "/message/settlement/orders/0/inter_participant must have required property 'amount'",
+                "schemaErr2": "/message/settlement/orders/0/inter_participant must have required property 'reference_no'",
+                "inter_participant": "inter_participant is not required for MISC type"
+            },
+            "on_report": {
+                "schemaErr0": "/message must have required property 'collector_app_id'",
+                "schemaErr1": "/message must have required property 'receiver_app_id'",
+                "schemaErr2": "/message/settlement/type must be equal to one of the allowed values (NP-NP)",
+                "schemaErr3": "/message/settlement/orders/0 must have required property 'id'",
+                "schemaErr4": "/message/settlement/orders/0 must have required property 'collector'",
+                "schemaErr5": "/message/settlement/orders/0/inter_participant must have required property 'settled_amount'",
+                "schemaErr6": "/message/settlement/orders/0/inter_participant must have required property 'amount'",
+                "schemaErr7": "/message/settlement/orders/0/inter_participant must have required property 'reference_no'"
+            }
+        },
+        "bpp_id": "SELLER_APP_SUBSCRIBER_ID",
+        "bap_id": "BUYER_APP_SUBSCRIBER_ID",
+        "domain": "ONDC:NTS10",
+        "payload": {
+            "settle": {
+                "context": {
+                    "action": "settle",
+                    "bap_id": "preprod.xpressbaazaar.com",
+                    "bap_uri": "https://preprod.xpressbaazaar.com/v1/",
+                    "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "city": {
+                            "code": "*"
+                        },
+                        "country": {
+                            "code": "IND"
+                        }
+                    },
+                    "message_id": "77c6f3f4-f2b3-4723-9c93-1bcf86b85be4",
+                    "timestamp": "2025-04-17T04:41:51.101Z",
+                    "transaction_id": "5445f9d7-145b-4b37-9f14-4c8f9472a1e3",
+                    "ttl": "P1D",
+                    "version": "2.0.0"
+                },
+                "message": {
+                    "settlement": {
+                        "type": "MISC",
+                        "id": "settlement-81f7c7f7-1a4c-49e2-9584-zknjksd",
+                        "orders": [
+                            {
+                                "self": {
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "339.00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "on_settle": {
+                "context": {
+                    "bap_id": "preprod.xpressbaazaar.com",
+                    "bap_uri": "https://preprod.xpressbaazaar.com/v1/",
+                    "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "5445f9d7-145b-4b37-9f14-4c8f9472a1e3",
+                    "message_id": "77c6f3f4-f2b3-4723-9c93-1bcf86b85be4",
+                    "timestamp": "2025-04-17T04:44:05.968Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_settle"
+                },
+                "message": {
+                    "settlement": {
+                        "type": "MISC",
+                        "id": "settlement-81f7c7f7-1a4c-49e2-9584-zknjksd",
+                        "orders": [
+                            {
+                                "self": {
+                                    "amount": {
+                                        "value": "339.00",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "4409845632946"
+                                },
+                                "inter_participant": {
+                                    "status": "SETTLED"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "report": {
+                "context": {
+                    "domain": "ONDC:NTS10",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "version": "2.0.0",
+                    "action": "report",
+                    "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "bap_id": "preprod.xpressbaazaar.com",
+                    "bap_uri": "https://preprod.xpressbaazaar.com/v1/",
+                    "transaction_id": "5445f9d7-145b-4b37-9f14-4c8f9472a1e3",
+                    "message_id": "d1c10a2b-3711-44cb-8970-a685932b4ad7",
+                    "timestamp": "2025-04-17T04:48:29.619Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "ref_transaction_id": "5445f9d7-145b-4b37-9f14-4c8f9472a1e3",
+                    "ref_message_id": "77c6f3f4-f2b3-4723-9c93-1bcf86b85be4"
+                }
+            },
+            "on_report": {
+                "context": {
+                    "bap_id": "preprod.xpressbaazaar.com",
+                    "bap_uri": "https://preprod.xpressbaazaar.com/v1/",
+                    "bpp_id": "rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "bpp_uri": "https://rsf-mock-service.ondc.org/seller_protocol_server_preprod/ondc",
+                    "location": {
+                        "country": {
+                            "code": "IND"
+                        },
+                        "city": {
+                            "code": "*"
+                        }
+                    },
+                    "transaction_id": "5445f9d7-145b-4b37-9f14-4c8f9472a1e3",
+                    "message_id": "d1c10a2b-3711-44cb-8970-a685932b4ad7",
+                    "timestamp": "2025-04-17T04:49:51.125Z",
+                    "domain": "ONDC:NTS10",
+                    "version": "2.0.0",
+                    "ttl": "P1D",
+                    "action": "on_report"
+                },
+                "message": {
+                    "settlement": {
+                        "type": "MISC",
+                        "id": "a4a476f3-a4c6-4fc9-be65-34446d2fb20a",
+                        "orders": [
+                            {
+                                "self": {
+                                    "amount": {
+                                        "value": "339.00",
+                                        "currency": "INR"
+                                    },
+                                    "status": "SETTLED",
+                                    "reference_no": "4409845632946"
+                                },
+                                "inter_participant": {
+                                    "status": "SETTLED"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "reportTimestamp": "2025-04-17T07:25:09.776Z"
+    },
+    "signature": "gfehIU34u4KN/5BjxFint66b4IRN3doxPIK99yFSpZoS2WVwh6FXrotcCW0PiwRDLRLR5ec1vx8HUwEyA8JSBQ==",
+    "signTimestamp": "2025-04-17T07:25:09.776Z"
+}
