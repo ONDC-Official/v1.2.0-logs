@@ -1,0 +1,155 @@
+{
+  "success": false,
+  "response": {
+    "message": "Logs were not verified successfully",
+    "report": {
+      "on_search_full_catalog_refresh": {
+        "schemaErr0": "/message/catalog/bpp~1providers/0/items/0/quantity/unitized/measure/unit must be equal to one of the allowed values (unit,dozen,gram,kilogram,tonne,litre,millilitre)",
+        "bap_id_in_uri": "Bap_id buyer-preprod.aurikatech.com is not found in BapUri https://stirred-anemone-accurate.ngrok-free.app/protocol/v1",
+        "providers[0_default_selection": "Error while Calculating Default Selection in /on_search, TypeError: Cannot read properties of undefined (reading 'min')\n    at /app/dist/utils/Retail/RET11_onSearch/onSearch.js:327:87\n    at Array.forEach (<anonymous>)\n    at checkOnsearchFullCatalogRefresh (/app/dist/utils/Retail/RET11_onSearch/onSearch.js:326:35)\n    at getResponse (/app/dist/shared/validateLogs.js:222:79)\n    at /app/dist/shared/validateLogs.js:200:38\n    at Array.forEach (<anonymous>)\n    at processApiSequence (/app/dist/shared/validateLogs.js:198:29)\n    at /app/dist/shared/validateLogs.js:321:29\n    at Generator.next (<anonymous>)\n    at /app/dist/shared/validateLogs.js:8:71",
+        "prvdr0categories": "Support for variants is mandatory, categories must be present in bpp/providers[0]",
+        "items[8be62f76-4d26-45ac-8ce8-5c17b4962d9f]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+        "items[31dfec43-0dc0-4de6-9fd1-ee4974c638d7]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+        "prvdr0/tags/timing/order": "The timings object must be present for Order in the tags"
+      },
+      "on_select": {
+        "schemaErr0": "/message/order/quote/breakup/0/item/tags must be object",
+        "schemaErr1": "/message/order/quote/breakup/1/item/tags must be object",
+        "pymntttl": "Quote breakup Payment title \"ONDC_FA\" is not as per the API Contract"
+      },
+      "on_init": {
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object",
+        "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M)."
+      },
+      "confirm": {
+        "quantErr": "Extra attribute Quantity provided in quote object i.e not supposed to be provided after on_select so invalid quote object"
+      },
+      "on_confirm": {
+        "updtdtmstmp": "order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)",
+        "message.order.tags[0].list": "Pan_id shouldn't be same in tax_number and provider_tax_number in message.order.tags[0].list",
+        "invldUpdtdTmstp": "updated_at timestamp should be equal to  context timestamp for /on_confirm"
+      },
+      "on_status_pending": {
+        "Domain[on_status]": "Domain should be same in each action",
+        "txnId": "Transaction Id should be same from /select onwards",
+        "onStatusOdrId": "Order id in /confirm and /on_status_pending do not match",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-18T10:10:23.722Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-14T13:00:46.550Z\" of on_status_pending",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-18T14:10:23.722Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-14T14:00:46.550Z\" of on_status_pending",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-18T10:10:23.722Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-19T16:00:46.550Z\" of on_status_pending",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-18T14:10:23.722Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-19T17:00:46.550Z\" of on_status_pending",
+        "tmpstmp": "Created At timestamp for /on_status_pending should be equal to context timestamp at confirm"
+      },
+      "on_status_packed": {
+        "schemaErr0": "/message/order/quote/breakup/4/price/value Price value should be a number in string with upto 2 decimal places",
+        "schemaErr1": "/message/order/quote/breakup/5/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_packed_msgId": "Message id should not be same with previous calls",
+        "ordrState": "order/state should be \"In-progress\" for /on_status_packed",
+        "message/order.fulfillments/1/end/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/contact'",
+        "message/order.fulfillments/1/end/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/location'",
+        "message/order.fulfillments/1/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'",
+        "message/order.fulfillments/1/id": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'id'",
+        "message/order.fulfillments/1/@ondc/org/provider_name": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/provider_name'",
+        "message/order.fulfillments/1/@ondc/org/TAT": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/TAT'",
+        "message/order.fulfillments/1/start/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/location'",
+        "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/1/start/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/contact'"
+      },
+      "on_status_picked": {
+        "schemaErr0": "/message/order/quote/breakup/4/price/value Price value should be a number in string with upto 2 decimal places",
+        "schemaErr1": "/message/order/quote/breakup/5/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_picked_msgId": "Message id should not be same with previous calls",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_picked",
+        "noOrdrPicked": "fulfillments/state should be Order-picked-up for /on_status_Order-picked-up",
+        "message/order.fulfillments/1/end/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/contact'",
+        "message/order.fulfillments/1/end/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/location'",
+        "message/order.fulfillments/1/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'",
+        "message/order.fulfillments/1/id": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'id'",
+        "message/order.fulfillments/1/@ondc/org/provider_name": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/provider_name'",
+        "message/order.fulfillments/1/@ondc/org/TAT": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/TAT'",
+        "message/order.fulfillments/1/start/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/location'",
+        "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/1/start/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/contact'"
+      },
+      "on_status_out_for_delivery": {
+        "schemaErr0": "/message/order/quote/breakup/4/price/value Price value should be a number in string with upto 2 decimal places",
+        "schemaErr1": "/message/order/quote/breakup/5/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_out_for_delivery_msgId": "Message id should not be same with previous calls",
+        "invalid_message_id": "Message_id cannot be same for on_status.packed and on_status.out_for_delivery",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_out_for_delivery",
+        "noOrdrOut_for_delivery": "fulfillments/state Should be out-for-delivery for /on_status_Out-for-delivery",
+        "message/order.fulfillments/1/end/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/contact'",
+        "message/order.fulfillments/1/end/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/location'",
+        "message/order.fulfillments/1/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'",
+        "message/order.fulfillments/1/id": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'id'",
+        "message/order.fulfillments/1/@ondc/org/provider_name": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/provider_name'",
+        "message/order.fulfillments/1/@ondc/org/TAT": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/TAT'",
+        "message/order.fulfillments/1/start/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/location'",
+        "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/1/start/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/contact'"
+      },
+      "on_status_delivered": {
+        "schemaErr0": "/message/order/quote/breakup/4/price/value Price value should be a number in string with upto 2 decimal places",
+        "schemaErr1": "/message/order/quote/breakup/5/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_delivered_msgId": "Message id should not be same with previous calls",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_delivered",
+        "ordrState": "order/state should be \"Completed\" for /on_status_delivered",
+        "noOrdrDelivered": "fulfillments/state should be Order-delivered for /on_status_Order-delivered",
+        "message/order.fulfillments/1/end/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/contact'",
+        "message/order.fulfillments/1/end/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/location'",
+        "message/order.fulfillments/1/end/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'end/time'",
+        "message/order.fulfillments/1/id": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'id'",
+        "message/order.fulfillments/1/@ondc/org/provider_name": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/provider_name'",
+        "message/order.fulfillments/1/@ondc/org/TAT": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key '@ondc/org/TAT'",
+        "message/order.fulfillments/1/start/location": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/location'",
+        "message/order.fulfillments/1/start/time": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/time'",
+        "message/order.fulfillments/1/start/contact": "Mismatch occurred while comparing 'Delivery' fulfillment object with on_status_pending on key 'start/contact'"
+      },
+      "update_reverse_qc": {
+        "returnFulfillment": "Return fulfillment/tags/list is missing in update_reverse_qc",
+        "schemaErr0": "/message/order/fulfillments/0/tags/0/list/2/value must NOT have fewer than 1 characters",
+        "schemaErr1": "/message/order/fulfillments/0/tags/0/list/2/value must be array"
+      },
+      "on_update_interim_reverse_qc": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}"
+      },
+      "on_update_approval": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}",
+        "Return.start.location.id": "Return fulfillment start location id is not required in on_update_approval"
+      },
+      "on_update_picked": {
+        "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+      },
+      "on_update_delivered": {
+        "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"110\",\"settlement_timestamp\":\"2025-04-18T10:33:10.816Z\"}",
+        "returnFF/end/time/timestamp": "end/time/timestamp of return fulfillment should be less than or equal to context/timestamp of on_update_delivered",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+      },
+      "update_liquidated": {
+        "returnFulfillment": "Return fulfillment/tags/list is missing in update_liquidated",
+        "schemaErr0": "/message/order/fulfillments/0/tags/0/list/2/value must NOT have fewer than 1 characters",
+        "schemaErr1": "/message/order/fulfillments/0/tags/0/list/2/value must be array"
+      },
+      "on_update_interim_liquidated": {
+        "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"110\",\"settlement_timestamp\":\"2025-04-18T10:33:10.816Z\"}"
+      },
+      "on_update_liquidated": {
+        "schemaErr0": "/message/order/fulfillments/2/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"825\",\"settlement_timestamp\":\"2025-04-18T10:11:16.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"netbanking\",\"settlement_amount\":\"110\",\"settlement_timestamp\":\"2025-04-18T10:33:10.816Z\"}",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm"
+      }
+    },
+    "bpp_id": "witslab-bpp-preprod.thewitslab.com",
+    "bap_id": "buyer-preprod.aurikatech.com",
+    "domain": "ONDC:RET11",
+    "reportTimestamp": "2025-04-18T10:39:45.648Z"
+  },
+  "signature": "z5K9e05uDVsWRm3Op4ct1TOg4RcU1f04H4KsLBBm/Q0BVNCOy0de/wnV5rqHFnVq5vgzi9MvCFjAYuziSTazCw==",
+  "signTimestamp": "2025-04-18T10:39:45.649Z"
+}
