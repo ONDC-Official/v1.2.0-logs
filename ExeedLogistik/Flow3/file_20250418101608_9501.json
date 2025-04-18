@@ -1,0 +1,4494 @@
+{
+  "domain": "nic2004:60232",
+  "payload": {
+    "search_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744969721\",expires=\"1744973321\",headers=\"(created) (expires) digest\",signature=\"QjABB7HGtUW+XSm8pC/BAw+thKQNduZhvolDDyioNrhYDtie2JyeG9ozXA8eKVMyCIhbmLF3HfGTsPaP+fRVBg==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "core_version": "1.2.0",
+          "action": "search",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c7819615-68f0-4a2f-a88c-2876a6417620",
+          "timestamp": "2025-04-18T09:48:41.262Z",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "intent": {
+            "category": {
+              "id": "Standard Delivery"
+            },
+            "provider": {
+              "time": {
+                "days": "1,2,3,4,5,6,7",
+                "duration": "PT30M",
+                "range": {
+                  "start": "1100",
+                  "end": "2100"
+                },
+                "schedule": {
+                  "holidays": [
+                    "2025-05-14",
+                    "2025-05-12"
+                  ]
+                }
+              }
+            },
+            "fulfillment": {
+              "type": "Delivery",
+              "start": {
+                "location": {
+                  "gps": "12.453544,77.928379",
+                  "address": {
+                    "area_code": "560041"
+                  }
+                }
+              },
+              "end": {
+                "location": {
+                  "gps": "12.453544,77.928379",
+                  "address": {
+                    "area_code": "560001"
+                  }
+                }
+              }
+            },
+            "payment": {
+              "type": "ON-ORDER"
+            },
+            "@ondc/org/payload_details": {
+              "category": "Home & Kitchen",
+              "value": {
+                "currency": "INR",
+                "value": "1000.00"
+              },
+              "dangerous_goods": false,
+              "dimensions": {
+                "length": {
+                  "unit": "centimeter",
+                  "value": 25
+                },
+                "breadth": {
+                  "unit": "centimeter",
+                  "value": 24
+                },
+                "height": {
+                  "unit": "centimeter",
+                  "value": 40
+                }
+              },
+              "weight": {
+                "unit": "kilogram",
+                "value": 2
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "action": "search",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c7819615-68f0-4a2f-a88c-2876a6417620",
+          "timestamp": "2025-04-18T09:48:41.374Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_search_1": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_search",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c7819615-68f0-4a2f-a88c-2876a6417620",
+          "timestamp": "2025-04-18T09:48:44.340210Z"
+        },
+        "message": {
+          "catalog": {
+            "bpp/descriptor": {
+              "name": "Exeed Logistics",
+              "tags": [
+                {
+                  "code": "bpp_terms",
+                  "list": [
+                    {
+                      "code": "static_terms",
+                      "value": ""
+                    },
+                    {
+                      "code": "static_terms_new",
+                      "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                    },
+                    {
+                      "code": "effective_date",
+                      "value": "2023-10-01T00:00:00.000Z"
+                    }
+                  ]
+                }
+              ]
+            },
+            "bpp/providers": [
+              {
+                "id": "P1",
+                "descriptor": {
+                  "name": "Exeed Logistics",
+                  "short_desc": "Fast Delivery Services",
+                  "long_desc": "Reliable same-day delivery"
+                },
+                "categories": [
+                  {
+                    "id": "Standard Delivery",
+                    "time": {
+                      "label": "TAT",
+                      "duration": "P2D",
+                      "timestamp": "2025-04-18T09:48:44.395792Z"
+                    }
+                  }
+                ],
+                "fulfillments": [
+                  {
+                    "id": "I1",
+                    "type": "Delivery",
+                    "start": {
+                      "time": {
+                        "duration": "PT3H"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "code": "distance",
+                        "list": [
+                          {
+                            "code": "motorable_distance_type",
+                            "value": "meters"
+                          },
+                          {
+                            "code": "motorable_distance",
+                            "value": "0"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "I2",
+                    "type": "RTO",
+                    "start": {
+                      "time": {
+                        "duration": "PT2H"
+                      }
+                    },
+                    "tags": [
+                      {
+                        "code": "distance",
+                        "list": [
+                          {
+                            "code": "motorable_distance_type",
+                            "value": "meters"
+                          },
+                          {
+                            "code": "motorable_distance",
+                            "value": "0"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "locations": [
+                  {
+                    "id": "L1",
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "street": "Jayanagar 4th Block",
+                      "city": "Bengaluru",
+                      "area_code": "560076",
+                      "state": "KA"
+                    }
+                  }
+                ],
+                "items": [
+                  {
+                    "id": "I1",
+                    "parent_item_id": "",
+                    "category_id": "Standard Delivery",
+                    "fulfillment_id": "I1",
+                    "descriptor": {
+                      "code": "P2P",
+                      "name": "Standard",
+                      "short_desc": "Standard",
+                      "long_desc": "Standard"
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "560.00"
+                    },
+                    "time": {
+                      "label": "TAT",
+                      "duration": "P2D",
+                      "timestamp": "2025-04-18T09:48:44.395792Z"
+                    }
+                  },
+                  {
+                    "id": "I2",
+                    "parent_item_id": "I1",
+                    "category_id": "Standard Delivery",
+                    "fulfillment_id": "I2",
+                    "descriptor": {
+                      "code": "P2P",
+                      "name": "RTO quote",
+                      "short_desc": "RTO quote",
+                      "long_desc": "RTO quote"
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "560.00"
+                    },
+                    "time": {
+                      "label": "TAT",
+                      "duration": "PT60M",
+                      "timestamp": "2025-04-18T09:48:44.395849Z"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_search",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c7819615-68f0-4a2f-a88c-2876a6417620",
+          "timestamp": "2025-04-18T09:48:44.340210Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "init_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744969736\",expires=\"1744973336\",headers=\"(created) (expires) digest\",signature=\"mU3cUHHMHPPdZrSX36LEaoMx/loJddg29T6j9soHVi/BDCXTk63Z/2Y/QLecYyL49SKRItazKRlmoM0ZODCnAQ==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "init",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c96f9765-6af2-46bc-a7aa-1cd3b73a7a97",
+          "timestamp": "2025-04-18T09:48:56.115Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "P1"
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "I1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                }
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  }
+                },
+                "end": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  }
+                }
+              }
+            ],
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            }
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c96f9765-6af2-46bc-a7aa-1cd3b73a7a97",
+          "timestamp": "2025-04-18T09:48:57.017144Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_init_1": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c96f9765-6af2-46bc-a7aa-1cd3b73a7a97",
+          "timestamp": "2025-04-18T09:48:57.017144Z"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "I1"
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  }
+                },
+                "end": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "rider_check",
+                    "list": [
+                      {
+                        "code": "inline_check_for_rider",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "cancellation_terms": [
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Pending",
+                    "short_desc": "008"
+                  }
+                },
+                "cancellation_fee": {
+                  "percentage": "0.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Agent-assigned",
+                    "short_desc": "001,003"
+                  }
+                },
+                "cancellation_fee": {
+                  "percentage": "100.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "50.00"
+                  }
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Order-picked-up",
+                    "short_desc": "001,003"
+                  }
+                },
+                "cancellation_fee": {
+                  "percentage": "100.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "50.00"
+                  }
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "011,012,013,014,015"
+                  }
+                },
+                "cancellation_fee": {
+                  "percentage": "100.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "50.00"
+                  }
+                }
+              }
+            ],
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "c96f9765-6af2-46bc-a7aa-1cd3b73a7a97",
+          "timestamp": "2025-04-18T09:48:57.017144Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "confirm_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744969747\",expires=\"1744973347\",headers=\"(created) (expires) digest\",signature=\"YR81+heyzcov+NNyyQIJlpxHnqfWsePsfp1mtAqjHPxQtJdih7pBYxoZlhALDzKYLaWr0GVh0QJSQv8HbKCsAg==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "confirm",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "02600fcd-ca82-49ac-9195-04e101c27d00",
+          "timestamp": "2025-04-18T09:49:07.565Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744969747565",
+            "state": "Created",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "I1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P2D",
+                  "timestamp": "2025-04-18T09:48:44.395792Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ]
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "5768"
+                  },
+                  "person": {
+                    "name": "221"
+                  },
+                  "time": {
+                    "duration": "PT3H"
+                  }
+                },
+                "end": {
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "person": {
+                    "name": "633"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "rto_action",
+                    "list": [
+                      {
+                        "code": "return_to_origin",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-18T09:49:07.565Z",
+            "updated_at": "2025-04-18T09:49:07.565Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_confirm",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "02600fcd-ca82-49ac-9195-04e101c27d00",
+          "timestamp": "2025-04-18T09:49:08.084827Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_confirm_1": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_confirm",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "02600fcd-ca82-49ac-9195-04e101c27d00",
+          "timestamp": "2025-04-18T09:49:08.084827Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744969747565",
+            "state": "Accepted",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "I1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P2D",
+                  "timestamp": "2025-04-18T09:48:44.395792Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ]
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "state": {
+                  "descriptor": {
+                    "code": "Pending,Agent-assigned"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159354&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-18T15:49:08+05:30",
+                      "end": "2025-04-18T16:04:08+05:30"
+                    }
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-18T16:19:08+05:30",
+                      "end": "2025-04-18T16:34:08+05:30"
+                    }
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "tags": [
+                  {
+                    "code": "weather_check",
+                    "list": [
+                      {
+                        "code": "raining",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-18T15:19:08+05:30",
+            "updated_at": "2025-04-18T15:19:08+05:30"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_confirm",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "02600fcd-ca82-49ac-9195-04e101c27d00",
+          "timestamp": "2025-04-18T09:49:08.084827Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "update_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744969766\",expires=\"1744973366\",headers=\"(created) (expires) digest\",signature=\"n1YOSWEpLHFqq9ntvskGhZcxTOMPzOj6Uesqeo+LjQcpJQO+F9JmYumaGhvwUqo30B0SG9WBGFU6f5wFBBx9Ag==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "635dea98-669b-4719-b91a-441dec0eb415",
+          "timestamp": "2025-04-18T09:49:26.508Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "update_target": "fulfillment",
+          "order": {
+            "id": "SS-1744969747565",
+            "items": [
+              {
+                "id": "I1",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "category_id": "Standard Delivery"
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "Z141"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "updated_at": "2025-04-18T09:49:26.508Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "635dea98-669b-4719-b91a-441dec0eb415",
+          "timestamp": "2025-04-18T09:49:27.026199Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_update_1": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "635dea98-669b-4719-b91a-441dec0eb415",
+          "timestamp": "2025-04-18T09:49:27.026199Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744969747565",
+            "state": "In-progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": ""
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P2D",
+                  "timestamp": "2025-04-18T15:19:27+05:30"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "state": {
+                  "descriptor": {
+                    "code": "Pending"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "5768"
+                  },
+                  "time": {
+                    "duration": "PT3H",
+                    "range": {
+                      "start": "2025-04-18T15:19:27+05:30",
+                      "end": "2025-04-18T15:49:27+05:30"
+                    }
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "instructions": [],
+                  "time": {
+                    "range": {
+                      "start": "2025-04-18T16:19:27+05:30",
+                      "end": "2025-04-18T17:19:27+05:30"
+                    }
+                  }
+                },
+                "tags": [
+                  []
+                ],
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                }
+              }
+            ],
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "diff_dim",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "centimeter"
+                  },
+                  {
+                    "code": "length",
+                    "value": ""
+                  },
+                  {
+                    "code": "breadth",
+                    "value": ""
+                  },
+                  {
+                    "code": "height",
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "code": "diff_weight",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "kilogram"
+                  },
+                  {
+                    "code": "weight",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-18T09:49:27.026199Z",
+            "updated_at": "2025-04-18T09:49:27.026199Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "635dea98-669b-4719-b91a-441dec0eb415",
+          "timestamp": "2025-04-18T09:49:27.026199Z"
+        },
+        "message": {
+          "ack": {
+            "status": "NACK"
+          }
+        },
+        "error": {
+          "code": "30000",
+          "message": "\"order.fulfillments[0].end.instructions\" must be of type object"
+        }
+      }
+    },
+    "update_2": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744970622\",expires=\"1744974222\",headers=\"(created) (expires) digest\",signature=\"l8ZWMyI0y9gvxELYIyo7mMfNcmBwTe8NQYN6C7majZfk56pySyf2MAkKGQwSaMLLIleaSfzLGZlZlwwPc2bFDQ==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "91a603f7-c239-4e3d-94fa-a1e0f848e5bd",
+          "timestamp": "2025-04-18T10:03:42.102Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "update_target": "fulfillment",
+          "order": {
+            "id": "SS-1744969747565",
+            "items": [
+              {
+                "id": "I1",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "category_id": "Standard Delivery"
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "I240"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "updated_at": "2025-04-18T10:03:42.102Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "91a603f7-c239-4e3d-94fa-a1e0f848e5bd",
+          "timestamp": "2025-04-18T10:03:43.418185Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_update_2": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "91a603f7-c239-4e3d-94fa-a1e0f848e5bd",
+          "timestamp": "2025-04-18T10:03:43.418185Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744969747565",
+            "state": "In-progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": ""
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P2D",
+                  "timestamp": "2025-04-18T15:33:43+05:30"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "state": {
+                  "descriptor": {
+                    "code": "Pending"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "5768"
+                  },
+                  "time": {
+                    "duration": "PT3H",
+                    "range": {
+                      "start": "2025-04-18T15:33:43+05:30",
+                      "end": "2025-04-18T16:03:43+05:30"
+                    }
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "instructions": [],
+                  "time": {
+                    "range": {
+                      "start": "2025-04-18T16:33:43+05:30",
+                      "end": "2025-04-18T17:33:43+05:30"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "rto_action",
+                    "list": [
+                      {
+                        "code": "return_to_origin",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                }
+              }
+            ],
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "diff_dim",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "centimeter"
+                  },
+                  {
+                    "code": "length",
+                    "value": ""
+                  },
+                  {
+                    "code": "breadth",
+                    "value": ""
+                  },
+                  {
+                    "code": "height",
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "code": "diff_weight",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "kilogram"
+                  },
+                  {
+                    "code": "weight",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-18T10:03:43.418185Z",
+            "updated_at": "2025-04-18T10:03:43.418185Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "91a603f7-c239-4e3d-94fa-a1e0f848e5bd",
+          "timestamp": "2025-04-18T10:03:43.418185Z"
+        },
+        "message": {
+          "ack": {
+            "status": "NACK"
+          }
+        },
+        "error": {
+          "code": "30000",
+          "message": "\"order.fulfillments[0].end.instructions\" must be of type object"
+        }
+      }
+    },
+    "update_3": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/buyer|df0b5672-27f0-42c4-90b5-9138e3c45a79|ed25519\",algorithm=\"ed25519\",created=\"1744970876\",expires=\"1744974476\",headers=\"(created) (expires) digest\",signature=\"ZJVuTpx07E4eZXM71BN/0Tv5/NAaUxGgj6J9DPAY8KlYwRdkkecHqLrMQwE3Cj301I31WRp6Dtjqa0NuTg5kBQ==\"",
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a3",
+          "timestamp": "2025-04-18T10:07:56.489Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "update_target": "fulfillment",
+          "order": {
+            "id": "SS-1744969747565",
+            "items": [
+              {
+                "id": "I1",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "category_id": "Standard Delivery"
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "start": {
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "V522"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "updated_at": "2025-04-18T10:07:56.489Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a3",
+          "timestamp": "2025-04-18T10:07:57.010332Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_update_3": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a3",
+          "timestamp": "2025-04-18T10:07:57.010332Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744969747565",
+            "state": "In-progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": ""
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "fulfillment_id": "1",
+                "category_id": "Standard Delivery",
+                "descriptor": {
+                  "code": "P2P"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P2D",
+                  "timestamp": "2025-04-18T15:37:57+05:30"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "I1",
+                "type": "Delivery",
+                "state": {
+                  "descriptor": {
+                    "code": "Pending"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Baker Street",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT3H",
+                    "range": {
+                      "start": "2025-04-18T15:37:57+05:30",
+                      "end": "2025-04-18T16:07:57+05:30"
+                    }
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.453544,77.928379",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "state": "Maharashtra",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-18T16:37:57+05:30",
+                      "end": "2025-04-18T17:37:57+05:30"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "state",
+                    "list": [
+                      {
+                        "code": "ready_to_ship",
+                        "value": "no"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "rto_action",
+                    "list": [
+                      {
+                        "code": "return_to_origin",
+                        "value": "yes"
+                      }
+                    ]
+                  }
+                ],
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                }
+              }
+            ],
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-18T09:48:44.340210Z",
+              "updated_at": "2025-04-18T09:48:44.340210Z"
+            },
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "2147ae46-a739-4fd5-9656-47277f767fe0",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "diff_dim",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "centimeter"
+                  },
+                  {
+                    "code": "length",
+                    "value": ""
+                  },
+                  {
+                    "code": "breadth",
+                    "value": ""
+                  },
+                  {
+                    "code": "height",
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "code": "diff_weight",
+                "list": [
+                  {
+                    "code": "unit",
+                    "value": "kilogram"
+                  },
+                  {
+                    "code": "weight",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-18T10:07:57.010332Z",
+            "updated_at": "2025-04-18T10:07:57.010332Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_update",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a3",
+          "timestamp": "2025-04-18T10:07:57.010332Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_1": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744964802152",
+            "state": "In Progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I1",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "Standard Delivery",
+                  "short_desc": "Standard Delivery",
+                  "long_desc": "Standard Delivery"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P1D",
+                  "timestamp": "2025-04-16T12:35:43.374721Z"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I2",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-16T12:35:43.374787Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "@ondc/org/awb_no": "4000159225",
+                "state": {
+                  "descriptor": {
+                    "code": "Searching-for-Agent",
+                    "short_desc": "Order-In Progress"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Jayanagar",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-16T18:36:14+05:30",
+                      "end": "2025-04-16T18:51:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159225&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "Bangalore",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-16T19:06:14+05:30",
+                      "end": "2025-04-16T19:21:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "@ondc/org/ewaybillno": "EBN1",
+                "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z",
+                "tags": [
+                  {
+                    "code": "fulfillment_delay",
+                    "list": [
+                      {
+                        "code": "state",
+                        "value": "Order-picked-up"
+                      },
+                      {
+                        "code": "reason_id",
+                        "value": "002"
+                      },
+                      {
+                        "code": "timestamp",
+                        "value": "2023-06-06T22:00:00.000Z"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "no"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://sellerNP.com/ondc/tracking_url"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-16T12:35:43.346278Z",
+              "updated_at": "2025-04-16T12:35:43.346278Z"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "d577daa9-aa79-459c-a23a-f09986f6a804",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-16T12:36:29.347468Z",
+            "updated_at": "2025-04-16T12:36:29.347478Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4694-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_2": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744964802152",
+            "state": "In Progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I1",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "Standard Delivery",
+                  "short_desc": "Standard Delivery",
+                  "long_desc": "Standard Delivery"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P1D",
+                  "timestamp": "2025-04-16T12:35:43.374721Z"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I2",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-16T12:35:43.374787Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "@ondc/org/awb_no": "4000159225",
+                "state": {
+                  "descriptor": {
+                    "code": "Searching-for-Agent",
+                    "short_desc": "Order-In Progress"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Jayanagar",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-16T18:36:14+05:30",
+                      "end": "2025-04-16T18:51:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159225&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "Bangalore",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-16T19:06:14+05:30",
+                      "end": "2025-04-16T19:21:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "@ondc/org/ewaybillno": "EBN1",
+                "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z",
+                "tags": [
+                  {
+                    "code": "fulfillment_delay",
+                    "list": [
+                      {
+                        "code": "state",
+                        "value": "Order-picked-up"
+                      },
+                      {
+                        "code": "reason_id",
+                        "value": "002"
+                      },
+                      {
+                        "code": "timestamp",
+                        "value": "2023-06-06T22:00:00.000Z"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "no"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://sellerNP.com/ondc/tracking_url"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-16T12:35:43.346278Z",
+              "updated_at": "2025-04-16T12:35:43.346278Z"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "d577daa9-aa79-459c-a23a-f09986f6a804",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-16T12:36:29.347468Z",
+            "updated_at": "2025-04-16T12:36:29.347478Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-4614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_3": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744964802152",
+            "state": "In Progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I1",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "Standard Delivery",
+                  "short_desc": "Standard Delivery",
+                  "long_desc": "Standard Delivery"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P1D",
+                  "timestamp": "2025-04-16T12:35:43.374721Z"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I2",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-16T12:35:43.374787Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "@ondc/org/awb_no": "4000159225",
+                "state": {
+                  "descriptor": {
+                    "code": "Order-picked-up",
+                    "short_desc": "Order-In Progress"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Jayanagar",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-16T18:36:14+05:30",
+                      "end": "2025-04-16T18:51:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159225&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "Bangalore",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-16T19:06:14+05:30",
+                      "end": "2025-04-16T19:21:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "@ondc/org/ewaybillno": "EBN1",
+                "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z",
+                "tags": [
+                  {
+                    "code": "fulfillment_delay",
+                    "list": [
+                      {
+                        "code": "state",
+                        "value": "Order-picked-up"
+                      },
+                      {
+                        "code": "reason_id",
+                        "value": "002"
+                      },
+                      {
+                        "code": "timestamp",
+                        "value": "2023-06-06T22:00:00.000Z"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "no"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://sellerNP.com/ondc/tracking_url"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-16T12:35:43.346278Z",
+              "updated_at": "2025-04-16T12:35:43.346278Z"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "d577daa9-aa79-459c-a23a-f09986f6a804",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-16T12:36:29.347468Z",
+            "updated_at": "2025-04-16T12:36:29.347478Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1286-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_4": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1216-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744964802152",
+            "state": "In Progress",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I1",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "Standard Delivery",
+                  "short_desc": "Standard Delivery",
+                  "long_desc": "Standard Delivery"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P1D",
+                  "timestamp": "2025-04-16T12:35:43.374721Z"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I2",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-16T12:35:43.374787Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "@ondc/org/awb_no": "4000159225",
+                "state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "Order-In Progress"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Jayanagar",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-16T18:36:14+05:30",
+                      "end": "2025-04-16T18:51:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159225&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "Bangalore",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-16T19:06:14+05:30",
+                      "end": "2025-04-16T19:21:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "@ondc/org/ewaybillno": "EBN1",
+                "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z",
+                "tags": [
+                  {
+                    "code": "fulfillment_delay",
+                    "list": [
+                      {
+                        "code": "state",
+                        "value": "Order-picked-up"
+                      },
+                      {
+                        "code": "reason_id",
+                        "value": "002"
+                      },
+                      {
+                        "code": "timestamp",
+                        "value": "2023-06-06T22:00:00.000Z"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "no"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://sellerNP.com/ondc/tracking_url"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-16T12:35:43.346278Z",
+              "updated_at": "2025-04-16T12:35:43.346278Z"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "d577daa9-aa79-459c-a23a-f09986f6a804",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-16T12:36:29.347468Z",
+            "updated_at": "2025-04-16T12:36:29.347478Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1216-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_5": {
+      "request": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1116-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "order": {
+            "id": "SS-1744964802152",
+            "state": "Completed",
+            "provider": {
+              "id": "P1",
+              "locations": [
+                {
+                  "id": "L1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I1",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "Standard Delivery",
+                  "short_desc": "Standard Delivery",
+                  "long_desc": "Standard Delivery"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "P1D",
+                  "timestamp": "2025-04-16T12:35:43.374721Z"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Standard Delivery",
+                "fulfillment_id": "I2",
+                "descriptor": {
+                  "code": "P2P",
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "800.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-16T12:35:43.374787Z"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "354"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "300"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "I1",
+                  "@ondc/org/title_type": "tax",
+                  "price": {
+                    "currency": "INR",
+                    "value": "54"
+                  }
+                }
+              ],
+              "ttl": "PT15M"
+            },
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "@ondc/org/awb_no": "4000159225",
+                "state": {
+                  "descriptor": {
+                    "code": "Order-delivered",
+                    "short_desc": "Order-In Progress"
+                  }
+                },
+                "tracking": false,
+                "start": {
+                  "person": {
+                    "name": "221"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "221",
+                      "building": "B",
+                      "locality": "Baker Street",
+                      "city": "Jayanagar",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560041"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "sherlock@detective.com"
+                  },
+                  "time": {
+                    "duration": "PT15M",
+                    "range": {
+                      "start": "2025-04-16T18:36:14+05:30",
+                      "end": "2025-04-16T18:51:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "2",
+                    "short_desc": "value of PCC",
+                    "long_desc": "QR code will be attached to package",
+                    "images": [
+                      "https://exeedlog.com/exeed_v2/exeed_erp/mobilecitprint?waybillNumbers=4000159225&selectedRadio=CITPrint"
+                    ],
+                    "additional_desc": {
+                      "content_type": "text/html",
+                      "url": "https://reverse_qc_sop_form.html"
+                    }
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "end": {
+                  "person": {
+                    "name": "633"
+                  },
+                  "location": {
+                    "gps": "12.967555,77.749666",
+                    "address": {
+                      "name": "633",
+                      "building": "Stagtrail Rd",
+                      "locality": "N. Caldwell",
+                      "city": "Bangalore",
+                      "state": "Karnataka",
+                      "country": "India",
+                      "area_code": "560001"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "tony@soprano.com"
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-04-16T19:06:14+05:30",
+                      "end": "2025-04-16T19:21:14+05:30"
+                    }
+                  },
+                  "instructions": {
+                    "code": "3",
+                    "short_desc": "value of DCC"
+                  },
+                  "authorization": {
+                    "type": "OTP",
+                    "token": "OTP code",
+                    "valid_from": "2023-06-07T12:00:00.000Z",
+                    "valid_to": "2023-06-07T14:00:00.000Z"
+                  }
+                },
+                "agent": {
+                  "name": "Test Agent",
+                  "phone": "0909090909"
+                },
+                "vehicle": {
+                  "registration": "KA12C1091"
+                },
+                "@ondc/org/ewaybillno": "EBN1",
+                "@ondc/org/ebnexpirydate": "2023-06-30T12:00:00.000Z",
+                "tags": [
+                  {
+                    "code": "fulfillment_delay",
+                    "list": [
+                      {
+                        "code": "state",
+                        "value": "Order-picked-up"
+                      },
+                      {
+                        "code": "reason_id",
+                        "value": "002"
+                      },
+                      {
+                        "code": "timestamp",
+                        "value": "2023-06-06T22:00:00.000Z"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "no"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://sellerNP.com/ondc/tracking_url"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "collected_by": "BAP"
+            },
+            "billing": {
+              "name": "ONDC Pramaan Logistics Buyer NP",
+              "address": {
+                "name": "221",
+                "building": "B",
+                "locality": "Baker Street",
+                "city": "Baker Street",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560041"
+              },
+              "tax_number": "00ABCDE1234F1Z5",
+              "phone": "9876543210",
+              "email": "sherlock@detective.com",
+              "created_at": "2025-04-16T12:35:43.346278Z",
+              "updated_at": "2025-04-16T12:35:43.346278Z"
+            },
+            "@ondc/org/linked_order": {
+              "items": [
+                {
+                  "category_id": "Home & Kitchen",
+                  "descriptor": {
+                    "name": "Home & Kitchen item"
+                  },
+                  "quantity": {
+                    "count": 1,
+                    "measure": {
+                      "unit": "kilogram",
+                      "value": 2
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "1000.00"
+                  }
+                }
+              ],
+              "provider": {
+                "descriptor": {
+                  "name": "ONDC Pramaan Logistics Buyer NP"
+                },
+                "address": {
+                  "name": "221",
+                  "building": "B",
+                  "locality": "Baker Street",
+                  "city": "Baker Street",
+                  "state": "Karnataka",
+                  "country": "India",
+                  "area_code": "560041"
+                }
+              },
+              "order": {
+                "id": "d577daa9-aa79-459c-a23a-f09986f6a804",
+                "weight": {
+                  "unit": "kilogram",
+                  "value": 2
+                },
+                "dimensions": {
+                  "length": {
+                    "unit": "centimeter",
+                    "value": 25
+                  },
+                  "breadth": {
+                    "unit": "centimeter",
+                    "value": 24
+                  },
+                  "height": {
+                    "unit": "centimeter",
+                    "value": 40
+                  }
+                }
+              }
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "0"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "Bengaluru"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "1000"
+                  },
+                  {
+                    "code": "static_terms",
+                    "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "accept_bpp_terms",
+                    "value": "Y"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-04-16T12:36:29.347468Z",
+            "updated_at": "2025-04-16T12:36:29.347478Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "nic2004:60232",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+          "bpp_id": "exeedlog.com/exeed-ondc",
+          "bpp_uri": "https://exeedlog.com/exeed-ondc/",
+          "transaction_id": "4137c57f-1b77-4d58-865a-3f762d344e9f",
+          "message_id": "51eb2d64-1116-1614-a9ff-00560c42f4a2",
+          "timestamp": "2025-04-17T10:05:56.302Z"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    }
+  }
+}
