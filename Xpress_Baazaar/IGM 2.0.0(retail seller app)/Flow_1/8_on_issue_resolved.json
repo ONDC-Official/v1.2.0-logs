@@ -1,0 +1,243 @@
+{
+  "context": {
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "preprod.xpressbaazaar.com",
+    "bpp_uri": "https://preprod.xpressbaazaar.com/v1/",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "transaction_id": "baf2f143-a2f1-479c-8915-8ccbc88c0270",
+    "message_id": "3eb433f3-d355-4f1f-9f94-1b5744ff5efb",
+    "timestamp": "2025-04-22T10:31:22.884Z",
+    "domain": "ONDC:RET10",
+    "core_version": "2.0.0",
+    "ttl": "PT30S",
+    "action": "on_issue"
+  },
+  "message": {
+    "issue": {
+      "id": "584ad2aa-aaf4-4931-bba1-48fdb6cbfc07",
+      "level": "ISSUE",
+      "status": "RESOLVED",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "O1", "ref_type": "ORDER" },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": { "code": "message.order.items" },
+              "list": [
+                {
+                  "descriptor": { "code": "quantity.selected.count" },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        { "ref_id": "P1", "ref_type": "PROVIDER" },
+        { "ref_id": "F1", "ref_type": "FULFILMENT" }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": { "name": "Sam Manuel" },
+            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": { "name": "John Doe" }
+          }
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "contact": {
+              "email": "xpressbaazaar@gmail.com",
+              "phone": "7900379776"
+            },
+            "org": { "name": "preprod.xpressbaazaar.com::ONDC:RET10" },
+            "person": { "name": "Yassi Sengar" }
+          },
+          "type": "COUNTERPARTY_NP"
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": ["NP2"],
+      "resolver_ids": ["NP2"],
+      "description": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png"
+          }
+        ]
+      },
+      "last_action_id": "A8",
+      "actions": [
+        {
+          "id": "A1",
+          "description": { "code": "OPEN", "short_desc": "OPEN" },
+          "updated_at": "2025-04-22T10:19:26.697Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": { "name": "Yassi Sengar" },
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "id": "A2",
+          "updated_at": "2025-04-22T10:19:26.792Z"
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": { "name": "Yassi sengar" },
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide Invoice"
+          },
+          "id": "A3",
+          "updated_at": "2025-04-22T10:19:47.880Z"
+        },
+        {
+          "id": "A4",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Invoice provided",
+            "images": [
+              { "url": "https://preprod.xpressbaazaar.com/invoice.jpeg" }
+            ]
+          },
+          "updated_at": "2025-04-22T10:24:18.054Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": { "name": "Yassi Sengar" },
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Seller app processing the info"
+          },
+          "id": "A5",
+          "updated_at": "2025-04-22T10:24:18.219Z"
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": { "name": "Yassi Sengar" },
+          "ref_id": "R_PARENT",
+          "ref_type": "RESOLUTIONS",
+          "description": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "PROVIDING RESOLUTION"
+          },
+          "id": "A6",
+          "updated_at": "2025-04-22T10:27:51.308Z"
+        },
+        {
+          "id": "A7",
+          "description": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "RESOLUTIONS"
+          },
+          "updated_at": "2025-04-22T10:31:22.783Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" },
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS"
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": { "name": "Yassi Sengar" },
+          "description": {
+            "code": "RESOLVED",
+            "short_desc": "Providing replacement"
+          },
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS",
+          "id": "A8",
+          "updated_at": "2025-04-22T10:31:22.884Z"
+        }
+      ],
+      "created_at": "2025-04-20T10:18:26.791Z",
+      "updated_at": "2025-04-22T10:31:22.884Z",
+      "resolutions": [
+        {
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "id": "R_PARENT",
+          "proposed_by": "NP2",
+          "updated_at": "2025-04-22T10:27:51.308Z"
+        },
+        {
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "id": "R1",
+          "proposed_by": "NP2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                { "descriptor": { "code": "ITEM" }, "value": "I1" },
+                { "descriptor": { "code": "REFUND" } }
+              ]
+            }
+          ],
+          "updated_at": "2025-04-22T10:27:51.308Z"
+        },
+        {
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "id": "R2",
+          "proposed_by": "NP2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [{ "descriptor": { "code": "ITEM" }, "value": "I1" }]
+            }
+          ],
+          "updated_at": "2025-04-22T10:27:51.308Z"
+        }
+      ]
+    },
+    "updated_target": [{ "action": "APPENDED", "path": "issue.actions" }]
+  }
+}
