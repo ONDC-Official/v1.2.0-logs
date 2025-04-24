@@ -1,0 +1,171 @@
+{
+  "req": {
+    "context": {
+      "domain": "ONDC:LOG10",
+      "country": "IND",
+      "city": "std:080",
+      "action": "on_search",
+      "core_version": "1.2.5",
+      "bap_id": "dev-automation.ondc.org",
+      "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+      "message_id": "1df81b7e-b7d2-415a-9487-88d952a9b6bb",
+      "timestamp": "2025-04-14T09:36:48.243Z",
+      "transaction_id": "8a15f58d-d29e-435d-955d-8705017e1cba",
+      "bpp_id": "dev-automation.ondc.org",
+      "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/seller"
+    },
+    "message": {
+      "catalog": {
+        "bpp/descriptor": {
+          "name": "LSP Aggregator Inc",
+          "tags": [
+            {
+              "code": "bpp_terms",
+              "list": [
+                {
+                  "code": "static_terms",
+                  "value": ""
+                },
+                {
+                  "code": "static_terms_new",
+                  "value": "https://github.com/ONDC-Official/NP-Static-Terms/lspNP_LSP/1.0/tc.pdf"
+                },
+                {
+                  "code": "effective_date",
+                  "value": "2025-04-14T09:36:48.243Z"
+                }
+              ]
+            }
+          ]
+        },
+        "bpp/providers": [
+          {
+            "id": "P1",
+            "descriptor": {
+              "name": "LSP Courier Inc",
+              "short_desc": "LSP Courier Inc",
+              "long_desc": "LSP Courier Inc"
+            },
+            "categories": [
+              {
+                "id": "Immediate Delivery",
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-14"
+                }
+              }
+            ],
+            "fulfillments": [
+              {
+                "id": "1",
+                "type": "Delivery",
+                "start": {
+                  "time": {
+                    "duration": "PT15M"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "distance",
+                    "list": [
+                      {
+                        "code": "motorable_distance_type",
+                        "value": "kilometer"
+                      },
+                      {
+                        "code": "motorable_distance",
+                        "value": "1.8"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "2",
+                "type": "RTO"
+              }
+            ],
+            "items": [
+              {
+                "id": "I1",
+                "parent_item_id": "",
+                "category_id": "Immediate Delivery",
+                "fulfillment_id": "1",
+                "descriptor": {
+                  "name": "Fast delivery",
+                  "short_desc": "Fast delivery services",
+                  "long_desc": "Fast delivery services"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "59.00"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-14"
+                }
+              },
+              {
+                "id": "I2",
+                "parent_item_id": "I1",
+                "category_id": "Immediate Delivery",
+                "fulfillment_id": "2",
+                "descriptor": {
+                  "name": "RTO quote",
+                  "short_desc": "RTO quote",
+                  "long_desc": "RTO quote"
+                },
+                "price": {
+                  "currency": "INR",
+                  "value": "88.50"
+                },
+                "time": {
+                  "label": "TAT",
+                  "duration": "PT60M",
+                  "timestamp": "2025-04-14"
+                }
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "code": "lsp_features",
+            "list": [
+              {
+                "code": "00C",
+                "value": "yes"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "res": {
+    "response": {
+      "message": {
+        "ack": {
+          "status": "ACK"
+        }
+      },
+      "context": {
+        "domain": "ONDC:LOG10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "on_search",
+        "core_version": "1.2.5",
+        "bap_id": "dev-automation.ondc.org",
+        "bap_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/buyer",
+        "message_id": "1df81b7e-b7d2-415a-9487-88d952a9b6bb",
+        "timestamp": "2025-04-14T09:36:48.243Z",
+        "transaction_id": "8a15f58d-d29e-435d-955d-8705017e1cba",
+        "bpp_id": "dev-automation.ondc.org",
+        "bpp_uri": "https://dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5/seller"
+      }
+    }
+  },
+  "signature": "Signature keyId=\"dev-automation.ondc.org/api-service/ONDC:LOG10/1.2.5|ONDC:LOG10-1.2.5-protocol-workbench|ed25519\",algorithm=\"ed25519\",created=\"1744623408\",expires=\"1744627008\",headers=\"(created) (expires) digest\",signature=\"aE3QOBfrPgegR/orrHNABbTvwAWAanjLv+kmOwqMn7rCaedpPDdzzSzbK2clQ75JaOF2rIUX+SoN7f2kNWZrAA==\""
+}

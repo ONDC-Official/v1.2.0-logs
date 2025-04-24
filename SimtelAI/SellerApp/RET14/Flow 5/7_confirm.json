@@ -1,0 +1,236 @@
+{
+    "context": {
+        "domain": "ONDC:RET14",
+        "country": "IND",
+        "city": "std:080",
+        "action": "confirm",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.neonexp.com",
+        "bap_uri": "https://preprod.neonexp.com/ondc",
+        "bpp_uri": "https://preprod.dixch.com/ondc",
+        "transaction_id": "8d907baa-d647-473b-b95c-363a3803b660",
+        "message_id": "140ae2c0-bef6-46e2-b2b4-dbfe32d88efe",
+        "timestamp": "2025-03-31T04:02:50.104Z",
+        "bpp_id": "preprod.dixch.com",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "2025-03-31-617887",
+            "state": "Created",
+            "billing": {
+                "address": {
+                    "name": "Ravi Kaushik",
+                    "building": "Brigade Woods",
+                    "locality": "GR Tech Park Road",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066"
+                },
+                "phone": "9513333472",
+                "name": "Ravi Kaushik",
+                "email": "ravi@simtel.ai",
+                "created_at": "2025-03-31T04:02:04.158Z",
+                "updated_at": "2025-03-31T04:02:04.158Z"
+            },
+            "items": [
+                {
+                    "id": "b69e0f87-5b98-45c8-9827-d6009a78f23c",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "77bc6889-9d7e-49ca-b253-9405602d4891"
+                }
+            ],
+            "provider": {
+                "id": "e30616b9-4d1a-4fb3-bca0-7ea34b5746a3",
+                "locations": [
+                    {
+                        "id": "Primary"
+                    }
+                ]
+            },
+            "fulfillments": [
+                {
+                    "@ondc/org/TAT": "PT48H",
+                    "id": "77bc6889-9d7e-49ca-b253-9405602d4891",
+                    "tracking": false,
+                    "end": {
+                        "contact": {
+                            "email": "ravi@simtel.ai",
+                            "phone": "9513333472"
+                        },
+                        "person": {
+                            "name": "Ravi Kaushik"
+                        },
+                        "location": {
+                            "gps": "12.984223,77.741696",
+                            "address": {
+                                "name": "Ravi Kaushik",
+                                "building": "Brigade Woods",
+                                "locality": "GR Tech Park Road",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560066"
+                            }
+                        }
+                    },
+                    "type": "Delivery"
+                }
+            ],
+            "payment": {
+                "uri": "https://razorpay.com/",
+                "tl_method": "http/get",
+                "params": {
+                    "amount": "71799.13",
+                    "currency": "INR",
+                    "transaction_id": "order_QDG5dbKqylwtHm"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_basis": "return_window_expiry",
+                "@ondc/org/settlement_window": "P2D",
+                "@ondc/org/withholding_amount": "0.0",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "neft",
+                        "settlement_bank_account_no": "12345678901234",
+                        "settlement_ifsc_code": "HDFC0000001",
+                        "beneficiary_name": "Neonyte",
+                        "bank_name": "HDFC Bank LTD",
+                        "branch_name": "Chickpet"
+                    }
+                ]
+            },
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "71799.13"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "77bc6889-9d7e-49ca-b253-9405602d4891",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "103.13"
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "b69e0f87-5b98-45c8-9827-d6009a78f23c",
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        },
+                        "title": "Mac Mini M2",
+                        "@ondc/org/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "58990.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "58990.00"
+                            }
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "b69e0f87-5b98-45c8-9827-d6009a78f23c",
+                        "title": "Tax",
+                        "@ondc/org/title_type": "tax",
+                        "price": {
+                            "currency": "INR",
+                            "value": "10618.00"
+                        },
+                        "item": {
+                            "tags": [
+                                {
+                                    "code": "quote",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "item"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "77bc6889-9d7e-49ca-b253-9405602d4891",
+                        "title": "Convenience Fee",
+                        "@ondc/org/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "2088.00"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "tags": [
+                {
+                    "code": "bpp_terms",
+                    "list": [
+                        {
+                            "code": "max_liability_cap"
+                        },
+                        {
+                            "code": "max_liability"
+                        },
+                        {
+                            "code": "mandatory_arbitration",
+                            "value": "false"
+                        },
+                        {
+                            "code": "court_jurisdiction",
+                            "value": "Bengaluru"
+                        },
+                        {
+                            "code": "delay_interest"
+                        },
+                        {
+                            "code": "np_type",
+                            "value": "MSN"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "29ABLCS1234F1ZZ"
+                        },
+                        {
+                            "code": "provider_tax_number",
+                            "value": "DRVPR1234R"
+                        }
+                    ]
+                },
+                {
+                    "code": "bap_terms",
+                    "list": [
+                        {
+                            "code": "accept_bpp_terms",
+                            "value": "Y"
+                        },
+                        {
+                            "code": "static_terms",
+                            "value": "https://github.com/ONDC-Official/static-terms/tree/master/RET/SimtelAI/1.0/SimtelAI_static_terms_v1.pdf"
+                        },
+                        {
+                            "code": "tax_number",
+                            "value": "29ABLCS4636F2ZY"
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2025-03-31T04:02:50.104Z",
+            "updated_at": "2025-03-31T04:02:50.104Z"
+        }
+    }
+}
