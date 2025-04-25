@@ -1,30 +1,22 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "location": {
-      "country": {
-        "code": "IND"
-      },
-      "city": {
-        "code": "*"
-      }
-    },
     "country": "IND",
     "city": "std:022",
     "action": "issue",
     "core_version": "2.0.0",
     "bap_id": "api.mobibharat.com",
-    "bap_uri": "https://api.mobibharat.com/protocol/v1",
+    "bap_uri": "https://api.mobibharat.com/ondc",
     "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
     "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-    "transaction_id": "8a318bcb-d76c-4dcd-946e-55bfe91f0973",
-    "message_id": "fe48b9e0-6ef4-4b21-ad0c-d90987d2996b",
-    "timestamp": "2025-04-25T06:22:12.523Z",
+    "transaction_id": "35f5f204-3925-4f58-9eb0-866016f2630b",
+    "message_id": "b8ec4672-07e8-4bd1-9c6c-65ad1b097857",
+    "timestamp": "2025-04-14T15:56:15.842Z",
     "ttl": "PT30S"
   },
   "message": {
     "issue": {
-      "_id": "67fd2efe-d994-4a19-854f-806440000001",
+      "_id": "67fd2efe-d994-4a19-854f-806440000002",
       "expected_response_time": {
         "duration": "PT1H"
       },
@@ -33,21 +25,14 @@
       },
       "description": {
         "code": "ITM004",
-        "images": [
-          {
-            "url": "https://buyerapp.com/additonal-details/desc.txt",
-            "size_type": "image"
-          }
-        ],
         "short_desc": "Issue with product quality.",
-        "long_desc": "Product quality is not correct. facing issues while using the product"
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "images": ["https://buyerapp.com/additonal-details/desc.txt"]
       },
-      "status": "OPEN",
+      "status": "PROCESSING",
       "category": "ITEM",
       "level": "ISSUE",
-      "respondent_ids": [
-        "NP2"
-      ],
+      "respondent_ids": ["NP2"],
       "actions": [
         {
           "id": "f4093360-d6a8-476b-a6e7-567c9078fc41",
@@ -55,7 +40,45 @@
             "code": "OPEN",
             "short_desc": "Complaint created"
           },
-          "updated_at": "2025-04-25T06:22:12.523Z",
+          "updated_at": "2025-04-18T08:40:14.190Z",
+          "action_by": "api.mobibharat.com",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "0",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-04-18T08:42:34.043Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "0",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-04-18T08:47:06.512Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "67fd301fd994a19554f8064a",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Issue with product quality.",
+            "long_desc": "Product quality is not correct. facing issues while using the product",
+            "images": ["https://buyerapp.com/additonal-details/desc.txt"]
+          },
+          "updated_at": "2025-04-18T08:47:06.512Z",
           "action_by": "api.mobibharat.com",
           "actor_details": {
             "name": "Sam Manuel"
@@ -91,6 +114,9 @@
       ],
       "actors": [
         {
+          "_id": "67fd2efed994a19554f80648",
+          "id": "api.mobibharat.com",
+          "type": "INTERFACING_NP",
           "info": {
             "org": {
               "name": "api.mobibharat.com::ONDC:RET10"
@@ -99,12 +125,12 @@
               "email": "bjanardhan5031+9908@gmail.com",
               "phone": "6261439535"
             }
-          },
-          "_id": "67fd2efed994a19554f80648",
-          "id": "api.mobibharat.com",
-          "type": "INTERFACING_NP"
+          }
         },
         {
+          "_id": "67fd2efed994a19554f80649",
+          "id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
               "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
@@ -113,20 +139,17 @@
               "name": "Pramaan Store 1"
             },
             "contact": {
-              "phone": "9450394039",
-              "email": "buyerapp@interface.com"
+              "email": "buyerapp@interface.com",
+              "phone": "9450394039"
             }
-          },
-          "_id": "67fd2efed994a19554f80649",
-          "id": "pramaan.ondc.org/beta/preprod/mock/seller",
-          "type": "COUNTERPARTY_NP"
+          }
         },
         {
           "id": "NP2",
           "type": "COUNTERPARTY_NP",
           "info": {
             "org": {
-              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+              "name": "sellerapp.com::ONDC:RET10"
             },
             "person": {
               "name": "Jane Doe"
@@ -140,9 +163,9 @@
       ],
       "source_id": "pramaan.ondc.org/beta/preprod/mock/seller",
       "complainant_id": "api.mobibharat.com",
-      "last_action_id": "f4093360-d6a8-476b-a6e7-567c9078fc41",
-      "created_at": "2025-04-25T06:22:12.523Z",
-      "updated_at": "2025-04-25T06:22:12.523Z",
+      "last_action_id": "67fd301fd994a19554f8064a",
+      "created_at": "2025-04-18T08:40:11.190Z",
+      "updated_at": "2025-04-18T08:40:14.190Z",
       "__v": 0,
       "sub_category": "FLM02",
       "complainant_info": {
@@ -173,22 +196,68 @@
         "type": "CONSUMER"
       },
       "issue_type": "ISSUE",
-      "issue_actions": {
-        "complainant_actions": [
-          {
-            "id": "f4093360-d6a8-476b-a6e7-567c9078fc41",
-            "description": {
-              "code": "OPEN",
-              "short_desc": "Complaint created"
-            },
-            "action_by": "api.mobibharat.com",
-            "actor_details": {
-              "name": "Sam Manuel"
-            }
+      "resolver_ids": ["NP2"]
+    },
+    "issue_actions": {
+      "complainant_actions": [
+        {
+          "id": "f4093360-d6a8-476b-a6e7-567c9078fc41",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-04-18T08:40:14.190Z",
+          "action_by": "api.mobibharat.com",
+          "actor_details": {
+            "name": "Sam Manuel"
           }
-        ],
-        "respondent_actions": []
+        },
+        {
+          "id": "0",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-04-18T08:42:34.043Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "0",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-04-18T08:47:06.512Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "67fd301fd994a19554f8064a",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Issue with product quality.",
+            "long_desc": "Product quality is not correct. facing issues while using the product",
+            "images": ["https://buyerapp.com/additonal-details/desc.txt"]
+          },
+          "updated_at": "2025-04-18T08:47:06.512Z",
+          "action_by": "api.mobibharat.com",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "respondent_actions": []
+    },
+    "updated_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
       }
-    }
+    ]
   }
 }
