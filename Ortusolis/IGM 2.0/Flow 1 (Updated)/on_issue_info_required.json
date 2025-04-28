@@ -1,0 +1,183 @@
+{
+    "context": {
+        "domain": "ONDC:RET16",
+        "location": {
+            "country": {
+                "code": "IND"
+            },
+            "city": {
+                "code": "*"
+            }
+        },
+        "action": "on_issue",
+        "core_version": "2.0.0",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "bpp_id": "ondcpreprod.ortusolis.in",
+        "bpp_uri": "https://ondcpreprod.ortusolis.in/bpp",
+        "transaction_id": "7bd78cb8-35ec-4c9a-a2d7-820aa548d372",
+        "message_id": "81066f7b-4c04-46be-adab-6f19f6a23ecc",
+        "timestamp": "2025-04-14T12:18:53.852Z",
+        "ttl": "PT10M"
+    },
+    "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
+        "issue": {
+            "id": "0a78299a-b121-4ec4-a951-f6c705700c83",
+            "status": "PROCESSING",
+            "level": "ISSUE",
+            "created_at": "2025-04-12T10:48:45.799Z",
+            "updated_at": "2025-04-14T12:18:53.852Z",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "2025-03-26-103726",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "VKF",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "203-4153",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        }
+                    }
+                },
+                {
+                    "id": "7c4ae465-4793-49e2-9094-7392d0347a08",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "ondcpreprod.ortusolis.in::ONDC:RET16"
+                        },
+                        "person": {
+                            "name": "Meena Bhatia"
+                        },
+                        "contact": {
+                            "phone": "9845091096",
+                            "email": "meenabhatia@gmail.com"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "7c4ae465-4793-49e2-9094-7392d0347a08"
+            ],
+            "description": {
+                "code": "ITM004",
+                "short_desc": "Issue with product quality",
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
+                "images": [
+                    "http://buyerapp.com/addtional-details/img1.png"
+                ]
+            },
+            "last_action_id": "43e463d5-c52a-4ed6-8ed3-c019765a5bf2",
+            "actions": [
+                {
+                    "id": "5b1f64a3-8fe2-4d3d-a4c9-97608fec14ed",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "Issue with product quality"
+                    },
+                    "updated_at": "2025-04-14T10:49:53.081Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "bace3d88-d2c0-482c-9f25-984dc0be45dc",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-04-14T10:52:04.209Z",
+                    "action_by": "7c4ae465-4793-49e2-9094-7392d0347a08",
+                    "actor_details": {
+                        "name": "Meena Bhatia"
+                    }
+                },
+                {
+                    "id": "43e463d5-c52a-4ed6-8ed3-c019765a5bf2",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide product images"
+                    },
+                    "updated_at": "2025-04-14T12:18:53.827Z",
+                    "action_by": "7c4ae465-4793-49e2-9094-7392d0347a08",
+                    "actor_details": {
+                        "name": "Meena Bhatia"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "context": {
+    "ttl": "P1D",
+    "action": "report",
+    "bap_id": "stage.agrikheti.com",
+    "bpp_id": "sa_nocs.nbbl.com",
+    "domain": "ONDC:NTS10",
+    "bap_uri": "https://stage.agrikheti.com/api/ondc",
+    "bpp_uri": "https://sa_nocs.nbbl.com/nocs_test",
+    "version": "2.0.0",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "timestamp": "2024-12-22T05:38:37.906Z",
+    "message_id": "12d2457a-b2ee-4f21-8005-6a7bf12ad1fa",
+    "transaction_id": "1ed85231-9138-47d9-928e-768fe1510d72"
+  },
+  "message": {
+    "ref_message_id": "1a324b1b-84fd-4873-a914-ae551af193bb",
+    "ref_transaction_id": "1ed85231-9138-47d9-928e-768fe1510d72"
+  }
+}

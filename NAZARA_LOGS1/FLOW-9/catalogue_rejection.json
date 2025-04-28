@@ -1,0 +1,36 @@
+{
+   "context":{
+      "country":"IND",
+      "domain":"ONDC:RET11",
+      "timestamp":"2024-12-20T05:51:18Z",
+      "action":"catalog_rejection",
+      "bap_id":"ondcpreprod.nazarasdk.com",
+      "bap_uri":"https://ondcpreprod.nazarasdk.com/protocol/v1",
+      "bpp_id":"prod-getdirect-bpp.shopalyst.com",
+      "bpp_uri":"https://prod-getdirect-bpp.shopalyst.com/getdirect",
+      "transaction_id":"9612cb01-69ec-410c-b023-5cb2662c3771",
+      "message_id":"faa14f6d-f4fc-4efc-b58f-b93ff9cbd93e",
+      "city":"std:011",
+      "core_version":"1.2.0"
+   },
+   "errors":[
+      {
+         "type":"BPP-ERROR",
+         "code":"9xxx1",
+         "path":"message.catalog",
+         "message":"item images missing for all the providers"
+      },
+      {
+         "type":"PROVIDER-ERROR",
+         "code":"90001",
+         "path":"message.catalog.bpp/providers[?(@.id=='P1')]",
+         "message":"Fulfilment rate below declared standards"
+      },
+      {
+         "type":"ITEM-ERROR",
+         "code":"91001",
+         "path":"message.catalog.bpp/providers[?(@.id=='P1')].items[?(@.id=='I1')]",
+         "message":"Item price > MRP"
+      }
+   ]
+}

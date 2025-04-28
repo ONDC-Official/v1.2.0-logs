@@ -1,0 +1,84 @@
+{
+  "context": {
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "ondc.taolabs.in",
+    "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "transaction_id": "db2f53b2-e164-4176-8eb0-cfe129d204cb",
+    "message_id": "b8d3c01a-6100-4fe2-a033-31ea0b61e4cb",
+    "timestamp": "2025-04-03T06:16:02.769Z",
+    "domain": "ONDC:RET14",
+    "core_version": "2.0.0",
+    "ttl": "PT10M",
+    "action": "on_issue"
+  },
+  "message": {
+    "update_target": { "path": "issue.actions", "actions": "APPENDED" },
+    "issue": {
+      "id": "3b866749-fb76-4c21-8718-70e1a8f8d620",
+      "level": "ISSUE",
+      "status": "OPEN",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "675bd845606bc7a83be667ce", "ref_type": "PROVIDER" },
+        {
+          "ref_id": "f0d3f088-adde-413f-a447-db0bd44a80ad",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "actors": [
+        {
+          "id": "4e062ab4-808b-45cd-a188-b6e10bfab499",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": { "name": "ondc.taolabs.in::ONDC:RET14" },
+            "person": { "name": "STS Seller" },
+            "contact": { "phone": "8477376457", "email": "kim@gmail.com" }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "sellerapp.com::ONDC:RET10" },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": { "name": "Jane Doe" }
+          }
+        }
+      ],
+      "source_id": "4e062ab4-808b-45cd-a188-b6e10bfab499",
+      "complainant_id": "4e062ab4-808b-45cd-a188-b6e10bfab499",
+      "respondent_ids": ["NP2"],
+      "description": {
+        "code": "PMT002",
+        "short_desc": "testing the create issue",
+        "long_desc": "more info for the issue",
+        "ilss": "more info for the issue"
+      },
+      "last_action_id": "a1",
+      "actions": [
+        {
+          "id": "4929393c-d068-4ca2-8876-f2679a9270d7",
+          "description": { "code": "OPEN", "short_desc": "Complaint created" },
+          "updated_at": "2025-04-03T06:14:04.094Z",
+          "action_by": "4e062ab4-808b-45cd-a188-b6e10bfab499",
+          "actor_details": { "name": "Praful Sakpal" }
+        },
+        {
+          "id": "a1",
+          "description": { "code": "PROCESSING", "short_desc": "processing" },
+          "updated_at": "2025-04-03T06:16:02.646Z",
+          "action_by": "NP2",
+          "actor_details": { "name": "Sam Manuel" }
+        }
+      ],
+      "created_at": "2025-04-03T06:14:04.094Z",
+      "updated_at": "2025-04-03T06:14:04.094Z"
+    }
+  }
+}

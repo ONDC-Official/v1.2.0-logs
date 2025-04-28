@@ -1,0 +1,221 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:0471",
+        "core_version": "1.2.0",
+        "action": "on_status",
+        "transaction_id": "00ca5b49-4d53-4f10-86de-372b9e5fb92a",
+        "message_id": "927943e6-3e08-44d1-ba30-be1e003db4a8",
+        "timestamp": "2025-02-07T12:55:15.996Z",
+        "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+        "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+        "ttl": "PT30S",
+        "bpp_id": "dev-ondc.qwqer.in",
+        "bpp_uri": "https://dev-ondc.qwqer.in/retail"
+    },
+    "message": {
+        "order": {
+            "id": "SS1738065656565",
+            "items": [
+                {
+                    "id": "49548",
+                    "location_id": "695581_681",
+                    "quantity": {
+                        "count": 1
+                    },
+                    "fulfillment_id": "F1"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "73.0"
+                },
+                "breakup": [
+                    {
+                        "@ondc/org/item_id": "49548",
+                        "@ondc/org/title_type": "item",
+                        "title": "Cavins Vanilla Milkshake - Immunity Booster Tetra Pack",
+                        "price": {
+                            "currency": "INR",
+                            "value": "38.0"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "38.0"
+                            },
+                            "quantity": {
+                                "available": {
+                                    "count": "99"
+                                },
+                                "maximum": {
+                                    "count": "5"
+                                }
+                            }
+                        },
+                        "@ondc/org/item_quantity": {
+                            "count": 1
+                        }
+                    },
+                    {
+                        "@ondc/org/item_id": "F1",
+                        "title": "Delivery charges",
+                        "@ondc/org/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "35.0"
+                        }
+                    }
+                ],
+                "ttl": "P1D"
+            },
+            "state": "Accepted",
+            "billing": {
+                "address": {
+                    "name": "Nirdosh Chauhan",
+                    "building": "221 B",
+                    "locality": "Baker Steeet",
+                    "city": "Gurgaon",
+                    "state": "Haryana",
+                    "country": "India",
+                    "area_code": "695102"
+                },
+                "tax_number": "00ABCDE1234F1Z5",
+                "name": "Nirdosh Chauhan",
+                "email": "nirdosh.chauhan@sequelstring.com",
+                "phone": "9876543210",
+                "created_at": "2025-02-07T12:54:43.606Z",
+                "updated_at": "2025-02-07T12:54:43.606Z"
+            },
+            "payment": {
+                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                "@ondc/org/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_bank_account_no": "323405000734",
+                        "settlement_ifsc_code": "ICIC0003234",
+                        "settlement_type": "neft",
+                        "beneficiary_name": "XXXXXXXXX",
+                        "bank_name": "XXXXXXXXX",
+                        "branch_name": "XXXXXXXXX"
+                    }
+                ],
+                "@ondc/org/settlement_basis": "delivery",
+                "@ondc/org/settlement_window": "P1D",
+                "@ondc/org/withholding_amount": "0.00",
+                "params": {
+                    "amount": "73.0",
+                    "currency": "INR",
+                    "transaction_id": "5ec01c4a-95e1-47a2-bf7b-6e879b755989"
+                },
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "status": "PAID"
+            },
+            "provider": {
+                "id": "681",
+                "locations": [
+                    {
+                        "id": "695581_681"
+                    }
+                ]
+            },
+            "created_at": "2025-02-07T12:54:43.606Z",
+            "updated_at": "2025-02-07T12:55:15.996Z",
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "@ondc/org/provider_name": "QWQER",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "type": "Delivery",
+                    "tracking": true,
+                    "tags": [
+                        {
+                            "code": "routing",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "P2P"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "tracking",
+                            "list": [
+                                {
+                                    "code": "gps_enabled",
+                                    "value": "yes"
+                                },
+                                {
+                                    "code": "url_enabled",
+                                    "value": "no"
+                                }
+                            ]
+                        }
+                    ],
+                    "@ondc/org/TAT": "PT1H",
+                    "start": {
+                        "location": {
+                            "id": "695581_681",
+                            "descriptor": {
+                                "name": "QWQER ONDC Store"
+                            },
+                            "gps": "8.560039,76.877669",
+                            "address": {
+                                "locality": "Amstor, Technopark Campus",
+                                "city": "Thiruvananthapuram",
+                                "area_code": "695581",
+                                "state": "Kerala"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2025-02-07T12:54:45.896Z",
+                                "end": "2025-02-07T13:09:45.896Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "8075537876",
+                            "email": "sajithj03@gmail.com"
+                        }
+                    },
+                    "end": {
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "nirdosh.chauhan@sequelstring.com"
+                        },
+                        "location": {
+                            "gps": "8.56638,76.88275",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "695102"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2025-02-07T13:09:45.896Z",
+                                "end": "2025-02-07T13:39:45.896Z"
+                            }
+                        },
+                        "person": {
+                            "name": "Nirdosh Chauhan"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,2884 @@
+{
+  "payload": {
+    "select_1": {
+      "signature": "Signature keyId=\"ondc.kpro42.com|ae7686be-f644-47fb-a20e-da180cb6ec62|ed25519\",algorithm=\"ed25519\",created=\"1738579568\",expires=\"1738585168\",headers=\"(created) (expires) digest\",signature=\"qsD0FCwkFBn6i1eOsY7NLiWABZFFUI2dIalZ9H3XwN97XgvOFKQ8wrex21CSQCLMYmYC+29WDi+U4DQ/L/4oDA==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "select",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "f067ac53-cd76-4203-8f2f-5f0458e9dafc",
+          "timestamp": "2025-02-03T11:19:28.949Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1"
+              }
+            ],
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "fulfillments": [
+              {
+                "end": {
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "area_code": "560038"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_select_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581569\",expires=\"1738585169\",headers=\"(created) (expires) digest\",signature=\"K5BvNHWoGGDA7zMv8Lmm1PHjXFPDR9CkD/PSDVfmIhl4/Ws5YbvfDl6dlBvTE5QQ3Y5ImhAGZtNwuMqXBLk5BQ==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_select",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "f067ac53-cd76-4203-8f2f-5f0458e9dafc",
+          "timestamp": "2025-02-03T11:19:29.408Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "type": "Delivery",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "tracking": true,
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Serviceable"
+                  }
+                }
+              },
+              {
+                "id": "8cbf2617-d6aa-4caa-a7c3-64ac346bd29f",
+                "type": "Self-Pickup",
+                "@ondc/org/provider_name": "",
+                "tracking": false,
+                "@ondc/org/category": "Takeaway",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Serviceable"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_select",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "f067ac53-cd76-4203-8f2f-5f0458e9dafc",
+          "timestamp": "2025-02-03T11:19:29.408Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "init_1": {
+      "signature": "Signature keyId=\"ondc.kpro42.com|ae7686be-f644-47fb-a20e-da180cb6ec62|ed25519\",algorithm=\"ed25519\",created=\"1738579599\",expires=\"1738585199\",headers=\"(created) (expires) digest\",signature=\"CB6nOCu3co2uyONPwwXcXmqAA/+aCCiahTTzduct9rK61/l2hzwSCMSTUgrf2RNOeHsGn4blkYzTlGOsPaIyBg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "init",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "86ee18d9-5162-4147-b2f6-a10d279b7cdc",
+          "timestamp": "2025-02-03T11:19:59.277Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "type": "Delivery",
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "building": "Test Building",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038",
+                      "locality": "7th Cross Road",
+                      "name": "Vansh"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_init_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581599\",expires=\"1738585199\",headers=\"(created) (expires) digest\",signature=\"yGtSBoyrcFLLWrpq2RhTImq9M9J9k7pMiumV/Yy7NSNLuekYPMynasUfABWb0qXIrwUzTfZDgZTjFwaiG7yWAw==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "86ee18d9-5162-4147-b2f6-a10d279b7cdc",
+          "timestamp": "2025-02-03T11:19:59.662Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "cancellation_terms": [
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Pending",
+                    "short_desc": ""
+                  }
+                },
+                "refund_eligible": true,
+                "reason_required": false,
+                "cancellation_fee": {
+                  "percentage": "0.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "0.00"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Packed",
+                    "short_desc": "001,003"
+                  }
+                },
+                "refund_eligible": true,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "0.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "0.00"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Order-picked-up",
+                    "short_desc": "001,003"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "10.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "14.50"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "009"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "30.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "43.50"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "010,011,012,013,014,015"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "35.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "50.75"
+                }
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "type": "Delivery",
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "building": "Test Building",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038",
+                      "locality": "7th Cross Road",
+                      "name": "Vansh"
+                    }
+                  }
+                },
+                "tracking": true
+              }
+            ],
+            "payment": {
+              "status": "NOT-PAID",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ],
+              "collected_by": "BAP"
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "86ee18d9-5162-4147-b2f6-a10d279b7cdc",
+          "timestamp": "2025-02-03T11:19:59.662Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "confirm_1": {
+      "signature": "Signature keyId=\"ondc.kpro42.com|ae7686be-f644-47fb-a20e-da180cb6ec62|ed25519\",algorithm=\"ed25519\",created=\"1738579629\",expires=\"1738585229\",headers=\"(created) (expires) digest\",signature=\"FHVM1J5lR2zduVFEYVNMvbP8GJNatIHms+p+sqTYtANh7WB6uO77duEp6Jwgq0MQuybp4erl2SGB3GLyKzmSAA==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "confirm",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "cd639172-650b-41e9-9d35-9cd0ed893a03",
+          "timestamp": "2025-02-03T11:20:29.496Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "Created",
+            "billing": {
+              "address": {
+                "name": "Vansh",
+                "building": "Test Building",
+                "locality": "7th Cross Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "fulfillments": [
+              {
+                "@ondc/org/TAT": "PT24H",
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "tracking": true,
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  }
+                },
+                "type": "Delivery"
+              }
+            ],
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:20:29.496Z"
+          }
+        }
+      },
+      "response": {
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_confirm_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581629\",expires=\"1738585229\",headers=\"(created) (expires) digest\",signature=\"O+EWdP4nWb4z261v983BgBcwZF9GXb7CEKk6ic8wWRG3FwwR68UFUcYFL8sgGiQV/v9wEn+Rk4Rr8KnU16GICQ==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_confirm",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "cd639172-650b-41e9-9d35-9cd0ed893a03",
+          "timestamp": "2025-02-03T11:20:29.977Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "Created",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Pending"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    }
+                  }
+                }
+              }
+            ],
+            "cancellation_terms": [
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Pending",
+                    "short_desc": ""
+                  }
+                },
+                "refund_eligible": true,
+                "reason_required": false,
+                "cancellation_fee": {
+                  "percentage": "0.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "0.00"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Packed",
+                    "short_desc": "001,003"
+                  }
+                },
+                "refund_eligible": true,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "0.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "0.00"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Order-picked-up",
+                    "short_desc": "001,003"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "10.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "14.50"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "009"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "30.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "43.50"
+                }
+              },
+              {
+                "fulfillment_state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery",
+                    "short_desc": "010,011,012,013,014,015"
+                  }
+                },
+                "refund_eligible": false,
+                "reason_required": true,
+                "cancellation_fee": {
+                  "percentage": "35.00",
+                  "amount": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                "amount": {
+                  "currency": "INR",
+                  "value": "50.75"
+                }
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:20:29.977Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_confirm",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "cd639172-650b-41e9-9d35-9cd0ed893a03",
+          "timestamp": "2025-02-03T11:20:29.977Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "track_1": {
+      "signature": "Signature keyId=\"ondc.kpro42.com|ae7686be-f644-47fb-a20e-da180cb6ec62|ed25519\",algorithm=\"ed25519\",created=\"1738579650\",expires=\"1738585250\",headers=\"(created) (expires) digest\",signature=\"CEb6OAiTwkAwVcv9x3BfIgGdLeFJo2JnTwvRokThZgmQP9rzqBJ7TB33sMfjjzQdbMn2SQk/Ei4O4HDz9wo7Cg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "track",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "69dbfcaa-9d17-4966-9189-b2e82b8e62c6",
+          "timestamp": "2025-02-03T11:20:50.348Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order_id": "2025-02-03-421925"
+        }
+      },
+      "response": {
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_track_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581650\",expires=\"1738585250\",headers=\"(created) (expires) digest\",signature=\"VQat6HS2ZFP9MN0dT0eK4Z3g35pOXqYKaEwGhd70MeZUd2hdWqWDSnwfm5VKea7mIB5o51+O9wRCvlop6qKxCg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_track",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "69dbfcaa-9d17-4966-9189-b2e82b8e62c6",
+          "timestamp": "2025-02-03T11:20:50.348Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "tracking": {
+            "id": "c719c1e9-4638-4465-b9ac-d7b2f3289c72",
+            "url": "http://sequelstring-lsp-ondc.com/track",
+            "status": "active"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_track",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "69dbfcaa-9d17-4966-9189-b2e82b8e62c6",
+          "timestamp": "2025-02-03T11:20:50.348Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_1": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581671\",expires=\"1738585271\",headers=\"(created) (expires) digest\",signature=\"MlXyS3kjBbYufLQQxFRHmCld9WpeH+6t5KF43w/0hIdCk3i8Zvf65JfJCV6jbS903t2xqoCFmfGLhtIYAXFlAA==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "5eab4839-8660-44fa-a9ca-c3107ae0121e",
+          "timestamp": "2025-02-03T11:21:11.128Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "In-progress",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Packed"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "routing",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "P2P"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://ondc.sequelstring.com/track/019e3c07-b175-4069-91ee-112e790d4fec"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:21:11.128Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "5eab4839-8660-44fa-a9ca-c3107ae0121e",
+          "timestamp": "2025-02-03T11:21:11.128Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_2": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581690\",expires=\"1738585290\",headers=\"(created) (expires) digest\",signature=\"dZQvkLLmlrN1ERwPnivrFe10HPn9bvO1xsNaqhzR4hB6lutndtvm5pLJMmS4d0HqIChrf5MquU1ONT5InvXhAQ==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "ea8e90ba-a25d-4e04-b695-1d6eb00935ea",
+          "timestamp": "2025-02-03T11:21:30.132Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "In-progress",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Agent-assigned"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "routing",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "P2P"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://ondc.sequelstring.com/track/019e3c07-b175-4069-91ee-112e790d4fec"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:21:30.132Z"
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "ea8e90ba-a25d-4e04-b695-1d6eb00935ea",
+          "timestamp": "2025-02-03T11:21:30.132Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_3": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581701\",expires=\"1738585301\",headers=\"(created) (expires) digest\",signature=\"ZSn02hMmnyGXtoBfUrzM4o6KKD7EqHu2XIXfMDCeihUFbz4uRIRpRGknVzY1m6zbXBgQS8cB8enEUOcSIlX/Dg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "e7781ed6-c4bd-4112-ac4f-23f4f7322d93",
+          "timestamp": "2025-02-03T11:21:41.801Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "In-progress",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Order-picked-up"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    },
+                    "timestamp": "2025-02-03T11:21:41.801Z"
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "routing",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "P2P"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://ondc.sequelstring.com/track/019e3c07-b175-4069-91ee-112e790d4fec"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:21:41.801Z",
+            "documents": [
+              {
+                "label": "Invoice",
+                "url": "https://ondc.sequelstring.com/seller/document/invoice.pdf"
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "e7781ed6-c4bd-4112-ac4f-23f4f7322d93",
+          "timestamp": "2025-02-03T11:21:41.801Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_4": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581716\",expires=\"1738585316\",headers=\"(created) (expires) digest\",signature=\"3LiqE2gFFmq9nhPpjknVVUUUzV5eWmtbUD0bXVPwKisa6HDt7VI3d99JLJ9xIbTxxX8bUyUnALkVolMx8YMZAg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "ce608bbf-ffb5-4463-903b-cd7e4b7db584",
+          "timestamp": "2025-02-03T11:21:56.391Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "In-progress",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Out-for-delivery"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    },
+                    "timestamp": "2025-02-03T11:21:41.801Z"
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    }
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "routing",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "P2P"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://ondc.sequelstring.com/track/019e3c07-b175-4069-91ee-112e790d4fec"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:21:56.391Z",
+            "documents": [
+              {
+                "label": "Invoice",
+                "url": "https://ondc.sequelstring.com/seller/document/invoice.pdf"
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "ce608bbf-ffb5-4463-903b-cd7e4b7db584",
+          "timestamp": "2025-02-03T11:21:56.391Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    },
+    "on_status_5": {
+      "signature": "Signature keyId=\"pramaan.ondc.org/beta/preprod/mock/seller|7518184f-f021-43e8-889b-a65298a33e4e|ed25519\",algorithm=\"ed25519\",created=\"1738581731\",expires=\"1738585331\",headers=\"(created) (expires) digest\",signature=\"RN8nA5RHdIBdaWZdgQZZrQxXw0ayg6t66BAHcex0EHu+hVFLzYUaFpB/v0ejbxshrZrGIQITZopGenw5p0ILBg==\"",
+      "request": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "630a3c4e-b4fa-476c-bb0a-8954b8c90e78",
+          "timestamp": "2025-02-03T11:22:11.265Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "order": {
+            "id": "2025-02-03-421925",
+            "state": "Completed",
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "019e3c07-b175-4069-91ee-112e790d4fec"
+              }
+            ],
+            "billing": {
+              "address": {
+                "building": "Test Building",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560038",
+                "locality": "7th Cross Road",
+                "name": "Vansh"
+              },
+              "phone": "7017669084",
+              "name": "Vansh",
+              "email": "vansh@gmail.com",
+              "created_at": "2025-02-03T11:19:59.277Z",
+              "updated_at": "2025-02-03T11:19:59.277Z"
+            },
+            "fulfillments": [
+              {
+                "id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                "@ondc/org/provider_name": "Pramaan Store 1",
+                "@ondc/org/category": "Standard Delivery",
+                "@ondc/org/TAT": "PT24H",
+                "state": {
+                  "descriptor": {
+                    "code": "Order-delivered"
+                  }
+                },
+                "type": "Delivery",
+                "tracking": true,
+                "start": {
+                  "location": {
+                    "id": "SSL1",
+                    "gps": "28.527300, 77.182100",
+                    "descriptor": {
+                      "name": "Pramaan Store 1",
+                      "images": [
+                        "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                      ]
+                    },
+                    "address": {
+                      "locality": "N. Caldwell",
+                      "city": "N. Caldwell",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-03T11:20:29.977Z",
+                      "end": "2025-02-03T23:00:00.000Z"
+                    },
+                    "timestamp": "2025-02-03T11:21:41.801Z"
+                  },
+                  "contact": {
+                    "phone": "9876543210",
+                    "email": "ss_seller_1@ss.com"
+                  }
+                },
+                "end": {
+                  "contact": {
+                    "phone": "7017669084"
+                  },
+                  "person": {
+                    "name": "Vansh"
+                  },
+                  "location": {
+                    "gps": "12.979049,77.639754",
+                    "address": {
+                      "name": "Vansh",
+                      "building": "Test Building",
+                      "locality": "7th Cross Road",
+                      "city": "Bengaluru",
+                      "state": "Karnataka",
+                      "country": "IND",
+                      "area_code": "560038"
+                    }
+                  },
+                  "time": {
+                    "range": {
+                      "start": "2025-02-04T09:30:00.000Z",
+                      "end": "2025-02-04T19:00:00.000Z"
+                    },
+                    "timestamp": "2025-02-03T11:22:11.265Z"
+                  }
+                },
+                "tags": [
+                  {
+                    "code": "routing",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "P2P"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "tracking",
+                    "list": [
+                      {
+                        "code": "gps_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url_enabled",
+                        "value": "yes"
+                      },
+                      {
+                        "code": "url",
+                        "value": "https://ondc.sequelstring.com/track/019e3c07-b175-4069-91ee-112e790d4fec"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    },
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "019e3c07-b175-4069-91ee-112e790d4fec",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "payment": {
+              "uri": "https://razorpay.com/",
+              "tl_method": "http/get",
+              "params": {
+                "amount": "145.00",
+                "currency": "INR",
+                "transaction_id": "order_PrDdIMCOGr2EoZ"
+              },
+              "status": "PAID",
+              "type": "ON-ORDER",
+              "collected_by": "BAP",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3.0",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ]
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00ABCDE1234F1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              },
+              {
+                "code": "bap_terms",
+                "list": [
+                  {
+                    "code": "tax_number",
+                    "value": "21ABCDE1234F1Z1"
+                  }
+                ]
+              }
+            ],
+            "created_at": "2025-02-03T11:20:29.496Z",
+            "updated_at": "2025-02-03T11:22:11.265Z",
+            "documents": [
+              {
+                "label": "Invoice",
+                "url": "https://ondc.sequelstring.com/seller/document/invoice.pdf"
+              }
+            ]
+          }
+        }
+      },
+      "response": {
+        "context": {
+          "domain": "ONDC:RET10",
+          "country": "IND",
+          "city": "std:080",
+          "action": "on_status",
+          "core_version": "1.2.0",
+          "bap_id": "ondc.kpro42.com",
+          "bap_uri": "https://ondc.kpro42.com/protocol/v1",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "7e459a80-2314-4178-9440-30776def95df",
+          "message_id": "630a3c4e-b4fa-476c-bb0a-8954b8c90e78",
+          "timestamp": "2025-02-03T11:22:11.265Z",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "ttl": "PT50S"
+        },
+        "message": {
+          "ack": {
+            "status": "ACK"
+          }
+        }
+      }
+    }
+  }
+}

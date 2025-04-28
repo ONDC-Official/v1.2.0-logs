@@ -1,0 +1,54 @@
+{
+  "context": {
+    "ttl": "P1D",
+    "action": "settle",
+    "bap_id": "stage.agrikheti.com",
+    "bpp_id": "sa_nocs.nbbl.com",
+    "domain": "ONDC:NTS10",
+    "bap_uri": "https://stage.agrikheti.com/api/ondc",
+    "bpp_uri": "https://sa_nocs.nbbl.com/nocs_test",
+    "version": "2.0.0",
+    "location": {
+      "city": {
+        "code": "*"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "timestamp": "2024-12-22T05:03:48.288Z",
+    "message_id": "075ca2b4-698d-4bce-b638-9e9fbc7d82fa",
+    "transaction_id": "62953a67-eb0c-4c4a-aa3c-3e610715f9f8"
+  },
+  "message": {
+    "settlement": {
+      "id": "caa1497c-961d-468b-9d40-592836d03830",
+      "type": "NP-NP",
+      "orders": [
+        {
+          "id": "ondctL14IizHucrI9zK2Sfjt4IBkkr9d",
+          "self": {
+            "amount": {
+              "value": "11.94",
+              "currency": "INR"
+            }
+          },
+          "collector": {
+            "amount": {
+              "value": "11.94",
+              "currency": "INR"
+            }
+          },
+          "inter_participant": {
+            "amount": {
+              "value": "386.06",
+              "currency": "INR"
+            }
+          }
+        }
+      ]
+    },
+    "receiver_app_id": "pramaan.ondc.org/alpha/mock-server",
+    "collector_app_id": "stage.agrikheti.com"
+  }
+}

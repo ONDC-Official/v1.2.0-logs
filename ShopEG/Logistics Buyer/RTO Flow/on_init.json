@@ -1,0 +1,89 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "dev-api.shopeg.in",
+    "bap_uri": "https://dev-api.shopeg.in/ondc/bpp",
+    "bpp_id": "preprod.logistics-seller.mp2.in",
+    "bpp_uri": "https://preprod.logistics-seller.mp2.in/ondc",
+    "transaction_id": "bd8f9475-6b06-4bfd-bede-322232d18753",
+    "message_id": "c0aa4486-b66c-48d9-a601-0e69af0a22d9",
+    "timestamp": "2024-12-09T12:21:05.463Z"
+  },
+  "message": {
+    "order": {
+      "provider": { "id": "MP2" },
+      "items": [
+        { "id": "mp2_immediate", "fulfillment_id": "mp2_immediate_f1" }
+      ],
+      "fulfillments": [
+        {
+          "id": "mp2_immediate_f1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.973282984530137,77.64140848070383",
+              "address": {
+                "name": "Bhaskar Test Shop 1",
+                "building": "Bhaskar Test Shop 1",
+                "locality": "Indiranagar, Bengaluru",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560038"
+              }
+            },
+            "contact": {
+              "phone": "8116576094",
+              "email": "ondc-support@shopeg.in"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.977518,77.634569",
+              "address": {
+                "name": "Prangan Kumar",
+                "building": "999/5",
+                "locality": "10th Main Road",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "560038"
+              }
+            },
+            "contact": {
+              "phone": "9517890976",
+              "email": "bhaskar.saha@bseek.com"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [{ "code": "inline_check_for_rider", "value": "yes" }]
+            }
+          ]
+        }
+      ],
+      "payment": { "type": "POST-FULFILLMENT", "collected_by": "BAP" },
+      "quote": {
+        "price": { "currency": "INR", "value": "25.0" },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "delivery",
+            "price": { "currency": "INR", "value": "21.19" }
+          },
+          {
+            "@ondc/org/item_id": "mp2_immediate",
+            "@ondc/org/title_type": "tax",
+            "price": { "currency": "INR", "value": "3.81" }
+          }
+        ],
+        "ttl": "PT15M"
+      }
+    }
+  }
+}

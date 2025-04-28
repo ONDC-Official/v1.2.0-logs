@@ -1,0 +1,189 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "location": {
+      "country": {
+        "code": "IND"
+      },
+      "city": {
+        "code": "*"
+      }
+    },
+    "core_version": "2.0.0",
+    "action": "on_issue",
+    "bap_id": "igm-mock-service.ondc.org",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+    "bpp_id": "ondc.pirimidtech.com/v2/seller",
+    "bpp_uri": "https://ondc.pirimidtech.com/v2/seller",
+    "transaction_id": "b79f1a24-5535-4732-b352-2dd0f9f9af31",
+    "message_id": "5f38313b-a51f-40ae-b526-4e7e75308b41",
+    "timestamp": "2025-03-09T07:56:20.039Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "updated_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-1",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "status": "OPEN",
+      "level": "ISSUE",
+      "created_at": "2025-03-07T07:55:37.484Z",
+      "updated_at": "2025-03-09T07:55:38.451Z",
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": [
+        "69240538-8945-4ad3-b5c8-cfb91c668f60"
+      ],
+      "last_action_id": "639a7c41-f0b7-4a48-af3e-afb52871954c",
+      "description": {
+        "code": "ITM01",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          "http://buyerapp.com/addtional-details/img1.png",
+          "http://buyerapp.com/addtional-details/img2.png"
+        ]
+      },
+      "actors": [
+        {
+          "id": "69240538-8945-4ad3-b5c8-cfb91c668f60",
+          "type": "TRANSACTION-COUNTERPARTY-NP",
+          "info": {
+            "org": {
+              "name": "ondc.pirimidtech.com/v2/seller::ONDC:RET10"
+            },
+            "person": {
+              "name": "Faldu Hemanshu"
+            },
+            "contact": {
+              "phone": "7202959000",
+              "email": "falduhemansh@gmail.com"
+            }
+          }
+        },
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            }
+          }
+        }
+      ],
+      "actions": [
+        {
+          "id": "01217f1f-0943-46ed-943b-dd9753644e28",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Product quality is not good enough"
+          },
+          "updated_at": "2025-03-09T07:55:37.483Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "14328bd5-904a-445f-8b7f-faa3224f3f92",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Processing Issue, soon will let you know"
+          },
+          "updated_at": "2025-03-09T07:55:38.460Z",
+          "action_by": "69240538-8945-4ad3-b5c8-cfb91c668f60",
+          "actor_details": {
+            "name": "Faldu Hemanshu"
+          }
+        },
+        {
+          "id": "639a7c41-f0b7-4a48-af3e-afb52871954c",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "short_desc": "Please provide product image"
+          },
+          "updated_at": "2025-03-09T07:56:20.034Z",
+          "action_by": "69240538-8945-4ad3-b5c8-cfb91c668f60",
+          "actor_details": {
+            "name": "Faldu Hemanshu"
+          }
+        }
+      ],
+      "resolutions": [],
+      "refs": [
+        {
+          "ref_id": "69759fae-dea8-43ed-a386-26da01d56a63",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "5b4017c0-52be-45cd-9291-f1ea4807bf61",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref_id": "ba2b08b1-d8dc-4e23-9dfe-16a2b4fa1f58",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "7cc350bd-156e-4b37-be6b-78f9ab491e91",
+          "ref_type": "FULFILLMENt"
+        },
+        {
+          "ref_id": "033cbdcf-8bee-4dc7-95dd-9ef009ac2ea5",
+          "ref_type": "TRANSACTION"
+        }
+      ]
+    }
+  }
+}
