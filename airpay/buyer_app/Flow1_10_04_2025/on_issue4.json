@@ -1,0 +1,262 @@
+{
+    "context": {
+        "bap_id": "preprod-ondc.airpay.ninja",
+        "bap_uri": "https://preprod-ondc.airpay.ninja/v1.2",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "country": "IND",
+        "city": "std:080,",
+        "transaction_id": "7d7424c6-851b-42cc-9ee8-5ac7e5565ed1",
+        "message_id": "10ac5a5e33b1dfa5c12f4bffe233645b",
+        "timestamp": "2025-04-24T19:36:12.740Z",
+        "domain": "ONDC:RET10",
+        "core_version": "1.2.0",
+        "ttl": "PT10M",
+        "action": "on_issue"
+    },
+    "message": {
+        "update_target": {
+            "path": "issue.actions",
+            "actions": "APPENDED"
+        },
+        "issue": {
+            "id": "7ad18b75-3ad1-404f-9504-ad5ee17651f3",
+            "level": "ISSUE",
+            "status": "PROCESSING",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILLMENT"
+                },
+                {
+                    "ref_id": "I1",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "description": {
+                "code": "ITM004",
+                "short_desc": "Issue with product quality",
+                "long_desc": "product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
+                "images": [
+                    {
+                        "url": "http://buyerapp.com/addtional-details/img1.png",
+                        "size_type": "xs"
+                    }
+                ],
+                "media": [
+                    {
+                        "url": "https://transitsolutions.in/logos/logo.icon"
+                    }
+                ]
+            },
+            "last_action_id": "A6",
+            "actions": [
+                {
+                    "id": "A1",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.489Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A2",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.489Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3_1",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO01",
+                        "short_desc": "Please provide product image"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.489Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3_2",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO002",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.489Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A4",
+                    "ref_id": "A3_1",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Info provided from buyer app",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2023-01-15T10:00:00.489Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Seller app processing the info"
+                    },
+                    "updated_at": "2025-04-24T19:32:26.883Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A6",
+                    "ref_id": "A3_2",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide invoice",
+                        "name": "INFO0002"
+                    },
+                    "updated_at": "2025-04-24T19:36:12.739Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "created_at": "2025-04-24T19:30:54.000Z",
+            "updated_at": "2025-04-24T19:30:54.000Z"
+        }
+    }
+}
