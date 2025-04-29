@@ -1,0 +1,228 @@
+{
+    "context": {
+        "bap_id": "preprod-ondc.airpay.ninja",
+        "bap_uri": "https://preprod-ondc.airpay.ninja/v1.2",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "country": "IND",
+        "city": "std:080",
+        "transaction_id": "d00ed2ca-466b-43e0-ba88-bfad869543c8",
+        "message_id": "43e271eebae1025b6167febf5af45d3e",
+        "timestamp": "2025-04-28T15:51:21.550Z",
+        "domain": "ONDC:RET10",
+        "core_version": "2.0.0",
+        "ttl": "PT10M",
+        "action": "on_issue"
+    },
+    "message": {
+        "update_target": {
+            "path": "issue.actions",
+            "actions": "APPENDED"
+        },
+        "issue": {
+            "id": "5753c813-73c7-4436-809b-8ba68fbf385e",
+            "level": "ISSUE",
+            "status": "PROCESSING",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING-NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "last_action_id": "AR7",
+            "actions": [
+                {
+                    "id": "AR1",
+                    "descriptor": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR2",
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint is being processed"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Mark Anthony"
+                    }
+                },
+                {
+                    "id": "AR3",
+                    "descriptor": {
+                        "name": "INFO001",
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide item images"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR4",
+                    "descriptor": {
+                        "name": "INFO002",
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide package images"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR5",
+                    "descriptor": {
+                        "name": "INFO001",
+                        "code": "INFO_PROVIDED",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR6",
+                    "descriptor": {
+                        "name": "INFO002",
+                        "code": "INFO_PROVIDED",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR7",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Please wait. We are processing the request."
+                    },
+                    "updated_at": "2025-04-28T15:51:21.549Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "AR8",
+                    "ref_id": "R1",
+                    "ref_type": "RESOLUTIONS",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED"
+                    },
+                    "updated_at": "2025-04-28T15:51:21.549Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "created_at": "2025-04-28T15:48:21.000Z",
+            "updated_at": "2025-04-28T15:48:21.000Z"
+        }
+    }
+}
