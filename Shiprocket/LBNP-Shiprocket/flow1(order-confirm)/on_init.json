@@ -1,0 +1,111 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "dev-lbnp-ondc.shiprocket.in",
+    "bap_uri": "https://dev-lbnp-ondc.shiprocket.in/",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "8fc5842f-428f-45a9-bafd-b0c5a8fff75b",
+    "message_id": "062da36c-d193-4e64-a82b-5b3ef83a6212",
+    "timestamp": "2025-04-29T11:05:13.709Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+      },
+      "items": [
+        {
+          "id": "imd_del",
+          "fulfillment_id": "a1667d97-4beb-46b7-9dbb-d513ca24529b"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "a1667d97-4beb-46b7-9dbb-d513ca24529b",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "28.473600,77.101051",
+              "address": {
+                "building": "No 28, 16th Cross",
+                "locality": "4th T Block, Jayanagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "122002",
+                "name": "MP2 Store"
+              }
+            },
+            "contact": {
+              "email": "dummy@gmail.com",
+              "phone": "9900163002"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.508848,77.097298",
+              "address": {
+                "building": "64/11, 38th B Cross",
+                "locality": "4th T Block, Jayanagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "122008",
+                "name": "Poornima"
+              }
+            },
+            "contact": {
+              "email": "dummy@l.com",
+              "phone": "9980659465"
+            }
+          }
+        }
+      ],
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "123456789123456",
+            "settlement_ifsc_code": "SBI00001234"
+          }
+        ]
+      },
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "31.81"
+        },
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "31.81"
+            },
+            "@ondc/org/item_id": "imd_del",
+            "@ondc/org/title_type": "delivery"
+          },
+          {
+            "title": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "@ondc/org/item_id": "imd_del",
+            "@ondc/org/title_type": "tax"
+          }
+        ],
+        "ttl": "P7D"
+      }
+    }
+  }
+}

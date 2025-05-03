@@ -1,0 +1,39 @@
+{
+    "Schema": {
+        "schemaErr0": "/init/0/message/order/billing/tax_number should be valid",
+        "schemaErr1": "/confirm/0/message/order/@ondc~1org~1linked_order/order/id Is linked retail order Id same as logistics order Id?",
+        "schemaErr2": "/on_status/0/message/order/payment must have required property 'status'",
+        "schemaErr3": "/on_status/0/message/order/@ondc~1org~1linked_order/order/id Is linked retail order Id same as logistics order Id?",
+        "schemaErr4": "/on_status/1/message/order/@ondc~1org~1linked_order/order/id Is linked retail order Id same as logistics order Id?",
+        "schemaErr5": "/on_status/2/message/order/@ondc~1org~1linked_order/order/id Is linked retail order Id same as logistics order Id?",
+        "schemaErr6": "/on_status/3/message/order/quote must pass \"isQuoteMatching\" keyword validation",
+        "schemaErr7": "/on_status/3/message/order/@ondc~1org~1linked_order/order/id Is linked retail order Id same as logistics order Id?",
+        "schemaErr8": "/on_cancel/0/message/order/quote must pass \"isQuoteMatching\" keyword validation",
+        "schemaErr9": "/on_cancel/0/message/order/fulfillments/0/tags/2/code must be equal to one of the allowed values (state,rto_action,rto_event,precancel_state)",
+        "schemaErr10": "/on_cancel/0/message/order/fulfillments/0/tags/2/list/0/code must be equal to one of the allowed values (ready_to_ship,return_to_origin,retry_count,rto_id,cancellation_reason_id,sub_reason_id,cancelled_by,fulfillment_state,updated_at)",
+        "schemaErr11": "/on_cancel/0/message/order/fulfillments/0/tags/2/list/1/code must be equal to one of the allowed values (ready_to_ship,return_to_origin,retry_count,rto_id,cancellation_reason_id,sub_reason_id,cancelled_by,fulfillment_state,updated_at)",
+        "schemaErr12": "/on_cancel/0/message/order/fulfillments/0/tags/2/list/2/code must be equal to one of the allowed values (ready_to_ship,return_to_origin,retry_count,rto_id,cancellation_reason_id,sub_reason_id,cancelled_by,fulfillment_state,updated_at)"
+    },
+    "Message": {
+        "search_0": {
+            "RGC-start-Err": "Reverse Geocoding for `start` failed. Area Code 122002 not matching with 28.473600,77.101051 Lat-Long pair.",
+            "CityCode-Err": "CityCode 080 should match the city for the fulfillment start location 122002, 0124",
+            "RGC-end-Err": "Reverse Geocoding for `end` failed. Area Code 122008 not matching with 28.508848,77.097298 Lat-Long pair."
+        },
+        "confirm_0": {
+            "avgPckupErr": "Average Pickup Time (fulfillments/start/time/duration) mismatches from the one provided in /on_search"
+        },
+        "on_confirm_0": {
+            "avgPckupErr": "Average Pickup Time PT15M (fulfillments/start/time/duration) mismatches from the one provided in /on_search (PT20M)"
+        },
+        "on_status_2": {
+            "pickupTimeErr": "Pickup timestamp (fulfillments/start/time/timestamp) cannot change for fulfillment state - Out-for-delivery"
+        },
+        "on_status_3": {
+            "pickupTimeErr": "Pickup timestamp (fulfillments/start/time/timestamp) cannot change for fulfillment state - Cancelled"
+        },
+        "on_cancel_0": {
+            "pickupTimeErr": "Pickup timestamp (fulfillments/start/time/timestamp) cannot change for fulfillment state - Cancelled"
+        }
+    }
+}

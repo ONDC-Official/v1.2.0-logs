@@ -1,0 +1,315 @@
+{
+    "context": {
+        "domain": "ONDC:RET10",
+        "country": "IND",
+        "city": "std:080",
+        "action": "issue",
+        "core_version": "1.2.0",
+        "bap_id": "preprod-ondc.airpay.ninja",
+        "bap_uri": "https://preprod-ondc.airpay.ninja/v1.2",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "transaction_id": "d00ed2ca-466b-43e0-ba88-bfad869543c8",
+        "message_id": "cd3910e034c2d438dfce56460bd3b312",
+        "timestamp": "2025-04-29T05:55:19.000Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "issue": {
+            "id": "5753c813-73c7-4436-809b-8ba68fbf385e",
+            "status": "CLOSED",
+            "level": "ISSUE",
+            "created_at": "2023-01-15T10:00:00.469Z",
+            "updated_at": "2023-01-15T10:00:00.469Z",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING-NP",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2-GRO",
+                    "type": "COUNTERPARTY_NP_GRO",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9999994039",
+                            "email": "sellerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "Grievance Officer SNP"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "resolver_ids": [
+                "NP2"
+            ],
+            "description": {
+                "code": "FLM005",
+                "short_desc": "Issue with packaging",
+                "long_desc": "Food has spilled in the package",
+                "images": [
+                    {
+                        "url": "http://buyerapp.com/addtional-details/img1.png",
+                        "size_type": "xs"
+                    },
+                    {
+                        "url": "http://buyerapp.com/addtional-details/img2.png",
+                        "size_type": "xs"
+                    }
+                ]
+            },
+            "last_action_id": "AR11",
+            "actions": [
+                {
+                    "id": "AR1",
+                    "descriptor": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR2",
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint is being processed"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Mark Anthony"
+                    }
+                },
+                {
+                    "id": "AR3",
+                    "descriptor": {
+                        "name": "INFO001",
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide item images"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR4",
+                    "descriptor": {
+                        "name": "INFO002",
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Please provide package images"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR5",
+                    "ref_id": "AL3",
+                    "descriptor": {
+                        "name": "INFO001",
+                        "code": "INFO_PROVIDED",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR6",
+                    "ref_id": "AL4",
+                    "descriptor": {
+                        "name": "INFO002",
+                        "code": "INFO_PROVIDED",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR7",
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Please wait. We are processing the request."
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR8",
+                    "ref_id": "R1",
+                    "ref_type": "RESOLUTIONS",
+                    "descriptor": {
+                        "code": "RESOLUTION_PROPOSED"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR9",
+                    "ref_id": "R1",
+                    "ref_type": "RESOLUTIONS",
+                    "descriptor": {
+                        "name": "REFUND",
+                        "code": "RESOLUTION_ACCEPTED"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1"
+                },
+                {
+                    "id": "AR10",
+                    "ref_id": "R1",
+                    "ref_type": "RESOLUTIONS",
+                    "descriptor": {
+                        "code": "RESOLVED"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP2"
+                },
+                {
+                    "id": "AR11",
+                    "descriptor": {
+                        "code": "CLOSED",
+                        "short_desc": "Complaint closed"
+                    },
+                    "updated_at": "2023-01-15T10:00:00.469Z",
+                    "action_by": "NP1",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "CLOSURE_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "RATING"
+                                    },
+                                    "value": "THUMBS_UP"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "resolutions": [
+                {
+                    "id": "R1",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "Providing refund for the item"
+                    },
+                    "updated_at": "2024-08-14T09:57:58.841Z",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM"
+                                    },
+                                    "value": "I1"
+                                },
+                                {
+                                    "descriptor": {
+                                        "code": "REFUND_AMOUNT"
+                                    },
+                                    "value": "200"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

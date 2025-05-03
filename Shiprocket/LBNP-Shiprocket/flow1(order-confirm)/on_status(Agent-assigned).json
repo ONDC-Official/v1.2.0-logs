@@ -1,0 +1,278 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "country": "IND",
+    "city": "std:080",
+    "action": "on_status",
+    "core_version": "1.2.0",
+    "bap_id": "dev-lbnp-ondc.shiprocket.in",
+    "bap_uri": "https://dev-lbnp-ondc.shiprocket.in/",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "8fc5842f-428f-45a9-bafd-b0c5a8fff75b",
+    "message_id": "ee5b4add-1b8d-43be-af3b-852f9020b370",
+    "timestamp": "2025-04-29T11:06:26.595Z",
+    "ttl": "PT50S"
+  },
+  "message": {
+    "order": {
+      "id": "test-stage-flow-new-01",
+      "state": "In-progress",
+      "provider": {
+        "id": "b2e91c9b-6c3a-4b22-86d9-e09ae76bc11c"
+      },
+      "items": [
+        {
+          "id": "imd_del",
+          "category_id": "Immediate Delivery",
+          "fulfillment_id": "a1667d97-4beb-46b7-9dbb-d513ca24529b",
+          "descriptor": {
+            "code": "P2P",
+            "name": "Immediate Delivery",
+            "long_desc": "Upto 60 mins for Delivery",
+            "short_desc": "Upto 60 mins for Delivery"
+          },
+          "time": {
+            "label": "TAT",
+            "duration": "PT60M",
+            "timestamp": "2025-04-29"
+          }
+        }
+      ],
+      "billing": {
+        "name": "shiprocket",
+        "address": {
+          "building": "416",
+          "locality": "Udhyog Vihar, Phase-3",
+          "city": "Gurgoun",
+          "state": "Haryana",
+          "country": "India",
+          "area_code": "122008",
+          "name": "shiprocket"
+        },
+        "email": "abcd.efgh.stage@gmail.com",
+        "phone": "9886098863",
+        "tax_number": "STAGEXYZXYZ",
+        "created_at": "2025-04-08T10:31:46.791Z",
+        "updated_at": "2025-04-08T10:31:46.791Z"
+      },
+      "fulfillments": [
+        {
+          "id": "a1667d97-4beb-46b7-9dbb-d513ca24529b",
+          "type": "Delivery",
+          "state": {
+            "descriptor": {
+              "code": "Agent-assigned"
+            }
+          },
+          "tracking": true,
+          "start": {
+            "location": {
+              "gps": "28.473600,77.101051",
+              "address": {
+                "building": "No 28, 16th Cross",
+                "locality": "4th T Block, Jayanagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "122002",
+                "name": "MP2 Store"
+              }
+            },
+            "time": {
+              "duration": "PT15M",
+              "range": {
+                "start": "2025-04-29T09:00:00.000Z",
+                "end": "2025-04-29T23:00:00.000Z"
+              }
+            },
+            "contact": {
+              "email": "dummy@gmail.com",
+              "phone": "9900163002"
+            },
+            "instructions": {
+              "code": "2",
+              "short_desc": "3030",
+              "long_desc": "Use this OTP to pick up the order"
+            },
+            "person": {
+              "name": "MP2 Store"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "28.508848,77.097298",
+              "address": {
+                "building": "64/11, 38th B Cross",
+                "locality": "4th T Block, Jayanagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "country": "India",
+                "area_code": "122008",
+                "name": "Poornima"
+              }
+            },
+            "contact": {
+              "email": "dummy@l.com",
+              "phone": "9980659465"
+            },
+            "instructions": {
+              "code": "2",
+              "short_desc": "1234",
+              "long_desc": "Use this OTP to deliver the order"
+            },
+            "person": {
+              "name": "Poornima"
+            },
+            "time": {
+              "range": {
+                "start": "2025-04-29T11:05:13.905Z",
+                "end": "2025-04-29T19:00:00.000Z"
+              }
+            }
+          },
+          "tags": [
+            {
+              "code": "state",
+              "list": [
+                {
+                  "code": "ready_to_ship",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "code": "rto_action",
+              "list": [
+                {
+                  "code": "return_to_origin",
+                  "value": "no"
+                }
+              ]
+            }
+          ],
+          "agent": {
+            "name": "Tom Hagen",
+            "phone": "9876543210"
+          },
+          "vehicle": {
+            "registration": "3LVJ945"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "31.81"
+        },
+        "breakup": [
+          {
+            "price": {
+              "currency": "INR",
+              "value": "31.81"
+            },
+            "@ondc/org/item_id": "imd_del",
+            "@ondc/org/title_type": "delivery"
+          },
+          {
+            "title": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            },
+            "@ondc/org/item_id": "imd_del",
+            "@ondc/org/title_type": "tax"
+          }
+        ]
+      },
+      "payment": {
+        "collected_by": "BAP",
+        "type": "POST-FULFILLMENT",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "123456789123456",
+            "settlement_ifsc_code": "SBI00001234"
+          }
+        ]
+      },
+      "@ondc/org/linked_order": {
+        "items": [
+          {
+            "category_id": "F&B",
+            "descriptor": {
+              "name": "Masala Dosa"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "value": 1,
+                "unit": "unit"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "80.0"
+            }
+          },
+          {
+            "category_id": "F&B",
+            "descriptor": {
+              "name": "Lassi"
+            },
+            "quantity": {
+              "count": 1,
+              "measure": {
+                "value": 1,
+                "unit": "unit"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "50.0"
+            }
+          }
+        ],
+        "provider": {
+          "descriptor": {
+            "name": "MP2 Store"
+          },
+          "address": {
+            "building": "No 28, 16th Cross",
+            "locality": "4th T Block, Jayanagar",
+            "city": "Bangalore",
+            "state": "Karnataka",
+            "country": "India",
+            "area_code": "122002",
+            "name": "MP2 Store"
+          }
+        },
+        "order": {
+          "id": "test-stage-flow-new-01",
+          "weight": {
+            "value": 2,
+            "unit": "kilogram"
+          },
+          "dimensions": {
+            "length": {
+              "unit": "centimeter",
+              "value": 10
+            },
+            "breadth": {
+              "unit": "centimeter",
+              "value": 10
+            },
+            "height": {
+              "unit": "centimeter",
+              "value": 10
+            }
+          }
+        }
+      },
+      "created_at": "2025-04-29T11:05:13.831Z",
+      "updated_at": "2025-04-29T11:06:26.595Z"
+    }
+  }
+}
