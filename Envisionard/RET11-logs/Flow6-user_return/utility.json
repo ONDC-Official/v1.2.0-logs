@@ -1,0 +1,157 @@
+{
+  "success": false,
+  "response": {
+    "message": "Logs were not verified successfully",
+    "report": {
+      "on_search_full_catalog_refresh": {
+        "schemaErr0": "/message/catalog/bpp~1providers/0/categories/1/descriptor/images/0 must match format \"url\"",
+        "schemaErr1": "/message/catalog/bpp~1providers/0/categories/1/descriptor/images/1 must match format \"url\"",
+        "schemaErr2": "/message/catalog/bpp~1providers/0/categories/1/descriptor/images/2 must match format \"url\"",
+        "providers[0_default_selection": "Error while Calculating Default Selection in /on_search, TypeError: Cannot read properties of undefined (reading 'min')\n    at /app/dist/utils/Retail/RET11_onSearch/onSearch.js:327:87\n    at Array.forEach (<anonymous>)\n    at checkOnsearchFullCatalogRefresh (/app/dist/utils/Retail/RET11_onSearch/onSearch.js:326:35)\n    at getResponse (/app/dist/shared/validateLogs.js:222:79)\n    at /app/dist/shared/validateLogs.js:200:38\n    at Array.forEach (<anonymous>)\n    at processApiSequence (/app/dist/shared/validateLogs.js:198:29)\n    at /app/dist/shared/validateLogs.js:321:29\n    at Generator.next (<anonymous>)\n    at /app/dist/shared/validateLogs.js:8:71",
+        "items[b1bac4e5-420c-477a-942f-6a28ac85374b]": "/message/catalog/bpp/providers/items/tags/'type' is optional for non-customizable (standalone) SKUs",
+        "invldAreaCode": "STD code does not match with correct area_code on /on_search",
+        "message/catalog/bpp/providers0/categories/items": "No items are mapped with the given category_id ofvQaK in providers0/items",
+        "prvdr0/tags/timing/order": "The timings object must be present for Order in the tags"
+      },
+      "on_select": {
+        "schemaErr0": "/message/order/quote/breakup/0/item/tags must be object",
+        "pymntttl": "Quote breakup Payment title \"ONDC_FA\" is not as per the API Contract"
+      },
+      "on_init": {
+        "tmpstmp": "context/timestamp difference between /on_init and /init should be less than 5 sec",
+        "quoteErr0": "Root level properties mismatch",
+        "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M)."
+      },
+      "confirm": {
+        "quoteErr0": "Root level properties mismatch",
+        "bapGstTags": "Tags/bap_terms should have valid gst number and fields in /confirm"
+      },
+      "on_confirm": {
+        "on_confirm_msgId": "Message Ids for /confirm and /on_confirm api should be same",
+        "tmpstmp": "Timestamp for /confirm api cannot be greater than or equal to /on_confirm api",
+        "crtdtmstmp": "order.created_at timestamp mismatches in /confirm and /on_confirm",
+        "updtdtmstmp": "order.updated_at timestamp should be updated as per the context.timestamp (since default fulfillment state is added)",
+        "quoteErr0": "Root level properties mismatch",
+        "tags_bap_terms": "Tags should have same and valid gst_number as passed in /confirm"
+      },
+      "on_update_part_cancel": {
+        "schemaErr0": "/context/action must be equal to constant (on_update)",
+        "action_err": "context.action should be on_update",
+        "invldQuotePrices": "Item quote breakup prices for /on_update_part_cancel should be equal to the net price.",
+        "order.state": "order.state shouldn't be changed from Created to Cancelled in /on_update_part_cancel",
+        "cancelRequest": "Cancel request is not present in the 'Cancel' fulfillment"
+      },
+      "on_status_pending": {
+        "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+        "onStatusOdrId": "Order id in /confirm and /on_status_pending do not match",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-09T07:17:52.245Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-09T08:42:13.763Z\" of on_status_pending",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-09T11:17:52.245Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-09T12:42:13.763Z\" of on_status_pending",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-10T07:17:52.245Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-10T08:42:13.763Z\" of on_status_pending",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-10T11:17:52.245Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-10T12:42:13.763Z\" of on_status_pending",
+        "tmpstmp": "Created At timestamp for /on_status_pending should be equal to context timestamp at confirm"
+      },
+      "on_status_packed": {
+        "schemaErr0": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_packed_msgId": "Message id should not be same with previous calls",
+        "invalid_message_id": "Message_id cannot be same for on_status.pending and on_status.packed",
+        "onStatusOdrId": "Order id in /confirm and /on_status_packed do not match",
+        "tmpstmp": "Created At timestamp for /on_status_packed.message.order should be equal to context timestamp at confirm",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-09T07:17:52.245Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-09T08:42:13.763Z\" of on_status_packed",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-09T11:17:52.245Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-09T12:42:13.763Z\" of on_status_packed",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-10T07:17:52.245Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-10T08:42:13.763Z\" of on_status_packed",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-10T11:17:52.245Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-10T12:42:13.763Z\" of on_status_packed",
+        "message/order.fulfillments/0": "Missing fulfillment type 'Cancel' in on_status_packed as compared to on_update_part_cancel"
+      },
+      "on_status_picked": {
+        "schemaErr0": "/message/order must have required property 'documents'",
+        "schemaErr1": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_picked_msgId": "Message id should not be same with previous calls",
+        "onStatusOdrId": "Order id in /confirm and /on_status_picked do not match",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_picked",
+        "tmpstmp": "Created At timestamp for /on_status_picked should be equal to context timestamp at confirm",
+        "pickUpTime": "picked timestamp is missing",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-09T07:17:52.245Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-09T08:42:13.763Z\" of on_status_picked",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-09T11:17:52.245Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-09T12:42:13.763Z\" of on_status_picked",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-10T07:17:52.245Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-10T08:42:13.763Z\" of on_status_picked",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-10T11:17:52.245Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-10T12:42:13.763Z\" of on_status_picked",
+        "message/order.fulfillments/0": "Missing fulfillment type 'Cancel' in on_status_picked as compared to on_update_part_cancel"
+      },
+      "on_status_out_for_delivery": {
+        "schemaErr0": "/message/order must have required property 'documents'",
+        "schemaErr1": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_out_for_delivery_msgId": "Message id should not be same with previous calls",
+        "invalid_message_id": "Message_id cannot be same for on_status.packed and on_status.out_for_delivery",
+        "onStatusOdrId": "Order id in /confirm and /on_status_out-for-delivery do not match",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_out_for_delivery",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-09T07:17:52.245Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-09T08:42:13.763Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-09T11:17:52.245Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-09T12:42:13.763Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-10T07:17:52.245Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-10T08:42:13.763Z\" of on_status_out_for_delivery",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-10T11:17:52.245Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-10T12:42:13.763Z\" of on_status_out_for_delivery",
+        "tmpstmp": "Created At timestamp for /on_status_out-for-delivery should be equal to context timestamp at confirm",
+        "out_for_delivery_time": "Out_for_delivery timestamp is missing",
+        "message/order.fulfillments/0": "Missing fulfillment type 'Cancel' in on_status_out_for_delivery as compared to on_update_part_cancel"
+      },
+      "on_status_delivered": {
+        "schemaErr0": "/message/order must have required property 'documents'",
+        "schemaErr1": "/message/order/quote/breakup/3/price/value Price value should be a number in string with upto 2 decimal places",
+        "on_status_delivered_msgId": "Message id should not be same with previous calls",
+        "onStatusOdrId": "Order id in /confirm and /on_status_delivered do not match",
+        "missingTags": "Tags are mandatory in Delivery Fulfillment for on_status_delivered",
+        "tmpstmp": "Created At timestamp for /on_status_delivered should be equal to context timestamp at confirm",
+        "fulfilmntRngErr0": "/start/range/start_time \"2025-04-09T07:17:52.245Z\" of on_confirm mismatched with /start/range/start_time \"2025-04-09T08:42:13.763Z\" of on_status_delivered",
+        "fulfilmntRngErr1": "/start/range/end_time \"2025-04-09T11:17:52.245Z\" of on_confirm mismatched with /start/range/end_time \"2025-04-09T12:42:13.763Z\" of on_status_delivered",
+        "fulfilmntRngErr2": "/end/range/start_time \"2025-04-10T07:17:52.245Z\" of on_confirm mismatched with /end/range/start_time \"2025-04-10T08:42:13.763Z\" of on_status_delivered",
+        "fulfilmntRngErr3": "/end/range/end_time \"2025-04-10T11:17:52.245Z\" of on_confirm mismatched with /end/range/end_time \"2025-04-10T12:42:13.763Z\" of on_status_delivered",
+        "deliverytime": "delivery timestamp is missing",
+        "message/order.fulfillments/0": "Missing fulfillment type 'Cancel' in on_status_delivered as compared to on_update_part_cancel"
+      },
+      "update_reverse_qc": {
+        "returnFulfillment": "Return fulfillment/tags/list is missing in update_reverse_qc"
+      },
+      "on_update_interim_reverse_qc": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_interim_reverse_qc"
+      },
+      "on_update_approval": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "Return.start.location.id": "Return fulfillment start location id is not required in on_update_approval",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_approval"
+      },
+      "on_update_picked": {
+        "schemaErr0": "/message/order/fulfillments/1/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_picked"
+      },
+      "on_update_delivered": {
+        "schemaErr0": "/message/order/fulfillments/1/start/location must have required property 'gps'",
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T09:02:40.344Z\"}",
+        "context/timestamp/": "context/timestamp of /on_update_delivered should be greater than context/timestamp of /update_settlement_reverse_qc",
+        "returnFF/end/time/timestamp": "end/time/timestamp of return fulfillment should be less than or equal to context/timestamp of on_update_delivered",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_delivered"
+      },
+      "update_liquidated": {
+        "returnFulfillment": "Return fulfillment/tags/list is missing in update_liquidated"
+      },
+      "on_update_interim_liquidated": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T09:02:40.344Z\"}",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_interim_liquidated"
+      },
+      "on_update_liquidated": {
+        "message/order.payment/@ondc/org/settlement_details/0": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T08:36:48.439Z\"}",
+        "message/order.payment/@ondc/org/settlement_details/1": "Missing payment/@ondc/org/settlement_details as compare to the previous calls or not captured correctly i.e. {\"settlement_counterparty\":\"buyer\",\"settlement_phase\":\"refund\",\"settlement_type\":\"upi\",\"settlement_amount\":\"405.26\",\"settlement_timestamp\":\"2025-04-09T09:02:40.344Z\"}",
+        "invldQuoteTrailPrices": "quote_trail price and item quote price sum for on_update should be equal to the price as in on_confirm",
+        "message/order.fulfillments/Cancel": "Fulfillments/Cancel is missing in on_update_liquidated"
+      }
+    },
+    "bpp_id": "witslab-bpp-preprod.thewitslab.com",
+    "bap_id": "uatmerchantapi.amealio.com",
+    "domain": "ONDC:RET11",
+    "reportTimestamp": "2025-04-09T11:11:24.212Z"
+  },
+  "signature": "6+9nLIsPX3voWUfpwgz5bOwHSp8rkZutQ7yJw2QtB66cdqyieQpOZiTwgoqQmPSTikghu8VtyjimlSzDnb5hBw==",
+  "signTimestamp": "2025-04-09T11:11:24.212Z"
+}
