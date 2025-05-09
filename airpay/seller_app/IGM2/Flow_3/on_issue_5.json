@@ -1,0 +1,210 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "080",
+    "action": "on_issue",
+    "core_version": "1.2.0",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "preprod-ondc.airpay.ninja",
+    "bpp_uri": "https://preprod-ondc.airpay.ninja/bapl/",
+    "transaction_id": "409abfc7538bfa9bb132768fd63ca245",
+    "message_id": "67fe478160d82",
+    "timestamp": "2025-04-15T11:48:17.000Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "issue": {
+      "id": "7ed3b150-95c6-11ee-9475-039cd8109009",
+      "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2023-01-15T10:00:00.469Z",
+      "updated_at": "2023-01-15T10:00:00.469Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "buyerapp.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "sellerapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        },
+        {
+          "id": "NP3",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "logisticsapp.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Alice Jones"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP2",
+      "respondent_ids": [
+        "NP3"
+      ],
+      "resolver_ids": [
+        "NP3"
+      ],
+      "description": {
+        "code": "FLM005",
+        "short_desc": "Issue with packaging",
+        "long_desc": "Food has spilled in the package",
+        "images": [
+          {
+            "size_type": "xs",
+            "url": "http://buyerapp.com/addtional-details/img1.png"
+          },
+          {
+            "size_type": "xs",
+            "url": "http://buyerapp.com/addtional-details/img2.png"
+          }
+        ]
+      },
+      "last_action_id": "AL7",
+      "actions": [
+        {
+          "id": "AL1",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Mark Anthony"
+          }
+        },
+        {
+          "id": "AL2",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP3"
+        },
+        {
+          "id": "AL3",
+          "description": {
+            "name": "INFO001",
+            "code": "INFO_REQUESTED",
+            "short_desc": "Please provide item images"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP3"
+        },
+        {
+          "id": "AL4",
+          "description": {
+            "name": "INFO002",
+            "code": "INFO_REQUESTED",
+            "short_desc": "Please provide package images"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP3"
+        },
+        {
+          "id": "AL5",
+          "description": {
+            "name": "INFO001",
+            "code": "INFO_PROVIDED",
+            "images": [
+              {
+                "url": "http://buyerapp.com/addtional-details/img1.png",
+                "size_type": "xs"
+              },
+              {
+                "url": "http://buyerapp.com/addtional-details/img2.png",
+                "size_type": "xs"
+              }
+            ]
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1"
+        },
+        {
+          "id": "AL6",
+          "description": {
+            "name": "INFO002",
+            "code": "INFO_PROVIDED",
+            "images": [
+              {
+                "url": "http://buyerapp.com/addtional-details/img1.png",
+                "size_type": "xs"
+              },
+              {
+                "url": "http://buyerapp.com/addtional-details/img2.png",
+                "size_type": "xs"
+              }
+            ]
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1"
+        },
+        {
+          "id": "AL7",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "Please wait. We are processing the request."
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP3"
+        }
+      ]
+    }
+  }
+}
