@@ -1,0 +1,241 @@
+{
+  "context": {
+    "domain": "ONDC:RET12",
+    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "action": "on_issue",
+    "core_version": "2.0.0",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "preprod.aurikatech.com",
+    "bpp_uri": "https://preprod.aurikatech.com/seller-app/api/v1",
+    "transaction_id": "a14f1230-a495-4533-ba7e-62721be12f02",
+    "message_id": "b949214f-32df-4745-aa9b-c200ae03cd07",
+    "timestamp": "2025-05-13T12:47:24.946Z",
+    "ttl": "PT10M"
+  },
+  "message": {
+    "updated_target": [
+      { "path": "issue.actions", "action": "APPENDED" },
+      { "path": "issue.resolutions", "action": "APPENDED" }
+    ],
+    "issue": {
+      "id": "ISSUE-001",
+      "level": "ISSUE",
+      "status": "PROCESSING",
+      "expected_response_time": { "duration": "PT2H" },
+      "expected_resolution_time": { "duration": "P1D" },
+      "refs": [
+        { "ref_id": "2025-03-18-151043", "ref_type": "ORDER" },
+        {
+          "ref_id": "a001584b-0437-4708-ac15-719898333389",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": { "code": "message.order.items" },
+              "list": [
+                {
+                  "descriptor": { "code": "quantity.selected.count" },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref_id": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "2859aa2f-1180-4222-a536-0db330386013",
+          "ref_type": "FULFILMENT"
+        },
+        {
+          "ref_id": "6e071a25-c65f-41e9-b255-1ca3ee1af9d4",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" },
+            "person": { "name": "Sam Manuel" }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": { "name": "John Doe" }
+          }
+        },
+        {
+          "id": "preprod.aurikatech.com",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": { "name": "preprod.aurikatech.com::ONDC:RET12" },
+            "contact": {
+              "phone": "7548924980",
+              "email": "pareen.k.jain@gmail.com"
+            },
+            "person": { "name": "Pareen Jain" }
+          }
+        },
+        {
+          "id": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "type": "PROVIDER",
+          "info": {
+            "org": { "name": "preprod.aurikatech.com::ONDC:RET12" },
+            "contact": { "phone": "7382075638", "email": "rajesh@gmail.com" },
+            "person": { "name": "Rajesh Singh" }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "description": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [{ "url": "http://buyerapp.com/addtional-details/img1.png" }]
+      },
+      "last_action_id": "3e8a7256-659b-42d6-9347-1502ecdaa773",
+      "actions": [
+        {
+          "id": "action_1",
+          "description": {
+            "code": "OPEN",
+            "short_desc": "product quality unsatisfactory"
+          },
+          "updated_at": "2025-05-13T12:40:05.105Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "b0d50644-5f27-47b1-accb-6455f240b38e",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "We are processing your request."
+          },
+          "updated_at": "2025-05-13T12:40:05.311Z",
+          "action_by": "preprod.aurikatech.com",
+          "actor_details": { "name": "Pareen Jain" }
+        },
+        {
+          "id": "8dc01840-5c70-4c0a-a09b-702f435f7e9d",
+          "description": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "need another image"
+          },
+          "updated_at": "2025-05-13T12:43:07.828Z",
+          "action_by": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "actor_details": { "name": "Rajesh Singh" }
+        },
+        {
+          "id": "action_2",
+          "ref_id": "8dc01840-5c70-4c0a-a09b-702f435f7e9d",
+          "description": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "here is the requested image",
+            "images": [{ "url": "https://testimg.com/test-img.jpg" }]
+          },
+          "updated_at": "2025-05-13T12:44:24.816Z",
+          "action_by": "NP1",
+          "actor_details": { "name": "Sam Manuel" }
+        },
+        {
+          "id": "37b0d359-3e10-433d-9536-0aff3d16df6b",
+          "description": {
+            "code": "PROCESSING",
+            "short_desc": "We are processing your request."
+          },
+          "updated_at": "2025-05-13T12:44:24.935Z",
+          "action_by": "preprod.aurikatech.com",
+          "actor_details": { "name": "Pareen Jain" }
+        },
+        {
+          "id": "3e8a7256-659b-42d6-9347-1502ecdaa773",
+          "ref_id": "d52b521b-0266-431c-ab12-c2b296521219",
+          "description": { "code": "RESOLUTION_PROPOSED" },
+          "updated_at": "2025-05-13T12:47:24.946Z",
+          "action_by": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "actor_details": { "name": "Rajesh Singh" }
+        }
+      ],
+      "created_at": "2025-05-11T12:38:36.792Z",
+      "updated_at": "2025-05-13T12:47:24.946Z",
+      "respondent_ids": [
+        "preprod.aurikatech.com",
+        "98ec8346-b8eb-42c2-9ecd-615c944ea91a"
+      ],
+      "resolutions": [
+        {
+          "id": "d52b521b-0266-431c-ab12-c2b296521219",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "Providing resolution options. Please select one."
+          },
+          "updated_at": "2025-05-13T12:47:24.946Z",
+          "proposed_by": "98ec8346-b8eb-42c2-9ecd-615c944ea91a"
+        },
+        {
+          "id": "0cfa9a7f-cf2a-436d-8d1f-2ad6724477fd",
+          "ref_id": "d52b521b-0266-431c-ab12-c2b296521219",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "we can provide partial refund for inconvenience"
+          },
+          "updated_at": "2025-05-13T12:47:24.946Z",
+          "proposed_by": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                {
+                  "descriptor": { "code": "ITEM" },
+                  "value": "a001584b-0437-4708-ac15-719898333389"
+                },
+                { "descriptor": { "code": "REFUND_AMOUNT" }, "value": "250" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7c223e29-97a0-4c32-ad0f-4cfdf3966954",
+          "ref_id": "d52b521b-0266-431c-ab12-c2b296521219",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "we can initiate a replacement for the product"
+          },
+          "updated_at": "2025-05-13T12:47:24.946Z",
+          "proposed_by": "98ec8346-b8eb-42c2-9ecd-615c944ea91a",
+          "tags": [
+            {
+              "descriptor": { "code": "RESOLUTION_DETAILS" },
+              "list": [
+                {
+                  "descriptor": { "code": "ITEM" },
+                  "value": "a001584b-0437-4708-ac15-719898333389"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
