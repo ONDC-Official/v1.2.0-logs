@@ -9,18 +9,24 @@
         "bap_uri": "https://preprod-ondc.airpay.ninja/v1.2",
         "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
         "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-        "transaction_id": "7694d76e-b871-4316-b458-9e2461dda107",
-        "message_id": "c7b9d690795e1bd2957250a3b92d7329",
-        "timestamp": "2025-05-09T08:59:44.000Z",
+        "transaction_id": "3329a479-93be-439e-bf90-bd5cbff1c215",
+        "message_id": "5c1a8b76361b1b6dac1ee6d3f39d6955",
+        "timestamp": "2025-05-08T10:48:40.000Z",
         "ttl": "PT30S"
     },
     "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
         "issue": {
-            "id": "0239811a-fae8-4f67-a82f-4165dceed214",
-            "status": "CLOSED",
+            "id": "5aec0259-9c61-4e74-b9e3-f1c4071fbd85",
+            "status": "PROCESSING",
             "level": "ISSUE",
-            "created_at": "2025-05-09T08:54:47.825Z",
-            "updated_at": "2025-05-09T08:54:47.825Z",
+            "created_at": "2025-05-08T10:48:40.000Z",
+            "updated_at": "2025-05-08T10:48:40.000Z",
             "expected_response_time": {
                 "duration": "PT2H"
             },
@@ -39,6 +45,25 @@
                 {
                     "ref_id": "F1",
                     "ref_type": "FULFILLMENT"
+                },
+                {
+                    "ref_id": "I1",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "actors": [
@@ -102,7 +127,7 @@
                             "email": "sellerapp@interface.com"
                         },
                         "person": {
-                            "name": "Grievance Officer SNP"
+                            "name": "Grievance Officer BNP"
                         }
                     }
                 }
@@ -115,177 +140,203 @@
             "resolver_ids": [
                 "NP2"
             ],
-            "description": {
-                "code": "FLM005",
-                "short_desc": "Issue with packaging",
-                "long_desc": "Food has spilled in the package",
+            "descriptor": {
+                "code": "ITM004",
+                "short_desc": "Issue with product quality",
+                "long_desc": "product quality is not correct. facing issues while using the product",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                },
                 "images": [
                     {
                         "url": "http://buyerapp.com/addtional-details/img1.png",
                         "size_type": "xs"
-                    },
+                    }
+                ],
+                "media": [
                     {
-                        "url": "http://buyerapp.com/addtional-details/img2.png",
-                        "size_type": "xs"
+                        "url": "https://transitsolutions.in/logos/logo.icon"
                     }
                 ]
             },
-            "last_action_id": "AR11",
+            "last_action_id": "A10",
             "actions": [
                 {
-                    "id": "AR1",
+                    "id": "A1",
                     "descriptor": {
                         "code": "OPEN",
                         "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP1"
-                },
-                {
-                    "id": "AR2",
-                    "descriptor": {
-                        "code": "PROCESSING",
-                        "short_desc": "Complaint is being processed"
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2",
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
                     "actor_details": {
-                        "name": "Mark Anthony"
+                        "name": "Sam Manuel"
                     }
                 },
                 {
-                    "id": "AR3",
-                    "descriptor": {
-                        "name": "INFO001",
-                        "code": "INFO_REQUESTED",
-                        "short_desc": "Please provide item images"
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2"
-                },
-                {
-                    "id": "AR4",
-                    "descriptor": {
-                        "name": "INFO002",
-                        "code": "INFO_REQUESTED",
-                        "short_desc": "Please provide package images"
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2"
-                },
-                {
-                    "id": "AR5",
-                    "ref_id": "AL3",
-                    "descriptor": {
-                        "name": "INFO001",
-                        "code": "INFO_PROVIDED",
-                        "images": [
-                            {
-                                "url": "http://buyerapp.com/addtional-details/img1.png",
-                                "size_type": "xs"
-                            },
-                            {
-                                "url": "http://buyerapp.com/addtional-details/img2.png",
-                                "size_type": "xs"
-                            }
-                        ]
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP1"
-                },
-                {
-                    "id": "AR6",
-                    "ref_id": "AL4",
-                    "descriptor": {
-                        "name": "INFO002",
-                        "code": "INFO_PROVIDED",
-                        "images": [
-                            {
-                                "url": "http://buyerapp.com/addtional-details/img1.png",
-                                "size_type": "xs"
-                            },
-                            {
-                                "url": "http://buyerapp.com/addtional-details/img2.png",
-                                "size_type": "xs"
-                            }
-                        ]
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP1"
-                },
-                {
-                    "id": "AR7",
+                    "id": "A2",
                     "descriptor": {
                         "code": "PROCESSING",
-                        "short_desc": "Please wait. We are processing the request."
+                        "short_desc": "Complaint created"
                     },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2"
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
                 },
                 {
-                    "id": "AR8",
-                    "ref_id": "R1",
+                    "id": "A3_1",
+                    "descriptor": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO001",
+                        "short_desc": "Please provide product image"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3_2",
+                    "descriptor": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO002",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A4",
+                    "ref_id": "A3_1",
+                    "descriptor": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Responded with images",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A6",
+                    "ref_id": "A3_2",
+                    "descriptor": {
+                        "code": "INFO_REQUESTED",
+                        "name": "INFO002",
+                        "short_desc": "Please provide invoice"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A7",
+                    "ref_id": "A6",
+                    "descriptor": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Provided invoice",
+                        "media": [
+                            {
+                                "url": "https://buyerapp.com/resources/invoiceord1.pdf"
+                            }
+                        ]
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A8",
+                    "descriptor": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing the complaint information"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A9",
+                    "ref_id": "R_PARENT",
                     "ref_type": "RESOLUTIONS",
                     "descriptor": {
                         "code": "RESOLUTION_PROPOSED"
                     },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2"
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
                 },
                 {
-                    "id": "AR9",
-                    "ref_id": "R1",
+                    "id": "A10",
+                    "ref_id": "R2",
                     "ref_type": "RESOLUTIONS",
                     "descriptor": {
-                        "name": "REFUND",
                         "code": "RESOLUTION_ACCEPTED"
                     },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP1"
-                },
-                {
-                    "id": "AR10",
-                    "ref_id": "R1",
-                    "ref_type": "RESOLUTIONS",
-                    "descriptor": {
-                        "code": "RESOLVED"
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
-                    "action_by": "NP2"
-                },
-                {
-                    "id": "AR11",
-                    "descriptor": {
-                        "code": "CLOSED",
-                        "short_desc": "Complaint closed"
-                    },
-                    "updated_at": "2025-05-09T08:54:47.825Z",
+                    "updated_at": "2025-05-08T10:48:40.000Z",
                     "action_by": "NP1",
-                    "tags": [
-                        {
-                            "descriptor": {
-                                "code": "CLOSURE_DETAILS"
-                            },
-                            "list": [
-                                {
-                                    "descriptor": {
-                                        "code": "RATING"
-                                    },
-                                    "value": "THUMBS_UP"
-                                }
-                            ]
-                        }
-                    ]
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
                 }
             ],
             "resolutions": [
                 {
+                    "id": "R_PARENT",
+                    "descriptor": {
+                        "code": "PARENT",
+                        "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "proposed_by": "NP2"
+                },
+                {
                     "id": "R1",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
                     "descriptor": {
                         "code": "REFUND",
                         "short_desc": "Providing refund for the item"
                     },
-                    "updated_at": "2024-08-14T09:57:58.841Z",
+                    "updated_at": "2025-05-08T10:48:40.000Z",
                     "proposed_by": "NP2",
                     "tags": [
                         {
@@ -308,8 +359,34 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "R2",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REPLACEMENT",
+                        "short_desc": "Providing replacement of the item"
+                    },
+                    "updated_at": "2025-05-08T10:48:40.000Z",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "ITEM"
+                                    },
+                                    "value": "I1"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     }
-  }
+}
