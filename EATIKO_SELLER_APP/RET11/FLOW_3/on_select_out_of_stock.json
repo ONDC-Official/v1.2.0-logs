@@ -1,0 +1,223 @@
+{
+        "context": {
+          "domain": "ONDC:RET11",
+          "action": "on_select",
+          "country": "IND",
+          "city": "std:011",
+          "core_version": "1.2.0",
+          "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+          "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+          "bpp_id": "staging-ondc-sellernp.eatiko.com",
+          "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+          "transaction_id": "7119be66-a6ca-44bb-ae9c-cc5cdc933dcf",
+          "message_id": "3240efe2-afb1-46cb-80ad-441b3c5eb959",
+          "timestamp": "2025-05-19T06:57:58.792Z",
+          "ttl": "PT30S"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "EFP01",
+              "locations": [
+                {
+                  "id": "LOC01"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "EFI002",
+                "fulfillment_id": "EFS100",
+                "parent_item_id": "item_1747637868907",
+                "tags": [
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "item"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "ETFI003",
+                "fulfillment_id": "EFS100",
+                "parent_item_id": "item_1747637868907",
+                "tags": [
+                  {
+                    "code": "parent",
+                    "list": [
+                      {
+                        "code": "id",
+                        "value": "CG01"
+                      },
+                      {
+                        "code": "default",
+                        "value": "yes"
+                      }
+                    ]
+                  },
+                  {
+                    "code": "type",
+                    "list": [
+                      {
+                        "code": "type",
+                        "value": "customization"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "369.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "EFI002",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "title": "Butter Chicken",
+                  "item": {
+                    "price": {
+                      "currency": "INR",
+                      "value": "269.00"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": "99"
+                      },
+                      "maximum": {
+                        "count": "99"
+                      }
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "269.00"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "ETFI003",
+                  "@ondc/org/item_quantity": {
+                    "count": 0
+                  },
+                  "@ondc/org/title_type": "item",
+                  "title": "OUT_OF_STOCKED_ITEM",
+                  "item": {
+                    "price": {
+                      "currency": "INR",
+                      "value": "100.00"
+                    },
+                    "quantity": {
+                      "available": {
+                        "count": "0"
+                      },
+                      "maximum": {
+                        "count": "0"
+                      }
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "0.00"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "EFS100",
+                  "@ondc/org/title_type": "delivery",
+                  "title": "Delivery Charges",
+                  "price": {
+                    "currency": "INR",
+                    "value": "50.00"
+                  },
+                  "item": {
+                    "tags": [
+                      {
+                        "code": "quote",
+                        "list": [
+                          {
+                            "code": "type",
+                            "value": "fulfillment"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "EFS100",
+                  "@ondc/org/title_type": "packing",
+                  "title": "Packing Charges",
+                  "price": {
+                    "currency": "INR",
+                    "value": "20.00"
+                  },
+                  "item": {
+                    "tags": [
+                      {
+                        "code": "quote",
+                        "list": [
+                          {
+                            "code": "type",
+                            "value": "fulfillment"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "EFS100",
+                  "@ondc/org/title_type": "misc",
+                  "title": "Convenience Fee",
+                  "price": {
+                    "currency": "INR",
+                    "value": "30.00"
+                  },
+                  "item": {
+                    "tags": [
+                      {
+                        "code": "quote",
+                        "list": [
+                          {
+                            "code": "type",
+                            "value": "fulfillment"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "ttl": "P1D"
+            },
+            "fulfillments": [
+              {
+                "id": "EFS100",
+                "type": "Delivery",
+                "@ondc/org/provider_name": "EATIKO OFFICIAL PROVIDER",
+                "tracking": false,
+                "@ondc/org/category": "Immediate Delivery",
+                "@ondc/org/TAT": "PT60M",
+                "state": {
+                  "descriptor": {
+                    "code": "Serviceable"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "error": {
+          "type": "DOMAIN-ERROR",
+          "code": "40002",
+          "message": "[{\"item_id\":\"ETFI003\",\"error\":\"40002\",\"parent_item_id\":\"item_1747637868907\"}]"
+        }
+      }

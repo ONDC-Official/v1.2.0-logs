@@ -1,0 +1,2888 @@
+{
+    "success": false,
+    "response": {
+        "message": "Logs were not verified successfully",
+        "report": {
+            "search_full_catalog_refresh": {
+                "schemaErr0": "/message/intent/tags/0/list/0/code must be equal to one of the allowed values (start_time,end_time,mode,static_terms,effective_date,static_terms_new,000,001,002,003,004,005,006,007,008,0091,0092,0093,0094,0095,0096,0097,0098,0099,009A,009B,009C,009D,009E,00A,00B,00C,00D,00E,00F,010,011,012,013,014,015,016,017,018,019,01A,01B,01C,01D)"
+            },
+            "on_search_full_catalog_refresh": {
+                "providers[0][EFI002]": "Provided default_selection calculated incorrectly,\n    Calculated: min=300, max=450. \n    Given: min=269, max=290.",
+                "message/catalog/bpp/providers0/categories/items": "No items are mapped with the given category_id CM01 in providers0/items"
+            },
+            "on_select": {
+                "schemaErr0": "/message/order/quote/breakup/2/item/tags must NOT have fewer than 2 items",
+                "schemaErr1": "/message/order/quote/breakup/3/item/tags must NOT have fewer than 2 items",
+                "schemaErr2": "/message/order/quote/breakup/4/item/tags must NOT have fewer than 2 items",
+                "priceErr": "Warning: Quoted Price in /on_select INR 1107 does not match with the total price of items in /select INR 300 i.e price for the item mismatch in on_search and on_select"
+            },
+            "on_init": {
+                "schemaErr0": "/message/order must NOT have additional properties (cancellation_terms)",
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet"
+            },
+            "on_confirm": {
+                "message.order": "'cancellation_terms' in /message/order should not be provided as those are not enabled yet"
+            }
+        },
+        "bpp_id": "staging-ondc-sellernp.eatiko.com",
+        "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+        "domain": "ONDC:RET11",
+        "payload": {
+            "search_full_catalog_refresh": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "action": "search",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "d0988b9b-d013-4c90-b011-c55b6db94e98",
+                    "timestamp": "2025-05-19T07:09:24.050Z",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "intent": {
+                        "payment": {
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3"
+                        },
+                        "tags": [
+                            {
+                                "code": "catalog_full",
+                                "list": [
+                                    {
+                                        "code": "payload_type",
+                                        "value": "inline"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "on_search_full_catalog_refresh": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "on_search",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "d0988b9b-d013-4c90-b011-c55b6db94e98",
+                    "timestamp": "2025-05-19T07:09:24.779Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "catalog": {
+                        "bpp/descriptor": {
+                            "name": "Seller NP",
+                            "symbol": "https://sellerNP.com/images/np.png",
+                            "short_desc": "Seller Marketplace",
+                            "long_desc": "Seller Marketplace",
+                            "images": [
+                                "https://sellerNP.com/images/np.png"
+                            ],
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "ISN"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "bpp/providers": [
+                            {
+                                "id": "EFP01",
+                                "time": {
+                                    "label": "enable",
+                                    "timestamp": "2025-05-09T09:16:04.253Z"
+                                },
+                                "descriptor": {
+                                    "name": "EATIKO OFFICIAL PROVIDER",
+                                    "symbol": "https://example.com/image2.jpg",
+                                    "short_desc": "Quick bites and meals",
+                                    "long_desc": "Tasty Foods offers a wide variety of delicious and affordable meals prepared with high-quality ingredients.",
+                                    "images": [
+                                        "https://example.com/image1.jpg",
+                                        "https://example.com/image2.jpg"
+                                    ]
+                                },
+                                "@ondc/org/fssai_license_no": "12345678901234",
+                                "ttl": "PT30M",
+                                "fulfillments": [
+                                    {
+                                        "id": "EFS100",
+                                        "type": "Delivery",
+                                        "contact": {
+                                            "phone": "+1234567890",
+                                            "email": "example@example.com"
+                                        }
+                                    }
+                                ],
+                                "locations": [
+                                    {
+                                        "id": "LOC01",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-09T09:16:19.521Z",
+                                            "days": "1,2,3,4,5,6,7",
+                                            "schedule": {
+                                                "holidays": []
+                                            },
+                                            "range": {
+                                                "start": "1000",
+                                                "end": "2100"
+                                            }
+                                        },
+                                        "gps": "28.527300,77.182100",
+                                        "address": {
+                                            "locality": "N. Caldwell",
+                                            "street": "633 Stagtrail Rd",
+                                            "city": "New Delhi",
+                                            "area_code": "110030",
+                                            "state": "New Delhi"
+                                        },
+                                        "circle": {
+                                            "gps": "28.527300,77.182100",
+                                            "radius": {
+                                                "unit": "km",
+                                                "value": "500"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "categories": [
+                                    {
+                                        "id": "CM01",
+                                        "parent_category_id": "",
+                                        "descriptor": {
+                                            "name": "Indian Feast",
+                                            "short_desc": "A bold collection of iconic Indian dishes and sweets.",
+                                            "long_desc": "This menu brings together flavorful Indian street food appetizers, rich curry mains, and indulgent traditional desserts, accompanied by signature beverages like chai and lassi.",
+                                            "images": [
+                                                "https://placehold.co/800x600/orange/white?text=Indian+Feast"
+                                            ]
+                                        },
+                                        "tags": [
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "custom_menu"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "timing",
+                                                "list": [
+                                                    {
+                                                        "code": "day_from",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "code": "day_to",
+                                                        "value": "7"
+                                                    },
+                                                    {
+                                                        "code": "time_from",
+                                                        "value": "1800"
+                                                    },
+                                                    {
+                                                        "code": "time_to",
+                                                        "value": "2200"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "display",
+                                                "list": [
+                                                    {
+                                                        "code": "rank",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "CG01",
+                                        "descriptor": {
+                                            "name": "NON VEG GROUP"
+                                        },
+                                        "tags": [
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "custom_group"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "config",
+                                                "list": [
+                                                    {
+                                                        "code": "min",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "code": "max",
+                                                        "value": "1"
+                                                    },
+                                                    {
+                                                        "code": "input",
+                                                        "value": "select"
+                                                    },
+                                                    {
+                                                        "code": "seq",
+                                                        "value": "1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "items": [
+                                    {
+                                        "id": "EFI001",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-09T09:17:35.768Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "Apples",
+                                            "symbol": "https://example.com/images/apple-icon.png",
+                                            "short_desc": "Fresh organic apples",
+                                            "long_desc": "Freshly picked organic apples from local farms.",
+                                            "images": [
+                                                "https://example.com/images/apple1.png",
+                                                "https://example.com/images/apple2.png"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "99"
+                                            },
+                                            "maximum": {
+                                                "count": "99"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "EFI002",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-09T09:17:46.801Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "Butter Chicken",
+                                            "symbol": "https://example.com/images/apple-icon.png",
+                                            "short_desc": "Creamy tomato chicken curry.",
+                                            "long_desc": "Tender chicken cooked in a buttery tomato gravy, served with naan bread.",
+                                            "images": [
+                                                " https://placehold.co/300x200?text=Butter+Chicken\n",
+                                                " https://placehold.co/300x200?text=Butter+Chicken+2"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "99"
+                                            },
+                                            "maximum": {
+                                                "count": "99"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "0",
+                                            "maximum_value": "0",
+                                            "tags": [
+                                                {
+                                                    "code": "default_selection",
+                                                    "list": [
+                                                        {
+                                                            "code": "value",
+                                                            "value": "269.00"
+                                                        },
+                                                        {
+                                                            "code": "maximum_value",
+                                                            "value": "290.00"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "range",
+                                                    "list": [
+                                                        {
+                                                            "code": "lower",
+                                                            "value": "269.00"
+                                                        },
+                                                        {
+                                                            "code": "upper",
+                                                            "value": "290.00"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "category_ids": [
+                                            "CM01:1"
+                                        ],
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "custom_group",
+                                                "list": [
+                                                    {
+                                                        "code": "id",
+                                                        "value": "CG01"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "item"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "EFI003",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-09T09:18:00.137Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "Classic Butter Chicken",
+                                            "symbol": "https://placehold.co/800x600/brown/white?text=classic+butter-chicken",
+                                            "short_desc": "Rich, creamy tomato-based curry with marinated chicken",
+                                            "long_desc": "Tender chicken cooked in a smooth, creamy tomato gravy, flavored with a blend of aromatic spices like garam masala, cumin, and coriander.",
+                                            "images": [
+                                                "https://placehold.co/800x600/brown/white?text=classic+butter-chicken+1",
+                                                "https://placehold.co/800x600/brown/white?text=classic+butter-chicken+2"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "99"
+                                            },
+                                            "maximum": {
+                                                "count": "99"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "parent",
+                                                "list": [
+                                                    {
+                                                        "code": "id",
+                                                        "value": "CG01"
+                                                    },
+                                                    {
+                                                        "code": "default",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "customization"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "EFI004",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-09T09:18:04.518Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "Medium Spicy ",
+                                            "symbol": "https://placehold.co/300x200?text=Chicken+Medium+spicy",
+                                            "short_desc": "Succulent chicken pieces cooked in clay oven.  ",
+                                            "long_desc": "Succulent chicken pieces cooked in clay oven.  ",
+                                            "images": [
+                                                "https://placehold.co/300x200?text=Chicken+Medium+spicy+1",
+                                                "https://placehold.co/300x200?text=Chicken+Medium+spicy+02"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "99"
+                                            },
+                                            "maximum": {
+                                                "count": "99"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "parent",
+                                                "list": [
+                                                    {
+                                                        "code": "id",
+                                                        "value": "CG01"
+                                                    },
+                                                    {
+                                                        "code": "default",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "customization"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "ETFI001",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-11T06:31:33.482Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "OUT OF STOCK ITEM",
+                                            "symbol": "https://example.com/images/apple-icon.png",
+                                            "short_desc": "Fresh organic apples",
+                                            "long_desc": "Freshly picked organic apples from local farms.",
+                                            "images": [
+                                                "https://example.com/images/apple1.png",
+                                                "https://example.com/images/apple2.png"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "0"
+                                            },
+                                            "maximum": {
+                                                "count": "0"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "ETFI002",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-13T09:54:15.304Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "INC REFERSH ITEM",
+                                            "symbol": "https://example.com/images/apple-icon.png",
+                                            "short_desc": "Fresh organic apples",
+                                            "long_desc": "Freshly picked organic apples from local farms.",
+                                            "images": [
+                                                "https://example.com/images/apple1.png",
+                                                "https://example.com/images/apple2.png"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "99"
+                                            },
+                                            "maximum": {
+                                                "count": "99"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "ETFI003",
+                                        "time": {
+                                            "label": "enable",
+                                            "timestamp": "2025-05-15T09:43:21.260Z"
+                                        },
+                                        "descriptor": {
+                                            "name": "OUT_OF_STOCKED_ITEM",
+                                            "symbol": "https://example.com/images/apple-icon.png",
+                                            "short_desc": "OUT_OF_STOCKED_ITEM(FOR TEST PURPOSE)",
+                                            "long_desc": "Freshly picked organic apples from local farms.",
+                                            "images": [
+                                                "https://example.com/images/apple1.png",
+                                                "https://example.com/images/apple2.png"
+                                            ]
+                                        },
+                                        "quantity": {
+                                            "unitized": {
+                                                "measure": {
+                                                    "unit": "kilogram",
+                                                    "value": "1"
+                                                }
+                                            },
+                                            "available": {
+                                                "count": "0"
+                                            },
+                                            "maximum": {
+                                                "count": "0"
+                                            }
+                                        },
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100",
+                                            "maximum_value": "150"
+                                        },
+                                        "category_id": "F&B",
+                                        "location_id": "LOC01",
+                                        "fulfillment_id": "EFS100",
+                                        "@ondc/org/returnable": true,
+                                        "@ondc/org/refundable": false,
+                                        "@ondc/org/cancellable": true,
+                                        "@ondc/org/return_window": "PT40M",
+                                        "@ondc/org/seller_pickup_return": false,
+                                        "@ondc/org/time_to_ship": "PT40M",
+                                        "@ondc/org/available_on_cod": true,
+                                        "@ondc/org/contact_details_consumer_care": "appu,appu@gamil.com,9099987887",
+                                        "related": false,
+                                        "recommended": true,
+                                        "tags": [
+                                            {
+                                                "code": "veg_nonveg",
+                                                "list": [
+                                                    {
+                                                        "code": "veg",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "parent",
+                                                "list": [
+                                                    {
+                                                        "code": "id",
+                                                        "value": "CG01"
+                                                    },
+                                                    {
+                                                        "code": "default",
+                                                        "value": "yes"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "code": "type",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "customization"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "tags": [
+                                    {
+                                        "code": "timing",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "All"
+                                            },
+                                            {
+                                                "code": "location",
+                                                "value": "LOC01"
+                                            },
+                                            {
+                                                "code": "day_from",
+                                                "value": "1"
+                                            },
+                                            {
+                                                "code": "day_to",
+                                                "value": "7"
+                                            },
+                                            {
+                                                "code": "time_from",
+                                                "value": "0000"
+                                            },
+                                            {
+                                                "code": "time_to",
+                                                "value": "2359"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "serviceability",
+                                        "list": [
+                                            {
+                                                "code": "location",
+                                                "value": "LOC01"
+                                            },
+                                            {
+                                                "code": "category",
+                                                "value": "F&B"
+                                            },
+                                            {
+                                                "code": "type",
+                                                "value": "10"
+                                            },
+                                            {
+                                                "code": "val",
+                                                "value": "500"
+                                            },
+                                            {
+                                                "code": "unit",
+                                                "value": "km"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "bpp/fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "type": "Delivery"
+                            }
+                        ]
+                    }
+                }
+            },
+            "select": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "action": "select",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "a704ff71-55c9-4540-9533-4cff2dfde238",
+                    "timestamp": "2025-05-19T07:10:03.463Z",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "ttl": "PT30S",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC"
+                },
+                "message": {
+                    "order": {
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "location_id": "LOC01",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "location_id": "LOC01",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "fulfillments": [
+                            {
+                                "end": {
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "area_code": "110001"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "payment": {
+                            "type": "ON-ORDER"
+                        }
+                    }
+                }
+            },
+            "on_select": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "on_select",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "a704ff71-55c9-4540-9533-4cff2dfde238",
+                    "timestamp": "2025-05-19T07:10:03.809Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order": {
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "EFS100",
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "EFS100",
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "quote": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "1207.00"
+                            },
+                            "breakup": [
+                                {
+                                    "@ondc/org/item_id": "EFI002",
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Butter Chicken",
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "269.00"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "807.00"
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFI003",
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Classic Butter Chicken",
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100.00"
+                                        }
+                                    },
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "300.00"
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "delivery",
+                                    "title": "Delivery Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "50.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "packing",
+                                    "title": "Packing Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "20.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "misc",
+                                    "title": "Convenience Fee",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "30.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "ttl": "P1D"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "type": "Delivery",
+                                "@ondc/org/provider_name": "EATIKO OFFICIAL PROVIDER",
+                                "tracking": false,
+                                "@ondc/org/category": "Immediate Delivery",
+                                "@ondc/org/TAT": "PT60M",
+                                "state": {
+                                    "descriptor": {
+                                        "code": "Serviceable"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "init": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "action": "init",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "039a5250-95ca-452a-9a93-a4cde010d290",
+                    "timestamp": "2025-05-19T07:10:23.918Z",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "ttl": "PT30S",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC"
+                },
+                "message": {
+                    "order": {
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "location_id": "LOC01",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "fulfillment_id": "EFS100"
+                            },
+                            {
+                                "id": "EFI003",
+                                "location_id": "LOC01",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "fulfillment_id": "EFS100"
+                            }
+                        ],
+                        "billing": {
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "110001"
+                            },
+                            "tax_number": "00ABCDE1234F1Z5",
+                            "name": "Nirdosh Chauhan",
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9876543210",
+                            "created_at": "2025-05-19T07:10:23.918Z",
+                            "updated_at": "2025-05-19T07:10:23.918Z"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "type": "Delivery",
+                                "end": {
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "name": "Nirdosh Chauhan",
+                                            "building": "221 B",
+                                            "locality": "Baker Steeet",
+                                            "city": "Gurgaon",
+                                            "state": "Haryana",
+                                            "country": "India",
+                                            "area_code": "110001"
+                                        }
+                                    },
+                                    "contact": {
+                                        "phone": "9876543210",
+                                        "email": "nirdosh.chauhan@sequelstring.com"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "on_init": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "on_init",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "039a5250-95ca-452a-9a93-a4cde010d290",
+                    "timestamp": "2025-05-19T07:10:24.128Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order": {
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "billing": {
+                            "name": "Nirdosh Chauhan",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "110001"
+                            },
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9876543210",
+                            "created_at": "2025-05-19T07:10:23.918Z",
+                            "updated_at": "2025-05-19T07:10:23.918Z",
+                            "tax_number": "00ABCDE1234F1Z5"
+                        },
+                        "quote": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "1207.00"
+                            },
+                            "breakup": [
+                                {
+                                    "@ondc/org/item_id": "EFI002",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "807.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "269.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFI003",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Classic Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "300.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "delivery",
+                                    "title": "Delivery Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "50.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "packing",
+                                    "title": "Packing Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "20.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "misc",
+                                    "title": "Convenience Fee",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "30.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "ttl": "P1D"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "type": "Delivery",
+                                "tracking": false,
+                                "end": {
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "name": "Nirdosh Chauhan",
+                                            "building": "221 B",
+                                            "locality": "Baker Steeet",
+                                            "city": "Gurgaon",
+                                            "state": "Haryana",
+                                            "country": "India",
+                                            "area_code": "110001"
+                                        }
+                                    },
+                                    "contact": {
+                                        "phone": "9876543210"
+                                    }
+                                }
+                            }
+                        ],
+                        "payment": {
+                            "type": "ON-ORDER",
+                            "status": "NOT-PAID",
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+                            "@ondc/org/settlement_details": [
+                                {
+                                    "settlement_counterparty": "seller-app",
+                                    "settlement_phase": "sale-amount",
+                                    "settlement_type": "upi",
+                                    "beneficiary_name": "John Doe",
+                                    "upi_address": "johndoe@oksbi",
+                                    "settlement_bank_account_no": "1234567890",
+                                    "settlement_ifsc_code": "SBIN0001234",
+                                    "bank_name": "State Bank of India",
+                                    "branch_name": "MG Road Branch"
+                                }
+                            ],
+                            "@ondc/org/settlement_basis": "delivery",
+                            "@ondc/org/settlement_window": "PT30M"
+                        },
+                        "cancellation_terms": [
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Pending",
+                                        "short_desc": "002"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "0.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Packed",
+                                        "short_desc": "001,003"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "10.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "120.70"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-picked-up",
+                                        "short_desc": "001,003"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "10.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "120.70"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Out-for-delivery",
+                                        "short_desc": "009"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "0.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Out-for-delivery",
+                                        "short_desc": "010,011,012,013,014,015"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "20.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "241.40"
+                                    }
+                                }
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "code": "bpp_terms",
+                                "list": [
+                                    {
+                                        "code": "np_type",
+                                        "value": "ISN"
+                                    },
+                                    {
+                                        "code": "tax_number",
+                                        "value": "37ABCDE1234F1Z4"
+                                    },
+                                    {
+                                        "code": "provider_tax_number",
+                                        "value": "ABCDE1234F"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "confirm": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "confirm",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "4fb545fe-e86d-459e-aaa0-2d4c9d019246",
+                    "timestamp": "2025-05-19T07:10:55.007Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order": {
+                        "id": "SS1747638655008",
+                        "state": "Created",
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "billing": {
+                            "name": "Nirdosh Chauhan",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "110001"
+                            },
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9876543210",
+                            "created_at": "2025-05-19T07:10:23.918Z",
+                            "updated_at": "2025-05-19T07:10:23.918Z",
+                            "tax_number": "00ABCDE1234F1Z5"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "type": "Delivery",
+                                "tracking": false,
+                                "end": {
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "name": "Nirdosh Chauhan",
+                                            "building": "221 B",
+                                            "locality": "Baker Steeet",
+                                            "city": "Gurgaon",
+                                            "state": "Haryana",
+                                            "country": "India",
+                                            "area_code": "110001"
+                                        }
+                                    },
+                                    "contact": {
+                                        "phone": "9876543210"
+                                    },
+                                    "person": {
+                                        "name": "Nirdosh Chauhan"
+                                    }
+                                },
+                                "@ondc/org/TAT": "PT60M"
+                            }
+                        ],
+                        "quote": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "1207.00"
+                            },
+                            "breakup": [
+                                {
+                                    "@ondc/org/item_id": "EFI002",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "807.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "269.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFI003",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Classic Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "300.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "delivery",
+                                    "title": "Delivery Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "50.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "packing",
+                                    "title": "Packing Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "20.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "misc",
+                                    "title": "Convenience Fee",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "30.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "ttl": "P1D"
+                        },
+                        "tags": [
+                            {
+                                "code": "bpp_terms",
+                                "list": [
+                                    {
+                                        "code": "np_type",
+                                        "value": "ISN"
+                                    },
+                                    {
+                                        "code": "tax_number",
+                                        "value": "37ABCDE1234F1Z4"
+                                    },
+                                    {
+                                        "code": "provider_tax_number",
+                                        "value": "ABCDE1234F"
+                                    }
+                                ]
+                            },
+                            {
+                                "code": "bap_terms",
+                                "list": [
+                                    {
+                                        "code": "tax_number",
+                                        "value": "00XYZAB1234C1Z8"
+                                    },
+                                    {
+                                        "code": "accept_bpp_terms",
+                                        "value": "Y"
+                                    }
+                                ]
+                            }
+                        ],
+                        "payment": {
+                            "type": "ON-ORDER",
+                            "status": "PAID",
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+                            "@ondc/org/settlement_details": [
+                                {
+                                    "settlement_counterparty": "seller-app",
+                                    "settlement_phase": "sale-amount",
+                                    "settlement_type": "upi",
+                                    "beneficiary_name": "John Doe",
+                                    "upi_address": "johndoe@oksbi",
+                                    "settlement_bank_account_no": "1234567890",
+                                    "settlement_ifsc_code": "SBIN0001234",
+                                    "bank_name": "State Bank of India",
+                                    "branch_name": "MG Road Branch"
+                                }
+                            ],
+                            "@ondc/org/settlement_basis": "delivery",
+                            "@ondc/org/settlement_window": "P1D",
+                            "@ondc/org/withholding_amount": "10.00",
+                            "params": {
+                                "amount": "1207.00",
+                                "currency": "INR",
+                                "transaction_id": "955857d0-2d65-435d-9b45-ffc4f937094c"
+                            },
+                            "collected_by": "BAP"
+                        },
+                        "created_at": "2025-05-19T07:10:55.007Z",
+                        "updated_at": "2025-05-19T07:10:55.007Z"
+                    }
+                }
+            },
+            "on_confirm": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "on_confirm",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "4fb545fe-e86d-459e-aaa0-2d4c9d019246",
+                    "timestamp": "2025-05-19T07:10:55.268Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order": {
+                        "id": "SS1747638655008",
+                        "state": "Created",
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "billing": {
+                            "name": "Nirdosh Chauhan",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "110001"
+                            },
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9876543210",
+                            "created_at": "2025-05-19T07:10:23.918Z",
+                            "updated_at": "2025-05-19T07:10:23.918Z",
+                            "tax_number": "00ABCDE1234F1Z5"
+                        },
+                        "quote": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "1207.00"
+                            },
+                            "breakup": [
+                                {
+                                    "@ondc/org/item_id": "EFI002",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "807.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "269.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFI003",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Classic Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "300.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 3
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "delivery",
+                                    "title": "Delivery Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "50.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "packing",
+                                    "title": "Packing Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "20.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "misc",
+                                    "title": "Convenience Fee",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "30.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "ttl": "P1D"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "@ondc/org/provider_name": "EATIKO OFFICIAL PROVIDER",
+                                "state": {
+                                    "descriptor": {
+                                        "code": "Pending"
+                                    }
+                                },
+                                "type": "Delivery",
+                                "tracking": false,
+                                "@ondc/org/TAT": "PT60M",
+                                "start": {
+                                    "location": {
+                                        "id": "LOC01",
+                                        "descriptor": {
+                                            "name": "EATIKO OFFICIAL PROVIDER"
+                                        },
+                                        "gps": "28.527300,77.182100",
+                                        "address": {
+                                            "locality": "N. Caldwell",
+                                            "city": "New Delhi",
+                                            "area_code": "110030",
+                                            "state": "New Delhi"
+                                        }
+                                    },
+                                    "time": {
+                                        "range": {
+                                            "start": "2025-05-19T07:10:55.007Z",
+                                            "end": "2025-05-19T07:40:55.007Z"
+                                        }
+                                    },
+                                    "contact": {
+                                        "phone": "+1234567890",
+                                        "email": "example@example.com"
+                                    }
+                                },
+                                "end": {
+                                    "person": {
+                                        "name": "Nirdosh Chauhan"
+                                    },
+                                    "contact": {
+                                        "phone": "9876543210"
+                                    },
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "name": "Nirdosh Chauhan",
+                                            "building": "221 B",
+                                            "locality": "Baker Steeet",
+                                            "city": "Gurgaon",
+                                            "state": "Haryana",
+                                            "country": "India",
+                                            "area_code": "110001"
+                                        }
+                                    },
+                                    "time": {
+                                        "range": {
+                                            "start": "2025-05-19T07:40:55.007Z",
+                                            "end": "2025-05-19T08:10:55.007Z"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "payment": {
+                            "type": "ON-ORDER",
+                            "params": {
+                                "currency": "INR",
+                                "transaction_id": "955857d0-2d65-435d-9b45-ffc4f937094c",
+                                "amount": "1207.00"
+                            },
+                            "status": "PAID",
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+                            "@ondc/org/settlement_details": [
+                                {
+                                    "settlement_counterparty": "seller-app",
+                                    "settlement_phase": "sale-amount",
+                                    "settlement_type": "upi",
+                                    "beneficiary_name": "John Doe",
+                                    "upi_address": "johndoe@oksbi",
+                                    "settlement_bank_account_no": "1234567890",
+                                    "settlement_ifsc_code": "SBIN0001234",
+                                    "bank_name": "State Bank of India",
+                                    "branch_name": "MG Road Branch"
+                                }
+                            ],
+                            "@ondc/org/settlement_basis": "delivery",
+                            "@ondc/org/settlement_window": "P1D",
+                            "@ondc/org/withholding_amount": "10.00",
+                            "collected_by": "BAP"
+                        },
+                        "cancellation_terms": [
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Pending",
+                                        "short_desc": "002"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "0.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Packed",
+                                        "short_desc": "001,003"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "10.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "120.70"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Order-picked-up",
+                                        "short_desc": "001,003"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "10.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "120.70"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Out-for-delivery",
+                                        "short_desc": "009"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "0.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    }
+                                }
+                            },
+                            {
+                                "fulfillment_state": {
+                                    "descriptor": {
+                                        "code": "Out-for-delivery",
+                                        "short_desc": "010,011,012,013,014,015"
+                                    }
+                                },
+                                "cancellation_fee": {
+                                    "percentage": "20.00",
+                                    "amount": {
+                                        "currency": "INR",
+                                        "value": "241.40"
+                                    }
+                                }
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "code": "bpp_terms",
+                                "list": [
+                                    {
+                                        "code": "np_type",
+                                        "value": "ISN"
+                                    },
+                                    {
+                                        "code": "tax_number",
+                                        "value": "37ABCDE1234F1Z4"
+                                    },
+                                    {
+                                        "code": "provider_tax_number",
+                                        "value": "ABCDE1234F"
+                                    }
+                                ]
+                            },
+                            {
+                                "code": "bap_terms",
+                                "list": [
+                                    {
+                                        "code": "tax_number",
+                                        "value": "00XYZAB1234C1Z8"
+                                    },
+                                    {
+                                        "code": "accept_bpp_terms",
+                                        "value": "Y"
+                                    }
+                                ]
+                            }
+                        ],
+                        "created_at": "2025-05-19T07:10:55.007Z",
+                        "updated_at": "2025-05-19T07:10:55.268Z"
+                    }
+                }
+            },
+            "cancel": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "cancel",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "eb4b1378-5e08-44a0-a7ee-2fe0da5b3cbf",
+                    "timestamp": "2025-05-19T07:11:08.317Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order_id": "SS1747638655008",
+                    "cancellation_reason_id": "001"
+                }
+            },
+            "on_cancel": {
+                "context": {
+                    "domain": "ONDC:RET11",
+                    "action": "on_cancel",
+                    "country": "IND",
+                    "city": "std:011",
+                    "core_version": "1.2.0",
+                    "bap_id": "pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bap_uri": "https://pramaan.ondc.org/beta/staging/mock/buyer",
+                    "bpp_id": "staging-ondc-sellernp.eatiko.com",
+                    "bpp_uri": "https://staging-ondc-sellernp.eatiko.com/api/v1/ONDC",
+                    "transaction_id": "375ebaf4-3b56-4e32-b719-f3daa2fb535f",
+                    "message_id": "eb4b1378-5e08-44a0-a7ee-2fe0da5b3cbf",
+                    "timestamp": "2025-05-19T07:11:08.483Z",
+                    "ttl": "PT30S"
+                },
+                "message": {
+                    "order": {
+                        "id": "SS1747638655008",
+                        "state": "Cancelled",
+                        "provider": {
+                            "id": "EFP01",
+                            "locations": [
+                                {
+                                    "id": "LOC01"
+                                }
+                            ]
+                        },
+                        "items": [
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 0
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI002",
+                                "fulfillment_id": "C_BNP_9e179f03-be36-4c31-b302-680e25f8587c",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "EFS100",
+                                "quantity": {
+                                    "count": 0
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "EFI003",
+                                "fulfillment_id": "C_BNP_9e179f03-be36-4c31-b302-680e25f8587c",
+                                "quantity": {
+                                    "count": 3
+                                },
+                                "parent_item_id": "item_1747638597999",
+                                "tags": [
+                                    {
+                                        "code": "parent",
+                                        "list": [
+                                            {
+                                                "code": "id",
+                                                "value": "CG01"
+                                            },
+                                            {
+                                                "code": "default",
+                                                "value": "yes"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "type",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "customization"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "billing": {
+                            "name": "Nirdosh Chauhan",
+                            "address": {
+                                "name": "Nirdosh Chauhan",
+                                "building": "221 B",
+                                "locality": "Baker Steeet",
+                                "city": "Gurgaon",
+                                "state": "Haryana",
+                                "country": "India",
+                                "area_code": "110001"
+                            },
+                            "email": "nirdosh.chauhan@sequelstring.com",
+                            "phone": "9876543210",
+                            "tax_number": "00ABCDE1234F1Z5",
+                            "created_at": "2025-05-19T07:10:23.918Z",
+                            "updated_at": "2025-05-19T07:10:23.918Z"
+                        },
+                        "quote": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "0.00"
+                            },
+                            "breakup": [
+                                {
+                                    "@ondc/org/item_id": "EFI002",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 0
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "269.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFI003",
+                                    "@ondc/org/title_type": "item",
+                                    "title": "Classic Butter Chicken",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    },
+                                    "@ondc/org/item_quantity": {
+                                        "count": 0
+                                    },
+                                    "item": {
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "100.00"
+                                        }
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "delivery",
+                                    "title": "Delivery Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "packing",
+                                    "title": "Packing Charges",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "@ondc/org/item_id": "EFS100",
+                                    "@ondc/org/title_type": "misc",
+                                    "title": "Convenience Fee",
+                                    "price": {
+                                        "currency": "INR",
+                                        "value": "0.00"
+                                    },
+                                    "item": {
+                                        "tags": [
+                                            {
+                                                "code": "quote",
+                                                "list": [
+                                                    {
+                                                        "code": "type",
+                                                        "value": "fulfillment"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "ttl": "P1D"
+                        },
+                        "fulfillments": [
+                            {
+                                "id": "EFS100",
+                                "@ondc/org/provider_name": "EATIKO OFFICIAL PROVIDER",
+                                "state": {
+                                    "descriptor": {
+                                        "code": "Cancelled"
+                                    }
+                                },
+                                "type": "Delivery",
+                                "tracking": false,
+                                "@ondc/org/TAT": "PT60M",
+                                "start": {
+                                    "location": {
+                                        "id": "LOC01",
+                                        "descriptor": {
+                                            "name": "EATIKO OFFICIAL PROVIDER"
+                                        },
+                                        "gps": "28.527300,77.182100",
+                                        "address": {
+                                            "locality": "N. Caldwell",
+                                            "city": "New Delhi",
+                                            "state": "New Delhi",
+                                            "area_code": "110030"
+                                        }
+                                    },
+                                    "time": {
+                                        "range": {
+                                            "start": "2025-05-19T07:10:55.007Z",
+                                            "end": "2025-05-19T07:40:55.007Z"
+                                        }
+                                    },
+                                    "contact": {
+                                        "phone": "+1234567890",
+                                        "email": "example@example.com"
+                                    }
+                                },
+                                "end": {
+                                    "person": {
+                                        "name": "Nirdosh Chauhan"
+                                    },
+                                    "contact": {
+                                        "phone": "9876543210"
+                                    },
+                                    "location": {
+                                        "gps": "28.4554726,77.0219019",
+                                        "address": {
+                                            "name": "Nirdosh Chauhan",
+                                            "building": "221 B",
+                                            "locality": "Baker Steeet",
+                                            "city": "Gurgaon",
+                                            "state": "Haryana",
+                                            "country": "India",
+                                            "area_code": "110001"
+                                        }
+                                    },
+                                    "time": {
+                                        "range": {
+                                            "start": "2025-05-19T07:40:55.007Z",
+                                            "end": "2025-05-19T08:10:55.007Z"
+                                        }
+                                    }
+                                },
+                                "tags": [
+                                    {
+                                        "code": "cancel_request",
+                                        "list": [
+                                            {
+                                                "code": "reason_id",
+                                                "value": "001"
+                                            },
+                                            {
+                                                "code": "initiated_by",
+                                                "value": "pramaan.ondc.org/beta/staging/mock/buyer"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "precancel_state",
+                                        "list": [
+                                            {
+                                                "code": "fulfillment_state",
+                                                "value": "Pending"
+                                            },
+                                            {
+                                                "code": "updated_at",
+                                                "value": "2025-05-19T07:10:55.268Z"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "C_BNP_9e179f03-be36-4c31-b302-680e25f8587c",
+                                "state": {
+                                    "descriptor": {
+                                        "code": "Cancelled"
+                                    }
+                                },
+                                "type": "Cancel",
+                                "tags": [
+                                    {
+                                        "code": "quote_trail",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            },
+                                            {
+                                                "code": "id",
+                                                "value": "EFI002"
+                                            },
+                                            {
+                                                "code": "currency",
+                                                "value": "INR"
+                                            },
+                                            {
+                                                "code": "value",
+                                                "value": "-807.00"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "quote_trail",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "item"
+                                            },
+                                            {
+                                                "code": "id",
+                                                "value": "EFI003"
+                                            },
+                                            {
+                                                "code": "currency",
+                                                "value": "INR"
+                                            },
+                                            {
+                                                "code": "value",
+                                                "value": "-300.00"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "quote_trail",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "delivery"
+                                            },
+                                            {
+                                                "code": "id",
+                                                "value": "EFS100"
+                                            },
+                                            {
+                                                "code": "currency",
+                                                "value": "INR"
+                                            },
+                                            {
+                                                "code": "value",
+                                                "value": "-50.00"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "quote_trail",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "packing"
+                                            },
+                                            {
+                                                "code": "id",
+                                                "value": "EFS100"
+                                            },
+                                            {
+                                                "code": "currency",
+                                                "value": "INR"
+                                            },
+                                            {
+                                                "code": "value",
+                                                "value": "-20.00"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "code": "quote_trail",
+                                        "list": [
+                                            {
+                                                "code": "type",
+                                                "value": "misc"
+                                            },
+                                            {
+                                                "code": "id",
+                                                "value": "EFS100"
+                                            },
+                                            {
+                                                "code": "currency",
+                                                "value": "INR"
+                                            },
+                                            {
+                                                "code": "value",
+                                                "value": "-30.00"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "payment": {
+                            "type": "ON-ORDER",
+                            "params": {
+                                "currency": "INR",
+                                "transaction_id": "955857d0-2d65-435d-9b45-ffc4f937094c",
+                                "amount": "1207.00"
+                            },
+                            "status": "PAID",
+                            "@ondc/org/buyer_app_finder_fee_type": "percent",
+                            "@ondc/org/buyer_app_finder_fee_amount": "3.00",
+                            "@ondc/org/settlement_details": [
+                                {
+                                    "settlement_counterparty": "seller-app",
+                                    "settlement_phase": "sale-amount",
+                                    "settlement_type": "upi",
+                                    "upi_address": "johndoe@oksbi",
+                                    "settlement_bank_account_no": "1234567890",
+                                    "settlement_ifsc_code": "SBIN0001234",
+                                    "bank_name": "State Bank of India",
+                                    "branch_name": "MG Road Branch",
+                                    "beneficiary_name": "John Doe"
+                                }
+                            ],
+                            "@ondc/org/settlement_basis": "delivery",
+                            "@ondc/org/settlement_window": "P1D",
+                            "@ondc/org/withholding_amount": "10.00",
+                            "collected_by": "BAP"
+                        },
+                        "created_at": "2025-05-19T07:10:55.007Z",
+                        "updated_at": "2025-05-19T07:11:08.483Z",
+                        "cancellation": {
+                            "cancelled_by": "pramaan.ondc.org/beta/staging/mock/buyer",
+                            "reason": {
+                                "id": "001"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "reportTimestamp": "2025-05-19T09:43:20.989Z"
+    },
+    "signature": "UkFsG8/aax/pN+xVOG6dvRbB9jwuWyMo87pCsgBj6Ey1iucuflPmeYuWb3JvKdii+tJwgOn3OuSV4MVkNM6sAw==",
+    "signTimestamp": "2025-05-19T09:43:20.989Z"
+}
