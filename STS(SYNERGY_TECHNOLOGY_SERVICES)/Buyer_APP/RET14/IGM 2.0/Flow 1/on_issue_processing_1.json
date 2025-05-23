@@ -1,26 +1,32 @@
 {
   "context": {
+    "domain": "ONDC:RET14",
+    "action": "on_issue",
+    "core_version": "1.2.0",
     "bap_id": "ondc.taolabs.in",
     "bap_uri": "https://ondc.taolabs.in/api/preprod",
-    "bpp_id": "ondc.taolabs.in",
-    "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
     "country": "IND",
     "city": "std:080",
+    "bpp_id": "ondc.taolabs.in",
+    "bpp_uri": "https://ondc.taolabs.in/api/seller/preprod",
     "transaction_id": "deecfd52-b904-43d9-8eeb-235644e83dbf",
     "message_id": "8fbbeca4-92da-45fc-a513-8e65c5c17dd4",
-    "timestamp": "2025-05-20T04:55:08.725Z",
-    "domain": "ONDC:RET14",
-    "core_version": "1.2.0",
-    "ttl": "PT30S",
-    "action": "issue"
+    "timestamp": "2025-05-20T04:55:08.737Z",
+    "ttl": "PT30S"
   },
   "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
     "issue": {
       "id": "647d48cc-d57c-4741-8546-57626cd7b347",
-      "status": "OPEN",
+      "status": "PROCESSING",
       "level": "ISSUE",
       "created_at": "2025-05-20T04:55:08.702Z",
-      "updated_at": "2025-05-20T04:55:08.702Z",
+      "updated_at": "2025-05-20T04:55:08.737Z",
       "expected_response_time": {
         "duration": "PT2H"
       },
@@ -57,6 +63,22 @@
             },
             "person": {
               "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "964df845-e7b7-443a-9386-e562898c88a5",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "ondc.taolabs.in::ONDC:RET14"
+            },
+            "contact": {
+              "phone": "3343434444",
+              "email": "moana@gmail.com"
+            },
+            "person": {
+              "name": "Namjoon"
             }
           }
         }
@@ -115,7 +137,7 @@
           "content_type": "text/plain"
         }
       },
-      "last_action_id": "f500e6f6-1651-4899-bd5a-ae43530ea7a7",
+      "last_action_id": "24bf3670-5e94-45a8-aa57-dc712b4838ba",
       "actions": [
         {
           "id": "f500e6f6-1651-4899-bd5a-ae43530ea7a7",
@@ -128,8 +150,21 @@
           "actor_details": {
             "name": "John Doe"
           }
+        },
+        {
+          "id": "24bf3670-5e94-45a8-aa57-dc712b4838ba",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2025-05-20T04:55:08.737Z",
+          "action_by": "964df845-e7b7-443a-9386-e562898c88a5",
+          "actor_details": {
+            "name": "Namjoon"
+          }
         }
-      ]
+      ],
+      "respondent_ids": ["964df845-e7b7-443a-9386-e562898c88a5"]
     }
   }
 }
