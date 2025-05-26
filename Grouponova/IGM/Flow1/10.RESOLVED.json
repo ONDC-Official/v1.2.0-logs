@@ -1,0 +1,328 @@
+{
+    "context": {
+        "bap_id": "dev.vogueriviera.com",
+        "bap_uri": "https://dev.vogueriviera.com/ondc_subscriber",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "country": "IND",
+        "city": "std:011",
+        "transaction_id": "e6cf362d-8fcc-43e8-aeee-0ba2131fa165",
+        "message_id": "35279711d-5c8b-4a01-9478-1f800ab57d49",
+        "timestamp": "2025-05-21T02:49:02.405Z",
+        "domain": "ONDC:RET10",
+        "core_version": "2.0.0",
+        "ttl": "PT10M",
+        "action": "on_issue"
+    },
+    "message": {
+        "update_target": {
+            "path": "issue.actions",
+            "actions": "APPENDED"
+        },
+        "issue": {
+            "id": "ISSUE-1",
+            "level": "ISSUE",
+            "status": "RESOLVED",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "I1",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": "Over 9 levels deep, aborting normalization",
+                                    "value": "Over 9 levels deep, aborting normalization"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "ref_id": "T1",
+                    "ref_type": "TRANSACTION"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "dev.vogueriviera.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "dev.vogueriviera.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "name": "Sam Manuel",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9999994039",
+                            "email": "sellerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "Grievance Officer BNP"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "last_action_id": "A8",
+            "actions": [
+                {
+                    "id": "A1",
+                    "descriptor": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-05-21T02:13:02.051Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A2",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Issue Processing"
+                    },
+                    "updated_at": "2025-05-21T02:13:41.050Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Info Requested",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-21T02:18:08.959Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A4",
+                    "ref_id": "A3",
+                    "description": {
+                        "code": "INFO_PROVIDED",
+                        "short_desc": "Info provided from buyer app",
+                        "images": [
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img1.png",
+                                "size_type": "xs"
+                            },
+                            {
+                                "url": "http://buyerapp.com/addtional-details/img2.png",
+                                "size_type": "xs"
+                            }
+                        ]
+                    },
+                    "updated_at": "2025-05-21T02:21:50.843Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A5",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "Seller app processing the info",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-21T02:26:07.236Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A6",
+                    "description": {
+                        "code": "RESOLUTION_PROPOSED",
+                        "short_desc": "RESOLUTION_PROPOSED",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-21T02:35:02.208Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A7",
+                    "ref_id": "R1",
+                    "ref_type": "RESOLUTIONS",
+                    "descriptor": {
+                        "code": "RESOLUTION_ACCEPTED"
+                    },
+                    "updated_at": "2025-05-21T02:46:56.592Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A8",
+                    "description": {
+                        "code": "RESOLVED",
+                        "short_desc": "Complaint  Resolved Providing Refund",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-21T02:49:02.405Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "resolutions": [
+                {
+                    "id": "R1",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REFUND",
+                        "short_desc": "Providing refund for the item"
+                    },
+                    "updated_at": "2024-08-14T09:57:58.841Z",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": "Over 9 levels deep, aborting normalization",
+                                    "value": "Over 9 levels deep, aborting normalization"
+                                },
+                                {
+                                    "descriptor": "Over 9 levels deep, aborting normalization",
+                                    "value": "Over 9 levels deep, aborting normalization"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "R2",
+                    "ref_id": "R_PARENT",
+                    "ref_type": "PARENT",
+                    "descriptor": {
+                        "code": "REPLACEMENT",
+                        "short_desc": "Providing replacement of the item"
+                    },
+                    "updated_at": "2024-08-14T09:57:58.841Z",
+                    "proposed_by": "NP2",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "RESOLUTION_DETAILS"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": "Over 9 levels deep, aborting normalization",
+                                    "value": "Over 9 levels deep, aborting normalization"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "created_at": "2025-05-21T02:46:56.592Z",
+            "updated_at": "2025-05-21T02:46:56.592Z"
+        }
+    }
+}
