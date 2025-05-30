@@ -1,137 +1,134 @@
 {
-    "context": {
-      "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
-      "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
-      "bpp_id": "saleor-preprod.bharatvyapaar.com",
-      "bpp_uri": "https://saleor-preprod.bharatvyapaar.com/bpp/retails/protocol/v1",
-      "location": {
-        "country": {
-          "code": "IND"
-        },
-        "city": {
-          "code": "*"
-        }
+  "context": {
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "saleor-preprod.bharatvyapaar.com",
+    "bpp_uri": "https://saleor-preprod.bharatvyapaar.com/bpp/retails/protocol/v1",
+    "country": "IND",
+    "city": "*",
+    "transaction_id": "T011",
+    "message_id": "M1",
+    "timestamp": "2025-05-28T09:11:42.587Z",
+    "domain": "ONDC:RET10",
+    "core_version": "2.0.0",
+    "ttl": "PT30S",
+    "action": "issue"
+  },
+  "message": {
+    "issue": {
+      "id": "ISSUE-15",
+      "level": "ISSUE",
+      "status": "OPEN",
+      "expected_response_time": {
+        "duration": "PT2H"
       },
-      "transaction_id": "T7121",
-      "message_id": "M1",
-      "timestamp": "2025-03-28T13:38:23.919Z",
-      "domain": "ONDC:RET10",
-      "core_version": "2.0.0",
-      "ttl": "PT10M",
-      "action": "issue"
-    },
-    "message": {
-      "issue": {
-        "id": "ISSUE-1",
-        "level": "ISSUE",
-        "status": "OPEN",
-        "expected_response_time": {
-          "duration": "PT2H"
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
         },
-        "expected_resolution_time": {
-          "duration": "P1D"
-        },
-        "refs": [
-          {
-            "ref_id": "O1",
-            "ref_type": "ORDER"
-          },
-          {
-            "ref_id": "I1",
-            "ref_type": "ITEM",
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "message.order.items"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "quantity.selected.count"
-                    },
-                    "value": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "ref_id": "P1",
-            "ref_type": "PROVIDER"
-          },
-          {
-            "ref_id": "F1",
-            "ref_type": "FULFILMENT"
-          }
-        ],
-        "actors": [
-          {
-            "id": "CUST1",
-            "type": "CONSUMER",
-            "info": {
-              "org": {
-                "name": "buyerapp.com::ONDC:RET10"
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
               },
-              "person": {
-                "name": "Sam Manuel"
-              },
-              "contact": {
-                "phone": "9879879870",
-                "email": "sam@yahoo.com"
-              }
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
             }
-          },
-          {
-            "id": "NP1",
-            "type": "INTERFACING_NP",
-            "info": {
-              "org": {
-                "name": "buyerapp.com::ONDC:RET10"
-              },
-              "contact": {
-                "phone": "9450394039",
-                "email": "buyerapp@interface.com"
-              },
-              "person": {
-                "name": "John Doe"
-              }
-            }
-          }
-        ],
-        "source_id": "CUST1",
-        "complainant_id": "NP1",
-        "description": {
-          "code": "ORD001",
-          "short_desc": "Issue with product quality",
-          "long_desc": "Product quality is not correct. facing issues while using the product",
-          "additional_desc": {
-            "url": "https://buyerapp.com/additonal-details/desc.txt",
-            "content_type": "text/plain"
-          },
-          "images": [
-            "http://buyerapp.com/addtional-details/img1.png",
-            "http://buyerapp.com/addtional-details/img2.png"
           ]
         },
-        "last_action_id": "A1",
-        "actions": [
-          {
-            "id": "A1",
-            "description": {
-              "code": "OPEN",
-              "short_desc": "OPEN"
+        {
+          "ref_id": "c2000ded-bf96-41ea-91c0-b52938edcac9",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "T1",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
             },
-            "updated_at": "2025-03-28T13:38:23.918Z",
-            "action_by": "NP1",
-            "actor_details": {
-              "name": "Pulkit Chauhan"
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
             }
           }
-        ],
-        "created_at": "2025-03-26T13:37:15.942Z",
-        "updated_at": "2025-03-28T08:38:23.919Z"
-      }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "igm-mock-service.ondc.org@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "descriptor": {
+        "code": "ORD001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://igm-mock-service.ondc.org.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://igm-mock-service.ondc.org.com/addtional-details/img1.png"
+          }
+        ]
+      },
+      "last_action_id": "A1",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-05-28T09:11:42.587Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "created_at": "2025-05-28T09:11:42.587Z",
+      "updated_at": "2025-05-28T09:11:42.587Z"
     }
   }
-  
-  
+}

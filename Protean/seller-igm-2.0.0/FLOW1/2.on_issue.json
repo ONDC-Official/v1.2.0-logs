@@ -1,116 +1,169 @@
 {
   "context": {
     "domain": "ONDC:RET10",
-    "location": { "country": { "code": "IND" }, "city": { "code": "*" } },
+    "country": "IND",
+    "city": "*",
     "action": "on_issue",
     "core_version": "2.0.0",
     "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
     "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
     "bpp_id": "saleor-preprod.bharatvyapaar.com",
-    "bpp_uri": "https://saleor-preprod.bharatvyapaar.com/bpp/retails/protocol/v1",
-    "transaction_id": "T7121",
+    "bpp_uri": "https://saleor-preprod.bharatvyapaar.com/bpp/retails/seller/protocol/v1",
+    "transaction_id": "T011",
     "message_id": "M1",
-    "timestamp": "2025-03-28T13:38:23.919Z",
-    "ttl": "PT10M"
+    "timestamp": "2025-05-28T09:11:42.587Z",
+    "ttl": "PT30S"
   },
   "message": {
-    "updated_target": [{ "path": "issue.actions", "action": "APPENDED" }],
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
     "issue": {
-      "id": "ISSUE-1",
+      "id": "ISSUE-15",
       "status": "PROCESSING",
       "level": "ISSUE",
-      "created_at": "2025-03-26T13:37:15.942Z",
-      "updated_at": "2025-03-28T13:38:23.919Z",
-      "expected_response_time": { "duration": "PT2H" },
-      "expected_resolution_time": { "duration": "P1D" },
+      "created_at": "2025-05-28T09:11:42.587Z",
+      "updated_at": "2025-05-28T09:11:42.687Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
       "refs": [
-        { "ref_id": "O1", "ref_type": "ORDER" },
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
         {
           "ref_id": "I1",
           "ref_type": "ITEM",
           "tags": [
             {
-              "descriptor": { "code": "message.order.items" },
+              "descriptor": {
+                "code": "message.order.items"
+              },
               "list": [
                 {
-                  "descriptor": { "code": "quantity.selected.count" },
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
                   "value": "2"
                 }
               ]
             }
           ]
         },
-        { "ref_id": "P1", "ref_type": "PROVIDER" },
-        { "ref_id": "F1", "ref_type": "FULFILMENT" }
+        {
+          "ref_id": "c2000ded-bf96-41ea-91c0-b52938edcac9",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "T1",
+          "ref_type": "TRANSACTION"
+        }
       ],
       "actors": [
         {
           "id": "CUST1",
           "type": "CONSUMER",
           "info": {
-            "org": { "name": "buyerapp.com::ONDC:RET10" },
-            "person": { "name": "Sam Manuel" },
-            "contact": { "phone": "9879879870", "email": "sam@yahoo.com" }
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
           }
         },
         {
           "id": "NP1",
           "type": "INTERFACING_NP",
           "info": {
-            "org": { "name": "buyerapp.com::ONDC:RET10" },
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
             "contact": {
               "phone": "9450394039",
-              "email": "buyerapp@interface.com"
+              "email": "igm-mock-service.ondc.org@interface.com"
             },
-            "person": { "name": "John Doe" }
+            "person": {
+              "name": "John Doe"
+            }
           }
         },
         {
           "id": "1",
-          "type": "COUNTERPARTY_NP",
+          "type": "SELLER",
           "info": {
-            "org": { "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10" }, 
-            "contact": {
-              "phone": "8888888888",
-              "email": "abhey.rajput@thewitslab.com"
+            "org": {
+              "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10"
             },
-            "person": { "name": "Provider-Abhey Rajput1" }
+            "contact": {
+              "phone": "8171720711",
+              "email": "vishalk.chaubey@thewitslab.com"
+            },
+            "person": {
+              "name": "Vishal"
+            }
           }
         }
       ],
+      "respondent_ids": [
+        "1"
+      ],
       "source_id": "CUST1",
       "complainant_id": "NP1",
-      "description": {
+      "descriptor": {
         "code": "ORD001",
         "short_desc": "Issue with product quality",
         "long_desc": "Product quality is not correct. facing issues while using the product",
         "additional_desc": {
-          "url": "https://buyerapp.com/additonal-details/desc.txt",
+          "url": "https://igm-mock-service.ondc.org.com/additonal-details/desc.txt",
           "content_type": "text/plain"
         },
         "images": [
-          "http://buyerapp.com/addtional-details/img1.png",
-          "http://buyerapp.com/addtional-details/img2.png"
+          {
+            "url": "http://igm-mock-service.ondc.org.com/addtional-details/img1.png"
+          }
         ]
       },
       "last_action_id": "A2",
       "actions": [
         {
           "id": "A1",
-          "description": { "code": "OPEN", "short_desc": "OPEN" },
-          "updated_at": "2025-03-28T13:38:23.918Z",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-05-28T09:11:42.587Z",
           "action_by": "NP1",
-          "actor_details": { "name": "Pulkit Chauhan" }
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
         },
         {
           "id": "A2",
-          "description": {
+          "descriptor": {
             "code": "PROCESSING",
             "short_desc": "Issue Processing"
           },
-          "updated_at": "2025-03-28T13:38:23.919Z", 
-          "actor_details": { "name": "Provider-Abhey Rajput1" },
-          "action_by": "1"
+          "updated_at": "2025-05-28T09:11:43.371Z",
+          "action_by": "1",
+          "actor_details": {
+            "name": "Vishal"
+          }
         }
       ]
     }
