@@ -1,0 +1,217 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "on_issue",
+    "country": "IND",
+    "city": "std:080,",
+    "core_version": "1.2.0",
+    "bap_id": "dev.vogueriviera.com",
+    "bap_uri": "https://dev.vogueriviera.com/ondc_subscriber",
+    "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "transaction_id": "78695f5bea-9235-4a3c-8bfb-f63e0e2f05bd",
+    "message_id": "378bb6f01-8850-4901-b12f-17eed3abf23b",
+    "timestamp": "2025-05-31T04:27:09.227Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-1",
+      "status": "RESOLVED",
+      "level": "ISSUE",
+      "created_at": "2025-05-31T04:27:09.227Z",
+      "updated_at": "2025-05-31T04:27:15.227Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "695f5bea1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": "Over 9 levels deep, aborting normalization",
+                  "value": "Over 9 levels deep, aborting normalization"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ref_id": "T10",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "igm-mock-service.ondc.org@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "dev.vogueriviera.com::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "resolver_ids": [
+        "NP2"
+      ],
+      "descriptor": {
+        "code": "VIS001",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://igm-mock-service.ondc.org.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://igm-mock-service.ondc.org.com/addtional-details/img1.png"
+          }
+        ]
+      },
+      "last_action_id": "A5",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Seller not visible on interface"
+          },
+          "updated_at": "2025-05-31T04:09:05.593Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A2",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Checking the issue raised"
+          },
+          "updated_at": "2025-05-31T04:10:55.150Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Grouponova Team"
+          }
+        },
+        {
+          "id": "A3",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Resolution provided"
+          },
+          "actor_details": {
+            "name": "Grouponova Team"
+          },
+          "updated_at": "2025-05-31T04:19:49.812Z",
+          "action_by": "NP2"
+        },
+        {
+          "id": "A4",
+          "descriptor": {
+            "code": "RESOLUTION_ACCEPTED",
+            "short_desc": "Resolution Accepted"
+          },
+          "updated_at": "2025-05-31T04:23:18.183Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "ref_id": "R1",
+          "ref_type": "resolutions"
+        },
+        {
+          "id": "A5",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLVED",
+            "short_desc": "Complaint resolved. Seller would be visible now"
+          },
+          "actor_details": {
+            "name": "Grouponova Team"
+          },
+          "updated_at": "2025-05-31T04:27:15.227Z",
+          "action_by": "NP2"
+        }
+      ],
+      "resolutions": [
+        {
+          "id": "R1",
+          "descriptor": {
+            "code": "NOW-VISIBLE",
+            "short_desc": "Error in ingestion, seller would be visible through the next ingestion."
+          },
+          "updated_at": "2025-05-31T04:19:49.812Z",
+          "proposed_by": "NP2"
+        }
+      ]
+    }
+  }
+}
