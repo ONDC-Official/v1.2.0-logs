@@ -1,0 +1,143 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080,",
+    "action": "on_issue",
+    "core_version": "1.2.0",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "preprod-ondc.airpay.ninja",
+    "bpp_uri": "https://preprod-ondc.airpay.ninja/bapl/",
+    "transaction_id": "bab28a40-7c1d-4930-a789-5018e3414ed6",
+    "message_id": "7ed3b150-95c6-11ee-9475-039cd8109d52",
+    "ttl": "PT30S",
+    "timestamp": "2025-04-15T11:41:24.000Z"
+  },
+  "message": {
+    "issue": {
+      "id": "7ed3b150-95c6-11ee-9475-039cd8109007",
+      "status": "OPEN",
+      "level": "ISSUE",
+      "created_at": "2025-04-15T11:41:24.000Z",
+      "updated_at": "2025-04-15T11:41:27.000Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "preprod-ondc.airpay.ninja::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "descriptor": {
+        "code": "FLM005",
+        "short_desc": "Issue with packaging",
+        "long_desc": "Food has spilled in the package",
+        "images": [
+          {
+            "size_type": "xs",
+            "url": "http://buyerapp.com/addtional-details/img1.png"
+          },
+          {
+            "size_type": "xs",
+            "url": "http://buyerapp.com/addtional-details/img2.png"
+          }
+        ]
+      },
+      "last_action_id": "AR2",
+      "actions": [
+        {
+          "id": "AR1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "AR2",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint is being processed"
+          },
+          "updated_at": "2025-04-15T11:41:27.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "respondent_ids": [
+        "NP2"
+      ]
+    }
+  }
+}
