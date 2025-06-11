@@ -1,0 +1,300 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080,",
+    "action": "on_issue",
+    "core_version": "1.2.0",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "preprod-ondc.airpay.ninja",
+    "bpp_uri": "https://preprod-ondc.airpay.ninja/bapl/",
+    "transaction_id": "bab28a40-7c1d-4930-a789-5018e3414ed6",
+    "message_id": "7e53b150-95c6-11ee-9475-039cd8109d55",
+    "ttl": "PT30S",
+    "timestamp": "2025-04-15T13:29:15.000Z"
+  },
+  "message": {
+    "issue": {
+      "id": "7ed3b150-95c6-11ee-9475-039cd8109007",
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        }
+      ],
+      "level": "ISSUE",
+      "actors": [
+        {
+          "id": "CUST1",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "email": "sam@yahoo.com",
+              "phone": "9879879870"
+            }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "email": "buyerapp@interface.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "org": {
+              "name": "preprod-ondc.airpay.ninja::ONDC:RET10"
+            },
+            "person": {
+              "name": "Jane Doe"
+            },
+            "contact": {
+              "email": "respondentapp@respond.com",
+              "phone": "9450394140"
+            }
+          },
+          "type": "COUNTERPARTY_NP"
+        }
+      ],
+      "status": "RESOLVED",
+      "actions": [
+        {
+          "id": "AR1",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          }
+        },
+        {
+          "id": "AR2",
+          "action_by": "NP2",
+          "updated_at": "2025-04-15T11:41:27.000Z",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint is being processed"
+          },
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "AR3",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2025-04-15T12:14:13.000Z",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "Please provide item images"
+          }
+        },
+        {
+          "id": "AR4",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2025-04-15T12:14:32.000Z",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide package images"
+          }
+        },
+        {
+          "id": "AR5",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "name": "INFO001",
+            "images": [
+              {
+                "url": "http://buyerapp.com/addtional-details/img1.png",
+                "size_type": "xs"
+              },
+              {
+                "url": "http://buyerapp.com/addtional-details/img2.png",
+                "size_type": "xs"
+              }
+            ]
+          }
+        },
+        {
+          "id": "AR6",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "name": "INFO002",
+            "images": [
+              {
+                "url": "http://buyerapp.com/addtional-details/img1.png",
+                "size_type": "xs"
+              },
+              {
+                "url": "http://buyerapp.com/addtional-details/img2.png",
+                "size_type": "xs"
+              }
+            ]
+          }
+        },
+        {
+          "id": "AR7",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "updated_at": "2025-04-15T12:23:30.000Z",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint information"
+          }
+        },
+        {
+          "id": "AR8",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLUTION_PROPOSED"
+          },
+          "updated_at": "2025-04-15T13:05:56.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          },
+          "descriptor": {
+            "code": "RESOLUTION_ACCEPTED",
+            "name": "REFUND"
+          },
+          "id": "AR9",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "updated_at": "2023-01-15T10:00:00.469Z"
+        },
+        {
+          "id": "AR10",
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLVED"
+          },
+          "updated_at": "2025-04-15T13:29:18.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "created_at": "2025-04-15T13:29:15.000Z",
+      "updated_at": "2025-04-15T13:29:18.000Z",
+      "descriptor": {
+        "code": "FLM005",
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png",
+            "size_type": "xs"
+          },
+          {
+            "url": "http://buyerapp.com/addtional-details/img2.png",
+            "size_type": "xs"
+          }
+        ],
+        "long_desc": "Food has spilled in the package",
+        "short_desc": "Issue with packaging"
+      },
+      "resolver_ids": [
+        "NP2"
+      ],
+      "complainant_id": "NP1",
+      "last_action_id": "AR10",
+      "respondent_ids": [
+        "NP2"
+      ],
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "resolutions": [
+        {
+          "id": "R1",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2025-04-15T13:05:56.000Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "200"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
