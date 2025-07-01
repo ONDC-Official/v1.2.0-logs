@@ -1,15 +1,31 @@
 # v1.2.0-logs
-Retail and Logistics logs for 1.2.0 certification - test scenarios for [retail](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1367601795) and [logistics](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1670900093)
 
-To submit logs for protocol compliance verification, following steps need to be followed:
+This repository is used for submitting **Retail** and **Logistics** logs for **ONDC Protocol v1.2.0** certification.
 
->1. Create a fork of the "v1.2.0-logs" repository
+Please ensure that logs include **request and response payloads for all enabled APIs** as per the certification checklist.
 
->2. Create a folder with the name of your entity in the base dir
+### Test Scenarios:
+- [Retail Test Scenarios](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1367601795)
+- [Logistics Test Scenarios](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1670900093)
 
->3. Update your logs in the dir of your forked repository (logs should include request & response payloads for all enabled APIs)
 
->4. Create PR for your repo to ONDC repo
+## Submission Steps
 
->5. The PR will be approved and merged and verification comments will be provided in issue tagged to your entity
+Follow the steps below to submit your logs for **protocol compliance verification**:
+
+1. **Fork** the `v1.2.0-logs` repository.
+2. Create a **folder** in the root directory named after your entity (e.g., `your-company-name`).
+3. Upload your **logs** (request and response payloads) to the folder.
+4. Create a **Pull Request (PR)** from your forked repo to the ONDC repo.
+5. Once the PR is **approved and merged**, verification comments will be provided in a **GitHub Issue tagged to your entity**.
+
+## Windows Users – Cloning Issue Notice
+
+If you're facing issues while cloning the repository on **Windows OS** (e.g., trailing spaces or file path errors), you may try the following solutions:
+
+### Recommended Workarounds:
+1. **Use a different operating system** such as Linux or macOS.
+2. **Use WSL (Windows Subsystem for Linux)** to bypass Windows file system limitations.
+
+>  [Learn how to install and use WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
