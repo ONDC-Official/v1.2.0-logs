@@ -8,7 +8,6 @@ Please ensure that logs include **request and response payloads for all enabled 
 - [Retail Test Scenarios](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1367601795)
 - [Logistics Test Scenarios](https://docs.google.com/spreadsheets/d/1JZV6ZQzXcHUsOwegGtArX3DdIXYIy3gxkhQ00q7kICc/edit#gid=1670900093)
 
----
 
 ## Submission Steps
 
@@ -20,8 +19,6 @@ Follow the steps below to submit your logs for **protocol compliance verificatio
 4. Create a **Pull Request (PR)** from your forked repo to the ONDC repo.
 5. Once the PR is **approved and merged**, verification comments will be provided in a **GitHub Issue tagged to your entity**.
 
----
-
 ## Windows Users – Cloning Issue Notice
 
 If you're facing issues while cloning the repository on **Windows OS** (e.g., trailing spaces or file path errors), you may try the following solutions:
@@ -30,9 +27,5 @@ If you're facing issues while cloning the repository on **Windows OS** (e.g., tr
 1. **Use a different operating system** such as Linux or macOS.
 2. **Use WSL (Windows Subsystem for Linux)** to bypass Windows file system limitations.
 
-> ℹ️ [Learn how to install and use WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
-
----
-
-For any queries or assistance, please connect with your ONDC SPOC or reach out via the official support channels.
+>  [Learn how to install and use WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
 
