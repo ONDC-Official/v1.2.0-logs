@@ -1,6 +1,6 @@
 ## IGM 2.0 FLOW-1 Validation Report
 
-### Issue
+### Issues
 
 **1. `missing_ref_fulfilment`**: Reference type `'FULFILMENT'` is mandatory for FLOW\_1 but is missing.
 
