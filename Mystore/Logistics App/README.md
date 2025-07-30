@@ -1,1 +1,0 @@
-Logistic buyer app flows
