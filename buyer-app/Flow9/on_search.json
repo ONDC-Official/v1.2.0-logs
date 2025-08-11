@@ -1,0 +1,439 @@
+{
+  "context": {
+        "domain": "ONDC:RET10",
+        "action": "on_status",
+        "core_version": "1.2.0",
+        "bap_id": "preprod.sreshta.shop",
+        "bap_uri": "https:\/\/preprod.sreshta.shop",
+        "bpp_id": "pramaan.ondc.org\/beta\/preprod\/mock\/seller",
+        "bpp_uri": "https:\/\/pramaan.ondc.org\/beta\/preprod\/mock\/seller",
+        "transaction_id": "a75595ee-16ac-4bd3-87ba-4ebc44791c82",
+        "message_id": "9d53b753-b3c5-4767-8614-9045856db05e",
+        "city": "std:080",
+        "country": "IND",
+        "timestamp": "2025-07-28T10:33:04.198Z",
+        "ttl": "PT30S"
+    },
+    "message": {
+        "order": {
+            "id": "935235",
+            "state": "In-progress",
+            "provider": {
+                "id": "pramaan_provider_1",
+                "locations": [
+                    {
+                        "id": "SSL1"
+                    }
+                ]
+            },
+            "billing": {
+                "name": "Test ONDC buyer",
+                "address": {
+                    "name": "sam",
+                    "building": "Signal, 673\/a, Varthur Rd, near Kundanahalii, BEML Layout",
+                    "locality": "Whitefield",
+                    "city": "Bengaluru",
+                    "state": "Karnataka",
+                    "country": "IND",
+                    "area_code": "560066"
+                },
+                "tax_number": "XXXXXXXXXXXXXXX",
+                "email": "testemail@gmail.com",
+                "phone": "9886098860",
+                "created_at": "2025-05-21T09:30:11.365Z",
+                "updated_at": "2025-05-21T09:30:11.365Z"
+            },
+            "payment": {
+                "uri": "https:\/\/ondc.transaction.com\/payment",
+                "tl_method": "http\/get",
+                "params": {
+                    "currency": "INR",
+                    "transaction_id": "3937",
+                    "amount": "450.65"
+                },
+                "status": "PAID",
+                "type": "ON-ORDER",
+                "collected_by": "BAP",
+                "@ondc\/org\/buyer_app_finder_fee_type": "percent",
+                "@ondc\/org\/buyer_app_finder_fee_amount": "3",
+                "@ondc\/org\/settlement_basis": "delivery",
+                "@ondc\/org\/settlement_window": "P1D",
+                "@ondc\/org\/withholding_amount": "10.00",
+                "@ondc\/org\/settlement_details": [
+                    {
+                        "settlement_counterparty": "seller-app",
+                        "settlement_phase": "sale-amount",
+                        "settlement_type": "upi",
+                        "upi_address": "gft@oksbi",
+                        "settlement_bank_account_no": "3434634634634",
+                        "settlement_ifsc_code": "SBI03486346",
+                        "beneficiary_name": "sam",
+                        "bank_name": "SBI",
+                        "branch_name": "whitefield,karnataka"
+                    },
+                    {
+                        "settlement_counterparty": "buyer",
+                        "settlement_phase": "refund",
+                        "settlement_type": "upi",
+                        "settlement_amount": "240.00",
+                        "settlement_timestamp": "2025-05-22T11:40:00.000Z"
+                    }
+                ]
+            },
+            "created_at": "2025-05-21T09:45:11.365Z",
+            "fulfillments": [
+                {
+                    "id": "F1",
+                    "@ondc\/org\/provider_name": "",
+                    "@ondc\/org\/category": "",
+                    "@ondc\/org\/TAT": "",
+                    "state": {
+                        "descriptor": {
+                            "code": "Pending"
+                        }
+                    },
+                    "start": {
+                        "location": {
+                            "id": "SSL1",
+                            "gps": "28.527300,77.182100",
+                            "descriptor": {
+                                "name": "Pramaan Store 1",
+                                "images": [
+                                    "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                                ]
+                            },
+                            "address": {
+                                "locality": "N. Caldwell",
+                                "city": "New Delhi",
+                                "area_code": "110030",
+                                "state": "New Delhi"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2025-07-28T10:32:31.266Z",
+                                "end": "2025-07-28T23:00:00.000Z"
+                            }
+                        },
+                        "contact": {
+                            "phone": "9876543210",
+                            "email": "ss_seller_1@ss.com"
+                        }
+                    },
+                    "end": {
+                        "person": {
+                            "name": "sam"
+                        },
+                        "contact": {
+                            "email": "testemail@gmail.com",
+                            "phone": "9886098860"
+                        },
+                        "location": {
+                            "gps": "12.453544,77.928379",
+                            "address": {
+                                "name": "sam",
+                                "building": "Signal, 673\/a, Varthur Rd, near Kundanahalii, BEML Layout",
+                                "locality": "Whitefield",
+                                "city": "Bengaluru",
+                                "state": "Karnataka",
+                                "country": "IND",
+                                "area_code": "560066"
+                            }
+                        },
+                        "time": {
+                            "range": {
+                                "start": "2025-07-29T09:30:00.000Z",
+                                "end": "2025-07-29T19:00:00.000Z"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "771fbefd-5411-4b47-9f76-2e7ef46d3694",
+                    "type": "Cancel",
+                    "state": {
+                        "descriptor": {
+                            "code": "Cancelled"
+                        }
+                    },
+                    "tags": [
+                        {
+                            "code": "cancel_request",
+                            "list": [
+                                {
+                                    "code": "reason_id",
+                                    "value": "016"
+                                },
+                                {
+                                    "code": "initiated_by",
+                                    "value": "pramaan.ondc.org\/beta\/preprod\/mock\/seller"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "quote_trail",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "item"
+                                },
+                                {
+                                    "code": "id",
+                                    "value": "id_13owvn_0_0"
+                                },
+                                {
+                                    "code": "currency",
+                                    "value": "INR"
+                                },
+                                {
+                                    "code": "value",
+                                    "value": "-65.00"
+                                },
+                                {
+                                    "code": "parent_item_id",
+                                    "value": "V11"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "items": [
+                {
+                    "id": "id_13owvn_0_0",
+                    "parent_item_id": "V11",
+                    "descriptor": {
+                        "name": "Plain Atta",
+                        "code": "1:8901603680311",
+                        "symbol": "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7",
+                        "short_desc": "The Flour Awakens",
+                        "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
+                        "images": [
+                            "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                        ]
+                    },
+                    "quantity": {
+                        "count": 0
+                    },
+                    "tags": [
+                        {
+                            "code": "origin",
+                            "list": [
+                                {
+                                    "code": "country",
+                                    "value": "IND"
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillment_id": "779f26a1-aca4-471a-b4e6-e8647c03757f"
+                },
+                {
+                    "id": "id_ancc5_1_0",
+                    "parent_item_id": "V11",
+                    "descriptor": {
+                        "name": "Plain Atta",
+                        "code": "1:8902485595199",
+                        "symbol": "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7",
+                        "short_desc": "The Flour Awakens",
+                        "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
+                        "images": [
+                            "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                        ]
+                    },
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": [
+                        {
+                            "code": "type",
+                            "list": [
+                                {
+                                    "code": "type",
+                                    "value": "customization"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "parent",
+                            "list": [
+                                {
+                                    "code": "id",
+                                    "value": "CG1"
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillment_id": "779f26a1-aca4-471a-b4e6-e8647c03757f"
+                },
+                {
+                    "id": "id_13owvn_0_0",
+                    "parent_item_id": "V11",
+                    "descriptor": {
+                        "name": "Plain Atta",
+                        "code": "1:8901603680311",
+                        "symbol": "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7",
+                        "short_desc": "The Flour Awakens",
+                        "long_desc": "Awaken the taste buds of your customers with The Flour Awakens.",
+                        "images": [
+                            "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                        ]
+                    },
+                    "quantity": {
+                        "count": 1
+                    },
+                    "tags": [
+                        {
+                            "code": "origin",
+                            "list": [
+                                {
+                                    "code": "country",
+                                    "value": "IND"
+                                }
+                            ]
+                        }
+                    ],
+                    "fulfillment_id": "771fbefd-5411-4b47-9f76-2e7ef46d3694"
+                }
+            ],
+            "quote": {
+                "price": {
+                    "currency": "INR",
+                    "value": "210.00"
+                },
+                "breakup": [
+                    {
+                        "@ondc\/org\/item_id": "id_13owvn_0_0",
+                        "title": "Plain Atta",
+                        "@ondc\/org\/item_quantity": {
+                            "count": 0
+                        },
+                        "@ondc\/org\/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "0.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "65.00"
+                            },
+                            "parent_item_id": "V11",
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "image",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "back_image"
+                                        },
+                                        {
+                                            "code": "url",
+                                            "value": "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@ondc\/org\/item_id": "id_ancc5_1_0",
+                        "title": "Plain Atta",
+                        "@ondc\/org\/item_quantity": {
+                            "count": 1
+                        },
+                        "@ondc\/org\/title_type": "item",
+                        "price": {
+                            "currency": "INR",
+                            "value": "130.00"
+                        },
+                        "item": {
+                            "price": {
+                                "currency": "INR",
+                                "value": "130.00"
+                            },
+                            "parent_item_id": "V11",
+                            "tags": [
+                                {
+                                    "code": "origin",
+                                    "list": [
+                                        {
+                                            "code": "country",
+                                            "value": "IND"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "image",
+                                    "list": [
+                                        {
+                                            "code": "type",
+                                            "value": "back_image"
+                                        },
+                                        {
+                                            "code": "url",
+                                            "value": "https:\/\/ondc.org\/assets\/theme\/images\/ondc_registered_logo.svg?v=399788fda7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "veg_nonveg",
+                                    "list": [
+                                        {
+                                            "code": "veg",
+                                            "value": "yes"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "@ondc\/org\/item_id": "779f26a1-aca4-471a-b4e6-e8647c03757f",
+                        "title": "Delivery charges",
+                        "@ondc\/org\/title_type": "delivery",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40.00"
+                        }
+                    },
+                    {
+                        "@ondc\/org\/item_id": "779f26a1-aca4-471a-b4e6-e8647c03757f",
+                        "title": "Convenience Fee",
+                        "@ondc\/org\/title_type": "misc",
+                        "price": {
+                            "currency": "INR",
+                            "value": "40.00"
+                        }
+                    }
+                ],
+                "ttl": "PT6H"
+            },
+            "cancellation": {
+                "cancelled_by": "pramaan.ondc.org\/beta\/preprod\/mock\/seller",
+                "reason": {
+                    "id": "016"
+                }
+            },
+            "updated_at": "2025-07-28T10:33:04.198Z"
+        }
+    }
+}

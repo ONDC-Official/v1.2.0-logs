@@ -1,0 +1,224 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "action": "confirm",
+    "core_version": "1.2.0",
+    "bap_id": "preprod.sreshta.shop",
+    "bap_uri": "https://preprod.sreshta.shop",
+    "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+    "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+    "transaction_id": "22d756ef-938c-41cc-a355-fc56ed826b9a",
+    "message_id": "9d715b89-1ba1-4abf-a8c1-b44f15699340",
+    "city": "std:080",
+    "country": "IND",
+    "timestamp": "2025-07-29T11:20:11.365Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "id": "935235",
+      "state": "Created",
+      "provider": {
+        "id": "pramaan_provider_1",
+        "locations": [
+          {
+            "id": "SSL1"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "id_13owvn_0_0",
+          "fulfillment_id": "F1",
+          "quantity": {
+            "count": 1
+          },
+          "parent_item_id": "V11",
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "offers": [
+        {
+          "id": "BUY2GET3"
+        }
+      ],
+      "billing": {
+        "name": "ONDC buyer",
+        "address": {
+          "name": "sam",
+          "building": "Signal, 673/a, Varthur Rd, near Kundanahalii, BEML Layout",
+          "locality": "Whitefield",
+          "city": "Bengaluru",
+          "state": "Karnataka",
+          "country": "IND",
+          "area_code": "560066"
+        },
+        "email": "testemail@gmail.com",
+        "phone": "9886098860",
+        "created_at": "2025-05-21T09:45:11.365Z",
+        "updated_at": "2025-05-21T09:45:11.365Z"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "@ondc/org/TAT": "PT60M",
+          "tracking": false,
+          "end": {
+            "person": {
+              "name": "sam"
+            },
+            "contact": {
+              "email": "testemail@gmail.com",
+              "phone": "9886098860"
+            },
+            "location": {
+              "gps": "12.453544,77.928379",
+              "address": {
+                "name": "sam",
+                "building": "Signal, 673/a, Varthur Rd, near Kundanahalii, BEML Layout",
+                "locality": "Whitefield",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560066"
+              }
+            }
+          },
+          "vehicle": {
+            "registration": "3LVJ945"
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "450.65"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "id_13owvn_0_0",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Plain Atta",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "450.65"
+            },
+            "item": {
+              "parent_item_id": "V11",
+              "price": {
+                "currency": "INR",
+                "value": "450.65"
+              },
+              "tags": [
+                {
+                  "code": "type",
+                  "list": [
+                    {
+                      "code": "type",
+                      "value": "item"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "ttl": "PT1H"
+      },
+      "payment": {
+        "uri": "https://ondc.transaction.com/payment",
+        "tl_method": "http/get",
+        "params": {
+          "currency": "INR",
+          "transaction_id": "3937",
+          "amount": "450.65"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "3434634634634",
+            "settlement_ifsc_code": "SBI03486346",
+            "beneficiary_name": "sam",
+            "bank_name": "SBI",
+            "branch_name": "whitefield,karnataka"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "7.50"
+            },
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_sellerNP"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/NP-Static-Terms/buyerNP_BNP/1.0/tc.pdf"
+            },
+            {
+              "code": "tax_number",
+              "value": "37AAHCT6589K1ZG"
+            }
+          ]
+        }
+      ],
+      "created_at": "2025-05-21T09:45:11.365Z",
+      "updated_at": "2025-05-21T09:45:11.365Z"
+    }
+  }
+}
