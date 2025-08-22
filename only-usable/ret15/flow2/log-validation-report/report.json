@@ -1,0 +1,3236 @@
+{
+    "hasSuccess": true,
+    "data": {
+        "success": false,
+        "response": {
+            "message": "Logs were not verified successfully",
+            "report": {
+                "on_search_full_catalog_refresh": {
+                    "bpp/providers[0]/items[0]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[0]/items[0]/descriptor/code",
+                    "bpp/providers[0]/items[1]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[0]/items[1]/descriptor/code",
+                    "bpp/providers[0]/items[2]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[0]/items[2]/descriptor/code",
+                    "bpp/providers[1]/items[0]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[1]/items[0]/descriptor/code",
+                    "bpp/providers[1]/items[1]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[1]/items[1]/descriptor/code",
+                    "bpp/providers[1]/items[2]/descriptor/code": "code should have 3:GTIN as a value in /message/catalog/bpp/providers[1]/items[2]/descriptor/code"
+                },
+                "on_init": {
+                    "settlementBasis": "Invalid settlement basis in /on_init. Expected one of: delivery, shipment",
+                    "settlementWindow": "Invalid settlement window in /on_init. Expected format: PTd+[MH] (e.g., PT1H, PT30M)."
+                },
+                "on_status_pending": {
+                    "errmsg": "When the onConfirm Order State is 'Accepted', the on_status_pending is not required!"
+                },
+                "on_status_picked": {
+                    "schemaErr0": "/context must have required property 'ttl'"
+                },
+                "on_status_out_for_delivery": {
+                    "schemaErr0": "/context must have required property 'ttl'"
+                }
+            },
+            "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+            "bap_id": "backend-preprod.onlyusable.com",
+            "domain": "ONDC:RET15",
+            "payload": {
+                "search_full_catalog_refresh": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "country": "IND",
+                        "city": "std:011",
+                        "action": "search",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "515d7380-ee00-4d51-9344-762f03ecf805",
+                        "timestamp": "2025-06-11T18:35:50.281Z",
+                        "ttl": "PT30S",
+                        "_id": "6849cc86095867ba157c2285"
+                    },
+                    "message": {
+                        "intent": {
+                            "fulfillment": {
+                                "type": "Delivery"
+                            },
+                            "payment": {
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3"
+                            },
+                            "tags": [
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "static_terms_new",
+                                            "value": ""
+                                        },
+                                        {
+                                            "code": "effective_date",
+                                            "value": "2024-12-01T00:00:00.000Z"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "on_search_full_catalog_refresh": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_search",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "515d7380-ee00-4d51-9344-762f03ecf805",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:35:51.590Z",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller"
+                    },
+                    "message": {
+                        "catalog": {
+                            "bpp/fulfillments": [
+                                {
+                                    "id": "F0",
+                                    "type": "Delivery"
+                                },
+                                {
+                                    "id": "F1",
+                                    "type": "Self-Pickup"
+                                }
+                            ],
+                            "bpp/descriptor": {
+                                "name": "ONDC Pramaan Seller Services",
+                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                "short_desc": "ONDC Pramaan Seller",
+                                "long_desc": "ONDC Pramaan Seller - One Stop Shop",
+                                "images": [
+                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                ],
+                                "tags": [
+                                    {
+                                        "code": "bpp_terms",
+                                        "list": [
+                                            {
+                                                "code": "np_type",
+                                                "value": "MSN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "bpp/providers": [
+                                {
+                                    "id": "pramaan_provider_1",
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-10-11T00:00:00.000Z"
+                                    },
+                                    "fulfillments": [
+                                        {
+                                            "id": "F0",
+                                            "type": "Delivery",
+                                            "contact": {
+                                                "phone": "9876543210",
+                                                "email": "ss_seller_1@ss.com"
+                                            }
+                                        },
+                                        {
+                                            "id": "F1",
+                                            "type": "Self-Pickup",
+                                            "contact": {
+                                                "phone": "9876543210",
+                                                "email": "ss_seller_1@ss.com"
+                                            }
+                                        }
+                                    ],
+                                    "descriptor": {
+                                        "name": "Pramaan Store 1",
+                                        "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                        "short_desc": "Pramaan Store 1",
+                                        "long_desc": "Pramaan Store 1",
+                                        "images": [
+                                            "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                        ]
+                                    },
+                                    "ttl": "P1D",
+                                    "categories": [
+                                        {
+                                            "id": "V11",
+                                            "descriptor": {
+                                                "name": "Electric Sewing Machine Variant Group"
+                                            },
+                                            "tags": [
+                                                {
+                                                    "code": "type",
+                                                    "list": [
+                                                        {
+                                                            "code": "type",
+                                                            "value": "variant_group"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attr",
+                                                    "list": [
+                                                        {
+                                                            "code": "name",
+                                                            "value": "item.tags.attribute.height"
+                                                        },
+                                                        {
+                                                            "code": "seq",
+                                                            "value": "1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "locations": [
+                                        {
+                                            "id": "SSL1",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2024-10-11T00:00:00.000Z",
+                                                "days": "1,2,3,4,5,6,7",
+                                                "schedule": {
+                                                    "holidays": []
+                                                },
+                                                "range": {
+                                                    "start": "1000",
+                                                    "end": "2100"
+                                                }
+                                            },
+                                            "gps": "28.527300,77.182100",
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "street": "633 Stagtrail Rd",
+                                                "city": "New Delhi",
+                                                "state": "New Delhi",
+                                                "area_code": "110030"
+                                            },
+                                            "circle": {
+                                                "gps": "28.527300,77.182100",
+                                                "radius": {
+                                                    "unit": "km",
+                                                    "value": "500"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "tags": [
+                                        {
+                                            "code": "serviceability",
+                                            "list": [
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL1"
+                                                },
+                                                {
+                                                    "code": "type",
+                                                    "value": "12"
+                                                },
+                                                {
+                                                    "code": "val",
+                                                    "value": "IND"
+                                                },
+                                                {
+                                                    "code": "unit",
+                                                    "value": "country"
+                                                },
+                                                {
+                                                    "code": "category",
+                                                    "value": "Electric Sewing Machine"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "serviceability",
+                                            "list": [
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL1"
+                                                },
+                                                {
+                                                    "code": "type",
+                                                    "value": "12"
+                                                },
+                                                {
+                                                    "code": "val",
+                                                    "value": "IND"
+                                                },
+                                                {
+                                                    "code": "unit",
+                                                    "value": "country"
+                                                },
+                                                {
+                                                    "code": "category",
+                                                    "value": "Electric Iron"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "timing",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "All"
+                                                },
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL1"
+                                                },
+                                                {
+                                                    "code": "day_from",
+                                                    "value": "1"
+                                                },
+                                                {
+                                                    "code": "day_to",
+                                                    "value": "7"
+                                                },
+                                                {
+                                                    "code": "time_from",
+                                                    "value": "1000"
+                                                },
+                                                {
+                                                    "code": "time_to",
+                                                    "value": "2100"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "items": [
+                                        {
+                                            "id": "id_18yq4w_0_0",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "parent_item_id": "V11",
+                                            "descriptor": {
+                                                "name": "Samsung StitchMaster",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung StitchMaster",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8903136260961"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "3349.00",
+                                                "maximum_value": "3349.00"
+                                            },
+                                            "category_id": "Electric Sewing Machine",
+                                            "location_id": "SSL1",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "stitchmaster 500"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "99"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "1000"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "extra needle"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": true,
+                                            "@ondc/org/cancellable": true,
+                                            "@ondc/org/return_window": "P1D",
+                                            "@ondc/org/seller_pickup_return": true,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": true,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Sewing Machine",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        },
+                                        {
+                                            "id": "id_55vxa_1_0",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "parent_item_id": "V11",
+                                            "descriptor": {
+                                                "name": "Samsung StitchMaster",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung StitchMaster",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8904018276841"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "5200.00",
+                                                "maximum_value": "5200.00"
+                                            },
+                                            "category_id": "Electric Sewing Machine",
+                                            "location_id": "SSL1",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "stitchmaster 500"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "200"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "99"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "1000"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "extra needle"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": true,
+                                            "@ondc/org/cancellable": true,
+                                            "@ondc/org/return_window": "P1D",
+                                            "@ondc/org/seller_pickup_return": true,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": true,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Sewing Machine",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        },
+                                        {
+                                            "id": "id_12xdek_2_0",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "descriptor": {
+                                                "name": "Samsung Iron Glide",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung Iron Glide",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8904891171622"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0",
+                                                "maximum_value": "2499.0"
+                                            },
+                                            "category_id": "Electric Iron",
+                                            "location_id": "SSL1",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "glide iron 3000"
+                                                        },
+                                                        {
+                                                            "code": "colour",
+                                                            "value": "#7CB0A1"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "20"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "250"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "water spray bottle"
+                                                        },
+                                                        {
+                                                            "code": "colour_name",
+                                                            "value": "acapulco"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": false,
+                                            "@ondc/org/cancellable": false,
+                                            "@ondc/org/return_window": "P7D",
+                                            "@ondc/org/seller_pickup_return": false,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": false,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Iron",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "pramaan_provider_2",
+                                    "time": {
+                                        "label": "enable",
+                                        "timestamp": "2024-10-11T00:00:00.000Z"
+                                    },
+                                    "fulfillments": [
+                                        {
+                                            "id": "F0",
+                                            "type": "Delivery",
+                                            "contact": {
+                                                "phone": "9753186420",
+                                                "email": "ss_seller_2@ss.com"
+                                            }
+                                        },
+                                        {
+                                            "id": "F1",
+                                            "type": "Self-Pickup",
+                                            "contact": {
+                                                "phone": "9753186420",
+                                                "email": "ss_seller_2@ss.com"
+                                            }
+                                        }
+                                    ],
+                                    "descriptor": {
+                                        "name": "Pramaan Store 2",
+                                        "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                        "short_desc": "Pramaan Store 2",
+                                        "long_desc": "Pramaan Store 2",
+                                        "images": [
+                                            "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                        ]
+                                    },
+                                    "ttl": "P2D",
+                                    "categories": [
+                                        {
+                                            "id": "V12",
+                                            "descriptor": {
+                                                "name": "Electric Sewing Machine Variant Group"
+                                            },
+                                            "tags": [
+                                                {
+                                                    "code": "type",
+                                                    "list": [
+                                                        {
+                                                            "code": "type",
+                                                            "value": "variant_group"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attr",
+                                                    "list": [
+                                                        {
+                                                            "code": "name",
+                                                            "value": "item.tags.attribute.height"
+                                                        },
+                                                        {
+                                                            "code": "seq",
+                                                            "value": "1"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "locations": [
+                                        {
+                                            "id": "SSL2",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2024-10-11T00:00:00.000Z",
+                                                "days": "1,2,3,4,5,6,7",
+                                                "schedule": {
+                                                    "holidays": []
+                                                },
+                                                "range": {
+                                                    "start": "1000",
+                                                    "end": "2100"
+                                                }
+                                            },
+                                            "gps": "28.527300,77.182100",
+                                            "address": {
+                                                "locality": "221B",
+                                                "street": "Baker Steet",
+                                                "city": "New Delhi",
+                                                "state": "New Delhi",
+                                                "area_code": "110030"
+                                            },
+                                            "circle": {
+                                                "gps": "28.527300,77.182100",
+                                                "radius": {
+                                                    "unit": "km",
+                                                    "value": "500"
+                                                }
+                                            }
+                                        }
+                                    ],
+                                    "tags": [
+                                        {
+                                            "code": "serviceability",
+                                            "list": [
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL2"
+                                                },
+                                                {
+                                                    "code": "type",
+                                                    "value": "12"
+                                                },
+                                                {
+                                                    "code": "val",
+                                                    "value": "IND"
+                                                },
+                                                {
+                                                    "code": "unit",
+                                                    "value": "country"
+                                                },
+                                                {
+                                                    "code": "category",
+                                                    "value": "Electric Sewing Machine"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "serviceability",
+                                            "list": [
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL2"
+                                                },
+                                                {
+                                                    "code": "type",
+                                                    "value": "12"
+                                                },
+                                                {
+                                                    "code": "val",
+                                                    "value": "IND"
+                                                },
+                                                {
+                                                    "code": "unit",
+                                                    "value": "country"
+                                                },
+                                                {
+                                                    "code": "category",
+                                                    "value": "Electric Iron"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "timing",
+                                            "list": [
+                                                {
+                                                    "code": "type",
+                                                    "value": "All"
+                                                },
+                                                {
+                                                    "code": "location",
+                                                    "value": "SSL2"
+                                                },
+                                                {
+                                                    "code": "day_from",
+                                                    "value": "1"
+                                                },
+                                                {
+                                                    "code": "day_to",
+                                                    "value": "7"
+                                                },
+                                                {
+                                                    "code": "time_from",
+                                                    "value": "1000"
+                                                },
+                                                {
+                                                    "code": "time_to",
+                                                    "value": "2100"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "items": [
+                                        {
+                                            "id": "id_18yq4w_0_1",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "parent_item_id": "V12",
+                                            "descriptor": {
+                                                "name": "Samsung StitchMaster",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung StitchMaster",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8904243780205"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "3349.00",
+                                                "maximum_value": "3349.00"
+                                            },
+                                            "category_id": "Electric Sewing Machine",
+                                            "location_id": "SSL2",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "stitchmaster 500"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "99"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "1000"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "extra needle"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": true,
+                                            "@ondc/org/cancellable": true,
+                                            "@ondc/org/return_window": "P1D",
+                                            "@ondc/org/seller_pickup_return": true,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": true,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Sewing Machine",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        },
+                                        {
+                                            "id": "id_55vxa_1_1",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "parent_item_id": "V12",
+                                            "descriptor": {
+                                                "name": "Samsung StitchMaster",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung StitchMaster",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8904025686183"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "5200.00",
+                                                "maximum_value": "5200.00"
+                                            },
+                                            "category_id": "Electric Sewing Machine",
+                                            "location_id": "SSL2",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "stitchmaster 500"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "200"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "99"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "1000"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "100"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "extra needle"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": true,
+                                            "@ondc/org/cancellable": true,
+                                            "@ondc/org/return_window": "P1D",
+                                            "@ondc/org/seller_pickup_return": true,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": true,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Sewing Machine",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        },
+                                        {
+                                            "id": "id_12xdek_2_1",
+                                            "time": {
+                                                "label": "enable",
+                                                "timestamp": "2025-04-09T07:30:00.000Z"
+                                            },
+                                            "descriptor": {
+                                                "name": "Samsung Iron Glide",
+                                                "symbol": "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7",
+                                                "short_desc": "Samsung Iron Glide",
+                                                "long_desc": "Description of the product",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ],
+                                                "code": "1:8904907691069"
+                                            },
+                                            "quantity": {
+                                                "unitized": {
+                                                    "measure": {
+                                                        "unit": "unit",
+                                                        "value": "1"
+                                                    }
+                                                },
+                                                "available": {
+                                                    "count": "99"
+                                                },
+                                                "maximum": {
+                                                    "count": "99"
+                                                }
+                                            },
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0",
+                                                "maximum_value": "2499.0"
+                                            },
+                                            "category_id": "Electric Iron",
+                                            "location_id": "SSL2",
+                                            "fulfillment_id": "F0",
+                                            "tags": [
+                                                {
+                                                    "code": "origin",
+                                                    "list": [
+                                                        {
+                                                            "code": "country",
+                                                            "value": "IND"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "attribute",
+                                                    "list": [
+                                                        {
+                                                            "code": "brand",
+                                                            "value": "Samsung"
+                                                        },
+                                                        {
+                                                            "code": "model",
+                                                            "value": "glide iron 3000"
+                                                        },
+                                                        {
+                                                            "code": "colour",
+                                                            "value": "#7CB0A1"
+                                                        },
+                                                        {
+                                                            "code": "height",
+                                                            "value": "5"
+                                                        },
+                                                        {
+                                                            "code": "length",
+                                                            "value": "20"
+                                                        },
+                                                        {
+                                                            "code": "weight",
+                                                            "value": "250"
+                                                        },
+                                                        {
+                                                            "code": "breadth",
+                                                            "value": "2"
+                                                        },
+                                                        {
+                                                            "code": "includes",
+                                                            "value": "water spray bottle"
+                                                        },
+                                                        {
+                                                            "code": "colour_name",
+                                                            "value": "acapulco"
+                                                        },
+                                                        {
+                                                            "code": "special_feature",
+                                                            "value": "frequency"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "@ondc/org/returnable": false,
+                                            "@ondc/org/cancellable": false,
+                                            "@ondc/org/return_window": "P7D",
+                                            "@ondc/org/seller_pickup_return": false,
+                                            "@ondc/org/time_to_ship": "PT15M",
+                                            "@ondc/org/available_on_cod": false,
+                                            "@ondc/org/contact_details_consumer_care": "John,john@abc.com,12004500123",
+                                            "@ondc/org/statutory_reqs_packaged_commodities": {
+                                                "manufacturer_or_packer_name": "ONDC Seller",
+                                                "manufacturer_or_packer_address": "August Kranti Marg, New Delhi - 110016",
+                                                "common_or_generic_name_of_commodity": "Electric Iron",
+                                                "month_year_of_manufacture_packing_import": "2024-08-06"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "select": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "select",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "b380e63c-f020-4c88-9b95-ab0e72e25cb5",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:26.039Z",
+                        "ttl": "PT30S"
+                    },
+                    "message": {
+                        "order": {
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "location_id": "SSL1",
+                                    "quantity": {
+                                        "count": 5
+                                    }
+                                }
+                            ],
+                            "fulfillments": [
+                                {
+                                    "end": {
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "area_code": "302012"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "payment": {
+                                "type": "ON-ORDER"
+                            }
+                        }
+                    }
+                },
+                "on_select": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_select",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "b380e63c-f020-4c88-9b95-ab0e72e25cb5",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:26.582Z"
+                    },
+                    "message": {
+                        "order": {
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "type": "Delivery",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "tracking": true,
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "state": {
+                                        "descriptor": {
+                                            "code": "Serviceable"
+                                        }
+                                    }
+                                }
+                            ],
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "location_id": "SSL1",
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "init": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "init",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "b018d32a-7a41-4265-92c6-8428d071f8f0",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:28.463Z",
+                        "ttl": "PT30S"
+                    },
+                    "message": {
+                        "order": {
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "type": "Delivery",
+                                    "end": {
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "on_init": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_init",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "b018d32a-7a41-4265-92c6-8428d071f8f0",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:28.836Z"
+                    },
+                    "message": {
+                        "order": {
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "location_id": "SSL1",
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "type": "Delivery",
+                                    "end": {
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212"
+                                        }
+                                    },
+                                    "tracking": true
+                                }
+                            ],
+                            "payment": {
+                                "type": "ON-ORDER",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ],
+                                "collected_by": "BAP"
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "confirm": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "confirm",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "6c41fdbd-4412-44d5-9c27-4470507594e4",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:31.043Z",
+                        "ttl": "PT30S"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "Created",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "@ondc/org/TAT": "PT24H",
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:37:31.043Z"
+                        }
+                    }
+                },
+                "on_confirm": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_confirm",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "6c41fdbd-4412-44d5-9c27-4470507594e4",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:37:31.437Z"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "Accepted",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:37:31.437Z"
+                        }
+                    }
+                },
+                "on_status_pending": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_status",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "63116589-09c3-414a-849b-21e72f32a98e",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:39:54.112Z"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "Accepted",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "state": {
+                                        "descriptor": {
+                                            "code": "Pending"
+                                        }
+                                    },
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:37:31.437Z"
+                        }
+                    }
+                },
+                "on_status_packed": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_status",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "5f3529ba-a847-464d-b9dd-8575b74ff3f8",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:41:16.912Z",
+                        "ttl": "PT30S"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "In-progress",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:41:16.912Z"
+                        }
+                    }
+                },
+                "on_status_picked": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_status",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "54175f87-5261-4ef2-98bd-ed60a68e0bb2",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:41:56.398Z"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "In-progress",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:41:50.992Z",
+                            "documents": [
+                                {
+                                    "label": "Invoice",
+                                    "url": "https://ondc.sequelstring.com/seller/document/invoice.pdf"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "on_status_out_for_delivery": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_status",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "5e3c7670-7af2-4830-b0ec-cb29ec4976ce",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:42:04.209Z"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "In-progress",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "created_at": "2025-06-11T18:37:31.043Z",
+                            "updated_at": "2025-06-11T18:42:00.168Z",
+                            "documents": [
+                                {
+                                    "label": "Invoice",
+                                    "url": "https://ondc.sequelstring.com/seller/document/invoice.pdf"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "on_status_delivered": {
+                    "context": {
+                        "domain": "ONDC:RET15",
+                        "action": "on_status",
+                        "core_version": "1.2.0",
+                        "bap_id": "backend-preprod.onlyusable.com",
+                        "bap_uri": "https://backend-preprod.onlyusable.com/api/v1/ondc",
+                        "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+                        "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+                        "transaction_id": "d8fd8644-2461-411a-aaac-fb8423de33ff",
+                        "message_id": "2245023b-92bc-41ff-af95-7f74dc133a74",
+                        "city": "std:011",
+                        "country": "IND",
+                        "timestamp": "2025-06-11T18:42:07.697Z",
+                        "ttl": "PT30S"
+                    },
+                    "message": {
+                        "order": {
+                            "id": "e21deffd5e8240dc93e4e6126c149797",
+                            "state": "Completed",
+                            "provider": {
+                                "id": "pramaan_provider_1",
+                                "locations": [
+                                    {
+                                        "id": "SSL1"
+                                    }
+                                ]
+                            },
+                            "items": [
+                                {
+                                    "id": "id_12xdek_2_0",
+                                    "quantity": {
+                                        "count": 5
+                                    },
+                                    "fulfillment_id": "627b6983-7974-43b6-b41d-29b7b077a245"
+                                }
+                            ],
+                            "billing": {
+                                "name": "Banda Shah",
+                                "phone": "1232123212",
+                                "email": "test@gmail.com",
+                                "address": {
+                                    "name": "Raj-12",
+                                    "building": "Mahal vila",
+                                    "locality": "rajya",
+                                    "city": "jaipur",
+                                    "state": "rajasthan",
+                                    "area_code": "302012",
+                                    "country": "IND"
+                                },
+                                "created_at": "2025-06-11T18:37:28.463Z",
+                                "updated_at": "2025-06-11T18:37:28.463Z"
+                            },
+                            "fulfillments": [
+                                {
+                                    "id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                    "@ondc/org/provider_name": "Pramaan Store 1",
+                                    "@ondc/org/category": "Standard Delivery",
+                                    "@ondc/org/TAT": "PT24H",
+                                    "type": "Delivery",
+                                    "tracking": true,
+                                    "start": {
+                                        "location": {
+                                            "id": "SSL1",
+                                            "gps": "28.527300,77.182100",
+                                            "descriptor": {
+                                                "name": "Pramaan Store 1",
+                                                "images": [
+                                                    "https://ondc.org/assets/theme/images/ondc_registered_logo.svg?v=399788fda7"
+                                                ]
+                                            },
+                                            "address": {
+                                                "locality": "N. Caldwell",
+                                                "city": "New Delhi",
+                                                "area_code": "110030",
+                                                "state": "New Delhi"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-11T18:37:31.433Z",
+                                                "end": "2025-06-11T23:00:00.000Z"
+                                            }
+                                        },
+                                        "contact": {
+                                            "phone": "9876543210",
+                                            "email": "ss_seller_1@ss.com"
+                                        }
+                                    },
+                                    "end": {
+                                        "person": {
+                                            "name": "Banda Shah"
+                                        },
+                                        "contact": {
+                                            "phone": "1232123212",
+                                            "email": "test@gmail.com"
+                                        },
+                                        "location": {
+                                            "gps": "26.9663718,75.7253985",
+                                            "address": {
+                                                "name": "Raj-12",
+                                                "building": "Mahal vila",
+                                                "locality": "rajya",
+                                                "city": "jaipur",
+                                                "state": "rajasthan",
+                                                "area_code": "302012",
+                                                "country": "IND"
+                                            }
+                                        },
+                                        "time": {
+                                            "range": {
+                                                "start": "2025-06-12T09:30:00.000Z",
+                                                "end": "2025-06-12T19:00:00.000Z"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "quote": {
+                                "price": {
+                                    "currency": "INR",
+                                    "value": "11855.00"
+                                },
+                                "breakup": [
+                                    {
+                                        "@ondc/org/item_id": "id_12xdek_2_0",
+                                        "title": "Samsung Iron Glide",
+                                        "@ondc/org/item_quantity": {
+                                            "count": 5
+                                        },
+                                        "@ondc/org/title_type": "item",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "11775.00"
+                                        },
+                                        "item": {
+                                            "price": {
+                                                "currency": "INR",
+                                                "value": "2355.0"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Delivery charges",
+                                        "@ondc/org/title_type": "delivery",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    },
+                                    {
+                                        "@ondc/org/item_id": "627b6983-7974-43b6-b41d-29b7b077a245",
+                                        "title": "Convenience Fee",
+                                        "@ondc/org/title_type": "misc",
+                                        "price": {
+                                            "currency": "INR",
+                                            "value": "40.00"
+                                        }
+                                    }
+                                ],
+                                "ttl": "PT6H"
+                            },
+                            "payment": {
+                                "params": {
+                                    "currency": "INR",
+                                    "transaction_id": "some-random",
+                                    "amount": "11855.00"
+                                },
+                                "status": "PAID",
+                                "type": "ON-ORDER",
+                                "collected_by": "BAP",
+                                "@ondc/org/buyer_app_finder_fee_type": "percent",
+                                "@ondc/org/buyer_app_finder_fee_amount": "3",
+                                "@ondc/org/settlement_basis": "delivery",
+                                "@ondc/org/withholding_amount": "10.00",
+                                "@ondc/org/settlement_details": [
+                                    {
+                                        "settlement_counterparty": "seller-app",
+                                        "upi_address": "",
+                                        "beneficiary_name": "SEQUELSTRING AI",
+                                        "settlement_type": "neft",
+                                        "settlement_bank_account_no": "9876543210012",
+                                        "settlement_ifsc_code": "AXIS123456",
+                                        "settlement_phase": "sale-amount",
+                                        "settlement_status": "NOT-PAID",
+                                        "bank_name": "AXIS BANK LTD ",
+                                        "branch_name": "NAVI MUMBAI"
+                                    }
+                                ]
+                            },
+                            "tags": [
+                                {
+                                    "code": "bpp_terms",
+                                    "list": [
+                                        {
+                                            "code": "np_type",
+                                            "value": "MSN"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "00CBADE2145H1Z5"
+                                        },
+                                        {
+                                            "code": "max_liability",
+                                            "value": "2"
+                                        },
+                                        {
+                                            "code": "max_liability_cap",
+                                            "value": "10000.00"
+                                        },
+                                        {
+                                            "code": "mandatory_arbitration",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "code": "court_jurisdiction",
+                                            "value": "New Delhi"
+                                        },
+                                        {
+                                            "code": "delay_interest",
+                                            "value": "7.50"
+                                        },
+                                        {
+                                            "code": "provider_tax_number",
+                                            "value": "ABCDE1234F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "code": "bap_terms",
+                                    "list": [
+                                        {
+                                            "code": "accept_bpp_terms",
+                                            "value": "Y"
+                                        },
+                                        {
+                                            "code": "tax_number",
+                                            "value": "08ABCDE1234D6Z2"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

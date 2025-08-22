@@ -1,0 +1,372 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "std:080,",
+    "core_version": "1.2.0",
+    "action": "issue",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_uri": "https://preprod-ondc.airpay.ninja/bapl/",
+    "transaction_id": "bab28a40-7c1d-4930-a789-5018e3414ed6",
+    "message_id": "78fb78cc4cacfc76531201226b9072e1a",
+    "timestamp": "2025-04-03T11:18:34.000Z",
+    "bpp_id": "preprod-ondc.airpay.ninja",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "7ed3b150-95c6-11ee-9475-039cd8109114",
+      "status": "PROCESSING",
+      "level": "ISSUE",
+      "created_at": "2025-04-03T10:52:07.000Z",
+      "updated_at": "2025-04-03T10:52:10.000Z",
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "type": "CONSUMER",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "phone": "9879879870",
+              "email": "sam@yahoo.com"
+            }
+          }
+        },
+        {
+          "id": "NP1",
+          "type": "INTERFACING_NP",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394039",
+              "email": "buyerapp@interface.com"
+            },
+            "person": {
+              "name": "John Doe"
+            }
+          }
+        },
+        {
+          "id": "NP2",
+          "type": "COUNTERPARTY_NP",
+          "info": {
+            "org": {
+              "name": "preprod-ondc.airpay.ninja::ONDC:RET10"
+            },
+            "contact": {
+              "phone": "9450394140",
+              "email": "respondentapp@respond.com"
+            },
+            "person": {
+              "name": "Jane Doe"
+            }
+          }
+        }
+      ],
+      "source_id": "CUST1",
+      "complainant_id": "NP1",
+      "descriptor": {
+        "code": "ITM004",
+        "short_desc": "Issue with product quality",
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "additional_desc": {
+          "url": "https://buyerapp.com/additional-details/desc.txt",
+          "content_type": "text/plain"
+        },
+        "images": [
+          {
+            "url": "http://buyerapp.com/addtional-details/img1.png",
+            "size_type": "xs"
+          },
+          {
+            "url": "http://buyerapp.com/addtional-details/img2.png",
+            "size_type": "xs"
+          }
+        ]
+      },
+      "last_action_id": "A11",
+      "actions": [
+        {
+          "id": "A1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A2",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint in progress"
+          },
+          "updated_at": "2025-04-02T10:50:23.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A3_8",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO001",
+            "short_desc": "Please provide product images"
+          },
+          "updated_at": "2025-04-11T12:36:21.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A4_9",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide invoice"
+          },
+          "updated_at": "2025-04-11T12:36:44.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A5",
+          "ref_id": "A3_8",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Info provided from buyer app",
+            "images": [
+              {
+                "size_type": "xs",
+                "url": "http://buyerapp.com/addtional-details/img1.png"
+              },
+              {
+                "size_type": "xs",
+                "url": "http://buyerapp.com/addtional-details/img2.png"
+              }
+            ]
+          },
+          "updated_at": "2025-04-02T11:00:42.000Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A6",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint information"
+          },
+          "updated_at": "2025-04-14T10:40:44.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A7",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INFO002",
+            "short_desc": "Please provide invoice"
+          },
+          "updated_at": "2025-04-14T10:43:16.000Z",
+          "action_by": "NP2",
+          "ref_id": "A4_9",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A8",
+          "ref_id": "A7",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "Provided invoice",
+            "media": [
+              {
+                "url": "https://buyerapp.com/resources/invoiceord1.pdf"
+              }
+            ]
+          },
+          "updated_at": "2023-01-15T10:00:00.469Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A9",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Processing the complaint information"
+          },
+          "updated_at": "2025-04-14T10:59:50.000Z",
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A10",
+          "descriptor": {
+            "code": "RESOLUTION_PROPOSED"
+          },
+          "ref_type": "RESOLUTIONS",
+          "updated_at": "2025-04-03T10:55:02.000Z",
+          "action_by": "NP2",
+          "ref_id": "R_PARENT",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A11",
+          "ref_id": "R2",
+          "ref_type": "RESOLUTIONS",
+          "descriptor": {
+            "code": "RESOLUTION_ACCEPTED"
+          },
+          "updated_at": "2025-04-03T10:55:02.000Z",
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        }
+      ],
+      "respondent_ids": [
+        "NP2"
+      ],
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS. PLEASE SELECT ONE"
+          },
+          "updated_at": "2025-04-03T10:55:02.000Z",
+          "proposed_by": "NP2"
+        },
+        {
+          "id": "R2",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": "Providing refund for the item"
+          },
+          "updated_at": "2025-04-03T10:56:10.000Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "200"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "descriptor": {
+            "code": "REPLACEMENT",
+            "short_desc": "Providing replacement of the item"
+          },
+          "updated_at": "2025-04-03T11:18:37.000Z",
+          "proposed_by": "NP2",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

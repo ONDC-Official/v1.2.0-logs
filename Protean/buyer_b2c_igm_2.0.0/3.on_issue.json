@@ -1,0 +1,164 @@
+{
+    "context": {
+        "bap_id": "saleor-preprod.bharatvyapaar.com",
+        "bap_uri": "https://saleor-preprod-buyer.bharatvyapaar.com/protocol/m/v1",
+        "bpp_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+        "bpp_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+        "country": "IND",
+        "city": "std:080,",
+        "transaction_id": "T9000000000",
+        "message_id": "M9000000001",
+        "timestamp": "2025-05-14T05:37:46.823Z",
+        "domain": "ONDC:RET10",
+        "core_version": "1.2.0",
+        "ttl": "PT10M",
+        "action": "on_issue"
+    },
+    "message": {
+        "update_target": {
+            "path": "issue.actions",
+            "actions": "APPENDED"
+        },
+        "issue": {
+            "id": "ISSUE-1",
+            "level": "ISSUE",
+            "status": "PROCESSING",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "O1",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "ref_id": "P1",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "F1",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "I1",
+                    "ref_type": "ITEM",
+                    "tags": [
+                        {
+                            "descriptor": {
+                                "code": "message.order.items"
+                            },
+                            "list": [
+                                {
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    },
+                                    "value": "2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "type": "CONSUMER",
+                    "info": {
+                        "org": {
+                            "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "phone": "9879879870",
+                            "email": "sam@yahoo.com"
+                        }
+                    }
+                },
+                {
+                    "id": "NP1",
+                    "type": "INTERFACING_NP",
+                    "info": {
+                        "org": {
+                            "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394039",
+                            "email": "buyerapp@interface.com"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        }
+                    }
+                },
+                {
+                    "id": "NP2",
+                    "type": "COUNTERPARTY_NP",
+                    "info": {
+                        "org": {
+                            "name": "sellerapp.com::ONDC:RET10"
+                        },
+                        "contact": {
+                            "phone": "9450394140",
+                            "email": "respondentapp@respond.com"
+                        },
+                        "person": {
+                            "name": "Jane Doe"
+                        }
+                    }
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "NP2"
+            ],
+            "last_action_id": "A3",
+            "actions": [
+                {
+                    "id": "A1",
+                    "descriptor": {
+                        "code": "OPEN",
+                        "short_desc": "Complaint created"
+                    },
+                    "updated_at": "2025-05-14T05:34:52.934Z",
+                    "action_by": "NP1",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A2",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "issue request is in process"
+                    },
+                    "updated_at": "2025-05-14T05:36:29.578Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "A3",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "short_desc": "item details required",
+                        "name": "INFO0001"
+                    },
+                    "updated_at": "2025-05-14T05:37:46.823Z",
+                    "action_by": "NP2",
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                }
+            ],
+            "created_at": "2025-05-14T05:34:52.934Z",
+            "updated_at": "2025-05-14T05:34:52.934Z"
+        }
+    }
+}

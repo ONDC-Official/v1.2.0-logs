@@ -1,0 +1,214 @@
+{
+    "context": {
+        "ttl": "PT30S",
+        "action": "on_issue",
+        "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-staging",
+        "bpp_id": "ondc-staging.unisouk.com",
+        "domain": "ONDC:RET12",
+        "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-staging/ondc",
+        "bpp_uri": "https://peaceful-valued-sunbird.ngrok-free.app/v2/igm",
+        "location": {
+            "city": {
+                "code": "*"
+            },
+            "country": {
+                "code": "IND"
+            }
+        },
+        "timestamp": "2025-04-25T10:55:26.727Z",
+        "message_id": "01966c91-70b9-7970-9ce6-988c13d282ec9",
+        "core_version": "2.0.0",
+        "transaction_id": "01966c91-4df5-78f7-b737-2234d6f24725"
+    },
+    "message": {
+        "updated_target": [
+            {
+                "path": "issue.actions",
+                "action": "APPENDED"
+            }
+        ],
+        "issue": {
+            "id": "ISSUE-1",
+            "status": "PROCESSING",
+            "level": "ISSUE",
+            "created_at": "2025-04-23T10:50:26.390Z",
+            "expected_response_time": {
+                "duration": "PT2H"
+            },
+            "expected_resolution_time": {
+                "duration": "P1D"
+            },
+            "refs": [
+                {
+                    "ref_id": "SS1744451330586",
+                    "ref_type": "ORDER"
+                },
+                {
+                    "tags": [
+                        {
+                            "list": [
+                                {
+                                    "value": "2",
+                                    "descriptor": {
+                                        "code": "quantity.selected.count"
+                                    }
+                                }
+                            ],
+                            "descriptor": {
+                                "code": "message.order.items"
+                            }
+                        }
+                    ],
+                    "ref_id": "36743304980989952",
+                    "ref_type": "ITEM"
+                },
+                {
+                    "ref_id": "367433049809779952",
+                    "ref_type": "PROVIDER"
+                },
+                {
+                    "ref_id": "SS1742276616464ddd",
+                    "ref_type": "FULFILMENT"
+                },
+                {
+                    "ref_id": "SS1742276616465dd22",
+                    "ref_type": "TRANSACTION"
+                }
+            ],
+            "actors": [
+                {
+                    "id": "CUST1",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "Sam Manuel"
+                        },
+                        "contact": {
+                            "email": "sam@yahoo.com",
+                            "phone": "9879879870"
+                        }
+                    },
+                    "type": "CONSUMER"
+                },
+                {
+                    "id": "NP1",
+                    "info": {
+                        "org": {
+                            "name": "buyerapp.com::ONDC:RET10"
+                        },
+                        "person": {
+                            "name": "John Doe"
+                        },
+                        "contact": {
+                            "email": "buyerapp@interface.com",
+                            "phone": "9450394039"
+                        }
+                    },
+                    "type": "INTERFACING_NP"
+                },
+                {
+                    "id": "36733322377823232",
+                    "info": {
+                        "org": {
+                            "name": "ondc-staging.unisouk.com::ONDC:RET12"
+                        },
+                        "person": {
+                            "name": "UniSouk - Organization 1"
+                        },
+                        "contact": {
+                            "email": "org1@example.com",
+                            "phone": "1234567890"
+                        }
+                    },
+                    "type": "COUNTERPARTY_NP"
+                }
+            ],
+            "source_id": "CUST1",
+            "complainant_id": "NP1",
+            "respondent_ids": [
+                "36733322377823232"
+            ],
+            "description": {
+                "code": "ORD001",
+                "images": [
+                    {
+                        "url": "http://buyerapp.com/addtional-details/img1.png"
+                    }
+                ],
+                "long_desc": "Product quality is not correct. facing issues while using the product",
+                "short_desc": "Issue with product quality",
+                "additional_desc": {
+                    "url": "https://buyerapp.com/additonal-details/desc.txt",
+                    "content_type": "text/plain"
+                }
+            },
+            "last_action_id": "41477164922630144",
+            "actions": [
+                {
+                    "id": "01966c92-309a-7856-a83e-7efa1be27f1c",
+                    "action_by": "NP1",
+                    "updated_at": "2025-04-25T10:52:43.905Z",
+                    "description": {
+                        "code": "OPEN",
+                        "short_desc": "OPEN"
+                    },
+                    "actor_details": {
+                        "name": "Sam Manuel"
+                    }
+                },
+                {
+                    "id": "41476558501766144",
+                    "action_by": "36733322377823232",
+                    "updated_at": "2025-04-25T10:53:02.141Z",
+                    "description": {
+                        "code": "PROCESSING",
+                        "short_desc": "Processing Issue"
+                    },
+                    "actor_details": {
+                        "name": "UniSouk - Organization 1"
+                    }
+                },
+                {
+                    "id": "41476793873524736",
+                    "action_by": "36733322377823232",
+                    "updated_at": "2025-04-25T10:53:58.261Z",
+                    "description": {
+                        "code": "INFO_REQUESTED",
+                        "name": "41476793873524736",
+                        "short_desc": "short desc"
+                    },
+                    "actor_details": {
+                        "name": "UniSouk - Organization 1"
+                    }
+                },
+                {
+                    "id": "41477164880686080",
+                    "description": {
+                        "short_desc": "OPEN",
+                        "code": "INFO_PROVIDED"
+                    },
+                    "updated_at": "2025-04-25T10:55:26.717Z",
+                    "action_by": "36733322377823232",
+                    "actor_details": {
+                        "name": "UniSouk - Organization 1"
+                    }
+                },
+                {
+                    "id": "41477164922630144",
+                    "description": {
+                        "short_desc": "Seller app processing the info",
+                        "code": "PROCESSING"
+                    },
+                    "updated_at": "2025-04-25T10:55:26.727Z",
+                    "action_by": "36733322377823232",
+                    "actor_details": {
+                        "name": "UniSouk - Organization 1"
+                    }
+                }
+            ],
+            "updated_at": "2025-04-25T10:55:26.727Z"
+        }
+    }
+}

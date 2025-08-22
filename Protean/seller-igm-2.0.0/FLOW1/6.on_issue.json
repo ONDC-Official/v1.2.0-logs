@@ -1,0 +1,284 @@
+{
+  "context": {
+    "domain": "ONDC:RET10",
+    "country": "IND",
+    "city": "*",
+    "action": "on_issue",
+    "core_version": "2.0.0",
+    "bap_id": "igm-mock-service.ondc.org/igm-protocol-server-preprod",
+    "bap_uri": "https://igm-mock-service.ondc.org/igm-protocol-server-preprod/ondc",
+    "bpp_id": "saleor-preprod.bharatvyapaar.com",
+    "bpp_uri": "https://saleor-preprod.bharatvyapaar.com/bpp/retails/protocol/v1",
+    "transaction_id": "T011",
+    "message_id": "b8c299ca-a412-465c-b510-ec913d11ea96",
+    "timestamp": "2025-05-28T09:19:02.849Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "update_target": [
+      {
+        "path": "issue.actions",
+        "action": "APPENDED"
+      }
+    ],
+    "issue": {
+      "id": "ISSUE-15",
+      "refs": [
+        {
+          "ref_id": "O1",
+          "ref_type": "ORDER"
+        },
+        {
+          "tags": [
+            {
+              "list": [
+                {
+                  "value": "2",
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  }
+                }
+              ],
+              "descriptor": {
+                "code": "message.order.items"
+              }
+            }
+          ],
+          "ref_id": "I1",
+          "ref_type": "ITEM"
+        },
+        {
+          "ref_id": "c2000ded-bf96-41ea-91c0-b52938edcac9",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "T1",
+          "ref_type": "TRANSACTION"
+        }
+      ],
+      "level": "ISSUE",
+      "actors": [
+        {
+          "id": "CUST1",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "Sam Manuel"
+            },
+            "contact": {
+              "email": "sam@yahoo.com",
+              "phone": "9879879870"
+            }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "org": {
+              "name": "igm-mock-service.ondc.org/igm-protocol-server-preprod::ONDC:RET10"
+            },
+            "person": {
+              "name": "John Doe"
+            },
+            "contact": {
+              "email": "igm-mock-service.ondc.org@interface.com",
+              "phone": "9450394039"
+            }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "1",
+          "info": {
+            "org": {
+              "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Vishal"
+            },
+            "contact": {
+              "email": "vishalk.chaubey@thewitslab.com",
+              "phone": "8171720711"
+            }
+          },
+          "type": "SELLER"
+        },
+        {
+          "id": "2",
+          "info": {
+            "org": {
+              "name": "saleor-preprod.bharatvyapaar.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "Vishal"
+            },
+            "contact": {
+              "email": "Digvijays.sutar@thewitslab.com",
+              "phone": "8171720797"
+            }
+          },
+          "type": "SELLER"
+        }
+      ],
+      "status": "PROCESSING",
+      "actions": [
+        {
+          "id": "A1",
+          "action_by": "NP1",
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "OPEN"
+          },
+          "updated_at": "2025-05-28T09:11:42.587Z",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A2",
+          "action_by": "1",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Issue Processing"
+          },
+          "updated_at": "2025-05-28T09:11:43.371Z",
+          "actor_details": {
+            "name": "Vishal"
+          }
+        },
+        {
+          "id": "A3",
+          "action_by": "2",
+          "descriptor": {
+            "code": "INFO_REQUESTED",
+            "name": "INF001",
+            "short_desc": "Some short description 1"
+          },
+          "updated_at": "2025-05-28T09:15:42.297Z",
+          "actor_details": {
+            "name": "Vishal"
+          }
+        },
+        {
+          "id": "A4",
+          "ref_id": "R1",
+          "ref_type": "ORDER",
+          "action_by": "NP1",
+          "descriptor": {
+            "code": "INFO_PROVIDED",
+            "short_desc": "INFO PROVIDED"
+          },
+          "updated_at": "2025-05-28T09:17:27.657Z",
+          "actor_details": {
+            "name": "Sam Manuel"
+          }
+        },
+        {
+          "id": "A5",
+          "action_by": "2",
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Issue Processing"
+          },
+          "updated_at": "2025-05-28T09:17:28.257Z",
+          "actor_details": {
+            "name": "Vishal"
+          }
+        },
+        {
+          "id": "A6",
+          "descriptor": {
+            "name": "INF001",
+            "code": "RESOLUTION_PROPOSED",
+            "short_desc": "Some short description 1"
+          },
+          "updated_at": "2025-05-28T09:19:02.849Z",
+          "action_by": "2",
+          "actor_details": {
+            "name": "Vishal"
+          },
+          "ref_id": "R1",
+          "ref_type": "RESOLUTIONS"
+        }
+      ],
+      "source_id": "CUST1",
+      "created_at": "2025-05-28T09:11:42.587Z",
+      "descriptor": {
+        "code": "ORD001",
+        "images": [
+          {
+            "url": "http://igm-mock-service.ondc.org.com/addtional-details/img1.png"
+          }
+        ],
+        "long_desc": "Product quality is not correct. facing issues while using the product",
+        "short_desc": "Issue with product quality",
+        "additional_desc": {
+          "url": "https://igm-mock-service.ondc.org.com/additonal-details/desc.txt",
+          "content_type": "text/plain"
+        }
+      },
+      "updated_at": "2025-05-28T09:19:02.849Z",
+      "complainant_id": "NP1",
+      "last_action_id": "A6",
+      "respondent_ids": [
+        "2"
+      ],
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "resolutions": [
+        {
+          "id": "R_PARENT",
+          "descriptor": {
+            "code": "PARENT",
+            "short_desc": "PROVIDING RESOLUTION OPTIONS"
+          },
+          "updated_at": "2025-05-28T09:19:02.849Z",
+          "proposed_by": 2
+        },
+        {
+          "id": "R1",
+          "descriptor": {
+            "code": "REFUND",
+            "short_desc": ""
+          },
+          "updated_at": "2025-05-28T09:19:02.849Z",
+          "proposed_by": 2,
+          "ref_id": "R_PARENT",
+          "ref_type": "PARENT",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "RESOLUTION_DETAILS"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "ITEM"
+                  },
+                  "value": "I1"
+                },
+                {
+                  "descriptor": {
+                    "code": "REFUND_AMOUNT"
+                  },
+                  "value": "52"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

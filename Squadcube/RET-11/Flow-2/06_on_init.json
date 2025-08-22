@@ -1,0 +1,251 @@
+{
+  "context": {
+    "domain": "ONDC:RET11",
+    "country": "IND",
+    "city": "std:0452",
+    "action": "on_init",
+    "core_version": "1.2.0",
+    "bap_id": "buyer-app-preprod-v2.ondc.org",
+    "bap_uri": "https://buyer-app-preprod-v2.ondc.org/protocol/v1",
+    "bpp_id": "ondcbeta.squadcube.in",
+    "bpp_uri": "https://ondcbeta.squadcube.in/sqc",
+    "transaction_id": "fb2c02e8-655e-4239-b0c5-1c81868703bd",
+    "message_id": "997c15f7-a10e-4764-826b-164ac00f8048",
+    "timestamp": "2025-05-28T11:29:47.826Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "1014",
+        "locations": [
+          {
+            "id": "LOC625011"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "1007",
+          "quantity": {
+            "count": 1
+          },
+          "location_id": "LOC625011",
+          "fulfillment_id": "F1"
+        }
+      ],
+      "offers": null,
+      "billing": {
+        "address": {
+          "building": "25/20D",
+          "city": "Avaniapuram",
+          "state": "Tamil Nadu",
+          "country": "IND",
+          "area_code": "625012",
+          "locality": "Senban Urani Road",
+          "name": "Sathish Kumar A"
+        },
+        "phone": "9629295619",
+        "name": "Sathish Kumar A",
+        "email": "sathi.sssha@gmail.com",
+        "created_at": "2025-05-28T11:29:46.628Z",
+        "updated_at": "2025-05-28T11:29:46.628Z"
+      },
+      "fulfillments": [
+        {
+          "id": "F1",
+          "type": "Delivery",
+          "end": {
+            "contact": {
+              "email": "sathi.sssha@gmail.com",
+              "phone": "9629295619"
+            },
+            "location": {
+              "gps": "9.881007,78.116655",
+              "address": {
+                "building": "25/20D",
+                "city": "Avaniapuram",
+                "state": "Tamil Nadu",
+                "country": "IND",
+                "area_code": "625012",
+                "locality": "Senban Urani Road",
+                "name": "Sathish Kumar A"
+              }
+            }
+          },
+          "@ondc/org/TAT": "PT2H",
+          "tracking": false
+        }
+      ],
+      "quote": {
+        "price": {
+          "currency": "INR",
+          "value": "127.00"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "1007",
+            "title": "Plain Doasi",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "120.95"
+            },
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "120.95"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "1007",
+            "title": "Tax",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "6.05"
+            }
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "title": "Delivery Charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        ],
+        "ttl": "PT30M"
+      },
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft",
+            "beneficiary_name": "Sarvesh Kumar",
+            "settlement_bank_account_no": "07501050065992",
+            "settlement_ifsc_code": "HDFC0000750",
+            "bank_name": "Hdfc bank",
+            "branch_name": "HDFC Bank, Poonamalle"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "np_type",
+              "value": "MSN"
+            },
+            {
+              "code": "tax_number",
+              "value": "33ABICS0502K1ZL"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "EWIPS6305A"
+            }
+          ]
+        }
+      ],
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": "002"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Packed",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "00.00"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "00.00"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "009"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "010,011,012,013,014,015"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "00.00",
+            "amount": {
+              "currency": "INR",
+              "value": "00.00"
+            }
+          },
+          "refund_eligible": true,
+          "reason_required": true
+        }
+      ]
+    }
+  }
+}

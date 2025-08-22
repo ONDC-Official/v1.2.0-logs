@@ -1,0 +1,184 @@
+{
+        "context": {
+          "domain": "ONDC:RET10",
+          "action": "on_init",
+          "core_version": "1.2.0",
+          "bap_id": "dev.vogueriviera.com",
+          "bap_uri": "https://dev.vogueriviera.com/ondc_subscriber",
+          "bpp_id": "pramaan.ondc.org/beta/preprod/mock/seller",
+          "bpp_uri": "https://pramaan.ondc.org/beta/preprod/mock/seller",
+          "transaction_id": "27ff856d-3e0c-4d92-9fa7-aa6e772cab9b",
+          "message_id": "6e97e51d-278f-48da-9c37-92f362e44c572",
+          "city": "std:011",
+          "country": "IND",
+          "timestamp": "2025-05-14T16:06:04.084Z"
+        },
+        "message": {
+          "order": {
+            "provider": {
+              "id": "pramaan_provider_1",
+              "locations": [
+                {
+                  "id": "SSL1"
+                }
+              ]
+            },
+            "items": [
+              {
+                "id": "id_13owvn_0_0",
+                "quantity": {
+                  "count": 1
+                },
+                "location_id": "SSL1",
+                "fulfillment_id": "663e3a0a-2fa1-4065-b2b0-1940237c0bcf"
+              }
+            ],
+            "quote": {
+              "price": {
+                "currency": "INR",
+                "value": "145.00"
+              },
+              "breakup": [
+                {
+                  "@ondc/org/item_id": "id_13owvn_0_0",
+                  "title": "Plain Atta",
+                  "@ondc/org/item_quantity": {
+                    "count": 1
+                  },
+                  "@ondc/org/title_type": "item",
+                  "price": {
+                    "currency": "INR",
+                    "value": "65.00"
+                  },
+                  "item": {
+                    "price": {
+                      "currency": "INR",
+                      "value": "65.00"
+                    }
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "663e3a0a-2fa1-4065-b2b0-1940237c0bcf",
+                  "title": "Delivery charges",
+                  "@ondc/org/title_type": "delivery",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40.00"
+                  }
+                },
+                {
+                  "@ondc/org/item_id": "663e3a0a-2fa1-4065-b2b0-1940237c0bcf",
+                  "title": "Convenience Fee",
+                  "@ondc/org/title_type": "misc",
+                  "price": {
+                    "currency": "INR",
+                    "value": "40.00"
+                  }
+                }
+              ],
+              "ttl": "PT6H"
+            },
+            "billing": {
+              "name": "ONDC buyer",
+              "address": {
+                "name": "Door 12",
+                "building": "ABC Residency",
+                "locality": "Some Street",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560037"
+              },
+              "tax_number": "XXXXXXXXXXXXXXX",
+              "email": "buyer@example.com",
+              "phone": "9876543210",
+              "created_at": "2025-05-14T16:06:03.966Z",
+              "updated_at": "2025-05-14T16:06:03.966Z"
+            },
+            "fulfillments": [
+              {
+                "id": "663e3a0a-2fa1-4065-b2b0-1940237c0bcf",
+                "type": "Delivery",
+                "end": {
+                  "location": {
+                    "gps": "28.527300,77.182100",
+                    "address": {
+                      "name": "my house or door or floor #",
+                      "building": "my building name or house #",
+                      "locality": "N. Caldwell",
+                      "street": "633 Stagtrail Rd",
+                      "country": "IND",
+                      "city": "New Delhi",
+                      "area_code": "110030",
+                      "state": "New Delhi"
+                    }
+                  },
+                  "contact": {
+                    "phone": "9876543210"
+                  }
+                },
+                "tracking": true
+              }
+            ],
+            "payment": {
+              "type": "ON-ORDER",
+              "@ondc/org/buyer_app_finder_fee_type": "percent",
+              "@ondc/org/buyer_app_finder_fee_amount": "3",
+              "@ondc/org/settlement_details": [
+                {
+                  "settlement_counterparty": "seller-app",
+                  "upi_address": "",
+                  "beneficiary_name": "SEQUELSTRING AI",
+                  "settlement_type": "neft",
+                  "settlement_bank_account_no": "9876543210012",
+                  "settlement_ifsc_code": "AXIS123456",
+                  "settlement_phase": "sale-amount",
+                  "settlement_status": "NOT-PAID",
+                  "bank_name": "AXIS BANK LTD ",
+                  "branch_name": "NAVI MUMBAI"
+                }
+              ],
+              "collected_by": "BAP"
+            },
+            "tags": [
+              {
+                "code": "bpp_terms",
+                "list": [
+                  {
+                    "code": "np_type",
+                    "value": "MSN"
+                  },
+                  {
+                    "code": "tax_number",
+                    "value": "00CBADE2145H1Z5"
+                  },
+                  {
+                    "code": "max_liability",
+                    "value": "2"
+                  },
+                  {
+                    "code": "max_liability_cap",
+                    "value": "10000.00"
+                  },
+                  {
+                    "code": "mandatory_arbitration",
+                    "value": "false"
+                  },
+                  {
+                    "code": "court_jurisdiction",
+                    "value": "New Delhi"
+                  },
+                  {
+                    "code": "delay_interest",
+                    "value": "7.50"
+                  },
+                  {
+                    "code": "provider_tax_number",
+                    "value": "ABCDE1234F"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
