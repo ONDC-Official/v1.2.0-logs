@@ -1,0 +1,158 @@
+{
+  "context": {
+    "domain": "ONDC:RET15",
+    "country": "IND",
+    "city": "std:011",
+    "core_version": "1.2.0",
+    "action": "on_init",
+    "transaction_id": "4301c41c-f771-4253-9e60-f38ff60f7046",
+    "message_id": "77ad1193-9fc8-4292-8f73-6b35a7e6296b",
+    "timestamp": "2026-01-20T19:32:43.801Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT30S",
+    "bpp_id": "preprod.e2esell.in",
+    "bpp_uri": "https://preprod.e2esell.in/ondc"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "9aca152c-889f-498b-9222-7e200acfd118",
+        "locations": [
+          {
+            "id": "696c77965cfbc8dac7b57a43"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "c143d6b9-a27a-4db2-9226-d560967cfe19",
+          "quantity": {
+            "count": 1
+          },
+          "fulfillment_id": "Fulfillment1"
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Nirdosh Chauhan",
+          "building": "221 B",
+          "locality": "Baker Steeet",
+          "city": "Gurgaon",
+          "state": "Haryana",
+          "country": "India",
+          "area_code": "122007"
+        },
+        "tax_number": "00ABCDE1234F1Z5",
+        "name": "Nirdosh Chauhan",
+        "email": "mock-user@example.com",
+        "phone": "9876543210",
+        "created_at": "2026-01-20T19:32:43.742Z",
+        "updated_at": "2026-01-20T19:32:43.742Z"
+      },
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "type": "Delivery",
+          "end": {
+            "location": {
+              "gps": "28.4554726,77.0219019",
+              "address": {
+                "name": "Nirdosh Chauhan",
+                "building": "221 B",
+                "locality": "Baker Steeet",
+                "city": "Gurgaon",
+                "state": "Haryana",
+                "country": "India",
+                "area_code": "122007"
+              }
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "mock-user@example.com"
+            }
+          },
+          "tracking": false
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "4999",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "c143d6b9-a27a-4db2-9226-d560967cfe19",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "title": "Samsung Tv",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "4999"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "58"
+                },
+                "maximum": {
+                  "count": "10"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "4999"
+              }
+            }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BPP",
+        "uri": "https://snp.com/pg",
+        "status": "NOT-PAID",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX",
+            "bank_name": "xxxx",
+            "branch_name": "xxxx"
+          }
+        ]
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "3j2b322jj3k2j32"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

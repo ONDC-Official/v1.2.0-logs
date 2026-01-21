@@ -1,0 +1,255 @@
+{
+  "context": {
+    "domain": "ONDC:RET15",
+    "country": "IND",
+    "city": "std:011",
+    "core_version": "1.2.0",
+    "action": "on_confirm",
+    "transaction_id": "07dde1ae-04b1-4dbe-b362-b5ba39779880",
+    "message_id": "6561ad8e-a53f-4c65-b8b3-5723448126c1",
+    "timestamp": "2026-01-20T19:12:59.472Z",
+    "bap_uri": "https://pramaan.ondc.org/beta/preprod/mock/buyer",
+    "bap_id": "pramaan.ondc.org/beta/preprod/mock/buyer",
+    "ttl": "PT30S",
+    "bpp_id": "preprod.e2esell.in",
+    "bpp_uri": "https://preprod.e2esell.in/ondc"
+  },
+  "message": {
+    "order": {
+      "id": "SS1768936379287",
+      "state": "Accepted",
+      "provider": {
+        "id": "9aca152c-889f-498b-9222-7e200acfd118",
+        "locations": [
+          {
+            "id": "696c77965cfbc8dac7b57a43"
+          }
+        ]
+      },
+      "items": [
+        {
+          "id": "c143d6b9-a27a-4db2-9226-d560967cfe19",
+          "quantity": {
+            "count": 3
+          },
+          "fulfillment_id": "Fulfillment1"
+        },
+        {
+          "id": "55017a0c-8bde-47c2-8b68-f3b3822888cc",
+          "quantity": {
+            "count": 2
+          },
+          "fulfillment_id": "Fulfillment1"
+        }
+      ],
+      "billing": {
+        "address": {
+          "name": "Nirdosh Chauhan",
+          "building": "221 B",
+          "locality": "Baker Steeet",
+          "city": "Gurgaon",
+          "state": "Haryana",
+          "country": "India",
+          "area_code": "122007"
+        },
+        "tax_number": "00ABCDE1234F1Z5",
+        "name": "Nirdosh Chauhan",
+        "email": "mock-user@example.com",
+        "phone": "9876543210",
+        "created_at": "2026-01-20T19:12:51.584Z",
+        "updated_at": "2026-01-20T19:12:51.584Z"
+      },
+      "fulfillments": [
+        {
+          "id": "Fulfillment1",
+          "@ondc/org/provider_name": "NJtest",
+          "state": {
+            "descriptor": {
+              "code": "Pending"
+            }
+          },
+          "type": "Delivery",
+          "tracking": false,
+          "start": {
+            "location": {
+              "id": "696c77965cfbc8dac7b57a43",
+              "descriptor": {
+                "name": "NJtest"
+              },
+              "gps": "28.679081336607492,77.06971943378448",
+              "address": {
+                "building": "123",
+                "city": "New Delhi",
+                "state": "Delhi",
+                "country": "India",
+                "area_code": "110041",
+                "locality": "Nangloi"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2026-01-20T19:12:59.385Z",
+                "end": "2026-01-20T19:12:59.385Z"
+              }
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "mock-user@example.com"
+            }
+          },
+          "end": {
+            "person": {
+              "name": "Nirdosh Chauhan"
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "mock-user@example.com"
+            },
+            "location": {
+              "gps": "28.4554726,77.0219019",
+              "address": {
+                "name": "Nirdosh Chauhan",
+                "building": "221 B",
+                "locality": "Baker Steeet",
+                "city": "Gurgaon",
+                "state": "Haryana",
+                "country": "India",
+                "area_code": "122007"
+              }
+            },
+            "time": {
+              "range": {
+                "start": "2026-01-20T19:12:59.385Z",
+                "end": "2026-01-21T19:12:59.385Z"
+              }
+            }
+          }
+        }
+      ],
+      "quote": {
+        "price": {
+          "value": "15003",
+          "currency": "INR"
+        },
+        "breakup": [
+          {
+            "@ondc/org/item_id": "c143d6b9-a27a-4db2-9226-d560967cfe19",
+            "@ondc/org/item_quantity": {
+              "count": 3
+            },
+            "title": "Samsung Tv",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "4999"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "65"
+                },
+                "maximum": {
+                  "count": "10"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "4999"
+              }
+            }
+          },
+          {
+            "@ondc/org/item_id": "55017a0c-8bde-47c2-8b68-f3b3822888cc",
+            "@ondc/org/item_quantity": {
+              "count": 2
+            },
+            "title": "Oil Container ",
+            "@ondc/org/title_type": "item",
+            "price": {
+              "currency": "INR",
+              "value": "3"
+            },
+            "item": {
+              "quantity": {
+                "available": {
+                  "count": "78"
+                },
+                "maximum": {
+                  "count": "10"
+                }
+              },
+              "price": {
+                "currency": "INR",
+                "value": "3"
+              }
+            }
+          },
+          {
+            "title": "Delivery charges",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "0"
+            }
+          }
+        ],
+        "ttl": "P1D"
+      },
+      "payment": {
+        "type": "ON-ORDER",
+        "collected_by": "BAP",
+        "uri": "https://snp.com/pg",
+        "status": "PAID",
+        "@ondc/org/buyer_app_finder_fee_type": "Percent",
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "10.00",
+        "@ondc/org/settlement_details": [
+          {
+            "settlement_counterparty": "seller-app",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "upi",
+            "beneficiary_name": "xxxxx",
+            "upi_address": "gft@oksbi",
+            "settlement_bank_account_no": "XXXXXXXXXX",
+            "settlement_ifsc_code": "XXXXXXXXX",
+            "bank_name": "xxxx",
+            "branch_name": "xxxx"
+          }
+        ],
+        "params": {
+          "amount": "15003",
+          "currency": "INR",
+          "transaction_id": "b933a73f-3f0d-4054-962d-782746ab6685"
+        }
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "3j2b322jj3k2j32"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "tax_number",
+              "value": "00XYZAB1234C1Z8"
+            },
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            }
+          ]
+        }
+      ],
+      "created_at": "2026-01-20T19:12:59.287Z",
+      "updated_at": "2026-01-20T19:12:59.472Z"
+    }
+  }
+}
