@@ -1,0 +1,115 @@
+{
+  "context": {
+    "domain": "ONDC:LOG10",
+    "location": {
+      "city": {
+        "code": "std:033"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "on_search",
+    "version": "2.0.0",
+    "bap_id": "buyer-app.example",
+    "bap_uri": "https://buyer-app.example/ondc",
+    "bpp_id": "lanceiq.com",
+    "bpp_uri": "https://lanceiq.com/api/ondc/inbound",
+    "transaction_id": "log10-tx-0001",
+    "message_id": "log10-on-search-0001",
+    "timestamp": "2026-04-15T12:00:03.000Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "catalog": {
+      "descriptor": {
+        "name": "LanceIQ LOG10 Logistics"
+      },
+      "fulfillments": [
+        {
+          "id": "fulfillment-delivery",
+          "type": "Delivery"
+        },
+        {
+          "id": "fulfillment-rto",
+          "type": "RTO"
+        }
+      ],
+      "providers": [
+        {
+          "id": "lanceiq-logistics-provider",
+          "descriptor": {
+            "name": "LanceIQ Logistics"
+          },
+          "locations": [
+            {
+              "id": "kolkata-hub",
+              "gps": "22.567745,88.347602",
+              "address": {
+                "area_code": "700069",
+                "city": "Kolkata",
+                "state": "WB",
+                "country": "IND"
+              }
+            }
+          ],
+          "categories": [
+            {
+              "id": "surface-delivery",
+              "descriptor": {
+                "code": "Surface_Delivery",
+                "name": "Surface Delivery"
+              }
+            }
+          ],
+          "items": [
+            {
+              "id": "surface-standard-10kg",
+              "parent_item_id": "surface-standard",
+              "category_ids": [
+                "surface-delivery"
+              ],
+              "fulfillment_ids": [
+                "fulfillment-delivery"
+              ],
+              "descriptor": {
+                "code": "P2H2P",
+                "name": "Point-to-point surface delivery"
+              },
+              "price": {
+                "currency": "INR",
+                "value": "450.00"
+              },
+              "time": {
+                "label": "TAT",
+                "duration": "P2D",
+                "timestamp": "2026-04-15T12:00:03.000Z"
+              },
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "Cargo_Details"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "Weight"
+                      },
+                      "value": "10"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "Weight_Unit"
+                      },
+                      "value": "kilogram"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

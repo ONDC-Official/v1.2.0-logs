@@ -1,0 +1,60 @@
+{
+  "context": {
+    "domain": "ONDC:LOG10",
+    "location": {
+      "city": {
+        "code": "std:033"
+      },
+      "country": {
+        "code": "IND"
+      }
+    },
+    "action": "select",
+    "version": "2.0.0",
+    "bap_id": "buyer-app.example",
+    "bap_uri": "https://buyer-app.example/ondc",
+    "bpp_id": "lanceiq.com",
+    "bpp_uri": "https://lanceiq.com/api/ondc/inbound",
+    "transaction_id": "log10-tx-0001",
+    "message_id": "log10-select-0001",
+    "timestamp": "2026-04-15T12:01:00.000Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "lanceiq-logistics-provider"
+      },
+      "items": [
+        {
+          "id": "surface-standard-10kg",
+          "fulfillment_id": "fulfillment-delivery"
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "fulfillment-delivery",
+          "type": "Delivery",
+          "stops": [
+            {
+              "id": "pickup-1",
+              "type": "start",
+              "location": {
+                "gps": "22.567745,88.347602",
+                "area_code": "700069"
+              }
+            },
+            {
+              "id": "drop-1",
+              "type": "end",
+              "location": {
+                "gps": "26.727101,88.395286",
+                "area_code": "734001"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
