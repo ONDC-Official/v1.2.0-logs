@@ -1,0 +1,172 @@
+{
+  "context": {
+    "action": "on_init",
+    "bap_id": "free11.com",
+    "bap_uri": "https://free11.com/api/ondc",
+    "bpp_id": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "city": "std:022",
+    "core_version": "1.2.5",
+    "country": "IND",
+    "domain": "ONDC:RET10",
+    "message_id": "bfec2f5e-c9b5-463d-8067-c10edbbe93c9",
+    "timestamp": "2026-10-26T09:04:20.777Z",
+    "transaction_id": "964fd17b-878c-4045-ab43-178a33c594b1",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "address": {
+          "area_code": "400053",
+          "building": "Test Tower",
+          "city": "Mumbai",
+          "country": "IND",
+          "locality": "Andheri West",
+          "name": "FREE11 Test Buyer",
+          "state": "Maharashtra"
+        },
+        "created_at": "2026-10-26T09:04:20.277Z",
+        "email": "abhishek@free11.com",
+        "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED",
+        "phone": "9056193611",
+        "updated_at": "2026-10-26T09:04:20.277Z"
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "location": {
+              "address": {
+                "area_code": "400053",
+                "building": "Test Tower",
+                "city": "Mumbai",
+                "country": "IND",
+                "locality": "Andheri West",
+                "name": "FREE11 Test Buyer",
+                "state": "Maharashtra"
+              },
+              "gps": "19.129076,72.825803"
+            }
+          },
+          "id": "F1",
+          "tracking": true,
+          "type": "Delivery"
+        }
+      ],
+      "items": [
+        {
+          "fulfillment_id": "F1",
+          "id": "I1",
+          "location_id": "L1",
+          "parent_item_id": "V1",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "XXXX",
+            "beneficiary_name": "xxxx",
+            "branch_name": "XXXX",
+            "settlement_bank_account_no": "XXXX",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "XXXX",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft"
+          }
+        ]
+      },
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "title": "Plain Atta"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Delivery charges"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Convenience Fee"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "200.00"
+        },
+        "ttl": "P1D"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "np_type",
+              "value": "MSN"
+            },
+            {
+              "code": "tax_number",
+              "value": "00ABCCH7409R1ZZ"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "ABCDE1234F"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

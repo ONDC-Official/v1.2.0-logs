@@ -1,0 +1,226 @@
+{
+  "context": {
+    "action": "confirm",
+    "bap_id": "free11.com",
+    "bap_uri": "https://free11.com/api/ondc",
+    "bpp_id": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "city": "std:022",
+    "core_version": "1.2.5",
+    "country": "IND",
+    "domain": "ONDC:RET10",
+    "message_id": "fc3abd11-f190-4451-9707-4bfb1db64f50",
+    "timestamp": "2026-10-26T08:58:05.234Z",
+    "transaction_id": "2fb629bc-9bde-479b-9bdc-ff17bdf796bf",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "address": {
+          "area_code": "400053",
+          "building": "Test Tower",
+          "city": "Mumbai",
+          "country": "IND",
+          "locality": "Andheri West",
+          "name": "FREE11 Test Buyer",
+          "state": "Maharashtra"
+        },
+        "created_at": "2026-10-26T08:58:05.234Z",
+        "email": "abhishek@free11.com",
+        "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED",
+        "phone": "9056193611",
+        "updated_at": "2026-10-26T08:58:05.234Z"
+      },
+      "created_at": "2026-10-26T08:58:05.234Z",
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "P2D",
+          "@ondc/org/category": "Standard Delivery",
+          "end": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "location": {
+              "address": {
+                "area_code": "400053",
+                "building": "Test Tower",
+                "city": "Mumbai",
+                "country": "IND",
+                "locality": "Andheri West",
+                "name": "FREE11 Test Buyer",
+                "state": "Maharashtra"
+              },
+              "gps": "19.129076,72.825803"
+            },
+            "person": {
+              "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED"
+            }
+          },
+          "id": "F1",
+          "tracking": true,
+          "type": "Delivery"
+        }
+      ],
+      "id": "f56af8d5a513",
+      "items": [
+        {
+          "fulfillment_id": "F1",
+          "id": "I1",
+          "location_id": "L1",
+          "parent_item_id": "V1",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "XXXX",
+            "beneficiary_name": "xxxx",
+            "branch_name": "XXXX",
+            "settlement_bank_account_no": "XXXX",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "XXXX",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft"
+          }
+        ],
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "0.00",
+        "collected_by": "BAP",
+        "params": {
+          "amount": "200.00",
+          "currency": "INR",
+          "transaction_id": "pay_f56af8d5a513"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "uri": "https://snp.com/pg"
+      },
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "title": "Plain Atta"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Delivery charges"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Convenience Fee"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "200.00"
+        },
+        "ttl": "P1D"
+      },
+      "state": "Created",
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000.00"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "7.50"
+            },
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_sellerNP"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "PAN_number_of_provider"
+            }
+          ]
+        },
+        {
+          "code": "bap_terms",
+          "list": [
+            {
+              "code": "accept_bpp_terms",
+              "value": "Y"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://free11.com/terms"
+            },
+            {
+              "code": "tax_number",
+              "value": "27AAGCF9489D1Z6"
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-10-26T08:58:05.234Z"
+    }
+  }
+}

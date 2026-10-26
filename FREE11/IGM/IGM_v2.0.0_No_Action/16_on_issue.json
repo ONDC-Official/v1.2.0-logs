@@ -1,0 +1,168 @@
+{
+  "context": {
+    "action": "on_issue",
+    "bap_id": "free11.com",
+    "bap_uri": "https://free11.com/api/ondc",
+    "bpp_id": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "city": "std:022",
+    "core_version": "1.2.5",
+    "country": "IND",
+    "domain": "ONDC:RET10",
+    "message_id": "491e8b76-481c-4ab2-a1d5-b5c90c9a3864",
+    "timestamp": "2026-10-26T09:10:53.228Z",
+    "transaction_id": "3ef8d245-e35a-4590-9392-164cba1fdece",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "issue": {
+      "actions": [
+        {
+          "action_by": "NP1",
+          "actor_details": {
+            "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED"
+          },
+          "descriptor": {
+            "code": "OPEN",
+            "short_desc": "Complaint created"
+          },
+          "id": "6084d536-d891-492c-84da-9b961408cf64",
+          "updated_at": "2026-10-26T09:10:52.543Z"
+        },
+        {
+          "action_by": "NP2",
+          "actor_details": {
+            "name": "mock-seller"
+          },
+          "descriptor": {
+            "code": "PROCESSING",
+            "short_desc": "Complaint created"
+          },
+          "id": "40705f21-3a0e-40ed-b8b3-241a8795c99e",
+          "updated_at": "2026-10-26T09:10:53.228Z"
+        }
+      ],
+      "actors": [
+        {
+          "id": "CUST1",
+          "info": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "org": {
+              "name": "free11.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED"
+            }
+          },
+          "type": "CONSUMER"
+        },
+        {
+          "id": "NP1",
+          "info": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "org": {
+              "name": "free11.com::ONDC:RET10"
+            },
+            "person": {
+              "name": "FREE11 Buyer App"
+            }
+          },
+          "type": "INTERFACING_NP"
+        },
+        {
+          "id": "NP2",
+          "info": {
+            "contact": {
+              "email": "sellerapp@interface.com",
+              "phone": "9999994039"
+            },
+            "org": {
+              "name": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller::ONDC:RET10"
+            },
+            "person": {
+              "name": "mock-seller"
+            }
+          },
+          "type": "COUNTERPARTY_NP"
+        }
+      ],
+      "complainant_id": "NP1",
+      "created_at": "2026-10-26T09:10:52.543Z",
+      "descriptor": {
+        "additional_desc": {
+          "content_type": "text/html",
+          "url": "https://example.com/issue-details"
+        },
+        "code": "ITM004",
+        "images": [
+          {
+            "size_type": "xs",
+            "url": "https://free11.com/logo512.png"
+          }
+        ],
+        "long_desc": "Product quality is not correct. Packaging damaged on delivery.",
+        "short_desc": "Issue with product quality"
+      },
+      "expected_resolution_time": {
+        "duration": "P1D"
+      },
+      "expected_response_time": {
+        "duration": "PT2H"
+      },
+      "id": "03ef8eac-e976-49be-bf18-fb1d0dfa5041",
+      "last_action_id": "40705f21-3a0e-40ed-b8b3-241a8795c99e",
+      "level": "ISSUE",
+      "refs": [
+        {
+          "ref_id": "cf02066d980e",
+          "ref_type": "ORDER"
+        },
+        {
+          "ref_id": "P1",
+          "ref_type": "PROVIDER"
+        },
+        {
+          "ref_id": "F1",
+          "ref_type": "FULFILLMENT"
+        },
+        {
+          "ref_id": "I1",
+          "ref_type": "ITEM",
+          "tags": [
+            {
+              "descriptor": {
+                "code": "message.order.items"
+              },
+              "list": [
+                {
+                  "descriptor": {
+                    "code": "quantity.selected.count"
+                  },
+                  "value": "1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "respondent_ids": [
+        "NP2"
+      ],
+      "source_id": "CUST1",
+      "status": "PROCESSING",
+      "updated_at": "2026-10-26T09:10:53.228Z"
+    },
+    "update_target": [
+      {
+        "action": "APPENDED",
+        "path": "issue.actions"
+      }
+    ]
+  }
+}

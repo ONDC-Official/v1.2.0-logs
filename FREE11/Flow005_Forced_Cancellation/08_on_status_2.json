@@ -1,0 +1,241 @@
+{
+  "context": {
+    "action": "on_status",
+    "bap_id": "free11.com",
+    "bap_uri": "https://free11.com/api/ondc",
+    "bpp_id": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "city": "std:022",
+    "core_version": "1.2.5",
+    "country": "IND",
+    "domain": "ONDC:RET10",
+    "message_id": "e5e5a965-217b-49aa-8432-48e71a8aec50",
+    "timestamp": "2026-10-26T09:02:03.917Z",
+    "transaction_id": "2fb629bc-9bde-479b-9bdc-ff17bdf796bf",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "address": {
+          "area_code": "400053",
+          "building": "Test Tower",
+          "city": "Mumbai",
+          "country": "IND",
+          "locality": "Andheri West",
+          "name": "FREE11 Test Buyer",
+          "state": "Maharashtra"
+        },
+        "created_at": "2026-10-26T08:58:02.759Z",
+        "email": "abhishek@free11.com",
+        "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED",
+        "phone": "9056193611",
+        "updated_at": "2026-10-26T08:58:02.759Z"
+      },
+      "created_at": "2026-10-26T08:58:05.234Z",
+      "fulfillments": [
+        {
+          "@ondc/org/TAT": "P2D",
+          "@ondc/org/provider_name": "Store 1",
+          "end": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "location": {
+              "address": {
+                "area_code": "400053",
+                "building": "Test Tower",
+                "city": "Mumbai",
+                "country": "IND",
+                "locality": "Andheri West",
+                "name": "FREE11 Test Buyer",
+                "state": "Maharashtra"
+              },
+              "gps": "19.129076,72.825803"
+            },
+            "person": {
+              "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED"
+            },
+            "time": {
+              "range": {
+                "end": "2026-10-28T09:12:01.004Z",
+                "start": "2026-10-26T09:22:01.004Z"
+              },
+              "timestamp": "2026-10-26T09:02:01.004Z"
+            }
+          },
+          "id": "F1",
+          "start": {
+            "contact": {
+              "email": "nobody@nomail.com",
+              "phone": "9594663710"
+            },
+            "location": {
+              "address": {
+                "area_code": "400053",
+                "city": "mock-seller-city",
+                "locality": "ANDHERI FOUR BUNGLOW AMAR JYOTI CHS",
+                "state": "mock-state",
+                "street": "1 & 2,AMAR JYOTI CHS.BLDG.,OPP.NAND KRIPA HALL"
+              },
+              "descriptor": {
+                "name": "Store 1"
+              },
+              "gps": "19.129076,72.825803",
+              "id": "L1"
+            },
+            "time": {
+              "range": {
+                "end": "2026-10-26T09:22:01.004Z",
+                "start": "2026-10-26T09:12:01.004Z"
+              },
+              "timestamp": "2026-10-26T09:02:01.004Z"
+            }
+          },
+          "state": {
+            "descriptor": {
+              "code": "Packed"
+            }
+          },
+          "tags": [
+            {
+              "code": "routing",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "P2H2P"
+                }
+              ]
+            },
+            {
+              "code": "tracking",
+              "list": [
+                {
+                  "code": "gps_enabled",
+                  "value": "no"
+                },
+                {
+                  "code": "url_enabled",
+                  "value": "yes"
+                },
+                {
+                  "code": "url",
+                  "value": "https://sellerNP.com/ondc/tracking_url"
+                }
+              ]
+            }
+          ],
+          "tracking": true,
+          "type": "Delivery"
+        }
+      ],
+      "id": "f56af8d5a513",
+      "items": [
+        {
+          "fulfillment_id": "F1",
+          "id": "I1",
+          "location_id": "L1",
+          "parent_item_id": "V1",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/settlement_basis": "delivery",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "XXXX",
+            "beneficiary_name": "xxxx",
+            "branch_name": "XXXX",
+            "settlement_bank_account_no": "XXXX",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "XXXX",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft"
+          }
+        ],
+        "@ondc/org/settlement_window": "P1D",
+        "@ondc/org/withholding_amount": "0.00",
+        "collected_by": "BAP",
+        "params": {
+          "amount": "200.00",
+          "currency": "INR",
+          "transaction_id": "pay_f56af8d5a513"
+        },
+        "status": "PAID",
+        "type": "ON-ORDER",
+        "uri": "https://snp.com/pg"
+      },
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "title": "Plain Atta"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Delivery charges"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Convenience Fee"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "200.00"
+        },
+        "ttl": "P1D"
+      },
+      "state": "In-progress",
+      "updated_at": "2026-10-26T09:02:03.921Z"
+    }
+  }
+}

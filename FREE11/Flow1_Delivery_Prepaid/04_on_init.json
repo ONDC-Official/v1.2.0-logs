@@ -1,0 +1,192 @@
+{
+  "context": {
+    "action": "on_init",
+    "bap_id": "free11.com",
+    "bap_uri": "https://free11.com/api/ondc",
+    "bpp_id": "workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/ONDC:RET10/1.2.5/seller",
+    "city": "std:022",
+    "core_version": "1.2.5",
+    "country": "IND",
+    "domain": "ONDC:RET10",
+    "message_id": "c164fc6f-f875-434b-a9b5-96f94a45dabc",
+    "timestamp": "2026-10-26T08:56:01.795Z",
+    "transaction_id": "df7ba272-a340-43cd-a0bc-9f8ffe7976e5",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "order": {
+      "billing": {
+        "address": {
+          "area_code": "400053",
+          "building": "Test Tower",
+          "city": "Mumbai",
+          "country": "IND",
+          "locality": "Andheri West",
+          "name": "FREE11 Test Buyer",
+          "state": "Maharashtra"
+        },
+        "created_at": "2026-10-26T08:55:58.497Z",
+        "email": "abhishek@free11.com",
+        "name": "FREE11 TECHNOLOGIES PRIVATE LIMITED",
+        "phone": "9056193611",
+        "updated_at": "2026-10-26T08:55:58.497Z"
+      },
+      "fulfillments": [
+        {
+          "end": {
+            "contact": {
+              "email": "abhishek@free11.com",
+              "phone": "9056193611"
+            },
+            "location": {
+              "address": {
+                "area_code": "400053",
+                "building": "Test Tower",
+                "city": "Mumbai",
+                "country": "IND",
+                "locality": "Andheri West",
+                "name": "FREE11 Test Buyer",
+                "state": "Maharashtra"
+              },
+              "gps": "19.129076,72.825803"
+            }
+          },
+          "id": "F1",
+          "tracking": true,
+          "type": "Delivery"
+        }
+      ],
+      "items": [
+        {
+          "fulfillment_id": "F1",
+          "id": "I1",
+          "location_id": "L1",
+          "parent_item_id": "V1",
+          "quantity": {
+            "count": 1
+          },
+          "tags": [
+            {
+              "code": "type",
+              "list": [
+                {
+                  "code": "type",
+                  "value": "item"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "payment": {
+        "@ondc/org/buyer_app_finder_fee_amount": "3",
+        "@ondc/org/buyer_app_finder_fee_type": "percent",
+        "@ondc/org/settlement_details": [
+          {
+            "bank_name": "XXXX",
+            "beneficiary_name": "xxxx",
+            "branch_name": "XXXX",
+            "settlement_bank_account_no": "XXXX",
+            "settlement_counterparty": "seller-app",
+            "settlement_ifsc_code": "XXXX",
+            "settlement_phase": "sale-amount",
+            "settlement_type": "neft"
+          }
+        ],
+        "collected_by": "BPP",
+        "status": "NOT-PAID",
+        "type": "ON-ORDER",
+        "uri": "https://snp.com/pg"
+      },
+      "provider": {
+        "id": "P1",
+        "locations": [
+          {
+            "id": "L1"
+          }
+        ]
+      },
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/item_quantity": {
+              "count": 1
+            },
+            "@ondc/org/title_type": "item",
+            "item": {
+              "price": {
+                "currency": "INR",
+                "value": "200.00"
+              }
+            },
+            "price": {
+              "currency": "INR",
+              "value": "200.00"
+            },
+            "title": "Plain Atta"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Delivery charges"
+          },
+          {
+            "@ondc/org/item_id": "F1",
+            "@ondc/org/title_type": "misc",
+            "price": {
+              "currency": "INR",
+              "value": "00.00"
+            },
+            "title": "Convenience Fee"
+          }
+        ],
+        "price": {
+          "currency": "INR",
+          "value": "200.00"
+        },
+        "ttl": "P1D"
+      },
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000.00"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "7.50"
+            },
+            {
+              "code": "tax_number",
+              "value": "gst_number_of_sellerNP"
+            },
+            {
+              "code": "provider_tax_number",
+              "value": "PAN_number_of_provider"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
