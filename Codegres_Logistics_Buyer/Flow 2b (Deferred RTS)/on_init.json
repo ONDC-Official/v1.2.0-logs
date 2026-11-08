@@ -1,0 +1,211 @@
+{
+  "context": {
+    "domain": "nic2004:60232",
+    "action": "on_init",
+    "timestamp": "2026-11-08T06:14:30.429Z",
+    "transaction_id": "9cd0281f-13ca-45cc-a40f-d3e25fffcc4c",
+    "message_id": "411d1250-2a83-439e-822d-7ab4977b34ee",
+    "bap_id": "ondc.codegres.com",
+    "bap_uri": "https://ondc.codegres.com",
+    "ttl": "PT30S",
+    "bpp_id": "workbench.ondc.tech",
+    "bpp_uri": "https://workbench.ondc.tech/api-service/nic2004:60232/1.2.0/seller",
+    "country": "IND",
+    "city": "std:080",
+    "core_version": "1.2.0"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "P1"
+      },
+      "items": [
+        {
+          "id": "I1",
+          "fulfillment_id": "1",
+          "descriptor": {
+            "code": "P2P"
+          }
+        }
+      ],
+      "fulfillments": [
+        {
+          "id": "1",
+          "type": "Delivery",
+          "start": {
+            "location": {
+              "gps": "12.971599,77.594566",
+              "address": {
+                "name": "Codegres Test Store",
+                "building": "12, MG Road",
+                "locality": "Ashok Nagar",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560001"
+              }
+            },
+            "contact": {
+              "phone": "9876543210",
+              "email": "store@codegres.com"
+            }
+          },
+          "end": {
+            "location": {
+              "gps": "12.935223,77.624481",
+              "address": {
+                "name": "Test Buyer",
+                "building": "4th Block",
+                "locality": "Koramangala",
+                "city": "Bengaluru",
+                "state": "Karnataka",
+                "country": "IND",
+                "area_code": "560034"
+              }
+            },
+            "contact": {
+              "phone": "9123456780",
+              "email": "buyer@example.com"
+            },
+            "person": {
+              "name": "Test Buyer"
+            }
+          },
+          "tags": [
+            {
+              "code": "rider_check",
+              "list": [
+                {
+                  "code": "inline_check_for_rider",
+                  "value": "yes"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "quote": {
+        "breakup": [
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "delivery",
+            "price": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          },
+          {
+            "@ondc/org/item_id": "I1",
+            "@ondc/org/title_type": "tax",
+            "price": {
+              "currency": "INR",
+              "value": "9.00"
+            }
+          }
+        ],
+        "ttl": "PT15M",
+        "price": {
+          "currency": "INR",
+          "value": "59.00"
+        }
+      },
+      "payment": {
+        "type": "POST-FULFILLMENT",
+        "collected_by": "BAP"
+      },
+      "cancellation_terms": [
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Pending",
+              "short_desc": "008"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "0.00",
+            "amount": {
+              "currency": "INR",
+              "value": "0.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Agent-assigned",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "100.00",
+            "amount": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Order-picked-up",
+              "short_desc": "001,003"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "100.00",
+            "amount": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          }
+        },
+        {
+          "fulfillment_state": {
+            "descriptor": {
+              "code": "Out-for-delivery",
+              "short_desc": "011,012,013,014,015"
+            }
+          },
+          "cancellation_fee": {
+            "percentage": "100.00",
+            "amount": {
+              "currency": "INR",
+              "value": "50.00"
+            }
+          }
+        }
+      ],
+      "tags": [
+        {
+          "code": "bpp_terms",
+          "list": [
+            {
+              "code": "max_liability",
+              "value": "2"
+            },
+            {
+              "code": "max_liability_cap",
+              "value": "10000"
+            },
+            {
+              "code": "mandatory_arbitration",
+              "value": "false"
+            },
+            {
+              "code": "court_jurisdiction",
+              "value": "Bengaluru"
+            },
+            {
+              "code": "delay_interest",
+              "value": "1000"
+            },
+            {
+              "code": "static_terms",
+              "value": "https://github.com/ONDC-Official/protocol-network-extension/discussions/79"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
